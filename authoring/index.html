@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="hu"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Szerzői kézikönyv – Wenova</title><link rel="stylesheet" href="../materials/assets/notebook.css"></head>
+<body><a class="skip" href="#main">Ugrás a tartalomhoz</a><header class="topbar"><a class="brand" href="../index.html">WENOVA</a><span>Belső munkaterület · AI Sales Workshop</span></header>
+<div class="layout"><nav class="toc" aria-label="Tartalomjegyzék"><p>Ebben a kézikönyvben</p><ol><li><a href="#workflow">Tananyagkészítés lépésről lépésre</a></li>
+<li><a href="#requirements">Mit várunk egy jó tananyagtól?</a></li>
+<li><a href="#template">Sablon és közös megjelenés</a></li>
+<li><a href="#review">Review és elfogadás</a></li>
+<li><a href="#checklist">Közös ellenőrzőlista</a></li>
+<li><a href="#review-prompt">Másolható review-prompt</a></li>
+<li><a href="#report">Jegyzőkönyv és ellenőrzési eszköz</a></li>
+<li><a href="#notes">Oktatói jegyzetek kapcsolása</a></li>
+<li><a href="#release">Résztvevői kiadás</a></li>
+<li><a href="#ai-rules">Közös AI-instrukciók</a></li></ol></nav><main id="main"><header><p class="eyebrow">Authoring · belső</p><h1>Szerzői kézikönyv</h1><p class="lead">A szakmai tudást az előadó adja, a fájlokat az AI kezeli. Egy közös munkafolyamat a tervtől az elfogadásig.</p></header>
+<section id="workflow"><h2>Tananyagkészítés lépésről lépésre</h2>
+<ol><li>Nyisd meg ezt a repót Claude Code-ban vagy Codexben, és mondd meg, melyik modult készíted.</li><li>Add át a meglévő jegyzeteidet, a célközönséget és a kívánt eredményt.</li><li>Az AI tisztázza a hiányzó információkat és tervet készít. Te jóváhagyod vagy módosítást kérsz.</li><li>A jóváhagyás után az AI a közös sablonból elkészíti a modul HTML-jét. A böngészőben átnézed, beszélgetésben kéred a javításokat.</li><li>Egy külön review-beszélgetés ellenőrzi a fájlokat. Az előadó végigpróbálja a feladatot, és a szakmai felelős elfogadja.</li></ol>
+<h3 id="workflow-1">Induló prompt</h3>
+<pre>Ebben a repóban szeretnék tananyagot készíteni.
+Olvasd el az AGENTS.md instrukciót és az authoring/index.html kézikönyvet.
+Partner / előadó: [név]
+Téma és célközönség: [röviden]
+Meglévő forrásaim: [fájlok vagy linkek]
+A résztvevő ezt készítse el: [ha már ismert]
+Keresd meg a megfelelő materials/modules/ modult.
+Kérdezz a hiányzó lényegi információkról, majd adj rövid tervet.
+Fájlokat csak a jóváhagyásom után szerkessz.
+A közös authoring/template.html szerkezetével és materials/assets/notebook.css stílussal dolgozz.</pre>
+<h3 id="workflow-2">Javítás kérése</h3>
+<blockquote>A gyakorlatot rövidítsd 15 percre, és adj hozzá egy magyar KKV-s példát. A közös megjelenést tartsd meg.</blockquote>
+<blockquote>Magyarázd el ezt kezdőknek is érthetően, majd adj másolható promptot és konkrét kész feltételeket.</blockquote>
+<h3 id="workflow-3">Átadás</h3>
+<p>Az AI sorolja fel a változásokat, az ellenőrzés eredményét és a nyitott kérdéseket. A közös repóba küldést külön kérd: „Tedd a jóváhagyott változtatásokat külön ágra, commitold, pushold, és készíts pull requestet szakmai ellenőrzésre.”</p>
+</section>
+<section id="requirements"><h2>Mit várunk egy jó tananyagtól?</h2>
+<p>Magyar, gyakorlati tananyag: emberi cél → AI-val végzett feladat → eredmény → ellenőrzés → következő lépés.</p>
+<ul><li>Az új anyag a authoring/template.html mintáját követi, a materials/assets/notebook.css közös megjelenésével. A szerző az AI-val beszélget; nem tölt ki technikai adatlapot.</li><li>Legyen világos cél, előfeltétel, rövid magyarázat, emberi döntés, másolható prompt, időzített feladat, kész feltétel, elakadási segítség és továbbvihető eredmény. A sablon tíz szakasza ezt mutatja; ne szaporíts üres fejezeteket csak a forma kedvéért.</li><li>A résztvevői szöveg és a másolható prompt magyar. A fájlnevek rövid angol nevek.</li><li>Saját üzlet és személyes LinkedIn-kapcsolat nélkül is végigjárható példa szükséges.</li><li>A statikus minta nem élő eszközvégrehajtás. Jelöld, hogy valódi rendszerben, tesztkörnyezetben vagy szimulációban dolgozunk.</li><li>Ne találj ki referenciát, vállalást vagy kipróbált integrációt. Kitalált példát jelölj kitaláltnak.</li><li>Az előző modul eredményét használd; ne kérd be ugyanazt újra. Öt perc elakadás után legyen konkrét mentőút.</li><li>Opcionális bővítés ne legyen a következő modul előfeltétele.</li><li>Publikálást, küldést és üzleti vállalást a résztvevő tudatosan hagy jóvá.</li><li>Státuszok: draft (váz), review (kidolgozott, próbára vár), ready (szakmailag és oktatóilag kipróbált).</li></ul>
+<p>A modul vázából és a közös mintaleckéből indulj ki; az előadóval jóváhagyott terv szerint dolgozz.</p>
+</section>
+<section id="template"><h2>Sablon és közös megjelenés</h2>
+<p><a href="template.html">Másolható HTML-sablon</a> · <a href="../materials/modules/01-business-foundations.html#01-business-foundations.01-offer-and-audience">Kidolgozott mintalecke</a></p><p>Egy modul egy HTML-oldal. A szakaszok stabil azonosítókat kapnak. A magyarázat, a másolható prompt, a feladat, az ellenőrzés és az elakadási segítség egységes blokkokban jelenik meg. A közös CSS a materials/assets/notebook.css fájlban található.</p><p>Magyar tartalom, angol fájl- és mappanevek. A sablon másolásakor az AI igazítsa a relatív hivatkozásokat. A résztvevői oldal helyi fájlként is olvasható legyen.</p>
+</section>
+<section id="review"><h2>Review és elfogadás</h2>
+<h3 id="review-1">Ki mit csinál?</h3>
+<div class="table-wrap"><table><thead><tr><th scope="col">Szerep</th><th scope="col">Feladat</th><th scope="col">Döntés</th></tr></thead><tbody><tr><td>Szerző partner + AI</td><td>Jóváhagyott tervből tananyagot készít és javít</td><td>Review-ra átadja</td></tr><tr><td>AI-reviewer új beszélgetésben</td><td>Fájlokból, a közös mércével ellenőriz</td><td>Hibákat és bizonyítékokat ad, nem hagy jóvá</td></tr><tr><td>Másik előadó / kijelölt próbarésztvevő</td><td>A leírás alapján végigjárja a feladatot</td><td>Rögzíti, működött-e, mennyi idő alatt</td></tr><tr><td>Modul szakmai felelőse</td><td>A jegyzőkönyv és próba alapján dönt</td><td>Elfogad / javításra visszaad</td></tr><tr><td>Wenova koordinátor</td><td>Modulátadások és teljes nap főpróbája</td><td>Teljes képzés megtarthatóságáról dönt</td></tr></tbody></table></div>
+<p>A konkrét embereket a jegyzőkönyvben kell megnevezni. A szerző saját ellenőrzése hasznos, de nem nevezhető független review-nak.</p>
+<h3 id="review-2">Hat lépés, egy rövid jegyzőkönyv</h3>
+<ol><li><strong>Terv:</strong> célközönség, előfeltétel, tanulási eredmény, időkeret, gyakorlat, minta és következő modul. Az előadó jóváhagyja.</li><li><strong>Átadás:</strong> a szerző megadja az ellenőrzendő HTML-t, kapcsolódó bemeneteket, mentőutat és a nyitott kérdéseket. Állapot: review.</li><li><strong>AI-ellenőrzés:</strong> új beszélgetés, közös <a href="#review-prompt">prompt</a>, <a href="#checklist">ellenőrzőlista</a>, konkrét helyek és bizonyítékok. Nem módosítja a tananyagot review közben.</li><li><strong>Javítás:</strong> a szerző jóváhagyott javítási terv szerint dolgozik; az ellenőrző lezárja vagy nyitva hagyja az egyes hibákat. Tartalmi változás után az érintett gyakorlatot újra kell próbálni.</li><li><strong>Emberi próba:</strong> az ellenőrző a leírás alapján elkészíti az eredményt, rögzíti az időt és az elakadásokat. Kipróbálja a minta/mentőutat, és megnyitja a tananyagot asztali, mobil szélességű és nyomtatási nézetben.</li><li><strong>Elfogadás:</strong> a szakmai felelős a bizonyítékok alapján dönt. Rögzíti a dátumot és a pontos elfogadott változatot.</li></ol>
+<h3 id="review-3">Eredmények és hibasúly</h3>
+<p>Minden ellenőrzési pont eredménye: <strong>Megfelel / Javítandó / Nem ellenőrzött</strong>. Mindegyikhez kell bizonyíték vagy a hiány pontos leírása. Csak az előre feltételes pont jelölhető „Nem alkalmazható”-nak, rövid indoklással.</p>
+<ul><li><strong>Blokkoló:</strong> kötelező feltétel sérül. Például nem követhető feladat, hiányzó bemenet, hibás szakmai állítás, nem működő szükséges link, el nem végzett kötelező próba. Nem fogadható el.</li><li><strong>Javaslat:</strong> nem akadályozza a megértést vagy végrehajtást; például rövidebb megfogalmazás. Nem blokkol, de a felelős rögzítse, javítják-e.</li></ul>
+<p>Nincs átlagpontszám: tíz sikeres ellenőrzés nem ellensúlyoz egy blokkoló hibát. A kötelező „Nem ellenőrzött” pont nyitott elfogadási feltétel.</p>
+<h3 id="review-4">Állapotok</h3>
+<ul><li><strong>draft:</strong> hiányos vagy még kidolgozatlan tananyag.</li><li><strong>review:</strong> elkészült, de az ellenőrzések, javítások vagy emberi próba még nyitottak.</li><li><strong>ready:</strong> minden kötelező pont megfelel, a feltételes kivételek indokoltak, nincs nyitott blokkoló hiba, és van megnevezett szakmai jóváhagyó dátummal.</li></ul>
+<p>Új érdemi módosítás után a korábbi elfogadás nem öröklődik automatikusan. Rögzítsd az új változatot; nyisd újra az érintett pontokat. Közös CSS-változás minden HTML mobil- és nyomtatási próbáját érinti. Puszta elírás javításánál elég az érintett szöveg és link ellenőrzése, az indok kerüljön a jegyzőkönyvbe.</p>
+<h3 id="review-5">Verzió és bizonyíték</h3>
+<p>A jegyzőkönyv tartalmazza a dátumot, ellenőrzőt, fájlokat, Git commitot (ha van), valamint a módosított helyi fájlok SHA-256 azonosítóit. A commit önmagában nem azonosítja a még nem commitolt munkát. A CSS, bemeneti minta és szükséges függő fájlok azonosítója is kell.</p>
+<p>Fájlon belüli bizonyíték például: <code>materials/modules/01-business-foundations.html#01-business-foundations.01-offer-and-audience--steps</code>, a konkrét mondat és az elvégzett ellenőrzés. Böngészős bizonyíték: böngésző, dátum, nézetméret, ellenőrzött művelet és eredmény; szükség szerint képernyőkép. Szakmai bizonyíték: elkészült kitalált mintakimenet és a kész feltételek értékelése. Valós résztvevői adatot ne ments a repóba.</p>
+<h3 id="review-6">A teljes nap főpróbája</h3>
+<p>A modulonkénti ready mellett egy esetet végig kell vezetni: üzleti alaplap → kampány → leadkezelés → ajánlat → átadás. Minden következő partner ténylegesen átveszi az előző eredményt. Külön próba kell a bekötött eszköz nélküli mintaútra. Rögzítjük az összidőt, az átadási hibákat és a javításokat. A működő mintalecke nem bizonyítja a teljes képzés készültségét.</p>
+</section>
+<section id="checklist"><h2>Közös ellenőrzőlista</h2>
+<p>Minden pontot külön értékelünk: <strong>Megfelel / Javítandó / Nem ellenőrzött</strong>, pontos bizonyítékkal. A kötelező pontok mind blokkolják az elfogadást, ha javítandók vagy nincsenek ellenőrizve. A feltételes pontnál indokolt „Nem alkalmazható” megengedett. Döntési szabály: <a href="#review">review-folyamat</a>.</p>
+<h3 id="checklist-1">T – Technikai alapok</h3>
+<div class="table-wrap"><table><thead><tr><th scope="col">ID</th><th scope="col">Kötelező elvárás</th><th scope="col">Ellenőrzés</th></tr></thead><tbody><tr><td>T1</td><td>Önálló HTML, magyar nyelvjelölés, értelmes cím, egy főcím, mobil viewport</td><td>Forrásolvasás és helyi megnyitás; a script csak a forrásrészét igazolja</td></tr><tr><td>T2</td><td>A közös CSS elérhető; a tananyag helyi fájlként, offline is olvasható</td><td>Relatív útvonalak, külső erőforrások és CSS-hivatkozások ellenőrzése</td></tr><tr><td>T3</td><td>A szükséges linkek és horgonyok működnek; nincs ismétlődő HTML-azonosító</td><td>Helyi célfájlok és HTML-horgonyok ellenőrzése; szükséges külső linkek külön megnyitása</td></tr><tr><td>T4</td><td>Nincs kitöltetlen sablonszöveg az átadott tananyagban; státusz, partner, időkeret, leckeazonosító olvasható</td><td>Forrás és látható szöveg átnézése; a sablonfájl maga nem átadott tananyag</td></tr><tr><td>T5</td><td>Olvasható asztali, mobil (390 és 320 px) és nyomtatási nézet; billentyűzettel követhető</td><td>Tényleges böngészős próba: nincs vízszintes kilógás, prompt nem vágódik le, fókusz látszik, linkek elérhetők</td></tr></tbody></table></div>
+<h3 id="checklist-2">R – Tartalmi review</h3>
+<div class="table-wrap"><table><thead><tr><th scope="col">ID</th><th scope="col">Kötelező elvárás</th><th scope="col">Ellenőrzés</th></tr></thead><tbody><tr><td>R1</td><td>Egyértelmű célközönség és konkrét tanulási eredmény</td><td>A modul és lecke alapján megmondható, kinek szól és mit készít el</td></tr><tr><td>R2</td><td>Az előfeltételek, bemenetek és szükséges hozzáférések teljesek</td><td>Minden szükséges fájl elérhető; fizetős vagy külön fiókot igénylő lépés feltétele tisztázott</td></tr><tr><td>R3</td><td>A másolható prompt önmagában használható az előírt csatolmányokkal</td><td>Nem hivatkozik át nem adott „fenti”/„alábbi” tartalomra; bemenet, feladat és ellenőrzési feltétel eljut az AI-hoz</td></tr><tr><td>R4</td><td>A magyarázat kezdő üzleti résztvevőnek is követhető</td><td>Fogalmak és döntések példával elmagyarázva; nincs rejtett technikai lépés</td></tr><tr><td>R5</td><td>A gyakorlat lépései és kész feltételei konkrétak</td><td>Elkészíthető, menthető eredmény; a résztvevő ellenőrizni tudja, kész van-e</td></tr><tr><td>R6</td><td>Létezik elakadási és hiányos bemeneti út</td><td>Saját üzlet nélkül is van összefüggő minta; opcionális feladat nem feltétele a folytatásnak</td></tr><tr><td>R7</td><td>Állítások, példák és végrehajtási mód őszintén jelöltek</td><td>Nincs kitalált referencia vagy igazolatlan eredmény; minta/live/sandbox/simulation megkülönböztetett, nincs valós titok/ügyféladat</td></tr><tr><td>R8</td><td>Az eredmény a következő lépésben ténylegesen használható</td><td>Mezők és fájlnevek egyeznek; a következő lecke kidolgozott, vagy az átadás a teljes tanfolyamhoz még nyitottként szerepel</td></tr></tbody></table></div>
+<h3 id="checklist-3">P – Próba és elfogadás</h3>
+<div class="table-wrap"><table><thead><tr><th scope="col">ID</th><th scope="col">Elvárás</th><th scope="col">Ellenőrzés</th></tr></thead><tbody><tr><td>P1</td><td>Kötelező: másik előadó/résztvevő végigpróbálta a normál feladatot</td><td>Név, dátum, tényleges idő, eredmény, kész feltételek; nem AI-időbecslés</td></tr><tr><td>P2</td><td>Kötelező: a minta- és mentőút is működik</td><td>Hiányos bemenettel végzett próba, mentett eredmény, folytatás bizonyítéka</td></tr><tr><td>P3</td><td>Feltételes: az ígért integrációt / kísérőfolytatást kipróbáltuk</td><td>Ha tanított lépés, környezet, fiók/csomag, dátum és megfigyelhető eredmény kell. Ha nincs ilyen lépés, ezt indokoljuk</td></tr><tr><td>P4</td><td>Kötelező: a kijelölt szakmai felelős elfogadta a vizsgált változatot</td><td>Név, dátum, fájlváltozat; nincs nyitott blokkoló vagy nem ellenőrzött kötelező pont</td></tr></tbody></table></div>
+<p>A T1 forrásellenőrzése például megfelelhet, miközben a teljes T1 a helyi megnyitás hiánya miatt még „Nem ellenőrzött”. Részbizonyítékból ne készíts teljes megfelelést. A mechanikus script eredményét és az összesített minősítést külön kezeld.</p>
+</section>
+<section id="review-prompt"><h2>Másolható review-prompt</h2>
+<p>Nyiss új Claude/Codex beszélgetést a repó mappájában. A szögletes zárójelben lévő részt cseréld ki; a technikai ellenőrzést is az AI végzi.</p>
+<pre>Tananyag-reviewt kérek ebben a repóban.
+Ellenőrzendő anyag: [a HTML-fájl vagy modul útvonala]
+Kapcsolódó saját megjegyzésem: [ha van]
+
+Olvasd el az AGENTS.md / CLAUDE.md közös instrukcióit, majd a
+authoring/index.html #review és #checklist szakaszait.
+Ez a review és a jegyzőkönyv elkészítése jóváhagyott feladat;
+a tananyagot most ne módosítsd.
+
+A fájlokból dolgozz, ne a szerző korábbi beszélgetésére hagyatkozz.
+Olvasd el a HTML-t, a CSS-t, a bemenetet, a mintát, a mentőutat,
+a modul áttekintőjét és a következő lecke bemenetét.
+Ha van Node.js a környezetedben, futtasd a authoring/qa/validate.cjs
+technikai segédeszközt. A technikai ellenőrzéseket te végezd el.
+
+Értékeld külön a T1–T5, R1–R8, P1–P4 pontokat.
+Eredmény: Megfelel / Javítandó / Nem ellenőrzött.
+A feltételes pontnál indokold, ha nem alkalmazható.
+Minden megállapításhoz adj pontos fájlt, szakaszt és bizonyítékot.
+Különböztesd meg a blokkoló hibát a javítási javaslattól.
+A promptot vizsgáld önállóan bemásolva: tudja-e az AI, miből dolgozzon,
+milyen eredményt készítsen, és mi alapján ellenőrizze?
+
+A rendelkezésedre álló böngészős próbákat is végezd el.
+Ha nincs böngésző vagy integrációs hozzáférésed, ezt írd le;
+ne jelöld a próbát sikeresnek. Ne küldj valódi üzleti üzenetet.
+Az emberi időmért próbát és szakmai jóváhagyást ne helyettesítsd AI-becsléssel.
+
+Ments jegyzőkönyvet a authoring/qa/reports/ mappába a kézikönyv #report szakasza alapján.
+Rögzítsd a vizsgált fájlok SHA-256 azonosítóit, és jelezd,
+ha a Git commit mellett helyi módosításokat vizsgálsz.
+Ne írd felül a korábbi reviewt; új ellenőrzés kapjon új fájlt.
+Összesítsd a blokkolókat, majd adj rövid javítási tervet.
+A tananyagot ne jelöld ready-nek és ne publikáld.</pre>
+</section>
+<section id="report"><h2>Jegyzőkönyv és ellenőrzési eszköz</h2>
+<ul><li>Anyag / modul:</li><li>Szerző:</li><li>AI-reviewer / külön beszélgetés vagy saját ellenőrzés:</li><li>Próba végzője:</li><li>Szakmai jóváhagyó:</li><li>Dátum:</li><li>Ellenőrzött fájlok, commit és SHA-256 azonosítók:</li><li>Összesítés: javításra visszaadva / emberi próbára vár / elfogadva</li></ul>
+<h3 id="report-1">Eredmény a közös ellenőrzőlista szerint</h3>
+<div class="table-wrap"><table><thead><tr><th scope="col">Pont</th><th scope="col">Eredmény</th><th scope="col">Bizonyíték / pontos hely / mi hiányzik</th></tr></thead><tbody><tr><td>T1–T5, R1–R8, P1–P4</td><td>Pontonként külön sorban kitöltendő</td><td>Ne maradjon összevont minősítés</td></tr></tbody></table></div>
+<h3 id="report-2">Hibák és javítások</h3>
+<div class="table-wrap"><table><thead><tr><th scope="col">Hiba</th><th scope="col">Súly</th><th scope="col">Pontos hely</th><th scope="col">Miért probléma?</th><th scope="col">Elvárt javítás</th><th scope="col">Felelős</th><th scope="col">Állapot és újraellenőrzés</th></tr></thead><tbody><tr><td>H1</td><td>Blokkoló / javaslat</td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div>
+<h3 id="report-3">Próba</h3>
+<ul><li>Bemenet, környezet és hozzáférések:</li><li>Eltelt idő:</li><li>Elkészült eredmény és mentés helye:</li><li>Kész feltételek értékelése:</li><li>Hiányos bemenet / mentőút eredménye:</li><li>Asztali / mobil / nyomtatási / billentyűzetes megnyitás:</li><li>Következő modul átvételi eredménye:</li></ul>
+<h3 id="report-4">Döntés</h3>
+<ul><li>Nyitott blokkolók és nem ellenőrzött kötelező pontok:</li><li>Elfogadott kivételek, indokkal (csak feltételes pontok):</li><li>Következő lépés, felelős, határidő:</li><li>Szakmai elfogadás neve és dátuma: csak valódi jóváhagyás után tölthető ki.</li></ul><p>A technikai ellenőrzést az AI végzi: <code>node authoring/qa/validate.cjs materials/modules/01-business-foundations.html</code>. Az eredmény a fájlok szerkezeti ellenőrzését igazolja; a böngészős és emberi próbát külön rögzítjük.</p><p><a href="qa/reports/sample-review.md">Mintalecke tartalmi review</a> · <a href="qa/reports/structure-review.md">Szerkezeti és megosztási ellenőrzés</a></p>
+</section>
+<section id="notes"><h2>Oktatói jegyzetek kapcsolása</h2>
+<p>A tananyag a materials/modules/ mappában, a belső jegyzet az operations/instructor-notes/ mappában van. Az oktatói oldal bal oldalán a tényleges tananyag jelenik meg, jobb oldalon a hozzá kapcsolt jegyzetek. A tananyagszöveget nem másoljuk a jegyzetbe.</p><p>Minden jegyzet konkrét szakaszra hivatkozzon, például <code>01-business-foundations.01-offer-and-audience--prompt</code>. Szakasz átnevezésekor az AI frissítse és ellenőrizze a kapcsolódó jegyzetlinkeket. A résztvevői oldalon ne legyen belső jegyzet, megjegyzésbe rejtett instrukció vagy az operations mappára mutató hivatkozás.</p><p><a href="../operations/instructor-notes/01-business-foundations.html">Üzleti alapok – oktatói nézet</a></p>
+</section>
+<section id="release"><h2>Résztvevői kiadás</h2>
+<ol><li>A modulfelelősök elfogadják a kiadandó anyagokat; a főpróba jegyzőkönyve elkészül.</li><li>Az AI ellenőrzi a materials teljes hivatkozási hálóját és a fájlokat. A csomag minden helyi függősége ezen a mappán belül legyen.</li><li>A szervező jóváhagyja a kiadást. Ekkor hozzuk létre a külön publikus repót, és kizárólag a materials tartalmát másoljuk a gyökerébe.</li><li>A publikus repo tiszta saját előzménnyel indul. A belső repo története, authoring és operations tartalma nem kerül bele.</li><li>A közzétett változatot és verziót rögzítjük. Továbbra is ebben a privát repóban szerkesztünk; a publikus repo a kiadott példány.</li></ol><p>A másolás nem engedély a publikálásra: a végleges kiadáshoz kifejezett szervezői kérés kell.</p>
+</section>
+<section id="ai-rules"><h2>Közös AI-instrukciók</h2>
+<h3 id="ai-rules-1">Először egyeztess</h3>
+<ol><li>Olvasd el a authoring/index.html kézikönyvet, a kijelölt modul áttekintőjét és a meglévő anyagot. Nézd meg a authoring/template.html sablont.</li><li>Tisztázd a partner témáját, célközönségét, időkeretét, tanulási eredményét és forrásait. Az ismert adatokat ne kérdezd újra. Egyszerre legfeljebb három lényegi kérdést tegyél fel.</li><li>Adj rövid tervet: szakaszok, gyakorlat, bemenet, elkészülő eredmény, példa és segítség. Fájlokat csak jóváhagyás után módosíts. Érdemi irányváltásnál egyeztess újra; az elfogadott terv rutinlépéseihez nem kell új engedély.</li></ol>
+<h3 id="ai-rules-2">A technikai munkát te végzed</h3>
+<ul><li>A résztvevői anyag közvetlenül szerkeszthető HTML. Közös stílusa: materials/assets/notebook.css.</li><li>Másold a authoring/template.html szerkezetét, a tartalmat a partner saját materials/modules/ mappájába írd. Igazítsd a relatív hivatkozásokat a célmappához. Használj szabályos HTML-elemeket, escape-eld a promptokban szereplő HTML-jeleket.</li><li>Egy HTML-oldalba rendezd a modul tananyagát, azon belül horgonyokkal elérhető leckékkel. A modul vázát és a kidolgozott mintaleckét használd kiindulásként.</li><li>Egy tartalomnak egy szerkesztett forrása legyen. Módosításkor frissítsd az érintett hivatkozásokat, őrizd meg a leckeazonosítókat. Ne tarts fenn párhuzamos HTML- és Markdown-tananyagot.</li><li>A modul gazdája, időkerete, bemenete és kimenete a modul HTML-oldalának áttekintőjében olvasható. Ezt is te frissíted, ha a jóváhagyott tartalom változik. A partnernek ne adj külön technikai adatlapkitöltési feladatot.</li><li>Más partner anyagát és a közös CSS-t csak az adott változtatásra kapott jóváhagyással módosítsd.</li><li>Adj helyi fájlhivatkozást a megnyitható HTML-hez. A partner a böngészőben ellenőriz, és beszélgetésben kéri a javítást.</li><li>Átadáskor sorold fel a változásokat, az ellenőrzéseket és a nyitott kérdéseket. Commit, push, pull request és publikálás csak kifejezett kérésre történjen.</li></ul>
+<h3 id="ai-rules-3">Tartalmi minimum</h3>
+<p>Magyar magyarázat és magyar másolható promptok. Legyen cél, előfeltétel, magyarázat, emberi döntés, feladat, példa, kész feltétel és elakadási segítség. A következő modul használja az előző eredményét.</p>
+<p>Ne találj ki referenciát, árat, vállalást vagy kipróbált integrációt. A hiányzó információ nyitott kérdés. A kitalált példát jelöld. Pontos márkanév: Blackhole Media. Valós ügyféladat, token és résztvevői személyes munka nem kerülhet a repóba.</p>
+<p>A váz draft, a kidolgozott, próbára váró anyag review. Ready csak szakmai és oktatói próba után lehet. A státusz szövegesen is jelenjen meg.</p>
+<h3 id="ai-rules-4">Átadás előtti ellenőrzés</h3>
+<p>Az AI ellenőrizze a helyi linkeket, a CSS elérését, a címsorokat, a másolható promptokat és a tartalom teljességét. Normál relatív href linkek legyenek; az olvasás ne igényeljen JavaScriptet, szervert vagy külső betűkészletet. Mobilon és nyomtatva is legyen olvasható. Ha valamelyik ellenőrzést nem tudtad elvégezni, mondd el. Fájlellenőrzés alapján ne állíts elvégzett böngészős vagy szakmai próbát.</p>
+<p>Kövesd a <a href="#review">review-folyamatot</a> és a <a href="#checklist">közös ellenőrzőlistát</a>. A reviewer külön beszélgetésben, fájlokból dolgozik. Jegyzőkönyvet készít, review közben nem javítja a tananyagot. A ready állapothoz emberi próba és megnevezett szakmai elfogadás kell. A technikai ellenőrzéseket az AI végzi.</p>
+</section><footer class="footer">Wenova × Brandiseer × Blackhole Media × EstiWise</footer></main></div></body></html>

@@ -1,7 +1,0 @@
-:root { --color-text: #172033; --color-background: #ffffff; --color-accent: #254dc5; --color-panel: #f3f5fa; --space: 1rem; --content-width: 72ch; }
-body { margin: 0 auto; padding: 1.5rem; max-width: var(--content-width); font-family: system-ui, sans-serif; line-height: 1.65; color: var(--color-text); background: var(--color-background); overflow-wrap: anywhere; }
-header { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
-a { color: var(--color-accent); }
-pre { white-space: pre-wrap; padding: 1rem; background: var(--color-panel); }
-:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
-@media print { nav, body > a { display: none; } body { max-width: none; } }

@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="hu"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Üzleti alapok és AI-működés – Wenova</title><link rel="stylesheet" href="../assets/notebook.css"></head>
+<body><a class="skip" href="#main">Ugrás a tartalomhoz</a><header class="topbar"><a class="brand" href="../index.html">WENOVA</a><span>AI Sales &amp; Marketing Workshop</span></header>
+<div class="layout"><nav class="toc" aria-label="Tartalomjegyzék"><p>Tanulási út</p><ol><li><a href="#overview">Cél, bemenet és eredmény</a></li>
+<li><a href="#01-business-foundations.01-offer-and-audience">Üzleti ajánlat és célcsoport kialakítása</a></li>
+<li><a href="#01-business-foundations.02-sales-strategy">Minimális marketing- és sales stratégia</a></li>
+<li><a href="#01-business-foundations.03-ai-workspace">Céges AI-munkautasítás és első eszközművelet</a></li>
+<li><a href="#recovery">Segítség elakadáskor</a></li>
+<li><a href="#examples">Gyakorlópéldák</a></li>
+<li><a href="#continue">Folytatás</a></li></ol></nav><main id="main" data-module-id="01-business-foundations"><header><p class="eyebrow">01-business-foundations · draft</p><h1>Üzleti alapok és AI-működés</h1><p class="lead">A modul állapotát és a leckék készültségét az alábbi jelölések mutatják.</p></header>
+<section id="overview"><h2>Cél, bemenet és eredmény</h2>
+<p><strong>Státusz: szerkesztői váz, partneri kidolgozás és próba szükséges.</strong></p>
+<p>15 perc bemutató + 3 × 20 perc gyakorlat + 15 perc ellenőrzés és pótlás.</p>
+<h3 id="overview-1">Bemenet</h3>
+<p>business-profile.md</p>
+<h3 id="overview-2">Kimenet</h3>
+<p>business-profile.md, sales-strategy.md, ai-work-instructions.md</p>
+<h3 id="overview-3">Folytatás elakadás esetén</h3>
+<p>Használd a <a href="#recovery">mentőútvonalat</a>. A kimeneteket a közös adatátadási szabály alapján ellenőrizzük.</p>
+<h3 id="overview-4">Moduladatok</h3>
+<ul><li>Azonosító: <code>01-business-foundations</code></li><li>Szakmai gazda: Wenova</li><li>Időkeret: 90 perc</li><li>Állapot: draft – kidolgozás és próba szükséges.</li></ul>
+</section>
+<section id="01-business-foundations.01-offer-and-audience"><h2>Üzleti ajánlat és célcsoport kialakítása</h2>
+<div data-lesson-id="01-business-foundations.01-offer-and-audience">
+    <!-- Szerkesztés: cím, partner, előadók, időkeret és állapot -->
+    <header><p class="eyebrow">01 / Üzleti alapok</p>
+    <p class="lead">Egy célcsoport. Egy világos ajánlat. Használható alap a következő lépéshez.</p>
+    <div class="meta"><span>20 perc</span><span>Próbára vár · review</span><span>Wenova · Piya Csaba, Kemény Krisztián</span></div></header>
+    <!-- Szerkeszthető tartalmi blokk: Ezt készíted el -->
+<section id="01-business-foundations.01-offer-and-audience--result" class="">
+<h3>Ezt készíted el</h3>
+<p>Egyetlen eladható ajánlatot egy körülhatárolt célcsoportnak, a <code>business-profile.md</code> fájlban. Ebből készül majd a kampány, a megkeresés és az ajánlat. A cél most a világos, tesztelhető üzleti alap.</p>
+</section><!-- Szerkeszthető tartalmi blokk: Erre lesz szükséged -->
+<section id="01-business-foundations.01-offer-and-audience--needs" class="">
+<h3>Erre lesz szükséged</h3>
+<p>Előzetes üzleti alaplapodra. Ha nincs, válassz a <code>scenarios/</code> három kitalált vállalkozásából. Ehhez a leckéhez csak Claude és menthető szöveg szükséges; partnerfiók nem kell.</p>
+<p><a href="../scenarios/office-plants/outputs/business-profile.md">Kitalált növénygondozási vállalkozás alaplapja</a> · <a href="../scenarios/office-plants/price-list.csv">Mintaárlista</a></p>
+</section><!-- Szerkeszthető tartalmi blokk: Így működik -->
+<section id="01-business-foundations.01-offer-and-audience--explanation" class="">
+<h3>Így működik</h3>
+<p>Célcsoport → konkrét probléma → körülhatárolt szolgáltatás → árazási alap → következő ügyféllépés. Példa: kis irodák növénygondozása; havi két látogatás; megadott mintadíj; következő lépés egy helyszíni felmérés kérése. Ha egyszerre három külön szolgáltatást kínálnál három közönségnek, válassz ma egyet.</p>
+</section><!-- Szerkeszthető tartalmi blokk: Ezekről te döntesz -->
+<section id="01-business-foundations.01-offer-and-audience--decisions" class="">
+<h3>Ezekről te döntesz</h3>
+<p>Saját üzlet vagy minta; választott célcsoport; a szolgáltatás tartalma és kizárásai; jóváhagyott ár vagy még nyitott árazás. Az AI ne találjon ki valódi referenciát, árkedvezményt vagy vállalást.</p>
+</section><!-- Szerkeszthető tartalmi blokk: Ezt kérd Claude-tól -->
+<section id="01-business-foundations.01-offer-and-audience--prompt" class="cell">
+<h3>Ezt kérd Claude-tól</h3>
+<pre>Segíts egyetlen világos ajánlatot kialakítani a workshophoz. Először kérdezd meg, saját üzlettel vagy mintával dolgozom.
+Egyenként kérdezz a célcsoportról, problémáról, szolgáltatásról, árazásról és következő ügyféllépésről.
+A bizonytalan adatokat jelöld nyitottnak. Készíts business-profile.md tartalmat a közös mezőkkel.
+Ellenőrizd az alábbi kész feltételeket, de az üzleti döntéseket velem hagyasd jóvá.</pre><p>A közös mezőket a <a href="../starter-kit/business-profile.md">másolható üzleti alaplap</a> tartalmazza. Add át ezt is az AI-nak.</p>
+</section><!-- Szerkeszthető tartalmi blokk: Haladj végig ezeken -->
+<section id="01-business-foundations.01-offer-and-audience--steps" class="cell exercise">
+<h3>Haladj végig ezeken</h3>
+<ol><li><strong>0–3 perc:</strong> válassz saját üzletet vagy mintát. Minta esetén annak árlistáját is használd.</li><li><strong>3–10 perc:</strong> válaszold meg Claude kérdéseit. Minden kérdésre egy-két mondat elég.</li><li><strong>10–15 perc:</strong> nézd át a vázlatot. Szűkítsd egy célcsoportra és egy ajánlatra. Jelöld a hiányzó adatokat.</li><li><strong>15–18 perc:</strong> mentsd <code>business-profile.md</code> néven a saját munkacsomagodba.</li><li><strong>18–20 perc:</strong> mondd el két mondatban, kinek mit kínálsz, és mi legyen az érdeklődő következő lépése.</li></ol>
+</section><!-- Szerkeszthető tartalmi blokk: Ellenőrizd az eredményt -->
+<section id="01-business-foundations.01-offer-and-audience--check" class="cell check">
+<h3>Ellenőrizd az eredményt</h3>
+<ul><li>Egyetlen ajánlat és meghatározott célcsoport szerepel.</li><li>Le van írva a probléma és a szolgáltatás kézzelfogható eredménye.</li><li>Megvan a tartalom, legalább egy kizárás, az árazási alap vagy egyértelmű nyitott jelölése.</li><li>Szerepel egy fő csatorna és egy következő ügyféllépés.</li><li>A feltételezések elkülönülnek a résztvevő által jóváhagyott adatoktól.</li><li>A fájl elmentve, a résztvevő saját szavaival meg tudja indokolni az ajánlatot.</li></ul>
+</section><!-- Szerkeszthető tartalmi blokk: Ha elakadtál -->
+<section id="01-business-foundations.01-offer-and-audience--help" class="cell help">
+<h3>Ha elakadtál</h3>
+<p>Ha öt perc alatt nincs ötlet, használd az <code>office-plants</code> minta alaplapját. Változtass meg benne egy célcsoporti szempontot, és indokold meg a döntést. Ha az ár bizonytalan, jelöld <code>open</code>; a későbbi ajánlatkészítésnél használj külön mintapéldányt. Ha Claude nem elérhető, az alaplap mezőit a statikus minta mellett kézzel is kitöltheted, és mentorral ellenőrizheted.</p>
+</section><!-- Szerkeszthető tartalmi blokk: Ezt viszed tovább -->
+<section id="01-business-foundations.01-offer-and-audience--handoff" class="">
+<h3>Ezt viszed tovább</h3>
+<p>Az ellenőrzött <code>business-profile.md</code> a következő, minimális stratégiát kialakító lecke bemenete. A naplóban rögzítsd az eredményt és a gyakorlási módot; mintából dolgozva <code>completed_with_example</code> legyen a tanulási állapot.</p>
+</section><!-- Szerkeszthető tartalmi blokk: Ha maradt időd -->
+<section id="01-business-foundations.01-offer-and-audience--extra" class="">
+<h3>Ha maradt időd</h3>
+<p>Írj egy alternatív célcsoportot, és mondd meg, mi változna az ajánlatban. A kötelező munkapéldányban maradjon az első választás.</p>
+</section>
+
+
+  </div>
+</section>
+<section id="01-business-foundations.02-sales-strategy"><h2>Minimális marketing- és sales stratégia</h2>
+<div data-lesson-id="01-business-foundations.02-sales-strategy"><p><strong>Azonosító:</strong> <code>01-business-foundations.02-sales-strategy</code> · <strong>Állapot:</strong> draft · <strong>Időkeret:</strong> 20 perc</p>
+<p><strong>Szerkesztői váz: a szakmai felelősnek ki kell dolgoznia és próbálnia.</strong></p>
+<h3 id="01-business-foundations.02-sales-strategy--section-1">Ezt készíted el</h3>
+<p>A(z) „Minimális marketing- és sales stratégia” feladat saját vagy mintaüzletre alkalmazott eredményét. A konkrét ellenőrizhető minimumot a partner rögzíti.</p>
+<h3 id="01-business-foundations.02-sales-strategy--section-2">Erre lesz szükséged</h3>
+<p>business-profile.md</p>
+<h3 id="01-business-foundations.02-sales-strategy--section-3">Így működik</h3>
+<p>A partner röviden mutassa be az üzleti összefüggést és egy kész mintát.</p>
+<h3 id="01-business-foundations.02-sales-strategy--section-4">Ezekről te döntesz</h3>
+<p>A célról, a felhasznált üzleti adatok megfelelőségéről és az eredmény elfogadásáról.</p>
+<h3 id="01-business-foundations.02-sales-strategy--section-5">Ezt kérd Claude-tól</h3>
+<blockquote>Vezess végig ezen a leckén a tananyag alapján, egyszerre egy feladattal. Ha a lecke még draft, jelezd, és csak az előkészített példát magyarázd el; hiányzó eszközlépést ne találj ki.</blockquote>
+<h3 id="01-business-foundations.02-sales-strategy--section-6">Haladj végig ezeken</h3>
+<ol><li>Nyisd meg a bemenetet.</li><li>A kidolgozott partneri feladat alapján készítsd el a munkadarabot.</li><li>Mentsd és ellenőrizd az eredményt.</li></ol>
+<p>A partner a második lépést konkrét, kipróbált útmutatóval egészíti ki.</p>
+<h3 id="01-business-foundations.02-sales-strategy--section-7">Ellenőrizd az eredményt</h3>
+<p>A partner definiáljon megfigyelhető feltételeket. Amíg ez hiányzik, a lecke nem ready.</p>
+<h3 id="01-business-foundations.02-sales-strategy--section-8">Ha elakadtál</h3>
+<p>Öt perc után használd a <a href="#recovery">mentőcsomagot</a>.</p>
+<h3 id="01-business-foundations.02-sales-strategy--section-9">Ezt viszed tovább</h3>
+<p>A modul kimeneteiből a leckéhez tartozó eredményt: business-profile.md, sales-strategy.md, ai-work-instructions.md. A pontos leckénkénti átadást a partner rögzíti.</p>
+<h3 id="01-business-foundations.02-sales-strategy--section-10">Ha maradt időd</h3>
+<p>Választható bővítést csak a kötelező út kipróbálása után adjunk hozzá.</p></div>
+</section>
+<section id="01-business-foundations.03-ai-workspace"><h2>Céges AI-munkautasítás és első eszközművelet</h2>
+<div data-lesson-id="01-business-foundations.03-ai-workspace"><p><strong>Azonosító:</strong> <code>01-business-foundations.03-ai-workspace</code> · <strong>Állapot:</strong> draft · <strong>Időkeret:</strong> 20 perc</p>
+<p><strong>Szerkesztői váz: a szakmai felelősnek ki kell dolgoznia és próbálnia.</strong></p>
+<h3 id="01-business-foundations.03-ai-workspace--section-1">Ezt készíted el</h3>
+<p>A(z) „Céges AI-munkautasítás és első eszközművelet” feladat saját vagy mintaüzletre alkalmazott eredményét. A konkrét ellenőrizhető minimumot a partner rögzíti.</p>
+<h3 id="01-business-foundations.03-ai-workspace--section-2">Erre lesz szükséged</h3>
+<p>business-profile.md</p>
+<h3 id="01-business-foundations.03-ai-workspace--section-3">Így működik</h3>
+<p>A partner röviden mutassa be az üzleti összefüggést és egy kész mintát.</p>
+<h3 id="01-business-foundations.03-ai-workspace--section-4">Ezekről te döntesz</h3>
+<p>A célról, a felhasznált üzleti adatok megfelelőségéről és az eredmény elfogadásáról.</p>
+<h3 id="01-business-foundations.03-ai-workspace--section-5">Ezt kérd Claude-tól</h3>
+<blockquote>Vezess végig ezen a leckén a tananyag alapján, egyszerre egy feladattal. Ha a lecke még draft, jelezd, és csak az előkészített példát magyarázd el; hiányzó eszközlépést ne találj ki.</blockquote>
+<h3 id="01-business-foundations.03-ai-workspace--section-6">Haladj végig ezeken</h3>
+<ol><li>Nyisd meg a bemenetet.</li><li>A kidolgozott partneri feladat alapján készítsd el a munkadarabot.</li><li>Mentsd és ellenőrizd az eredményt.</li></ol>
+<p>A partner a második lépést konkrét, kipróbált útmutatóval egészíti ki.</p>
+<h3 id="01-business-foundations.03-ai-workspace--section-7">Ellenőrizd az eredményt</h3>
+<p>A partner definiáljon megfigyelhető feltételeket. Amíg ez hiányzik, a lecke nem ready.</p>
+<h3 id="01-business-foundations.03-ai-workspace--section-8">Ha elakadtál</h3>
+<p>Öt perc után használd a <a href="#recovery">mentőcsomagot</a>.</p>
+<h3 id="01-business-foundations.03-ai-workspace--section-9">Ezt viszed tovább</h3>
+<p>A modul kimeneteiből a leckéhez tartozó eredményt: business-profile.md, sales-strategy.md, ai-work-instructions.md. A pontos leckénkénti átadást a partner rögzíti.</p>
+<h3 id="01-business-foundations.03-ai-workspace--section-10">Ha maradt időd</h3>
+<p>Választható bővítést csak a kötelező út kipróbálása után adjunk hozzá.</p></div>
+</section>
+<section id="recovery"><h2>Segítség elakadáskor</h2>
+<ol><li>Mentsd a saját eddigi munkádat.</li><li>Válaszd ugyanazt a mintavállalkozást, amellyel elkezdtél dolgozni.</li><li>A <code>scenarios/&lt;scenario&gt;/outputs/</code> mappából vedd át az aktuális modul hiányzó kimeneteit.</li><li>A haladási naplóban jelöld: <code>completed_with_example</code>, végrehajtás: <code>simulation</code>.</li><li>Mondd el saját szavaiddal, mit készített volna a lépés, majd folytasd a következő leckével.</li></ol>
+<p>Saját üzletről mintára váltáskor külön munkapéldányban a teljes kapcsolódó mintaláncot használd; ne keverd a minta árait a saját ajánlatoddal. A statikus csomag nem bizonyít működő partnerintegrációt.</p>
+</section>
+<section id="examples"><h2>Gyakorlópéldák</h2>
+<p>A közös, összefüggő kitalált példák a repó <code>scenarios/</code> mappájában találhatók. A partner ide adhat eszközspecifikus kimenetet; jelölje a teszt dátumát és a példavállalkozás azonosítóját.</p>
+</section>
+<section id="continue"><h2>Folytatás</h2>
+<nav class="page-nav"><a href="../index.html#modules">Modulok</a><a href="02-content-marketing.html">Következő modul →</a></nav>
+</section><footer class="footer">Wenova × Brandiseer × Blackhole Media × EstiWise</footer></main></div></body></html>
