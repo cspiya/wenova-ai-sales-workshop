@@ -1,5 +1,7 @@
 # Ajánlatadás és belső átadás
 
+**Állapot: draft.**
+
 [HTML-változat](04-proposals-handoff.html)
 
 ## Tartalom
@@ -56,6 +58,8 @@ Használd a [mentőútvonalat](#recovery). A kimeneteket a közös adatátadási
 <a name="04-proposals-handoff.01-discover-needs"></a>
 
 ## Ügyféligény és hiányzó adatok
+
+**Állapot: draft.**
 
 **Azonosító:** `04-proposals-handoff.01-discover-needs` · **Állapot:** draft · **Időkeret:** 20 perc
 
@@ -129,6 +133,8 @@ Választható bővítést csak a kötelező út kipróbálása után adjunk hozz
 
 ## Ellenőrizhető ajánlattervezet
 
+**Állapot: draft.**
+
 **Azonosító:** `04-proposals-handoff.02-prepare-proposal` · **Állapot:** draft · **Időkeret:** 20 perc
 
 **Szerkesztői váz: a szakmai felelősnek ki kell dolgoznia és próbálnia.**
@@ -200,6 +206,8 @@ Választható bővítést csak a kötelező út kipróbálása után adjunk hozz
 <a name="04-proposals-handoff.03-handoff"></a>
 
 ## Belső átadás és következő feladat
+
+**Állapot: draft.**
 
 **Azonosító:** `04-proposals-handoff.03-handoff` · **Állapot:** draft · **Időkeret:** 20 perc
 

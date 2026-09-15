@@ -1,0 +1,15 @@
+{
+  "name": "wenova-ai-sales-workshop",
+  "private": true,
+  "version": "0.1.0",
+  "engines": { "node": ">=24 <25" },
+  "scripts": {
+    "render": "node authoring/qa/render.cjs",
+    "check": "node authoring/qa/gate.cjs",
+    "test": "node --test authoring/qa/*.test.cjs",
+    "prepare:push": "node authoring/qa/gate.cjs --prepare --changed",
+    "release:check": "node authoring/qa/release.cjs",
+    "release:package": "node authoring/qa/release.cjs --package"
+  },
+  "dependencies": { "markdown-it": "15.0.2" }
+}

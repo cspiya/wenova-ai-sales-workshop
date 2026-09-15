@@ -40,16 +40,16 @@ Egy közös hely a tananyaghoz, a szerzői munkához és a workshop megszervezé
 
 | Hely | Tartalom | Mikor használod? |
 | --- | --- | --- |
-| materials/index.html | Agenda és a teljes tanulási út | Program áttekintése, résztvevői indulás |
-| materials/modules/ | Egy HTML modulonként | Tananyagírás és gyakorlat |
+| materials/README.md | Agenda és a teljes tanulási út | Program áttekintése, résztvevői indulás |
+| materials/modules/ | Markdown-forrás és HTML-nézet modulonként | Tananyagírás és gyakorlat |
 | materials/starter-kit/ | Üzleti alaplap, haladási napló, saját eredmények helye | A résztvevő saját példányt készít |
 | materials/scenarios/ | Kitalált vállalkozások, árlisták, munkadarabok | Saját üzlet nélkül vagy elakadáskor |
 | materials/assistant.md | A tanulási kísérő utasítása | Átadjuk az AI-nak az aktuális modullal együtt |
 | materials/assets/ | Közös CSS, képek és mellékletek | A tananyag megjelenése |
-| authoring/index.html | Szerzői kézikönyv, promptok, szabályok és review | Előadóként és reviewerként innen indulsz |
-| authoring/template.html | Másolható HTML-munkafüzet | Az AI ebből készíti az új tananyagot |
+| authoring/README.md | Szerzői kézikönyv, promptok, szabályok és review | Előadóként és reviewerként innen indulsz |
+| authoring/template.md | Másolható Markdown-munkafüzet | Az AI ebből készíti az új tananyagot |
 | authoring/qa/ | Ellenőrző eszközök és tényleges jegyzőkönyvek | Az AI ellenőriz, a felelős a bizonyítékból dönt |
-| operations/index.html | Terv, kampányszövegek, email, eszközpróba és lebonyolítás | Szervezői, marketing- és sales munka |
+| operations/README.md | Terv, kampányszövegek, email, eszközpróba és lebonyolítás | Szervezői, marketing- és sales munka |
 | operations/instructor-notes/ | Tananyag mellé kapcsolt belső jegyzetek | Előadói felkészülés és oktatás |
 
 <a name="working"></a>
@@ -64,7 +64,7 @@ A szakmai próba és elfogadás a kijelölt előadó feladata. A résztvevői an
 
 ## Megosztás és kiadás
 
-A **materials** önálló résztvevői csomag. Az első kiadás jóváhagyásakor kizárólag ennek tartalma kerül külön publikus repóba. Az **authoring** és **operations** belső marad. A szerkesztés közös forrása ez a privát repo.
+A **materials** önálló résztvevői csomag. Az első kiadás jóváhagyásakor kizárólag ennek tartalma kerül külön publikus repóba. Az **authoring** és **operations** a szerzők és szervezők munkaterülete; a résztvevői kiadásba nem kerül bele. Ez a közös szerkesztési repo jelenleg publikus, ezért ezekbe sem kerülhet bizalmas információ.
 
 [Kiadási folyamat](authoring/README.md#release)
 

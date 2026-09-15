@@ -1,5 +1,7 @@
 # Folyamatpróba és indulási terv
 
+**Állapot: draft.**
+
 [HTML-változat](05-pipeline-review.html)
 
 ## Tartalom
@@ -54,6 +56,8 @@ Használd a [mentőútvonalat](#recovery). A kimeneteket a közös adatátadási
 <a name="05-pipeline-review.01-review-pipeline"></a>
 
 ## Egy ügyféleset teljes útjának ellenőrzése
+
+**Állapot: draft.**
 
 **Azonosító:** `05-pipeline-review.01-review-pipeline` · **Állapot:** draft · **Időkeret:** 30 perc
 

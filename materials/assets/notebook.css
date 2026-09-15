@@ -43,6 +43,10 @@ li { margin:.35rem 0; }
 /* Shared handbook and module layout. */
 h3 { font-size:1.1rem; line-height:1.4; margin:1.7rem 0 .7rem; }
 h4 { font-size:1rem; }
+.cell-heading { border-left:4px solid var(--accent); padding:.7rem 1rem; background:#f6f9ff; }
+.cell-heading.steps { border-color:#8b5a1b; background:#fffbf2; }
+.cell-heading.check { border-color:#297052; background:#f3faf6; }
+.cell-heading.help { border-color:#75618c; background:#f8f5fb; }
 .table-wrap { max-width:100%; overflow-x:auto; margin:1rem 0; }
 table { width:100%; border-collapse:collapse; font-size:.87rem; }
 th,td { padding:.65rem .75rem; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }

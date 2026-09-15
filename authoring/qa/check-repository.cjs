@@ -1,5 +1,18 @@
 'use strict';
 const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
+const MarkdownIt=require('markdown-it');
+const {slug}=require('./render.cjs');
+function markdownInfo(text){
+ const tokens=new MarkdownIt({html:true}).parse(text,{}), targets=[], anchors=[], used=new Map();
+ for(let i=0;i<tokens.length;i++){
+  const t=tokens[i];
+  if(t.type==='heading_open'){const base=slug(tokens[i+1].content),n=used.get(base)||0;used.set(base,n+1);anchors.push(base+(n?'-'+n:''));}
+  for(const c of t.children||[]){if(c.type==='link_open')targets.push(c.attrGet('href'));if(c.type==='image')targets.push(c.attrGet('src'));}
+  for(const raw of [t,...(t.children||[])].filter(t=>t.type==='html_block'||t.type==='html_inline')){
+   for(const {a} of elements(raw.content)){if(a.name||a.id)anchors.push(a.name||a.id);if(a.href)targets.push(a.href);if(a.src)targets.push(a.src);}
+  }
+ }return {targets,anchors};
+}
 const ROOT=path.resolve(__dirname,'../..');
 const unix=p=>p.split(path.sep).join('/');
 const attrs=tag=>Object.fromEntries([...tag.matchAll(/([\w:-]+)\s*=\s*(["'])(.*?)\2/gs)].map(m=>[m[1].toLowerCase(),m[3]]));
@@ -7,7 +20,7 @@ const clean=s=>s.replace(/<!--[\s\S]*?-->/g,'');
 const elements=s=>[...clean(s).matchAll(/<[a-z][^>]*>/gi)].map(m=>({name:m[0].match(/^<(\w+)/)[1].toLowerCase(),a:attrs(m[0])}));
 function check(root=ROOT){
  const errors=[],files=[],hashes={},external=new Set();let links=0,htmlCount=0,materialLinks=0;const lessonIds=[];
- function walk(dir){for(const d of fs.readdirSync(dir,{withFileTypes:true})){if(d.name==='.git'||d.name.startsWith('.validation-test-'))continue;const p=path.join(dir,d.name);if(d.isSymbolicLink()){errors.push('Symlink requires explicit review: '+unix(path.relative(root,p)));continue;}if(d.isDirectory())walk(p);else files.push(p);}}
+ function walk(dir){for(const d of fs.readdirSync(dir,{withFileTypes:true})){if(['.git','node_modules','artifacts'].includes(d.name)||d.name.startsWith('.validation-test-'))continue;const p=path.join(dir,d.name);if(d.isSymbolicLink()){errors.push('Symlink requires explicit review: '+unix(path.relative(root,p)));continue;}if(d.isDirectory())walk(p);else files.push(p);}}
  walk(root);const inside=p=>p===root||p.startsWith(root+path.sep);const publicRoot=path.join(root,'materials');
  for(const file of files){const relative=unix(path.relative(root,file));const publicFile=file.startsWith(publicRoot+path.sep);const ext=path.extname(file);if(!['.html','.md','.css'].includes(ext))continue;
   const bytes=fs.readFileSync(file),text=bytes.toString('utf8');hashes[relative]=crypto.createHash('sha256').update(bytes).digest('hex');let targets=[];
@@ -26,7 +39,7 @@ function check(root=ROOT){
     if(publicFile&&['iframe','script'].includes(name))errors.push(relative+': participant content contains '+name+'; release review required');
    }
   } else if(ext==='.md'){
-   targets=[...text.replace(/```[\s\S]*?```/g,'').matchAll(/\]\(([^)]+)\)/g)].map(m=>m[1]);
+   targets=markdownInfo(text).targets;
   } else {
    targets=[...text.matchAll(/url\(\s*["']?([^)'"\s]+)["']?\s*\)/g)].map(m=>m[1]);
    if(publicFile && /@import\b/.test(text))errors.push(relative+': CSS import needs explicit dependency review');
@@ -40,8 +53,7 @@ function check(root=ROOT){
    if(publicFile&&resolved!==publicRoot&&!resolved.startsWith(publicRoot+path.sep))errors.push(relative+': escapes materials: '+target);
    if(fragment&&path.extname(resolved)==='.html'&&!elements(fs.readFileSync(resolved,'utf8')).some(e=>e.a.id===fragment))errors.push(relative+': missing anchor '+target);
    if(fragment&&path.extname(resolved)==='.md'){
-    const markdown=fs.readFileSync(resolved,'utf8').replace(/```[\s\S]*?```/g,'');
-    if(!elements(markdown).some(e=>e.a.name===fragment||e.a.id===fragment))errors.push(relative+': missing Markdown anchor '+target);
+    if(!markdownInfo(fs.readFileSync(resolved,'utf8')).anchors.includes(fragment))errors.push(relative+': missing Markdown anchor '+target);
    }
   }
  }

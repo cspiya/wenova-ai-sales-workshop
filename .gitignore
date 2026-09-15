@@ -3,3 +3,5 @@
 !.env.example
 *.local.*
 participant-work/
+node_modules/
+artifacts/

@@ -425,7 +425,7 @@ Az összesen sor deduplikált. A partnerenkénti számok összege átfedés miat
 
 | Dátum | Gazda/eszköz | Bemenet → művelet → kimenet | Állapot | Bizonyíték / mérhető eredmény | Következő lépés |
 | --- | --- | --- | --- | --- | --- |
-| 2026-09-15 | Codex | Repo és szervezői instrukciók → terv és szövegek → marketing-munkacsomag | Előkészített | Az operations/index.html terv- és kampányfejezete; előkészített munkadarab | Partneri jóváhagyás |
+| 2026-09-15 | Codex | Repo és szervezői instrukciók → terv és szövegek → marketing-munkacsomag | Előkészített | Az operations/README.md terv- és kampányfejezete; előkészített munkadarab | Partneri jóváhagyás |
 
 Új sor éles használatnál: pontos eszköz, jóváhagyás, végrehajtás ideje, kitakart/összesített bizonyíték és eredmény. A változás vagy sikertelen próbálkozás is kerüljön ide. Valós küldést csak valódi elküldési bizonyíték alapján jelöljünk.
 
@@ -455,9 +455,9 @@ Minden eszköznél rögzítendő: konkrét fiók és csomag, költség, hozzáf�
 
 ### A tanulási kísérő próbája
 
-A résztvevő az aktuális tananyagot, a materials/assistant.md kísérőutasítást és a saját elmentett munkáját adja át Claude-nak a használt felület által támogatott módon. Ha a felület nem fogad HTML-t, a böngészőben olvasható szöveget is bemásolhatja. Mindig csak az aktuális modulhoz szükséges anyagot adja át.
+A résztvevő az aktuális tananyagot, a materials/assistant.md kísérőutasítást és a saját elmentett munkáját adja át Claude-nak a használt felület által támogatott módon. A modul Markdown-forrását adja át; olvasáshoz a HTML-nézetet használhatja. Mindig csak az aktuális modulhoz szükséges anyagot adja át.
 
-A repo önmagában nem töltődik be automatikusan a beszélgetésbe, és nem ad eszközjogosultságot. A tanulási kísérő kipróbálása külön oktatói feladat; a partneri HTML-szerkesztéshez nincs rá szükség.
+A repo önmagában nem töltődik be automatikusan a beszélgetésbe, és nem ad eszközjogosultságot. A tanulási kísérő kipróbálása külön oktatói feladat; a partneri tananyagkészítéshez nincs rá szükség.
 
 <a name="tools-3"></a>
 
@@ -518,7 +518,7 @@ Elsősorban ezekre kérnék visszajelzést:
 
 1. **Program:** jó-e a tematika és a blokkok sorrendje? Belefér-e a saját részetek az időkeretbe, és reális-e a résztvevőktől várt eredmény?
 2. **Partneri vállalás:** ki viszi nálatok a tananyagot, milyen eszköz és hozzáférés kell hozzá, és mikorra tudjuk közösen kipróbálni?
-3. **Közös munkamód:** érthető-e a repo felépítése? A cél, hogy Claude-dal vagy Codexszel készítsük az anyagokat egy közös HTML-sablonban, majd egységes review és előadói próba után fogadjuk el őket. A kezdőoldalról a materials (résztvevői tananyag), authoring (tananyagkészítés és review) és operations (szervezés, marketing, sales) munkaterület érhető el. GitHubon a kezdőoldalról közvetlenül olvashatók a kézikönyvek és az agenda.
+3. **Közös munkamód:** érthető-e a repo felépítése? A cél, hogy Claude-dal vagy Codexszel készítsük az anyagokat közös Markdown-sablonból, generált HTML-nézettel, majd egységes review és előadói próba után fogadjuk el őket. A kezdőoldalról a materials (résztvevői tananyag), authoring (tananyagkészítés és review) és operations (szervezés, marketing, sales) munkaterület érhető el. GitHubon a kezdőoldalról közvetlenül olvashatók a kézikönyvek és az agenda.
 4. **Dátum:** október 14., 15., 21. vagy 22. közül melyik jó nektek? Holnap válasszuk ki a végleges napot. A helyszín még egyeztetés alatt van.
 5. **Indulás:** állapodjunk meg az árban, a jelentkezési folyamatban, a közös marketingfeladatokban és a felelősökben.
 
@@ -531,3 +531,5 @@ Kérlek, holnapra hozzátok a módosítási javaslataitokat, a nektek megfelelő
 Köszi!
 
 Wenova × Brandiseer × Blackhole Media × EstiWise
+
+Az oktató saját eszközzel készített anyagot is átadhat. A szerkesztő AI segítségével integrálja a közös formátumba; a review és a próba ugyanaz. Részletek a [szerzői kézikönyvben](../authoring/README.md#flexible-authoring).

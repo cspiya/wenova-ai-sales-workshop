@@ -1,5 +1,7 @@
 # Márkaazonos tartalom és kampány
 
+**Állapot: draft.**
+
 [HTML-változat](02-content-marketing.html)
 
 ## Tartalom
@@ -56,6 +58,8 @@ Használd a [mentőútvonalat](#recovery). A kimeneteket a közös adatátadási
 <a name="02-content-marketing.01-brand-brief"></a>
 
 ## Márkabrief készítése
+
+**Állapot: draft.**
 
 **Azonosító:** `02-content-marketing.01-brand-brief` · **Állapot:** draft · **Időkeret:** 20 perc
 
@@ -129,6 +133,8 @@ Választható bővítést csak a kötelező út kipróbálása után adjunk hozz
 
 ## Márkaazonos kampányanyagok
 
+**Állapot: draft.**
+
 **Azonosító:** `02-content-marketing.02-create-content` · **Állapot:** draft · **Időkeret:** 20 perc
 
 **Szerkesztői váz: a szakmai felelősnek ki kell dolgoznia és próbálnia.**
@@ -200,6 +206,8 @@ Választható bővítést csak a kötelező út kipróbálása után adjunk hozz
 <a name="02-content-marketing.03-prepare-publishing"></a>
 
 ## Publikálás előkészítése
+
+**Állapot: draft.**
 
 **Azonosító:** `02-content-marketing.03-prepare-publishing` · **Állapot:** draft · **Időkeret:** 20 perc
 

@@ -1,11 +1,15 @@
-## Eredmény
+## Változás és olvasói eredmény
 
-## Érintett modul és átadási fájlok
+Mi változik, kinek és miért?
 
 ## Ellenőrzés
 
-- [ ] A HTML, a közös CSS és a helyi hivatkozások ellenőrizve; a kihagyott próbák jelölve
-- [ ] Normál és mentőút kipróbálva, vagy a hiány jelölve
-- [ ] Másik partner átvételi ellenőrzése
+- [ ] A Markdown-forrás és a HTML-megjelenés együtt frissült
+- [ ] npm run check és npm test sikeres; a kötelező CI is zöld
+- [ ] A stabil hivatkozások és a résztvevői csomag határa rendben
+- [ ] A tartalmi/böngészős/emberi próbák eredménye vagy hiánya rögzítve
+- [ ] Saját formátumban kapott anyagnál a szerkesztő elvégezte az integrálást; egyedi HTML-nél a forgatókönyv egyezőségét is ellenőriztük (ha érintett)
 
-## Nyitott kérdések
+Review-jegyzőkönyv, nyitott feltételek és jóváhagyó:
+
+A technikai merge nem jelenti a tananyag szakmai elfogadását vagy publikálási engedélyét.
