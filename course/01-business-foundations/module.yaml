@@ -1,0 +1,13 @@
+schema_version: 1
+id: 01-business-foundations
+title: Üzleti alapok és AI-működés
+partner: wenova
+status: draft
+duration_minutes: 90
+inputs: ["business-profile.md"]
+outputs: ["business-profile.md", "sales-strategy.md", "ai-work-instructions.md"]
+lessons:
+  - lessons/01-offer-and-audience.md
+  - lessons/02-sales-strategy.md
+  - lessons/03-ai-workspace.md
+recovery: recovery/README.md

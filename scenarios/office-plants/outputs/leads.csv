@@ -1,0 +1,6 @@
+lead_id,company,fit_reason,status,next_action
+office-plants-L01,Minta Cég 1,A példában megadott célcsoportba illik,qualified,Igényfelmérés
+office-plants-L02,Minta Cég 2,A példában megadott célcsoportba illik,qualified,Igényfelmérés
+office-plants-L03,Minta Cég 3,A példában megadott célcsoportba illik,qualified,Igényfelmérés
+office-plants-L04,Minta Cég 4,Illeszkedéshez további adat kell,open,Pontosító kérdés
+office-plants-L05,Minta Cég 5,Illeszkedéshez további adat kell,open,Pontosító kérdés

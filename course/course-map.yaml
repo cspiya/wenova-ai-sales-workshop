@@ -1,0 +1,27 @@
+schema_version: 1
+course_id: wenova-ai-sales-workshop
+language: hu
+status: authoring
+modules:
+  - id: 00-prework
+    manifest: 00-prework/module.yaml
+  - id: 01-business-foundations
+    manifest: 01-business-foundations/module.yaml
+  - id: 02-content-marketing
+    manifest: 02-content-marketing/module.yaml
+  - id: 03-lead-generation
+    manifest: 03-lead-generation/module.yaml
+  - id: 04-proposals-handoff
+    manifest: 04-proposals-handoff/module.yaml
+  - id: 05-pipeline-review
+    manifest: 05-pipeline-review/module.yaml
+schedule:
+  - {start: "09:00", end: "09:15", kind: opening}
+  - {start: "09:15", end: "10:45", module: 01-business-foundations}
+  - {start: "10:45", end: "11:00", kind: break}
+  - {start: "11:00", end: "12:30", module: 02-content-marketing}
+  - {start: "12:30", end: "13:15", kind: lunch}
+  - {start: "13:15", end: "14:45", module: 03-lead-generation}
+  - {start: "14:45", end: "15:00", kind: break}
+  - {start: "15:00", end: "16:30", module: 04-proposals-handoff}
+  - {start: "16:30", end: "17:00", module: 05-pipeline-review}

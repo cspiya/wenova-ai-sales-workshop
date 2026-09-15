@@ -1,0 +1,11 @@
+schema_version: 1
+id: 05-pipeline-review
+title: Folyamatpróba és indulási terv
+partner: wenova
+status: draft
+duration_minutes: 30
+inputs: ["business-profile.md", "campaign-plan.md", "leads.csv", "customer-brief.md", "proposal.md", "handoff.md"]
+outputs: ["pipeline-review.md"]
+lessons:
+  - lessons/01-review-pipeline.md
+recovery: recovery/README.md

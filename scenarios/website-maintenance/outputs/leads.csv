@@ -1,0 +1,6 @@
+lead_id,company,fit_reason,status,next_action
+website-maintenance-L01,Minta Cég 1,A példában megadott célcsoportba illik,qualified,Igényfelmérés
+website-maintenance-L02,Minta Cég 2,A példában megadott célcsoportba illik,qualified,Igényfelmérés
+website-maintenance-L03,Minta Cég 3,A példában megadott célcsoportba illik,qualified,Igényfelmérés
+website-maintenance-L04,Minta Cég 4,Illeszkedéshez további adat kell,open,Pontosító kérdés
+website-maintenance-L05,Minta Cég 5,Illeszkedéshez további adat kell,open,Pontosító kérdés

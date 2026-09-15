@@ -1,0 +1,13 @@
+schema_version: 1
+id: 02-content-marketing
+title: Márkaazonos tartalom és kampány
+partner: brandiseer
+status: draft
+duration_minutes: 90
+inputs: ["business-profile.md", "sales-strategy.md"]
+outputs: ["brand-brief.md", "campaign-plan.md"]
+lessons:
+  - lessons/01-brand-brief.md
+  - lessons/02-create-content.md
+  - lessons/03-prepare-publishing.md
+recovery: recovery/README.md
