@@ -39,6 +39,10 @@ function check(root=ROOT){
    if(!inside(resolved)||!fs.existsSync(resolved)){errors.push(relative+': missing '+target);continue;}
    if(publicFile&&resolved!==publicRoot&&!resolved.startsWith(publicRoot+path.sep))errors.push(relative+': escapes materials: '+target);
    if(fragment&&path.extname(resolved)==='.html'&&!elements(fs.readFileSync(resolved,'utf8')).some(e=>e.a.id===fragment))errors.push(relative+': missing anchor '+target);
+   if(fragment&&path.extname(resolved)==='.md'){
+    const markdown=fs.readFileSync(resolved,'utf8').replace(/```[\s\S]*?```/g,'');
+    if(!elements(markdown).some(e=>e.a.name===fragment||e.a.id===fragment))errors.push(relative+': missing Markdown anchor '+target);
+   }
   }
  }
  if(new Set(lessonIds).size!==lessonIds.length)errors.push('Duplicate lesson IDs');

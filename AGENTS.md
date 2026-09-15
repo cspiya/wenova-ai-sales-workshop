@@ -8,6 +8,7 @@ Use English file and folder names, Hungarian participant and partner-facing pros
 - authoring/: the single authoring handbook, template and QA evidence.
 - operations/: the single organizing/marketing/sales handbook and private instructor notes.
 - Keep prose in the relevant handbook; create separate files only for independently used artifacts or actual review evidence.
+- Every HTML document has a GitHub-readable Markdown copy (index.html → README.md, other pages → matching .md). HTML is the editing source. After content changes, update copies using authoring/qa/sync-markdown.cjs and verify with --check. Keep Markdown navigation within the Markdown copies where available.
 - Instructor notes link to stable module/section IDs and embed the existing material. Never copy lesson text into notes, put private notes into participant HTML, or hide private content with CSS.
 - Keep lesson IDs, output contracts and recovery paths consistent. Do not present draft lessons or untested tools as ready.
 - Use exact brand name Blackhole Media. Never commit real participant/customer data or tokens.
