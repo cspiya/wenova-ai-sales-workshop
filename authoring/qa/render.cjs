@@ -8,6 +8,7 @@ const unix = p => p.split(path.sep).join('/');
 const escape = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const output = p => p === 'README.md' ? 'index.html' : p.replace(/\/README\.md$/, '/index.html').replace(/\.md$/, '.html');
 const slug = s => s.toLowerCase().replace(/[^\p{L}\p{N}\s_-]/gu, '').replace(/\s/g, '-');
+const isLessonId = (id,moduleId) => id.startsWith(moduleId+'.') && /^\d{2}-[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id.slice(moduleId.length+1));
 function files(root = ROOT) {
   const result = [];
   function walk(dir) {
@@ -80,7 +81,7 @@ function render(source, root = ROOT, pages = new Set(inventory(root))) {
         if (id === mainId) continue;
         if (used.has(id)) throw Error(source+': duplicate anchor '+id);
         used.add(id);
-        const lesson = moduleId && !id.includes('--') && new RegExp('^'+moduleId.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'\\.\\d{2}-[a-z0-9-]+$').test(id);
+        const lesson = moduleId && isLessonId(id,moduleId);
         token.content = '<a id="'+id+'"'+(lesson?' data-lesson-id="'+id+'"':'')+'></a>\n';
         if (tokens[i+1]?.type === 'heading_open') tokens[i+1].meta = {anchor:id};
       }
@@ -139,4 +140,4 @@ function run({root=ROOT, check=false, selected=null}={}) {
   return count;
 }
 if (require.main === module) { try { const i=process.argv.indexOf('--accept-custom');if(i>=0)acceptCustom(process.argv[i+1]);else console.log('PASS: '+run({check:process.argv.includes('--check')})+' presentation sources.'); } catch(e) { console.error(e.message); process.exitCode=1; } }
-module.exports = {ROOT, files, inventory, output, slug, rewrite, render, run,custom,sourceHash,acceptCustom};
+module.exports = {ROOT, files, inventory, output, slug, rewrite, render, run,custom,sourceHash,acceptCustom,isLessonId};

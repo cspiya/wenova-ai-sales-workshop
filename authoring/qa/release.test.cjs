@@ -13,6 +13,15 @@ test('release blocks draft/missing evidence/stale approval and packages only app
   assert(readiness(root).some(e=>e.startsWith('Missing')));
   const approved=()=>'- Decision: approved\n- Approver: Test Reviewer\n- Date: 2026-09-15\n- Materials SHA-256: '+fingerprint(root)+'\n\n'+POINTS.map(p=>'| '+p+' | Megfelel | Fixture evidence for '+p+' |').join('\n');
   put(APPROVAL,approved());assert.deepEqual(readiness(root),[]);
+  for(const attribute of ['id','name']){
+   put('materials/modules/01-demo.md',source.replaceAll('a name=', 'a '+attribute+'='));run({root});put(APPROVAL,approved());
+   assert.deepEqual(readiness(root),[],attribute+' anchors must be releasable');
+  }
+  for(const marker of ['[IDE ÍRD BE]','{{value}}','TODO','TBD','Szerzői feladat:','[KITÖLTENDŐ]']){
+   put('materials/modules/01-demo.md',source+'\n'+marker+'\n');run({root});put(APPROVAL,approved());
+   assert(readiness(root).some(e=>e.includes('placeholder')),marker+' must block an otherwise approved release');
+  }
+  put('materials/modules/01-demo.md',source);run({root});put(APPROVAL,approved());
   put('materials/modules/01-demo.md',source.replace('Állapot: ready.','Állapot: draft.'));
   assert(readiness(root).some(e=>e.includes('not ready')));assert(readiness(root).some(e=>e.includes('SHA-256')));
   put('materials/modules/01-demo.md',source);put(APPROVAL,approved().replace('| T5 | Megfelel','| T5 | Nem ellenőrzött'));

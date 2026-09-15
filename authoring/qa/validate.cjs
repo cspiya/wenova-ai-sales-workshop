@@ -10,6 +10,7 @@ const hash = text => crypto.createHash('sha256').update(text).digest('hex');
 const attrs = tag => Object.fromEntries([...tag.matchAll(/([\w:-]+)\s*=\s*(["'])(.*?)\2/gs)].map(m => [m[1].toLowerCase(), m[3]]));
 const tags = (text, name) => [...text.matchAll(new RegExp('<'+name+'\\b[^>]*>', 'gi'))].map(m => attrs(m[0]));
 const clean = text => text.replace(/<!--[\s\S]*?-->/g, '');
+const hasPlaceholders = text => /\{\{|\bTODO\b|\bTBD\b|Szerzői feladat:|\[IDE[^\]]*\]|\[KITÖLTENDŐ\]/i.test(text);
 const ids = text => [...clean(text).matchAll(/<[a-z][^>]*>/gi)].map(m => attrs(m[0]).id).filter(Boolean);
 function validate(file) {
   const checks = [], dependencies = new Map();
@@ -54,7 +55,7 @@ function validate(file) {
     add('T2-css-offline',!/@import\b|url\s*\(\s*["']?(?:https?:|\/\/)/i.test(content),'CSS külső import nélkül: '+rel(css));
   }
   const visible=text.replace(/<[^>]*>/g,' ');
-  add('T4-placeholder',!(/\{\{|\bTODO\b|\bTBD\b|Szerzői feladat:|\[IDE[^\]]*\]|\[KITÖLTENDŐ\]/i.test(visible)), 'Ismert kitöltetlen sablonjelölések szűrése; szemantikai review külön szükséges.');
+  add('T4-placeholder',!hasPlaceholders(visible), 'Ismert kitöltetlen sablonjelölések szűrése; szemantikai review külön szükséges.');
   add('T4-meta',/data-(?:lesson|module)-id\s*=/.test(text) && /\b(?:draft|review|ready)\b/.test(visible) && /\d+\s*perc/.test(visible), 'Leckeazonosító, állapot és időkeret szerepel. Partner és tartalom kézi reviewban.');
   for (const item of ['T1-render','T5','R1–R8','P1–P4']) checks.push({id:item,result:'Nem ellenőrzött',detail:'Böngészős, tartalmi vagy emberi ellenőrzést igényel.'});
   return {file:rel(file),checks,dependencies:Object.fromEntries(dependencies)};
@@ -66,4 +67,4 @@ function run(args) {
   return results.some(r=>r.checks.some(c=>c.result==='Javítandó'))?1:0;
 }
 if (require.main===module) process.exitCode=run(process.argv.slice(2));
-module.exports={validate,root};
+module.exports={validate,root,hasPlaceholders};

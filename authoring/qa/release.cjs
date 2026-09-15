@@ -1,6 +1,7 @@
 'use strict';
 const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
-const {ROOT,files,inventory}=require('./render.cjs');
+const {ROOT,files,inventory,isLessonId}=require('./render.cjs');
+const {hasPlaceholders}=require('./validate.cjs');
 const {gate}=require('./gate.cjs');
 const POINTS=['T1','T2','T3','T4','T5','R1','R2','R3','R4','R5','R6','R7','R8','P1','P2','P3','P4','REHEARSAL'];
 const APPROVAL='authoring/qa/reports/release-approval.md';
@@ -16,12 +17,14 @@ function readiness(root=ROOT){
  for(const p of modules){
   const text=fs.readFileSync(path.join(root,p),'utf8');
   // Module introduction and each stable lesson are approved separately.
-  const chunks=text.split(/<a name="\d{2}-[a-z0-9]+(?:-[a-z0-9]+)*\.\d{2}-[a-z0-9]+(?:-[a-z0-9]+)*"><\/a>/);
+  const moduleId=path.basename(p,'.md');
+  const boundaries=[...text.matchAll(/<a (?:name|id)="([\w.:-]+)"><\/a>/g)].filter(m=>isLessonId(m[1],moduleId)).map(m=>m.index);
+  const starts=[0,...boundaries],chunks=starts.map((start,i)=>text.slice(start,starts[i+1]));
   for(let i=0;i<chunks.length;i++){
    if(!/^\*\*Állapot: ready\.\*\*$/m.test(chunks[i]))errors.push(p+': '+(i?'lesson '+i:'module')+' is not ready');
   }
   if(chunks.length<2)errors.push(p+': no stable lesson IDs');
-  if(/(?:Állapot:|Státusz:|·)\s*(?:draft|review)\b|\bTODO\b|\bTBD\b|Szerzői feladat:|\[KITÖLTENDŐ\]/i.test(text))errors.push(p+': unfinished status or placeholder');
+  if(/(?:Állapot:|Státusz:|·)\s*(?:draft|review)\b/i.test(text)||hasPlaceholders(text))errors.push(p+': unfinished status or placeholder');
  }
  const approvalPath=path.join(root,APPROVAL),digest=fingerprint(root);
  if(!fs.existsSync(approvalPath))return [...errors,'Missing '+APPROVAL];

@@ -77,6 +77,8 @@ Nem kell technikai szerzővé válnod. Dolgozhatsz a megszokott eszközöddel: W
 
 Az oktatónak nem kell Git-parancsokat, telepítést vagy ellenőrző scripteket futtatnia. Ezt az integrálást végző szerkesztő és az AI intézi. A saját formátum választása elfogadott munkamód.
 
+Ehhez nem kell külön kivételkérelem vagy engedélyezési kör. Az átvételt és az ellenőrzést a meglévő PR-ban/reviewban rögzítjük. Egy javításnak egy munkafolyamata legyen; a részletes kiadási jegyzőkönyvet csak a résztvevői kiadás előtt készítjük el.
+
 **Egyedi prezentáció:** a saját kialakítású HTML is megtartható. Legyen mellette azonos nevű Markdown-forgatókönyv a teljes érdemi szöveggel, a diák/szakaszok sorrendjével, az ábrák jelentésével és a másolható promptokkal. A szerkesztő a kettő egyezőségét külön ellenőrzi; a technikai jelölést az [automatizálási leírás](#automation) szerint ő kezeli. Oktatói megjegyzés továbbra is külön, az operations alatt marad.
 
 <a name="requirements"></a>
