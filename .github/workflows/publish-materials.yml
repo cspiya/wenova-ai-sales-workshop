@@ -1,0 +1,23 @@
+name: Prepare participant release
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  package:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm test
+      - run: npm run release:package
+      - uses: actions/upload-artifact@v4
+        with:
+          name: participant-materials-${{ github.sha }}
+          path: artifacts/materials/
+          if-no-files-found: error

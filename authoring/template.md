@@ -21,7 +21,7 @@
 
 Egy célcsoport. Egy világos ajánlat. Használható alap a következő lépéshez.
 
-20 percSablon · draftWenova · Piya Csaba, Kemény Krisztián
+20 perc · Sablon · draft · Wenova · Piya Csaba, Kemény Krisztián
 
 <a name="result"></a>
 

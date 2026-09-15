@@ -1,5 +1,7 @@
 # Ügyfélszerzés és leadkezelés
 
+**Állapot: draft.**
+
 [HTML-változat](03-lead-generation.html)
 
 ## Tartalom
@@ -56,6 +58,8 @@ Használd a [mentőútvonalat](#recovery). A kimeneteket a közös adatátadási
 <a name="03-lead-generation.01-qualify-leads"></a>
 
 ## Öt lead minősítése
+
+**Állapot: draft.**
 
 **Azonosító:** `03-lead-generation.01-qualify-leads` · **Állapot:** draft · **Időkeret:** 20 perc
 
@@ -129,6 +133,8 @@ Választható bővítést csak a kötelező út kipróbálása után adjunk hozz
 
 ## Személyre szabott megkeresés és utánkövetés
 
+**Állapot: draft.**
+
 **Azonosító:** `03-lead-generation.02-personalize-outreach` · **Állapot:** draft · **Időkeret:** 20 perc
 
 **Szerkesztői váz: a szakmai felelősnek ki kell dolgoznia és próbálnia.**
@@ -200,6 +206,8 @@ Választható bővítést csak a kötelező út kipróbálása után adjunk hozz
 <a name="03-lead-generation.03-process-reply"></a>
 
 ## Ügyfélválasz feldolgozása
+
+**Állapot: draft.**
 
 **Azonosító:** `03-lead-generation.03-process-reply` · **Állapot:** draft · **Időkeret:** 20 perc
 

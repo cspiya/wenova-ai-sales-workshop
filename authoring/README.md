@@ -5,6 +5,7 @@
 ## Tartalom
 
 - [Tananyagkészítés lépésről lépésre](#workflow)
+- [Ha saját eszközzel készíted az anyagot](#flexible-authoring)
 - [Mit várunk egy jó tananyagtól?](#requirements)
 - [Sablon és közös megjelenés](#template)
 - [Review és elfogadás](#review)
@@ -13,6 +14,7 @@
 - [Jegyzőkönyv és ellenőrzési eszköz](#report)
 - [Oktatói jegyzetek kapcsolása](#notes)
 - [Résztvevői kiadás](#release)
+- [Automatikus generálás és ellenőrzés](#automation)
 - [Közös AI-instrukciók](#ai-rules)
 
 <a name="main"></a>
@@ -28,7 +30,7 @@ A szakmai tudást az előadó adja, a fájlokat az AI kezeli. Egy közös munkaf
 1. Nyisd meg ezt a repót Claude Code-ban vagy Codexben, és mondd meg, melyik modult készíted.
 2. Add át a meglévő jegyzeteidet, a célközönséget és a kívánt eredményt.
 3. Az AI tisztázza a hiányzó információkat és tervet készít. Te jóváhagyod vagy módosítást kérsz.
-4. A jóváhagyás után az AI a közös sablonból elkészíti a modul HTML-jét. A böngészőben átnézed, beszélgetésben kéred a javításokat.
+4. A jóváhagyás után az AI a közös sablonból elkészíti a modul Markdown-forrását, majd legenerálja a HTML-nézetet. A böngészőben átnézed, beszélgetésben kéred a javításokat.
 5. Egy külön review-beszélgetés ellenőrzi a fájlokat. Az előadó végigpróbálja a feladatot, és a szakmai felelős elfogadja.
 
 <a name="workflow-1"></a>
@@ -37,7 +39,7 @@ A szakmai tudást az előadó adja, a fájlokat az AI kezeli. Egy közös munkaf
 
 ```text
 Ebben a repóban szeretnék tananyagot készíteni.
-Olvasd el az AGENTS.md instrukciót és az authoring/index.html kézikönyvet.
+Olvasd el az AGENTS.md instrukciót és az authoring/README.md kézikönyvet.
 Partner / előadó: [név]
 Téma és célközönség: [röviden]
 Meglévő forrásaim: [fájlok vagy linkek]
@@ -45,7 +47,7 @@ A résztvevő ezt készítse el: [ha már ismert]
 Keresd meg a megfelelő materials/modules/ modult.
 Kérdezz a hiányzó lényegi információkról, majd adj rövid tervet.
 Fájlokat csak a jóváhagyásom után szerkessz.
-A közös authoring/template.html szerkezetével és materials/assets/notebook.css stílussal dolgozz.
+A közös authoring/template.md szerkezetével és materials/assets/notebook.css stílussal dolgozz.
 ```
 
 <a name="workflow-2"></a>
@@ -62,13 +64,30 @@ A közös authoring/template.html szerkezetével és materials/assets/notebook.c
 
 Az AI sorolja fel a változásokat, az ellenőrzés eredményét és a nyitott kérdéseket. A közös repóba küldést külön kérd: „Tedd a jóváhagyott változtatásokat külön ágra, commitold, pushold, és készíts pull requestet szakmai ellenőrzésre.”
 
+<a name="flexible-authoring"></a>
+
+## Ha saját eszközzel készíted az anyagot
+
+Nem kell technikai szerzővé válnod. Dolgozhatsz a megszokott eszközöddel: Worddel, PowerPointtal, saját HTML-lel vagy más, előre egyeztetett formátumban. A közös sablon tartalmi szerkezetét kérjük követni, amennyire az anyaghoz illik: cél, magyarázat, példa, feladat, kész feltétel és segítség.
+
+1. Egyeztesd a témát, a formátumot és az átadási határidőt a koordinátorral; nevezzetek meg egy szerkesztőt az integráláshoz.
+2. Add át az anyagot a szerkesztőnek, a képekkel, szükséges mellékletekkel és használati jogokkal együtt. A PR-ban vagy review-jegyzőkönyvben rögzítjük az eredeti forrást, az oktatót és az integrálás felelősét.
+3. A szerkesztő AI segítségével elkészíti a repo Markdown-forrását, a kapcsolódó HTML-nézetet és a szükséges hivatkozásokat. Ezt követően itt vezetjük a tartalmi javításokat; ha új külső változatot adsz át, a szerkesztő összevezeti őket.
+4. Te ellenőrzöd, hogy hűen adtuk-e vissza a mondanivalódat. Ugyanaz a szakmai review és gyakorlati próba következik, mint a közvetlenül itt készített anyagnál.
+
+Az oktatónak nem kell Git-parancsokat, telepítést vagy ellenőrző scripteket futtatnia. Ezt az integrálást végző szerkesztő és az AI intézi. A saját formátum választása elfogadott munkamód.
+
+Ehhez nem kell külön kivételkérelem vagy engedélyezési kör. Az átvételt és az ellenőrzést a meglévő PR-ban/reviewban rögzítjük. Egy javításnak egy munkafolyamata legyen; a részletes kiadási jegyzőkönyvet csak a résztvevői kiadás előtt készítjük el.
+
+**Egyedi prezentáció:** a saját kialakítású HTML is megtartható. Legyen mellette azonos nevű Markdown-forgatókönyv a teljes érdemi szöveggel, a diák/szakaszok sorrendjével, az ábrák jelentésével és a másolható promptokkal. A szerkesztő a kettő egyezőségét külön ellenőrzi; a technikai jelölést az [automatizálási leírás](#automation) szerint ő kezeli. Oktatói megjegyzés továbbra is külön, az operations alatt marad.
+
 <a name="requirements"></a>
 
 ## Mit várunk egy jó tananyagtól?
 
 Magyar, gyakorlati tananyag: emberi cél → AI-val végzett feladat → eredmény → ellenőrzés → következő lépés.
 
-- Az új anyag a authoring/template.html mintáját követi, a materials/assets/notebook.css közös megjelenésével. A szerző az AI-val beszélget; nem tölt ki technikai adatlapot.
+- Az új anyag a authoring/template.md mintáját követi, a materials/assets/notebook.css közös megjelenésével. A szerző az AI-val beszélget; nem tölt ki technikai adatlapot.
 - Legyen világos cél, előfeltétel, rövid magyarázat, emberi döntés, másolható prompt, időzített feladat, kész feltétel, elakadási segítség és továbbvihető eredmény. A sablon tíz szakasza ezt mutatja; ne szaporíts üres fejezeteket csak a forma kedvéért.
 - A résztvevői szöveg és a másolható prompt magyar. A fájlnevek rövid angol nevek.
 - Saját üzlet és személyes LinkedIn-kapcsolat nélkül is végigjárható példa szükséges.
@@ -85,9 +104,9 @@ A modul vázából és a közös mintaleckéből indulj ki; az előadóval jóv�
 
 ## Sablon és közös megjelenés
 
-[Másolható HTML-sablon](template.md) · [Kidolgozott mintalecke](../materials/modules/01-business-foundations.md#01-business-foundations.01-offer-and-audience)
+[Másolható Markdown-sablon](template.md) · [Kidolgozott mintalecke](../materials/modules/01-business-foundations.md#01-business-foundations.01-offer-and-audience)
 
-Egy modul egy HTML-oldal. A szakaszok stabil azonosítókat kapnak. A magyarázat, a másolható prompt, a feladat, az ellenőrzés és az elakadási segítség egységes blokkokban jelenik meg. A közös CSS a materials/assets/notebook.css fájlban található.
+Egy modul egy Markdown-forrás és a belőle generált HTML-oldal. A szakaszok stabil azonosítókat kapnak. A magyarázat, a másolható prompt, a feladat, az ellenőrzés és az elakadási segítség egységes blokkokban jelenik meg. A közös CSS a materials/assets/notebook.css fájlban található.
 
 Magyar tartalom, angol fájl- és mappanevek. A sablon másolásakor az AI igazítsa a relatív hivatkozásokat. A résztvevői oldal helyi fájlként is olvasható legyen.
 
@@ -114,7 +133,7 @@ A konkrét embereket a jegyzőkönyvben kell megnevezni. A szerző saját ellen�
 ### Hat lépés, egy rövid jegyzőkönyv
 
 1. **Terv:** célközönség, előfeltétel, tanulási eredmény, időkeret, gyakorlat, minta és következő modul. Az előadó jóváhagyja.
-2. **Átadás:** a szerző megadja az ellenőrzendő HTML-t, kapcsolódó bemeneteket, mentőutat és a nyitott kérdéseket. Állapot: review.
+2. **Átadás:** a szerző megadja az ellenőrzendő Markdown-forrást és HTML-nézetet, kapcsolódó bemeneteket, mentőutat és a nyitott kérdéseket. Állapot: review.
 3. **AI-ellenőrzés:** új beszélgetés, közös [prompt](#review-prompt), [ellenőrzőlista](#checklist), konkrét helyek és bizonyítékok. Nem módosítja a tananyagot review közben.
 4. **Javítás:** a szerző jóváhagyott javítási terv szerint dolgozik; az ellenőrző lezárja vagy nyitva hagyja az egyes hibákat. Tartalmi változás után az érintett gyakorlatot újra kell próbálni.
 5. **Emberi próba:** az ellenőrző a leírás alapján elkészíti az eredményt, rögzíti az időt és az elakadásokat. Kipróbálja a minta/mentőutat, és megnyitja a tananyagot asztali, mobil szélességű és nyomtatási nézetben.
@@ -147,7 +166,7 @@ Nincs átlagpontszám: tíz sikeres ellenőrzés nem ellensúlyoz egy blokkoló 
 
 A jegyzőkönyv tartalmazza a dátumot, ellenőrzőt, fájlokat, Git commitot (ha van), valamint a módosított helyi fájlok SHA-256 azonosítóit. A commit önmagában nem azonosítja a még nem commitolt munkát. A CSS, bemeneti minta és szükséges függő fájlok azonosítója is kell.
 
-Fájlon belüli bizonyíték például: `materials/modules/01-business-foundations.html#01-business-foundations.01-offer-and-audience--steps`, a konkrét mondat és az elvégzett ellenőrzés. Böngészős bizonyíték: böngésző, dátum, nézetméret, ellenőrzött művelet és eredmény; szükség szerint képernyőkép. Szakmai bizonyíték: elkészült kitalált mintakimenet és a kész feltételek értékelése. Valós résztvevői adatot ne ments a repóba.
+Fájlon belüli bizonyíték például: `materials/modules/01-business-foundations.md#01-business-foundations.01-offer-and-audience--steps`, a konkrét mondat és az elvégzett ellenőrzés. Böngészős bizonyíték: böngésző, dátum, nézetméret, ellenőrzött művelet és eredmény; szükség szerint képernyőkép. Szakmai bizonyíték: elkészült kitalált mintakimenet és a kész feltételek értékelése. Valós résztvevői adatot ne ments a repóba.
 
 <a name="review-6"></a>
 
@@ -209,19 +228,18 @@ Nyiss új Claude/Codex beszélgetést a repó mappájában. A szögletes zárój
 
 ```text
 Tananyag-reviewt kérek ebben a repóban.
-Ellenőrzendő anyag: [a HTML-fájl vagy modul útvonala]
+Ellenőrzendő anyag: [a Markdown-fájl vagy modul útvonala]
 Kapcsolódó saját megjegyzésem: [ha van]
 
 Olvasd el az AGENTS.md / CLAUDE.md közös instrukcióit, majd a
-authoring/index.html #review és #checklist szakaszait.
+authoring/README.md #review és #checklist szakaszait.
 Ez a review és a jegyzőkönyv elkészítése jóváhagyott feladat;
 a tananyagot most ne módosítsd.
 
 A fájlokból dolgozz, ne a szerző korábbi beszélgetésére hagyatkozz.
-Olvasd el a HTML-t, a CSS-t, a bemenetet, a mintát, a mentőutat,
+Olvasd el a Markdown-forrást, a generált HTML-t, a CSS-t, a bemenetet, a mintát, a mentőutat,
 a modul áttekintőjét és a következő lecke bemenetét.
-Ha van Node.js a környezetedben, futtasd a authoring/qa/validate.cjs
-technikai segédeszközt. A technikai ellenőrzéseket te végezd el.
+Futtasd az npm run check és npm test ellenőrzéseket. A technikai ellenőrzéseket te végezd el.
 
 Értékeld külön a T1–T5, R1–R8, P1–P4 pontokat.
 Eredmény: Megfelel / Javítandó / Nem ellenőrzött.
@@ -313,12 +331,42 @@ Minden jegyzet konkrét szakaszra hivatkozzon, például `01-business-foundation
 ## Résztvevői kiadás
 
 1. A modulfelelősök elfogadják a kiadandó anyagokat; a főpróba jegyzőkönyve elkészül.
-2. Az AI ellenőrzi a materials teljes hivatkozási hálóját és a fájlokat. A csomag minden helyi függősége ezen a mappán belül legyen.
+2. Az AI futtatja az `npm test` és `npm run check` ellenőrzéseket. A csomag minden helyi függősége a materials mappán belül legyen. A modulok és leckék állapota külön-külön ready; az ismert sablonjelölések nem maradhatnak bennük.
 3. A szervező jóváhagyja a kiadást. Ekkor hozzuk létre a külön publikus repót, és kizárólag a materials tartalmát másoljuk a gyökerébe.
 4. A publikus repo tiszta saját előzménnyel indul. A belső repo története, authoring és operations tartalma nem kerül bele.
-5. A közzétett változatot és verziót rögzítjük. Továbbra is ebben a privát repóban szerkesztünk; a publikus repo a kiadott példány.
+5. A [kiadási jóváhagyásban](qa/reports/release-approval.md) rögzítjük a T1–T5, R1–R8, P1–P4 pontok és a teljes főpróba bizonyítékát, a jóváhagyó nevét, dátumát és a teljes materials-csomag SHA-256 lenyomatát. Ezt az AI a `node authoring/qa/release.cjs --fingerprint` paranccsal számolja ki. Elfogadást csak tényleges emberi döntés alapján rögzítünk.
+6. A main ágon a GitHub Actions **Prepare participant release** folyamatot indítjuk. Újra lefutnak a tesztek és a technikai kapu, majd a kiadásellenőrzés. Csak siker esetén készül letölthető `participant-materials-…` csomag, kizárólag a materials tartalmával. A folyamat nem küld automatikusan fájlokat másik repóba vagy weboldalra. Helyi megfelelője: `npm run release:package`, tiszta kimeneti mappával.
+7. A kiadással megbízott szerkesztő ebből az ellenőrzött csomagból publikál. A közzétett verziót és commitot rögzítjük. Továbbra is ebben a közös szerkesztési repóban dolgozunk; a résztvevői repo a kiadott példány.
 
 A másolás nem engedély a publikálásra: a végleges kiadáshoz kifejezett szervezői kérés kell.
+
+<a name="automation"></a>
+
+## Automatikus generálás és ellenőrzés
+
+**Szerzőként:** Markdownban dolgozunk, a HTML a böngészőben könnyen olvasható megjelenés. Kérd az AI-tól: „Frissítsd az érintett Markdown-forrásokat, generáld újra a HTML-t, futtasd az ellenőrzéseket, és mutasd meg az eredményt.” Saját eszközzel készített anyagnál ezt a szerkesztő intézi.
+
+**Az AI és a szerkesztő technikai menete:** Node.js 24, a package-lock.json rögzített függőségeivel. Windowson szükség esetén `npm.cmd` használható az `npm` helyett.
+
+| Mikor? | Parancs / kapu | Mit igazol? |
+| --- | --- | --- |
+| Első munka vagy függőségváltozás | `npm ci --ignore-scripts` | Rögzített feldolgozó telepítése |
+| Tartalmi szerkesztés után | `npm run render` | Markdownból elkészülnek a HTML-nézetek |
+| Minden mellékági push előtt, ajánlott | `npm run prepare:push` majd `npm test` | Változott fájlok meghatározása, szükséges generálás, utána ellenőrzés és tesztek |
+| Másik összehasonlítási alap | `npm run prepare:push -- --base origin/my-branch` | A megadott ág közös ősétől számolt változások |
+| Csak ellenőrzés a változásokon | `npm run check -- --changed --base origin/main` | Nem ír fájlt; a munkakönyvtár, staging és új fájlok is számítanak |
+| Commit / PR / main | `npm run check` és `npm test` | Teljes, fájlt nem módosító technikai ellenőrzés |
+| Kiadás előtt | `npm run release:check` | Technikai kapu, készültség, emberi bizonyíték és a pontos csomag jóváhagyása |
+
+A változáslista tartalmazza az ág commitjait és a helyi módosításokat is; a már fetch-elt összehasonlítási ág legyen friss. Markdown-, HTML-, CSS- vagy eszközváltozásnál a generálás a teljes, kis méretű megjelenítési készletre kiterjed, hogy a kereszthivatkozások is frissüljenek. A helyi linkháló ellenőrzése mindig teljes: egy törölt szakaszra változatlan fájlból is hivatkozhatunk. Ismeretlen összehasonlítási alapnál a parancs hibával leáll.
+
+**Forrás és megjelenés párosítása:** a négy fő README, az authoring/template.md, a materials/modules és operations/instructor-notes Markdown-fájljai automatikusan kapnak HTML-t. README.md → index.html, más fájl → azonos nevű .html. Más önálló bemutató Markdownjának első sora `<!-- presentation -->`; így az is automatikusan bekerül. A mintakimenetek és munkafájlok önálló Markdownként használhatók. Új modulnál őrizd meg a sablon tartalmi szerkezetét és a stabil horgonyokat. A modul elején és minden lecke elején legyen `**Állapot: draft.**`, később `review`, valódi elfogadás után `ready`.
+
+**Egyedi HTML kivétel:** az azonos nevű Markdown első sora `<!-- presentation: custom -->`. Ezt a generátor megőrzi. A szerkesztő a HTML és a teljes Markdown-forgatókönyv egyezőségét, hivatkozásait és olvashatóságát ellenőrzi, majd az oktató visszaigazolását a reviewban rögzíti. Csak ezután futtatja: `node authoring/qa/render.cjs --accept-custom materials/modules/example.md` (a tényleges útvonallal). A jelölés mindkét fájl lenyomatát rögzíti; bármelyik változása új egyezőség-ellenőrzést igényel. A script a rögzített fájlpárt ellenőrzi, a tartalmi egyezőséget ember és reviewer állapítja meg. A kivételre is érvényes a linkellenőrzés, a résztvevői határ és a szakmai elfogadás.
+
+**Main merge:** pull request szükséges, friss alappal és sikeres **Content quality gate** ellenőrzéssel. Minden pushon és mainre célzó PR-on lefut a teljes ellenőrzés; nem javítja ki csendben a hiányzó generálást. A kézzel módosított generált HTML, hiányzó pár, törött link és résztvevői határsértés hibát ad. Forrás átnevezésekor/törlésekor a hozzá tartozó HTML-t is nevezd át/töröld, a bejövő linkeket javítsd. A forrás és a generált eredmény egy commitba kerüljön.
+
+A zöld technikai kapu mellett is lehet draft anyag a mainen. Ez közös szerkesztésre alkalmas állapotot igazol; a tanfolyam megtarthatóságát és a kiadást külön review dönti el. A készültség és a jóváhagyott csomaglenyomat eltérése blokkolja a kiadási csomag elkészítését.
 
 <a name="ai-rules"></a>
 
@@ -328,7 +376,7 @@ A másolás nem engedély a publikálásra: a végleges kiadáshoz kifejezett sz
 
 ### Először egyeztess
 
-1. Olvasd el a authoring/index.html kézikönyvet, a kijelölt modul áttekintőjét és a meglévő anyagot. Nézd meg a authoring/template.html sablont.
+1. Olvasd el a authoring/README.md kézikönyvet, a kijelölt modul áttekintőjét és a meglévő anyagot. Nézd meg a authoring/template.md sablont.
 2. Tisztázd a partner témáját, célközönségét, időkeretét, tanulási eredményét és forrásait. Az ismert adatokat ne kérdezd újra. Egyszerre legfeljebb három lényegi kérdést tegyél fel.
 3. Adj rövid tervet: szakaszok, gyakorlat, bemenet, elkészülő eredmény, példa és segítség. Fájlokat csak jóváhagyás után módosíts. Érdemi irányváltásnál egyeztess újra; az elfogadott terv rutinlépéseihez nem kell új engedély.
 
@@ -336,11 +384,11 @@ A másolás nem engedély a publikálásra: a végleges kiadáshoz kifejezett sz
 
 ### A technikai munkát te végzed
 
-- A résztvevői anyag közvetlenül szerkeszthető HTML. Közös stílusa: materials/assets/notebook.css.
-- Másold a authoring/template.html szerkezetét, a tartalmat a partner saját materials/modules/ mappájába írd. Igazítsd a relatív hivatkozásokat a célmappához. Használj szabályos HTML-elemeket, escape-eld a promptokban szereplő HTML-jeleket.
-- Egy HTML-oldalba rendezd a modul tananyagát, azon belül horgonyokkal elérhető leckékkel. A modul vázát és a kidolgozott mintaleckét használd kiindulásként.
-- Egy tartalomnak egy szerkesztett forrása legyen. Módosításkor frissítsd az érintett hivatkozásokat, őrizd meg a leckeazonosítókat. A HTML a szerkesztési forrás; a GitHubon olvasható Markdown-változatot az AI ugyanabból frissíti. Tartalmi változtatás után futtasd az authoring/qa/sync-markdown.cjs eszközt, majd a --check ellenőrzést.
-- A modul gazdája, időkerete, bemenete és kimenete a modul HTML-oldalának áttekintőjében olvasható. Ezt is te frissíted, ha a jóváhagyott tartalom változik. A partnernek ne adj külön technikai adatlapkitöltési feladatot.
+- A résztvevői anyag szerkesztési forrása Markdown. Közös stílusa: materials/assets/notebook.css.
+- Másold a authoring/template.md szerkezetét, a tartalmat a partner saját materials/modules/ mappájába írd. Igazítsd a relatív hivatkozásokat a célmappához. Használj Markdown-címsorokat, listákat és fenced kódblokkokat a másolható promptokhoz.
+- Egy Markdown-fájlba rendezd a modul tananyagát, azon belül horgonyokkal elérhető leckékkel. A modul vázát és a kidolgozott mintaleckét használd kiindulásként.
+- Egy tartalomnak egy szerkesztett forrása legyen. Módosításkor frissítsd az érintett hivatkozásokat, őrizd meg a leckeazonosítókat. A Markdown az elsődleges forrás. Futtasd az npm run render generálást, majd az npm run check ellenőrzést; a HTML-t ne szerkeszd kézzel.
+- A modul gazdája, időkerete, bemenete és kimenete a modul Markdown-forrásának áttekintőjében olvasható. Ezt is te frissíted, ha a jóváhagyott tartalom változik. A partnernek ne adj külön technikai adatlapkitöltési feladatot.
 - Más partner anyagát és a közös CSS-t csak az adott változtatásra kapott jóváhagyással módosítsd.
 - Adj helyi fájlhivatkozást a megnyitható HTML-hez. A partner a böngészőben ellenőriz, és beszélgetésben kéri a javítást.
 - Átadáskor sorold fel a változásokat, az ellenőrzéseket és a nyitott kérdéseket. Commit, push, pull request és publikálás csak kifejezett kérésre történjen.

@@ -1,5 +1,7 @@
 # Üzleti alapok és AI-működés
 
+**Állapot: draft.**
+
 [HTML-változat](01-business-foundations.html)
 
 ## Tartalom
@@ -57,11 +59,13 @@ Használd a [mentőútvonalat](#recovery). A kimeneteket a közös adatátadási
 
 ## Üzleti ajánlat és célcsoport kialakítása
 
+**Állapot: review.**
+
 01 / Üzleti alapok
 
 Egy célcsoport. Egy világos ajánlat. Használható alap a következő lépéshez.
 
-20 percPróbára vár · reviewWenova · Piya Csaba, Kemény Krisztián
+20 perc · Próbára vár · review · Wenova · Piya Csaba, Kemény Krisztián
 
 <a name="01-business-foundations.01-offer-and-audience--result"></a>
 
@@ -145,6 +149,8 @@ Az ellenőrzött `business-profile.md` a következő, minimális stratégiát ki
 
 ## Minimális marketing- és sales stratégia
 
+**Állapot: draft.**
+
 **Azonosító:** `01-business-foundations.02-sales-strategy` · **Állapot:** draft · **Időkeret:** 20 perc
 
 **Szerkesztői váz: a szakmai felelősnek ki kell dolgoznia és próbálnia.**
@@ -216,6 +222,8 @@ Választható bővítést csak a kötelező út kipróbálása után adjunk hozz
 <a name="01-business-foundations.03-ai-workspace"></a>
 
 ## Céges AI-munkautasítás és első eszközművelet
+
+**Állapot: draft.**
 
 **Azonosító:** `01-business-foundations.03-ai-workspace` · **Állapot:** draft · **Időkeret:** 20 perc
 

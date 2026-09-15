@@ -1,16 +1,17 @@
 # Shared instructions for Codex and Claude
 
-Read authoring/index.html before course work; its #ai-rules, #requirements and #review sections are the shared authoring rules.
-Plan and ask first. Edit only after the user's approval; continue routine steps within approved scope.
-Use English file and folder names, Hungarian participant and partner-facing prose.
+Read [authoring/README.md](authoring/README.md), especially #ai-rules, #requirements, #review and #automation.
+Plan and ask first. Edit after approval; continue routine steps within approved scope.
+Use English filenames and Hungarian participant/partner prose.
 
-- materials/: participant-only deliverables. One HTML per module, shared assets/notebook.css, starter-kit, scenarios and assistant.md. All local dependencies must stay inside materials/.
-- authoring/: the single authoring handbook, template and QA evidence.
-- operations/: the single organizing/marketing/sales handbook and private instructor notes.
-- Keep prose in the relevant handbook; create separate files only for independently used artifacts or actual review evidence.
-- Every HTML document has a GitHub-readable Markdown copy (index.html → README.md, other pages → matching .md). HTML is the editing source. After content changes, update copies using authoring/qa/sync-markdown.cjs and verify with --check. Keep Markdown navigation within the Markdown copies where available.
-- Instructor notes link to stable module/section IDs and embed the existing material. Never copy lesson text into notes, put private notes into participant HTML, or hide private content with CSS.
-- Keep lesson IDs, output contracts and recovery paths consistent. Do not present draft lessons or untested tools as ready.
-- Use exact brand name Blackhole Media. Never commit real participant/customer data or tokens.
-- Verify local links and the materials boundary using authoring/qa/check-repository.cjs; use validate.cjs for module checks. Report unperformed browser or human checks honestly.
-- Do not commit, push, create the public repository, publish, or send messages without explicit instruction. Public release copies only approved materials/ content, with a clean history.
+- Markdown is the source of truth. Read/edit Markdown handbooks, modules, instructor notes and presentation scripts. Keep source navigation on Markdown where available.
+- materials/: participant deliverables only. One Markdown per module, generated HTML, shared assets/notebook.css, starter-kit, scenarios and assistant.md. All local dependencies stay inside materials/.
+- authoring/: one handbook, template and QA evidence. operations/: organizing/marketing/sales handbook and instructor notes. Keep prose consolidated; separate only independently used artifacts and actual review records.
+- Instructors may submit Word, slides, their own HTML or other agreed formats. The editor and AI integrate them, prepare/reconcile Markdown and perform technical checks. Do not require instructors to use Git, Node or a particular AI tool. Common review and human trials still apply.
+- Generate HTML using npm run render. Never edit generated HTML directly. README.md maps to index.html; module/template/note files map to matching .html. Additional scripts start with <!-- presentation -->. Custom HTML uses <!-- presentation: custom --> in its matching Markdown; see the handbook for explicit correspondence review and acceptance.
+- Instructor notes refer to stable lesson/section IDs and embed existing material. Never duplicate lesson text or put instructor/organizing content in materials, even hidden by CSS or comments. Repository visibility is not an access boundary between folders.
+- Preserve lesson IDs, output contracts and recovery paths. Never present drafts, untested integrations or unperformed browser/human checks as ready. Use exact brand name Blackhole Media. No real participant/customer data or tokens.
+- You handle tooling: npm ci --ignore-scripts; npm run prepare:push before each branch push; npm test. Include changed Markdown and generated HTML in the same commit. npm run check must pass without modifying files. See #automation for changed-file options.
+- Main changes go through a pull request and the required Content quality gate. Never bypass protection. Technical merge success is not course acceptance or release permission.
+- Participant publication uses npm run release:package through the main-only release workflow. Only approved materials/ are packaged with current evidence and a matching fingerprint. Never fabricate human approval or accept a custom script on someone's behalf.
+- Commit, push, create a public repository, publish or send messages only when requested. Copy only the approved participant package into a separate release repository with clean history.

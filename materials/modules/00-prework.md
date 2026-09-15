@@ -1,5 +1,7 @@
 # Felkészülés
 
+**Állapot: draft.**
+
 [HTML-változat](00-prework.html)
 
 ## Tartalom
@@ -56,6 +58,8 @@ Használd a [mentőútvonalat](#recovery). A kimeneteket a közös adatátadási
 <a name="00-prework.01-business-profile"></a>
 
 ## Állítsd össze üzleti alaplapodat
+
+**Állapot: draft.**
 
 **Azonosító:** `00-prework.01-business-profile` · **Állapot:** draft · **Időkeret:** 10 perc
 
@@ -129,6 +133,8 @@ Választható bővítést csak a kötelező út kipróbálása után adjunk hozz
 
 ## Ellenőrizd a hozzáféréseidet
 
+**Állapot: draft.**
+
 **Azonosító:** `00-prework.02-account-check` · **Állapot:** draft · **Időkeret:** 10 perc
 
 **Szerkesztői váz: a szakmai felelősnek ki kell dolgoznia és próbálnia.**
@@ -200,6 +206,8 @@ Választható bővítést csak a kötelező út kipróbálása után adjunk hozz
 <a name="00-prework.03-coach-check"></a>
 
 ## Próbáld ki a tanulási kísérőt
+
+**Állapot: draft.**
 
 **Azonosító:** `00-prework.03-coach-check` · **Állapot:** draft · **Időkeret:** 10 perc
 
