@@ -70,7 +70,7 @@ Egy héttel korábban Claude vezetett kérdéssorával mindenki üzleti alaplapo
 | 10:45–11:00 | Szünet |  |
 | 11:00–12:30 | Márkaazonos kampány — Brandiseer | Márkabrief, két poszt, kép, rövid videó terve, publikálási terv |
 | 12:30–13:15 | Ebéd és szakmai beszélgetések |  |
-| 13:15–14:45 | Ügyfélszerzés és leadkezelés — Blackhole Media | Öt minősített mintalead, megkeresés, utánkövetés, feldolgozott válasz |
+| 13:15–14:45 | Ügyfélszerzés és leadkezelés — Blackhole Media | AI brain, öt minősített lead, kampány a Sales Botban, feldolgozott ügyfélválasz |
 | 14:45–15:00 | Szünet |  |
 | 15:00–16:30 | Ajánlatadás és belső átadás — EstiWise, Wenova közreműködésével | Igényfelmérés, ellenőrzött ajánlat, belső átadás |
 | 16:30–17:00 | Közös folyamatpróba — minden partner | Egy végigkövetett ügyféleset, működési állapotlap és másnapi terv |
