@@ -7,7 +7,6 @@
 ## Tartalom
 
 - [Cél, bemenet és eredmény](#overview)
-- [Bemutató: hogyan szereznek ügyfelet a sales csapatok?](#talk)
 - [Célközönség és öt minősített lead](#03-lead-generation.01-qualify-leads)
 - [Kampány és személyre szabott üzenetek](#03-lead-generation.02-personalize-outreach)
 - [Ügyfélválasz feldolgozása](#03-lead-generation.03-process-reply)
@@ -60,53 +59,6 @@ Használd a [mentőútvonalat](#recovery). A kimeneteket a közös adatátadási
 - Előadók: Bölcskei Balázs, Nagy Bogáta
 - Időkeret: 90 perc
 - Állapot: review – kidolgozva, oktatói próba és szakmai elfogadás szükséges.
-
-<a name="talk"></a>
-
-## Bemutató: hogyan szereznek ügyfelet a sales csapatok?
-
-**15 perc, a gyakorlat előtt.** Ez a vetített bemutató forgatókönyve; a gyakorlatok után is visszaolvashatod.
-
-<a name="talk-1"></a>
-
-### Így csinálták eddig
-
-1. **Adatbázis vásárlás:** például az Optentől, minden magyar céggel, e-mail-címmel és telefonszámmal.
-2. **Hideghívás:** a megvett listát végigtelefonálták.
-3. **E-mail kampány:** tömeges hideg e-mailek ugyanarra a listára.
-4. **Kézi keresés:** újabban Apollo-kreditekkel vagy egyesével a LinkedInen.
-
-<a name="talk-2"></a>
-
-### Miért nem elég ma már?
-
-- **Pontatlan célzás:** az adatbázist csak számok alapján lehet szűrni (létszám, árbevétel), ez nem fedi a valóságot.
-- **Romló kézbesítés:** a Gmail és az Outlook egyre szigorúbban szűri a hideg e-maileket.
-- **Egy üzenet kevés:** a konverzió egy jól időzített üzenetsorozatból jön, nem egyetlen megkeresésből.
-
-<a name="talk-3"></a>
-
-### Miért a LinkedIn?
-
-Ott van a célközönség, a hangnem személyesebb, és tartalommal bizalmat építhetsz. Aki bekerül a kapcsolati hálódba, utána a posztjaidat is látja: a hálózat hosszú távú befektetés. A Blackhole Media 2017 óta foglalkozik LinkedIn-megkeresésekkel.
-
-<a name="talk-4"></a>
-
-### A rejtett szivárgás: a válaszkezelés
-
-A legtöbb lead nem a megkeresésnél vész el, hanem utána. Közel száz együttműködésben azt láttuk, hogy a sales csapatok nem kezelik rendesen a válaszokat, és nem követik a leadeket. Kisebb cégeknél sokszor maga a cégvezető salesel, sok más feladata mellett. Külön CRM-re pedig extra költséget fizetnek.
-
-<a name="talk-5"></a>
-
-### Mit csinál a Sales Bot?
-
-| Mikor? | Mit végez el? |
-| --- | --- |
-| Kampány előtt | Felépíti a célközönséget: nem kell adatbázist vásárolni. |
-| Kampány közben | Bizonyított sablonokból megírja az üzeneteket, többféle kampánytípussal. |
-| Kampány után | Kategorizálja a válaszokat, válaszjavaslatot ír, időpontot egyeztet, CRM-ben követ. |
-
-Mindez az **AI brainre** épül: ebben tárolja a Sales Bot a céged adatait, ajánlatait és ideális ügyfelét, és ez alapján ír a nevedben. Magyar rendszer: jól ír magyarul, tegeződve vagy magázódva, és ismeri a magyar üzleti szokásokat, például hogy sokan szívesebben egyeztetnek időpontot kézzel.
 
 <a name="03-lead-generation.01-qualify-leads"></a>
 

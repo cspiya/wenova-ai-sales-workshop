@@ -28,7 +28,38 @@ Előadók: Bölcskei Balázs (bemutató és gyakorlat), Nagy Bogáta (mentor a g
 
 ### Bemutató
 
-[Bemutató forgatókönyve](../../materials/modules/03-lead-generation.md#talk). Csaba kérése: az elején néhány dia arról, miért jó, hogyan működik, mik az alternatívák, és hogyan szokták ezt csinálni a sales csapatok. A vetített diák ugyanezt a sorrendet követik.
+15 perc, a gyakorlat előtt. Csaba kérése: az elején néhány dia arról, miért jó, hogyan működik, mik az alternatívák, és hogyan szokták ezt csinálni a sales csapatok. A vetített diák ezt a sorrendet követik.
+
+#### Így csinálták eddig
+
+1. **Adatbázis vásárlás:** például az Optentől, minden magyar céggel, e-mail-címmel és telefonszámmal.
+2. **Hideghívás:** a megvett listát végigtelefonálták.
+3. **E-mail kampány:** tömeges hideg e-mailek ugyanarra a listára.
+4. **Kézi keresés:** újabban Apollo-kreditekkel vagy egyesével a LinkedInen.
+
+#### Miért nem elég ma már?
+
+- **Pontatlan célzás:** az adatbázist csak számok alapján lehet szűrni (létszám, árbevétel), ez nem fedi a valóságot.
+- **Romló kézbesítés:** a Gmail és az Outlook egyre szigorúbban szűri a hideg e-maileket.
+- **Egy üzenet kevés:** a konverzió egy jól időzített üzenetsorozatból jön, nem egyetlen megkeresésből.
+
+#### Miért a LinkedIn?
+
+Ott van a célközönség, a hangnem személyesebb, és tartalommal bizalmat építhetsz. Aki bekerül a kapcsolati hálódba, utána a posztjaidat is látja: a hálózat hosszú távú befektetés. A Blackhole Media 2017 óta foglalkozik LinkedIn-megkeresésekkel.
+
+#### A rejtett szivárgás: a válaszkezelés
+
+A legtöbb lead nem a megkeresésnél vész el, hanem utána. Közel száz együttműködésben azt láttuk, hogy a sales csapatok nem kezelik rendesen a válaszokat, és nem követik a leadeket. Kisebb cégeknél sokszor maga a cégvezető salesel, sok más feladata mellett. Külön CRM-re pedig extra költséget fizetnek.
+
+#### Mit csinál a Sales Bot?
+
+| Mikor? | Mit végez el? |
+| --- | --- |
+| Kampány előtt | Felépíti a célközönséget: nem kell adatbázist vásárolni. |
+| Kampány közben | Bizonyított sablonokból megírja az üzeneteket, többféle kampánytípussal. |
+| Kampány után | Kategorizálja a válaszokat, válaszjavaslatot ír, időpontot egyeztet, CRM-ben követ. |
+
+Mindez az **AI brainre** épül: ebben tárolja a Sales Bot a céged adatait, ajánlatait és ideális ügyfelét, és ez alapján ír a nevedben. Magyar rendszer: jól ír magyarul, tegeződve vagy magázódva, és ismeri a magyar üzleti szokásokat, például hogy sokan szívesebben egyeztetnek időpontot kézzel.
 
 <a name="notes-3"></a>
 
@@ -66,7 +97,6 @@ A [customer-brief.md](../../materials/modules/03-lead-generation.md#03-lead-gene
 
 A hivatkozások a bal oldali tananyagnézetet a megfelelő szakaszra állítják.
 
-- [Bemutató: hogyan szereznek ügyfelet a sales csapatok?](../../materials/modules/03-lead-generation.md#talk)
 - [Célközönség és öt minősített lead](../../materials/modules/03-lead-generation.md#03-lead-generation.01-qualify-leads)
 - [Kampány és személyre szabott üzenetek](../../materials/modules/03-lead-generation.md#03-lead-generation.02-personalize-outreach)
 - [Ügyfélválasz feldolgozása](../../materials/modules/03-lead-generation.md#03-lead-generation.03-process-reply)
