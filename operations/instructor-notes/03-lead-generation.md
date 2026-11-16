@@ -23,6 +23,12 @@ Előadók: Bölcskei Balázs (bemutató és gyakorlat), Nagy Bogáta (mentor a g
 - A workshop-profilok **nincsenek LinkedInhez kötve**; a leadlista 100 főben van korlátozva, hogy senki ne húzza le a teljes adatbázist, és semmi ne menjen ki.
 - Ellenőrizni kell, hogy az MCP-n keresztül működik-e az AI brain kitöltése, a lista- és kampánylétrehozás, valamint a válaszok listázása.
 - Elő kell készíteni a gyakorló válaszok generálását: kampánylétrehozás után résztvevőnként kb. 10 kitalált lead-választ küldünk be.
+- MCP-próba (2026-11-16, tesztfiókban): a piszkozat kampány, a háttérben futó leadkeresés, a lead státusza és jegyzete, valamint az üzenetsorozat mentése és visszaolvasása működik. A kampányt MCP-ről nem lehet elindítani.
+- Szerdáig el kell készülnie az AI brain író eszközének az MCP-ben; ma csak olvasni lehet. Ha nincs kész, az 1. lépésben a Claude megírja a szöveget, és a résztvevő a platformon illeszti be.
+- A gyakorló válaszokat a platform oldalán kell beküldeni; erre nincs MCP-eszköz.
+- A résztvevők csak a saját workspace-ükhöz kötött tokent kapjanak. A kivetítőn ne admin tokennel mutassunk, mert az minden ügyfél-workspace-t látja.
+- A cégméret-szűrő a próbán pontatlan volt (11–50 főre nagyvállalatok is jöttek): ez jó példa a minősítés fontosságára, a gyakorlat elején mondjuk el.
+- A leadkvótát ellenőrizni kell: a kis csomag havi 500 lead, a workshopon fejenként legfeljebb 100.
 
 <a name="notes-2"></a>
 
