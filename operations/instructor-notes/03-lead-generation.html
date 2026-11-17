@@ -6,26 +6,97 @@
 <h1>03-lead-generation</h1>
 <p><a href="03-lead-generation.html">HTML-változat</a></p>
 <p><a href="../../materials/modules/03-lead-generation.html" target="lesson">Kapcsolódó tananyag</a></p>
-<p>Belső oktatói jegyzet · draft</p>
-<p><strong>Státusz: draft.</strong></p>
-<p>15 perc bemutató + 3 × 20 perc gyakorlat + 15 perc ellenőrzés és pótlás.</p>
+<p>Belső oktatói jegyzet · review</p>
+<p><strong>Státusz: review – oktatói próbára vár.</strong></p>
+<p>Előadók: Bölcskei Balázs (bemutató és gyakorlat), Nagy Bogáta (mentor a gyakorlat alatt, majd a záró sales blokk). Csaba kérésére ketten jövünk, mert a résztvevők egyszerű lépéseken is elakadnak.</p>
+<p>15 perc bemutató + 3 × 20 perc gyakorlat + 15 perc eredmények, ajánlat és kérdések.</p>
 <a id="notes-1"></a>
-<h3>Bemutató</h3>
-<p>A partner dolgozza ki a bemutatót a felsorolt bemenetből a kimenetig. Először mutasson kész mintát.</p>
+<h3>Előkészítés a workshop előtt</h3>
+<ul>
+<li>A résztvevők Sales Bot regisztrációját mi töltjük ki előre; mindenkinek legyen profilja.</li>
+<li>A belépő linket a workshop előtt e-mailben ki kell küldeni.</li>
+<li>A workshop-profilok <strong>nincsenek LinkedInhez kötve</strong>; a leadlista 100 főben van korlátozva, hogy senki ne húzza le a teljes adatbázist, és semmi ne menjen ki.</li>
+<li>Ellenőrizni kell, hogy az MCP-n keresztül működik-e az AI brain kitöltése, a lista- és kampánylétrehozás, valamint a válaszok listázása.</li>
+<li>Elő kell készíteni a gyakorló válaszok generálását: kampánylétrehozás után résztvevőnként kb. 10 kitalált lead-választ küldünk be.</li>
+<li>MCP-próba (2026-11-16, tesztfiókban): a piszkozat kampány, a háttérben futó leadkeresés, a lead státusza és jegyzete, valamint az üzenetsorozat mentése és visszaolvasása működik. A kampányt MCP-ről nem lehet elindítani.</li>
+<li>Szerdáig el kell készülnie az AI brain író eszközének az MCP-ben; ma csak olvasni lehet. Ha nincs kész, az 1. lépésben a Claude megírja a szöveget, és a résztvevő a platformon illeszti be.</li>
+<li>A gyakorló válaszokat a platform oldalán kell beküldeni; erre nincs MCP-eszköz.</li>
+<li>A résztvevők csak a saját workspace-ükhöz kötött tokent kapjanak. A kivetítőn ne admin tokennel mutassunk, mert az minden ügyfél-workspace-t látja.</li>
+<li>A cégméret-szűrő a próbán pontatlan volt (11–50 főre nagyvállalatok is jöttek): ez jó példa a minősítés fontosságára, a gyakorlat elején mondjuk el.</li>
+<li>A leadkvótát ellenőrizni kell: a kis csomag havi 500 lead, a workshopon fejenként legfeljebb 100.</li>
+</ul>
 <a id="notes-2"></a>
-<h3>Gyakorlat</h3>
-<p>Minden leckénél mondd meg az aktuális feladatot, a mentendő eredményt és a kész feltételt. Öt perc sikertelen hibaelhárítás után ajánld fel a mentőcsomagot; a saját munka maradjon meg.</p>
+<h3>Bemutató</h3>
+<p>15 perc, a gyakorlat előtt. Csaba kérése: az elején néhány dia arról, miért jó, hogyan működik, mik az alternatívák, és hogyan szokták ezt csinálni a sales csapatok. A vetített diák ezt a sorrendet követik.</p>
+<h4 id="így-csinálták-eddig">Így csinálták eddig</h4>
+<ol>
+<li><strong>Adatbázis vásárlás:</strong> például az Optentől, minden magyar céggel, e-mail-címmel és telefonszámmal.</li>
+<li><strong>Hideghívás:</strong> a megvett listát végigtelefonálták.</li>
+<li><strong>E-mail kampány:</strong> tömeges hideg e-mailek ugyanarra a listára.</li>
+<li><strong>Kézi keresés:</strong> újabban Apollo-kreditekkel vagy egyesével a LinkedInen.</li>
+</ol>
+<h4 id="miért-nem-elég-ma-már">Miért nem elég ma már?</h4>
+<ul>
+<li><strong>Pontatlan célzás:</strong> az adatbázist csak számok alapján lehet szűrni (létszám, árbevétel), ez nem fedi a valóságot.</li>
+<li><strong>Romló kézbesítés:</strong> a Gmail és az Outlook egyre szigorúbban szűri a hideg e-maileket.</li>
+<li><strong>Egy üzenet kevés:</strong> a konverzió egy jól időzített üzenetsorozatból jön, nem egyetlen megkeresésből.</li>
+</ul>
+<h4 id="miért-a-linkedin">Miért a LinkedIn?</h4>
+<p>Ott van a célközönség, a hangnem személyesebb, és tartalommal bizalmat építhetsz. Aki bekerül a kapcsolati hálódba, utána a posztjaidat is látja: a hálózat hosszú távú befektetés. A Blackhole Media 2017 óta foglalkozik LinkedIn-megkeresésekkel.</p>
+<h4 id="a-rejtett-szivárgás-a-válaszkezelés">A rejtett szivárgás: a válaszkezelés</h4>
+<p>A legtöbb lead nem a megkeresésnél vész el, hanem utána. Közel száz együttműködésben azt láttuk, hogy a sales csapatok nem kezelik rendesen a válaszokat, és nem követik a leadeket. Kisebb cégeknél sokszor maga a cégvezető salesel, sok más feladata mellett. Külön CRM-re pedig extra költséget fizetnek.</p>
+<h4 id="mit-csinál-a-sales-bot">Mit csinál a Sales Bot?</h4>
+<div class="table-wrap" role="region" aria-label="Táblázat" tabindex="0"><table>
+<thead>
+<tr>
+<th>Mikor?</th>
+<th>Mit végez el?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kampány előtt</td>
+<td>Felépíti a célközönséget: nem kell adatbázist vásárolni.</td>
+</tr>
+<tr>
+<td>Kampány közben</td>
+<td>Bizonyított sablonokból megírja az üzeneteket, többféle kampánytípussal.</td>
+</tr>
+<tr>
+<td>Kampány után</td>
+<td>Kategorizálja a válaszokat, válaszjavaslatot ír, időpontot egyeztet, CRM-ben követ.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Mindez az <strong>AI brainre</strong> épül: ebben tárolja a Sales Bot a céged adatait, ajánlatait és ideális ügyfelét, és ez alapján ír a nevedben. Magyar rendszer: jól ír magyarul, tegeződve vagy magázódva, és ismeri a magyar üzleti szokásokat, például hogy sokan szívesebben egyeztetnek időpontot kézzel.</p>
 <a id="notes-3"></a>
-<h3>Partneri feladatok</h3>
-<p>Rögzítendő: eszközbemutató, tényleges kapcsolatok, időmért próba, gyakori hibák és mentorbeosztás.</p>
+<h3>Gyakorlat</h3>
+<p>Csaba kérése: ne a platformon kattintgassunk, hanem mindent a Claude-ban csináljunk. A platformot csak a kivetítőn mutatjuk: a leadek átnézését, törlését, a CSV-feltöltést, a szűrőket (senioritás, pozíció, cégméret) és a beérkező üzeneteket a válaszjavaslatokkal.</p>
+<ul>
+<li><a href="../../materials/modules/03-lead-generation.html#03-lead-generation.01-qualify-leads--explanation" target="lesson">AI brain és leadlista</a>: a cégméret-szűrőnél kell egy kis elmélet, mert a Claude meg fogja kérdezni, és a legtöbben nem tudják, hogyan működnek a szűrők.</li>
+<li><a href="../../materials/modules/03-lead-generation.html#03-lead-generation.02-personalize-outreach--explanation" target="lesson">Kampány</a>: itt mutassuk be a kampánytípusainkat. Mindenki átnézi a saját üzeneteit, és belemódosíthat.</li>
+<li><a href="../../materials/modules/03-lead-generation.html#03-lead-generation.03-process-reply--explanation" target="lesson">Válaszkezelés</a>: MCP-ben csak kilistázzuk a válaszokat; a válaszjavaslatokat az inboxban mutatjuk meg. Utána röviden: naptár- és e-mail-bekötés, időpontfoglalás, CRM pipeline.</li>
+</ul>
+<p>Gyakori elakadás: Teams-meetingbe lépésnél be kell írni a nevet. Öt perc sikertelen hibaelhárítás után ajánld fel a mentőcsomagot; a saját munka maradjon meg.</p>
 <a id="notes-4"></a>
+<h3>Záró sales blokk (Bogi)</h3>
+<p>A gyakorlat után Bogi veszi át:</p>
+<ol>
+<li><strong>Eredmények:</strong> ügyféllogók, képernyőképek a saját rendszerből, hány leadet hoztunk június óta. Csak ellenőrzött számot mutatunk.</li>
+<li><strong>Mire lehet számítani:</strong> árazás, feltételek és a workshop-kedvezmény.</li>
+<li><strong>Ajándék:</strong> LinkedIn profil optimalizáció.</li>
+<li><strong>Jelentkezés:</strong> QR kód, ami egy e-mailre vezet („Wenova-kedvezményt kérek”), vagy személyesen: estig ott vagyunk.</li>
+<li>Kérdések.</li>
+</ol>
+<p>Nyitott, a workshop előtt eldöntendő: az árazás és a kedvezmény pontos összege; hogy a Black Friday ajánlatot (25% kedvezmény a beállításra) is megemlítjük-e, vagy csak 1–2 hét után küldjük azoknak, akik nem reagálnak; a június óta hozott leadek száma; a QR kód célcímzettje.</p>
+<a id="notes-5"></a>
 <h3>Átadás</h3>
-<p>Ellenőrizd a tananyag áttekintőjében felsorolt eredményeket; a következő lépés gazdája próbálja ki az átvételt.</p>
+<p>A <a href="../../materials/modules/03-lead-generation.html#03-lead-generation.03-process-reply--handoff" target="lesson">customer-brief.md</a> a 04-es modul (EstiWise) bemenete; a következő modul gazdája próbálja ki az átvételt.</p>
 <h2 id="kapcsolódó-tananyagrészek">Kapcsolódó tananyagrészek</h2>
 <p>A hivatkozások a bal oldali tananyagnézetet a megfelelő szakaszra állítják.</p>
 <ul>
-<li><a href="../../materials/modules/03-lead-generation.html#03-lead-generation.01-qualify-leads" target="lesson">Öt lead minősítése</a></li>
-<li><a href="../../materials/modules/03-lead-generation.html#03-lead-generation.02-personalize-outreach" target="lesson">Személyre szabott megkeresés és utánkövetés</a></li>
+<li><a href="../../materials/modules/03-lead-generation.html#03-lead-generation.01-qualify-leads" target="lesson">Célközönség és öt minősített lead</a></li>
+<li><a href="../../materials/modules/03-lead-generation.html#03-lead-generation.02-personalize-outreach" target="lesson">Kampány és személyre szabott üzenetek</a></li>
 <li><a href="../../materials/modules/03-lead-generation.html#03-lead-generation.03-process-reply" target="lesson">Ügyfélválasz feldolgozása</a></li>
 </ul>
 </main></div>
