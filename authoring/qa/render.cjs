@@ -48,7 +48,7 @@ function rewrite(href, source, pages) {
 const PARTNERS = [
   {key:'wenova', name:'Wenova', role:'Szervező · AI-működés', logo:'wenova-wordmark.png', w:1060, h:124},
   {key:'brandiseer', name:'Brandiseer', role:'Márkaazonos tartalom', logo:'brandiseer-icon.png', w:167, h:192, word:true},
-  {key:'blackhole', name:'Blackhole Media', role:'Ügyfélszerzés · Sales-bot', logo:'black-hole-media-logo.png', w:854, h:80},
+  {key:'blackhole', name:'Blackhole Media', role:'Ügyfélszerzés · Sales Bot', logo:'black-hole-media-logo.png', w:854, h:80},
   {key:'estiwise', name:'EstiWise', role:'Ajánlatadás 0–24', logo:'estiwise-logo-feher.svg', w:509, h:144},
 ];
 const LEAD = {'00':'wenova','01':'wenova','02':'brandiseer','03':'blackhole','04':'estiwise','05':'wenova'};
