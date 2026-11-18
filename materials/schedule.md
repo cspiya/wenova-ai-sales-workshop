@@ -23,18 +23,18 @@ A **Cég-DNS-ed** (kinek adsz el, mit és milyen hangon) minden blokk bemenete. 
 
 | Idő | Blokk | Partner | Előadók | Mit építesz |
 | --- | --- | --- | --- | --- |
-| Előtte | [Felkészülés](modules/00-prework.md) | Wenova | Wenova csapat | Hozzáférések ellenőrzése, választott saját cég vagy mintavállalkozás |
+| Előtte | [Felkészülés](modules/00-prework.md) | Wenova | Wenova csapat | Claude-projekt a sablonokkal, levelező- és Google-kapcsolat, CRM-tábla, Sales Bot- és EstiWise-belépés, saját források |
 | 08:30–09:00 | Érkezés, technikai check | Wenova | Wenova csapat | Működő gép, Claude-fiók és megnyitott munkacsomag |
 | 09:00–09:20 | Nyitás | Wenova | Piya Csaba | A nap célja és fonala: egy ügyfél útja a Cég-DNS-től az ajánlatig |
-| 09:20–10:30 | [1. Cég-DNS és saját AI-csapat](modules/01-business-foundations.md) | Wenova | Piya Csaba, Kemény Krisztián | Cég-DNS, minimális sales-stratégia, készítő és ellenőrző agentek munkautasítással |
+| 09:20–10:30 | [1. Cég-DNS és saját AI-csapat](modules/01-business-foundations.md) | Wenova | Piya Csaba, Kemény Krisztián | Cég-DNS forrásokkal, hangprofil a küldött leveleidből, saját AI-csapat (Karmester, Író, Ellenőr) első próbafutással |
 | 10:30–10:45 | Szünet |  |  |  |
 | 10:45–12:15 | [2. Tartalom a céged hangján](modules/02-content-marketing.md) | Brandiseer | Sorok Dániel | Márkabrief, posztok, képterv és rövid videó vázlata, publikálási terv |
 | 12:15–13:00 | Ebéd |  |  |  |
 | 13:00–14:30 | [3. LinkedIn-ügyfélszerzés és lead-kezelés](modules/03-lead-generation.md) | Blackhole Media / Sales-bot | Bölcskei Balázs, Nagy Bogáta | Minősített leadlista, személyre szabott megkeresés és utánkövetés, feldolgozott válasz |
 | 14:30–14:45 | Szünet |  |  |  |
 | 14:45–16:15 | [4. Igényfelmérés és ajánlatadás 0–24-ben](modules/04-proposals-handoff.md) | EstiWise / CommIT Smart | Gyömrei Máté | Szolgáltatáskatalógus és árazási szabály, ellenőrzött ajánlattervezet, belső átadás |
-| 16:15–16:50 | [5. Folyamatpróba: levelek, CRM, egy ügyfél végig](modules/05-pipeline-review.md) | Wenova | Kemény Krisztián, Piya Csaba | Egy végigkövetett ügyféleset: levelek, CRM-bejegyzés, működési állapotlap |
-| 16:50–17:00 | Zárás | Wenova |  | Másnapi terv: az első lépés a saját folyamatodban |
+| 16:15–16:50 | [5. Folyamatpróba: levelek, CRM, egy ügyfél végig](modules/05-pipeline-review.md) | Wenova | Kemény Krisztián, Piya Csaba | Postás és válaszpiszkozat a saját hangodon, frissített CRM, egy ügyfél végig a Karmesterrel, heti mérés és visszacsatolás |
+| 16:50–17:00 | Zárás | Wenova |  | Indulási terv: három holnapi lépés és heti rutin |
 
 <a name="partners"></a>
 

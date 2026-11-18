@@ -6,31 +6,74 @@
 <header class="page-hero">
 <h1>00-prework</h1>
 <p class="hero-links"><a href="../../materials/modules/00-prework.html" target="lesson">Kapcsolódó tananyag</a></p>
-<p class="kicker">Belső oktatói jegyzet · draft</p>
-<p class="state"><strong>Státusz: draft.</strong></p>
-<p class="lead">Workshop előtt: 20–30 perc üzleti felkészülés és külön technikai ellenőrzés.</p>
-<div class="block-banner block-banner--wenova"><p class="block-banner__when"><span class="chip chip--time">Előtte</span> <span class="block-banner__title">A nap menetében: Felkészülés</span></p><p class="block-banner__lead"><span class="logo-tile"><img class="logo logo--wenova" src="../../materials/assets/logos/wenova-wordmark.png" alt="Wenova" width="239" height="28"></span><span><span class="block-banner__label">Blokkgazda</span> <strong>Wenova</strong> · Wenova csapat</span></p><p class="block-banner__builds"><span class="block-banner__label">Ezt építed</span> Hozzáférések ellenőrzése, választott saját cég vagy mintavállalkozás</p></div>
+<p class="kicker">Belső oktatói jegyzet · review</p>
+<p class="state"><strong>Státusz: review.</strong> Felkészülés a workshop előtt, technikai pult 08:30–09:00.</p>
+<div class="block-banner block-banner--wenova"><p class="block-banner__when"><span class="chip chip--time">Előtte</span> <span class="block-banner__title">A nap menetében: Felkészülés</span></p><p class="block-banner__lead"><span class="logo-tile"><img class="logo logo--wenova" src="../../materials/assets/logos/wenova-wordmark.png" alt="Wenova" width="239" height="28"></span><span><span class="block-banner__label">Blokkgazda</span> <strong>Wenova</strong> · Wenova csapat</span></p><p class="block-banner__builds"><span class="block-banner__label">Ezt építed</span> Claude-projekt a sablonokkal, levelező- és Google-kapcsolat, CRM-tábla, Sales Bot- és EstiWise-belépés, saját források</p></div>
 </header>
-<div class="cell cell--how">
 <a id="notes-1"></a>
-<h3 class="cell-title">Bemutató</h3>
-<p>A partner dolgozza ki a bemutatót a felsorolt bemenetből a kimenetig. Először mutasson kész mintát.</p>
-</div>
+<h3>Előző nap</h3>
+<ul>
+<li>A felkészülési linket a résztvevők 2026-11-18-án kapják meg. A kísérőlevélben külön sor: fizetős Claude kell, és a Sales Bot belépő e-mail a Blackhole Mediától jön.</li>
+<li>Tisztázandó és a pultnál rögzítendő: a tananyagcsomag letöltési helye (materials mappa), az EstiWise Claude-kapcsolat pontos leírása (Máté küldi), van-e Brandiseer-előregisztráció.</li>
+<li>Demófiókok listája: EstiWise (Máté), Sales Bot tartalék fiók (Balázs, Bogáta).</li>
+</ul>
 <a id="notes-2"></a>
-<h3>Gyakorlat</h3>
-<p>Minden leckénél mondd meg az aktuális feladatot, a mentendő eredményt és a kész feltételt. Öt perc sikertelen hibaelhárítás után ajánld fel a mentőcsomagot; a saját munka maradjon meg.</p>
+<h3>Technikai pult 08:30–09:00</h3>
+<p>Sorrend: <a href="../../materials/modules/00-prework.html#00-prework.02-account-check--steps" target="lesson">projekt és connectorok</a> → <a href="../../materials/modules/00-prework.html#00-prework.03-partner-accounts--steps" target="lesson">partnerfiókok</a> → <a href="../../materials/modules/00-prework.html#00-prework.04-coach-check--prompt" target="lesson">indulási próba</a>. Egy résztvevőre legfeljebb 5 perc; ami addig nem megy, az a kézi úton indul, és a blokkban a körbejáró oktató pótolja.</p>
+<p>Pultlap (papíron, név nélkül, asztalszámmal): projekt ✅/⚠️ · levelező ✅/⚠️ · Google-tábla ✅/⚠️ · Sales Bot ✅/⚠️ · EstiWise ✅/⚠️.</p>
 <a id="notes-3"></a>
-<h3>Partneri feladatok</h3>
-<p>Rögzítendő: eszközbemutató, tényleges kapcsolatok, időmért próba, gyakori hibák és mentorbeosztás.</p>
+<h3>Gyakori hibák</h3>
+<div class="table-wrap" role="region" aria-label="Táblázat" tabindex="0"><table>
+<thead>
+<tr>
+<th>Hiba</th>
+<th>Tünet</th>
+<th>Megoldás a pultnál</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ingyenes csomag</td>
+<td>Nincs Projects vagy fájlkészítés</td>
+<td>Előfizetés helyben (Pro), vagy párban dolgozik egy másik résztvevővel</td>
+</tr>
+<tr>
+<td>Fájlkészítés kikapcsolva</td>
+<td>A Claude nem ad letölthető fájlt</td>
+<td>Settings → Capabilities → Create and edit files</td>
+</tr>
+<tr>
+<td>Céges Microsoft 365</td>
+<td>A connector rendszergazdai jóváhagyást kér</td>
+<td>Nem oldjuk meg helyben: bemásolt levelek, <a href="../../materials/scenarios/office-plants/outputs/mailbox-sample.md">mintapostafiók</a></td>
+</tr>
+<tr>
+<td>Google Sheets nincs a connectorlistában</td>
+<td>A Claude nem találja a táblát</td>
+<td>CSV a projektben, kézi bemásolás (<a href="../../materials/modules/00-prework.html#00-prework.04-coach-check--help" target="lesson">help</a>)</td>
+</tr>
+<tr>
+<td>Projektutasítás nincs mentve</td>
+<td>Az indítómondatokat nem ismeri fel</td>
+<td>Mentés ellenőrzése, új beszélgetés</td>
+</tr>
+<tr>
+<td>Régi és új fájl egyszerre a projektben</td>
+<td>A Claude a sablont olvassa a kitöltött DNS helyett</td>
+<td>A sablon törlése a projekt tudásából</td>
+</tr>
+</tbody>
+</table></div>
 <a id="notes-4"></a>
-<h3>Átadás</h3>
-<p>Ellenőrizd a tananyag áttekintőjében felsorolt eredményeket; a következő lépés gazdája próbálja ki az átvételt.</p>
+<h3>Adatvédelem</h3>
+<p>A pultnál is ismételd el: jelszó és belépőkód nem kerül a Claude-ba; céges levelezés csak akkor, ha a résztvevőnek van rá engedélye. Ha bizonytalan, mintával dolgozik. Az <a href="../../materials/modules/00-prework.html#00-prework.01-business-profile--decisions" target="lesson">adatkezelési szabályok</a> a tananyagban vannak; a jegyzet nem ismétli őket.</p>
 <h2 id="kapcsolódó-tananyagrészek">Kapcsolódó tananyagrészek</h2>
 <p>A hivatkozások a bal oldali tananyagnézetet a megfelelő szakaszra állítják.</p>
 <ul>
-<li><a href="../../materials/modules/00-prework.html#00-prework.01-business-profile" target="lesson">Állítsd össze üzleti alaplapodat</a></li>
-<li><a href="../../materials/modules/00-prework.html#00-prework.02-account-check" target="lesson">Ellenőrizd a hozzáféréseidet</a></li>
-<li><a href="../../materials/modules/00-prework.html#00-prework.03-coach-check" target="lesson">Próbáld ki a tanulási kísérőt</a></li>
+<li><a href="../../materials/modules/00-prework.html#00-prework.01-business-profile" target="lesson">Gyűjtsd össze a saját forrásaidat</a></li>
+<li><a href="../../materials/modules/00-prework.html#00-prework.02-account-check" target="lesson">Claude, projekt és connectorok</a></li>
+<li><a href="../../materials/modules/00-prework.html#00-prework.03-partner-accounts" target="lesson">Partnerfiókok</a></li>
+<li><a href="../../materials/modules/00-prework.html#00-prework.04-coach-check" target="lesson">Indulási próba és CRM-tábla</a></li>
 </ul>
 </main></div>
 <footer class="site-foot"><div class="partner-band partner-band--foot has-lead"><p class="partner-band__label">Wenova × Brandiseer × Blackhole Media × EstiWise</p><ul class="partner-band__list" aria-label="Partnerek"><li class="partner partner--wenova is-lead"><span class="partner__logo"><img class="logo logo--wenova" src="../../materials/assets/logos/wenova-wordmark.png" alt="Wenova" width="239" height="28"></span><span class="partner__role"><span class="partner__lead">Blokkgazda</span> · Szervező · AI-működés</span></li><li class="partner partner--brandiseer"><span class="partner__logo"><img class="logo logo--brandiseer" src="../../materials/assets/logos/brandiseer-icon.png" alt="" width="24" height="28"><span class="logo-word">Brandiseer</span></span><span class="partner__role">Márkaazonos tartalom</span></li><li class="partner partner--blackhole"><span class="partner__logo"><img class="logo logo--blackhole" src="../../materials/assets/logos/black-hole-media-logo.png" alt="Blackhole Media" width="299" height="28"></span><span class="partner__role">Ügyfélszerzés · Sales-bot</span></li><li class="partner partner--estiwise"><span class="partner__logo"><img class="logo logo--estiwise" src="../../materials/assets/logos/estiwise-logo-feher.svg" alt="EstiWise" width="99" height="28"></span><span class="partner__role">Ajánlatadás 0–24</span></li></ul></div><p class="site-foot__meta">AI Sales &amp; Marketing Workshop · 2026. november 19. · CEU, Budapest · a Wenova szervezésében</p></footer>
