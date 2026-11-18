@@ -7,6 +7,7 @@ import { FIELDS, generate as genPersona, summary as personaSummary } from "./per
 import { sellerInstructions, buyerInstructions, vars, analysisRequest, generateRequest, refineRequest, parseJsonLoose, stripFences, lintScript, ANALYSIS_KEYS, isFarewell } from "./prompts.js";
 import { Conversation, startHuman, startVoiceDuel, runTextDuel, CANCELLED } from "./engine.js";
 import { $, $$, esc, uid, fmtTime, clock, diffLines, download, hashStr, median } from "./util.js";
+import { normConv, normScript, normAnalysis } from "./records.js";
 
 // ------------------------------------------------------------------ settings (non-secret: localStorage; keys: session/local)
 const LS = { get(k, d) { try { const v = localStorage.getItem("vl." + k); return v == null ? d : JSON.parse(v); } catch { return d; } },
@@ -33,6 +34,7 @@ let scripts = [], activeId = null, selectedId = null;
 let persona = null, locks = {};
 let run = null;            // { conv, kind, stop() }
 let lastAnalysis = null;
+let brokerRejected = false;   // set on a 401 from the broker; cleared when the access code changes
 
 const servedByHelper = () => /^http:\/\/(127\.0\.0\.1|localhost):\d+$/.test(location.origin);
 
@@ -40,10 +42,14 @@ const servedByHelper = () => /^http:\/\/(127\.0\.0\.1|localhost):\d+$/.test(loca
 async function resolveCreds() {
   const tries = [];
   const s = settings.source;
-  if ((s === "auto" || s === "broker") && settings.brokerUrl) tries.push(new BrokerSource(settings.brokerUrl, keys.accessCode, "broker"));
+  // Auto mode uses the broker only with an access code (its health check needs none, the credential calls do),
+  // and not after it rejected the code; an explicit "broker" choice always tries it.
+  const skipped = [];
+  if (settings.brokerUrl && (s === "broker" || (s === "auto" && keys.accessCode && !brokerRejected))) tries.push(new BrokerSource(settings.brokerUrl, keys.accessCode, "broker"));
+  else if (s === "auto" && settings.brokerUrl) skipped.push(brokerRejected ? "távoli broker: elutasította a hozzáférési kódot, kihagyva" : "távoli broker: nincs megadva hozzáférési kód, kihagyva");
   if (s === "local" || (s === "auto" && servedByHelper())) tries.push(new BrokerSource(servedByHelper() && s === "auto" ? location.origin : settings.localUrl, keys.accessCode, "local"));
   if ((s === "auto" || s === "keys") && (keys.openai || keys.google || keys.elevenlabs)) tries.push(new KeySource(keys, CONFIG.textModels));
-  creds = null; health = null; const fails = [];
+  creds = null; health = null; const fails = [...skipped];
   let fallback = null;   // a reachable source without any provider key: used only if nothing better answers
   for (const c of tries) {
     try {
@@ -54,6 +60,12 @@ async function resolveCreds() {
     } catch (e) { fails.push(c.label + ": " + e.message); }
   }
   if (!creds && fallback) [creds, health] = fallback;
+  if (creds && creds.kind === "broker") creds.onUnauthorized = () => {   // a wrong code shows up only on a real call
+    if (brokerRejected) return;
+    brokerRejected = true;
+    resolveCreds().then(() => setStatus("#status", "A távoli broker elutasította a hozzáférési kódot (401). " +
+      (creds ? "Átváltottam erre: " + creds.label + ". Indítsd újra." : "Adj meg helyes kódot vagy saját kulcsot a Beállításokban."), true));
+  };
   renderCredState(fails);
   renderPickers();
 }
@@ -68,7 +80,8 @@ function renderCredState(fails = []) {
       ? "A helyi segéd fut, de nincs API-kulcsa. Írd a kulcsot a <code>materials/demos/voice-lab/.env.local</code> fájlba (minta: <code>.env.example</code>), vagy add meg a <code>VOICE_LAB_ENV</code> változóval, majd indítsd újra a segédet. "
       : "A forrás elérhető, de egyik hangszolgáltatóhoz sincs kulcsa. ") +
       "Saját kulcsot a Beállításokban is megadhatsz. Kulcs nélkül a forgatókönyv, a persona és az előzmények használhatók, a hangmodellek nem. " +
-      "<button class=\"btn btn--small\" type=\"button\" id=\"bannerSettings\">Beállítások megnyitása</button>";
+      "<button class=\"btn btn--small\" type=\"button\" id=\"bannerSettings\">Beállítások megnyitása</button>" +
+      (fails.length ? "<br><small>" + esc(fails.join(" · ")) + "</small>" : "");
     $("#bannerSettings").onclick = openSettings;
   } else if (creds) {
     b.textContent = "Mód: " + creds.label; b.className = "badge badge--ok";
@@ -139,7 +152,7 @@ const verLabel = s => `v${s.n} · ${KIND_LABEL[s.kind] || s.kind} · ${fmtTime(s
 const byId = id => scripts.find(s => s.id === id);
 
 async function loadScripts() {
-  scripts = (await store.all("scripts")).sort((a, b) => a.n - b.n);
+  scripts = (await store.all("scripts")).map(normScript).filter(Boolean).sort((a, b) => a.n - b.n);
   try {
     const r = await fetch(CONFIG.defaultScriptUrl, { cache: "no-cache" });
     if (r.ok) {
@@ -160,7 +173,7 @@ async function addScript({ text, kind, note = "", parent = null, builtinHash, ac
   return s;
 }
 function renderScripts() {
-  const opts = [...scripts].reverse().map(s => `<option value="${s.id}">${esc(verLabel(s))}${s.id === activeId ? " (aktív)" : ""}</option>`).join("");
+  const opts = [...scripts].reverse().map(s => `<option value="${esc(s.id)}">${esc(verLabel(s))}${s.id === activeId ? " (aktív)" : ""}</option>`).join("");
   $("#verSel").innerHTML = opts; $("#verSel").value = selectedId || "";
   const s = byId(selectedId);
   $("#editor").value = s ? s.text : "";
@@ -170,7 +183,7 @@ function renderScripts() {
   $("#activateVer").disabled = !s || s.id === activeId;
   const a = byId(activeId);
   $("#activeScriptLabel").textContent = a ? verLabel(a) : "–";
-  $("#cmpSel").innerHTML = [...scripts].reverse().filter(x => x.id !== selectedId).map(x => `<option value="${x.id}">${esc(verLabel(x))}</option>`).join("");
+  $("#cmpSel").innerHTML = [...scripts].reverse().filter(x => x.id !== selectedId).map(x => `<option value="${esc(x.id)}">${esc(verLabel(x))}</option>`).join("");
   const parent = s && s.parent && byId(s.parent);
   if (parent) $("#cmpSel").value = parent.id; else if (a && a.id !== selectedId) $("#cmpSel").value = a.id;
   renderLint(); renderDiff(); renderAssembled();
@@ -195,7 +208,7 @@ function renderDiff() {
     html += `<div class="d d--${x.op === "+" ? "add" : x.op === "-" ? "del" : "eq"}"><span aria-hidden="true">${x.op === " " ? " " : x.op}</span>${esc(x.text) || "&nbsp;"}</div>`;
   });
   if (skipped) html += `<div class="d d--skip">… ${skipped} változatlan sor …</div>`;
-  $("#diff").innerHTML = `<p class="hint">v${other.n} → ${byId(selectedId) ? "v" + byId(selectedId).n : "szerkesztő"}${$("#editor").value !== (byId(selectedId) || {}).text ? " (a szerkesztő tartalma)" : ""}: ${changed} eltérő sor.</p>` + (changed ? html : "");
+  $("#diff").innerHTML = `<p class="hint">v${esc(other.n)} → ${byId(selectedId) ? "v" + esc(byId(selectedId).n) : "szerkesztő"}${$("#editor").value !== (byId(selectedId) || {}).text ? " (a szerkesztő tartalma)" : ""}: ${changed} eltérő sor.</p>` + (changed ? html : "");
 }
 function sellerFor(scriptText, firstName) { return sellerInstructions(scriptText, { firstName, agentName: CONFIG.agentName }); }
 function renderAssembled() {
@@ -229,19 +242,21 @@ const ROLE_NAMES = { user: "Te", agent: "Ügynök", seller: "Eladó", buyer: "É
 function renderTranscript(lines, box = $("#transcript")) {
   const stick = box.scrollTop + box.clientHeight >= box.scrollHeight - 40;
   box.innerHTML = lines.length ? [...lines].sort((a, b) => (a.ts || Date.parse(a.t)) - (b.ts || Date.parse(b.t))).map(l =>
-    `<p class="line line--${l.role}"><span class="line__t">${clock(l.ts || Date.parse(l.t))}</span><span class="line__who">${ROLE_NAMES[l.role] || l.role}</span><span class="line__text">${esc(l.text)}</span></p>`).join("")
+    `<p class="line line--${ROLE_NAMES[l.role] ? l.role : "sys"}"><span class="line__t">${esc(clock(l.ts || Date.parse(l.t)))}</span><span class="line__who">${esc(ROLE_NAMES[l.role] || l.role)}</span><span class="line__text">${esc(l.text)}</span></p>`).join("")
     : "<p class=\"empty\">Az átirat itt jelenik meg.</p>";
   if (stick) box.scrollTop = box.scrollHeight;
 }
 function metricsHtml(metrics) {
   const rows = [];
   for (const [k, m] of Object.entries(metrics || {})) {
-    if (k === "text_turn_ms") { rows.push(`<div class="metric"><span>Szövegmodell válaszideje (medián)</span><b>${median(m.map(x => x.ms)) ?? "–"} ms</b><small>${m.length} megszólalás</small></div>`); continue; }
-    const name = { agent: "Ügynök válaszideje", seller: "Eladó válaszideje", buyer: "Érdeklődő válaszideje" }[k] || k;
+    if (k === "text_turn_ms") { if (Array.isArray(m)) rows.push(`<div class="metric"><span>Szövegmodell válaszideje (medián)</span><b>${esc(median(m.map(x => +x.ms || 0)) ?? "–")} ms</b><small>${m.length} megszólalás</small></div>`); continue; }
+    const name = { agent: "Ügynök válaszideje", seller: "Eladó válaszideje", buyer: "Érdeklődő válaszideje" }[k];
+    if (!name || !m || !Array.isArray(m.latency_ms)) continue;
     const last = m.latency_ms.at(-1);
-    rows.push(`<div class="metric"><span>${name}</span><b>${m.latency_median_ms ?? "–"} ms</b><small>medián · utolsó ${last ?? "–"} ms · ${m.latency_ms.length} kör` +
-      (m.event_latency_median_ms != null ? ` · szerveresemény ${m.event_latency_median_ms} ms` : "") +
-      (m.barge_ins.length ? ` · közbevágás ${m.barge_ins.length}×${m.barge_stop_median_ms != null ? ", elhallgatás " + m.barge_stop_median_ms + " ms" : ""}${m.barge_not_stopped ? `, ${m.barge_not_stopped}× nem hallgatott el` : ""}` : "") + "</small></div>");
+    const bi = Array.isArray(m.barge_ins) ? m.barge_ins : [];
+    rows.push(`<div class="metric"><span>${name}</span><b>${esc(m.latency_median_ms ?? "–")} ms</b><small>medián · utolsó ${esc(last ?? "–")} ms · ${m.latency_ms.length} kör` +
+      (m.event_latency_median_ms != null ? ` · szerveresemény ${esc(m.event_latency_median_ms)} ms` : "") +
+      (bi.length ? ` · közbevágás ${bi.length}×${m.barge_stop_median_ms != null ? ", elhallgatás " + esc(m.barge_stop_median_ms) + " ms" : ""}${m.barge_not_stopped ? `, ${esc(m.barge_not_stopped)}× nem hallgatott el` : ""}` : "") + "</small></div>");
   }
   return rows.join("");
 }
@@ -319,7 +334,8 @@ function scheduleFarewellStop() {
 
 async function stop(reason = "leállítva") {
   if (!run || run.stopping) return;
-  const r = run; r.stopping = true; clearTimeout(r.limit);
+  const r = run; r.stopping = true;
+  if (r.saved) { await r.conv.finish(reason); run = null; setRunning(false); return; } clearTimeout(r.limit);
   setStatus("#status", "Lezárás…");
   const res = await r.conv.finish(reason);
   run = null; setRunning(false);
@@ -338,12 +354,12 @@ async function stop(reason = "leállítva") {
   }
   setStatus("#status", `Mentve (${reason}). ${record.transcript.length} sor, ${record.duration_s} s.` + (errs.length ? " Hibák: " + errs.join(" · ") : ""), !!errs.length);
   await renderHistory(record.id);
-  if (settings.autoAnalyze && textChoice().ok && record.transcript.filter(l => l.role !== "sys").length >= 2) analyze(record.id);
+  if (settings.autoAnalyze && textChoice().ok && record.transcript.filter(l => l.role !== "sys").length >= 2) analyze(record.id).catch(e => setStatus("#anaStatus", e.message, true));
 }
 
 // ------------------------------------------------------------------ analysis
 async function analyze(id) {
-  const conv = await store.get("convs", id);
+  const conv = normConv(await store.get("convs", id));
   if (!conv) return;
   if (!creds || !textChoice().ok) return setStatus("#anaStatus", "Az elemzéshez szövegmodell kell (Beállítások).", true);
   const script = byId(conv.script && conv.script.id) || byId(activeId);
@@ -352,7 +368,7 @@ async function analyze(id) {
     const tc = textChoice();
     const r = await creds.text({ provider: tc.provider, model: tc.model, ...analysisRequest({ script: script ? script.text : "", conv }) });
     const a = parseJsonLoose(r.text);
-    conv.analysis = { ...a, model: r.provider + "/" + r.model, at: new Date().toISOString() };
+    conv.analysis = normAnalysis({ ...a, model: r.provider + "/" + r.model, at: new Date().toISOString() });
     await store.put("convs", conv);
     lastAnalysis = { convId: id, analysis: conv.analysis };
     setStatus("#anaStatus", "Kész (" + conv.analysis.model + ").");
@@ -360,7 +376,10 @@ async function analyze(id) {
   } catch (e) { setStatus("#anaStatus", "Az elemzés nem sikerült: " + e.message, true); }
 }
 async function showAnalysis(id) {
-  const conv = await store.get("convs", id), v = $("#anaView");
+  try { await renderAnalysis(id); } catch (e) { $("#anaView").innerHTML = ""; setStatus("#anaStatus", "Az elemzés nem jeleníthető meg: " + e.message, true); }
+}
+async function renderAnalysis(id) {
+  const conv = normConv(await store.get("convs", id)), v = $("#anaView");
   if (!conv) { v.innerHTML = "<p class=\"hint\">Még nincs rögzített beszélgetés.</p>"; return; }
   const a = conv.analysis;
   if (!a) { v.innerHTML = "<p class=\"hint\">Ehhez a beszélgetéshez még nincs elemzés.</p>"; return; }
@@ -401,26 +420,26 @@ async function aiScript(kind, req, parent, note) {
 
 // ------------------------------------------------------------------ history
 async function renderHistory(openId) {
-  const convs = (await store.all("convs")).sort((a, b) => Date.parse(b.started_at) - Date.parse(a.started_at));
+  const convs = (await store.all("convs")).map(normConv).filter(Boolean).sort((a, b) => Date.parse(b.started_at) - Date.parse(a.started_at));
   const modeName = { human: "Ember ↔ modell", "voice-duel": "Modell ↔ modell (hang)", "text-duel": "Modell ↔ modell (szöveg)" };
   const avg = c => { const s = c.analysis && c.analysis.scores; if (!s) return null; const v = ANALYSIS_KEYS.map(([k]) => +((s[k] || {}).score) || 0).filter(Boolean); return v.length ? (v.reduce((x, y) => x + y, 0) / v.length).toFixed(1) : null; };
-  $("#histList").innerHTML = convs.length ? convs.map(c => `<li><button class="hist__item" type="button" data-id="${c.id}">
-      <span class="hist__when">${fmtTime(Date.parse(c.started_at))}</span>
-      <span class="hist__what">${modeName[c.mode] || c.mode} · ${esc(c.participants.map(p => p.model).join(" ↔ "))}</span>
-      <span class="hist__meta">v${c.script ? c.script.n : "?"} · ${c.duration_s} s${c.audio ? " · hang" : ""}${avg(c) ? " · átlag " + avg(c) + "/5" : c.analysis ? "" : " · nincs elemzés"}</span></button></li>`).join("")
+  $("#histList").innerHTML = convs.length ? convs.map(c => `<li><button class="hist__item" type="button" data-id="${esc(c.id)}">
+      <span class="hist__when">${esc(fmtTime(Date.parse(c.started_at)))}</span>
+      <span class="hist__what">${esc(modeName[c.mode] || c.mode)} · ${esc(c.participants.map(p => p.model).join(" ↔ "))}</span>
+      <span class="hist__meta">v${esc(c.script ? c.script.n : "?")} · ${esc(c.duration_s)} s${c.audio ? " · hang" : ""}${avg(c) ? " · átlag " + avg(c) + "/5" : c.analysis ? "" : " · nincs elemzés"}</span></button></li>`).join("")
     : "<li class=\"hint\">Még nincs rögzített beszélgetés.</li>";
   $$("#histList .hist__item").forEach(b => { b.onclick = () => openHistory(b.dataset.id); });
-  $("#anaSel").innerHTML = convs.map(c => `<option value="${c.id}">${fmtTime(Date.parse(c.started_at))} · ${modeName[c.mode] || c.mode}${c.analysis ? " · elemezve" : ""}</option>`).join("");
-  if (openId) { $("#anaSel").value = openId; showAnalysis(openId); }
-  else if (convs[0] && !$("#anaView").innerHTML) showAnalysis($("#anaSel").value);
+  $("#anaSel").innerHTML = convs.map(c => `<option value="${esc(c.id)}">${esc(fmtTime(Date.parse(c.started_at)))} · ${esc(modeName[c.mode] || c.mode)}${c.analysis ? " · elemezve" : ""}</option>`).join("");
+  if (openId) { $("#anaSel").value = openId; await showAnalysis(openId); }
+  else if (convs[0] && !$("#anaView").innerHTML) await showAnalysis($("#anaSel").value);
   const latest = convs.find(c => c.analysis); if (latest && !lastAnalysis) lastAnalysis = { convId: latest.id, analysis: latest.analysis };
 }
 async function openHistory(id) {
-  const c = await store.get("convs", id), au = await store.get("audio", id), d = $("#histDetail");
+  const c = normConv(await store.get("convs", id)), au = await store.get("audio", id), d = $("#histDetail");
   if (!c) return;
-  const url = au && au.blob ? URL.createObjectURL(au.blob) : null;
-  d.innerHTML = `<div class="box"><h3>${fmtTime(Date.parse(c.started_at))} · ${esc(c.end_reason || "")}</h3>
-    <p class="meta">${esc(c.participants.map(p => `${ROLE_NAMES[p.role] || p.role}: ${p.option} ${p.model}${p.voice ? " (" + p.voice + ")" : ""}`).join(" · "))} · forgatókönyv v${c.script ? c.script.n : "?"}${c.persona ? " · persona: " + esc(personaSummary(c.persona)) : ""}</p>
+  const url = au && au.blob instanceof Blob ? URL.createObjectURL(au.blob) : null;
+  d.innerHTML = `<div class="box"><h3>${esc(fmtTime(Date.parse(c.started_at)))} · ${esc(c.end_reason || "")}</h3>
+    <p class="meta">${esc(c.participants.map(p => `${ROLE_NAMES[p.role] || p.role}: ${p.option} ${p.model}${p.voice ? " (" + p.voice + ")" : ""}`).join(" · "))} · forgatókönyv v${esc(c.script ? c.script.n : "?")}${c.persona ? " · persona: " + esc(personaSummary(c.persona)) : ""}</p>
     ${url ? `<audio controls src="${url}"></audio>` : "<p class=\"hint\">Ehhez a beszélgetéshez nincs hangfelvétel.</p>"}
     <div class="metrics">${metricsHtml(c.metrics)}</div>
     <div class="transcript transcript--static" tabindex="0" aria-label="Átirat"></div>
@@ -456,7 +475,7 @@ function openSettings() {
   $("#textProvider").value = settings.textProvider || ""; $("#textModel").value = settings.textModel || "";
   for (const k of ["recordAudio", "autoAnalyze", "diskCopy"]) $("#" + k).checked = !!settings[k];
   $("#thIn").value = settings.thIn; $("#thOut").value = settings.thOut;
-  $("#settings").showModal();
+  $("#settings").returnValue = ""; $("#settings").showModal();
 }
 function readSettings() {
   settings.source = ($$("input[name=source]").find(r => r.checked) || {}).value || "auto";
@@ -493,7 +512,11 @@ async function init() {
   syncMode(); initTabs();
   $("#themeBtn").onclick = () => { settings.theme = { auto: "light", light: "dark", dark: "auto" }[settings.theme]; saveSettings(); applyTheme(); };
   $("#settingsBtn").onclick = openSettings;
-  $("#settings").addEventListener("close", () => { readSettings(); resolveCreds(); });
+  // Only "Mentés és bezárás" saves; Escape (cancel) closes the dialog without saving.
+  $("#settings").addEventListener("close", () => {
+    if ($("#settings").returnValue !== "close") return;
+    const oldCode = keys.accessCode; readSettings(); if (keys.accessCode !== oldCode) brokerRejected = false; resolveCreds();
+  });
   $("#clearKeys").onclick = () => { for (const id of ["accessCode", "keyOpenai", "keyGoogle", "keyEleven", "elRealtime", "elCascade"]) $("#" + id).value = ""; $("#rememberKeys").checked = false; keys = {}; remember = false; storeKeys({}, false); setStatus("#probeResult", "Kulcsok törölve."); };
   $("#probeLocal").onclick = async () => {
     setStatus("#probeResult", "Keresés…");
@@ -543,11 +566,16 @@ async function init() {
   $("#exportBtn").onclick = async () => download(`hangugynok-labor-export-${new Date().toISOString().slice(0, 10)}.json`, JSON.stringify(await store.exportAll(), null, 1));
   $("#importFile").onchange = async e => {
     const f = e.target.files[0]; if (!f) return;
-    try { const n = await store.importAll(JSON.parse(await f.text())); await loadScripts(); await renderHistory(); alert(n + " elem importálva."); }
+    try { const r = await store.importAll(JSON.parse(await f.text())); await loadScripts(); await renderHistory(); alert(r.n + " elem importálva" + (r.skipped ? ", " + r.skipped + " hibás elem kihagyva." : ".")); }
     catch (err) { alert("Az importálás nem sikerült: " + err.message); }
     e.target.value = "";
   };
-  window.addEventListener("pagehide", () => { if (run) run.conv.finish("oldal bezárva"); });
+  window.addEventListener("pagehide", () => {   // best effort: store what we have before the page goes away
+    if (!run || run.saved) return;
+    const snap = run.conv.snapshot("oldal bezárva");
+    if (snap.transcript.some(l => l.role !== "sys")) { run.saved = true; store.put("convs", { id: uid("c-"), ...snap, ...run.meta }).catch(() => {}); }
+    run.conv.finish("oldal bezárva");
+  });
   renderPersona();
   try { await loadScripts(); await renderHistory(); }
   catch (e) { setStatus("#status", "A böngésző helyi tárolója nem érhető el (privát ablak?): " + e.message, true); }

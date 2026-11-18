@@ -6,6 +6,7 @@ import { generate, FIELDS } from "./js/persona.js";
 import { diffLines } from "./js/util.js";
 import { OPTIONS } from "./js/catalog.js";
 import { geminiSetup } from "./js/creds.js";
+import { normConv, normScript, normAnalysis } from "./js/records.js";
 
 const script = readFileSync(new URL("./prompts/sales-call-hu.md", import.meta.url), "utf8");
 const results = [];
@@ -51,6 +52,21 @@ t("katalógus: két előnyben részesített modell, gpt-live-1 és gemini-3.8-li
   assert.ok(pref[0].models.includes("gpt-live-1") && pref[1].models[0] === "gemini-3.8-live");
 });
 t("Gemini setup forma", () => { const s = geminiSetup("gemini-3.8-live", "Kore", "x", false); assert.equal(s.model, "models/gemini-3.8-live"); assert.ok(!s.inputAudioTranscription); });
+
+t("import: hibás azonosító és szerepkör kiszűrve", () => {
+  assert.equal(normConv({ id: "<img src=x onerror=alert(1)>" }), null);
+  const c = normConv({ id: "c-1", mode: "<b>x</b>", duration_s: "<i>", transcript: [{ role: "\" onmouseover=x", text: 5, t: "nem dátum" }], script: { n: "<svg>" }, metrics: { evil: {}, agent: { latency_ms: ["<x>", 3] } }, extra: "drop" });
+  assert.equal(c.mode, "human"); assert.equal(c.duration_s, 0); assert.equal(c.transcript[0].role, "sys"); assert.equal(c.transcript[0].text, "5");
+  assert.equal(c.script.n, 0); assert.deepEqual(Object.keys(c.metrics), ["agent"]); assert.deepEqual(c.metrics.agent.latency_ms, [3]); assert.ok(!("extra" in c));
+});
+t("import: forgatókönyv-verzió normalizálva", () => {
+  assert.equal(normScript({ id: "x y", text: "a" }), null);
+  const s = normScript({ id: "s-1", n: "abc", kind: "<b>", text: "szöveg" }); assert.equal(s.n, 1); assert.equal(s.kind, "import");
+});
+t("elemzés normalizálva (hibás pontszám, hiányzó mezők)", () => {
+  const a = normAnalysis({ scores: { qualification: { score: "9" } }, factual_errors: "nem lista" });
+  assert.equal(a.scores.qualification.score, 5); assert.equal(a.scores.script_adherence.score, 0); assert.deepEqual(a.factual_errors, []);
+});
 
 for (const [r, n] of results) console.log(r.padEnd(5), n);
 process.exitCode = results.some(([r]) => r !== "OK") ? 1 : 0;

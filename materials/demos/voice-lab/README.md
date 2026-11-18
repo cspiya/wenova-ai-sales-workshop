@@ -29,9 +29,9 @@ Az alapforgatókönyv a november 19-i workshop kampányához készült: néhány
 
 A demó oldala statikus, kulcs nincs benne és a repóban sincs. A hangmodellekhez rövid életű hitelesítő adat kell, ezt háromféleképpen kaphatja (Beállítások; automatikus módban ebben a sorrendben):
 
-1. **Távoli broker:** egy kis szerver a Wenova kulcsaival, amely csak rövid életű tokent ad ki, hozzáférési kóddal. A Wenova brokere (`https://voice-lab-broker.vercel.app`) be van állítva; a hozzáférési kódot a workshopon kapod meg, és ezzel kulcs nélkül is kipróbálható. A felületét a [BROKER-API.md](BROKER-API.md) írja le.
+1. **Távoli broker:** egy kis szerver a Wenova kulcsaival, amely csak rövid életű tokent ad ki, hozzáférési kóddal. A Wenova brokere (`https://voice-lab-broker.vercel.app`) be van állítva; a hozzáférési kódot a workshopon kapod meg, ezt a Beállításokban add meg. Kód nélkül az automatikus mód kihagyja a brokert; ha a broker elutasítja a kódot, a labor a következő forrásra vált, és ezt ki is írja. A felületét a [BROKER-API.md](BROKER-API.md) írja le.
 2. **Helyi segéd:** `python server.py` a saját gépeden, a saját kulcsaiddal. Ugyanazt a felületet adja, mint a broker.
-3. **Saját API-kulcs a böngészőben:** a kulcs csak ebben a böngészőben marad (alapból a lap bezárásáig; kérésre ezen az eszközön), és közvetlenül a szolgáltatóhoz megy. A **Kulcsok törlése** gomb eltávolítja. Saját kulcsnál a költség a te fiókodat terheli.
+3. **Saját API-kulcs a böngészőben:** a kulcs csak ebben a böngészőben marad, és közvetlenül a szolgáltatóhoz megy. Alapból a lap bezárásakor törlődik; a „Megjegyzés ezen az eszközön” kapcsoló alapból ki van kapcsolva, mert a `cspiya.github.io` alatti összes oldal ugyanazt a böngészős tárolót látja. A **Kulcsok törlése** gomb eltávolítja. Saját kulcsnál a költség a te fiókodat terheli.
 
 | Szolgáltató | Mire kell | Közvetlenül a böngészőből (saját kulccsal) | Brokerrel vagy helyi segéddel |
 | --- | --- | --- | --- |
@@ -45,6 +45,7 @@ A böngészős elérést a végpontok CORS-válasza alapján ellenőriztük; tel
 
 - A beszélgetés hangja a böngésződ és a választott szolgáltató között megy. Az átirat, a felvétel, az elemzés és a forgatókönyv-verziók csak a böngésződben tárolódnak (IndexedDB). Az Előzmények fülön exportálhatod (JSON) és letöltheted a felvételt; a Beállításokban mindent törölhetsz.
 - Az elemzéshez és a forgatókönyv-íráshoz a szöveg a szövegmodell szolgáltatójához kerül.
+- A GitHub Pages-en a `cspiya.github.io` alatti összes oldal ugyanazt a böngészős tárolót használja. Ezért a kulcsot alapból nem jegyezzük meg, és megosztott gépen a használat után nyomd meg a **Kulcsok törlése** gombot.
 - Csak saját teszthívásra és kitalált adatokkal használd. Valódi érdeklődő vagy ügyfél nevét, számát, beszélgetését ide ne vidd.
 - A Google ingyenes szintjén a beszélgetést a Google felhasználhatja a termékei fejlesztésére. Valódi ügyféladattal ne használd.
 

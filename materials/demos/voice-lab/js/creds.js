@@ -28,7 +28,7 @@ async function jfetch(url, opts, label) {
   try { r = await fetch(url, opts); } catch (e) { throw new Error(`${label}: a kérés nem jutott el (${e.message}). Hálózat, CORS vagy helyi hálózati engedély?`); }
   const txt = await r.text(); let j = null;
   try { j = txt ? JSON.parse(txt) : {}; } catch { j = { error: { message: txt.slice(0, 300) } }; }
-  if (!r.ok) throw new Error(`${label}: HTTP ${r.status} ${errText(j)}`.trim());
+  if (!r.ok) { const e = new Error(`${label}: HTTP ${r.status} ${errText(j)}`.trim()); e.status = r.status; throw e; }
   return j;
 }
 
@@ -36,7 +36,10 @@ export class BrokerSource {
   constructor(base, accessCode, kind) { this.base = String(base || "").replace(/\/+$/, ""); this.code = accessCode || ""; this.kind = kind; }
   get label() { return this.kind === "local" ? "helyi segéd" : "távoli broker"; }
   headers(json = true) { const h = {}; if (json) h["Content-Type"] = "application/json"; if (this.code) h["X-Access-Code"] = this.code; return h; }
-  post(path, body) { return jfetch(this.base + path, { method: "POST", headers: this.headers(), body: JSON.stringify(body) }, this.label + " " + path); }
+  async post(path, body) {
+    try { return await jfetch(this.base + path, { method: "POST", headers: this.headers(), body: JSON.stringify(body) }, this.label + " " + path); }
+    catch (e) { if (e.status === 401 && this.onUnauthorized) this.onUnauthorized(); throw e; }
+  }
   async health(timeoutMs = 2500) {
     const ac = new AbortController(), t = setTimeout(() => ac.abort(), timeoutMs);
     try {

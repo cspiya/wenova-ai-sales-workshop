@@ -1,5 +1,6 @@
 // Browser-side storage (IndexedDB): script versions, conversations (+ analyses), audio blobs, small settings.
 // Everything stays in this browser profile; export/import moves it between machines.
+import { normConv, normScript } from "./records.js";
 const DB = "wenova-voice-lab", VERSION = 1;
 let dbp = null;
 
@@ -40,8 +41,8 @@ export async function exportAll() {
 }
 export async function importAll(data) {
   if (!data || data.format !== "wenova-voice-lab-export") throw new Error("Ez nem a hangügynök-labor exportfájlja.");
-  let n = 0;
-  for (const s of data.scripts || []) if (s && s.id && typeof s.text === "string") { await put("scripts", s); n++; }
-  for (const c of data.conversations || []) if (c && c.id) { await put("convs", c); n++; }
-  return n;
+  let n = 0, skipped = 0;   // records are normalised: unknown fields dropped, ids/enums validated (no markup injection)
+  for (const raw of Array.isArray(data.scripts) ? data.scripts : []) { const s = normScript(raw); if (s) { await put("scripts", s); n++; } else skipped++; }
+  for (const raw of Array.isArray(data.conversations) ? data.conversations : []) { const c = normConv(raw); if (c) { await put("convs", c); n++; } else skipped++; }
+  return { n, skipped };
 }

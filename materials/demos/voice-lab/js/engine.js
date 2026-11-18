@@ -74,8 +74,10 @@ class Agent {
   constructor(o) {
     Object.assign(this, o);       // ctx, opt, model, voice, instructions, openingCmd, creds, sink, onStatus, onEventLatency, onClosed, transcribe
     this.inNode = this.ctx.createGain(); this.outNode = this.ctx.createGain();
-    this.closed = false; this.errors = []; this.sessionId = null; this.cleanups = [];
+    this.closed = false; this.errors = []; this.sessionId = null; this.cleanups = []; this.cleanedUp = false;
   }
+  /** Register a release step; if the agent was already stopped, release at once (stop during startup). */
+  addCleanup(fn) { if (this.cleanedUp) { try { fn(); } catch (e) { /* best effort */ } } else this.cleanups.push(fn); }
   alive() { if (this.closed) throw new Error(CANCELLED); }
   status(m, err) { if (err) this.errors.push(m); this.onStatus && this.onStatus(m, err); }
   remoteClosed(reason) { if (!this.closed) this.onClosed && this.onClosed(reason); }
@@ -83,6 +85,7 @@ class Agent {
     if (this.closed) return; this.closed = true;
     try { await this.close?.(); } catch (e) { this.errors.push(String(e.message || e)); }
     for (const c of this.cleanups.reverse()) { try { c(); } catch (e) { /* best effort */ } }
+    this.cleanups = []; this.cleanedUp = true;
   }
   describe() { return { option: this.opt.id, provider: this.opt.provider, model: this.model, voice: this.voice, session_id: this.sessionId }; }
 }
@@ -91,8 +94,8 @@ class OpenAIAgent extends Agent {
   async start() {
     const live = this.opt.id === "oa-live", ctx = this.ctx;
     const dest = ctx.createMediaStreamDestination(); this.inNode.connect(dest);
-    const pc = new RTCPeerConnection(); this.cleanups.push(() => pc.close());
-    const audio = new Audio(); audio.autoplay = true; this.cleanups.push(() => { audio.srcObject = null; });
+    const pc = new RTCPeerConnection(); this.addCleanup(() => pc.close());
+    const audio = new Audio(); audio.autoplay = true; this.addCleanup(() => { audio.srcObject = null; });
     pc.ontrack = e => {
       audio.srcObject = e.streams[0];                 // playback (Chrome also needs it for the Web Audio tap below)
       const src = ctx.createMediaStreamSource(e.streams[0]); src.connect(this.outNode);
@@ -170,7 +173,7 @@ class GeminiAgent extends Agent {
     this.alive(); this.status("Kapcsolódás a Gemini Live-hoz…");
     const ws = new WebSocket(tok.ws_url + "?access_token=" + encodeURIComponent(tok.token));
     ws.binaryType = "arraybuffer";
-    this.cleanups.push(() => { player.flush(); if (ws.readyState <= 1) ws.close(1000); });
+    this.addCleanup(() => { player.flush(); if (ws.readyState <= 1) ws.close(1000); });
     const send = o => ws.readyState === 1 && ws.send(JSON.stringify(o));
     const dec = new TextDecoder();
     let gotSetup = false, vadEnd = null, setupOk, setupFail;
@@ -203,7 +206,7 @@ class GeminiAgent extends Agent {
     };
     try { await ready; } finally { clearTimeout(timer); }
     this.alive();
-    this.cleanups.push(await pcmCapture(ctx, this.inNode, 16000, b64 => send({ realtimeInput: { audio: { data: b64, mimeType: "audio/pcm;rate=16000" } } })));
+    this.addCleanup(await pcmCapture(ctx, this.inNode, 16000, b64 => send({ realtimeInput: { audio: { data: b64, mimeType: "audio/pcm;rate=16000" } } })));
     if (this.openingCmd) send({ realtimeInput: { text: this.openingCmd } });   // Live waits for input; this makes the seller open
     this.close = async () => { if (ws.readyState <= 1) ws.close(1000); };
   }
@@ -219,7 +222,7 @@ class ElevenAgent extends Agent {
     const { signed_url } = await this.creds.elevenSignedUrl({ variant: this.opt.variant });
     this.alive();
     const ws = new WebSocket(signed_url);
-    this.cleanups.push(() => { player.flush(); if (ws.readyState <= 1) ws.close(1000); });
+    this.addCleanup(() => { player.flush(); if (ws.readyState <= 1) ws.close(1000); });
     const send = o => ws.readyState === 1 && ws.send(JSON.stringify(o));
     let outRate = 16000, inRate = 16000, ok, fail, started = false;
     const ready = new Promise((a, b) => { ok = a; fail = b; });
@@ -254,7 +257,7 @@ class ElevenAgent extends Agent {
     };
     try { await ready; } finally { clearTimeout(timer); }
     this.alive();
-    this.cleanups.push(await pcmCapture(ctx, this.inNode, inRate, b64 => send({ user_audio_chunk: b64 })));
+    this.addCleanup(await pcmCapture(ctx, this.inNode, inRate, b64 => send({ user_audio_chunk: b64 })));
     this.close = async () => { if (ws.readyState <= 1) ws.close(1000); };
   }
 }
@@ -295,8 +298,12 @@ export class Conversation {
   constructor({ mode, names, onUpdate, onStatus, thresholds }) {
     Object.assign(this, { mode, names, onUpdate, onStatus, thresholds });
     this.t0 = Date.now(); this.lines = []; this.meters = []; this.agents = []; this.errors = []; this.closed = false;
-    this.cur = {}; this.last = {};
+    this.cur = {}; this.last = {}; this.cleanups = []; this.cleanedUp = false;
   }
+  /** Register a release step (mic, AudioContext, speech); after finish() it runs immediately, so a Stop during
+   *  startup never leaks a live microphone or audio context. */
+  addCleanup(fn) { if (this.cleanedUp) { try { fn(); } catch (e) { /* best effort */ } } else this.cleanups.push(fn); }
+  alive() { if (this.closed) throw new Error(CANCELLED); }
   update() { if (this.raf) return; this.raf = requestAnimationFrame(() => { this.raf = null; this.onUpdate && this.onUpdate(this); }); }
   status(m, err) { if (err) this.errors.push(m); this.onStatus && this.onStatus(m, err); }
   final(role, text, ts = Date.now()) {
@@ -337,16 +344,21 @@ export class Conversation {
     clearInterval(this.timer);
     await Promise.all(this.agents.map(a => a.stop()));
     const audio = await this.stopRecording();
-    for (const c of this.cleanups || []) { try { c(); } catch (e) { /* best effort */ } }
+    for (const c of this.cleanups.reverse()) { try { c(); } catch (e) { /* best effort */ } }
+    this.cleanups = []; this.cleanedUp = true;
+    return { record: this.snapshot(reason), audio };
+  }
+  /** Synchronous record of what we have so far (also used on pagehide, where nothing can be awaited). */
+  snapshot(reason) {
     const metrics = {}; for (const m of this.meters) metrics[m.label] = m.summary();
     if (this.turnTimes) metrics.text_turn_ms = this.turnTimes;
-    return { record: {
+    return {
       mode: this.mode, started_at: new Date(this.t0).toISOString(), ended_at: new Date().toISOString(), end_reason: reason,
       duration_s: Math.round((Date.now() - this.t0) / 1000),
       participants: this.agents.map(a => ({ role: a.role, ...a.describe() })).concat(this.participants || []),
       transcript: this.lines.filter(l => String(l.text).trim()).sort((a, b) => a.ts - b.ts).map(l => ({ t: new Date(l.ts).toISOString(), role: l.role, text: l.text })),
       metrics, errors: [...this.errors, ...this.agents.flatMap(a => a.errors)],
-    }, audio };
+    };
   }
 }
 
@@ -357,19 +369,21 @@ async function mic() {
 // ------------------------------------------------------------------ runs
 /** Human ↔ model. cfg: { creds, opt, model, voice, seller: {instructions, opening, openingCmd}, dynVars, override, record } */
 export async function startHuman(conv, cfg) {
-  const ctx = new AudioContext(); await ctx.resume();
-  conv.cleanups = [() => ctx.close().catch(() => {})];
-  const stream = await mic(); conv.cleanups.unshift(() => stream.getTracks().forEach(t => t.stop()));
-  if (conv.closed) throw new Error(CANCELLED);
+  conv.alive();
+  const ctx = new AudioContext(); conv.addCleanup(() => ctx.close().catch(() => {}));
+  await ctx.resume(); conv.alive();
+  const stream = await mic(); conv.addCleanup(() => stream.getTracks().forEach(t => t.stop()));
+  conv.alive();
   const micSrc = ctx.createMediaStreamSource(stream);
   const agent = makeAgent({ ctx, opt: cfg.opt, model: cfg.model, voice: cfg.voice, role: "agent", creds: cfg.creds, transcribe: true,
     instructions: cfg.seller.instructions, opening: cfg.seller.opening, openingCmd: cfg.seller.openingCmd, dynVars: cfg.dynVars, override: cfg.override,
     sink: conv.sinkFor("agent", "user"), onStatus: (m, e) => conv.status(m, e), onClosed: r => conv.onRemoteClose && conv.onRemoteClose(r) });
   conv.agents.push(agent);
+  conv.alive();
   micSrc.connect(agent.inNode);
   const meter = conv.addMeter("agent", levelOf(ctx, micSrc), levelOf(ctx, agent.outNode));
   agent.onEventLatency = ms => meter.evLat.push(Math.round(ms));
-  await agent.start();
+  await agent.start(); conv.alive();
   if (cfg.record) conv.startRecording(ctx, [micSrc, agent.outNode]);
   conv.startTicking();
   conv.status("Kapcsolódva (" + cfg.opt.label + ", " + cfg.model + "). Beszélj!");
@@ -377,8 +391,9 @@ export async function startHuman(conv, cfg) {
 
 /** Model ↔ model with real voice sessions: seller.out → buyer.in and buyer.out → seller.in. */
 export async function startVoiceDuel(conv, cfg) {
-  const ctx = new AudioContext(); await ctx.resume();
-  conv.cleanups = [() => ctx.close().catch(() => {})];
+  conv.alive();
+  const ctx = new AudioContext(); conv.addCleanup(() => ctx.close().catch(() => {}));
+  await ctx.resume(); conv.alive();
   const mk = (side, role, ins, openingCmd) => makeAgent({ ctx, opt: side.opt, model: side.model, voice: side.voice, role, creds: cfg.creds, transcribe: false,
     instructions: ins, openingCmd, sink: conv.sinkFor(role, null), onStatus: (m, e) => conv.status((role === "seller" ? "Eladó: " : "Érdeklődő: ") + m, e),
     onClosed: r => conv.onRemoteClose && conv.onRemoteClose((role === "seller" ? "eladó: " : "érdeklődő: ") + r) });
@@ -390,11 +405,10 @@ export async function startVoiceDuel(conv, cfg) {
   const ms = conv.addMeter("seller", bOut, sOut), mb = conv.addMeter("buyer", sOut, bOut);
   seller.onEventLatency = x => ms.evLat.push(Math.round(x)); buyer.onEventLatency = x => mb.evLat.push(Math.round(x));
   conv.status("Az érdeklődő munkamenete indul…");
-  await buyer.start();                      // the buyer must be listening before the seller opens
-  if (conv.closed) throw new Error(CANCELLED);
+  await buyer.start(); conv.alive();        // the buyer must be listening before the seller opens
   conv.status("Az eladó munkamenete indul…");
   seller.openingCmd = cfg.seller.openingCmd;
-  await seller.start();
+  await seller.start(); conv.alive();
   if (cfg.record) conv.startRecording(ctx, [seller.outNode, buyer.outNode]);
   conv.startTicking();
   conv.status("Fut: a két modell beszélget. A Leállítás gombbal bármikor megállíthatod.");
@@ -414,7 +428,7 @@ export async function runTextDuel(conv, cfg) {
     if (voices.length < 2 && role === "buyer") u.pitch = 0.8;
     u.onend = u.onerror = () => res(); speechSynthesis.speak(u);
   });
-  conv.cleanups = [() => typeof speechSynthesis !== "undefined" && speechSynthesis.cancel()];
+  conv.addCleanup(() => typeof speechSynthesis !== "undefined" && speechSynthesis.cancel());
   const add = async (role, text) => { history.push({ role, text }); conv.final(role, text); await say(text, role); };
   await add("seller", cfg.seller.opening);
   for (let turn = 1; turn < cfg.maxTurns && !conv.closed; turn++) {

@@ -134,7 +134,7 @@ export function refineRequest({ script, instruction, analysis }) {
     `Összegzés: ${analysis.summary || ""}`,
     ...(analysis.issues || []).map(i => `- Probléma: ${i}`),
     ...(analysis.factual_errors || []).map(e => `- Ténybeli hiba: „${e.quote}” → ${e.issue} (helyesen: ${e.correct})`),
-    ...(analysis.script_suggestions || []).map(s => `- Javaslat (${s.section}): ${s.change} — mert ${s.why}`),
+    ...(analysis.script_suggestions || []).map(s => `- Javaslat (${s.section}): ${s.change}, mert ${s.why}`),
   ].join("\n") : "";
   return {
     system: "Magyar telefonos értékesítési forgatókönyvet javítasz egy hangalapú AI-asszisztensnek. Csak azt változtasd meg, amit a kérés és az elemzés indokol; a többi részt hagyd szó szerint. \n\n" + SCRIPT_RULES + "\n\nA workshop tényei:\n" + FACTS,
