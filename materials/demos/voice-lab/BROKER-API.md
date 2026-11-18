@@ -26,7 +26,7 @@ No access code needed. Response:
 {"service": "voice-lab-broker", "api": 1, "kind": "remote-broker", "auth_required": true,
  "providers": {"openai": true, "google": true, "elevenlabs": false},
  "elevenlabs_agents": {"cascade": false, "realtime": false},
- "text": {"openai": "gpt-5.4-mini", "google": "gemini-2.5-flash", "model_override": false},
+ "text": {"openai": "gpt-5.4-mini", "google": "gemini-3.8-flash", "model_override": false},
  "limits": {"max_instructions_chars": 60000}}
 ```
 `service` must be exactly `voice-lab-broker`. `text.<provider>` is the model the broker uses, or `null` if that provider is unavailable. `model_override: false` means the broker ignores a client-supplied text `model`. The local helper also returns `"local_archive": true`.

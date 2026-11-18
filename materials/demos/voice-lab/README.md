@@ -29,7 +29,7 @@ Az alapforgatókönyv a november 19-i workshop kampányához készült: néhány
 
 A demó oldala statikus, kulcs nincs benne és a repóban sincs. A hangmodellekhez rövid életű hitelesítő adat kell, ezt háromféleképpen kaphatja (Beállítások; automatikus módban ebben a sorrendben):
 
-1. **Távoli broker:** egy kis szerver a Wenova kulcsaival, amely csak rövid életű tokent ad ki, hozzáférési kóddal. Ha a szervező megadja a címét és a kódot, kulcs nélkül is kipróbálható. A felületét a [BROKER-API.md](BROKER-API.md) írja le.
+1. **Távoli broker:** egy kis szerver a Wenova kulcsaival, amely csak rövid életű tokent ad ki, hozzáférési kóddal. A Wenova brokere (`https://voice-lab-broker.vercel.app`) be van állítva; a hozzáférési kódot a workshopon kapod meg, és ezzel kulcs nélkül is kipróbálható. A felületét a [BROKER-API.md](BROKER-API.md) írja le.
 2. **Helyi segéd:** `python server.py` a saját gépeden, a saját kulcsaiddal. Ugyanazt a felületet adja, mint a broker.
 3. **Saját API-kulcs a böngészőben:** a kulcs csak ebben a böngészőben marad (alapból a lap bezárásáig; kérésre ezen az eszközön), és közvetlenül a szolgáltatóhoz megy. A **Kulcsok törlése** gomb eltávolítja. Saját kulcsnál a költség a te fiókodat terheli.
 
@@ -62,7 +62,7 @@ Ezután nyisd meg: `http://127.0.0.1:8765/`. Leállítás: Ctrl+C. Másik port: 
 | `OPENAI_API_KEY` | GPT-Live, Realtime, OpenAI-szövegmodell |
 | `GEMINI_API_KEY` vagy `GOOGLE_API_KEY` | Gemini Live, Gemini-szövegmodell |
 | `ELEVENLABS_API_KEY`, `EL_AGENT_ID_REALTIME`, `EL_AGENT_ID_CASCADE` | ElevenLabs-ügynökök |
-| `VOICE_LAB_TEXT_MODEL_OPENAI`, `VOICE_LAB_TEXT_MODEL_GOOGLE` | a szövegmodell azonosítója (alapból `gpt-5.4-mini`, illetve `gemini-2.5-flash`) |
+| `VOICE_LAB_TEXT_MODEL_OPENAI`, `VOICE_LAB_TEXT_MODEL_GOOGLE` | a szövegmodell azonosítója (alapból `gpt-5.4-mini`, illetve `gemini-3.8-flash`) |
 | `VOICE_LAB_ACCESS_CODE` | ha meg van adva, a segéd csak ezzel a kóddal ad tokent |
 | `VOICE_LAB_ALLOWED_ORIGINS` | mely weboldalak érhetik el a segédet (alapból a GitHub Pages-cím) |
 | `VOICE_LAB_ENV` | az env-fájl útvonala (alapból a git-ignorált `.env.local` ebben a mappában; minta: `.env.example`) |

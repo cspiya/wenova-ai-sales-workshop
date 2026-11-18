@@ -30,7 +30,7 @@
 <h2 id="honnan-jönnek-a-kulcsok">Honnan jönnek a kulcsok?</h2>
 <p>A demó oldala statikus, kulcs nincs benne és a repóban sincs. A hangmodellekhez rövid életű hitelesítő adat kell, ezt háromféleképpen kaphatja (Beállítások; automatikus módban ebben a sorrendben):</p>
 <ol>
-<li><strong>Távoli broker:</strong> egy kis szerver a Wenova kulcsaival, amely csak rövid életű tokent ad ki, hozzáférési kóddal. Ha a szervező megadja a címét és a kódot, kulcs nélkül is kipróbálható. A felületét a <a href="BROKER-API.md">BROKER-API.md</a> írja le.</li>
+<li><strong>Távoli broker:</strong> egy kis szerver a Wenova kulcsaival, amely csak rövid életű tokent ad ki, hozzáférési kóddal. A Wenova brokere (<code>https://voice-lab-broker.vercel.app</code>) be van állítva; a hozzáférési kódot a workshopon kapod meg, és ezzel kulcs nélkül is kipróbálható. A felületét a <a href="BROKER-API.md">BROKER-API.md</a> írja le.</li>
 <li><strong>Helyi segéd:</strong> <code>python server.py</code> a saját gépeden, a saját kulcsaiddal. Ugyanazt a felületet adja, mint a broker.</li>
 <li><strong>Saját API-kulcs a böngészőben:</strong> a kulcs csak ebben a böngészőben marad (alapból a lap bezárásáig; kérésre ezen az eszközön), és közvetlenül a szolgáltatóhoz megy. A <strong>Kulcsok törlése</strong> gomb eltávolítja. Saját kulcsnál a költség a te fiókodat terheli.</li>
 </ol>
@@ -99,7 +99,7 @@ python server.py
 </tr>
 <tr>
 <td><code>VOICE_LAB_TEXT_MODEL_OPENAI</code>, <code>VOICE_LAB_TEXT_MODEL_GOOGLE</code></td>
-<td>a szövegmodell azonosítója (alapból <code>gpt-5.4-mini</code>, illetve <code>gemini-2.5-flash</code>)</td>
+<td>a szövegmodell azonosítója (alapból <code>gpt-5.4-mini</code>, illetve <code>gemini-3.8-flash</code>)</td>
 </tr>
 <tr>
 <td><code>VOICE_LAB_ACCESS_CODE</code></td>

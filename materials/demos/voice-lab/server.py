@@ -42,7 +42,7 @@ GEMINI_API = "https://generativelanguage.googleapis.com/v1beta"
 GEMINI_WS = ("wss://generativelanguage.googleapis.com/ws/"
              "google.ai.generativelanguage.v1beta.GenerativeService.BidiGenerateContentConstrained")
 GEMINI_LANG = "RESPOND IN HUNGARIAN. YOU MUST RESPOND UNMISTAKABLY IN HUNGARIAN.\n\n"
-DEFAULT_TEXT_MODELS = {"openai": "gpt-5.4-mini", "google": "gemini-2.5-flash"}
+DEFAULT_TEXT_MODELS = {"openai": "gpt-5.4-mini", "google": "gemini-3.8-flash"}
 
 _ENV = None
 
