@@ -27,6 +27,15 @@ function storeKeys(keys, remember) {
   try { (remember ? localStorage : sessionStorage).setItem("vl.keys", JSON.stringify(clean)); } catch { /* blocked */ }
 }
 let { keys, remember } = loadKeys();
+// One-tap link for the workshop: app.htm#code=<access code>. The fragment never reaches any server;
+// it is moved into sessionStorage (this tab only) and removed from the address bar at once.
+(function codeFromHash() {
+  const m = /(?:^#|&)code=([^&]{4,120})/.exec(location.hash || "");
+  if (!m) return;
+  try { keys.accessCode = decodeURIComponent(m[1]).trim(); } catch { return; }
+  storeKeys(keys, remember);
+  try { history.replaceState(null, "", location.pathname + location.search); } catch { /* ignore */ }
+})();
 
 // ------------------------------------------------------------------ state
 let creds = null, health = null;
