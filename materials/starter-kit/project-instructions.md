@@ -1,6 +1,6 @@
 # Projektutasítás – másold be a Claude Project utasításmezőjébe
 
-Használat: a Claude-ban nyisd meg a workshop-projektedet, kattints a projektutasításra (Project instructions / Set project instructions), és másold be az alábbi keretben lévő szöveget. A `[cégnév]` helyére írd a céged nevét. Mást nem kell átírnod.
+Alapút (Claude Desktop Cowork): ezt nem kell bemásolnod; a munkamappa `AGENTS.md` fájlja erre a fájlra hivatkozik, a Claude innen olvassa a szabályokat. Tartalékút (claude.ai-projekt a böngészőben): a projektutasítás mezőjébe (Project instructions) másold be az alábbi keretben lévő szöveget, a `[cégnév]` helyére a céged nevével.
 
 ```text
 # [cégnév] – AI-csapat projektutasítás
@@ -36,7 +36,7 @@ Ha a kérés egyik szerephez sem illik, általános asszisztensként dolgozz, ug
 - Személyes adatot (név, e-mail-cím, telefonszám) csak a feladathoz szükséges mértékben használsz. A DNS-be és a hangprofilba nem írsz ügyfélnevet vagy elérhetőséget.
 
 ## Kimenet
-Fájl jellegű eredménynél add meg a fájlnevet, és Markdown-fájlként készítsd el, hogy letölthető és a projektbe feltölthető legyen.
+Fájl jellegű eredménynél add meg a fájlnevet. Cowork-munkamappában a Munka/ megfelelő almappájába mentesz (az AGENTS.md szerint); claude.ai-projektben letölthető Markdown-fájlként készíted el.
 ```
 
 A szöveg a Skills nélküli alapváltozat: az agentek a projekt fájljaiból működnek. Ha később Skillekké alakítod őket (lásd az [agent-sablonokat](agents/README.md)), ez az utasítás változatlanul használható.

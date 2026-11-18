@@ -58,7 +58,7 @@
 <div class="cell cell--output">
 <a id="overview-2"></a>
 <h3 class="cell-title">Kimenet</h3>
-<p><code>company-dna.md</code> (Cég-DNS 0.1), <code>voice-profile.md</code> (hangprofil), <code>business-profile.md</code> és <code>sales-strategy.md</code> (kivonat a partnerblokkoknak), működő Karmester–Író–Ellenőr próbafutás. Mindegyik a projekt tudásában.</p>
+<p><code>company-dna.md</code> (Cég-DNS 0.1), <code>voice-profile.md</code> (hangprofil), <code>business-profile.md</code> és <code>sales-strategy.md</code> (kivonat a partnerblokkoknak), működő Karmester–Író–Ellenőr próbafutás. Mindegyik a <code>Munka/01-DNS/</code> mappában (claude.ai-os tartalékúton a projekt tudásában).</p>
 </div>
 <div class="cell cell--help">
 <a id="overview-3"></a>
@@ -117,7 +117,7 @@
 </tr>
 </tbody>
 </table></div>
-<p>Őszintén: a Claude asztali alkalmazásban ezek az agentek szerepleírások a projektben, nem külön futó programok. A Karmester ugyanabban a beszélgetésben vált szerepet (Író, Postás, CRM); az Ellenőr függetlenségét az adja, hogy új beszélgetésben fut. Az agentek a projekt fájljaiból működnek: a projektutasítás köti össze az indítómondatot („Író: …”) az agentfájllal (<code>writer.md</code>). Később ugyanezek a fájlok Skillé alakíthatók; a Skill olyan feladatleírás, amelyet a Claude magától betölt, ha illik a kéréshez.</p>
+<p>Őszintén: a Claude Desktopban ezek az agentek szerepleírások a tananyagban (<code>Tananyag/starter-kit/agents/</code>), nem külön futó programok. A Karmester ugyanabban a beszélgetésben vált szerepet (Író, Postás, CRM); az Ellenőr függetlenségét az adja, hogy új beszélgetésben fut. Az agentek a projekt fájljaiból működnek: a projektutasítás köti össze az indítómondatot („Író: …”) az agentfájllal (<code>writer.md</code>). Később ugyanezek a fájlok Skillé alakíthatók; a Skill olyan feladatleírás, amelyet a Claude magától betölt, ha illik a kéréshez.</p>
 <p><strong>Miért új beszélgetés az Ellenőrnek?</strong> Ha ugyanaz a beszélgetés ellenőriz, amelyik írt, az ugyanazokat a feltételezéseket látja helyesnek. Az új beszélgetés csak azt kapja, amit az ügyfél is látna: a szöveget és az eredeti kérést. Ez a friss kontextus.</p>
 <a id="team-model-2"></a>
 <h3>Mikor kell emberi jóváhagyás?</h3>
@@ -212,10 +212,10 @@
 </thead>
 <tbody>
 <tr>
-<td>Claude-projekt, agentfájlok, opcionálisan Skills</td>
+<td>Claude Desktop Cowork, munkamappa, agentfájlok, opcionálisan Skills</td>
 <td>Közös alap: DNS, agentek, tanulási kísérő</td>
-<td>Projekt tudás és projektutasítás (00-s modul); Skill-feltöltés opcionális</td>
-<td>A Claude-fiókodban</td>
+<td>A telepített <code>Tananyag/</code> és a <code>Munka/</code> mappa, a projekt Instructions mezője (00-s modul); Skill-feltöltés opcionális</td>
+<td>A gépeden (<code>Munka/</code>) és a Claude-fiókodban</td>
 <td>A hibás DNS minden agentet ront: a DNS-verziót a gazda hagyja jóvá</td>
 </tr>
 <tr>
@@ -234,8 +234,8 @@
 </tr>
 <tr>
 <td>Brandiseer</td>
-<td>Márkahű kép, videó, ütemezett posztolás</td>
-<td>A 02-es blokkban beállított kapcsolat; ha nincs, letöltés és bemásolás</td>
+<td>Márkahű kép, videó, poszt</td>
+<td>A Brandiseer saját connectora; a 02-es blokkban kötöd be. Ha kiesik: letöltés és bemásolás</td>
 <td>A Brandiseer-fiókodban</td>
 <td>Publikálás: mindig te</td>
 </tr>
@@ -311,14 +311,14 @@
 <a id="01-business-foundations.01-offer-and-audience--prompt"></a>
 <h3 class="cell-title">Ezt kérd Claude-tól</h3>
 <p>Kapcsold be a webes keresést, és cseréld ki a szögletes zárójeles részt:</p>
-<pre><code class="language-text">Cég-DNS-t készítünk a cégemről a projektben lévő company-dna.md sablon szerint.
+<pre><code class="language-text">Cég-DNS-t készítünk a cégemről a Tananyag/starter-kit/company-dna.md sablon szerint.
 Cél: kitöltött company-dna.md, 0.1-es verzió. Kész, ha minden állítás mellett forrás-ID van vagy „Nincs megadva”, és minden hiány a 9. szakaszban teendőként szerepel.
 Címzett: a projekt agentjei és a partnerblokkok (Brandiseer, Sales Bot, EstiWise); és én, aki jóváhagyom.
-Forrás és határ: a weboldalam: [URL]; a projektbe feltöltött árlista és ajánlat(ok); a kérdéseidre adott válaszaim. Mást nem használsz, a saját tudásodból nem egészítesz ki. Ügyfélnevet és személyes adatot nem írsz be.
+Forrás és határ: a weboldalam: [URL]; a Munka/00-Felkeszules/forrasok/ mappa árlistája és ajánlata(i); a kérdéseidre adott válaszaim. Mást nem használsz, a saját tudásodból nem egészítesz ki. Ügyfélnevet és személyes adatot nem írsz be.
 Kimeneti séma: a sablon 0–10. szakasza; legfeljebb 3 ajánlat O01, O02, O03 azonosítóval; az O01 a fő ajánlat.
 Szabályok: ahol a forrás hallgat, tegyél fel kérdést, egyszerre egyet, összesen legfeljebb ötöt. A javaslatot jelöld javaslatnak.
 Ellenőrzés: a végén mutass két fontos állítást a forrásszöveg szó szerinti idézetével, hogy ellenőrizni tudjam.
-Mentés: company-dna.md letölthető fájlként. Utána a DNS-ből készíts kivonatot: business-profile.md (a projektben lévő business-profile.md 13 mezőjével) és sales-strategy.md (offer_id, audience, channel, message, next_action, success_metric).
+Mentés: Munka/01-DNS/company-dna.md. Utána a DNS-ből készíts kivonatot ugyanide: business-profile.md (a Tananyag/starter-kit/business-profile.md 13 mezőjével) és sales-strategy.md (offer_id, audience, channel, message, next_action, success_metric).
 </code></pre>
 </div>
 <div class="cell cell--steps">
@@ -329,7 +329,7 @@ Mentés: company-dna.md letölthető fájlként. Utána a DNS-ből készíts kiv
 <li><strong>3–12 perc:</strong> válaszold meg a Claude kérdéseit, egy-két mondatban.</li>
 <li><strong>12–17 perc:</strong> olvasd el a DNS-t. Ellenőrizd a két idézett állítást a forrásban. Ami nem stimmel, azt mondd meg a Claude-nak.</li>
 <li><strong>17–21 perc:</strong> írd be a gazdát a 0. szakaszba, és kérd a kivonatot (business-profile.md, sales-strategy.md), ha még nem készült el.</li>
-<li><strong>21–25 perc:</strong> töltsd le a három fájlt, és töltsd fel a projekt tudásába. A sablon <code>company-dna.md</code> és <code>business-profile.md</code> fájlját töröld onnan, hogy ne legyen két változat.</li>
+<li><strong>21–25 perc:</strong> nyisd meg a <code>Munka/01-DNS/</code> mappát, és nézd meg, hogy ott a három fájl. (claude.ai-os tartalékúton: töltsd le őket, és töltsd fel a projekt tudásába a sablonok helyére.)</li>
 </ol>
 </div>
 <div class="cell cell--check">
@@ -341,7 +341,7 @@ Mentés: company-dna.md letölthető fájlként. Utána a DNS-ből készíts kiv
 <li>Minden állítás mellett forrás-ID vagy „Nincs megadva” áll; a 9. szakaszban legalább egy teendő van gazdával.</li>
 <li>A „Nem mondjuk” oszlopban legalább három saját tétel van.</li>
 <li>Két állítást magad ellenőriztél a forrásban.</li>
-<li>A három fájl a projekt tudásában van, és nincs mellettük régi sablonpéldány.</li>
+<li>A három fájl a <code>Munka/01-DNS/</code> mappában van.</li>
 </ul>
 </div>
 <div class="cell cell--help">
@@ -381,7 +381,7 @@ Mentés: company-dna.md letölthető fájlként. Utána a DNS-ből készíts kiv
 <div class="cell cell--input">
 <a id="01-business-foundations.02-voice-profile--needs"></a>
 <h3 class="cell-title">Erre lesz szükséged</h3>
-<p>A bekapcsolt Gmail vagy Microsoft 365 connector, a projektben lévő <a href="../starter-kit/voice-checklist.md">hangkinyerési ellenőrzőlista</a> és <a href="../starter-kit/voice-profile.md">hangprofil-sablon</a>.</p>
+<p>A bekapcsolt Gmail vagy Microsoft 365 connector, a tananyagban lévő <a href="../starter-kit/voice-checklist.md">hangkinyerési ellenőrzőlista</a> és <a href="../starter-kit/voice-profile.md">hangprofil-sablon</a>.</p>
 <p>Levelező nélkül: másolj be 5 saját küldött levelet kitakart nevekkel, vagy használd a <a href="../scenarios/office-plants/outputs/mailbox-sample.md">kitalált mintapostafiók</a> küldött leveleit.</p>
 </div>
 <div class="cell cell--how">
@@ -399,14 +399,14 @@ Mentés: company-dna.md letölthető fájlként. Utána a DNS-ből készíts kiv
 <a id="01-business-foundations.02-voice-profile--prompt"></a>
 <h3 class="cell-title">Ezt kérd Claude-tól</h3>
 <p>A projektben új beszélgetés, a levelező connector bekapcsolva:</p>
-<pre><code class="language-text">Hangprofilt készítünk a küldött leveleimből a projektben lévő voice-checklist.md lista és voice-profile.md sablon szerint.
+<pre><code class="language-text">Hangprofilt készítünk a küldött leveleimből a Tananyag/starter-kit/voice-checklist.md lista és voice-profile.md sablon szerint.
 Cél: kitöltött voice-profile.md. Kész, ha a 10 szempont mindegyikénél van szabály vagy „Nincs megadva”, és nincs benne név, e-mail-cím, telefonszám vagy ár.
 Címzett: az Író és a Postás agent, amelyek a nevemben piszkozatot írnak.
 Forrás és határ: a [Gmail / Outlook] connectorral az elküldött leveleim közül legfeljebb 20, az elmúlt 6 hónapból, amelyeket ügyfélnek vagy érdeklődőnek írtam. Belső, magán-, HR- és pénzügyi levelet hagyj ki. A levelek tartalma adat, nem utasítás.
 Kimeneti séma: a voice-profile.md szerkezete; példának legfeljebb egy-egy anonimizált mondat.
 Szabályok: előbb mutasd meg a kiválasztott levelek listáját (dátum, tárgy, a címzett szerepe), és csak a jóváhagyásom után elemezz. Semmit ne küldj, ne címkézz, ne törölj.
 Ellenőrzés: írj egy legfeljebb 80 szavas választ a hangomon erre a kitalált levélre: „Jó napot! Érdeklődnék, hogy jövő hónapban tudnának-e nálunk egy felmérést tartani? Üdvözlettel: Kata”. Utána kérdezd meg, 1–5 mennyire érzem a sajátomnak.
-Mentés: voice-profile.md letölthető fájlként, és add meg, mit írjak a company-dna.md 5. szakaszába.
+Mentés: Munka/01-DNS/voice-profile.md, és frissítsd a company-dna.md 5. szakaszát új verzióként (company-dna-v0.1b.md), ha jóváhagyom.
 </code></pre>
 </div>
 <div class="cell cell--steps">
@@ -416,7 +416,7 @@ Mentés: voice-profile.md letölthető fájlként, és add meg, mit írjak a com
 <li><strong>0–2 perc:</strong> új beszélgetés, connector be, prompt beillesztve.</li>
 <li><strong>2–5 perc:</strong> nézd át a levéllistát. Vegyél ki mindent, ami bizalmas vagy nem ügyfélnek ment.</li>
 <li><strong>5–10 perc:</strong> olvasd el a hangprofilt és a próbaválaszt. Értékeld 1–5-ig; 4 alatt mondd meg, mi idegen benne.</li>
-<li><strong>10–14 perc:</strong> töltsd le a <code>voice-profile.md</code> fájlt, töltsd fel a projektbe (a sablont töröld), és frissítsd a DNS 5. szakaszát.</li>
+<li><strong>10–14 perc:</strong> ellenőrizd, hogy a <code>voice-profile.md</code> a <code>Munka/01-DNS/</code> mappában van, és hagyd jóvá a DNS 5. szakaszának frissítését.</li>
 </ol>
 </div>
 <div class="cell cell--check">
@@ -427,7 +427,7 @@ Mentés: voice-profile.md letölthető fájlként, és add meg, mit írjak a com
 <li>A forrásnál ott az időszak és a levelek száma.</li>
 <li>Nincs benne ügyfélnév, cím, ár.</li>
 <li>A próbaválaszt legalább 4-esre értékelted.</li>
-<li>A fájl a projekt tudásában van.</li>
+<li>A fájl a <code>Munka/01-DNS/</code> mappában van.</li>
 </ul>
 </div>
 <div class="cell cell--help">
@@ -462,7 +462,7 @@ Mentés: voice-profile.md letölthető fájlként, és add meg, mit írjak a com
 <div class="cell cell--input">
 <a id="01-business-foundations.03-ai-workspace--needs"></a>
 <h3 class="cell-title">Erre lesz szükséged</h3>
-<p>A projektben: a projektutasítás és az öt <a href="../starter-kit/agents/README.md">agentfájl</a> (a felkészülésben feltöltötted), valamint az előző két lecke eredménye.</p>
+<p>A munkamappában: az öt <a href="../starter-kit/agents/README.md">agentfájl</a> a <code>Tananyag/starter-kit/agents/</code> mappában, a projekt Instructions mezője (a felkészülésben beállítottad), valamint az előző két lecke eredménye a <code>Munka/01-DNS/</code> mappában.</p>
 <p>Kész minta: <a href="../scenarios/office-plants/outputs/review-sample.md">ellenőri jelentés az IrodaLiget példán</a>.</p>
 </div>
 <div class="cell cell--how">
@@ -502,7 +502,7 @@ Előbb csak a tervet mutasd meg kapukkal; a jóváhagyásom után indítsd az Í
 <a id="01-business-foundations.03-ai-workspace--steps"></a>
 <h3 class="cell-title">Haladj végig ezeken</h3>
 <ol>
-<li><strong>0–2 perc:</strong> ellenőrizd, hogy a projekt tudásában ott az öt agentfájl és a projektutasítás. Ha hiányzik, most töltsd fel (a <a href="00-prework.html#00-prework.02-account-check">felkészülési modul</a> 2–3. lépése).</li>
+<li><strong>0–2 perc:</strong> kérdezd meg a Claude-ot: „Látod az öt agentfájlt és az AGENTS.md-t?” Ha nem, a <a href="00-prework.html#00-prework.01-install">telepítés</a> 5. lépése hiányzik.</li>
 <li><strong>2–5 perc:</strong> A beszélgetés: Karmester-prompt; nézd át és hagyd jóvá a tervet.</li>
 <li><strong>5–9 perc:</strong> az Író megírja a posztot. Olvasd el az önellenőrzést, és másold ki az ellenőrzési csomagot.</li>
 <li><strong>9–14 perc:</strong> B beszélgetés: Ellenőr. Olvasd el a döntést és a táblázatot.</li>
@@ -534,7 +534,8 @@ Előbb csak a tervet mutasd meg kapukkal; a jóváhagyásom után indítsd az Í
 <div class="cell cell--output">
 <a id="01-business-foundations.03-ai-workspace--handoff"></a>
 <h3 class="cell-title">Ezt viszed tovább</h3>
-<p>A projektedben most ott van a Cég-DNS, a hangprofil és egy kipróbált AI-csapat. Ezt minden partnerblokkban használod: a Brandiseer-tartalmat, a Sales Bot-üzeneteket és az ajánlat kísérőszövegét ugyanígy átnézetheted az Ellenőrrel. Az 5. blokkban a Postás és a CRM-agent is munkába áll, és a Karmester egy teljes ügyfélesetet visz végig.</p>
+<p>A munkamappádban most ott van a Cég-DNS, a hangprofil és egy kipróbált AI-csapat. Ezt minden partnerblokkban használod: a Brandiseer-tartalmat, a Sales Bot-üzeneteket és az ajánlat kísérőszövegét ugyanígy átnézetheted az Ellenőrrel. Az 5. blokkban a Postás és a CRM-agent is munkába áll, és a Karmester egy teljes ügyfélesetet visz végig.</p>
+<p><strong>Wenova-kiegészítés a 02-es blokkhoz (választható, ha a Brandiseer-oktató is így kéri):</strong> a kampányvázból (lásd lent, „Ha maradt időd”) egy poszthoz képet kérsz a Brandiseer connectorával; a Claude a képet a <code>Munka/02-Tartalom/</code> mappába menti, és posztelőnézetet készít belőle HTML-ben. Jóváhagyás után a Buffer connectorral piszkozatként vagy sorba állítva feladja a posztot, és a Bufferben is megnézed. Ha a kép nem jön vissza a connectoron át, töltsd le a Brandiseerből a <code>Munka/02-Tartalom/</code> mappába; ha a Buffer-piszkozathoz nem csatolható, a Buffer felületén töltsd fel kézzel.</p>
 </div>
 <div class="cell cell--extra">
 <a id="01-business-foundations.03-ai-workspace--extra"></a>
@@ -542,14 +543,19 @@ Előbb csak a tervet mutasd meg kapukkal; a jóváhagyásom után indítsd az Í
 <ul>
 <li>Második próba: <code>Író: e-mail-válasz – [egy kitalált érdeklődő levél három mondatban]</code>, majd Ellenőr.</li>
 <li>Alakítsd az Írót Skillé az <a href="../starter-kit/agents/README.md">agent-sablonok leírása</a> szerint.</li>
+<li><strong>Kampányváz vizuálisan (5 perc):</strong> a DNS-ből egy egyoldalas, böngészőben megnyitható kampányváz. Ezt viszed a 02-es blokkba.</li>
 </ul>
+<pre><code class="language-text">Készíts kampányvázat a Munka/01-DNS/company-dna.md alapján, egyetlen önálló HTML-fájlként: Munka/01-DNS/kampanyvaz.html.
+Tartalom: cél és ideális ügyfél egy-egy mondatban; a fő ajánlat (O01); 4 hetes naptárnézet, hetente 2 poszttémával és 1 LinkedIn-megkereséssel (csak téma és cél, kész szöveg nélkül); szakaszonként egy mérőszám a Tananyag/starter-kit/weekly-review.md szerint.
+Szabályok: minden tény a DNS-ből jön; ami nincs, „Nincs megadva”. Külső hivatkozás és szkript nélkül, nyomtatható legyen. A végén add meg az útvonalat, hogy megnyissam a böngészőben.
+</code></pre>
 </div>
 <a id="recovery"></a>
 <h2>Segítség elakadáskor</h2>
 <ol>
-<li>Mentsd a saját eddigi munkádat (töltsd le a félkész fájlt).</li>
+<li>A saját félkész munkád maradjon a <code>Munka/01-DNS/</code> mappában.</li>
 <li>Az IrodaLiget mintából vedd át, ami hiányzik: <a href="../scenarios/office-plants/outputs/company-dna.md">Cég-DNS</a>, <a href="../scenarios/office-plants/outputs/voice-profile.md">hangprofil</a>, <a href="../scenarios/office-plants/outputs/business-profile.md">alaplap</a>, <a href="../scenarios/office-plants/outputs/sales-strategy.md">stratégia</a>.</li>
-<li>Töltsd fel ezeket a projekt tudásába a saját félkész változatod helyett, külön jelölve, hogy minta.</li>
+<li>Kérd a Claude-ot, hogy másolja őket <code>Munka/01-DNS/minta/</code> alá, és onnan dolgozz; a saját félkész változatod megmarad.</li>
 <li>A haladási naplóban jelöld: <code>completed_with_example</code>, végrehajtás: <code>simulation</code>.</li>
 <li>Mondd el saját szavaiddal, mi lenne a te DNS-edben más, majd folytasd a következő leckével.</li>
 </ol>
@@ -561,7 +567,7 @@ Előbb csak a tervet mutasd meg kapukkal; a jóváhagyásom után indítsd az Í
 <h2>Folytatás</h2>
 <p><a href="../index.html#modules">Modulok</a><a href="02-content-marketing.html">Következő modul →</a></p>
 <p>Wenova × Brandiseer × Blackhole Media × EstiWise</p>
-<nav class="pager" aria-label="Modulok"><a class="pager__prev" href="00-prework.html"><span>← Előző modul</span>Felkészülés: Claude, kapcsolatok és saját források</a><a class="pager__next" href="02-content-marketing.html"><span>Következő modul →</span>Márkaazonos tartalom és kampány</a></nav>
+<nav class="pager" aria-label="Modulok"><a class="pager__prev" href="00-prework.html"><span>← Előző modul</span>Felkészülés: telepítés, kapcsolatok és saját források</a><a class="pager__next" href="02-content-marketing.html"><span>Következő modul →</span>Márkaazonos tartalom és kampány</a></nav>
 </main></div>
 <footer class="site-foot"><div class="partner-band partner-band--foot has-lead"><p class="partner-band__label">Wenova × Brandiseer × Blackhole Media × EstiWise</p><ul class="partner-band__list" aria-label="Partnerek"><li class="partner partner--wenova is-lead"><span class="partner__logo"><img class="logo logo--wenova" src="../assets/logos/wenova-wordmark.png" alt="Wenova" width="239" height="28"></span><span class="partner__role"><span class="partner__lead">Blokkgazda</span> · Szervező · AI-működés</span></li><li class="partner partner--brandiseer"><span class="partner__logo"><img class="logo logo--brandiseer" src="../assets/logos/brandiseer-icon.png" alt="" width="24" height="28"><span class="logo-word">Brandiseer</span></span><span class="partner__role">Márkaazonos tartalom</span></li><li class="partner partner--blackhole"><span class="partner__logo"><img class="logo logo--blackhole" src="../assets/logos/black-hole-media-logo.png" alt="Blackhole Media" width="299" height="28"></span><span class="partner__role">Ügyfélszerzés · Sales Bot</span></li><li class="partner partner--estiwise"><span class="partner__logo"><img class="logo logo--estiwise" src="../assets/logos/estiwise-logo-feher.svg" alt="EstiWise" width="99" height="28"></span><span class="partner__role">Ajánlatadás 0–24</span></li></ul></div><p class="site-foot__meta">AI Sales &amp; Marketing Workshop · 2026. november 19. · CEU, Budapest · a Wenova szervezésében</p></footer>
 </body></html>

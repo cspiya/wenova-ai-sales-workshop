@@ -65,6 +65,14 @@ A 35 perc csak a rövid úttal fér bele: a Postás csak a WORKSHOP-TESZT levele
 
 Utána három résztvevő mondja el a saját holnapi első lépését; végül partneri ajánlatok és visszajelzés.
 
+<a name="notes-6"></a>
+
+### Partnerkapcsolatok, vizuális áttekintés, ütemezés
+
+- Az 5. blokk azzal számol, hogy a Brandiseer, a Sales Bot és az EstiWise connectora a 02–04-es blokkban be van kötve. Akinél kiesett, az a táblázat „Ha nem érhető el” oszlopa szerint fájlból dolgozik, `simulation` jelöléssel.
+- „A nap egy oldalon” HTML és az ütemezett feladatok csak „Ha maradt időd” vagy otthoni feladat. A 35 percbe nem férnek bele; ne erőltesd.
+- Ütemezett feladat Pro csomagon a felhőben fut, helyi mappa nélkül: ezért a DNS-t a Google Drive-ba kell tenni. Ezt élőben nem próbáltuk.
+
 ## Kapcsolódó tananyagrészek
 
 A hivatkozások a bal oldali tananyagnézetet a megfelelő szakaszra állítják.

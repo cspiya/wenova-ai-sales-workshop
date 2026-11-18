@@ -14,13 +14,13 @@
 <h3>Előző nap</h3>
 <ul>
 <li>A résztvevők 2026-11-18-án e-mailt kaptak: fizetős Claude kell; Brandiseer- és (kötelező) Buffer-fiók legalább egy közösségimédia-oldallal; EstiWise-regisztráció bankkártya nélkül; a Sales Bothoz előre nincs teendő, a hozzáférést a 03-as blokk elején kapják, csak a LinkedIn-belépés legyen kéznél. Partnereszközre senkinek nem kell előfizetnie. Terem: N13 412/A (4. emelet), belépőkártya a recepción.</li>
-<li>A pultnál legyen kéznél: a tananyag letöltési linkje (ZIP és böngészhető oldal). Az EstiWise és a Sales Bot Claude-kapcsolatát a pultnál NEM kötjük be: ezt a 03-as és 04-es blokk elején a partnerek csinálják.</li>
-<li>Demófiókok listája: EstiWise (Máté), Sales Bot tartalék fiók (Balázs, Bogáta).</li>
+<li>Az alapút <strong>Claude Desktop, Cowork mód</strong>, munkamappa: <code>Wenova-AI-Sales-Workshop</code> (<code>Tananyag/</code> + <code>Munka/</code>). A tananyag a nyilvános repó <code>main</code> ágáról települ egy mondattal (<a href="../../materials/modules/00-prework.html#00-prework.01-install" target="lesson">telepítés</a>). A PR-nak 19-én reggelig a <code>main</code>-en kell lennie, különben a telepítés a régi anyagot hozza.</li>
+<li>A partnerek MCP-connectorát (Brandiseer, Sales Bot, EstiWise) a partnerek a saját blokkjukban kötik be. A pultnál ezekkel nem foglalkozunk.</li>
 </ul>
 <a id="notes-2"></a>
 <h3>Technikai pult 08:30–09:00</h3>
-<p>Sorrend: <a href="../../materials/modules/00-prework.html#00-prework.02-account-check--steps" target="lesson">projekt és connectorok</a> → <a href="../../materials/modules/00-prework.html#00-prework.03-partner-accounts--steps" target="lesson">partnerfiókok</a> → <a href="../../materials/modules/00-prework.html#00-prework.04-coach-check--prompt" target="lesson">indulási próba</a>. Egy résztvevőre legfeljebb 5 perc; ami addig nem megy, az a kézi úton indul, és a blokkban a körbejáró oktató pótolja.</p>
-<p>Pultlap (papíron, név nélkül, asztalszámmal): projekt ✅/⚠️ · levelező ✅/⚠️ · levelező küldés/válasz/továbbítás/törlés Tiltva (Blocked) ✅/⚠️ · Google-tábla ✅/⚠️ · Brandiseer ✅/⚠️ · Buffer + közösségimédia-oldal ✅/⚠️ · EstiWise-fiók ✅/⚠️. A Sales Bot nincs a lapon: a hozzáférést a 03-as blokkban kapják.</p>
+<p>Sorrend: <a href="../../materials/modules/00-prework.html#00-prework.01-install--steps" target="lesson">telepítés</a> → <a href="../../materials/modules/00-prework.html#00-prework.02-account-check--steps" target="lesson">connectorok és tiltás</a> → <a href="../../materials/modules/00-prework.html#00-prework.05-coach-check--prompt" target="lesson">indulási próba</a>. Egy résztvevőre legfeljebb 5 perc; ami addig nem megy, az a kézi úton indul, és a blokkban a körbejáró oktató pótolja.</p>
+<p>Pultlap (papíron, név nélkül, asztalszámmal): Cowork + munkamappa ✅/⚠️ · <code>Tananyag/</code> verzió ✅/⚠️ · Instructions-mondat ✅/⚠️ · levelező ✅/⚠️ · levelező küldés/válasz/továbbítás/törlés Tiltva (Blocked) ✅/⚠️ · Google Drive + CRM-tábla ✅/⚠️ · Buffer-fiók + connector ✅/⚠️ · Brandiseer ✅/⚠️ · EstiWise-fiók ✅/⚠️.</p>
 <p>Levelezőbiztonság: a connector oldalán az írási eszközök Tiltva (Blocked) állásban; írási műveletnél senki ne kattintson a „Mindig engedélyez” (Always allow) gombra.</p>
 <a id="notes-3"></a>
 <h3>Gyakori hibák</h3>
@@ -35,13 +35,28 @@
 <tbody>
 <tr>
 <td>Ingyenes csomag</td>
-<td>Nincs Projects vagy fájlkészítés</td>
-<td>Előfizetés helyben (Pro), vagy párban dolgozik egy másik résztvevővel</td>
+<td>Nincs Cowork</td>
+<td>Előfizetés helyben (Pro), vagy párban dolgozik</td>
 </tr>
 <tr>
-<td>Fájlkészítés kikapcsolva</td>
-<td>A Claude nem ad letölthető fájlt</td>
-<td>Settings → Capabilities → Create and edit files</td>
+<td>Nincs csatolt mappa</td>
+<td>A Claude kéri, hogy válasszon mappát</td>
+<td>Projects → + → Use an existing folder → <code>Wenova-AI-Sales-Workshop</code></td>
+</tr>
+<tr>
+<td>A letöltés hálózati hibával áll meg</td>
+<td><code>git clone</code> vagy letöltés elutasítva</td>
+<td>Settings → Capabilities → Allow network egress be, Domain allowlist: Package managers only; „Próbáld újra”</td>
+</tr>
+<tr>
+<td>Ez sem megy</td>
+<td>–</td>
+<td><a href="../../materials/modules/00-prework.html#00-prework.01-install--help" target="lesson">Kézi ZIP-út</a>, 3 perc</td>
+</tr>
+<tr>
+<td>Cowork nem indul a gépen</td>
+<td>–</td>
+<td>Tartalékút: claude.ai-projekt a böngészőben (<a href="../../materials/modules/00-prework.html#00-prework.01-install--help" target="lesson">help</a>)</td>
 </tr>
 <tr>
 <td>Céges Microsoft 365</td>
@@ -49,32 +64,39 @@
 <td>Nem oldjuk meg helyben: bemásolt levelek, <a href="../../materials/scenarios/office-plants/outputs/mailbox-sample.md">mintapostafiók</a></td>
 </tr>
 <tr>
-<td>Google Sheets nincs a connectorlistában</td>
-<td>A Claude nem találja a táblát</td>
-<td>CSV a projektben, kézi bemásolás (<a href="../../materials/modules/00-prework.html#00-prework.04-coach-check--help" target="lesson">help</a>)</td>
+<td>A Claude nem találja a CRM-táblát</td>
+<td>–</td>
+<td>„Keresd a Google Drive-ban a CRM nevű táblázatot”; ha nincs Drive: CSV a <code>Munka/05-Folyamat/</code> alatt (<a href="../../materials/modules/00-prework.html#00-prework.05-coach-check--help" target="lesson">help</a>)</td>
 </tr>
 <tr>
-<td>Projektutasítás nincs mentve</td>
+<td>Az Instructions-mondat hiányzik</td>
 <td>Az indítómondatokat nem ismeri fel</td>
-<td>Mentés ellenőrzése, új beszélgetés</td>
-</tr>
-<tr>
-<td>Régi és új fájl egyszerre a projektben</td>
-<td>A Claude a sablont olvassa a kitöltött DNS helyett</td>
-<td>A sablon törlése a projekt tudásából</td>
+<td>Projekt beállításai → Instructions: „Kövesd a munkamappa AGENTS.md fájlját. A cégem neve: …”</td>
 </tr>
 </tbody>
 </table></div>
 <a id="notes-4"></a>
+<h3>Ma este tesztelendő, nem ellenőrzött pontok</h3>
+<p>A dokumentáció alapján írtuk, élő próbán nem futott:</p>
+<ol>
+<li>A Cowork a <code>raw.githubusercontent.com</code> linket a résztvevő által megadott URL-ként be tudja-e olvasni, és a <code>git clone</code> a github.com-ról Pro csomagon, alapbeállítással átmegy-e (a Pro alapértelmezett hálózati beállítása a dokumentációban nem szerepel).</li>
+<li>A VM-ben letöltött fájlok átmásolása a csatolt helyi mappába (<code>Tananyag/</code>) gond nélkül megy-e, és a ~97 fájlnál mennyi idő.</li>
+<li>Cowork beolvassa-e a csatolt mappa gyökerében lévő <code>AGENTS.md</code>-t magától; ezért kérjük az Instructions-mondatot (ez dokumentáltan működik).</li>
+<li>A Buffer connector neve és a „Connect” lépés a Customize → Connectors listában (a Buffer dokumentációja szerint létezik).</li>
+<li>A Cowork ütemezett feladata helyi mappa nélkül (Pro) a Google Drive-ból olvassa-e a DNS-t.</li>
+</ol>
+<p>Ha az 1–2. pont nem működik: a pultnál mindenki a kézi ZIP-utat kapja, ez 3 perc.</p>
+<a id="notes-5"></a>
 <h3>Adatvédelem</h3>
-<p>A pultnál is ismételd el: jelszó és belépőkód nem kerül a Claude-ba; céges levelezés csak akkor, ha a résztvevőnek van rá engedélye. Ha bizonytalan, mintával dolgozik. Az <a href="../../materials/modules/00-prework.html#00-prework.01-business-profile--decisions" target="lesson">adatkezelési szabályok</a> a tananyagban vannak; a jegyzet nem ismétli őket.</p>
+<p>A pultnál is ismételd el: jelszó és belépőkód nem kerül a Claude-ba; céges levelezés csak akkor, ha a résztvevőnek van rá engedélye. Ha bizonytalan, mintával dolgozik. Az <a href="../../materials/modules/00-prework.html#00-prework.04-sources--decisions" target="lesson">adatkezelési szabályok</a> a tananyagban vannak; a jegyzet nem ismétli őket.</p>
 <h2 id="kapcsolódó-tananyagrészek">Kapcsolódó tananyagrészek</h2>
 <p>A hivatkozások a bal oldali tananyagnézetet a megfelelő szakaszra állítják.</p>
 <ul>
-<li><a href="../../materials/modules/00-prework.html#00-prework.01-business-profile" target="lesson">Gyűjtsd össze a saját forrásaidat</a></li>
-<li><a href="../../materials/modules/00-prework.html#00-prework.02-account-check" target="lesson">Claude, projekt és connectorok</a></li>
+<li><a href="../../materials/modules/00-prework.html#00-prework.01-install" target="lesson">Telepítés: Claude Desktop és a tananyag egy mondattal</a></li>
+<li><a href="../../materials/modules/00-prework.html#00-prework.02-account-check" target="lesson">Connectorok és biztonsági beállítás</a></li>
 <li><a href="../../materials/modules/00-prework.html#00-prework.03-partner-accounts" target="lesson">Partnerfiókok</a></li>
-<li><a href="../../materials/modules/00-prework.html#00-prework.04-coach-check" target="lesson">Indulási próba és CRM-tábla</a></li>
+<li><a href="../../materials/modules/00-prework.html#00-prework.04-sources" target="lesson">Saját források és adatkezelés</a></li>
+<li><a href="../../materials/modules/00-prework.html#00-prework.05-coach-check" target="lesson">Indulási próba és CRM-tábla</a></li>
 </ul>
 </main></div>
 <footer class="site-foot"><div class="partner-band partner-band--foot has-lead"><p class="partner-band__label">Wenova × Brandiseer × Blackhole Media × EstiWise</p><ul class="partner-band__list" aria-label="Partnerek"><li class="partner partner--wenova is-lead"><span class="partner__logo"><img class="logo logo--wenova" src="../../materials/assets/logos/wenova-wordmark.png" alt="Wenova" width="239" height="28"></span><span class="partner__role"><span class="partner__lead">Blokkgazda</span> · Szervező · AI-működés</span></li><li class="partner partner--brandiseer"><span class="partner__logo"><img class="logo logo--brandiseer" src="../../materials/assets/logos/brandiseer-icon.png" alt="" width="24" height="28"><span class="logo-word">Brandiseer</span></span><span class="partner__role">Márkaazonos tartalom</span></li><li class="partner partner--blackhole"><span class="partner__logo"><img class="logo logo--blackhole" src="../../materials/assets/logos/black-hole-media-logo.png" alt="Blackhole Media" width="299" height="28"></span><span class="partner__role">Ügyfélszerzés · Sales Bot</span></li><li class="partner partner--estiwise"><span class="partner__logo"><img class="logo logo--estiwise" src="../../materials/assets/logos/estiwise-logo-feher.svg" alt="EstiWise" width="99" height="28"></span><span class="partner__role">Ajánlatadás 0–24</span></li></ul></div><p class="site-foot__meta">AI Sales &amp; Marketing Workshop · 2026. november 19. · CEU, Budapest · a Wenova szervezésében</p></footer>

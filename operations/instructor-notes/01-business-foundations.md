@@ -53,6 +53,14 @@ Ne mutass élő Gmailt; a demó a [mintapostafiókkal](../../materials/scenarios
 
 A 02-es, 03-as és 04-es blokk a projektben lévő `company-dna.md` és `business-profile.md` fájlra épít ([átadás](../../materials/modules/01-business-foundations.md#01-business-foundations.01-offer-and-audience--handoff)). Szólj a partner előadóinak, hány résztvevő dolgozik mintával (IrodaLiget), hogy a demófiókokat erre készítsék.
 
+<a name="notes-5"></a>
+
+### Cowork, vizuális eredmény, partnerkapcsolatok
+
+- A résztvevők Cowork-munkamappában dolgoznak: az eredmények a `Munka/01-DNS/` mappába kerülnek, nem a projekt tudásába. Ha valaki claude.ai-projekt tartalékúton van, a letöltés–feltöltés lépést kell csinálnia.
+- A kampányváz HTML a 03-as lecke „Ha maradt időd” része; a bemutatóban elég megmutatni, hogy a fájl a böngészőben nyílik.
+- A „Wenova-kiegészítés a 02-es blokkhoz” csak akkor kerüljön elő, ha Sorok Dániel is így akarja. A Brandiseer connectort a 02-es blokkban a Brandiseer köti be; a pontos lépéseket és azt, hogy a kép a connectoron át visszajön-e, ő erősíti meg. A Buffer connector a Claude connectorlistájában van; a kép csatolását a Buffer-piszkozathoz nem próbáltuk.
+
 ## Kapcsolódó tananyagrészek
 
 A hivatkozások a bal oldali tananyagnézetet a megfelelő szakaszra állítják.

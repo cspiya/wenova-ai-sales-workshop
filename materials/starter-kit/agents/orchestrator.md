@@ -30,7 +30,7 @@ A Karmester koordinál. Nem ő írja a szöveget (azt az Író), nem ő minősí
 
 | Lépés | Kapcsolat a Claude-ban | Ha nem érhető el |
 | --- | --- | --- |
-| Tartalom | A Brandiseer-blokkban beállított kapcsolat, ha van; a szöveget az Író is megírja | A Brandiseerből kimásolt vagy letöltött anyag, `campaign-plan.md` |
+| Tartalom | A Brandiseer connectora (02-es blokk) és a Buffer connector; a szöveget az Író is megírja | A Brandiseerből kimásolt vagy letöltött anyag, `campaign-plan.md` |
 | LinkedIn-lead és válasz | Sales Bot connector (03-as blokk): leadek, státuszok, beérkező beszélgetések, piszkozatok | `leads.csv`, `outreach.md`, `customer-brief.md` |
 | Ajánlat | EstiWise-kapcsolat (04-es blokk): ajánlattervezet, értékesítési szakasz | `proposal.md`, `handoff.md` |
 | Levelek | Gmail vagy Microsoft 365 (Outlook) connector | Bemásolt levélszöveg |

@@ -28,7 +28,7 @@ A Cég-DNS-től az ajánlatig és a CRM-ig: saját AI-csapat a Claude-ban, a saj
 
 **2026. november 19., csütörtök, 09:00–17:00 (érkezés és technikai ellenőrzés 08:30-tól) · CEU Nádor Event Center, Budapest V., Nádor u. 15., N13 412/A terem (4. emelet; belépőkártya a recepción) · legfeljebb 30 résztvevő**
 
-**Honnan töltöd le az anyagot?** A teljes tananyagot (ZIP és böngészhető oldal) a szervezőtől kapott linkről töltöd le; a ZIP-et csomagold ki egy „AI Sales Workshop” mappába.
+**Honnan töltöd le az anyagot?** A Claude Desktop Cowork módjában egy mondattal telepíted: „Telepítsd a workshop tananyagát: https://raw.githubusercontent.com/cspiya/wenova-ai-sales-workshop/main/materials/TELEPITES.md”. Részletek: [felkészülés](modules/00-prework.md#00-prework.01-install) és [telepítési futtatókönyv](TELEPITES.md). Kézi letöltés: [ZIP](https://github.com/cspiya/wenova-ai-sales-workshop/archive/refs/heads/main.zip); böngészőben: [github.com/cspiya/wenova-ai-sales-workshop/tree/main/materials](https://github.com/cspiya/wenova-ai-sales-workshop/tree/main/materials). Terminálhoz szokottaknak: [haladó út Claude Code-dal](CLAUDE-CODE.md).
 
 <a name="agenda-1"></a>
 
@@ -59,7 +59,7 @@ Cég-DNS és saját AI-csapat → tartalom a céged hangján → LinkedIn-megker
 
 ### Előzetes felkészülés
 
-A workshop előtt kb. 50 perc a [felkészülési modul](modules/00-prework.md) szerint: Claude-előfizetés és asztali alkalmazás, egy workshop-projekt a Claude-ban a sablonokkal, a levelező és a Google-táblázat bekötése, Brandiseer-, Buffer- és EstiWise-fiók, a saját források összegyűjtése. Ami nem sikerül, azt reggel 08:30-tól a technikai pultnál befejezzük.
+A workshop előtt kb. 55 perc a [felkészülési modul](modules/00-prework.md) szerint: Claude-előfizetés és Claude Desktop, a tananyag telepítése egy mondattal egy saját munkamappába, a levelező és a Google-táblázat bekötése, Brandiseer-, Buffer- és EstiWise-fiók, a saját források összegyűjtése. Ami nem sikerül, azt reggel 08:30-tól a technikai pultnál befejezzük.
 
 <a name="agenda-5"></a>
 
@@ -82,9 +82,9 @@ Minden partnerblokk felépítése: rövid bevezető, vezetett gyakorlat a saját
 
 <a name="agenda-6"></a>
 
-### A nap eszköze: Claude
+### A nap eszköze: Claude Desktop, Cowork mód
 
-Egész nap egyetlen Claude-projektben dolgozol. A projekt tudásában van a Cég-DNS, a hangprofil és az öt agent (Karmester, Író, Ellenőr, Postás, CRM). A levelezőt, a Google-táblázatot és a három partnerrendszert connectorral (engedélyezett kapcsolattal) éred el a Claude-ból. Ahol egy kapcsolat nem működik, mintafájllal vagy kézi lépéssel folytatod, és ezt jelöljük.
+Egész nap egyetlen Cowork-projektben dolgozol, a gépeden lévő `Wenova-AI-Sales-Workshop` munkamappában: a `Tananyag/` a workshop anyaga, a `Munka/` a te eredményeid. A Claude a mappa [AGENTS.md](AGENTS.md) fájlja szerint dolgozik; a Cég-DNS, a hangprofil és az öt agent (Karmester, Író, Ellenőr, Postás, CRM) innen dolgozik. Vizuális eredményeket (kampányváz, posztelőnézet, a nap összefoglalója) HTML-fájlként kapsz, a böngészőben nyitod meg. A levelezőt, a Google-táblázatot és a három partnerrendszert connectorral (engedélyezett kapcsolattal) éred el a Claude-ból. Ahol egy kapcsolat nem működik, mintafájllal vagy kézi lépéssel folytatod, és ezt jelöljük.
 
 <a name="agenda-7"></a>
 
@@ -122,9 +122,9 @@ Szerkesztés alatt álló tananyag. A leckék draft/review állapota jelzi a ké
 
 ## Saját munkacsomag és AI-kísérő
 
-Másold a [starter-kit](starter-kit/README.md) mappát a saját gépedre, és töltsd fel a tartalmát a Claude-projektedbe a [felkészülési modul](modules/00-prework.md) szerint. Az [asszisztens instrukciója](assistant.md) a tanulási kísérő: a „Kezdjük az 1. blokkot” mondatra végigvezet. Saját cégből vagy az alábbi minták egyikéből dolgozz.
+A telepítés a [starter-kit](starter-kit/README.md) sablonjait is a munkamappádba teszi; feltölteni semmit nem kell ([felkészülés](modules/00-prework.md)). Az [asszisztens instrukciója](assistant.md) a tanulási kísérő: a „Kezdjük az 1. blokkot” mondatra végigvezet. Saját cégből vagy az alábbi minták egyikéből dolgozz.
 
-[Projektutasítás](starter-kit/project-instructions.md) · [Cég-DNS sablon](starter-kit/company-dna.md) · [Agentek](starter-kit/agents/README.md) · [Haladási napló](starter-kit/progress.json)
+[AGENTS.md](AGENTS.md) · [Telepítés](TELEPITES.md) · [Projektutasítás](starter-kit/project-instructions.md) · [Ütemezett feladatok](starter-kit/scheduled-tasks.md) · [Cég-DNS sablon](starter-kit/company-dna.md) · [Agentek](starter-kit/agents/README.md) · [Haladási napló](starter-kit/progress.json)
 
 <a name="scenarios"></a>
 
@@ -140,7 +140,7 @@ Másold a [starter-kit](starter-kit/README.md) mappát a saját gépedre, és t�
 
 ## Eszközök és hozzáférések
 
-Fizetős Claude-előfizetés (Pro vagy magasabb) és a Claude asztali alkalmazás; Gmail- vagy Microsoft 365-levelezés; Google-fiók a CRM-táblához. Előre: ingyenes Brandiseer-fiók ([brandiseer.com/auth](https://brandiseer.com/auth)), kötelező ingyenes Buffer-fiók ([buffer.com](https://buffer.com)) legalább egy közösségimédia-oldallal, EstiWise-regisztráció bankkártya nélkül ([admin.estiwise.ai/auth/register](https://admin.estiwise.ai/auth/register)). A Sales Bothoz ([sales-bot.io](https://sales-bot.io)) előre nincs teendőd: a hozzáférést a helyszínen, a 03-as blokk elején kapod; a LinkedIn-belépésed legyen kéznél. A partnereszközökre nem kell előfizetned, a napra mindenki megkapja a használati keretet. A részletes lépések a [felkészülési modulban](modules/00-prework.md) vannak. Személyes LinkedIn-kapcsolat nélkül is végig lehet menni a napon.
+Fizetős Claude-előfizetés (Pro vagy magasabb) és a Claude Desktop (Cowork mód); Gmail- vagy Microsoft 365-levelezés; Google-fiók a CRM-táblához. Előre: ingyenes Brandiseer-fiók ([brandiseer.com/auth](https://brandiseer.com/auth)), kötelező ingyenes Buffer-fiók ([buffer.com](https://buffer.com)) legalább egy közösségimédia-oldallal, EstiWise-regisztráció bankkártya nélkül ([admin.estiwise.ai/auth/register](https://admin.estiwise.ai/auth/register)). A Sales Bothoz ([sales-bot.io](https://sales-bot.io)) előre nincs teendőd: a hozzáférést a helyszínen, a 03-as blokk elején kapod; a LinkedIn-belépésed legyen kéznél. A partnereszközökre nem kell előfizetned, a napra mindenki megkapja a használati keretet. A részletes lépések a [felkészülési modulban](modules/00-prework.md) vannak. Személyes LinkedIn-kapcsolat nélkül is végig lehet menni a napon.
 
 <a name="outputs"></a>
 

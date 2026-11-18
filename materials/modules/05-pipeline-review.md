@@ -41,7 +41,7 @@ A nap végén minden kifelé menő művelet piszkozat marad: levél, Sales Bot-�
 
 ### Bemenet
 
-A projektben: `company-dna.md`, `voice-profile.md`, az öt agentfájl. A nap eredményei: a 02-es blokk tartalma (vagy `campaign-plan.md`), a 03-as blokk `leads.csv`, `outreach.md`, `customer-brief.md` fájlja és Sales Bot-kampánya, a 04-es blokk `proposal.md`, `handoff.md` fájlja és EstiWise-ajánlata. A „CRM – [cégnév]” táblázat (vagy a saját Excel-fájlod).
+A munkamappában: `Munka/01-DNS/company-dna.md` és `voice-profile.md`, az öt agentfájl a `Tananyag/starter-kit/agents/` mappában. A három partner connectora (Brandiseer, Sales Bot, EstiWise), amelyet a 02–04-es blokkban kötöttél be. A nap eredményei: a 02-es blokk tartalma (vagy `campaign-plan.md`), a 03-as blokk `leads.csv`, `outreach.md`, `customer-brief.md` fájlja és Sales Bot-kampánya, a 04-es blokk `proposal.md`, `handoff.md` fájlja és EstiWise-ajánlata. A „CRM – [cégnév]” táblázat (vagy a saját Excel-fájlod).
 
 <a name="overview-2"></a>
 
@@ -87,7 +87,7 @@ A Postás megkeresi a WORKSHOP-TESZT próbalevelet, és a saját hangodon válas
 
 - A bekapcsolt Gmail vagy Microsoft 365 connector, valamint a Google Drive connector.
 - Egy próbalevél: a gyakorlat elején küldj magadnak a telefonodról egy rövid, kitalált érdeklődést a saját szolgáltatásodra, **WORKSHOP-TESZT** tárggyal (minta: a [mintapostafiók](../scenarios/office-plants/outputs/mailbox-sample.md) B1 levele).
-- A 03-as és 04-es blokk fájljai a projektben vagy a gépeden.
+- A 03-as és 04-es blokk fájljai a `Munka/03-Leadek/` és `Munka/04-Ajanlat/` mappában.
 
 <a name="05-pipeline-review.01-inbox-crm--explanation"></a>
 
@@ -145,7 +145,7 @@ Amikor szólok, hogy bemásoltam, olvasd vissza a táblát a Google Drive-ból, 
 ### Ha elakadtál
 
 - **Nincs bekötött levelező:** másold be a próbalevelet, vagy a [mintapostafiók](../scenarios/office-plants/outputs/mailbox-sample.md) beérkezett leveleit.
-- **A Claude nem találja a táblát a Drive-ban:** töltsd fel CSV-ként a projektbe `crm.csv` néven, vagy maradj a saját Excel-fájlodnál; a visszaolvasás ekkor a feltöltött fájlból történik.
+- **A Claude nem találja a táblát a Drive-ban:** mentsd a táblát CSV-ként `Munka/05-Folyamat/crm.csv` néven, vagy maradj a saját Excel-fájlodnál a `Munka/05-Folyamat/` mappában; a visszaolvasás ekkor onnan történik.
 - **Öt perc után sem megy:** nézd meg a [kitöltött CRM-mintát](../scenarios/office-plants/outputs/crm.csv), és lépj a következő leckére.
 
 <a name="05-pipeline-review.01-inbox-crm--handoff"></a>
@@ -193,7 +193,7 @@ A Karmester nem csinál meg mindent egyedül: kiosztja a lépéseket, és megál
 | Lépés | Ki végzi? | Kapcsolat | Ha nem érhető el | Ma |
 | --- | --- | --- | --- | --- |
 | 1. DNS | Karmester | Projekt | – | automatikus |
-| 2. Tartalom: mit látott a lead? | Karmester; Író, ha új szöveg kell | Brandiseer / Buffer, ha a 02-es blokkban bekötötted | A kimásolt poszt vagy `campaign-plan.md` | ha maradt időd |
+| 2. Tartalom: mit látott a lead? | Karmester; Író, ha új szöveg kell | Brandiseer és Buffer connector (02-es blokk) | A kimásolt poszt vagy `campaign-plan.md` | ha maradt időd |
 | 3. LinkedIn-lead és státusza | Karmester | Sales Bot connector (sandbox) | `leads.csv`, `outreach.md` | **igen** |
 | 4. A lead válasza és a válaszpiszkozat | Karmester, Író | Sales Bot connector | `customer-brief.md` | ha maradt időd |
 | 5. Ajánlat és értékesítési szakasz | Karmester | EstiWise-kapcsolat | `proposal.md`, `handoff.md` | **igen** |
@@ -227,7 +227,7 @@ A végén add meg a pipeline-review.md tartalmát a közös mezőkkel: case_id, 
 
 1. **0–2 perc:** válaszd ki az ügyfelet a CRM-ből, futtasd a Karmester-promptot, hagyd jóvá a tervet.
 2. **2–8 perc:** kövesd a lépéseket. A partnerrendszerből érkező adatot vesd össze azzal, amit délután láttál; a CRM-sort másold be.
-3. **8–12 perc:** töltsd le a `pipeline-review.md` fájlt, és ellenőrizd, hogy a CRM-sor szakasza és következő lépése egyezik vele.
+3. **8–12 perc:** a `pipeline-review.md` a `Munka/05-Folyamat/` mappába kerül; ellenőrizd, hogy a CRM-sor szakasza és következő lépése egyezik vele.
 
 <a name="05-pipeline-review.02-one-customer--check"></a>
 
@@ -257,6 +257,16 @@ A `pipeline-review.md` `gaps` és `next_step` mezője a holnapi indulási terv b
 ### Ha maradt időd
 
 Kérd a teljes láncot: „Karmester: most a kihagyott lépéseket is: milyen tartalmunkat láthatta, mit válaszolt, és írja meg az Író az ajánlat kísérőszövegét.” A kísérőszöveget nézesd át az Ellenőrrel új beszélgetésben.
+
+**A nap egy oldalon (vizuális áttekintés, 5 perc):**
+
+```text
+Karmester: készíts egyetlen önálló HTML-fájlt Munka/05-Folyamat/nap-attekintes.html néven a mai eredményeimből.
+Tartalom: 1) a Cég-DNS lényege (ICP, fő ajánlat, hang); 2) kampánynaptár: a Bufferben lévő mai posztjaim és a Sales Bot-kampány lépései naptárnézetben (a Buffer és a Sales Bot connectorból olvasd; ha nem érhető el, a Munka/02-Tartalom és 03-Leadek fájljaiból); 3) posztelőnézet a Munka/02-Tartalom mappa képeivel; 4) a végigvitt ügyfél útja lépésenként, végrehajtási móddal; 5) a CRM szakaszonkénti számai; 6) a holnapi három lépés.
+Szabályok: csak olvass; semmit ne küldj, ne ütemezz, ne módosíts a partnerrendszerekben. Ami nincs meg, „Nincs megadva”. Külső hivatkozás és szkript nélkül. A végén add meg az útvonalat.
+```
+
+Nyisd meg a fájlt a böngészőben (dupla kattintás a `Munka/05-Folyamat/` mappában).
 
 <a name="05-pipeline-review.03-measure-launch"></a>
 
@@ -290,7 +300,7 @@ Mérés nélkül nem tudod, melyik agent és melyik blokk hoz eredményt. Szakas
 
 | Szakasz | Mérőszám | Forrás |
 | --- | --- | --- |
-| Tartalom | Megjelent posztok, megjelenés, reakció + komment | LinkedIn; Buffer (és Brandiseer, ha bekötötted) |
+| Tartalom | Megjelent posztok, megjelenés, reakció + komment | LinkedIn; Buffer és Brandiseer connector |
 | LinkedIn | Bejelölés, elfogadás, válasz, érdeklődő válasz | Sales Bot |
 | Bejövő | Új érdeklődés e-mailben és EstiWise-on | CRM, EstiWise |
 | Ajánlat | Tervezet, kiküldött, megnyert, érték | CRM, EstiWise |
@@ -321,7 +331,7 @@ Adj egy sort a Heti mérés laphoz CSV-ben (week, stage, metric_id, metric, valu
 
 1. **0–2 perc:** a CRM-táblázatban új lap „Heti mérés” néven, és importáld a `metrics-template.csv` fájlt („Jelenlegi munkalap cseréje”).
 2. **2–7 perc:** prompt; nézd át a három holnapi lépést, és javítsd, ami nem konkrét.
-3. **7–9 perc:** másold be a mérési sort a „Heti mérés” lapra; töltsd le a `launch-plan.md` fájlt.
+3. **7–9 perc:** másold be a mérési sort a „Heti mérés” lapra; a `launch-plan.md` a `Munka/05-Folyamat/` mappába kerül.
 4. **9–10 perc:** tedd a naptáradba a hétfői 30 perces heti átnézést.
 
 <a name="05-pipeline-review.03-measure-launch--check"></a>
@@ -358,11 +368,13 @@ Minden más „Nincs megadva”, nem nulla. A Heti mérés sorait CSV-ben add me
 Utána töltsd ki a launch-plan.md többi részét: heti rutin, ami még nem működik élesben, egy mérőszám kiinduló értékkel.
 ```
 
+**Ütemezett feladatok (otthon, 10 perc):** a Claude Desktop **Scheduled** oldalán (bal oldali sáv → Scheduled → New task → Create with Claude) beállíthatsz napi levél-összefoglalót, heti levélpiszkozatot és hétfői heti átnézést. A kész promptok és a szabályok: [ütemezett feladatok](../starter-kit/scheduled-tasks.md). Az ütemezett feladat csak olvas, összefoglal és piszkozatot ír; nem küld.
+
 <a name="recovery"></a>
 
 ## Segítség elakadáskor
 
-1. Mentsd a saját eddigi munkádat (töltsd le a félkész fájlokat, a CRM-tábla maradjon).
+1. A saját eddigi munkád maradjon a `Munka/` mappában, a CRM-tábla is.
 2. Az IrodaLiget mintából vedd át, ami hiányzik: [mintapostafiók](../scenarios/office-plants/outputs/mailbox-sample.md), [CRM-minta](../scenarios/office-plants/outputs/crm.csv), [folyamatpróba](../scenarios/office-plants/outputs/pipeline-review.md), [indulási terv](../scenarios/office-plants/outputs/launch-plan.md).
 3. A haladási naplóban jelöld: `completed_with_example`, végrehajtás: `simulation`.
 4. A saját indulási tervedet akkor is töltsd ki: a holnapi első lépés lehet az, ami ma nem működött.

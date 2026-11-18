@@ -12,7 +12,7 @@
 
 ## Két telepítési mód
 
-**Alapmód (a workshopon ezt használjuk, 3 perc):** töltsd fel az öt fájlt a Claude-projekted tudásába (Project knowledge), és másold be a [projektutasítást](../project-instructions.md). A projektutasítás köti össze az indítómondatot a fájllal.
+**Alapmód (a workshopon ezt használjuk):** a telepítés után az öt fájl a `Tananyag/starter-kit/agents/` mappában van, és a munkamappa `AGENTS.md` fájlja köti össze az indítómondatot a fájllal; nincs teendőd. Tartalékúton (claude.ai-projekt) töltsd fel az öt fájlt a projekt tudásába, és másold be a [projektutasítást](../project-instructions.md).
 
 **Skill-mód (opcionális, otthon):** a Skill olyan mappa, amelyben egy `SKILL.md` fájl írja le a feladatot; Claude magától betölti, amikor a leírása illik a kéréshez, minden projektben. A sablonok eleje (a `---` közötti `name` és `description` sor) már Skill-formátumú. Lépések:
 
