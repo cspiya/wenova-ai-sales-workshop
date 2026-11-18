@@ -8,8 +8,8 @@ A „CRM – [cégnév]” táblázatban két lap van:
 
 | Lap | Tartalom | Ki tölti? |
 | --- | --- | --- |
-| CRM | Soronként egy ügyféleset, szakasszal és forrással ([oszlopok](crm-template.csv)) | A CRM-agent, a te jóváhagyásoddal |
-| Heti mérés | Hetente egy sor mérőszámonként ([sablon](metrics-template.csv)) | A Karmester javasolja, te hagyod jóvá |
+| CRM | Soronként egy ügyféleset, szakasszal és forrással ([oszlopok](crm-template.csv)) | A CRM-agent CSV-sorokat ad, te bemásolod |
+| Heti mérés | Hetente egy sor mérőszámonként ([sablon](metrics-template.csv)) | A Karmester sorokat javasol, te bemásolod |
 
 A második lapot így hozod létre: a táblázat alján + (új lap), neve „Heti mérés”, majd Fájl → Importálás → Feltöltés: `metrics-template.csv`, importálási hely: „Jelenlegi munkalap cseréje”.
 
@@ -31,7 +31,7 @@ Arányok, amiket a Karmester számol: elfogadási arány = M05 / M04; válaszar�
 
 ## Heti átnézés: a prompt
 
-A workshop-projektben, új beszélgetésben, a táblázat-connectort (és ha van, a Sales Bot és az EstiWise kapcsolatot) bekapcsolva:
+A workshop-projektben, új beszélgetésben, a Google Drive connectort (és ha van, a Buffer, a Sales Bot és az EstiWise kapcsolatot) bekapcsolva:
 
 ```text
 Karmester: heti átnézés.
@@ -46,7 +46,7 @@ Kimeneti séma:
 5. A jövő heti terv: 3–5 teendő agenttel és nappal.
 Szabályok: javaslat nem döntés; semmit ne módosíts és ne küldj ki. Ha egy számhoz kevés az adat (például 10 alatti esetszám), mondd ki, hogy ebből még nem következik semmi.
 Ellenőrzés: minden arányt a nyers számokból számolj újra, és írd mellé a képletet.
-Mentés: a jelentést weekly-review-ÉÉÉÉ-HH-NN.md fájlként készítsd el; a Heti mérés lap új sorait csak a jóváhagyásom után írd be.
+Mentés: a jelentést weekly-review-ÉÉÉÉ-HH-NN.md fájlként készítsd el; a Heti mérés lap új sorait CSV-formában add át, én másolom be.
 ```
 
 ## Hogyan kerül vissza a folyamatba?

@@ -83,7 +83,7 @@ A bemutató ezt a részt mutatja meg. Később kézikönyvként visszalapozhatsz
 | **Ellenőr** (reviewer) | Új beszélgetésben, csak a szövegből, a DNS-ből és ellenőrzőlistából minősít: MEGFELEL / JAVÍTANDÓ / BLOKKOLÓ. | Nem írja át a szöveget, és nem látja az Író indoklását. |
 | **Te** | Jóváhagyod a tervet, döntesz az Ellenőr után, és te küldesz, publikálsz, indítasz. | – |
 
-Az agentek a projekt fájljaiból működnek: a projektutasítás köti össze az indítómondatot („Író: …”) az agentfájllal (`writer.md`). Később ugyanezek a fájlok Skillé alakíthatók; a Skill olyan feladatleírás, amelyet a Claude magától betölt, ha illik a kéréshez.
+Őszintén: a Claude asztali alkalmazásban ezek az agentek szerepleírások a projektben, nem külön futó programok. A Karmester ugyanabban a beszélgetésben vált szerepet (Író, Postás, CRM); az Ellenőr függetlenségét az adja, hogy új beszélgetésben fut. Az agentek a projekt fájljaiból működnek: a projektutasítás köti össze az indítómondatot („Író: …”) az agentfájllal (`writer.md`). Később ugyanezek a fájlok Skillé alakíthatók; a Skill olyan feladatleírás, amelyet a Claude magától betölt, ha illik a kéréshez.
 
 **Miért új beszélgetés az Ellenőrnek?** Ha ugyanaz a beszélgetés ellenőriz, amelyik írt, az ugyanazokat a feltételezéseket látja helyesnek. Az új beszélgetés csak azt kapja, amit az ügyfél is látna: a szöveget és az eredeti kérést. Ez a friss kontextus.
 
@@ -118,12 +118,12 @@ A tét dönt, nem a feladat mérete. Kétség esetén a magasabb sor érvényes.
 | Rendszer | Mire? | Hogyan kötjük be? | Hol az adat? | Kockázat és jóváhagyási pont |
 | --- | --- | --- | --- | --- |
 | Claude-projekt, agentfájlok, opcionálisan Skills | Közös alap: DNS, agentek, tanulási kísérő | Projekt tudás és projektutasítás (00-s modul); Skill-feltöltés opcionális | A Claude-fiókodban | A hibás DNS minden agentet ront: a DNS-verziót a gazda hagyja jóvá |
-| Gmail vagy Microsoft 365 (Outlook) | Levelek olvasása, hangkinyerés, válaszpiszkozat | A Claude saját connectora | A levelezésedben | Küldés: eszközengedélyben jóváhagyásos vagy tiltott; csak piszkozat |
-| Google Táblázatok / Drive | CRM és Heti mérés lap | Google Sheets vagy Drive connector; ha nincs, CSV-fájl a projektben és kézi bemásolás | A Google-fiókodban | Felülírás: írás előtt változáslista, jóváhagyás |
+| Gmail vagy Microsoft 365 (Outlook) | Levelek olvasása, hangkinyerés | A Claude saját connectora; a válaszpiszkozat a beszélgetésben készül, te másolod a levelezőbe (a levelezőbe menteni csak akkor, ha a connectorod tud piszkozatot menteni, például Outlook) | A levelezésedben | Küldés, válasz, továbbítás, törlés: Tiltva (Blocked) |
+| Google Táblázatok / Drive (vagy saját Excel) | CRM és Heti mérés lap | Olvasás: Google Drive connector. Írás: a CRM-agent CSV-sorokat és változáslistát ad, te bemásolod; közvetlen írás csak, ha a connectorod írni is tud | A Google-fiókodban vagy a gépeden | Felülírás: változáslista, a bemásolás a te döntésed |
 | Brandiseer | Márkahű kép, videó, ütemezett posztolás | A 02-es blokkban beállított kapcsolat; ha nincs, letöltés és bemásolás | A Brandiseer-fiókodban | Publikálás: mindig te |
-| Buffer (opcionális) | Posztok ütemezése | A Claude connectorlistájában van Buffer connector; a workshopon csak ha a 02-es blokk használja | A Buffer-fiókodban | Publikálás: mindig te |
-| Sales Bot (Blackhole Media) | LinkedIn-célzás, leadek, üzenetsor, válaszok | Sales Bot connector (MCP) a 03-as blokkban; ma sandbox | A Sales Bot-fiókodban | Kampány a Claude-ból nem indítható; küldés: te |
-| EstiWise | Igényfelmérés, árazás, ajánlattervezet, értékesítési szakasz | EstiWise-kapcsolat a Claude-ban (00-s és 04-es modul) | Az EstiWise-fiókodban | Ajánlat kiküldése: te |
+| Buffer (kötelező, ingyenes fiók) | Posztok ütemezése a közösségimédia-oldaladra | A 02-es blokkban használod; a Claude connectorlistájában van Buffer connector, ha a blokk ezt köti be | A Buffer-fiókodban | Publikálás és ütemezés: mindig te |
+| Sales Bot (Blackhole Media) | LinkedIn-célzás, leadek, üzenetsor, válaszok | Sales Bot connector (MCP); a hozzáférést és a bekötést a helyszínen, a 03-as blokk elején kapod; ma sandbox | A Sales Bot-fiókodban | Kampány a Claude-ból nem indítható; küldés: te |
+| EstiWise | Igényfelmérés, árazás, ajánlattervezet, értékesítési szakasz | EstiWise-kapcsolat a Claude-ban; a 04-es blokkban együtt kötjük be | Az EstiWise-fiókodban | Ajánlat kiküldése: te |
 | HubSpot, Notion, Linear (opcionális) | Ha már ezt használod CRM-nek vagy feladatkövetésre | A Claude connectorlistájában elérhetők; ma nem kötjük be | A saját rendszeredben | Ugyanaz a szabály: írás előtt változáslista |
 
 <a name="team-model-5"></a>
@@ -139,6 +139,8 @@ Minden szakasznak van egy-két száma: posztok és elérés, LinkedIn-elfogadás
 **Állapot: review.**
 
 **Azonosító:** `01-business-foundations.01-offer-and-audience` · **Állapot:** review · **Időkeret:** 25 perc
+
+**Hogyan futtasd:** a tanulási kísérővel („Kezdjük az 1. blokkot”, elakadásnál „Mutasd a mintát”), vagy gyorsabban: másold a lenti promptot egy új beszélgetésbe a projektben.
 
 01 / Cég-DNS
 
@@ -247,6 +249,8 @@ Kérd meg a Claude-ot, hogy a 7. szakaszba (gyakori kérdések és kifogások) j
 
 **Azonosító:** `01-business-foundations.02-voice-profile` · **Állapot:** review · **Időkeret:** 14 perc
 
+**Hogyan futtasd:** a kísérővel („Folytassuk”), vagy gyorsabban: a lenti prompt egy új beszélgetésben, a levelező connectorral.
+
 <a name="01-business-foundations.02-voice-profile--result"></a>
 
 ### Ezt készíted el
@@ -338,6 +342,8 @@ Kérj külön szabályt arra a helyzetre, amikor panaszra vagy késésre válasz
 **Állapot: review.**
 
 **Azonosító:** `01-business-foundations.03-ai-workspace` · **Állapot:** review · **Időkeret:** 20 perc
+
+**Hogyan futtasd:** a lenti három promptot másold be sorban; a kísérő csak elakadásnál kell („Elakadtam”).
 
 <a name="01-business-foundations.03-ai-workspace--result"></a>
 

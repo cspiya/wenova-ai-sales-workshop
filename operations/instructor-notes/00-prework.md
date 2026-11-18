@@ -14,8 +14,8 @@ Belső oktatói jegyzet · review
 
 ### Előző nap
 
-- A felkészülési linket a résztvevők 2026-11-18-án kapják meg. A kísérőlevélben külön sor: fizetős Claude kell, és a Sales Bot belépő e-mail a Blackhole Mediától jön.
-- Tisztázandó és a pultnál rögzítendő: a tananyagcsomag letöltési helye (materials mappa), az EstiWise Claude-kapcsolat pontos leírása (Máté küldi), van-e Brandiseer-előregisztráció.
+- A résztvevők 2026-11-18-án e-mailt kaptak: fizetős Claude kell; Brandiseer- és (kötelező) Buffer-fiók legalább egy közösségimédia-oldallal; EstiWise-regisztráció bankkártya nélkül; a Sales Bothoz előre nincs teendő, a hozzáférést a 03-as blokk elején kapják, csak a LinkedIn-belépés legyen kéznél. Partnereszközre senkinek nem kell előfizetnie. Terem: N13 412/A (4. emelet), belépőkártya a recepción.
+- A pultnál legyen kéznél: a tananyag letöltési linkje (ZIP és böngészhető oldal). Az EstiWise és a Sales Bot Claude-kapcsolatát a pultnál NEM kötjük be: ezt a 03-as és 04-es blokk elején a partnerek csinálják.
 - Demófiókok listája: EstiWise (Máté), Sales Bot tartalék fiók (Balázs, Bogáta).
 
 <a name="notes-2"></a>
@@ -24,7 +24,9 @@ Belső oktatói jegyzet · review
 
 Sorrend: [projekt és connectorok](../../materials/modules/00-prework.md#00-prework.02-account-check--steps) → [partnerfiókok](../../materials/modules/00-prework.md#00-prework.03-partner-accounts--steps) → [indulási próba](../../materials/modules/00-prework.md#00-prework.04-coach-check--prompt). Egy résztvevőre legfeljebb 5 perc; ami addig nem megy, az a kézi úton indul, és a blokkban a körbejáró oktató pótolja.
 
-Pultlap (papíron, név nélkül, asztalszámmal): projekt ✅/⚠️ · levelező ✅/⚠️ · Google-tábla ✅/⚠️ · Sales Bot ✅/⚠️ · EstiWise ✅/⚠️.
+Pultlap (papíron, név nélkül, asztalszámmal): projekt ✅/⚠️ · levelező ✅/⚠️ · levelező küldés/válasz/továbbítás/törlés Tiltva (Blocked) ✅/⚠️ · Google-tábla ✅/⚠️ · Brandiseer ✅/⚠️ · Buffer + közösségimédia-oldal ✅/⚠️ · EstiWise-fiók ✅/⚠️. A Sales Bot nincs a lapon: a hozzáférést a 03-as blokkban kapják.
+
+Levelezőbiztonság: a connector oldalán az írási eszközök Tiltva (Blocked) állásban; írási műveletnél senki ne kattintson a „Mindig engedélyez” (Always allow) gombra.
 
 <a name="notes-3"></a>
 

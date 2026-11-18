@@ -117,7 +117,7 @@
 </tr>
 </tbody>
 </table></div>
-<p>Az agentek a projekt fájljaiból működnek: a projektutasítás köti össze az indítómondatot („Író: …”) az agentfájllal (<code>writer.md</code>). Később ugyanezek a fájlok Skillé alakíthatók; a Skill olyan feladatleírás, amelyet a Claude magától betölt, ha illik a kéréshez.</p>
+<p>Őszintén: a Claude asztali alkalmazásban ezek az agentek szerepleírások a projektben, nem külön futó programok. A Karmester ugyanabban a beszélgetésben vált szerepet (Író, Postás, CRM); az Ellenőr függetlenségét az adja, hogy új beszélgetésben fut. Az agentek a projekt fájljaiból működnek: a projektutasítás köti össze az indítómondatot („Író: …”) az agentfájllal (<code>writer.md</code>). Később ugyanezek a fájlok Skillé alakíthatók; a Skill olyan feladatleírás, amelyet a Claude magától betölt, ha illik a kéréshez.</p>
 <p><strong>Miért új beszélgetés az Ellenőrnek?</strong> Ha ugyanaz a beszélgetés ellenőriz, amelyik írt, az ugyanazokat a feltételezéseket látja helyesnek. Az új beszélgetés csak azt kapja, amit az ügyfél is látna: a szöveget és az eredeti kérést. Ez a friss kontextus.</p>
 <a id="team-model-2"></a>
 <h3>Mikor kell emberi jóváhagyás?</h3>
@@ -220,17 +220,17 @@
 </tr>
 <tr>
 <td>Gmail vagy Microsoft 365 (Outlook)</td>
-<td>Levelek olvasása, hangkinyerés, válaszpiszkozat</td>
-<td>A Claude saját connectora</td>
+<td>Levelek olvasása, hangkinyerés</td>
+<td>A Claude saját connectora; a válaszpiszkozat a beszélgetésben készül, te másolod a levelezőbe (a levelezőbe menteni csak akkor, ha a connectorod tud piszkozatot menteni, például Outlook)</td>
 <td>A levelezésedben</td>
-<td>Küldés: eszközengedélyben jóváhagyásos vagy tiltott; csak piszkozat</td>
+<td>Küldés, válasz, továbbítás, törlés: Tiltva (Blocked)</td>
 </tr>
 <tr>
-<td>Google Táblázatok / Drive</td>
+<td>Google Táblázatok / Drive (vagy saját Excel)</td>
 <td>CRM és Heti mérés lap</td>
-<td>Google Sheets vagy Drive connector; ha nincs, CSV-fájl a projektben és kézi bemásolás</td>
-<td>A Google-fiókodban</td>
-<td>Felülírás: írás előtt változáslista, jóváhagyás</td>
+<td>Olvasás: Google Drive connector. Írás: a CRM-agent CSV-sorokat és változáslistát ad, te bemásolod; közvetlen írás csak, ha a connectorod írni is tud</td>
+<td>A Google-fiókodban vagy a gépeden</td>
+<td>Felülírás: változáslista, a bemásolás a te döntésed</td>
 </tr>
 <tr>
 <td>Brandiseer</td>
@@ -240,23 +240,23 @@
 <td>Publikálás: mindig te</td>
 </tr>
 <tr>
-<td>Buffer (opcionális)</td>
-<td>Posztok ütemezése</td>
-<td>A Claude connectorlistájában van Buffer connector; a workshopon csak ha a 02-es blokk használja</td>
+<td>Buffer (kötelező, ingyenes fiók)</td>
+<td>Posztok ütemezése a közösségimédia-oldaladra</td>
+<td>A 02-es blokkban használod; a Claude connectorlistájában van Buffer connector, ha a blokk ezt köti be</td>
 <td>A Buffer-fiókodban</td>
-<td>Publikálás: mindig te</td>
+<td>Publikálás és ütemezés: mindig te</td>
 </tr>
 <tr>
 <td>Sales Bot (Blackhole Media)</td>
 <td>LinkedIn-célzás, leadek, üzenetsor, válaszok</td>
-<td>Sales Bot connector (MCP) a 03-as blokkban; ma sandbox</td>
+<td>Sales Bot connector (MCP); a hozzáférést és a bekötést a helyszínen, a 03-as blokk elején kapod; ma sandbox</td>
 <td>A Sales Bot-fiókodban</td>
 <td>Kampány a Claude-ból nem indítható; küldés: te</td>
 </tr>
 <tr>
 <td>EstiWise</td>
 <td>Igényfelmérés, árazás, ajánlattervezet, értékesítési szakasz</td>
-<td>EstiWise-kapcsolat a Claude-ban (00-s és 04-es modul)</td>
+<td>EstiWise-kapcsolat a Claude-ban; a 04-es blokkban együtt kötjük be</td>
 <td>Az EstiWise-fiókodban</td>
 <td>Ajánlat kiküldése: te</td>
 </tr>
@@ -276,6 +276,7 @@
 <h2 class="lesson-heading">Cég-DNS a saját forrásaidból</h2>
 <p><strong>Állapot: review.</strong></p>
 <p><strong>Azonosító:</strong> <code>01-business-foundations.01-offer-and-audience</code> · <strong>Állapot:</strong> review · <strong>Időkeret:</strong> 25 perc</p>
+<p><strong>Hogyan futtasd:</strong> a tanulási kísérővel („Kezdjük az 1. blokkot”, elakadásnál „Mutasd a mintát”), vagy gyorsabban: másold a lenti promptot egy új beszélgetésbe a projektben.</p>
 <p>01 / Cég-DNS</p>
 <p>Egy oldal. Minden állítás forrással. A hiány is látszik.</p>
 <p>25 perc · Próbára vár · review · Wenova · Piya Csaba, Kemény Krisztián</p>
@@ -371,6 +372,7 @@ Mentés: company-dna.md letölthető fájlként. Utána a DNS-ből készíts kiv
 <h2 class="lesson-heading">A hangod a küldött leveleidből</h2>
 <p><strong>Állapot: review.</strong></p>
 <p><strong>Azonosító:</strong> <code>01-business-foundations.02-voice-profile</code> · <strong>Állapot:</strong> review · <strong>Időkeret:</strong> 14 perc</p>
+<p><strong>Hogyan futtasd:</strong> a kísérővel („Folytassuk”), vagy gyorsabban: a lenti prompt egy új beszélgetésben, a levelező connectorral.</p>
 <div class="cell cell--goal">
 <a id="01-business-foundations.02-voice-profile--result"></a>
 <h3 class="cell-title">Ezt készíted el</h3>
@@ -451,6 +453,7 @@ Mentés: voice-profile.md letölthető fájlként, és add meg, mit írjak a com
 <h2 class="lesson-heading">Saját AI-csapat: Karmester, Író, Ellenőr</h2>
 <p><strong>Állapot: review.</strong></p>
 <p><strong>Azonosító:</strong> <code>01-business-foundations.03-ai-workspace</code> · <strong>Állapot:</strong> review · <strong>Időkeret:</strong> 20 perc</p>
+<p><strong>Hogyan futtasd:</strong> a lenti három promptot másold be sorban; a kísérő csak elakadásnál kell („Elakadtam”).</p>
 <div class="cell cell--goal">
 <a id="01-business-foundations.03-ai-workspace--result"></a>
 <h3 class="cell-title">Ezt készíted el</h3>

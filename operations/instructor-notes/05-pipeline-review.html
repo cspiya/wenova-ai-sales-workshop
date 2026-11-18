@@ -30,6 +30,7 @@
 </ul>
 <a id="notes-4"></a>
 <h3>Időkapuk és gyakori hibák</h3>
+<p>A 35 perc csak a rövid úttal fér bele: a Postás csak a WORKSHOP-TESZT levelet és legfeljebb 5 szálat nézi; a Karmester alapból a 3., 5. és 7. lépést viszi; az Ellenőr és a heti jelentés „Ha maradt időd” vagy házi feladat.</p>
 <div class="table-wrap" role="region" aria-label="Táblázat" tabindex="0"><table>
 <thead>
 <tr>
@@ -40,35 +41,48 @@
 </thead>
 <tbody>
 <tr>
-<td>16:22</td>
-<td>A Postás táblázata kész</td>
-<td>Bemásolt próbalevél vagy mintapostafiók</td>
+<td>16:21</td>
+<td>A Postás megtalálta a WORKSHOP-TESZT levelet</td>
+<td>Próbalevél bemásolva vagy mintapostafiók</td>
+</tr>
+<tr>
+<td>16:24</td>
+<td>A piszkozat a levelezőben (bemásolva)</td>
+<td>Piszkozat csak a beszélgetésben; tovább</td>
 </tr>
 <tr>
 <td>16:28</td>
-<td>A CRM-ben legalább három sor</td>
-<td>CSV-sorok kézi bemásolása; tovább a 2. leckére</td>
+<td>CSV-sorok bemásolva, visszaolvasva</td>
+<td><code>crm.csv</code> a projektben; tovább a 2. leckére</td>
 </tr>
 <tr>
 <td>16:40</td>
-<td><code>pipeline-review.md</code> kész</td>
-<td>A Karmester csak a 3., 5. és 7. lépést csinálja; a többi <code>gaps</code></td>
+<td><code>pipeline-review.md</code> kész (3., 5., 7. lépés)</td>
+<td>Csak a 7. lépés; a többi <code>gaps</code></td>
 </tr>
 <tr>
 <td>16:48</td>
-<td><code>launch-plan.md</code> „Holnap” része kész</td>
-<td>A többi holnap reggel, a mintából</td>
+<td><code>launch-plan.md</code> „Holnap” táblája kész, egy „Heti mérés” sor</td>
+<td>A mérési sor holnapra marad</td>
 </tr>
 </tbody>
 </table></div>
 <ul>
+<li><strong>Valaki vár, hogy a Claude „beírja” a táblába vagy elmentse a Gmail-piszkozatot:</strong> ez az alapút szerint kézi bemásolás (Gmail connector: olvasás; táblázatírás nincs mindenhol dokumentálva). Ne töltsenek vele időt.</li>
 <li><strong>A Sales Bot vagy az EstiWise lassú a nap végén:</strong> egy újrapróbálás, aztán fájlból, <code>simulation</code> jelöléssel. Ne indítsanak új EstiWise-kalkulációt.</li>
 <li><strong>Valaki „live”-nak jelöl mintából jött lépést:</strong> ez a blokk második fontos tanulsága; javíttasd.</li>
 <li><strong>Valaki elküldené a piszkozatot:</strong> ma nem; a holnapi terv első lépése lehet.</li>
 </ul>
 <a id="notes-5"></a>
 <h3>Zárás 16:50–17:00</h3>
-<p>A <a href="../../materials/modules/05-pipeline-review.html#05-pipeline-review.03-measure-launch--handoff" target="lesson">hazavihető lista</a> felolvasása helyett: három résztvevő mondja el a saját holnapi első lépését. Utána partneri ajánlatok és visszajelzés.</p>
+<p><strong>Egy visszacsatolási kör bemutatása (4 perc, kivetítve, IrodaLiget):</strong></p>
+<ol>
+<li>A <a href="../../materials/scenarios/office-plants/outputs/review-sample.md">kész ellenőri jelentés</a>: az Ellenőr BLOKKOLÓ-t adott, mert az Író 25 növényre ígért árat.</li>
+<li>A <a href="../../materials/scenarios/office-plants/outputs/company-dna.md">DNS</a> 6. szakaszába új sor a „Nem mondjuk” oszlopba: „Ár 20 növény felett bejárás nélkül”. Verzió 0.1 → 0.2, sor a változásnaplóba („ellenőri BLOKKOLÓ, B1 levél”). Az új fájl cseréje a projekt tudásában.</li>
+<li>Az Író újrafuttatása ugyanarra a levélre egy új beszélgetésben: a piszkozat már nem ígér árat; az Ellenőr MEGFELEL-t ad.</li>
+<li>Kulcsmondat: „Ez a hétfői 30 perc kicsiben: szám vagy ellenőri jelzés → DNS-sor → új verzió → minden agent jobb.”</li>
+</ol>
+<p>Utána három résztvevő mondja el a saját holnapi első lépését; végül partneri ajánlatok és visszajelzés.</p>
 <h2 id="kapcsolódó-tananyagrészek">Kapcsolódó tananyagrészek</h2>
 <p>A hivatkozások a bal oldali tananyagnézetet a megfelelő szakaszra állítják.</p>
 <ul>

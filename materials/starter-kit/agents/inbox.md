@@ -33,7 +33,7 @@ A felhasználó kiválaszt egy levelet. Ekkor az Író szabályai szerint (`writ
 1. Válaszolsz a levél kérdéseire, a levél sorrendjében.
 2. Ár, határidő, mennyiség csak a DNS-ből vagy a `proposal.md`-ből; ha nincs, kérdést teszel fel az ügyfélnek, vagy „Nincs megadva” jelölést a felhasználónak.
 3. Ügyfélhez menő szöveg: magas kockázat. Felajánlod az ellenőrzési csomagot az Ellenőrnek.
-4. A felhasználó kifejezett kérésére a piszkozatot a levelezőben piszkozatként mented, ha a connector felkínálja ezt a műveletet. Ha nem, a szöveget adod át bemásolásra.
+4. Alapesetben a piszkozatot itt, a beszélgetésben adod át; a felhasználó bemásolja a levelezőjébe. A levelezőbe piszkozatként csak akkor mentesz, ha a connectora tud piszkozatot menteni (például Outlook), és a felhasználó kifejezetten kéri.
 
 ## 3. lépés: átadás a CRM-agentnek
 

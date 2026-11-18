@@ -26,7 +26,9 @@ A Cég-DNS-től az ajánlatig és a CRM-ig: saját AI-csapat a Claude-ban, a saj
 
 **Wenova × Brandiseer × Blackhole Media × EstiWise**
 
-**2026. november 19., csütörtök, 09:00–17:00 (érkezés és technikai ellenőrzés 08:30-tól) · CEU Nádor Event Center, Budapest V., Nádor utca 15. · legfeljebb 30 résztvevő**
+**2026. november 19., csütörtök, 09:00–17:00 (érkezés és technikai ellenőrzés 08:30-tól) · CEU Nádor Event Center, Budapest V., Nádor u. 15., N13 412/A terem (4. emelet; belépőkártya a recepción) · legfeljebb 30 résztvevő**
+
+**Honnan töltöd le az anyagot?** A teljes tananyagot (ZIP és böngészhető oldal) a szervezőtől kapott linkről töltöd le; a ZIP-et csomagold ki egy „AI Sales Workshop” mappába.
 
 <a name="agenda-1"></a>
 
@@ -57,7 +59,7 @@ Cég-DNS és saját AI-csapat → tartalom a céged hangján → LinkedIn-megker
 
 ### Előzetes felkészülés
 
-A workshop előtt kb. 50 perc a [felkészülési modul](modules/00-prework.md) szerint: Claude-előfizetés és asztali alkalmazás, egy workshop-projekt a Claude-ban a sablonokkal, a levelező és a Google-táblázat bekötése, Sales Bot- és EstiWise-belépés, a saját források összegyűjtése. Ami nem sikerül, azt reggel 08:30-tól a technikai pultnál befejezzük.
+A workshop előtt kb. 50 perc a [felkészülési modul](modules/00-prework.md) szerint: Claude-előfizetés és asztali alkalmazás, egy workshop-projekt a Claude-ban a sablonokkal, a levelező és a Google-táblázat bekötése, Brandiseer-, Buffer- és EstiWise-fiók, a saját források összegyűjtése. Ami nem sikerül, azt reggel 08:30-tól a technikai pultnál befejezzük.
 
 <a name="agenda-5"></a>
 
@@ -138,7 +140,7 @@ Másold a [starter-kit](starter-kit/README.md) mappát a saját gépedre, és t�
 
 ## Eszközök és hozzáférések
 
-Fizetős Claude-előfizetés (Pro vagy magasabb) és a Claude asztali alkalmazás; Gmail- vagy Microsoft 365-levelezés; Google-fiók a CRM-táblához. A Sales Bot workshop-fiókot a Blackhole Media hozza létre, az EstiWise-próbafiókot te regisztrálod, a Brandiseer-hozzáférésről a partner értesít. A részletes lépések a [felkészülési modulban](modules/00-prework.md) vannak. Személyes LinkedIn-kapcsolat nélkül is végig lehet menni a napon.
+Fizetős Claude-előfizetés (Pro vagy magasabb) és a Claude asztali alkalmazás; Gmail- vagy Microsoft 365-levelezés; Google-fiók a CRM-táblához. Előre: ingyenes Brandiseer-fiók ([brandiseer.com/auth](https://brandiseer.com/auth)), kötelező ingyenes Buffer-fiók ([buffer.com](https://buffer.com)) legalább egy közösségimédia-oldallal, EstiWise-regisztráció bankkártya nélkül ([admin.estiwise.ai/auth/register](https://admin.estiwise.ai/auth/register)). A Sales Bothoz ([sales-bot.io](https://sales-bot.io)) előre nincs teendőd: a hozzáférést a helyszínen, a 03-as blokk elején kapod; a LinkedIn-belépésed legyen kéznél. A partnereszközökre nem kell előfizetned, a napra mindenki megkapja a használati keretet. A részletes lépések a [felkészülési modulban](modules/00-prework.md) vannak. Személyes LinkedIn-kapcsolat nélkül is végig lehet menni a napon.
 
 <a name="outputs"></a>
 

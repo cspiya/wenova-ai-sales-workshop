@@ -37,13 +37,17 @@ Belső oktatói jegyzet · review
 
 ### Időkapuk és gyakori hibák
 
+A 35 perc csak a rövid úttal fér bele: a Postás csak a WORKSHOP-TESZT levelet és legfeljebb 5 szálat nézi; a Karmester alapból a 3., 5. és 7. lépést viszi; az Ellenőr és a heti jelentés „Ha maradt időd” vagy házi feladat.
+
 | Óra | Hol kell tartani? | Ha nem |
 | --- | --- | --- |
-| 16:22 | A Postás táblázata kész | Bemásolt próbalevél vagy mintapostafiók |
-| 16:28 | A CRM-ben legalább három sor | CSV-sorok kézi bemásolása; tovább a 2. leckére |
-| 16:40 | `pipeline-review.md` kész | A Karmester csak a 3., 5. és 7. lépést csinálja; a többi `gaps` |
-| 16:48 | `launch-plan.md` „Holnap” része kész | A többi holnap reggel, a mintából |
+| 16:21 | A Postás megtalálta a WORKSHOP-TESZT levelet | Próbalevél bemásolva vagy mintapostafiók |
+| 16:24 | A piszkozat a levelezőben (bemásolva) | Piszkozat csak a beszélgetésben; tovább |
+| 16:28 | CSV-sorok bemásolva, visszaolvasva | `crm.csv` a projektben; tovább a 2. leckére |
+| 16:40 | `pipeline-review.md` kész (3., 5., 7. lépés) | Csak a 7. lépés; a többi `gaps` |
+| 16:48 | `launch-plan.md` „Holnap” táblája kész, egy „Heti mérés” sor | A mérési sor holnapra marad |
 
+- **Valaki vár, hogy a Claude „beírja” a táblába vagy elmentse a Gmail-piszkozatot:** ez az alapút szerint kézi bemásolás (Gmail connector: olvasás; táblázatírás nincs mindenhol dokumentálva). Ne töltsenek vele időt.
 - **A Sales Bot vagy az EstiWise lassú a nap végén:** egy újrapróbálás, aztán fájlból, `simulation` jelöléssel. Ne indítsanak új EstiWise-kalkulációt.
 - **Valaki „live”-nak jelöl mintából jött lépést:** ez a blokk második fontos tanulsága; javíttasd.
 - **Valaki elküldené a piszkozatot:** ma nem; a holnapi terv első lépése lehet.
@@ -52,7 +56,14 @@ Belső oktatói jegyzet · review
 
 ### Zárás 16:50–17:00
 
-A [hazavihető lista](../../materials/modules/05-pipeline-review.md#05-pipeline-review.03-measure-launch--handoff) felolvasása helyett: három résztvevő mondja el a saját holnapi első lépését. Utána partneri ajánlatok és visszajelzés.
+**Egy visszacsatolási kör bemutatása (4 perc, kivetítve, IrodaLiget):**
+
+1. A [kész ellenőri jelentés](../../materials/scenarios/office-plants/outputs/review-sample.md): az Ellenőr BLOKKOLÓ-t adott, mert az Író 25 növényre ígért árat.
+2. A [DNS](../../materials/scenarios/office-plants/outputs/company-dna.md) 6. szakaszába új sor a „Nem mondjuk” oszlopba: „Ár 20 növény felett bejárás nélkül”. Verzió 0.1 → 0.2, sor a változásnaplóba („ellenőri BLOKKOLÓ, B1 levél”). Az új fájl cseréje a projekt tudásában.
+3. Az Író újrafuttatása ugyanarra a levélre egy új beszélgetésben: a piszkozat már nem ígér árat; az Ellenőr MEGFELEL-t ad.
+4. Kulcsmondat: „Ez a hétfői 30 perc kicsiben: szám vagy ellenőri jelzés → DNS-sor → új verzió → minden agent jobb.”
+
+Utána három résztvevő mondja el a saját holnapi első lépését; végül partneri ajánlatok és visszajelzés.
 
 ## Kapcsolódó tananyagrészek
 

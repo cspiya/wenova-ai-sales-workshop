@@ -15,11 +15,14 @@
 
 ## Döntés: BLOKKOLÓ
 
+A nem teljesült pontok:
+
 | ID | Súly | Idézet | Bizonyíték | Javasolt javítás |
 | --- | --- | --- | --- | --- |
 | K2 | Blokkoló | „A 25 növényetekre is jó ez a csomag” | DNS 3. szakasz: legfeljebb 20 növény; 20 felett ár: Nincs megadva | „25 növénynél a bejárás után adjuk meg a pontos díjat.” |
 | K1 | Blokkoló | „decemberben már indulhatunk” | Kezdési kapacitás nincs a DNS-ben | Kérdés: „Mikor lenne ideális a kezdés decemberben?” vagy jóváhagyott időpont |
-| K8 | Megfelel | „15 perces bejárás jövő csütörtök 10-kor?” | voice-profile.md: időpont-javaslat kérdésként | – |
+
+A többi pont (K3–K8) teljesül; a következő lépés (K8) egyértelmű: időpont-javaslat kérdésként, a voice-profile.md szerint.
 
 **Emberi döntés:** küldés előtt a felhasználó jóváhagyása kötelező.
 

@@ -9,7 +9,7 @@
 - [Cél, bemenet és eredmény](#overview)
 - [Gyűjtsd össze a saját forrásaidat](#00-prework.01-business-profile)
 - [Claude, projekt és connectorok](#00-prework.02-account-check)
-- [Partnerfiókok: Sales Bot, EstiWise, Brandiseer](#00-prework.03-partner-accounts)
+- [Partnerfiókok: Brandiseer, Buffer, EstiWise, Sales Bot](#00-prework.03-partner-accounts)
 - [Indulási próba és CRM-tábla](#00-prework.04-coach-check)
 - [Segítség elakadáskor](#recovery)
 - [Gyakorlópéldák](#examples)
@@ -21,15 +21,17 @@
 
 Egy működő Claude-projekt, bekötött levelezés és táblázat, partnerfiókok és a saját anyagaid. Ezzel indulsz reggel 9-kor.
 
+**Honnan töltöd le az anyagot?** A teljes tananyagot (ZIP és böngészhető oldal) a szervezőtől kapott linkről töltöd le; a ZIP-et csomagold ki egy „AI Sales Workshop” mappába.
+
 <a name="overview"></a>
 
 ## Cél, bemenet és eredmény
 
 **Státusz: kidolgozott útmutató, a helyszíni technikai próbára vár.**
 
-A workshop 2026. november 19-én, csütörtökön 09:00–17:00 között lesz a CEU Nádor Event Centerben (Budapest V., Nádor utca 15.). Az egész napot a saját cégeden, a Claude-ban dolgozod végig. A felkészülés kb. 50 perc: otthon, előző este a legjobb. Ami nem sikerül, azt reggel 08:30 és 09:00 között a technikai pultnál befejezzük.
+A workshop 2026. november 19-én, csütörtökön 09:00–17:00 között lesz a CEU Nádor Event Centerben (Budapest V., Nádor u. 15., N13 412/A terem, 4. emelet; a belépőkártyát a recepción kapod). Az egész napot a saját cégeden, a Claude-ban dolgozod végig. A felkészülés kb. 50 perc: otthon, előző este a legjobb. Ami nem sikerül, azt reggel 08:30 és 09:00 között a technikai pultnál befejezzük.
 
-A nap eszköze a **Claude** fizetős előfizetéssel. Két fogalom, amit egész nap használunk:
+A nap eszköze a **Claude** fizetős előfizetéssel. A partnereszközökre (Brandiseer, Buffer, Sales Bot, EstiWise) nem kell előfizetned: a napra mindenki megkapja a használati keretet. Két fogalom, amit egész nap használunk:
 
 - **Projekt (Project):** saját munkaterület a Claude-ban. Van saját utasítása, és fájlokat tölthetsz fel a tudásába (Project knowledge). Minden beszélgetés, amit a projektben indítasz, látja ezeket.
 - **Connector (kapcsolat):** engedélyezett kapcsolat a Claude és egy másik szolgáltatás között, például a Gmail vagy a Sales Bot. A technikai neve MCP (Model Context Protocol). A connectorral a Claude olvasni és – ha engedélyezed – írni tud abban a szolgáltatásban.
@@ -38,13 +40,13 @@ A nap eszköze a **Claude** fizetős előfizetéssel. Két fogalom, amit egész 
 
 ### Bemenet
 
-A céged weboldala, árlistád, 1–2 korábbi ajánlatod, a levelezésed, a partnerektől kapott belépő e-mailek.
+A céged weboldala, árlistád, 1–2 korábbi ajánlatod, a levelezésed, a LinkedIn-belépésed.
 
 <a name="overview-2"></a>
 
 ### Kimenet
 
-Egy „AI Sales Workshop – [cégnév]” Claude-projekt feltöltött fájlokkal és projektutasítással; bekapcsolt levelező- és Google-kapcsolat; „CRM – [cégnév]” Google-táblázat; Sales Bot- és EstiWise-belépés; a tanulási kísérő ellenőrzőlistája.
+Egy „AI Sales Workshop – [cégnév]” Claude-projekt feltöltött fájlokkal és projektutasítással; bekapcsolt levelező- és Google-kapcsolat; „CRM – [cégnév]” Google-táblázat; Brandiseer-, Buffer- és EstiWise-fiók; a tanulási kísérő ellenőrzőlistája.
 
 <a name="overview-3"></a>
 
@@ -69,6 +71,8 @@ Ami otthon nem sikerül, írd fel, és hozd a 08:30-as technikai pulthoz. Minden
 **Állapot: review.**
 
 **Azonosító:** `00-prework.01-business-profile` · **Állapot:** review · **Időkeret:** 10 perc
+
+**Hogyan futtasd:** ezt a leckét Claude nélkül, a fájlkezelőben végzed.
 
 <a name="00-prework.01-business-profile--result"></a>
 
@@ -108,6 +112,7 @@ Melyik dokumentum mehet AI-feldolgozásra, és mit takarsz ki előtte. Saját c�
 2. Jelszót, API-kulcsot, belépőkódot, bankkártyaadatot soha ne írj be a Claude-ba.
 3. Ha a cégednél szabályzat vagy vezetői engedély kell a levelezés vagy az ügyféladatok AI-feldolgozásához, ezt a workshop előtt kérd meg. Ha nincs engedélyed, a kitalált mintákkal dolgozz.
 4. A Claude beállításainál (Settings → Privacy, Adatvédelem) nézd meg, engedélyezted-e, hogy a beszélgetéseidet a modell fejlesztésére használják. Céges adatnál javasoljuk kikapcsolni.
+5. A terem nyitott tér: levelet és ügyféladatot ne vetíts ki, és figyelj, ki látja a képernyődet. A közös bemutatókhoz a kitalált mintát használjuk.
 
 <a name="00-prework.01-business-profile--prompt"></a>
 
@@ -164,6 +169,8 @@ A „Workshop-források” mappa tartalmát a következő leckében feltöltöd 
 
 **Azonosító:** `00-prework.02-account-check` · **Állapot:** review · **Időkeret:** 20 perc
 
+**Hogyan futtasd:** a lépéseket a Claude felületén kattintod végig; elakadásnál a lenti promptot másold egy új beszélgetésbe.
+
 <a name="00-prework.02-account-check--result"></a>
 
 ### Ezt készíted el
@@ -178,7 +185,7 @@ Egy „AI Sales Workshop – [cégnév]” projektet a Claude-ban, a tananyaggal
 - **Claude asztali alkalmazás** a claude.com/download oldalról (Windows vagy Mac). A webes felület is működik; néhány connector beállítása csak weben megy.
 - **Levelezés:** Gmail- vagy Google Workspace-fiók, vagy Microsoft 365 / Outlook-fiók.
 - **Google-fiók** a CRM-táblázathoz (Google Táblázatok). Ha csak Microsoft-fiókod van, a CRM a projektben tárolt CSV-fájl lesz; lásd a 4. leckét.
-- A tananyagcsomag: az `assistant.md`, a [00-s](00-prework.md), [01-es](01-business-foundations.md) és [05-ös](05-pipeline-review.md) modul Markdown-fájlja, valamint a [saját munkacsomag](../starter-kit/README.md) mappája.
+- A tananyagcsomag (lásd: „Honnan töltöd le az anyagot?”): az `assistant.md`, a [00-s](00-prework.md), [01-es](01-business-foundations.md), [03-as](03-lead-generation.md), [04-es](04-proposals-handoff.md) és [05-ös](05-pipeline-review.md) modul Markdown-fájlja, valamint a [saját munkacsomag](../starter-kit/README.md) mappája.
 
 <a name="00-prework.02-account-check--explanation"></a>
 
@@ -186,7 +193,7 @@ Egy „AI Sales Workshop – [cégnév]” projektet a Claude-ban, a tananyaggal
 
 Egész nap egyetlen projektben dolgozol, a partnerblokkokban is. Így a Cég-DNS és az agentek minden beszélgetésben elérhetők, nem kell őket újra csatolni.
 
-A connectorok a fiókodhoz tartoznak. Egy beszélgetésben a szövegmező melletti **+** menüben (vagy az eszközök ikonjánál) kapcsolhatod be vagy ki őket. Minden connectornál beállíthatod, melyik művelethez kér jóváhagyást a Claude (Tool permissions, eszközengedélyek). A küldő műveleteket (levél küldése, válasz, továbbítás) mindig „jóváhagyás kell” vagy „tiltva” állásba tedd.
+A connectorok a fiókodhoz tartoznak. Egy beszélgetésben a szövegmező melletti **+** menüben (vagy az eszközök ikonjánál) kapcsolhatod be vagy ki őket. Minden connector saját oldalán beállíthatod, melyik műveletet használhatja a Claude (Tool permissions, eszközengedélyek). A levelezőnél a küldés, válasz, továbbítás és törlés legyen **Tiltva (Blocked)**. Írási műveletnél soha ne kattints a „Mindig engedélyez” (Always allow) gombra.
 
 <a name="00-prework.02-account-check--decisions"></a>
 
@@ -213,24 +220,24 @@ Jelszót és belépőkódot ne kérj tőlem.
 
 1. **0–3 perc:** telepítsd és indítsd el a Claude asztali alkalmazást, lépj be. Beállítások → Képességek (Settings → Capabilities): kapcsold be a fájlkészítést (Create and edit files, régebbi néven Code execution and file creation). Enélkül a Claude nem tud letölthető fájlt készíteni.
 2. **3–7 perc:** Projektek (Projects) → új projekt, neve: „AI Sales Workshop – [cégnév]”. A projekt tudásába (Project knowledge, + gomb) töltsd fel:
-   - az `assistant.md` fájlt és a 00-, 01-, 05-ös modul `.md` fájlját;
+   - az `assistant.md` fájlt és a 00-, 01-, 03-, 04- és 05-ös modul `.md` fájlját;
    - a saját munkacsomagból a `company-dna.md`, `voice-profile.md`, `voice-checklist.md`, `crm-template.csv`, `metrics-template.csv`, `weekly-review.md`, `launch-plan.md`, `business-profile.md` fájlt és az `agents` mappa öt agentfájlját (`orchestrator.md`, `writer.md`, `reviewer.md`, `inbox.md`, `crm.md`);
    - a „Workshop-források” mappád fájljait (árlista, ajánlatok).
 3. **7–9 perc:** nyisd meg a [projektutasítást](../starter-kit/project-instructions.md), másold ki a keretes szöveget, írd be a cégneved, és illeszd be a projekt utasításmezőjébe (Project instructions).
-4. **9–15 perc:** Beállítások → Connectorok (Settings → Connectors). Kapcsold be:
+4. **9–15 perc:** Testreszabás → Connectorok (Customize → Connectors; az asztali appban a bal oldali sávban). Kapcsold be:
    - a **Gmail** és a **Google Drive** connectort, ha Google-t használsz. Ha a listában a **Google Sheets** (Google Táblázatok) is szerepel, azt is;
-   - a **Microsoft 365** connectort, ha Outlookot használsz. Személyes Outlook.com-fiókot a webes Claude-ban köss be. Céges Microsoft 365-fióknál a cég rendszergazdájának jóvá kell hagynia; ha ez nem megy, a leveleket bemásolva dolgozzuk fel.
-5. **15–18 perc:** minden bekötött levelező connectornál nyisd meg az eszközengedélyeket, és a küldés, válasz, továbbítás műveletet állítsd jóváhagyásosra vagy tiltottra.
+   - a **Microsoft 365** connectort, ha Outlookot használsz. Személyes Outlook.com-fiókot a webes Claude-ban köss be. Céges Microsoft 365-fióknál a cég rendszergazdájának jóvá kell hagynia; ha te vagy a Microsoft 365 rendszergazda, a belépéskor jóváhagyhatod. Ha ez nem megy, a leveleket bemásolva dolgozzuk fel.
+5. **15–18 perc:** nyisd meg a bekötött levelező connector oldalát, és az eszközengedélyeknél (Tool permissions) a küldés, válasz, továbbítás és törlés műveletet állítsd **Tiltva (Blocked)** állásba. A „Mindig engedélyez” (Always allow) gombra írási műveletnél ne kattints.
 6. **18–20 perc:** a projektben nyiss új beszélgetést, kapcsold be a connectorokat a + menüben, és írd: „Milyen fájlokat látsz a projektben, és milyen connectorok vannak bekapcsolva?”
 
 <a name="00-prework.02-account-check--check"></a>
 
 ### Ellenőrizd az eredményt
 
-- A projekt neve „AI Sales Workshop – [cégnév]”, a tudásban legalább 17 fájl van.
+- A projekt neve „AI Sales Workshop – [cégnév]”, a tudásban legalább 19 fájl van.
 - A projektutasításban a saját cégneved szerepel.
 - A Claude a 6. lépés kérdésére felsorolja a fájlokat és legalább egy levelező connectort.
-- A levélküldés jóváhagyáshoz kötött vagy tiltott.
+- A levelezőben a küldés, válasz, továbbítás és törlés Tiltva (Blocked).
 
 <a name="00-prework.02-account-check--help"></a>
 
@@ -254,68 +261,67 @@ Kapcsold be a Google Naptár connectort is. Az 5. blokkban a holnapi teendőidet
 
 <a name="00-prework.03-partner-accounts"></a>
 
-## Partnerfiókok: Sales Bot, EstiWise, Brandiseer
+## Partnerfiókok: Brandiseer, Buffer, EstiWise, Sales Bot
 
 **Állapot: review.**
 
 **Azonosító:** `00-prework.03-partner-accounts` · **Állapot:** review · **Időkeret:** 10 perc
 
+**Hogyan futtasd:** a regisztrációkat a böngészőben végzed; Claude nem kell hozzá.
+
 <a name="00-prework.03-partner-accounts--result"></a>
 
 ### Ezt készíted el
 
-Belépés a Sales Botba és az EstiWise-ba, az EstiWise Claude-kapcsolatával. A Brandiseer-hozzáférés a partner értesítése szerint.
+Ingyenes Brandiseer-fiókot, ingyenes Buffer-fiókot legalább egy bekötött közösségimédia-oldallal, és EstiWise-fiókot. A partnereszközökre nem kell előfizetned: a napra mindenki megkapja a használati keretet.
 
 <a name="00-prework.03-partner-accounts--needs"></a>
 
 ### Erre lesz szükséged
 
-A partnerektől kapott e-mailek (nézd meg a spam mappát is), valamint a weboldalad címe vagy szolgáltatásleírásod az EstiWise-regisztrációhoz.
+Egy e-mail-cím a regisztrációkhoz, legalább egy közösségimédia-oldal (például a céges LinkedIn- vagy Facebook-oldal) a Bufferhez, a weboldalad címe vagy szolgáltatásleírásod az EstiWise-hoz, és a LinkedIn-belépésed.
 
 <a name="00-prework.03-partner-accounts--explanation"></a>
 
 ### Így működik
 
-A három partnerrendszert a Claude-ból vezérled. Mindegyik a saját blokkjában kerül elő, a délutáni 5. blokkban pedig egy ügyfélesetben kapcsoljuk össze őket.
+A partnerrendszereket a saját blokkjukban használod, a délutáni 5. blokkban pedig egy ügyfélesetben kapcsoljuk össze őket.
 
-| Partner és blokk | Mit csinálsz előre? | Mit csinálnak a mentorok a helyszínen? |
+| Partner és blokk | Mit csinálsz előre? | Mi történik a helyszínen? |
 | --- | --- | --- |
-| **Blackhole Media – Sales Bot** ([03-as modul](03-lead-generation.md)) | A workshop-fiókodat a partner előre létrehozza, a belépő linket e-mailben kapod. Lépj be egyszer. | Segítenek bekötni a Sales Bot connectort a Claude-ba. |
-| **EstiWise** ([04-es modul](04-proposals-handoff.md)) | Regisztrálj az [estiwise.ai](https://estiwise.ai/) oldalon a Standard próbacsomagra (bankkártya nélkül), és kösd be az EstiWise-kapcsolatot a Claude-ba az EstiWise leírása szerint. | Ha a kapcsolat nem él, vagy nem jön meg a belépőkód, demófiókot adnak. |
-| **Brandiseer** ([02-es modul](02-content-marketing.md)) | A blokk anyagát a Brandiseer véglegesíti. Ha előzetes regisztrációs linket kapsz, végezd el; egy közösségimédia-fiók vagy tesztfiók hasznos. | A blokk elején beállítjátok a szükséges kapcsolatot. |
+| **Brandiseer** ([02-es modul](02-content-marketing.md)) | Ingyenes fiók: [brandiseer.com/auth](https://brandiseer.com/auth). | A 02-es blokkban dolgozol vele. |
+| **Buffer** (posztok ütemezése, a 02-es blokkhoz kötelező) | Ingyenes fiók: [buffer.com](https://buffer.com), és köss be legalább egy közösségimédia-oldalt. | A 02-es blokkban ide ütemezed a posztokat. |
+| **EstiWise** ([04-es modul](04-proposals-handoff.md)) | Regisztráció: [admin.estiwise.ai/auth/register](https://admin.estiwise.ai/auth/register). Bankkártya és előfizetés nem kell. | A Claude-összekötést a 04-es blokkban együtt csináljuk; a helyszínen kötjük be, előre ne próbáld. |
+| **Blackhole Media – Sales Bot** ([03-as modul](03-lead-generation.md)) | Előre nincs teendőd. Ha kíváncsi vagy, nézd meg: [sales-bot.io](https://sales-bot.io). A LinkedIn-belépésed legyen kéznél. | A hozzáférést a helyszínen, a 03-as blokk elején kapod. |
 
 <a name="00-prework.03-partner-accounts--decisions"></a>
 
 ### Ezekről te döntesz
 
-Saját céggel vagy gyakorlóvállalkozással regisztrálsz az EstiWise-ba. A próbafiókok a saját fiókjaid; hogy a próbaidő után megtartod-e őket, később döntöd el.
+Saját céggel vagy gyakorlóvállalkozással regisztrálsz. Melyik közösségimédia-oldalt kötöd be a Bufferbe. A workshopon semmi nem kerül ki nyilvánosan a jóváhagyásod nélkül.
 
 <a name="00-prework.03-partner-accounts--prompt"></a>
 
 ### Ezt kérd Claude-tól
 
-Az EstiWise bekötése után, a workshop-projektben, új beszélgetésben:
-
-```text
-Ellenőrizd, hogy él-e az EstiWise-kapcsolat: milyen eszközeid vannak, és milyen csomagban vagyok?
-Semmit ne módosíts, ez csak kapcsolatpróba.
-```
+Ennél a leckénél nem kell Claude. A Sales Bot és az EstiWise Claude-kapcsolatát a helyszínen, a saját blokkjukban kötjük be.
 
 <a name="00-prework.03-partner-accounts--steps"></a>
 
 ### Haladj végig ezeken
 
-1. **0–2 perc:** keresd meg a Sales Bot belépő e-mailjét, és lépj be egyszer.
-2. **2–8 perc:** regisztrálj az EstiWise-ba, és kövesd az EstiWise leírását a Claude-kapcsolathoz (jellemzően: Beállítások → Connectorok → egyéni connector hozzáadása az EstiWise által megadott címmel). Futtasd a fenti kapcsolatpróbát.
-3. **8–10 perc:** nézd meg, kaptál-e Brandiseer-értesítést; ha igen, végezd el.
+1. **0–3 perc:** Brandiseer-fiók a [brandiseer.com/auth](https://brandiseer.com/auth) oldalon.
+2. **3–7 perc:** Buffer-fiók a [buffer.com](https://buffer.com) oldalon, legalább egy közösségimédia-oldal bekötésével.
+3. **7–10 perc:** EstiWise-regisztráció az [admin.estiwise.ai/auth/register](https://admin.estiwise.ai/auth/register) oldalon. A Claude-kapcsolatot ne állítsd be.
 
 <a name="00-prework.03-partner-accounts--check"></a>
 
 ### Ellenőrizd az eredményt
 
-- Be tudsz lépni a Sales Botba.
-- Az EstiWise-fiókod él, és a Claude válaszol a kapcsolatpróbára, vagy felírtad a hibát a technikai pulthoz.
-- Tudod, mi a teendőd a Brandiseerrel.
+- Be tudsz lépni a Brandiseerbe.
+- A Bufferben legalább egy közösségimédia-oldal be van kötve.
+- Be tudsz lépni az EstiWise-ba.
+- Kéznél van a LinkedIn-belépésed.
 
 <a name="00-prework.03-partner-accounts--help"></a>
 
@@ -327,13 +333,13 @@ Egyik partnerfiók sem feltétele a délelőttnek. Ha valami nem működik, írd
 
 ### Ezt viszed tovább
 
-A belépések a 02-es, 03-as és 04-es blokk bemenetei. Az 5. blokkban a Karmester ugyanezeket a kapcsolatokat használja.
+A fiókok a 02-es és 04-es blokk bemenetei; a Sales Bot-hozzáférést a 03-as blokkban kapod. Az 5. blokkban a Karmester ugyanezeket használja.
 
 <a name="00-prework.03-partner-accounts--extra"></a>
 
 ### Ha maradt időd
 
-Nézd meg 5 percig a Sales Bot és az EstiWise felületét. Elég, ha tudod, hol vannak a fő menük.
+Nézd meg 5 percig a Brandiseer és az EstiWise felületét. Elég, ha tudod, hol vannak a fő menük.
 
 <a name="00-prework.04-coach-check"></a>
 
@@ -342,6 +348,8 @@ Nézd meg 5 percig a Sales Bot és az EstiWise felületét. Elég, ha tudod, hol
 **Állapot: review.**
 
 **Azonosító:** `00-prework.04-coach-check` · **Állapot:** review · **Időkeret:** 10 perc
+
+**Hogyan futtasd:** a táblázatot a böngészőben hozod létre, az ellenőrzést a tanulási kísérő végzi („Kezdjük a felkészülés ellenőrzését”).
 
 <a name="00-prework.04-coach-check--result"></a>
 
@@ -359,7 +367,7 @@ A kész projekt, a bekapcsolt connectorok és a [CRM-sablon](../starter-kit/crm-
 
 ### Így működik
 
-A **CRM** (ügyfélkapcsolat-kezelő) itt egy egyszerű táblázat: soronként egy ügyféleset, szakasszal és következő lépéssel. Azért Google-táblázat, mert nem kell hozzá fejlesztő, a Claude a connectorral olvasni és frissíteni tudja, te pedig bármikor megnyithatod. Ide érkeznek a Sales Bot leadjei, az EstiWise-ajánlatok és a levelekből kinyert érdeklődők. Ha már használsz HubSpotot vagy Pipedrive-ot, és van hozzá connector a Claude-ban, később azt is bekötheted; a workshopon a táblázattal dolgozunk.
+A **CRM** (ügyfélkapcsolat-kezelő) itt egy egyszerű táblázat: soronként egy ügyféleset, szakasszal és következő lépéssel. Azért Google-táblázat, mert nem kell hozzá fejlesztő, és a Claude a Google Drive connectorral el tudja olvasni. A frissítést a CRM-agent CSV-sorokként adja, te bemásolod; ha a connectorod írni is tud, közvetlenül is írhat. Outlook- és Excel-felhasználóknál ugyanez működik a saját Excel-fájloddal. Ide érkeznek a Sales Bot leadjei, az EstiWise-ajánlatok és a levelekből kinyert érdeklődők. Ha már használsz HubSpotot vagy Pipedrive-ot, és van hozzá connector a Claude-ban, később azt is bekötheted; a workshopon a táblázattal dolgozunk.
 
 A **tanulási kísérő** a Claude a projektedben, az `assistant.md` utasítás szerint. Indítómondatra vezet végig egy blokkon.
 
@@ -379,7 +387,7 @@ A workshop-projektben, új beszélgetésben, a connectorokat bekapcsolva:
 Kezdjük a felkészülés ellenőrzését.
 ```
 
-A kísérő ekkor ellenőrzi: látja-e a projektfájlokat és a projektutasítást; a levelező connectorral ki tudja-e olvasni a legutóbbi beérkezett levél tárgyát (a tartalmát nem mutatja); megtalálja-e a „CRM – [cégnév]” táblázatot; élnek-e a partnerkapcsolatok. Az eredmény egy ✅/⚠️ lista teendőkkel.
+A kísérő ekkor ellenőrzi: látja-e a projektfájlokat és a projektutasítást; a levelező connectorral ki tudja-e olvasni a legutóbbi beérkezett levél tárgyát (a tartalmát nem mutatja); megtalálja-e a „CRM – [cégnév]” táblázatot. A Sales Bot és az EstiWise kapcsolatát nem ellenőrzi: azokat a helyszínen kötjük be. Az eredmény egy ✅/⚠️ lista teendőkkel.
 
 <a name="00-prework.04-coach-check--steps"></a>
 
@@ -396,13 +404,13 @@ A kísérő ekkor ellenőrzi: látja-e a projektfájlokat és a projektutasítá
 - A CRM-táblázat létezik, az első sorban a 15 oszlopnév van.
 - A kísérő listájában a projektfájlok és a projektutasítás ✅.
 - A levelezés és a CRM ✅, vagy ⚠️ és tudod a kézi utat (bemásolás, CSV).
-- A partnerkapcsolatok állapota ismert.
+- A Brandiseer-, Buffer- és EstiWise-fiókod megvan.
 
 <a name="00-prework.04-coach-check--help"></a>
 
 ### Ha elakadtál
 
-Ha a Claude nem találja a táblázatot, a Google Sheets connector hiányozhat a listádból. Ilyenkor a CRM a projektben tárolt `crm-template.csv` másolata lesz; az 5. blokkban a Claude a frissített sorokat adja át, te pedig bemásolod a táblázatba.
+Ha a Claude nem találja a táblázatot, a Google Sheets connector hiányozhat a listádból. Ilyenkor töltsd fel a táblázatot CSV-ként a projektbe `crm.csv` néven (a `crm-template.csv` másolata); az 5. blokkban a Claude a frissített sorokat adja át, te pedig bemásolod a táblázatba.
 
 <a name="00-prework.04-coach-check--handoff"></a>
 

@@ -9,7 +9,7 @@ Indítómondat: `CRM: [mit frissítsünk]` vagy `CRM: mi a mai teendő?`
 
 ## A tábla
 
-Egy Google-táblázat „CRM – [cégnév]” néven, a [CRM-sablon](../crm-template.csv) oszlopaival. Egy sor egy ügyféleset (egy cég egy lehetősége).
+Egy Google-táblázat „CRM – [cégnév]” néven (Outlook- és Excel-felhasználóknál a saját Excel-fájl), a [CRM-sablon](../crm-template.csv) oszlopaival. Ha a táblázat nem érhető el connectorral, a projektbe feltöltött `crm.csv` (a `crm-template.csv` másolata) a forrás. Egy sor egy ügyféleset (egy cég egy lehetősége).
 
 | Oszlop | Tartalom | Szabály |
 | --- | --- | --- |
@@ -39,10 +39,10 @@ Egy Google-táblázat „CRM – [cégnév]” néven, a [CRM-sablon](../crm-tem
 ## Munkamenet
 
 1. Beolvasod a bemenetet: a Postás táblázata, `leads.csv`, `customer-brief.md`, `proposal.md`, `handoff.md`, vagy a Sales Bot és az EstiWise kapcsolaton át lekérdezett státusz.
-2. Beolvasod a táblát (Google Sheets connectorral, vagy a projektben lévő `crm.csv`-ből).
+2. Beolvasod a táblát: a Google Drive connectorral (a beszélgetésben + → Google Drive-ból), vagy a projektben lévő `crm.csv`-ből.
 3. Változáslistát mutatsz: „új sor” vagy „módosítás: oszlop régi → új”. Duplikációt jelzel.
-4. Jóváhagyás után írsz. Írás után visszaolvasod a módosított sorokat, és megmutatod.
-5. Ha nincs írási lehetőség, a frissített sorokat CSV-formában adod át bemásolásra, és ezt kimondod.
+4. Alapeset: jóváhagyás után a frissített és új sorokat CSV-formában adod át, a tábla oszlopsorrendjében; a felhasználó bemásolja őket a táblázatba. Utána a Drive connectorral visszaolvasod a táblát, és megerősíted, hogy a sorok bekerültek.
+5. Közvetlenül csak akkor írsz a táblába, ha a connectorod írni is tud, és a felhasználó jóváhagyta; utána is visszaolvasod.
 
 ## „Mi a mai teendő?”
 
