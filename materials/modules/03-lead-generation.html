@@ -44,11 +44,12 @@
 <ul>
 <li>Az 01-es modulban mentett <code>business-profile.md</code> és a 02-es modul <code>campaign-plan.md</code> fájlja.</li>
 <li>A workshop-fiókod a Sales Botban. A fiókot előre létrehoztuk; a belépő linket e-mailben kaptad meg.</li>
-<li>Claude, amelyben be van kapcsolva a Sales Bot connector (MCP). A beállításban a mentorok segítenek.</li>
+<li>Claude, amelyben be van kapcsolva a Sales Bot connector (MCP): <strong>Beállítások → Connectors → „Add custom connector”</strong>, név például <code>Sales-Bot.io</code>, URL: <code>https://app.sales-bot.io/api/mcp</code>, majd <strong>Connect</strong>, belépés a Sales Bot-fiókkal és engedélyezés. Ha elakadsz, a mentorok segítenek.</li>
 </ul>
 <p>Saját fiók nélkül: <a href="../scenarios/office-plants/outputs/business-profile.md">IrodaLiget mintaalaplap</a> · <a href="../scenarios/office-plants/outputs/leads.csv">Minta leadlista</a></p>
 <a id="03-lead-generation.01-qualify-leads--explanation"></a>
 <h3>Így működik</h3>
+<p>Az <strong>AI brain</strong> a Sales Bot tudásbázisa: ebből ír minden üzenetet és válaszjavaslatot. Cégszinten a cégleírást, a hangnemet és a linkeket tárolja; ajánlatonként a szolgáltatásokat, az ideális ügyfelet, az iparágakat, az USP-t, a pozicionálást, a fájdalompontokat, a bizonyítékokat, az esettanulmányokat, az ellenvetéseket, az árazást és a folyamatot. Háromféleképpen töltheted ki: a <strong>weboldalad</strong> alapján, az 01-es modulban készült <strong>cég-DNS-ből</strong> (<code>business-profile.md</code>), vagy <strong>kézzel</strong>. Több ajánlatot is felvehetsz.</p>
 <p>A célzás négy szűrőn múlik: <strong>ország</strong>, <strong>cégméret</strong> (létszámsáv), <strong>iparág</strong> és <strong>döntéshozó</strong> (pozíció és senioritás). A Sales Bot ezek alapján keres; nem kell adatbázist vásárolni. A szűrők nem pontosak: a próbán a 11–50 fős szűrőre több ezer fős cégek is bejöttek, és az iparág is tévedett néhány leadnél. Ezért a listát átnézzük, és csak a valóban illeszkedő leadeket visszük tovább.</p>
 <p>A keresés a háttérben fut, a leadek néhány perc alatt érkeznek meg. A leadeket egy piszkozat kampányhoz kötjük, erre épül a következő lecke.</p>
 <p><strong>Kitalált példa:</strong> az IrodaLiget 10–40 fős budapesti irodák irodavezetőit és ügyvezetőit célozza.</p>
@@ -59,19 +60,19 @@
 <a id="03-lead-generation.01-qualify-leads--prompt"></a>
 <h3 class="cell-heading prompt">Ezt kérd Claude-tól</h3>
 <pre><code class="language-text">A Sales Bot eszközeivel dolgozunk a workshopon, sandbox módban: semmit ne küldj ki.
-1. Töltsd ki a Sales Bot AI brainjét a csatolt business-profile.md alapján: cég, ajánlat(ok), ideális ügyfél, hangnem (tegeződő vagy magázódó). Előtte mutasd meg, mit írnál be, és hagyasd jóvá velem.
+1. Töltsd ki a Sales Bot AI brainjét. Válaszd ki, melyik utat használjuk: (A) a weboldalam alapján: [weboldal]; (B) a csatolt business-profile.md (cég-DNS) alapján; (C) kézzel, a kérdéseid alapján. Utána mutasd meg a kitöltött mezőket (cégleírás, hangnem, ajánlat, ideális ügyfél, USP, fájdalompontok, ellenvetések), és javítsuk, amit kell.
 2. Hozz létre egy piszkozat kampányt a fő ajánlatomra „Workshop – [cégnév]” néven. Ne indítsd el.
 3. Kérdezd meg tőlem egyenként: ország, cégméret (például 11-50 fő), iparág, döntéshozói szint. Ezután keress leadeket ehhez a kampányhoz: először 20-at, és ha a minta jó, bővítsd legfeljebb 100-ra.
 4. A keresés a háttérben fut. Néhány perc múlva nézd meg az állapotát, és listázd ki a leadeket.
 5. Mutass öt leadet. Mindegyiknél ellenőrizd a cégméretet és az iparágat is, mert a szűrő nem mindig pontos, és írd le egy mondatban, miért illik vagy miért nem.
 6. A jóváhagyásom után a jó leadeket állítsd Qualified státuszra a Sales Botban, és készíts leads.csv tartalmat ezekkel az oszlopokkal: lead_id,company,fit_reason,status,next_action. A status értéke qualified vagy open legyen.
 </code></pre>
-<p>Csatold a <code>business-profile.md</code> fájlodat.</p>
+<p>Ha a cég-DNS-ből dolgozol, csatold a <code>business-profile.md</code> fájlodat.</p>
 <a id="03-lead-generation.01-qualify-leads--steps"></a>
 <h3 class="cell-heading steps">Haladj végig ezeken</h3>
 <ol>
-<li><strong>0–3 perc:</strong> lépj be a belépő linkkel, és ellenőrizd, hogy a Claude látja a Sales Bot eszközeit („Milyen Sales Bot eszközeid vannak?”).</li>
-<li><strong>3–8 perc:</strong> másold be a promptot, csatold a <code>business-profile.md</code> fájlt, és hagyd jóvá az AI brain tartalmát.</li>
+<li><strong>0–3 perc:</strong> a Claude-ban add hozzá a connectort (Beállítások → Connectors → „Add custom connector”, URL: <code>https://app.sales-bot.io/api/mcp</code>, Connect), lépj be a Sales Bot-fiókoddal, és ellenőrizd, hogy a Claude látja az eszközöket („Milyen Sales Bot eszközeid vannak?”).</li>
+<li><strong>3–8 perc:</strong> másold be a promptot, válaszd ki az AI brain kitöltésének útját (weboldal, cég-DNS vagy kézi), és nézd át a kitöltött mezőket.</li>
 <li><strong>8–14 perc:</strong> válaszold meg a szűrőkre vonatkozó kérdéseket, és indítsd el a keresést. Amíg a leadek megérkeznek (2–3 perc), írd le magadnak, milyen lead lenne a legjobb ügyfeled.</li>
 <li><strong>14–18 perc:</strong> nézd át az öt leadet. Ami illik, kerüljön Qualified státuszba; ami nem, maradjon <code>open</code>.</li>
 <li><strong>18–20 perc:</strong> mentsd a <code>leads.csv</code> fájlt a saját munkacsomagodba.</li>
@@ -79,7 +80,7 @@
 <a id="03-lead-generation.01-qualify-leads--check"></a>
 <h3 class="cell-heading check">Ellenőrizd az eredményt</h3>
 <ul>
-<li>Az AI brainben szerepel a céged, legalább egy ajánlat, az ideális ügyfél és a hangnem.</li>
+<li>Az AI brainben ki van töltve a cégleírás, a hangnem, és legalább egy ajánlat az ideális ügyféllel, az USP-vel és a fájdalompontokkal.</li>
 <li>A leadlista legfeljebb 100 fős, és a négy szűrő mindegyikét te adtad meg.</li>
 <li>A <code>leads.csv</code> öt sort tartalmaz a közös oszlopokkal; mindegyikhez van indoklás.</li>
 <li>Legalább három lead <code>qualified</code>, és meg tudod mondani, miért.</li>
