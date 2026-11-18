@@ -16,10 +16,10 @@ Belső oktatói jegyzet · review
 
 ### Bemutató (20 perc)
 
-1. **Probléma (3 perc):** a kkv-knak napi tartalom kell, de a márka minden csatornán máshogy néz ki; ügynökség lassú és drága, a ChatGPT és a Canva gyors, de általános.
-2. **Piac (4 perc):** képgenerálók (ChatGPT, Gemini, Midjourney, Canva AI), márkaeszközök (Bloom). Mindegyik a nulláról indul minden kérésnél, vagy csak egyszeri pillanatképet készít a márkáról.
+1. **Probléma (3 perc):** a kkv-knak napi tartalom kell, de a márka minden csatornán máshogy néz ki; több eszközben nehéz következetesen továbbvinni ugyanazt a vizuális megjelenést.
+2. **Piac (4 perc):** nevezd meg a képgenerálók és márkaeszközök kategóriáit. A 2026. november 15-i Brandiseer-próbából mutasd meg a kiválasztott márkát és két design módban készült posztképet. A próba a márka kiválasztását és a saját logó megjelenését igazolta.
 3. **Brandiseer (4 perc):** a weboldalból tanult, megmaradó márkaprofil; design mód; MCP, így Claude-ból vezérelhető; magyar termék, magyar támogatás.
-4. **Bizonyíték (2 perc):** Komáromy Pékség: 5× több tartalom, 85%-kal kevesebb tervezési idő, eszközönként 1 € alatti költség.
+4. **Ügyfélbeszámoló (2 perc):** a Komáromy Pékség beszámolója szerint ötször annyi tartalmat készítettek, és a vizuális tervezés ideje 85%-kal csökkent. A két adat ennek a pékségnek a tapasztalata, a Brandiseer által közölt ügyfélinterjú alapján. [Brandiseer-esettanulmány](https://brandiseer.com/case-studies/komaromy-pekseg)
 5. **Élő demó (7 perc):** ugyanaz a folyamat, amit a résztvevők csinálnak, a BRANDISEER márkán: márkalista → Cég-DNS-összefoglaló és két kérdés → egy design kép → a hét többi posztjának táblázata. Előre generált tartalékképek legyenek kéznél a diák között, ha a hálózat lassú.
 
 Mondandó, amit érdemes kimondani: „A márka a rendszerben él, nem a promptban. Te csak azt mondod meg, mi legyen a képen.”

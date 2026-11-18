@@ -157,18 +157,19 @@ Minden output a résztvevő saját munkacsomagjába kerül. A példavállalkozá
 | company-dna.md | Metaadat (verzió, státusz, gazda), ICP, ajánlatok offer\_id-val, bizonyíték, hangnem, Mondjuk / Nem mondjuk, források, hiányok |
 | voice-profile.md | Tegezés/magázás, megszólítás, mondathossz, következő lépés, záróformula, kerülendő kifejezések |
 | business-profile.md | business\_id, business\_name, offer\_id, offer, audience, problem, outcome, scope, exclusions, pricing\_basis, channel, next\_action, assumptions |
+| post-review.md | Szövegazonosító, vizsgált verzió, Ellenőr ítélete, függőben lévő újraellenőrzés (ha van) |
 | sales-strategy.md | offer\_id, audience, channel, message, next\_action, success\_metric |
-| ai-work-instructions.md | goal, inputs, allowed\_actions, review\_points, missing\_data\_rule |
-| brand-brief.md | business\_id, voice, message, visual\_direction |
-| campaign-plan.md | offer\_id, audience, posts, image\_brief, video\_outline, channel, call\_to\_action |
+| campaign-plan.md | offer\_id, audience, posts (öt nap, téma és szöveg), image\_urls (naponként), channel, call\_to\_action |
 | leads.csv | lead\_id, company, fit\_reason, status, next\_action |
 | outreach.md | lead\_id, first\_message, followup, stop\_condition |
 | customer-brief.md | lead\_id, offer\_id, need, quantity, constraints, open\_questions |
 | proposal.md | proposal\_id, lead\_id, offer\_id, scope, quantity, unit\_price, currency, price\_basis, total, assumptions, status |
-| handoff.md | proposal\_id, decision\_status, owner, next\_task, due |
+| handoff.md | proposal\_id, lead\_id, decision\_status, owner, next\_task, due |
 | pipeline-review.md | case\_id, results, execution\_mode, evidence, gaps, next\_step |
 | CRM – [cégnév] (Google-táblázat) | CRM lap: case\_id, company, source, offer\_id, stage, next\_step, next\_step\_due …; Heti mérés lap: week, stage, metric\_id, value, source |
 | launch-plan.md | Három holnapi lépés, heti rutin, ami még nem működik, mérőszám |
+
+Az `ai-work-instructions.md` és a `brand-brief.md` a gyakorlóvállalkozások kiegészítő mintafájljai. A rendes gyakorlatban átadott fájlok a fenti táblázatban szerepelnek.
 
 Az ajánlat számítását az árlista és a mennyiség alapján külön ellenőrizzük. A `draft` ajánlat nem elfogadott megrendelés. Eszközspecifikus formátumból a modul végén a közös formátumba exportálunk vagy átalakítunk.
 

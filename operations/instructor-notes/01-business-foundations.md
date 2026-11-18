@@ -54,7 +54,7 @@ Ne mutass élő Gmailt; a demó a [mintapostafiókkal](../../materials/scenarios
 
 ### Átadás a partnereknek
 
-A 02-es, 03-as és 04-es blokk a projektben lévő `company-dna.md` és `business-profile.md` fájlra épít ([átadás](../../materials/modules/01-business-foundations.md#01-business-foundations.01-offer-and-audience--handoff)). Szólj a partner előadóinak, hány résztvevő dolgozik mintával (IrodaLiget), hogy a demófiókokat erre készítsék.
+A következő blokkok a legutóbbi `progress.json` fájlban kijelölt DNS-re, hangprofilra és üzleti alaplapra építenek ([átadás](../../materials/modules/01-business-foundations.md#01-business-foundations.01-offer-and-audience--handoff)). Szólj a partner előadóinak, hány résztvevő dolgozik mintával (IrodaLiget), hogy a demófiókokat erre készítsék.
 
 **A blokk itt ér véget (egyeztetés, november 18.):** a Wenova-blokk a kész Cég-DNS-sel és az első Karmester–Író–Ellenőr próbafutással zárul. Partnerconnectort ebben a blokkban nem kötünk be: a Brandiseer, a Sales Bot és az EstiWise connectorát minden partner a saját blokkja elején köti be a résztvevőkkel (a résztvevő csak annyit mond: „Kösd be nekem a Brandiseert”, a hitelesítést maga végzi). A nap célja, hogy zárásra mindenkinél mindhárom partnerrendszer be legyen kötve, és a Claude-ból vezérelje őket.
 

@@ -27,7 +27,9 @@ Kevés szám, amit tényleg meg tudsz nézni. A célértéket a saját első 2�
 | Minőség | Ellenőri BLOKKOLÓ/JAVÍTANDÓ (M15) az ellenőrzött szövegekből (M16) | Ellenőri jelentések | Elég jó-e a DNS és az Író utasítása |
 | Idő | Megtakarított idő (M17) | Saját becslés | Megéri-e; becslés, nem mérés |
 
-Arányok, amiket a Karmester számol: elfogadási arány = M05 / M04; válaszarány = M06 / M05; ajánlat → megnyert = M12 / M11 (M11 a kiküldés hete szerint számol, a mostani CRM-szakasztól függetlenül); ellenőri visszadobási arány = M15 / M16.
+A Karmester azonos időszak adataiból számolja az elfogadási arányt (M05 / M04), a válaszarányt (M06 / M05) és az ellenőri visszadobási arányt (M15 / M16). Nulla vagy hiányzó nevezőnél az arány „nem számítható”.
+
+A héten kiküldött ajánlat (M11) és a héten megnyert ügy (M12) két külön darabszám. A számokhoz kiküldési, illetve megnyerési eseménydátum kell. A CRM aktuális szakasza és az utolsó módosítás dátuma erre kevés. Az ajánlati konverzióhoz válaszd ki az azonos héten kiküldött ajánlatokat. A követés végén ezek közül számold meg az addig megnyerteket, és oszd el a kiválasztott ajánlatok számával. Eseménydátum vagy nem nulla nevező hiányában a konverzió „nem számítható”.
 
 ## Heti átnézés: a prompt
 
@@ -39,7 +41,7 @@ Cél: egyoldalas heti jelentés és legfeljebb három javasolt változtatás. K�
 Címzett: én, a cég vezetője; 5 perc alatt el akarom olvasni.
 Forrás és határ: a „CRM – [cégnév]” táblázat CRM és Heti mérés lapja; a Sales Bot és az EstiWise kapcsolat, ha be van kapcsolva; a company-dna.md; az elmúlt heti ellenőri jelentések, ha bemásolom őket. Ami nincs meg: „Nincs megadva”, nem nulla.
 Kimeneti séma:
-1. Számok: a Heti mérés lap e heti sorai az előző héthez képest, és a négy arány.
+1. Számok: a Heti mérés lap e heti sorai az előző héthez képest, és a forrásból kiszámítható arányok. Az M11 és M12 külön darabszám. Ajánlati konverziót csak azonos kiküldési hét ajánlataiból számolj, dokumentált kiküldési és megnyerési eseménydátumokkal és egy rögzített zárónappal. Nulla vagy hiányzó nevezőnél írd: „nem számítható”.
 2. A pipeline: ügyek szakaszonként, lejárt következő lépések.
 3. Három megfigyelés, mindegyik egy számra hivatkozva.
 4. Javaslatok, legfeljebb három, mindegyik egy helyre: Cég-DNS (ICP, ajánlat, hangnem, Mondjuk/Nem mondjuk), Ellenőr ellenőrzőlistája, jövő heti kampány- és teendőterv.
@@ -60,4 +62,4 @@ Mentés: a jelentést weekly-review-ÉÉÉÉ-HH-NN.md fájlként készítsd el; 
 | Gyakori ellenőri BLOKKOLÓ | DNS 6. szakasz (Mondjuk / Nem mondjuk), az Ellenőr ellenőrzőlistája | Új tiltott ígéret a listán |
 | Az Író hangja idegen | voice-profile.md | Új jellemző kifejezés, kerülendő szó |
 
-Minden jóváhagyott változtatás után: a DNS verziószáma nő (0.1 → 0.2), és egy sor kerül a változásnaplóba (mi, miért, melyik számból). Az új DNS-fájlt cseréld le a projekt tudásában. Így a következő héten minden agent már az új változatból dolgozik.
+Minden jóváhagyott változtatás után: a DNS verziószáma nő (0.1 → 0.2), és egy sor kerül a változásnaplóba (mi, miért, melyik számból). A következő munkamenet előtt a `progress.json` új változatában jelöld ki az új DNS-fájlt. Ha webes Claude-projektben dolgozol, töltsd fel az új fájlt és a naplót is.

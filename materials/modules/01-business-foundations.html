@@ -58,7 +58,7 @@
 <div class="cell cell--output">
 <a id="overview-2"></a>
 <h3 class="cell-title">Kimenet</h3>
-<p><code>company-dna.md</code> (Cég-DNS 0.1), <code>voice-profile.md</code> (hangprofil), <code>business-profile.md</code> és <code>sales-strategy.md</code> (kivonat a partnerblokkoknak), működő Karmester–Író–Ellenőr próbafutás. Mindegyik a <code>Munka/01-DNS/</code> mappában (claude.ai-os tartalékúton a projekt tudásában).</p>
+<p><code>company-dna.md</code> (Cég-DNS 0.1), <code>voice-profile.md</code> (hangprofil), <code>business-profile.md</code> és <code>sales-strategy.md</code> (kivonat a partnerblokkoknak), valamint a próbafutás <code>post-review.md</code> ellenőri rekordja. Mindegyik a <code>Munka/01-DNS/</code> mappában (claude.ai-os tartalékúton a projekt tudásában).</p>
 </div>
 <div class="cell cell--help">
 <a id="overview-3"></a>
@@ -121,6 +121,7 @@
 <p><strong>Miért új beszélgetés az Ellenőrnek?</strong> Ha ugyanaz a beszélgetés ellenőriz, amelyik írt, az ugyanazokat a feltételezéseket látja helyesnek. Az új beszélgetés csak azt kapja, amit az ügyfél is látna: a szöveget és az eredeti kérést. Ez a friss kontextus.</p>
 <a id="team-model-2"></a>
 <h3>Mikor kell emberi jóváhagyás?</h3>
+<p>Ez a három sor a workshop rövidítése a piszkozatok és a belső gyakorlóműveletek átnézéséhez.</p>
 <div class="table-wrap" role="region" aria-label="Táblázat" tabindex="0"><table>
 <thead>
 <tr>
@@ -147,7 +148,8 @@
 </tr>
 </tbody>
 </table></div>
-<p>A tét dönt, nem a feladat mérete. Kétség esetén a magasabb sor érvényes.</p>
+<p>A Wenova-módszer a tényleges döntési jogot D0–D3 szinten adja meg. D0-nál az agent dönthet sikeres ellenőrzés és független review után. D1-nél ehhez bizonyíték, előnézet és visszaállítás kell. D2-nél a kockázathoz igazított próbák és két független ellenőrzés kell. D3-nál az arra jogosult ember dönt, például árról vagy külső vállalásról. <a href="https://github.com/cspiya/wenova-os/blob/f450f6fd91e87eca4c24725e1b1541aa61ecc817/09-engineering/agentic-engineering-method/03-decision-levels.md">Wenova OS: döntési szintek</a></p>
+<p>Például az ajánlat kísérőlevelét az Író készíti és az Ellenőr ellenőrzi. A kiküldésről te döntesz külön, és később te küldöd el. A műhelyben a levél piszkozat marad.</p>
 <a id="team-model-3"></a>
 <h3>A folyamat lépésről lépésre</h3>
 <div class="table-wrap" role="region" aria-label="Táblázat" tabindex="0"><table>
@@ -318,7 +320,7 @@ Forrás és határ: a weboldalam: [URL]; a Munka/00-Felkeszules/forrasok/ mappa 
 Kimeneti séma: a sablon 0–10. szakasza; legfeljebb 3 ajánlat O01, O02, O03 azonosítóval; az O01 a fő ajánlat.
 Szabályok: ahol a forrás hallgat, tegyél fel kérdést, egyszerre egyet, összesen legfeljebb ötöt. A javaslatot jelöld javaslatnak.
 Ellenőrzés: a végén mutass két fontos állítást a forrásszöveg szó szerinti idézetével, hogy ellenőrizni tudjam.
-Mentés: Munka/01-DNS/company-dna.md. Utána a DNS-ből készíts kivonatot ugyanide: business-profile.md (a Tananyag/starter-kit/business-profile.md 13 mezőjével) és sales-strategy.md (offer_id, audience, channel, message, next_action, success_metric).
+Mentés: Munka/01-DNS/company-dna.md. Utána a DNS-ből készíts kivonatot ugyanide: business-profile.md (a Tananyag/starter-kit/business-profile.md 13 mezőjével) és sales-strategy.md (offer_id, audience, channel, message, next_action, success_metric). A legutóbbi progress.json új változatában jelöld ki az aktív céget, a DNS verzióját és a DNS, illetve az alaplap útvonalát. A hangprofil útvonalát a következő leckében töltjük ki.
 </code></pre>
 </div>
 <div class="cell cell--steps">
@@ -406,7 +408,7 @@ Forrás és határ: a [Gmail / Outlook] connectorral az elküldött leveleim kö
 Kimeneti séma: a voice-profile.md szerkezete; példának legfeljebb egy-egy anonimizált mondat.
 Szabályok: előbb mutasd meg a kiválasztott levelek listáját (dátum, tárgy, a címzett szerepe), és csak a jóváhagyásom után elemezz. Semmit ne küldj, ne címkézz, ne törölj.
 Ellenőrzés: írj egy legfeljebb 80 szavas választ a hangomon erre a kitalált levélre: „Jó napot! Érdeklődnék, hogy jövő hónapban tudnának-e nálunk egy felmérést tartani? Üdvözlettel: Kata”. Utána kérdezd meg, 1–5 mennyire érzem a sajátomnak.
-Mentés: Munka/01-DNS/voice-profile.md, és frissítsd a company-dna.md 5. szakaszát új verzióként (company-dna-v0.1b.md), ha jóváhagyom.
+Mentés: Munka/01-DNS/voice-profile.md. Jóváhagyásom után frissítsd a DNS 5. szakaszát új verzióként (company-dna-v0.1b.md). A legutóbbi progress.json új változatában töltsd ki az active_business mezőt: cégnév, aktív DNS-verzió, DNS, hangprofil és üzleti alaplap pontos útvonala. Ha nem hagyom jóvá az új DNS-t, a korábbi jóváhagyott útvonalat rögzítsd.
 </code></pre>
 </div>
 <div class="cell cell--steps">
@@ -416,7 +418,7 @@ Mentés: Munka/01-DNS/voice-profile.md, és frissítsd a company-dna.md 5. szaka
 <li><strong>0–2 perc:</strong> új beszélgetés, connector be, prompt beillesztve.</li>
 <li><strong>2–5 perc:</strong> nézd át a levéllistát. Vegyél ki mindent, ami bizalmas vagy nem ügyfélnek ment.</li>
 <li><strong>5–10 perc:</strong> olvasd el a hangprofilt és a próbaválaszt. Értékeld 1–5-ig; 4 alatt mondd meg, mi idegen benne.</li>
-<li><strong>10–14 perc:</strong> ellenőrizd, hogy a <code>voice-profile.md</code> a <code>Munka/01-DNS/</code> mappában van, és hagyd jóvá a DNS 5. szakaszának frissítését.</li>
+<li><strong>10–14 perc:</strong> ellenőrizd a hangprofilt és a DNS-frissítést. A mentett naplóban nézd meg a cég nevét, a jóváhagyott DNS verzióját és a három aktív fájl útvonalát.</li>
 </ol>
 </div>
 <div class="cell cell--check">
@@ -442,7 +444,7 @@ Mentés: Munka/01-DNS/voice-profile.md, és frissítsd a company-dna.md 5. szaka
 <div class="cell cell--output">
 <a id="01-business-foundations.02-voice-profile--handoff"></a>
 <h3 class="cell-title">Ezt viszed tovább</h3>
-<p>A <code>voice-profile.md</code> az Író és a Postás mércéje. A 03-as blokkban a Sales Bot hangnem-beállításánál is ebből indulj ki (tegeződő vagy magázódó).</p>
+<p>A naplóba beírt aktív hangprofil az Író és a Postás mércéje. A 02–05. blokk nyitásakor kérd: „Mondd vissza az aktív cég nevét, a DNS verzióját, valamint a DNS, a hangprofil és az üzleti alaplap pontos útvonalát a legutóbbi progress.json alapján.” A 03-as blokkban a Sales Bot hangnem-beállításánál is ebből indulj ki (tegeződő vagy magázódó).</p>
 </div>
 <div class="cell cell--extra">
 <a id="01-business-foundations.02-voice-profile--extra"></a>
@@ -457,7 +459,7 @@ Mentés: Munka/01-DNS/voice-profile.md, és frissítsd a company-dna.md 5. szaka
 <div class="cell cell--goal">
 <a id="01-business-foundations.03-ai-workspace--result"></a>
 <h3 class="cell-title">Ezt készíted el</h3>
-<p>Egy működő próbafutást a saját csapatoddal: a Karmester tervet ad, az Író megír egy LinkedIn-posztot a fő ajánlatodról, az Ellenőr új beszélgetésben minősíti, az Író egyszer javít, te döntesz.</p>
+<p>Egy működő próbafutást a saját csapatoddal: a Karmester tervet ad, az Író megír egy LinkedIn-posztot a fő ajánlatodról, az Ellenőr új beszélgetésben minősíti, és javítás után ugyanott a javított változatról ad új döntést.</p>
 </div>
 <div class="cell cell--input">
 <a id="01-business-foundations.03-ai-workspace--needs"></a>
@@ -473,7 +475,8 @@ Mentés: Munka/01-DNS/voice-profile.md, és frissítsd a company-dna.md 5. szaka
 <li><strong>A beszélgetés – Karmester:</strong> megkapja a célt, és legfeljebb 8 lépéses tervet ad, kapukkal. Te jóváhagyod.</li>
 <li><strong>Ugyanitt – Író:</strong> megírja a posztot a DNS és a hangprofil alapján, önellenőrzéssel. A végén <strong>ellenőrzési csomagot</strong> ad: a szöveg, a műfaj, az eredeti kérés, indoklás nélkül.</li>
 <li><strong>B beszélgetés (új) – Ellenőr:</strong> csak a csomagot kapja meg. A DNS-sel és a K1–K8 ellenőrzőlistával dolgozik, és döntést ad.</li>
-<li><strong>Vissza az A beszélgetésbe:</strong> az Író csak a megnevezett hibákat javítja.</li>
+<li><strong>Vissza az A beszélgetésbe:</strong> az Író javítja a megnevezett hibákat, és új, verzióval jelölt ellenőrzési csomagot ad.</li>
+<li><strong>Vissza a B beszélgetésbe:</strong> az Ellenőr a javított változaton nézi meg a hibákat és a változással érintett állításokat. Az új ítélet ehhez a változathoz tartozik.</li>
 </ol>
 <p>Az első próbafutás célja nem a tökéletes poszt, hanem hogy lásd: az Ellenőr olyat is megfog, amit az Író nem vett észre. Ha az Ellenőr a DNS hiánya miatt jelez hibát, az a DNS következő verziójának teendője.</p>
 </div>
@@ -487,15 +490,19 @@ Mentés: Munka/01-DNS/voice-profile.md, és frissítsd a company-dna.md 5. szaka
 <h3 class="cell-title">Ezt kérd Claude-tól</h3>
 <p><strong>A beszélgetés:</strong></p>
 <pre><code class="language-text">Karmester: próbafutás. Egy LinkedIn-poszt a fő ajánlatunkról (O01), a DNS 2. szakaszában leírt fő problémára.
-Az Író írja, az Ellenőr új beszélgetésben minősíti, utána legfeljebb egy javítási kör.
+Az Író v1 néven adja át a posztot. Az Ellenőr külön beszélgetésben minősíti. Egy javítási kör után a javított változat ugyanahhoz az Ellenőrhöz kerül vissza.
 Előbb csak a tervet mutasd meg kapukkal; a jóváhagyásom után indítsd az Író lépését ebben a beszélgetésben.
 </code></pre>
 <p><strong>B beszélgetés (új beszélgetés ugyanebben a projektben):</strong></p>
 <pre><code class="language-text">Ellenőr: LinkedIn-poszt – az alábbi csomag.
-[az Író ellenőrzési csomagja, bemásolva]
+[az Író v1 ellenőrzési csomagja, bemásolva]
+A döntés mellé írd oda a szöveg azonosítóját (01-LinkedIn-poszt) és a vizsgált verziót.
 </code></pre>
 <p><strong>Vissza az A beszélgetésbe:</strong></p>
-<pre><code class="language-text">Az Ellenőr megállapításai: [bemásolva]. Javítsd csak ezeket, és jelöld, mit változtattál.
+<pre><code class="language-text">Az Ellenőr megállapításai: [bemásolva]. Javítsd ezeket, és adj új ellenőrzési csomagot a teljes javított szöveggel. Jelöld a változatot v2-ként.
+</code></pre>
+<p><strong>Vissza a B beszélgetésbe:</strong></p>
+<pre><code class="language-text">Ellenőr: itt a teljes javított v2 változat [bemásolva]. Ellenőrizd a korábbi hibák javítását és a változással érintett állításokat a források alapján. Add meg az új ítéletet a változat megjelölésével és a megállapításokkal.
 </code></pre>
 </div>
 <div class="cell cell--steps">
@@ -507,7 +514,7 @@ Előbb csak a tervet mutasd meg kapukkal; a jóváhagyásom után indítsd az Í
 <li><strong>5–9 perc:</strong> az Író megírja a posztot. Olvasd el az önellenőrzést, és másold ki az ellenőrzési csomagot.</li>
 <li><strong>9–14 perc:</strong> B beszélgetés: Ellenőr. Olvasd el a döntést és a táblázatot.</li>
 <li><strong>14–17 perc:</strong> vissza az A beszélgetésbe; egy javítási kör.</li>
-<li><strong>17–20 perc:</strong> döntsd el, megfelel-e a poszt. Ha a hiba oka a DNS-ben van, írd be a DNS 9. szakaszába teendőként.</li>
+<li><strong>17–20 perc:</strong> ha változott a poszt, küldd vissza a B beszélgetésbe, és olvasd el a javított változathoz tartozó új ítéletet. A B beszélgetésből mentsd a tényleges ítéletet a <code>Munka/01-DNS/post-review.md</code> fájlba a szöveg azonosítójával és verziójával. Ha a javítás újraellenőrzésére nincs idő, a javított változat mellé írd: „ellenőrzésre vár”. DNS-hiány esetén írd be a teendőt a DNS 9. szakaszába.</li>
 </ol>
 </div>
 <div class="cell cell--check">
@@ -516,7 +523,8 @@ Előbb csak a tervet mutasd meg kapukkal; a jóváhagyásom után indítsd az Í
 <ul>
 <li>A Karmester terve kapukat tartalmaz, és te hagytad jóvá.</li>
 <li>Az Író önellenőrzése ✅/⚠️ jelöléssel és kockázati szinttel ott van.</li>
-<li>Az Ellenőr új beszélgetésben futott, és döntést adott (MEGFELEL / JAVÍTANDÓ / BLOKKOLÓ) táblázattal.</li>
+<li>Az Ellenőr a B beszélgetésben adott döntést (MEGFELEL / JAVÍTANDÓ / BLOKKOLÓ) a mentett szövegváltozatról. Javítás után az új ítéletet ellenőrizd.</li>
+<li>A <code>post-review.md</code> megnevezi a szöveget, a vizsgált verziót és az Ellenőr tényleges ítéletét. A még függőben lévő újraellenőrzést külön jelöli.</li>
 <li>Meg tudod mondani egy mondatban, mit fogott meg az Ellenőr, vagy miért nem talált hibát.</li>
 <li>Semmi nem ment ki: a poszt piszkozat.</li>
 </ul>
@@ -534,8 +542,8 @@ Előbb csak a tervet mutasd meg kapukkal; a jóváhagyásom után indítsd az Í
 <div class="cell cell--output">
 <a id="01-business-foundations.03-ai-workspace--handoff"></a>
 <h3 class="cell-title">Ezt viszed tovább</h3>
-<p>A munkamappádban most ott van a Cég-DNS, a hangprofil és egy kipróbált AI-csapat. Ezt minden partnerblokkban használod: a Brandiseer-tartalmat, a Sales Bot-üzeneteket és az ajánlat kísérőszövegét ugyanígy átnézetheted az Ellenőrrel. Az 5. blokkban a Postás és a CRM-agent is munkába áll, és a Karmester egy teljes ügyfélesetet visz végig.</p>
-<p><strong>Wenova-kiegészítés a 02-es blokkhoz (választható, ha a Brandiseer-oktató is így kéri):</strong> a kampányvázból (lásd lent, „Ha maradt időd”) egy poszthoz képet kérsz a Brandiseer connectorával; a Claude a képet a <code>Munka/02-Tartalom/</code> mappába menti, és posztelőnézetet készít belőle HTML-ben. Jóváhagyás után a Buffer connectorral piszkozatként vagy sorba állítva feladja a posztot, és a Bufferben is megnézed. Ha a kép nem jön vissza a connectoron át, töltsd le a Brandiseerből a <code>Munka/02-Tartalom/</code> mappába; ha a Buffer-piszkozathoz nem csatolható, a Buffer felületén töltsd fel kézzel.</p>
+<p>A munkamappádban ott van a Cég-DNS és a hangprofil. A <code>post-review.md</code> fájlt add át az 05-ös blokk méréséhez is. Ugyanilyen ellenőri menettel nézheted át a Brandiseer-tartalmat, a Sales Bot-üzeneteket és az ajánlat kísérőszövegét. Az 5. blokkban a Postás és a CRM-agent is munkába áll, és a Karmester egy teljes ügyfélesetet visz végig.</p>
+<p><strong>Wenova-kiegészítés a 02-es blokkhoz (választható, ha a Brandiseer-oktató is így kéri):</strong> a kampányvázból (lásd lent, „Ha maradt időd”) egy poszthoz képet kérsz a Brandiseer connectorával; a Claude a képet a <code>Munka/02-Tartalom/</code> mappába menti, és posztelőnézetet készít belőle HTML-ben. Jóváhagyás után a Claude <code>draft</code> állapotú piszkozatként menti a posztot a Bufferbe. Ellenőrizd a Buffer Piszkozatok (Drafts) nézetében. Ha a kép nem jön vissza a connectoron át, töltsd le a Brandiseerből a <code>Munka/02-Tartalom/</code> mappába; ha a Buffer-piszkozathoz nem csatolható, a Buffer felületén töltsd fel kézzel.</p>
 </div>
 <div class="cell cell--extra">
 <a id="01-business-foundations.03-ai-workspace--extra"></a>
@@ -545,7 +553,7 @@ Előbb csak a tervet mutasd meg kapukkal; a jóváhagyásom után indítsd az Í
 <li>Alakítsd az Írót Skillé az <a href="../starter-kit/agents/README.md">agent-sablonok leírása</a> szerint.</li>
 <li><strong>Kampányváz vizuálisan (5 perc):</strong> a DNS-ből egy egyoldalas, böngészőben megnyitható kampányváz. Ezt viszed a 02-es blokkba.</li>
 </ul>
-<pre><code class="language-text">Készíts kampányvázat a Munka/01-DNS/company-dna.md alapján, egyetlen önálló HTML-fájlként: Munka/01-DNS/kampanyvaz.html.
+<pre><code class="language-text">Készíts kampányvázat a legutóbbi progress.json-ban kijelölt aktív DNS alapján, egyetlen önálló HTML-fájlként: Munka/01-DNS/kampanyvaz.html.
 Tartalom: cél és ideális ügyfél egy-egy mondatban; a fő ajánlat (O01); 4 hetes naptárnézet, hetente 2 poszttémával és 1 LinkedIn-megkereséssel (csak téma és cél, kész szöveg nélkül); szakaszonként egy mérőszám a Tananyag/starter-kit/weekly-review.md szerint.
 Szabályok: minden tény a DNS-ből jön; ami nincs, „Nincs megadva”. Külső hivatkozás és szkript nélkül, nyomtatható legyen. A végén add meg az útvonalat, hogy megnyissam a böngészőben.
 </code></pre>
@@ -555,7 +563,7 @@ Szabályok: minden tény a DNS-ből jön; ami nincs, „Nincs megadva”. Küls�
 <ol>
 <li>A saját félkész munkád maradjon a <code>Munka/01-DNS/</code> mappában.</li>
 <li>Az IrodaLiget mintából vedd át, ami hiányzik: <a href="../scenarios/office-plants/outputs/company-dna.md">Cég-DNS</a>, <a href="../scenarios/office-plants/outputs/voice-profile.md">hangprofil</a>, <a href="../scenarios/office-plants/outputs/business-profile.md">alaplap</a>, <a href="../scenarios/office-plants/outputs/sales-strategy.md">stratégia</a>.</li>
-<li>Kérd a Claude-ot, hogy másolja őket <code>Munka/01-DNS/minta/</code> alá, és onnan dolgozz; a saját félkész változatod megmarad.</li>
+<li>Kérd a Claude-ot, hogy az összetartozó mintafájlokat másolja a <code>Munka/01-DNS/minta/</code> mappába. A napló <code>active_business</code> mezőjébe az IrodaLiget nevét, a minta DNS-verzióját és a három itteni fájl útvonalát írja. A saját félkész változatod megmarad.</li>
 <li>A haladási naplóban jelöld: <code>completed_with_example</code>, végrehajtás: <code>simulation</code>.</li>
 <li>Mondd el saját szavaiddal, mi lenne a te DNS-edben más, majd folytasd a következő leckével.</li>
 </ol>

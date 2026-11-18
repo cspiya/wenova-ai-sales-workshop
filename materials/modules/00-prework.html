@@ -9,7 +9,7 @@
 <p class="kicker">00-prework · review</p>
 <p class="lead">Egy működő Claude-munkamappa a tananyaggal, bekötött levelezés és táblázat, partnerfiókok és a saját anyagaid. Ezzel indulsz reggel 9-kor.</p>
 <p class="lead"><strong>Honnan töltöd le az anyagot?</strong> Nem kell külön letöltened: az 1. leckében a Claude egyetlen mondatra telepíti. Kézi letöltés (ZIP): <a href="https://github.com/cspiya/wenova-ai-sales-workshop/archive/refs/heads/main.zip">main.zip</a>; böngészőben olvasható: <a href="https://github.com/cspiya/wenova-ai-sales-workshop/tree/main/materials">github.com/cspiya/wenova-ai-sales-workshop/tree/main/materials</a>.</p>
-<div class="block-banner block-banner--wenova"><p class="block-banner__when"><span class="chip chip--time">Előtte</span> <span class="block-banner__title">A nap menetében: Felkészülés</span></p><p class="block-banner__lead"><span class="logo-tile"><img class="logo logo--wenova" src="../assets/logos/wenova-wordmark.png" alt="Wenova" width="239" height="28"></span><span><span class="block-banner__label">Blokkgazda</span> <strong>Wenova</strong> · Wenova csapat</span></p><p class="block-banner__builds"><span class="block-banner__label">Ezt építed</span> Claude-projekt a sablonokkal, levelező- és Google-kapcsolat, CRM-tábla, Sales Bot- és EstiWise-belépés, saját források</p></div>
+<div class="block-banner block-banner--wenova"><p class="block-banner__when"><span class="chip chip--time">Előtte</span> <span class="block-banner__title">A nap menetében: Felkészülés</span></p><p class="block-banner__lead"><span class="logo-tile"><img class="logo logo--wenova" src="../assets/logos/wenova-wordmark.png" alt="Wenova" width="239" height="28"></span><span><span class="block-banner__label">Blokkgazda</span> <strong>Wenova</strong> · Wenova csapat</span></p><p class="block-banner__builds"><span class="block-banner__label">Ezt építed</span> Claude-projekt a sablonokkal, levelező- és Google-kapcsolat, CRM-tábla, EstiWise-fiók, saját források</p></div>
 </header>
 <a id="overview"></a>
 <h2>Cél, bemenet és eredmény</h2>
@@ -109,7 +109,7 @@
 <h3 class="cell-title">Ha elakadtál</h3>
 <ul>
 <li><strong>A Claude szerint a letöltés hálózati okból nem megy:</strong> Beállítások → Képességek (Settings → Capabilities): kapcsold be az <strong>Allow network egress</strong> kapcsolót, a <strong>Domain allowlist</strong> legyen <strong>Package managers only</strong> (ez engedi a github.com-ot). Utána: „Próbáld újra.”</li>
-<li><strong>Így sem megy:</strong> kézi út, 3 perc: töltsd le a <a href="https://github.com/cspiya/wenova-ai-sales-workshop/archive/refs/heads/main.zip">ZIP-et</a>, bontsd ki (Windows: jobb klikk → Összes kibontása; macOS: dupla kattintás), a kibontott mappában a <code>materials</code> mappa <strong>tartalmát</strong> másold a <code>Wenova-AI-Sales-Workshop/Tananyag/</code> mappába, és hozz létre mellette egy <code>Munka</code> mappát. Utána írd a Claude-nak: „Ellenőrizd a telepítést a Tananyag/TELEPITES.md 5–7. lépése szerint.”</li>
+<li><strong>Így sem megy:</strong> kézi út, 3 perc: töltsd le a <a href="https://github.com/cspiya/wenova-ai-sales-workshop/archive/refs/heads/main.zip">ZIP-et</a>, bontsd ki (Windows: jobb klikk → Összes kibontása; macOS: dupla kattintás), a kibontott mappában a <code>materials</code> mappa <strong>tartalmát</strong> másold a <code>Wenova-AI-Sales-Workshop/Tananyag/</code> mappába, és hozz létre mellette egy <code>Munka</code> mappát. Utána írd a Claude-nak: „A Tananyag/TELEPITES.md 4. szakasza szerint hozd létre a Munka hat almappájából a hiányzókat. A már bemásolt Tananyag mappát hagyd a helyén. Utána folytasd az 5–7. szakasszal.”</li>
 <li><strong>Nincs Cowork a gépeden, vagy nem indul:</strong> tartalékút a böngészőben: a claude.ai-on hozz létre egy projektet („AI Sales Workshop – [cégnév]”), töltsd fel a tudásába az <code>assistant.md</code>, <code>AGENTS.md</code>, a 00–05 modulok <code>.md</code> fájljait és a <code>starter-kit</code> sablonjait, a projektutasításba pedig a <a href="../starter-kit/project-instructions.md">projektutasítás</a> keretes szövegét. Ilyenkor a „Munka/” helyett az eredményeket letöltöd és visszatöltöd a projektbe.</li>
 <li><strong>Terminált szívesen használsz:</strong> a <a href="../CLAUDE-CODE.html">haladó út a Claude Code-dal</a> ugyanezt a telepítést a terminálban végzi.</li>
 </ul>
@@ -176,7 +176,7 @@ Jelszót és belépőkódot ne kérj tőlem.
 </ul>
 </li>
 <li><strong>5–8 perc:</strong> nyisd meg a levelező connector oldalát, és az eszközengedélyeknél a küldés, válasz, továbbítás és törlés eszközt állítsd <strong>Tiltva (Blocked)</strong> állásba.</li>
-<li><strong>8–10 perc:</strong> a Cowork-projektben új munkamenet, kapcsold be a connectorokat a + menüben, és írd: „Milyen connectorok vannak bekapcsolva, és melyik eszközük van tiltva?”</li>
+<li><strong>8–10 perc:</strong> a Cowork-projektben új munkamenet, kapcsold be a connectorokat a + menüben, és írd: „Milyen connectorokat látsz ebben a munkamenetben?”</li>
 </ol>
 </div>
 <div class="cell cell--check">
@@ -184,7 +184,7 @@ Jelszót és belépőkódot ne kérj tőlem.
 <h3 class="cell-title">Ellenőrizd az eredményt</h3>
 <ul>
 <li>A Claude felsorolja a levelező és a Google Drive connectort (és a Buffert, ha bekötötted).</li>
-<li>A levelezőben a küldés, válasz, továbbítás és törlés Tiltva (Blocked).</li>
+<li>A levelező connector engedélyoldalán te ellenőrizted a küldés, válasz, továbbítás és törlés Tiltva (Blocked) beállítását.</li>
 </ul>
 </div>
 <div class="cell cell--help">
@@ -259,7 +259,7 @@ Jelszót és belépőkódot ne kérj tőlem.
 <div class="cell cell--decide">
 <a id="00-prework.03-partner-accounts--decisions"></a>
 <h3 class="cell-title">Ezekről te döntesz</h3>
-<p>Saját céggel vagy gyakorlóvállalkozással regisztrálsz. Bekötöd-e a Buffert, és ha igen, melyik közösségimédia-oldalt. A workshopon semmi nem kerül ki nyilvánosan a jóváhagyásod nélkül.</p>
+<p>Saját céggel vagy gyakorlóvállalkozással regisztrálsz. Bekötöd-e a Buffert, és ha igen, melyik közösségimédia-oldalt. A workshopon piszkozatokkal dolgozol. A közzétételről később külön döntesz.</p>
 </div>
 <div class="cell cell--prompt">
 <a id="00-prework.03-partner-accounts--prompt"></a>
@@ -444,7 +444,7 @@ Adatok: [például: ügyfélnév, kapcsolattartó e-mail-címe, egyedi kedvezmé
 <p>A Cowork-projektben, új munkamenetben, a connectorokat bekapcsolva:</p>
 <pre><code class="language-text">Kezdjük a felkészülés ellenőrzését.
 </code></pre>
-<p>A kísérő ellenőrzi: megvan-e a <code>Tananyag/</code> és a <code>Munka/</code>, a projekt Instructions mezője és a gyökérben az <code>AGENTS.md</code>; a levelező connectorral ki tudja-e olvasni a legutóbbi beérkezett levél tárgyát (a tartalmát nem mutatja); a levélküldés tiltva van-e; megtalálja-e a Google Drive-ban a „CRM – [cégnév]” táblázatot; él-e a Buffer connector. A partnerek connectorát nem ellenőrzi: azokat a blokkjukban kötjük be. Az eredmény egy ✅/⚠️ lista teendőkkel.</p>
+<p>A kísérő ellenőrzi a munkamappát, a projektutasítást, a CRM-tábla elérését, a levél tárgyának olvasását és a Buffer-kapcsolatot, ha azt választottad. Nyisd meg a levelező connector eszközengedélyeit, ellenőrizd a küldés, válasz, továbbítás és törlés Tiltva (Blocked) beállítását, majd mondd meg a kísérőnek, mit látsz. A listában külön sorban rögzítsétek az olvasás eredményét és az általad ellenőrzött engedélyeket. Ehhez elég a beállítási oldal, próbaüzenetet nem kell küldened.</p>
 </div>
 <div class="cell cell--steps">
 <a id="00-prework.05-coach-check--steps"></a>
@@ -461,7 +461,7 @@ Adatok: [például: ügyfélnév, kapcsolattartó e-mail-címe, egyedi kedvezmé
 <ul>
 <li>A CRM-táblázat létezik, az első sorban a 15 oszlopnév van.</li>
 <li>A kísérő listájában a munkamappa és az utasítások ✅.</li>
-<li>A levelezés, a levélküldés tiltása és a CRM ✅ (a Buffer, ha bekötötted), vagy ⚠️ és tudod a kézi utat.</li>
+<li>Külön látod, hogy működött-e a levélolvasás, és hogy te ellenőrizted-e az írási műveletek tiltását. Ha a beállítást nem láttad, az eredmény „nem ellenőrzött”. A CRM és a választott Buffer-kapcsolat mellett ott az eredmény vagy a kézi út.</li>
 <li>A Brandiseer- és EstiWise-fiókod megvan (a Buffer-fiók választható).</li>
 </ul>
 </div>

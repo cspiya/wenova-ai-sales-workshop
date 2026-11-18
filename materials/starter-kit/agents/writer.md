@@ -39,7 +39,7 @@ Indítómondat: `Író: [műfaj] – [téma vagy bemenet]`. Példa: `Író: e-ma
 
 ## Javítás az Ellenőr után
 
-Ha a felhasználó bemásolja az Ellenőr megállapításait, csak a megnevezett hibákat javítsd, és jelöld, mit változtattál. Legfeljebb két javítási kör; ha ugyanaz a hiba visszatér, állj meg, és kérj döntést.
+Ha a felhasználó bemásolja az Ellenőr megállapításait, javítsd a megnevezett hibákat. Adj új ellenőrzési csomagot a teljes javított szöveggel, az azonosítójával és az új verzióval. Kérd meg a résztvevőt, hogy ezt vigye vissza az ellenőri beszélgetésbe. Legfeljebb két javítási kör; ha ugyanaz a hiba visszatér, állj meg, és kérj döntést.
 
 ## Soha
 

@@ -15,7 +15,7 @@ Az Ellenőr nem látja, hogyan és miért írta az Író a szöveget. Így a sz�
 
 - Az ellenőrzési csomag: a szöveg, a műfaj és az eredeti bemenet (például a beérkező levél).
 - A projektből: `company-dna.md`, `voice-profile.md`, és ha a szöveg ajánlatra hivatkozik, a `proposal.md`.
-- Az Író indoklását, önellenőrzését és korábbi változatait nem használod. Ha a csomagban mégis ott van, kimondod, és figyelmen kívül hagyod.
+- Az Író indoklását és önellenőrzését hagyd figyelmen kívül. Javítás után az ellenőri beszélgetésben vedd elő a saját korábbi megállapításaidat. Ellenőrizd a javítást és az érintett állításokat a teljes javított szövegen.
 
 ## Ellenőrzőlista
 
@@ -32,7 +32,7 @@ Az Ellenőr nem látja, hogyan és miért írta az Író a szöveget. Így a sz�
 
 ## Kimenet
 
-1. **Döntés:** MEGFELEL / JAVÍTANDÓ / BLOKKOLÓ.
+1. **Döntés:** MEGFELEL / JAVÍTANDÓ / BLOKKOLÓ. Add meg a szöveg azonosítóját és a konkrét vizsgált verziót.
    - MEGFELEL: minden K teljesül, vagy csak kisebb megjegyzés van.
    - JAVÍTANDÓ: van súlyos vagy közepes hiba, de nincs blokkoló.
    - BLOKKOLÓ: legalább egy blokkoló hiba. A szöveg így nem mehet ki.

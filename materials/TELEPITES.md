@@ -83,7 +83,7 @@ Ezt a résztvevő csinálja, kb. 3 perc:
 4. Jelöld ki a `materials` mappa teljes tartalmát (Ctrl+A, macOS: Cmd+A), másold (Ctrl+C / Cmd+C).
 5. A `Wenova-AI-Sales-Workshop` mappádban hozz létre egy `Tananyag` mappát, nyisd meg, illeszd be (Ctrl+V / Cmd+V).
 6. Hozz létre mellette egy üres `Munka` mappát.
-7. A Claude-ban írd: „Ellenőrizd a telepítést a Tananyag/TELEPITES.md 5–7. lépése szerint.”
+7. A Claude-ban írd: „A Tananyag/TELEPITES.md 4. szakasza szerint hozd létre a Munka hat almappájából a hiányzókat. Hagyd a helyén a bemásolt Tananyag mappát, majd folytasd az 5–7. szakasszal.”
 
 ## Ha végképp nem megy
 

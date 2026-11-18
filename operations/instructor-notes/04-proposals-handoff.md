@@ -29,7 +29,7 @@ A tananyag [célja](../../materials/modules/04-proposals-handoff.md#overview) ut
 ### Gyakorlat
 
 - [Ügyféligény és hiányzó adatok](../../materials/modules/04-proposals-handoff.md#04-proposals-handoff.01-discover-needs--explanation): a hiányzó mennyiség nem nulla, hanem nyitott adat.
-- [Ellenőrizhető ajánlattervezet](../../materials/modules/04-proposals-handoff.md#04-proposals-handoff.02-prepare-proposal--explanation): a 0 Ft sor hiányzó mennyiséget jelent; árazás után a mentor javítja az EstiWise felületén.
+- [Ellenőrizhető ajánlattervezet](../../materials/modules/04-proposals-handoff.md#04-proposals-handoff.02-prepare-proposal--explanation): 0 Ft-os sornál nézzétek meg a mennyiséget, az egységárat, a kedvezményt és a jóváhagyott díjmentességet. A mentor segít, ha a már árazott kalkulációt javítani kell.
 - [Belső átadás](../../materials/modules/04-proposals-handoff.md#04-proposals-handoff.03-handoff--explanation): tervezet ajánlatból nem indul teljesítés.
 
 Minden leckénél mondd meg az aktuális feladatot, a mentendő eredményt és a kész feltételt. Öt perc sikertelen hibaelhárítás után ajánld fel a mentőcsomagot; a saját munka maradjon meg.
@@ -44,7 +44,7 @@ Rögzítendő: eszközbemutató, tényleges kapcsolatok, időmért próba, gyako
 
 ### Átadás
 
-Ellenőrizd a tananyag áttekintőjében felsorolt eredményeket; a következő lépés gazdája próbálja ki az átvételt.
+Ellenőrizd az átadandó fájlokat. 16:15-kor indul a folyamatpróba, a kész saját ügy fájljaival vagy a választott teljes mintalánccal. A webes előnézetet csak a pótlás után, a fennmaradó időben végezzétek el.
 
 ## Kapcsolódó tananyagrészek
 

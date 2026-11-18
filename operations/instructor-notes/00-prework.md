@@ -14,8 +14,9 @@ Belső oktatói jegyzet · review
 
 ### Előző nap
 
-- A résztvevők 2026-11-18-án e-mailt kaptak: fizetős Claude kell; Brandiseer- és (kötelező) Buffer-fiók legalább egy közösségimédia-oldallal; EstiWise-regisztráció bankkártya nélkül; a Sales Bothoz előre nincs teendő, a hozzáférést a 03-as blokk elején kapják, csak a LinkedIn-belépés legyen kéznél. Partnereszközre senkinek nem kell előfizetnie. Terem: N13 412/A (4. emelet), belépőkártya a recepción.
+- A résztvevők 2026-11-18-án e-mailt kaptak: fizetős Claude kell; Brandiseer-fiók és legalább egy közösségimédia-oldallal összekötött Buffer-fiók (a levél még kötelezőként kérte a Buffert); EstiWise-regisztráció bankkártya nélkül; a Sales Bothoz előre nincs teendő, a hozzáférést a 03-as blokk elején kapják, csak a LinkedIn-belépés legyen kéznél. Partnereszközre senkinek nem kell előfizetnie. Terem: N13 412/A (4. emelet), belépőkártya a recepción.
 - Az alapút **Claude Desktop, Cowork mód**, munkamappa: `Wenova-AI-Sales-Workshop` (`Tananyag/` + `Munka/`). A tananyag a nyilvános repó `main` ágáról települ egy mondattal ([telepítés](../../materials/modules/00-prework.md#00-prework.01-install)). A PR-nak 19-én reggelig a `main`-en kell lennie, különben a telepítés a régi anyagot hozza.
+- Érvényes pontosítás a korábbi levélhez: a Buffer választható. A pultnál Buffer nélkül is kész lehet a felkészülés.
 - A partnerek MCP-connectorát (Brandiseer, Sales Bot, EstiWise) a partnerek a saját blokkjukban kötik be. A pultnál ezekkel nem foglalkozunk.
 
 <a name="notes-2"></a>
@@ -24,9 +25,9 @@ Belső oktatói jegyzet · review
 
 Sorrend: [telepítés](../../materials/modules/00-prework.md#00-prework.01-install--steps) → [connectorok és tiltás](../../materials/modules/00-prework.md#00-prework.02-account-check--steps) → [indulási próba](../../materials/modules/00-prework.md#00-prework.05-coach-check--prompt). Egy résztvevőre legfeljebb 5 perc; ami addig nem megy, az a kézi úton indul, és a blokkban a körbejáró oktató pótolja.
 
-Pultlap (papíron, név nélkül, asztalszámmal): Cowork + munkamappa ✅/⚠️ · `Tananyag/` verzió ✅/⚠️ · Instructions-mondat ✅/⚠️ · levelező ✅/⚠️ · levelező küldés/válasz/továbbítás/törlés Tiltva (Blocked) ✅/⚠️ · Google Drive + CRM-tábla ✅/⚠️ · Buffer-fiók + connector ✅/⚠️ · Brandiseer ✅/⚠️ · EstiWise-fiók ✅/⚠️.
+Pultlap (papíron, név nélkül, asztalszámmal): Cowork + munkamappa ✅/⚠️ · `Tananyag/` verzió ✅/⚠️ · Instructions-mondat ✅/⚠️ · levelező ✅/⚠️ · levelező küldés/válasz/továbbítás/törlés Tiltva (Blocked) ✅/⚠️ · Google Drive + CRM-tábla ✅/⚠️ · Buffer-fiók + connector ✅/⚠️/nem választotta · Brandiseer ✅/⚠️ · EstiWise-fiók ✅/⚠️.
 
-Levelezőbiztonság: a connector oldalán az írási eszközök Tiltva (Blocked) állásban; írási műveletnél senki ne kattintson a „Mindig engedélyez” (Always allow) gombra.
+Levelezőbiztonság: a résztvevő a connector engedélyoldalán ellenőrzi a küldés, válasz, továbbítás és törlés Tiltva (Blocked) állását. Az olvasási próba eredményét külön jelöljük; írási műveletnél senki ne kattintson a „Mindig engedélyez” (Always allow) gombra.
 
 <a name="notes-3"></a>
 
