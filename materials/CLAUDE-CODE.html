@@ -1,0 +1,102 @@
+<!doctype html>
+<!-- Generated from materials/CLAUDE-CODE.md; edit Markdown and run npm run render. -->
+<html lang="hu"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Haladó út: Claude Code a terminálban · AI Sales &amp; Marketing Workshop</title><link rel="stylesheet" href="assets/notebook.css"></head><body class="page page--doc">
+<a class="skip" href="#main">Ugrás a tartalomhoz</a><header class="site-head"><div class="site-head__bar"><a class="site-head__brand" href="index.html"><img src="assets/logos/wenova-wordmark.png" alt="Wenova" width="154" height="18"><span>AI Sales &amp; Marketing Workshop</span></a><nav class="site-head__nav" aria-label="Fő navigáció"><a href="index.html">Kezdőlap</a><a href="schedule.html" class="is-cta">A nap menete</a><a href="CLAUDE-CODE.md">Markdown-forrás</a></nav></div><div class="partner-band partner-band--head"><p class="partner-band__label">Négy hazai csapat, egy közös értékesítési folyamat</p><ul class="partner-band__list" aria-label="Partnerek"><li class="partner partner--wenova"><span class="partner__logo"><img class="logo logo--wenova" src="assets/logos/wenova-wordmark.png" alt="Wenova" width="239" height="28"></span><span class="partner__role">Szervező · AI-működés</span></li><li class="partner partner--brandiseer"><span class="partner__logo"><img class="logo logo--brandiseer" src="assets/logos/brandiseer-icon.png" alt="" width="24" height="28"><span class="logo-word">Brandiseer</span></span><span class="partner__role">Márkaazonos tartalom</span></li><li class="partner partner--blackhole"><span class="partner__logo"><img class="logo logo--blackhole" src="assets/logos/black-hole-media-logo.png" alt="Blackhole Media" width="299" height="28"></span><span class="partner__role">Ügyfélszerzés · Sales Bot</span></li><li class="partner partner--estiwise"><span class="partner__logo"><img class="logo logo--estiwise" src="assets/logos/estiwise-logo-feher.svg" alt="EstiWise" width="99" height="28"></span><span class="partner__role">Ajánlatadás 0–24</span></li></ul></div></header>
+<div class="layout"><nav class="toc" aria-label="Tartalom"><p>Tartalom</p><ol><li><a href="#mikor-jó-ez-neked">Mikor jó ez neked?</a></li><li><a href="#1-telepítés-5-perc">1. Telepítés (5 perc)</a></li><li><a href="#2-belépés">2. Belépés</a></li><li><a href="#3-a-tananyag-telepítése-egy-mondattal">3. A tananyag telepítése egy mondattal</a></li><li><a href="#4-connectorok">4. Connectorok</a></li><li><a href="#5-biztonsági-beállítás-küldés-tiltva">5. Biztonsági beállítás: küldés tiltva</a></li><li><a href="#6-így-dolgozol-a-blokkokban">6. Így dolgozol a blokkokban</a></li><li><a href="#7-ütemezett-feladatok">7. Ütemezett feladatok</a></li><li><a href="#8-biztonság-röviden">8. Biztonság röviden</a></li></ol></nav><main id="main">
+<!-- presentation -->
+<header class="page-hero">
+<h1>Haladó út: Claude Code a terminálban</h1>
+<p class="lead"><strong>Választható, haladóknak.</strong> Az alapút a Claude Desktop Cowork; ezt csak akkor válaszd, ha szívesen dolgozol a terminálban (karakteres képernyőn). Ugyanazt a tananyagot, ugyanazokkal a lépésekkel járod végig, csak a Claude Code-ban.</p>
+</header>
+<h2 id="mikor-jó-ez-neked">Mikor jó ez neked?</h2>
+<ul>
+<li>Ismered a terminált (Windowson PowerShell, macOS-en Terminal), vagy szeretnéd megtanulni.</li>
+<li>Azt szeretnéd, hogy a Claude közvetlenül a saját gépeden, a munkamappádban dolgozzon, és a változásokat fájlonként lásd.</li>
+<li>Pro, Max vagy magasabb Claude-előfizetésed van. Az ingyenes csomag nem tartalmazza a Claude Code-ot.</li>
+</ul>
+<h2 id="1-telepítés-5-perc">1. Telepítés (5 perc)</h2>
+<p>A hivatalos parancsok (<a href="https://code.claude.com/docs/en/setup">Claude Code telepítési leírás</a>):</p>
+<div class="table-wrap" role="region" aria-label="Táblázat" tabindex="0"><table>
+<thead>
+<tr>
+<th>Rendszer</th>
+<th>Parancs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows, PowerShell</td>
+<td><code>irm https://claude.ai/install.ps1 | iex</code></td>
+</tr>
+<tr>
+<td>Windows, CMD</td>
+<td><code>curl -fsSL https://claude.ai/install.cmd -o install.cmd &amp;&amp; install.cmd &amp;&amp; del install.cmd</code></td>
+</tr>
+<tr>
+<td>macOS</td>
+<td><code>curl -fsSL https://claude.ai/install.sh | bash</code></td>
+</tr>
+<tr>
+<td>macOS, Homebrew</td>
+<td><code>brew install --cask claude-code</code></td>
+</tr>
+<tr>
+<td>Windows, WinGet</td>
+<td><code>winget install Anthropic.ClaudeCode</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>Utána nyiss <strong>új</strong> terminálablakot, és ellenőrizd: <code>claude --version</code>. Ha a <code>claude</code> parancs ismeretlen, a leírás „Fix your PATH” része segít. Windowson a Git for Windows nem kötelező; nélküle a Claude Code PowerShell-lel dolgozik. Rendszergazdai jog nem kell.</p>
+<h2 id="2-belépés">2. Belépés</h2>
+<p>Írd be: <code>claude</code>. A böngészőben lépj be a Pro vagy Max Claude-fiókoddal. Jelszót a terminálba ne írj.</p>
+<h2 id="3-a-tananyag-telepítése-egy-mondattal">3. A tananyag telepítése egy mondattal</h2>
+<ol>
+<li>Hozd létre a munkamappát, és lépj bele:
+<ul>
+<li>Windows (PowerShell): <code>mkdir $HOME\Wenova-AI-Sales-Workshop; cd $HOME\Wenova-AI-Sales-Workshop</code></li>
+<li>macOS: <code>mkdir -p ~/Wenova-AI-Sales-Workshop &amp;&amp; cd ~/Wenova-AI-Sales-Workshop</code></li>
+</ul>
+</li>
+<li>Indítsd: <code>claude</code>. Amikor rákérdez, jelöld megbízhatónak a mappát.</li>
+<li>Írd be:</li>
+</ol>
+<pre><code class="language-text">Telepítsd a workshop tananyagát: https://raw.githubusercontent.com/cspiya/wenova-ai-sales-workshop/main/materials/TELEPITES.md
+</code></pre>
+<p>A Claude Code a saját gépeden tölti le és csomagolja ki a tananyagot a <code>Tananyag/</code> mappába, létrehozza a <code>Munka/</code> mappát, és a gyökérbe másolja a <code>CLAUDE.md</code> és <code>AGENTS.md</code> fájlt. Minden parancs előtt engedélyt kér: olvasd el, mit futtatna, és csak akkor engedd, ha érted. A futtatókönyv: <a href="TELEPITES.md">TELEPITES.md</a>.</p>
+<ol start="4">
+<li>Lépj ki (<code>/exit</code>), és indítsd újra a <code>claude</code> parancsot ugyanebben a mappában. A Claude Code ekkor automatikusan betölti a <code>CLAUDE.md</code> fájlt, az pedig az <code>AGENTS.md</code>-t: így tudja a mappaszabályokat, az indítómondatokat és a biztonsági szabályokat.</li>
+</ol>
+<h2 id="4-connectorok">4. Connectorok</h2>
+<ul>
+<li><strong>A claude.ai-on bekötött connectorok</strong> (Gmail vagy Microsoft 365, Google Drive) a Claude Code-ban is megjelenhetnek, ha ugyanazzal a fiókkal léptél be. A <code>/mcp</code> paranccsal nézd meg, mi látszik, és ott kapcsolhatod ki, ami nem kell.</li>
+<li><strong>Buffer:</strong> <code>claude mcp add --transport http buffer https://mcp.buffer.com/mcp</code>, utána a Claude Code-ban <code>/mcp</code> → Buffer → belépés a böngészőben (<a href="https://developers.buffer.com/guides/integrations/claude.html">Buffer leírása</a>).</li>
+<li><strong>Brandiseer, Sales Bot, EstiWise:</strong> a partnerek MCP-connectorát a saját blokkjukban kötjük be; előre nincs teendő. A blokkban kapott címet ugyanígy, <code>claude mcp add --transport http …</code> paranccsal adod hozzá.</li>
+</ul>
+<h2 id="5-biztonsági-beállítás-küldés-tiltva">5. Biztonsági beállítás: küldés tiltva</h2>
+<p>Az engedélymódod maradjon az alapértelmezett: a Claude minden művelet előtt kérdez. Az automatikus jóváhagyást ne kapcsold be. Levélküldést, posztolást és törlést soha ne engedélyezz „mindig” (always allow) válasszal.</p>
+<p>Tiltsd le a levelező írási eszközeit: a <code>/permissions</code> paranccsal a <strong>Deny</strong> listára vedd fel a Gmail vagy Outlook küldő, válaszoló, továbbító és törlő eszközét. Az eszközök pontos nevét a <code>/mcp</code> mutatja (például <code>mcp__claude_ai_Gmail__send_message</code>). A tiltólista erősebb, mint a kérés: a tiltott eszközt a Claude akkor sem tudja használni, ha valaki erre utasítja.</p>
+<h2 id="6-így-dolgozol-a-blokkokban">6. Így dolgozol a blokkokban</h2>
+<ul>
+<li>Indítómondatok ugyanazok: „Kezdjük a felkészülést”, „Kezdjük az 1. blokkot”, „Hol tartok?”, „Karmester: …”, „Író: …”, és így tovább.</li>
+<li>Az eredmények a <code>Munka/</code> mappába kerülnek; a Claude Code minden fájlírás előtt megmutatja a változást. Nézd át, és csak utána engedd.</li>
+<li>A vizuális eredmények (kampányáttekintés, posztelőnézet, a nap összefoglalója) HTML-fájlok a <code>Munka/</code> alatt. Nyisd meg őket a böngészőben (dupla kattintás); claude.ai-os artifact itt nincs.</li>
+<li>Az Ellenőrt új munkamenetben futtasd: <code>/clear</code>, vagy nyiss új terminálablakot, és ott indíts új <code>claude</code> munkamenetet.</li>
+<li>Hasznos parancsok: <code>/mcp</code> (connectorok), <code>/permissions</code> (engedélyek), <code>/clear</code> (új, tiszta beszélgetés), <code>/resume</code> (korábbi beszélgetés folytatása), <code>/exit</code> (kilépés). A <code>/init</code> parancs itt nem kell: a <code>CLAUDE.md</code> már megvan.</li>
+</ul>
+<h2 id="7-ütemezett-feladatok">7. Ütemezett feladatok</h2>
+<ul>
+<li>A <strong>Claude Desktop Code fülén</strong> van <strong>Scheduled</strong> oldal. Ott a feladat a saját gépeden, a munkamappádban is futhat („Only on this computer”); ehhez a gépnek ébren kell lennie, és az alkalmazásnak nyitva (<a href="https://code.claude.com/docs/en/desktop-scheduled-tasks">leírás</a>).</li>
+<li>A terminálban a <code>/loop</code> csak a nyitott munkamenet alatt ismétel; hosszabb távra a fenti Desktop-feladat vagy a felhőben futó ütemezett feladat való.</li>
+<li>Kész promptok: <a href="starter-kit/scheduled-tasks.md">ütemezett feladatok</a>. Ugyanaz a szabály: csak olvas, összefoglal, piszkozatot ír; nem küld.</li>
+</ul>
+<h2 id="8-biztonság-röviden">8. Biztonság röviden</h2>
+<ul>
+<li>Jelszót, API-kulcsot, belépőkódot soha ne írj a terminálba vagy a beszélgetésbe.</li>
+<li>A levélküldő eszközök legyenek a Deny listán.</li>
+<li>Minden fájlváltozást nézz át, mielőtt engeded.</li>
+<li>Ha valami furcsát kér a Claude (törlés, ismeretlen parancs), utasítsd el, és kérdezz egy oktatót.</li>
+</ul>
+<p><a href="modules/00-prework.html">Vissza a felkészüléshez</a> · <a href="index.html">A tananyag kezdőlapja</a></p>
+</main></div>
+<footer class="site-foot"><div class="partner-band partner-band--foot"><p class="partner-band__label">Négy hazai csapat, egy közös értékesítési folyamat</p><ul class="partner-band__list" aria-label="Partnerek"><li class="partner partner--wenova"><span class="partner__logo"><img class="logo logo--wenova" src="assets/logos/wenova-wordmark.png" alt="Wenova" width="239" height="28"></span><span class="partner__role">Szervező · AI-működés</span></li><li class="partner partner--brandiseer"><span class="partner__logo"><img class="logo logo--brandiseer" src="assets/logos/brandiseer-icon.png" alt="" width="24" height="28"><span class="logo-word">Brandiseer</span></span><span class="partner__role">Márkaazonos tartalom</span></li><li class="partner partner--blackhole"><span class="partner__logo"><img class="logo logo--blackhole" src="assets/logos/black-hole-media-logo.png" alt="Blackhole Media" width="299" height="28"></span><span class="partner__role">Ügyfélszerzés · Sales Bot</span></li><li class="partner partner--estiwise"><span class="partner__logo"><img class="logo logo--estiwise" src="assets/logos/estiwise-logo-feher.svg" alt="EstiWise" width="99" height="28"></span><span class="partner__role">Ajánlatadás 0–24</span></li></ul></div><p class="site-foot__meta">AI Sales &amp; Marketing Workshop · 2026. november 19. · CEU, Budapest · a Wenova szervezésében</p></footer>
+</body></html>

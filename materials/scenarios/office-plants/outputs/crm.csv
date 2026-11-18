@@ -1,0 +1,5 @@
+case_id,company,contact_role,source,offer_id,stage,value_net,currency,next_step,next_step_due,owner,partner_ref,last_contact,notes,updated
+office-plants-L01,Minta Cég 1 (kitalált),irodavezető,LinkedIn / Sales Bot,office-plants-O01,Ajánlattervezet,40000,HUF,Indulási időpont és számlázási igény pontosítása,2026-11-21,Ügyvezető,office-plants-P01,2026-11-19,Ajánlat tervezet; nincs kiküldve,2026-11-19
+office-plants-L02,Minta Cég 2 (kitalált),ügyvezető,LinkedIn / Sales Bot,office-plants-O01,Minősített,,HUF,Első üzenet jóváhagyása a Sales Botban,2026-11-20,Ügyvezető,,2026-11-19,,2026-11-19
+E-261119-01,Minta Tanácsadó Kft. (kitalált),irodavezető,E-mail,office-plants-O01,Igényfelmérés,,HUF,Bejárás egyeztetése (25 növény; ár a bejárás után),2026-11-20,Ügyvezető,,2026-11-19,20 növény feletti igény,2026-11-19
+E-261119-02,Példa Szoftver Kft. (kitalált),ügyvezető,E-mail,office-plants-O01,Ajánlat kint,40000,HUF,Válasz: nettó ár és januári érvényesség,2026-11-20,Ügyvezető,,2026-11-19,Kérdés a nettó/bruttó árról,2026-11-19

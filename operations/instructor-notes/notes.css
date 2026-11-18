@@ -1,1 +1,22 @@
-body { background:#eef1f5; } .instructor-grid { display:grid; grid-template-columns:minmax(0,2fr) minmax(300px,1fr); gap:1rem; padding:1rem; max-width:1800px; margin:auto; } .lesson-pane { position:sticky; top:1rem; align-self:start; } iframe { width:100%; height:85vh; border:1px solid #dbe2ea; border-radius:6px; background:white; } .notes { padding:1.5rem; border:1px solid #dbe2ea; border-radius:6px; background:white; min-width:0; } .notes h1 { font-size:1.7rem; } @media(max-width:850px) { .instructor-grid { grid-template-columns:1fr; } .lesson-pane { position:static; } iframe { height:65vh; } } @media print { .lesson-pane { display:none; } .instructor-grid { display:block; } .notes { border:0; } }
+/* Oktatói jegyzet: a notebook.css-re épül. Bal oldalon a résztvevői lecke, jobbra a jegyzet.
+   Belső anyag: a fejlécsáv jelzi, hogy nem résztvevői oldal. */
+.page--notes .site-head { box-shadow:inset 0 -4px 0 #8b5cf6; }
+.page--notes .site-head__bar::after { content:"Belső oktatói jegyzet"; order:-1; flex-basis:100%; font:500 .68rem/1.4 var(--mono); letter-spacing:.14em; text-transform:uppercase; color:#c4b5fd; }
+.instructor-grid { display:grid; grid-template-columns:minmax(0,1.7fr) minmax(320px,1fr); gap:1.2rem; padding:1.2rem 1.5rem 2rem; max-width:1800px; margin:auto; }
+.lesson-pane { position:sticky; top:1rem; align-self:start; }
+.lesson-pane iframe { display:block; width:100%; height:calc(100vh - 2rem); border:1px solid var(--line); border-radius:var(--r-lg); background:#fff; box-shadow:var(--shadow); }
+main.notes { padding:clamp(1.1rem,2.5vw,1.8rem); border-top:5px solid #8b5cf6; }
+.notes h1 { font-size:clamp(1.5rem,2.4vw,1.9rem); }
+.notes h2 { font-size:1.2rem; margin-top:2rem; }
+.notes h3:not(.cell-title) { font-size:1.02rem; margin:1.5rem 0 .5rem; padding-left:.7rem; border-left:3px solid #8b5cf6; }
+.notes a[target="lesson"]::after { content:" ↗" / ""; font-size:.8em; }
+@media (max-width:980px) {
+  .instructor-grid { grid-template-columns:1fr; padding:1rem; }
+  .lesson-pane { position:static; order:2; }
+  .lesson-pane iframe { height:70vh; }
+}
+@media print {
+  .lesson-pane { display:none; }
+  .instructor-grid { display:block; padding:0; }
+  main.notes { border:0; }
+}

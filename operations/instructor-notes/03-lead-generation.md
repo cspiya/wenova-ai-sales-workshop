@@ -22,12 +22,17 @@ Előadók: Bölcskei Balázs (bemutató és gyakorlat), Nagy Bogáta (mentor a g
 - A belépő linket a workshop előtt e-mailben ki kell küldeni.
 - A workshop-profilok **nincsenek LinkedInhez kötve**; a leadlista 100 főben van korlátozva, hogy senki ne húzza le a teljes adatbázist, és semmi ne menjen ki.
 - Ellenőrizni kell, hogy az MCP-n keresztül működik-e az AI brain kitöltése, a lista- és kampánylétrehozás, valamint a válaszok listázása.
-- Elő kell készíteni a gyakorló válaszok generálását: kampánylétrehozás után résztvevőnként kb. 10 kitalált lead-választ küldünk be.
+- Elő kell készíteni a gyakorló válaszok generálását: a 2. leckében létrehozott kampányra résztvevőnként kb. 10 kitalált lead-választ küldünk be.
 - MCP-próba (2026-11-16, tesztfiókban): a piszkozat kampány, a háttérben futó leadkeresés, a lead státusza és jegyzete, valamint az üzenetsorozat mentése és visszaolvasása működik. A kampányt MCP-ről nem lehet elindítani.
-- Szerdáig el kell készülnie az AI brain író eszközének az MCP-ben; ma csak olvasni lehet. Ha nincs kész, az 1. lépésben a Claude megírja a szöveget, és a résztvevő a platformon illeszti be.
-- A gyakorló válaszokat a platform oldalán kell beküldeni; erre nincs MCP-eszköz.
+- Az AI brain írása az MCP-ben elkészült (2026-11-17-i próba): a szöveges forrás (cég-DNS) és a mezők kézi javítása működik. A weboldalas forrás a 2026-11-18-i próbán már kitöltötte az ajánlat összes mezőjét, 1–2 perc alatt; a szöveges forrás kb. 45 másodperc. Mindkettő a háttérben fut: hívás után egy percig várni kell, és utána megnézni a brain-t.
+- A gyakorló válaszokat a demo-válaszokat betöltő eszközzel (admin) töltjük be a résztvevők workspace-ébe; semmi nem megy ki.
+- Connector a résztvevőknél: Beállítások → Connectors → „Add custom connector”, URL `https://app.sales-bot.io/api/mcp`, Connect, belépés és engedélyezés.
 - A résztvevők csak a saját workspace-ükhöz kötött tokent kapjanak. A kivetítőn ne admin tokennel mutassunk, mert az minden ügyfél-workspace-t látja.
-- A cégméret-szűrő a próbán pontatlan volt (11–50 főre nagyvállalatok is jöttek): ez jó példa a minősítés fontosságára, a gyakorlat elején mondjuk el.
+- A cégméret-szűrő javult: a rossz méretű cégeket kihagyja, és nem von le rájuk kreditet (20 kértből 14 jött). Az iparág viszont téved (szoftveres szűrőre felsőoktatási, pénzügyi cégek is jöttek): ez jó példa a minősítés fontosságára, a gyakorlat elején mondjuk el.
+- Végigpróba (2026-11-18): a sorrend leadlista → kampány a listára. Ha a keresést a kampányhoz kötjük lista nélkül, a kampány visszaolvasva „nincs közönség”, és a leadeket nehéz kilistázni.
+- Leadstátusznak a CRM státuszait használjuk (Interested, Later, Not Interested); a „Qualified” és „Replied” értéket elfogadja, de a CRM nem számolja.
+- Kampányonként adjunk meg válaszcélt, különben az AI angol alapcélt használ („20-minute demo call”). Foglalási link nélkül a válaszjavaslat időpontot kérdez.
+- A {COMPANY} változóra ne kerüljön rag: a próbán „a Innomedio Kft.-nál” lett belőle.
 - A leadkvótát ellenőrizni kell: a kis csomag havi 500 lead, a workshopon fejenként legfeljebb 100.
 
 <a name="notes-2"></a>
@@ -45,27 +50,35 @@ Előadók: Bölcskei Balázs (bemutató és gyakorlat), Nagy Bogáta (mentor a g
 
 #### Miért nem elég ma már?
 
-- **Pontatlan célzás:** az adatbázist csak számok alapján lehet szűrni (létszám, árbevétel), ez nem fedi a valóságot.
-- **Romló kézbesítés:** a Gmail és az Outlook egyre szigorúbban szűri a hideg e-maileket.
-- **Egy üzenet kevés:** a konverzió egy jól időzített üzenetsorozatból jön, nem egyetlen megkeresésből.
+- **Pontatlan célzás:** az adatbázist csak TEÁOR-számok alapján lehet szűrni, ez nem mindig fedi a valóságot. Ma már a cégek weboldalának szövege alapján is lehet célozni.
+- **Romló kézbesítés:** a Gmail és az Outlook egyre szigorúbban szűri a hideg e-maileket, a hideghívást pedig az emberek egyre jobban utálják.
+- **Egy üzenet kevés:** a konverzió egy jól időzített üzenetsorozatból jön, nem egyetlen megkeresésből. Ez rengeteg follow-up és iszonyatosan sok kézi munka.
 
 #### Miért a LinkedIn?
 
-Ott van a célközönség, a hangnem személyesebb, és tartalommal bizalmat építhetsz. Aki bekerül a kapcsolati hálódba, utána a posztjaidat is látja: a hálózat hosszú távú befektetés. A Blackhole Media 2017 óta foglalkozik LinkedIn-megkeresésekkel.
+Ott van a célközönség, és ott épül a bizalom. Magyarországon kb. 2 millió LinkedIn-tag van (a felnőttek kb. 25%-a, DataReportal Digital 2026), és havonta kb. 500 ezren lépnek be (LinkedIn uniós DSA-adat); világszerte 1 milliárd+ szakember.
+
+- **Személyes profilról:** személyesebb, mint a céges oldal: emberi hang, nem hirdetés, hanem people to people.
+- **Egymást erősítik:** posztolsz, építed a brandedet, látják a hitelességedet; aki bekerül a kapcsolati hálódba, a posztjaidat is látja.
+- **Hosszú távú befektetés:** a network a kampány után is a tiéd: bármikor eléred őket, és később is látnak.
+
+A Blackhole Media 2017 óta foglalkozik LinkedIn-megkeresésekkel.
 
 #### A rejtett szivárgás: a válaszkezelés
 
-A legtöbb lead nem a megkeresésnél vész el, hanem utána. Közel száz együttműködésben azt láttuk, hogy a sales csapatok nem kezelik rendesen a válaszokat, és nem követik a leadeket. Kisebb cégeknél sokszor maga a cégvezető salesel, sok más feladata mellett. Külön CRM-re pedig extra költséget fizetnek.
+A legtöbb lead nem a megkeresésnél vész el, hanem utána. Több száz együttműködés után azt láttuk, hogy a sales csapatok nem kezelik rendesen a válaszokat, és nem követik a leadeket. Kisebb cégeknél sokszor maga a cégvezető salesel, sok más feladata mellett. Külön CRM-re pedig extra költséget fizetnek.
 
-#### Mit csinál a Sales Bot?
+#### A megoldás: a Sales Bot
+
+Sok outreach tool van; a Sales Bot nem csak üzenetet küld, hanem végigviszi a teljes folyamatot. 2018 óta fejlesztjük, sok verzión vagyunk túl, a 2026 elején kiadott verzió már az AI-ra épül.
 
 | Mikor? | Mit végez el? |
 | --- | --- |
-| Kampány előtt | Felépíti a célközönséget: nem kell adatbázist vásárolni. |
-| Kampány közben | Bizonyított sablonokból megírja az üzeneteket, többféle kampánytípussal. |
-| Kampány után | Kategorizálja a válaszokat, válaszjavaslatot ír, időpontot egyeztet, CRM-ben követ. |
+| Kampány előtt | Az AI felépíti a célközönséget, és bevált sablonokból megírja az üzeneteket a céged adatai alapján. |
+| Kampány | Szekvenciákat futtat: bejelölés és üzenetek, 1st-degree kampány, InMail. Hamarosan e-mail küldés is. |
+| Utánkövetés | Az AI kategorizálja és megválaszolja a válaszokat, időpontot foglal, e-mailt ír; a dealeket a CRM-ben követed. |
 
-Mindez az **AI brainre** épül: ebben tárolja a Sales Bot a céged adatait, ajánlatait és ideális ügyfelét, és ez alapján ír a nevedben. Magyar rendszer: jól ír magyarul, tegeződve vagy magázódva, és ismeri a magyar üzleti szokásokat, például hogy sokan szívesebben egyeztetnek időpontot kézzel.
+Mindez az **AI brainre** épül: megtanulja a céged, az ajánlataidat és az ideális ügyfeledet, és ez alapján dolgozik a nevedben. Magyar rendszer: jól ír magyarul, tegeződve vagy magázódva, és ismeri a magyar üzleti szokásokat, például hogy sokan szívesebben egyeztetnek időpontot kézzel.
 
 <a name="notes-3"></a>
 

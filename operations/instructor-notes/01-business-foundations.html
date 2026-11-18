@@ -1,38 +1,92 @@
 <!doctype html>
 <!-- Generated from operations/instructor-notes/01-business-foundations.md; edit Markdown and run npm run render. -->
-<html lang="hu"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>01-business-foundations</title><link rel="stylesheet" href="../../materials/assets/notebook.css"><link rel="stylesheet" href="notes.css"></head><body>
-<a class="skip" href="#notes">Ugrás a tartalomhoz</a><header class="topbar"><a class="brand" href="../../index.html">WENOVA · Workshop</a><a href="01-business-foundations.md">Markdown-forrás</a></header>
+<html lang="hu"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>01-business-foundations · AI Sales &amp; Marketing Workshop</title><link rel="stylesheet" href="../../materials/assets/notebook.css"><link rel="stylesheet" href="notes.css"></head><body class="page page--notes lead--wenova">
+<a class="skip" href="#notes">Ugrás a tartalomhoz</a><header class="site-head"><div class="site-head__bar"><a class="site-head__brand" href="../../index.html"><img src="../../materials/assets/logos/wenova-wordmark.png" alt="Wenova" width="154" height="18"><span>AI Sales &amp; Marketing Workshop</span></a><nav class="site-head__nav" aria-label="Fő navigáció"><a href="../../index.html">Kezdőlap</a><a href="../../materials/schedule.html" class="is-cta">A nap menete</a><a href="../../materials/index.html">Résztvevői tananyag</a><a href="01-business-foundations.md">Markdown-forrás</a></nav></div><div class="partner-band partner-band--head has-lead"><p class="partner-band__label">Wenova × Brandiseer × Blackhole Media × EstiWise</p><ul class="partner-band__list" aria-label="Partnerek"><li class="partner partner--wenova is-lead"><span class="partner__logo"><img class="logo logo--wenova" src="../../materials/assets/logos/wenova-wordmark.png" alt="Wenova" width="239" height="28"></span><span class="partner__role"><span class="partner__lead">Blokkgazda</span> · Szervező · AI-működés</span></li><li class="partner partner--brandiseer"><span class="partner__logo"><img class="logo logo--brandiseer" src="../../materials/assets/logos/brandiseer-icon.png" alt="" width="24" height="28"><span class="logo-word">Brandiseer</span></span><span class="partner__role">Márkaazonos tartalom</span></li><li class="partner partner--blackhole"><span class="partner__logo"><img class="logo logo--blackhole" src="../../materials/assets/logos/black-hole-media-logo.png" alt="Blackhole Media" width="299" height="28"></span><span class="partner__role">Ügyfélszerzés · Sales Bot</span></li><li class="partner partner--estiwise"><span class="partner__logo"><img class="logo logo--estiwise" src="../../materials/assets/logos/estiwise-logo-feher.svg" alt="EstiWise" width="99" height="28"></span><span class="partner__role">Ajánlatadás 0–24</span></li></ul></div></header>
 <div class="instructor-grid"><div class="lesson-pane"><iframe name="lesson" src="../../materials/modules/01-business-foundations.html" title="Résztvevői tananyag"></iframe></div><main id="notes" class="notes">
+<header class="page-hero">
 <h1>01-business-foundations</h1>
-<p><a href="01-business-foundations.html">HTML-változat</a></p>
-<p><a href="../../materials/modules/01-business-foundations.html" target="lesson">Kapcsolódó tananyag</a></p>
-<p>Belső oktatói jegyzet · draft</p>
-<p><strong>Státusz: draft.</strong></p>
-<p>15 perc bemutató + 3 × 20 perc gyakorlat + 15 perc ellenőrzés és pótlás.</p>
+<p class="hero-links"><a href="../../materials/modules/01-business-foundations.html" target="lesson">Kapcsolódó tananyag</a></p>
+<p class="kicker">Belső oktatói jegyzet · review</p>
+<p class="state"><strong>Státusz: review.</strong> 09:20–10:30, 70 perc. Vezeti: Piya Csaba; körbejár: Kemény Krisztián.</p>
+<div class="block-banner block-banner--wenova"><p class="block-banner__when"><span class="chip chip--time">09:20–10:30</span> <span class="block-banner__title">A nap menetében: 1. Cég-DNS és saját AI-csapat</span></p><p class="block-banner__lead"><span class="logo-tile"><img class="logo logo--wenova" src="../../materials/assets/logos/wenova-wordmark.png" alt="Wenova" width="239" height="28"></span><span><span class="block-banner__label">Blokkgazda</span> <strong>Wenova</strong> · Piya Csaba, Kemény Krisztián</span></p><p class="block-banner__builds"><span class="block-banner__label">Ezt építed</span> Cég-DNS forrásokkal, hangprofil a küldött leveleidből, saját AI-csapat (Karmester, Író, Ellenőr) első próbafutással</p></div>
+</header>
+<div class="cell cell--how">
 <a id="notes-1"></a>
-<h3>Bemutató</h3>
-<p>A partner dolgozza ki a bemutatót a felsorolt bemenetből a kimenetig. Először mutasson kész mintát.</p>
+<h3 class="cell-title">Bemutató 09:20–09:28 (8 perc)</h3>
+<p>A nyitásban (09:00–09:20) elhangzik: miért kell a Cég-DNS, mi az agentikus működés, és hogyan lehet az agenteket jó minőségű munkára rávenni (Karmester–Készítő–Ellenőr minta és a mögötte lévő utasításkészlet). A résztvevő ezeket a telepített tananyagban készen megkapja (<code>starter-kit/agents/</code>), nem kézzel hozza létre.</p>
+<p>Egy kivetített Claude-projekt az IrodaLiget mintával. Forgatókönyv:</p>
+<ol>
+<li><strong>Cég-DNS (2 perc):</strong> a <a href="../../materials/scenarios/office-plants/outputs/company-dna.md">kitalált DNS</a> 3. és 9. szakasza: forrás-ID és „Nincs megadva”. Mondat: „A hiány nem hiba, hanem teendő.”</li>
+<li><strong>Karmester, Író, Ellenőr (3 perc):</strong> a <a href="../../materials/modules/01-business-foundations.html#team-model-1" target="lesson">szereptábla</a> és a <a href="../../materials/modules/01-business-foundations.html#team-model-3" target="lesson">folyamattábla</a>. Kulcsmondat: „A Karmester koordinál, az Író készít, az Ellenőr friss beszélgetésben minősít, te döntesz.” A friss kontextus oka: az ügyfél sem látja az Író indoklását.</li>
+<li><strong>Mit kötünk be és miért (2 perc):</strong> az <a href="../../materials/modules/01-business-foundations.html#team-model-4" target="lesson">integrációs térkép</a> sorai: a nap végére minden sor él, vagy kézi úttal jelölt. Hangsúly: a küldés mindig emberi; a Sales Botból kampány nem indítható a Claude-ból.</li>
+<li><strong>Mérés és visszacsatolás (1 perc):</strong> <a href="../../materials/modules/01-business-foundations.html#team-model-5" target="lesson">röviden</a>: „Délután számokat teszünk mellé, hétfőn a számokból DNS-javítás lesz.” Részletesen az 5. blokkban.</li>
+</ol>
+<p>Ne mutass élő Gmailt; a demó a <a href="../../materials/scenarios/office-plants/outputs/mailbox-sample.md">mintapostafiókkal</a> és a <a href="../../materials/scenarios/office-plants/outputs/review-sample.md">kész ellenőri jelentéssel</a> megy.</p>
+</div>
 <a id="notes-2"></a>
-<h3>Gyakorlat</h3>
-<p>Minden leckénél mondd meg az aktuális feladatot, a mentendő eredményt és a kész feltételt. Öt perc sikertelen hibaelhárítás után ajánld fel a mentőcsomagot; a saját munka maradjon meg.</p>
+<h3>Gyakorlat: időkapuk</h3>
+<div class="table-wrap" role="region" aria-label="Táblázat" tabindex="0"><table>
+<thead>
+<tr>
+<th>Óra</th>
+<th>Hol kell tartani?</th>
+<th>Ha nem</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>09:40</td>
+<td>A Claude már kérdez a DNS-hez</td>
+<td><a href="../../materials/modules/01-business-foundations.html#01-business-foundations.01-offer-and-audience--help" target="lesson">Promptsegítség</a>: weboldal-szöveg bemásolása</td>
+</tr>
+<tr>
+<td>09:53</td>
+<td>A DNS letöltve és a projektben</td>
+<td>A kivonatot (business-profile.md) a 10:27-es zárásban pótolja; a 03-as és 04-es blokknak ez kell</td>
+</tr>
+<tr>
+<td>10:07</td>
+<td>Hangprofil kész</td>
+<td><a href="../../materials/scenarios/office-plants/outputs/voice-profile.md">IrodaLiget hangprofil</a> átírása</td>
+</tr>
+<tr>
+<td>10:20</td>
+<td>Az Ellenőr lefutott</td>
+<td>Csak Író + Ellenőr, Karmester nélkül</td>
+</tr>
+</tbody>
+</table></div>
+<p>10:27–10:30 zárás, egy mondat a teremnek: „A DNS-t és a <code>business-profile.md</code>-t a projektben hagyjátok; Dani, Balázs és Máté ebből dolgozik.”</p>
 <a id="notes-3"></a>
-<h3>Partneri feladatok</h3>
-<p>Rögzítendő: eszközbemutató, tényleges kapcsolatok, időmért próba, gyakori hibák és mentorbeosztás.</p>
+<h3>Gyakori hibák körbejáráskor</h3>
+<ul>
+<li><strong>A Claude kitalál referenciát vagy árat:</strong> mutasd meg a <a href="../../materials/modules/01-business-foundations.html#01-business-foundations.01-offer-and-audience--check" target="lesson">kész feltételeket</a>, és kérd a forrás-ID-t állításonként.</li>
+<li><strong>Túl sok ajánlat:</strong> legfeljebb három, egy fő (O01). A <a href="../../materials/modules/01-business-foundations.html#01-business-foundations.01-offer-and-audience--decisions" target="lesson">döntések</a> a résztvevőé.</li>
+<li><strong>A hangprofilban nevek vannak:</strong> törlés, szerep a név helyett.</li>
+<li><strong>Az Ellenőr ugyanabban a beszélgetésben fut:</strong> állítsd le, új beszélgetés. Ez a blokk legfontosabb tanulsága.</li>
+<li><strong>Az Ellenőr mindent MEGFELEL-re tesz:</strong> kérdezd meg, ellenőrizte-e K1-et forrással; a „nem ellenőrizhető” nem teljesült.</li>
+<li><strong>Régi sablon a projektben a kitöltött mellett:</strong> törlés.</li>
+</ul>
 <a id="notes-4"></a>
-<h3>Átadás</h3>
-<p>Ellenőrizd a tananyag áttekintőjében felsorolt eredményeket; a következő lépés gazdája próbálja ki az átvételt.</p>
+<h3>Átadás a partnereknek</h3>
+<p>A 02-es, 03-as és 04-es blokk a projektben lévő <code>company-dna.md</code> és <code>business-profile.md</code> fájlra épít (<a href="../../materials/modules/01-business-foundations.html#01-business-foundations.01-offer-and-audience--handoff" target="lesson">átadás</a>). Szólj a partner előadóinak, hány résztvevő dolgozik mintával (IrodaLiget), hogy a demófiókokat erre készítsék.</p>
+<p><strong>A blokk itt ér véget (egyeztetés, november 18.):</strong> a Wenova-blokk a kész Cég-DNS-sel és az első Karmester–Író–Ellenőr próbafutással zárul. Partnerconnectort ebben a blokkban nem kötünk be: a Brandiseer, a Sales Bot és az EstiWise connectorát minden partner a saját blokkja elején köti be a résztvevőkkel (a résztvevő csak annyit mond: „Kösd be nekem a Brandiseert”, a hitelesítést maga végzi). A nap célja, hogy zárásra mindenkinél mindhárom partnerrendszer be legyen kötve, és a Claude-ból vezérelje őket.</p>
+<p><strong>Kérdések és időtartás:</strong> a menet közbeni kérdésekre nyugodtan válaszolj, de figyeld az időkapukat: a korábbi workshopokon a kérdések miatt csúszott a menet. Ami hosszabb, az a zárás előtti kérdéskörbe vagy a szünetbe megy.</p>
+<a id="notes-5"></a>
+<h3>Cowork, vizuális eredmény, partnerkapcsolatok</h3>
+<ul>
+<li>A résztvevők Cowork-munkamappában dolgoznak: az eredmények a <code>Munka/01-DNS/</code> mappába kerülnek, nem a projekt tudásába. Ha valaki claude.ai-projekt tartalékúton van, a letöltés–feltöltés lépést kell csinálnia.</li>
+<li>A kampányváz HTML a 03-as lecke „Ha maradt időd” része; a bemutatóban elég megmutatni, hogy a fájl a böngészőben nyílik.</li>
+<li>A „Wenova-kiegészítés a 02-es blokkhoz” csak akkor kerüljön elő, ha Sorok Dániel is így akarja. A Brandiseer connectort a 02-es blokkban a Brandiseer köti be; a pontos lépéseket és azt, hogy a kép a connectoron át visszajön-e, ő erősíti meg. A Buffer connector a Claude connectorlistájában van; a kép csatolását a Buffer-piszkozathoz nem próbáltuk.</li>
+</ul>
 <h2 id="kapcsolódó-tananyagrészek">Kapcsolódó tananyagrészek</h2>
 <p>A hivatkozások a bal oldali tananyagnézetet a megfelelő szakaszra állítják.</p>
 <ul>
-<li><a href="../../materials/modules/01-business-foundations.html#01-business-foundations.01-offer-and-audience" target="lesson">Üzleti ajánlat és célcsoport kialakítása</a></li>
-<li><a href="../../materials/modules/01-business-foundations.html#01-business-foundations.02-sales-strategy" target="lesson">Minimális marketing- és sales stratégia</a></li>
-<li><a href="../../materials/modules/01-business-foundations.html#01-business-foundations.03-ai-workspace" target="lesson">Céges AI-munkautasítás és első eszközművelet</a></li>
+<li><a href="../../materials/modules/01-business-foundations.html#team-model" target="lesson">Hogyan működik az AI-csapat?</a></li>
+<li><a href="../../materials/modules/01-business-foundations.html#01-business-foundations.01-offer-and-audience" target="lesson">Cég-DNS a saját forrásaidból</a></li>
+<li><a href="../../materials/modules/01-business-foundations.html#01-business-foundations.02-voice-profile" target="lesson">A hangod a küldött leveleidből</a></li>
+<li><a href="../../materials/modules/01-business-foundations.html#01-business-foundations.03-ai-workspace" target="lesson">Saját AI-csapat: Karmester, Író, Ellenőr</a></li>
 </ul>
-<a id="offer-notes"></a>
-<h2>Ajánlat és célcsoport – oktatói segítség</h2>
-<p><a href="../../materials/modules/01-business-foundations.html#01-business-foundations.01-offer-and-audience--decisions" target="lesson">Emberi döntések</a>: kérdezd meg, miért ezt az egy célcsoportot választotta a résztvevő. Ha több ajánlatot sorol, kérj egyetlen mai fókuszt.</p>
-<p><a href="../../materials/modules/01-business-foundations.html#01-business-foundations.01-offer-and-audience--prompt" target="lesson">Prompt</a>: review-megállapítás szerint a kész feltételek átadását tisztázni kell. A főpróba előtt javíttasd a tananyagban; a jegyzet nem helyettesíti a résztvevői instrukciót.</p>
-<p><a href="../../materials/modules/01-business-foundations.html#01-business-foundations.01-offer-and-audience--check" target="lesson">Ellenőrzés</a>: kérj kétmondatos, saját szavas összefoglalót. Figyeld, hogy a feltételezés és a vállalt üzleti adat elkülönül-e.</p>
-<p><a href="../../materials/modules/01-business-foundations.html#01-business-foundations.01-offer-and-audience--help" target="lesson">Elakadás</a>: öt perc után a kitalált növénygondozási mintával folytassanak; a saját részleges munka maradjon meg.</p>
 </main></div>
+<footer class="site-foot"><div class="partner-band partner-band--foot has-lead"><p class="partner-band__label">Wenova × Brandiseer × Blackhole Media × EstiWise</p><ul class="partner-band__list" aria-label="Partnerek"><li class="partner partner--wenova is-lead"><span class="partner__logo"><img class="logo logo--wenova" src="../../materials/assets/logos/wenova-wordmark.png" alt="Wenova" width="239" height="28"></span><span class="partner__role"><span class="partner__lead">Blokkgazda</span> · Szervező · AI-működés</span></li><li class="partner partner--brandiseer"><span class="partner__logo"><img class="logo logo--brandiseer" src="../../materials/assets/logos/brandiseer-icon.png" alt="" width="24" height="28"><span class="logo-word">Brandiseer</span></span><span class="partner__role">Márkaazonos tartalom</span></li><li class="partner partner--blackhole"><span class="partner__logo"><img class="logo logo--blackhole" src="../../materials/assets/logos/black-hole-media-logo.png" alt="Blackhole Media" width="299" height="28"></span><span class="partner__role">Ügyfélszerzés · Sales Bot</span></li><li class="partner partner--estiwise"><span class="partner__logo"><img class="logo logo--estiwise" src="../../materials/assets/logos/estiwise-logo-feher.svg" alt="EstiWise" width="99" height="28"></span><span class="partner__role">Ajánlatadás 0–24</span></li></ul></div><p class="site-foot__meta">AI Sales &amp; Marketing Workshop · 2026. november 19. · CEU, Budapest · a Wenova szervezésében</p></footer>
 </body></html>
