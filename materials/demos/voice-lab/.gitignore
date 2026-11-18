@@ -1,0 +1,5 @@
+# Local secrets, recordings and analyses of the voice lab. Never commit.
+.env.local
+.env.*.local
+.data/
+__pycache__/

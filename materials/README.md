@@ -120,6 +120,8 @@ Szerkesztés alatt álló tananyag. A leckék draft/review állapota jelzi a ké
 
 - [**Folyamatpróba: levelek, CRM, egy ügyfél végig** 05-pipeline-review](modules/05-pipeline-review.md)
 
+Kitekintésként, nem kötelező: **[Demók](demos/README.md)**, például a hangügynök-labor (AI-telefonos asszisztens a böngészőben, kitalált adatokkal).
+
 <a name="start"></a>
 
 ## Saját munkacsomag és AI-kísérő
