@@ -48,7 +48,7 @@ Claude-előfizetés, a céged weboldala, árlistád, 1–2 korábbi ajánlatod, 
 
 ### Kimenet
 
-A `Wenova-AI-Sales-Workshop` munkamappa a telepített tananyaggal; egy Cowork-projekt erre a mappára; bekapcsolt levelező-, Google Drive- és Buffer-kapcsolat, a levélküldés tiltva; Brandiseer-, Buffer- és EstiWise-fiók; a forrásaid a `Munka/00-Felkeszules/forrasok/` mappában; „CRM – [cégnév]” Google-táblázat; a tanulási kísérő ellenőrzőlistája.
+A `Wenova-AI-Sales-Workshop` munkamappa a telepített tananyaggal; egy Cowork-projekt erre a mappára; bekapcsolt levelező- és Google Drive-kapcsolat (ha van Buffer-fiókod, a Buffer-kapcsolat is), a levélküldés tiltva; Brandiseer- és EstiWise-fiók, választhatóan Buffer-fiók; a forrásaid a `Munka/00-Felkeszules/forrasok/` mappában; „CRM – [cégnév]” Google-táblázat; a tanulási kísérő ellenőrzőlistája.
 
 <a name="overview-3"></a>
 
@@ -167,7 +167,7 @@ Lapozd át a böngészőben a [nap menetét](../schedule.md).
 
 ### Ezt készíted el
 
-Bekapcsolt levelező-, Google Drive- és Buffer-kapcsolatot, a levelező írási eszközei tiltva.
+Bekapcsolt levelező- és Google Drive-kapcsolatot (ha van Buffer-fiókod, a Buffer-kapcsolatot is), a levelező írási eszközei tiltva.
 
 <a name="00-prework.02-account-check--needs"></a>
 
@@ -175,7 +175,7 @@ Bekapcsolt levelező-, Google Drive- és Buffer-kapcsolatot, a levelező írási
 
 - **Levelezés:** Gmail- vagy Google Workspace-fiók, vagy Microsoft 365 / Outlook-fiók.
 - **Google-fiók** a CRM-táblázathoz. Ha csak Microsoft-fiókod van, a CRM a saját Excel-fájlod lesz.
-- A Buffer-fiók (a 3. lecke része; ha még nincs, előbb azt csináld meg).
+- Ha a Buffert is bekötöd: a Buffer-fiók (a 3. lecke része; ha még nincs, előbb azt csináld meg). A Buffer választható, a 02-es blokkban csak a bónuszfeladathoz kell.
 
 <a name="00-prework.02-account-check--explanation"></a>
 
@@ -211,7 +211,7 @@ Jelszót és belépőkódot ne kérj tőlem.
 1. **0–5 perc:** Testreszabás → Connectorok (Customize → Connectors; az asztali appban a bal oldali sávban). Kapcsold be:
    - a **Gmail** és a **Google Drive** connectort, ha Google-t használsz;
    - a **Microsoft 365** connectort, ha Outlookot használsz. Személyes Outlook.com-fiókot a webes Claude-ban (claude.ai) köss be. Céges fióknál a cég rendszergazdájának jóvá kell hagynia; ha te vagy a Microsoft 365 rendszergazda, a belépéskor jóváhagyhatod. Ha ez nem megy, a leveleket bemásolva dolgozzuk fel;
-   - a **Buffer** connectort (keresd a listában, Connect, belépés a Bufferbe).
+   - választhatóan a **Buffer** connectort (keresd a listában, Connect, belépés a Bufferbe), ha van Buffer-fiókod.
 2. **5–8 perc:** nyisd meg a levelező connector oldalát, és az eszközengedélyeknél a küldés, válasz, továbbítás és törlés eszközt állítsd **Tiltva (Blocked)** állásba.
 3. **8–10 perc:** a Cowork-projektben új munkamenet, kapcsold be a connectorokat a + menüben, és írd: „Milyen connectorok vannak bekapcsolva, és melyik eszközük van tiltva?”
 
@@ -219,7 +219,7 @@ Jelszót és belépőkódot ne kérj tőlem.
 
 ### Ellenőrizd az eredményt
 
-- A Claude felsorolja a levelező, a Google Drive és a Buffer connectort.
+- A Claude felsorolja a levelező és a Google Drive connectort (és a Buffert, ha bekötötted).
 - A levelezőben a küldés, válasz, továbbítás és törlés Tiltva (Blocked).
 
 <a name="00-prework.02-account-check--help"></a>
@@ -227,7 +227,7 @@ Jelszót és belépőkódot ne kérj tőlem.
 ### Ha elakadtál
 
 - **A levelező connector nem kapcsolódik:** folytasd nélküle. Az 1. és 5. blokkban a leveleidet bemásolva vagy a [kitalált mintapostafiókkal](../scenarios/office-plants/outputs/mailbox-sample.md) dolgozol.
-- **A Buffer connector nem található:** a 02-es blokkban a Buffer felületén, kézzel dolgozol.
+- **A Buffer connector nem található:** nem gond, a Buffer választható. A 02-es blokkban a posztokat letöltöd, és kézzel teszed ki, amikor jónak látod.
 
 <a name="00-prework.02-account-check--handoff"></a>
 
@@ -255,13 +255,13 @@ Kapcsold be a Google Naptár connectort is. Az 5. blokkban a holnapi teendőidet
 
 ### Ezt készíted el
 
-Brandiseer-fiókot a felvett márkáddal és a WENOVA kóddal aktivált Pro csomaggal, ingyenes Buffer-fiókot legalább egy bekötött közösségimédia-oldallal, és EstiWise-fiókot. A partnereszközökre nem kell fizetned: a Brandiseerhez a WENOVA kód ad egy hónap ingyenes Pro csomagot, a többihez a napra mindenki megkapja a használati keretet.
+Brandiseer-fiókot a felvett márkáddal és a WENOVA kóddal aktivált Pro csomaggal, EstiWise-fiókot, és ha szeretnéd, ingyenes Buffer-fiókot legalább egy bekötött közösségimédia-oldallal (választható). A partnereszközökre nem kell fizetned: a Brandiseerhez a WENOVA kód ad egy hónap ingyenes Pro csomagot, a többihez a napra mindenki megkapja a használati keretet.
 
 <a name="00-prework.03-partner-accounts--needs"></a>
 
 ### Erre lesz szükséged
 
-Egy e-mail-cím a regisztrációkhoz, legalább egy közösségimédia-oldal (például a céges LinkedIn- vagy Facebook-oldal) a Bufferhez, a weboldalad címe vagy szolgáltatásleírásod az EstiWise-hoz, és a LinkedIn-belépésed.
+Egy e-mail-cím a regisztrációkhoz, ha a Buffert is bekötöd, legalább egy közösségimédia-oldal (például a céges LinkedIn- vagy Facebook-oldal), a weboldalad címe vagy szolgáltatásleírásod az EstiWise-hoz, és a LinkedIn-belépésed.
 
 <a name="00-prework.03-partner-accounts--explanation"></a>
 
@@ -272,7 +272,7 @@ A partnerrendszereket a saját blokkjukban használod, a délutáni 5. blokkban 
 | Partner és blokk | Mit csinálsz előre? | Mi történik a helyszínen? |
 | --- | --- | --- |
 | **Brandiseer** ([02-es modul](02-content-marketing.md)) | A [brandiseer.hu](https://brandiseer.hu) oldalon add meg a céged weboldalát → **Try My Brand** → töröld a nem odaillő képeket → **Add Brand** → fiók létrehozása. Utána Pro csomag a **WENOVA** kóddal (az első hónap ingyenes). | A 02-es blokkban a Brandiseer connectorát is bekötitek. |
-| **Buffer** (posztok ütemezése, a 02-es blokkhoz kötelező) | Ingyenes fiók: [buffer.com](https://buffer.com), és köss be legalább egy közösségimédia-oldalt. A Claude-connectort a 2. leckében kapcsolod be. | A 02-es blokkban ide kerülnek a posztok. |
+| **Buffer** (posztok ütemezése, választható) | Ingyenes fiók: [buffer.com](https://buffer.com), és köss be legalább egy közösségimédia-oldalt. A Claude-connectort a 2. leckében kapcsolod be. | A 02-es blokk bónuszfeladatában ide kerülnek a posztok piszkozatként. Nélküle is végig lehet menni a blokkon. |
 | **EstiWise** ([04-es modul](04-proposals-handoff.md)) | Regisztráció: [admin.estiwise.ai/auth/register](https://admin.estiwise.ai/auth/register). Bankkártya és előfizetés nem kell. | A Claude-összekötést a 04-es blokkban együtt csináljuk; előre ne próbáld. |
 | **Blackhole Media – Sales Bot** ([03-as modul](03-lead-generation.md)) | Előre nincs teendőd. Ha kíváncsi vagy: [sales-bot.io](https://sales-bot.io). A LinkedIn-belépésed legyen kéznél. | A hozzáférést és a connectort a 03-as blokk elején kapod. |
 
@@ -280,7 +280,7 @@ A partnerrendszereket a saját blokkjukban használod, a délutáni 5. blokkban 
 
 ### Ezekről te döntesz
 
-Saját céggel vagy gyakorlóvállalkozással regisztrálsz. Melyik közösségimédia-oldalt kötöd be a Bufferbe. A workshopon semmi nem kerül ki nyilvánosan a jóváhagyásod nélkül.
+Saját céggel vagy gyakorlóvállalkozással regisztrálsz. Bekötöd-e a Buffert, és ha igen, melyik közösségimédia-oldalt. A workshopon semmi nem kerül ki nyilvánosan a jóváhagyásod nélkül.
 
 <a name="00-prework.03-partner-accounts--prompt"></a>
 
@@ -293,7 +293,7 @@ Ennél a leckénél nem kell Claude.
 ### Haladj végig ezeken
 
 1. **0–3 perc:** Brandiseer: a [brandiseer.hu](https://brandiseer.hu) oldalon add meg a weboldalad címét → **Try My Brand** → nézd át a képeket → **Add Brand** → fiók; majd Pro csomag a **WENOVA** kóddal.
-2. **3–7 perc:** Buffer-fiók a [buffer.com](https://buffer.com) oldalon, legalább egy közösségimédia-oldal bekötésével.
+2. **3–7 perc (választható):** Buffer-fiók a [buffer.com](https://buffer.com) oldalon, legalább egy közösségimédia-oldal bekötésével.
 3. **7–10 perc:** EstiWise-regisztráció az [admin.estiwise.ai/auth/register](https://admin.estiwise.ai/auth/register) oldalon. A Claude-kapcsolatot ne állítsd be.
 
 <a name="00-prework.03-partner-accounts--check"></a>
@@ -301,7 +301,7 @@ Ennél a leckénél nem kell Claude.
 ### Ellenőrizd az eredményt
 
 - Be tudsz lépni a Brandiseerbe, és ott van a márkád.
-- A Bufferben legalább egy közösségimédia-oldal be van kötve.
+- Ha Buffert is használsz: legalább egy közösségimédia-oldal be van kötve.
 - Be tudsz lépni az EstiWise-ba.
 - Kéznél van a LinkedIn-belépésed.
 
@@ -482,8 +482,8 @@ A kísérő ellenőrzi: megvan-e a `Tananyag/` és a `Munka/`, a projekt Instruc
 
 - A CRM-táblázat létezik, az első sorban a 15 oszlopnév van.
 - A kísérő listájában a munkamappa és az utasítások ✅.
-- A levelezés, a levélküldés tiltása, a CRM és a Buffer ✅, vagy ⚠️ és tudod a kézi utat.
-- A Brandiseer-, Buffer- és EstiWise-fiókod megvan.
+- A levelezés, a levélküldés tiltása és a CRM ✅ (a Buffer, ha bekötötted), vagy ⚠️ és tudod a kézi utat.
+- A Brandiseer- és EstiWise-fiókod megvan (a Buffer-fiók választható).
 
 <a name="00-prework.05-coach-check--help"></a>
 

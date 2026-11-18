@@ -8,7 +8,7 @@
 
 Belső oktatói jegyzet · review
 
-**Státusz: review.** Előadó: Sorok Dániel (Brandiseer). Időpont: 10:45–12:15 (a Wenova nyilvános programja szerint; a közös README még 11:00–12:30-at ír).
+**Státusz: review.** Előadó: Sorok Dániel (Brandiseer). Időpont: 10:45–12:15.
 
 20 perc bemutató és élő demó + 3 × 20 perc gyakorlat + 10 perc ellenőrzés és kérdések.
 

@@ -59,7 +59,7 @@ Cég-DNS és saját AI-csapat → tartalom a céged hangján → LinkedIn-megker
 
 ### Előzetes felkészülés
 
-A workshop előtt kb. 55 perc a [felkészülési modul](modules/00-prework.md) szerint: Claude-előfizetés és Claude Desktop, a tananyag telepítése egy mondattal egy saját munkamappába, a levelező és a Google-táblázat bekötése, Brandiseer-, Buffer- és EstiWise-fiók, a saját források összegyűjtése. Ami nem sikerül, azt reggel 08:30-tól a technikai pultnál befejezzük.
+A workshop előtt kb. 55 perc a [felkészülési modul](modules/00-prework.md) szerint: Claude-előfizetés és Claude Desktop, a tananyag telepítése egy mondattal egy saját munkamappába, a levelező és a Google-táblázat bekötése, Brandiseer- és EstiWise-fiók (a Buffer-fiók választható), a saját források összegyűjtése. Ami nem sikerül, azt reggel 08:30-tól a technikai pultnál befejezzük.
 
 <a name="agenda-5"></a>
 
@@ -142,7 +142,7 @@ A telepítés a [starter-kit](starter-kit/README.md) sablonjait is a munkamappá
 
 ## Eszközök és hozzáférések
 
-Fizetős Claude-előfizetés (Pro vagy magasabb) és a Claude Desktop (Cowork mód); Gmail- vagy Microsoft 365-levelezés; Google-fiók a CRM-táblához. Előre: Brandiseer-fiók a felvett márkáddal ([brandiseer.hu](https://brandiseer.hu): Try My Brand → Add Brand) és Pro csomag a WENOVA kóddal (az első hónap ingyenes), kötelező ingyenes Buffer-fiók ([buffer.com](https://buffer.com)) legalább egy közösségimédia-oldallal, EstiWise-regisztráció bankkártya nélkül ([admin.estiwise.ai/auth/register](https://admin.estiwise.ai/auth/register)). A Sales Bothoz ([sales-bot.io](https://sales-bot.io)) előre nincs teendőd: a hozzáférést a helyszínen, a 03-as blokk elején kapod; a LinkedIn-belépésed legyen kéznél. A partnereszközökre nem kell fizetned: a Brandiseerhez a WENOVA kód ad egy hónap ingyenes Pro csomagot, a többi eszközhöz a napra mindenki megkapja a használati keretet. A részletes lépések a [felkészülési modulban](modules/00-prework.md) vannak. Személyes LinkedIn-kapcsolat nélkül is végig lehet menni a napon.
+Fizetős Claude-előfizetés (Pro vagy magasabb) és a Claude Desktop (Cowork mód); Gmail- vagy Microsoft 365-levelezés; Google-fiók a CRM-táblához. Előre: Brandiseer-fiók a felvett márkáddal ([brandiseer.hu](https://brandiseer.hu): Try My Brand → Add Brand) és Pro csomag a WENOVA kóddal (az első hónap ingyenes), választhatóan ingyenes Buffer-fiók ([buffer.com](https://buffer.com)) legalább egy közösségimédia-oldallal (a 02-es blokk bónuszfeladatához), EstiWise-regisztráció bankkártya nélkül ([admin.estiwise.ai/auth/register](https://admin.estiwise.ai/auth/register)). A Sales Bothoz ([sales-bot.io](https://sales-bot.io)) előre nincs teendőd: a hozzáférést a helyszínen, a 03-as blokk elején kapod; a LinkedIn-belépésed legyen kéznél. A partnereszközökre nem kell fizetned: a Brandiseerhez a WENOVA kód ad egy hónap ingyenes Pro csomagot, a többi eszközhöz a napra mindenki megkapja a használati keretet. A részletes lépések a [felkészülési modulban](modules/00-prework.md) vannak. Személyes LinkedIn-kapcsolat nélkül is végig lehet menni a napon.
 
 <a name="outputs"></a>
 

@@ -73,6 +73,15 @@ Utána három résztvevő mondja el a saját holnapi első lépését; végül p
 - „A nap egy oldalon” HTML és az ütemezett feladatok csak „Ha maradt időd” vagy otthoni feladat. A 35 percbe nem férnek bele; ne erőltesd.
 - Ütemezett feladat Pro csomagon a felhőben fut, helyi mappa nélkül: ezért a DNS-t a Google Drive-ba kell tenni. Ezt élőben nem próbáltuk.
 
+<a name="notes-7"></a>
+
+### Kitekintő bemutatók (csak ha marad idő, kivetítve; a résztvevő nem követi)
+
+Az egyeztetés (november 18.) döntése: ezek bemutatók, nem gyakorlatok. A 35 percből nem vehetnek el; ha nincs idő, a zárásban egy mondat róluk elég.
+
+- **Meta-hirdetések a Claude-ból (Piya Csaba, kb. 3 perc):** a Wenova saját kampányában a Claude a Meta Marketing API-n át kampányt és hirdetést hozott létre, és a leadeket, leveleket, hívásokat egy egyszerű Claude Artifact-irányítópultba (mini CRM) gyűjtötte. Élőben nem kötjük be: a céges Facebook-oldal, a Business Manager, a fejlesztői app és a rendszerfelhasználó összekattintása 1–3 óra. Üzenet: „Egy gyors kampányhoz egy Artifact elég; tartós rendszerhez CRM (például HubSpot) kell.” Tanulság a saját kampányunkból: a korosztályt és a célzást nem szabad teljesen a Metára hagyni, mert arra optimalizál, aki kattint, nem arra, aki vásárol.
+- **AI-hangasszisztens visszahíváshoz (választható, Gyömrei Máté vagy Ujvári Csaba, kb. 5 perc, ha vállalják):** az EstiWise ElevenLabs-agentjének tapasztalatai (gyors válaszidő turbó modellel, a megszakítás és a bemutatkozó mondat kezelése). Kiegészítés a Wenova próbájából: magyar telefonszám uniós SIP-szolgáltatótól fél óra alatt beköthető; élő ügyfeleknél a hideg hívás nem működött, a visszahívást kérő érdeklődőnél van értelme. Ne ígérj kész megoldást.
+
 ## Kapcsolódó tananyagrészek
 
 A hivatkozások a bal oldali tananyagnézetet a megfelelő szakaszra állítják.
