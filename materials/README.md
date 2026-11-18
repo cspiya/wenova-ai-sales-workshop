@@ -67,6 +67,8 @@ A workshop előtt kb. 55 perc a [felkészülési modul](modules/00-prework.md) s
 
 A pontos idővonal, előadók és blokkonkénti eredmények: **[A nap menete](schedule.md)**.
 
+Általános, forrásokkal alátámasztott tanácsok AI-val vitt kampányhoz: **[Jó tanácsok](tippek.md)**.
+
 | Időpont | Blokk | Gazda |
 | --- | --- | --- |
 | 08:30–09:00 | Érkezés, technikai ellenőrzés | Wenova |
