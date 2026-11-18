@@ -2,7 +2,7 @@
 <!-- Generated from materials/modules/02-content-marketing.md; edit Markdown and run npm run render. -->
 <html lang="hu"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Márkaazonos tartalom és kampány · AI Sales &amp; Marketing Workshop</title><link rel="stylesheet" href="../assets/notebook.css"></head><body class="page page--module lead--brandiseer">
 <a class="skip" href="#main">Ugrás a tartalomhoz</a><header class="site-head"><div class="site-head__bar"><a class="site-head__brand" href="../index.html"><img src="../assets/logos/wenova-wordmark.png" alt="Wenova" width="154" height="18"><span>AI Sales &amp; Marketing Workshop</span></a><nav class="site-head__nav" aria-label="Fő navigáció"><a href="../index.html">Kezdőlap</a><a href="../schedule.html" class="is-cta">A nap menete</a><a href="02-content-marketing.md">Markdown-forrás</a></nav></div><div class="partner-band partner-band--head has-lead"><p class="partner-band__label">Wenova × Brandiseer × Blackhole Media × EstiWise</p><ul class="partner-band__list" aria-label="Partnerek"><li class="partner partner--wenova"><span class="partner__logo"><img class="logo logo--wenova" src="../assets/logos/wenova-wordmark.png" alt="Wenova" width="239" height="28"></span><span class="partner__role">Szervező · AI-működés</span></li><li class="partner partner--brandiseer is-lead"><span class="partner__logo"><img class="logo logo--brandiseer" src="../assets/logos/brandiseer-icon.png" alt="" width="24" height="28"><span class="logo-word">Brandiseer</span></span><span class="partner__role"><span class="partner__lead">Blokkgazda</span> · Márkaazonos tartalom</span></li><li class="partner partner--blackhole"><span class="partner__logo"><img class="logo logo--blackhole" src="../assets/logos/black-hole-media-logo.png" alt="Blackhole Media" width="299" height="28"></span><span class="partner__role">Ügyfélszerzés · Sales Bot</span></li><li class="partner partner--estiwise"><span class="partner__logo"><img class="logo logo--estiwise" src="../assets/logos/estiwise-logo-feher.svg" alt="EstiWise" width="99" height="28"></span><span class="partner__role">Ajánlatadás 0–24</span></li></ul></div></header>
-<div class="layout"><nav class="toc" aria-label="Tartalom"><p>Tartalom</p><ol><li><a href="#overview">Cél, bemenet és eredmény</a></li><li><a href="#02-content-marketing.01-brand-brief">A márkád a Brandiseerben</a></li><li><a href="#02-content-marketing.02-create-content">Két márkahű poszt Claude-dal</a></li><li><a href="#02-content-marketing.03-prepare-publishing">Egy hét posztjai és kampányterv</a></li><li><a href="#recovery">Segítség elakadáskor</a></li><li><a href="#examples">Gyakorlópéldák</a></li><li><a href="#continue">Folytatás</a></li></ol></nav><main id="main" data-module-id="02-content-marketing">
+<div class="layout"><nav class="toc" aria-label="Tartalom"><p>Tartalom</p><ol><li><a href="#overview">Cél, bemenet és eredmény</a></li><li><a href="#connect">A Brandiseer bekötése a Claude-ba</a></li><li><a href="#02-content-marketing.01-brand-brief">A márkád a Brandiseerben</a></li><li><a href="#02-content-marketing.02-create-content">Két márkahű poszt Claude-dal</a></li><li><a href="#02-content-marketing.03-prepare-publishing">Egy hét posztjai és kampányterv</a></li><li><a href="#recovery">Segítség elakadáskor</a></li><li><a href="#examples">Gyakorlópéldák</a></li><li><a href="#continue">Folytatás</a></li></ol></nav><main id="main" data-module-id="02-content-marketing">
 <header class="page-hero">
 <h1>Márkaazonos tartalom és kampány</h1>
 <p class="state"><strong>Állapot: review.</strong></p>
@@ -52,6 +52,28 @@
 <a id="overview-6"></a>
 <h3>Egy szabály egész modulra: design mód</h3>
 <p>Minden képet <strong>design</strong> módban készítünk. Ez a Brandiseer grafikai, márkahű módja: poszt, plakát, szöveges elrendezés. A fast mód csak tartalék, ha a design hibát ad; ilyenkor Claude jelezze. Egy design kép 1–1,5 perc alatt készül el és 5 kreditbe kerül.</p>
+<a id="connect"></a>
+<h2>A Brandiseer bekötése a Claude-ba</h2>
+<p><strong>Az 1. lecke előtt, kb. 3 perc.</strong> Ha előre már bekötötted, csak az ellenőrzést csináld meg.</p>
+<p>A Brandiseer connector címe:</p>
+<pre><code class="language-text">https://brandiseer.com/api/mcp
+</code></pre>
+<p><strong>Claude Desktop (Cowork) vagy claude.ai:</strong></p>
+<ol>
+<li><strong>Customize</strong> → <strong>Connectors</strong> → <strong>+</strong> → <strong>Add custom connector</strong>.</li>
+<li>Név: <code>Brandiseer</code>, URL: a fenti cím → <strong>Add</strong>.</li>
+<li>Jelentkezz be ugyanazzal a fiókkal, amellyel a brandiseer.hu-n a márkádat felvetted, és engedélyezd a hozzáférést.</li>
+<li>A beszélgetésben a bal alsó <strong>+</strong> gomb → <strong>Connectors</strong> alatt kapcsold be a Brandiseert.</li>
+</ol>
+<p>A custom connectort a Claude Desktopban a beállításokban, kézzel kell hozzáadni; ez fél perc.</p>
+<p><strong>Claude Code (haladó út):</strong></p>
+<pre><code class="language-text">claude mcp add --transport http brandiseer https://brandiseer.com/api/mcp
+</code></pre>
+<p>Utána a Claude Code-ban <code>/mcp</code> → Brandiseer → belépés a böngészőben.</p>
+<p><strong>Ellenőrzés:</strong> új beszélgetésben írd be:</p>
+<pre><code class="language-text">Listázd a Brandiseer-márkáimat.
+</code></pre>
+<p>Ha megjelenik a márkád neve és azonosítója (<code>bds_c_…</code>), kész vagy. Ha üres a lista, ugyanazzal az e-mail-címmel léptél be? Ha nincs még márkád: brandiseer.hu → <strong>Try My Brand</strong> → <strong>Add Brand</strong>.</p>
 <a id="02-content-marketing.01-brand-brief" data-lesson-id="02-content-marketing.01-brand-brief"></a>
 <h2 class="lesson-heading">A márkád a Brandiseerben</h2>
 <p><strong>Állapot: review.</strong></p>

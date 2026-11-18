@@ -7,6 +7,7 @@
 ## Tartalom
 
 - [Cél, bemenet és eredmény](#overview)
+- [A Brandiseer bekötése a Claude-ba](#connect)
 - [A márkád a Brandiseerben](#02-content-marketing.01-brand-brief)
 - [Két márkahű poszt Claude-dal](#02-content-marketing.02-create-content)
 - [Egy hét posztjai és kampányterv](#02-content-marketing.03-prepare-publishing)
@@ -72,6 +73,43 @@ Használd a [mentőútvonalat](#recovery). A kimeneteket a közös adatátadási
 ### Egy szabály egész modulra: design mód
 
 Minden képet **design** módban készítünk. Ez a Brandiseer grafikai, márkahű módja: poszt, plakát, szöveges elrendezés. A fast mód csak tartalék, ha a design hibát ad; ilyenkor Claude jelezze. Egy design kép 1–1,5 perc alatt készül el és 5 kreditbe kerül.
+
+<a name="connect"></a>
+
+## A Brandiseer bekötése a Claude-ba
+
+**Az 1. lecke előtt, kb. 3 perc.** Ha előre már bekötötted, csak az ellenőrzést csináld meg.
+
+A Brandiseer connector címe:
+
+```text
+https://brandiseer.com/api/mcp
+```
+
+**Claude Desktop (Cowork) vagy claude.ai:**
+
+1. **Customize** → **Connectors** → **+** → **Add custom connector**.
+2. Név: `Brandiseer`, URL: a fenti cím → **Add**.
+3. Jelentkezz be ugyanazzal a fiókkal, amellyel a brandiseer.hu-n a márkádat felvetted, és engedélyezd a hozzáférést.
+4. A beszélgetésben a bal alsó **+** gomb → **Connectors** alatt kapcsold be a Brandiseert.
+
+A custom connectort a Claude Desktopban a beállításokban, kézzel kell hozzáadni; ez fél perc.
+
+**Claude Code (haladó út):**
+
+```text
+claude mcp add --transport http brandiseer https://brandiseer.com/api/mcp
+```
+
+Utána a Claude Code-ban `/mcp` → Brandiseer → belépés a böngészőben.
+
+**Ellenőrzés:** új beszélgetésben írd be:
+
+```text
+Listázd a Brandiseer-márkáimat.
+```
+
+Ha megjelenik a márkád neve és azonosítója (`bds_c_…`), kész vagy. Ha üres a lista, ugyanazzal az e-mail-címmel léptél be? Ha nincs még márkád: brandiseer.hu → **Try My Brand** → **Add Brand**.
 
 <a name="02-content-marketing.01-brand-brief"></a>
 
