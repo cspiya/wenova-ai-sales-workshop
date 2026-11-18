@@ -12,6 +12,7 @@
 - [Mérés, visszacsatolás és holnapi indulás](#05-pipeline-review.03-measure-launch)
 - [Segítség elakadáskor](#recovery)
 - [Gyakorlópéldák](#examples)
+- [Kitekintés: demó](#outlook)
 - [Folytatás](#continue)
 
 <a name="main"></a>
@@ -386,6 +387,12 @@ Saját cégről mintára váltáskor ne keverd a minta árait a saját ajánlato
 ## Gyakorlópéldák
 
 Az [IrodaLiget](../scenarios/office-plants/README.md) teljes kitalált lánca: alaplap → DNS → lead → igény → ajánlat → átadás → CRM → folyamatpróba → indulási terv. A végrehajtási mód mindenhol `simulation`.
+
+<a name="outlook"></a>
+
+## Kitekintés: demó
+
+Nem része a 35 percnek, és nem kell hozzá semmit telepítened. Ha kíváncsi vagy, hogyan beszél egy magyar AI-telefonos asszisztens egy értékesítési forgatókönyv szerint, és hogyan javítható a forgatókönyv a rögzített beszélgetések elemzéséből, nézd meg a [hangügynök-labort](../demos/voice-lab/README.md). Otthon is kipróbálható, saját API-kulccsal vagy a szervezőtől kapott hozzáféréssel. Ugyanaz a hurok, mint a heti átnézésnél: beszélgetés → elemzés → javaslat → új verzió.
 
 <a name="continue"></a>
 

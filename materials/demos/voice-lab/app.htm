@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Hangügynök-labor · Wenova</title>
+<link rel="stylesheet" href="app.css">
+<script type="module" src="js/app.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Ugrás a tartalomhoz</a>
+<header class="top">
+  <div class="brand">
+    <img class="brand__logo" src="../../assets/logos/wenova-wordmark.png" alt="Wenova" width="132" height="15">
+    <div>
+      <h1>Hangügynök-labor</h1>
+      <p class="brand__sub">Magyar hangügynökök kipróbálása egy telefonos értékesítési forgatókönyvvel</p>
+    </div>
+  </div>
+  <div class="top__actions">
+    <span id="credBadge" class="badge" role="status" aria-live="polite">Kapcsolat ellenőrzése…</span>
+    <button id="themeBtn" class="btn btn--ghost" type="button" aria-label="Téma váltása">Téma: auto</button>
+    <button id="settingsBtn" class="btn" type="button">Beállítások</button>
+    <a class="btn btn--ghost" href="index.html">Leírás</a>
+  </div>
+</header>
+<noscript><p class="banner banner--warn">A labor JavaScriptet igényel. A leírás JavaScript nélkül is olvasható: <a href="index.html">index.html</a>.</p></noscript>
+<p id="banner" class="banner" hidden></p>
+<p id="availability" class="availability" aria-label="Elérhető szolgáltatók"></p>
+
+<main id="main" class="grid">
+  <section class="panel run" aria-labelledby="runTitle">
+    <div class="panel__head">
+      <h2 id="runTitle">Beszélgetés</h2>
+      <div class="seg" role="radiogroup" aria-label="Mód">
+        <label><input type="radio" name="mode" value="human" checked><span>Ember ↔ modell</span></label>
+        <label><input type="radio" name="mode" value="duel"><span>Modell ↔ modell</span></label>
+      </div>
+    </div>
+
+    <div id="humanCfg" class="cfg">
+      <div class="picker" id="pickHuman"></div>
+      <div class="field-row">
+        <label class="field">Megszólítás (kitalált keresztnév, üresen hagyható)
+          <input id="firstName" type="text" maxlength="30" autocomplete="off" placeholder="üres = név nélkül köszön">
+        </label>
+        <label class="check" id="overrideWrap" hidden><input id="override" type="checkbox" checked> A forgatókönyv átadása az ElevenLabs-ügynöknek (prompt-felülírás)</label>
+      </div>
+      <p class="hint">Használj fülhallgatót: hangszóróból a mikrofon visszahallja az ügynököt, és az elrontja a mérést.</p>
+    </div>
+
+    <div id="duelCfg" class="cfg" hidden>
+      <div class="seg seg--small" role="radiogroup" aria-label="Motor">
+        <label><input type="radio" name="engine" value="voice" checked><span>Hang (két élő hangmodell)</span></label>
+        <label><input type="radio" name="engine" value="text"><span>Csak szöveg (gyors, olcsó)</span></label>
+      </div>
+      <div class="duel-sides">
+        <fieldset class="side side--seller"><legend>Eladó (az aktív forgatókönyvvel)</legend><div class="picker" id="pickSeller"></div></fieldset>
+        <fieldset class="side side--buyer"><legend>Érdeklődő (persona)</legend><div class="picker" id="pickBuyer"></div>
+          <p class="hint" id="personaLine"></p></fieldset>
+      </div>
+      <div class="field-row">
+        <label class="field field--narrow">Legfeljebb (másodperc)<input id="maxSec" type="number" min="30" max="600" step="10" value="180"></label>
+        <label class="field field--narrow" id="maxTurnsWrap" hidden>Legfeljebb (megszólalás)<input id="maxTurns" type="number" min="4" max="40" value="16"></label>
+        <label class="check" id="speakWrap" hidden><input id="speak" type="checkbox"> Felolvasás a böngésző magyar hangján</label>
+      </div>
+    </div>
+
+    <p class="script-line">Aktív forgatókönyv: <strong id="activeScriptLabel">–</strong></p>
+    <div class="actions">
+      <button id="startBtn" class="btn btn--primary" type="button">Indítás</button>
+      <button id="stopBtn" class="btn" type="button" disabled>Leállítás</button>
+    </div>
+    <p id="status" class="status" role="status" aria-live="polite">Kész.</p>
+    <div id="meters" class="meters" aria-hidden="true"></div>
+    <div id="metrics" class="metrics"></div>
+    <div id="transcript" class="transcript" tabindex="0" aria-label="Élő átirat" aria-live="polite"><p class="empty">Az átirat itt jelenik meg.</p></div>
+  </section>
+
+  <section class="panel work" aria-label="Munkaterület">
+    <div class="tabs" role="tablist" aria-label="Munkaterület">
+      <button role="tab" id="tab-script" aria-controls="pane-script" aria-selected="true">Forgatókönyv</button>
+      <button role="tab" id="tab-persona" aria-controls="pane-persona" aria-selected="false" tabindex="-1">Persona</button>
+      <button role="tab" id="tab-analysis" aria-controls="pane-analysis" aria-selected="false" tabindex="-1">Elemzés</button>
+      <button role="tab" id="tab-history" aria-controls="pane-history" aria-selected="false" tabindex="-1">Előzmények</button>
+    </div>
+
+    <div role="tabpanel" id="pane-script" aria-labelledby="tab-script" class="pane">
+      <div class="field-row">
+        <label class="field">Verzió<select id="verSel"></select></label>
+        <span id="verBadge" class="pill"></span>
+      </div>
+      <p id="verMeta" class="meta"></p>
+      <label class="sr-only" for="editor">A forgatókönyv szövege (Markdown)</label>
+      <textarea id="editor" class="editor" spellcheck="false" rows="18"></textarea>
+      <p id="lint" class="lint" role="status"></p>
+      <div class="field-row">
+        <label class="field">Megjegyzés az új verzióhoz<input id="verNote" type="text" maxlength="120" placeholder="mit változtattál?"></label>
+      </div>
+      <div class="actions">
+        <button id="saveVer" class="btn" type="button">Mentés új verzióként</button>
+        <button id="activateVer" class="btn btn--primary" type="button">Aktiválás</button>
+        <button id="dlVer" class="btn btn--ghost" type="button">Letöltés (.md)</button>
+      </div>
+      <details class="box">
+        <summary>Összehasonlítás másik verzióval</summary>
+        <label class="field">Mihez képest?<select id="cmpSel"></select></label>
+        <div id="diff" class="diff" tabindex="0" aria-label="Eltérések"></div>
+      </details>
+      <details class="box">
+        <summary>Ezt kapja az eladó modell (összeállított utasítás)</summary>
+        <pre id="assembled" class="pre"></pre>
+      </details>
+      <div class="box box--ai">
+        <h3>AI-segéd a forgatókönyvhöz</h3>
+        <label class="field">Új forgatókönyv megbízásból
+          <textarea id="brief" rows="3" placeholder="Pl.: rövidebb nyitás, több figyelem a laptop kérdésére, sietős hívottaknál egyetlen minősítő kérdés."></textarea></label>
+        <div class="actions"><button id="genBtn" class="btn" type="button">Új forgatókönyv írása</button></div>
+        <label class="field">A kiválasztott verzió finomítása
+          <textarea id="refineIns" rows="2" placeholder="Pl.: az árat csak a minősítő kérdések után mondja, és rövidebben."></textarea></label>
+        <label class="check"><input id="useAnalysis" type="checkbox" checked> A legutóbbi elemzés javaslatainak felhasználása</label>
+        <div class="actions"><button id="refineBtn" class="btn" type="button">Finomítás</button></div>
+        <p id="aiStatus" class="status" role="status" aria-live="polite"></p>
+      </div>
+    </div>
+
+    <div role="tabpanel" id="pane-persona" aria-labelledby="tab-persona" class="pane" hidden>
+      <p class="prose">A Modell ↔ modell módban ez a kitalált érdeklődő veszi fel a telefont. Minden adat kitalált; valódi érdeklődő adatát ide ne írd. Ember ↔ modell módban szerepkártyának is használhatod.</p>
+      <div class="field-row">
+        <label class="field field--narrow">Véletlenmag<input id="seed" type="text" maxlength="24" autocomplete="off"></label>
+        <button id="rollBtn" class="btn" type="button">Új véletlen persona</button>
+        <button id="unlockBtn" class="btn btn--ghost" type="button">Rögzítések feloldása</button>
+      </div>
+      <p class="hint">Ugyanaz a mag ugyanazt a personát adja. A „rögzít” jelölésű mezők új sorsoláskor sem változnak; ha kézzel választasz értéket, a mező automatikusan rögzül.</p>
+      <div id="personaFields" class="persona-grid"></div>
+      <p id="personaSummary" class="persona-summary"></p>
+      <details class="box"><summary>Ezt kapja az érdeklődő modell</summary><pre id="buyerIns" class="pre"></pre></details>
+    </div>
+
+    <div role="tabpanel" id="pane-analysis" aria-labelledby="tab-analysis" class="pane" hidden>
+      <div class="field-row">
+        <label class="field">Beszélgetés<select id="anaSel"></select></label>
+        <button id="anaRun" class="btn" type="button">Elemzés futtatása</button>
+      </div>
+      <p id="anaStatus" class="status" role="status" aria-live="polite"></p>
+      <div id="anaView"></div>
+    </div>
+
+    <div role="tabpanel" id="pane-history" aria-labelledby="tab-history" class="pane" hidden>
+      <div class="actions">
+        <button id="exportBtn" class="btn" type="button">Exportálás (JSON)</button>
+        <label class="btn btn--ghost file-btn">Importálás<input id="importFile" type="file" accept="application/json,.json"></label>
+      </div>
+      <p class="hint">A beszélgetések, elemzések és forgatókönyv-verziók ebben a böngészőben tárolódnak (IndexedDB). A hangfelvételt beszélgetésenként töltheted le.</p>
+      <ol id="histList" class="hist"></ol>
+      <div id="histDetail"></div>
+    </div>
+  </section>
+</main>
+
+<dialog id="settings" aria-labelledby="setTitle">
+  <form method="dialog" class="settings" novalidate>
+    <h2 id="setTitle">Beállítások</h2>
+    <fieldset>
+      <legend>Honnan jönnek a hitelesítő adatok?</legend>
+      <label class="check"><input type="radio" name="source" value="auto"> Automatikus (broker → helyi segéd → saját kulcsok)</label>
+      <label class="check"><input type="radio" name="source" value="broker"> Távoli broker (hozzáférési kóddal)</label>
+      <label class="check"><input type="radio" name="source" value="local"> Helyi segéd (<code>python server.py</code>)</label>
+      <label class="check"><input type="radio" name="source" value="keys"> Saját API-kulcsok ebben a böngészőben</label>
+    </fieldset>
+    <fieldset>
+      <legend>Távoli broker</legend>
+      <label class="field">Cím<input id="brokerUrl" type="url" placeholder="https://…" autocomplete="off"></label>
+      <label class="field">Hozzáférési kód<input id="accessCode" type="password" autocomplete="off"></label>
+    </fieldset>
+    <fieldset>
+      <legend>Helyi segéd</legend>
+      <label class="field">Cím<input id="localUrl" type="url" autocomplete="off"></label>
+      <div class="actions"><button id="probeLocal" class="btn" type="button">Kapcsolat ellenőrzése</button><span id="probeResult" class="status"></span></div>
+      <p class="hint">A GitHub Pages-ről megnyitott oldal a saját gépeden futó segédet csak akkor keresi, ha itt kéred. A Chrome ilyenkor engedélyt kérhet a helyi hálózat elérésére.</p>
+    </fieldset>
+    <fieldset>
+      <legend>Saját API-kulcsok</legend>
+      <label class="field">OpenAI API-kulcs<input id="keyOpenai" type="password" autocomplete="off" spellcheck="false"></label>
+      <label class="field">Google (Gemini) API-kulcs<input id="keyGoogle" type="password" autocomplete="off" spellcheck="false"></label>
+      <label class="field">ElevenLabs API-kulcs<input id="keyEleven" type="password" autocomplete="off" spellcheck="false"></label>
+      <label class="field">ElevenLabs-ügynök azonosító (realtime)<input id="elRealtime" type="text" autocomplete="off" spellcheck="false"></label>
+      <label class="field">ElevenLabs-ügynök azonosító (kaszkád)<input id="elCascade" type="text" autocomplete="off" spellcheck="false"></label>
+      <label class="check"><input id="rememberKeys" type="checkbox"> Megjegyzés ezen az eszközön (különben a lap bezárásakor törlődnek)</label>
+      <div class="actions"><button id="clearKeys" class="btn btn--danger" type="button">Kulcsok törlése</button></div>
+      <p class="prose note">A kulcsok csak ebben a böngészőben maradnak (alapból a munkamenet végéig), és közvetlenül a szolgáltatóhoz mennek (OpenAI, Google, ElevenLabs); a Wenova nem kapja meg őket. Saját kulcsnál a költség a te fiókodat terheli. A megjegyzés alapból ki van kapcsolva: a GitHub Pages-en a <code>cspiya.github.io</code> alatti összes oldal ugyanazt a böngészős tárolót látja, ezért megosztott vagy idegen gépen ne jegyeztesd meg a kulcsot.</p>
+    </fieldset>
+    <fieldset>
+      <legend>Szövegmodell (forgatókönyv-írás, finomítás, elemzés, szöveges szimuláció)</legend>
+      <label class="field">Szolgáltató<select id="textProvider"><option value="">automatikus</option><option value="openai">OpenAI</option><option value="google">Google</option></select></label>
+      <label class="field">Modell (üres = alapértelmezett)<input id="textModel" type="text" list="textModelList" autocomplete="off" spellcheck="false"><datalist id="textModelList"></datalist></label>
+      <div class="actions"><button id="listModels" class="btn btn--ghost" type="button">Modellek listázása</button><span id="listResult" class="status"></span></div>
+    </fieldset>
+    <fieldset>
+      <legend>Rögzítés és mérés</legend>
+      <label class="check"><input id="recordAudio" type="checkbox" checked> Hangfelvétel készítése (a böngészőben tárolódik)</label>
+      <label class="check"><input id="autoAnalyze" type="checkbox" checked> Automatikus elemzés minden beszélgetés után</label>
+      <label class="check"><input id="diskCopy" type="checkbox"> Másolat a helyi segéd lemezére is (<code>.data/</code>, git-ignorált)</label>
+      <div class="field-row">
+        <label class="field field--narrow">Mikrofonküszöb (RMS)<input id="thIn" type="number" step="0.005" min="0" value="0.02"></label>
+        <label class="field field--narrow">Ügynökküszöb (RMS)<input id="thOut" type="number" step="0.005" min="0" value="0.01"></label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Helyi adatok</legend>
+      <div class="actions"><button id="wipeAll" class="btn btn--danger" type="button">Minden helyi adat törlése</button></div>
+      <p class="hint">Törli a beszélgetéseket, felvételeket, elemzéseket és a saját forgatókönyv-verziókat ebből a böngészőből. Előtte exportálj, ha kell.</p>
+    </fieldset>
+    <p class="prose note">Adatvédelem: a beszélgetés hangja a böngésződ és a választott szolgáltató között megy. Az átirat, a felvétel és az elemzés csak ebben a böngészőben tárolódik, illetve a helyi segéd gépén, ha bekapcsolod. Az elemzéshez az átirat a szövegmodell szolgáltatójához kerül. Csak kitalált adatokkal és saját teszthívással használd; valódi érdeklődő adata ide nem kerülhet. A Google ingyenes szintjén a beszélgetés felhasználható a termékeik fejlesztésére.</p>
+    <div class="actions actions--end"><button class="btn btn--primary" value="close">Mentés és bezárás</button></div>
+  </form>
+</dialog>
+
+<footer class="foot">
+  <p>Wenova · AI Sales &amp; Marketing Workshop · demó, kitalált adatokkal. Telefonhívás nincs; minden a böngészőben fut.</p>
+</footer>
+</body>
+</html>
