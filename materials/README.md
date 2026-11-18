@@ -39,7 +39,7 @@ Magyarországi, AI-alapú megoldások fejlesztésében, bevezetésében és üzl
 | Partner | Tudás és szerep | Előadó |
 | --- | --- | --- |
 | Wenova — szervező és szakmai partner | AI-bevezetés, folyamatoptimalizálás, agentikus működés és a közös tanulási útvonal | Piya Csaba, Kemény Krisztián |
-| Brandiseer | Márkaazonos kép-, videó- és tartalomkészítés, kampány-előkészítés | Sorok Dániel |
+| Brandiseer | Márkaazonos képkészítés és tartalom, kampány-előkészítés | Sorok Dániel |
 | Blackhole Media | B2B leadgenerálás, LinkedIn-megkeresés, sales automatizáció | Bölcskei Balázs, Nagy Bogáta |
 | EstiWise | Igényfelmérés, szabályalapú árazás és ajánlatautomatizáció | Gyömrei Máté, CommIT Smart Kft. |
 
@@ -142,7 +142,7 @@ A telepítés a [starter-kit](starter-kit/README.md) sablonjait is a munkamappá
 
 ## Eszközök és hozzáférések
 
-Fizetős Claude-előfizetés (Pro vagy magasabb) és a Claude Desktop (Cowork mód); Gmail- vagy Microsoft 365-levelezés; Google-fiók a CRM-táblához. Előre: ingyenes Brandiseer-fiók ([brandiseer.com/auth](https://brandiseer.com/auth)), kötelező ingyenes Buffer-fiók ([buffer.com](https://buffer.com)) legalább egy közösségimédia-oldallal, EstiWise-regisztráció bankkártya nélkül ([admin.estiwise.ai/auth/register](https://admin.estiwise.ai/auth/register)). A Sales Bothoz ([sales-bot.io](https://sales-bot.io)) előre nincs teendőd: a hozzáférést a helyszínen, a 03-as blokk elején kapod; a LinkedIn-belépésed legyen kéznél. A partnereszközökre nem kell előfizetned, a napra mindenki megkapja a használati keretet. A részletes lépések a [felkészülési modulban](modules/00-prework.md) vannak. Személyes LinkedIn-kapcsolat nélkül is végig lehet menni a napon.
+Fizetős Claude-előfizetés (Pro vagy magasabb) és a Claude Desktop (Cowork mód); Gmail- vagy Microsoft 365-levelezés; Google-fiók a CRM-táblához. Előre: Brandiseer-fiók a felvett márkáddal ([brandiseer.hu](https://brandiseer.hu): Try My Brand → Add Brand) és Pro csomag a WENOVA kóddal (az első hónap ingyenes), kötelező ingyenes Buffer-fiók ([buffer.com](https://buffer.com)) legalább egy közösségimédia-oldallal, EstiWise-regisztráció bankkártya nélkül ([admin.estiwise.ai/auth/register](https://admin.estiwise.ai/auth/register)). A Sales Bothoz ([sales-bot.io](https://sales-bot.io)) előre nincs teendőd: a hozzáférést a helyszínen, a 03-as blokk elején kapod; a LinkedIn-belépésed legyen kéznél. A partnereszközökre nem kell fizetned: a Brandiseerhez a WENOVA kód ad egy hónap ingyenes Pro csomagot, a többi eszközhöz a napra mindenki megkapja a használati keretet. A részletes lépések a [felkészülési modulban](modules/00-prework.md) vannak. Személyes LinkedIn-kapcsolat nélkül is végig lehet menni a napon.
 
 <a name="outputs"></a>
 

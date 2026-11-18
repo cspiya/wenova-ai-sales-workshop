@@ -28,7 +28,7 @@ A **Cég-DNS-ed** (kinek adsz el, mit és milyen hangon) minden blokk bemenete. 
 | 09:00–09:20 | Nyitás | Wenova | Piya Csaba | A nap célja és fonala: egy ügyfél útja a Cég-DNS-től az ajánlatig |
 | 09:20–10:30 | [1. Cég-DNS és saját AI-csapat](modules/01-business-foundations.md) | Wenova | Piya Csaba, Kemény Krisztián | Cég-DNS forrásokkal, hangprofil a küldött leveleidből, saját AI-csapat (Karmester, Író, Ellenőr) első próbafutással |
 | 10:30–10:45 | Szünet |  |  |  |
-| 10:45–12:15 | [2. Tartalom a céged hangján](modules/02-content-marketing.md) | Brandiseer | Sorok Dániel | Márkabrief, posztok, képterv és rövid videó vázlata, publikálási terv |
+| 10:45–12:15 | [2. Tartalom a céged hangján](modules/02-content-marketing.md) | Brandiseer | Sorok Dániel | Egy hétre való márkahű posztkép szöveggel, kampányterv |
 | 12:15–13:00 | Ebéd |  |  |  |
 | 13:00–14:30 | [3. LinkedIn-ügyfélszerzés és lead-kezelés](modules/03-lead-generation.md) | Blackhole Media / Sales Bot | Bölcskei Balázs, Nagy Bogáta | Minősített leadlista, személyre szabott megkeresés és utánkövetés, feldolgozott válasz |
 | 14:30–14:45 | Szünet |  |  |  |
@@ -41,7 +41,7 @@ A **Cég-DNS-ed** (kinek adsz el, mit és milyen hangon) minden blokk bemenete. 
 ## Partnerek
 
 - **Wenova** – szervező; AI-bevezetés, folyamatoptimalizálás, agentikus működés.
-- **Brandiseer** – márkaazonos kép-, videó- és tartalomkészítés.
+- **Brandiseer** – márkaazonos képkészítés és tartalom.
 - **Blackhole Media** – B2B leadgenerálás, LinkedIn-megkeresés, Sales Bot.
 - **EstiWise** – igényfelmérés, szabályalapú árazás és ajánlatautomatizáció (CommIT Smart Kft.).
 

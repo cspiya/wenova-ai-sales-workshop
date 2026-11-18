@@ -32,7 +32,7 @@ Egy működő Claude-munkamappa a tananyaggal, bekötött levelezés és táblá
 
 A workshop 2026. november 19-én, csütörtökön 09:00–17:00 között lesz a CEU Nádor Event Centerben (Budapest V., Nádor u. 15., N13 412/A terem, 4. emelet; a belépőkártyát a recepción kapod). Az egész napot a saját cégeden, a Claude-ban dolgozod végig. A felkészülés kb. 55 perc: otthon, előző este a legjobb. Ami nem sikerül, azt reggel 08:30 és 09:00 között a technikai pultnál befejezzük.
 
-A nap eszköze a **Claude Desktop** fizetős előfizetéssel (Pro vagy magasabb), azon belül a **Cowork** mód. A partnereszközökre (Brandiseer, Buffer, Sales Bot, EstiWise) nem kell előfizetned: a napra mindenki megkapja a használati keretet. Három fogalom, amit egész nap használunk:
+A nap eszköze a **Claude Desktop** fizetős előfizetéssel (Pro vagy magasabb), azon belül a **Cowork** mód. A partnereszközökre (Brandiseer, Buffer, Sales Bot, EstiWise) nem kell fizetned: a Brandiseerhez a WENOVA kód ad egy hónap ingyenes Pro csomagot, a többihez a napra mindenki megkapja a használati keretet. Három fogalom, amit egész nap használunk:
 
 - **Cowork:** a Claude Desktop munkamódja, amelyben a Claude a gépeden lévő, általad kijelölt mappában olvas és ír, és több lépésből álló feladatot végez el. A fájlokat nem kell feltöltened.
 - **Munkamappa:** `Wenova-AI-Sales-Workshop` a felhasználói mappádban, benne a `Tananyag/` (a workshop anyaga, csak olvassuk) és a `Munka/` (a te eredményeid).
@@ -255,7 +255,7 @@ Kapcsold be a Google Naptár connectort is. Az 5. blokkban a holnapi teendőidet
 
 ### Ezt készíted el
 
-Ingyenes Brandiseer-fiókot, ingyenes Buffer-fiókot legalább egy bekötött közösségimédia-oldallal, és EstiWise-fiókot. A partnereszközökre nem kell előfizetned: a napra mindenki megkapja a használati keretet.
+Brandiseer-fiókot a felvett márkáddal és a WENOVA kóddal aktivált Pro csomaggal, ingyenes Buffer-fiókot legalább egy bekötött közösségimédia-oldallal, és EstiWise-fiókot. A partnereszközökre nem kell fizetned: a Brandiseerhez a WENOVA kód ad egy hónap ingyenes Pro csomagot, a többihez a napra mindenki megkapja a használati keretet.
 
 <a name="00-prework.03-partner-accounts--needs"></a>
 
@@ -271,7 +271,7 @@ A partnerrendszereket a saját blokkjukban használod, a délutáni 5. blokkban 
 
 | Partner és blokk | Mit csinálsz előre? | Mi történik a helyszínen? |
 | --- | --- | --- |
-| **Brandiseer** ([02-es modul](02-content-marketing.md)) | Ingyenes fiók: [brandiseer.com/auth](https://brandiseer.com/auth). | A 02-es blokkban a Brandiseer connectorát is bekötitek. |
+| **Brandiseer** ([02-es modul](02-content-marketing.md)) | A [brandiseer.hu](https://brandiseer.hu) oldalon add meg a céged weboldalát → **Try My Brand** → töröld a nem odaillő képeket → **Add Brand** → fiók létrehozása. Utána Pro csomag a **WENOVA** kóddal (az első hónap ingyenes). | A 02-es blokkban a Brandiseer connectorát is bekötitek. |
 | **Buffer** (posztok ütemezése, a 02-es blokkhoz kötelező) | Ingyenes fiók: [buffer.com](https://buffer.com), és köss be legalább egy közösségimédia-oldalt. A Claude-connectort a 2. leckében kapcsolod be. | A 02-es blokkban ide kerülnek a posztok. |
 | **EstiWise** ([04-es modul](04-proposals-handoff.md)) | Regisztráció: [admin.estiwise.ai/auth/register](https://admin.estiwise.ai/auth/register). Bankkártya és előfizetés nem kell. | A Claude-összekötést a 04-es blokkban együtt csináljuk; előre ne próbáld. |
 | **Blackhole Media – Sales Bot** ([03-as modul](03-lead-generation.md)) | Előre nincs teendőd. Ha kíváncsi vagy: [sales-bot.io](https://sales-bot.io). A LinkedIn-belépésed legyen kéznél. | A hozzáférést és a connectort a 03-as blokk elején kapod. |
@@ -292,7 +292,7 @@ Ennél a leckénél nem kell Claude.
 
 ### Haladj végig ezeken
 
-1. **0–3 perc:** Brandiseer-fiók a [brandiseer.com/auth](https://brandiseer.com/auth) oldalon.
+1. **0–3 perc:** Brandiseer: a [brandiseer.hu](https://brandiseer.hu) oldalon add meg a weboldalad címét → **Try My Brand** → nézd át a képeket → **Add Brand** → fiók; majd Pro csomag a **WENOVA** kóddal.
 2. **3–7 perc:** Buffer-fiók a [buffer.com](https://buffer.com) oldalon, legalább egy közösségimédia-oldal bekötésével.
 3. **7–10 perc:** EstiWise-regisztráció az [admin.estiwise.ai/auth/register](https://admin.estiwise.ai/auth/register) oldalon. A Claude-kapcsolatot ne állítsd be.
 
@@ -300,7 +300,7 @@ Ennél a leckénél nem kell Claude.
 
 ### Ellenőrizd az eredményt
 
-- Be tudsz lépni a Brandiseerbe.
+- Be tudsz lépni a Brandiseerbe, és ott van a márkád.
 - A Bufferben legalább egy közösségimédia-oldal be van kötve.
 - Be tudsz lépni az EstiWise-ba.
 - Kéznél van a LinkedIn-belépésed.

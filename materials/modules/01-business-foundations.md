@@ -106,7 +106,7 @@ A tét dönt, nem a feladat mérete. Kétség esetén a magasabb sor érvényes.
 | Szakasz | Karmester | Író (maker) | Ellenőr (reviewer) | Te döntesz |
 | --- | --- | --- | --- | --- |
 | Kampánytervezés | Célt, ICP-t, csatornát és heti ütemet bont a DNS-ből | Kampányterv-vázlat | DNS-egyezés, reális vállalás | A terv jóváhagyása |
-| Tartalomgyártás | Témákat és határidőt oszt ki | Posztszöveg; kép és videó a Brandiseerrel (02-es blokk) | K1–K8 ellenőrzőlista | Publikálás vagy ütemezés |
+| Tartalomgyártás | Témákat és határidőt oszt ki | Posztszöveg; márkahű kép a Brandiseerrel (02-es blokk) | K1–K8 ellenőrzőlista | Publikálás vagy ütemezés |
 | Megkeresés | A Sales Bot-kampány lépéseit kéri | Üzenetsor a Sales Botban (03-as blokk) | Hang, ígéret, hossz | A kampány indítása a Sales Botban |
 | Válasz és ajánlat | A beérkező válaszokat a Postáshoz, az ajánlatot az EstiWise-hoz irányítja | Válaszpiszkozat; ajánlat kísérőszövege; ajánlat az EstiWise-ban (04-es blokk) | Ár és vállalás forrása | Küldés |
 | CRM és mérés | Összegyűjti az eredményt, heti jelentést kér (5. blokk) | CRM-sorok, heti jelentés | Változáslista | Táblaírás jóváhagyása, heti döntések |
@@ -120,7 +120,7 @@ A tét dönt, nem a feladat mérete. Kétség esetén a magasabb sor érvényes.
 | Claude Desktop Cowork, munkamappa, agentfájlok, opcionálisan Skills | Közös alap: DNS, agentek, tanulási kísérő | A telepített `Tananyag/` és a `Munka/` mappa, a projekt Instructions mezője (00-s modul); Skill-feltöltés opcionális | A gépeden (`Munka/`) és a Claude-fiókodban | A hibás DNS minden agentet ront: a DNS-verziót a gazda hagyja jóvá |
 | Gmail vagy Microsoft 365 (Outlook) | Levelek olvasása, hangkinyerés | A Claude saját connectora; a válaszpiszkozat a beszélgetésben készül, te másolod a levelezőbe (a levelezőbe menteni csak akkor, ha a connectorod tud piszkozatot menteni, például Outlook) | A levelezésedben | Küldés, válasz, továbbítás, törlés: Tiltva (Blocked) |
 | Google Táblázatok / Drive (vagy saját Excel) | CRM és Heti mérés lap | Olvasás: Google Drive connector. Írás: a CRM-agent CSV-sorokat és változáslistát ad, te bemásolod; közvetlen írás csak, ha a connectorod írni is tud | A Google-fiókodban vagy a gépeden | Felülírás: változáslista, a bemásolás a te döntésed |
-| Brandiseer | Márkahű kép, videó, poszt | A Brandiseer saját connectora; a 02-es blokkban kötöd be. Ha kiesik: letöltés és bemásolás | A Brandiseer-fiókodban | Publikálás: mindig te |
+| Brandiseer | Márkahű posztkép | A Brandiseer saját connectora; a 02-es blokkban kötöd be. Ha kiesik: letöltés és bemásolás | A Brandiseer-fiókodban | Publikálás: mindig te |
 | Buffer (kötelező, ingyenes fiók) | Posztok ütemezése a közösségimédia-oldaladra | A 02-es blokkban használod; a Claude connectorlistájában van Buffer connector, ha a blokk ezt köti be | A Buffer-fiókodban | Publikálás és ütemezés: mindig te |
 | Sales Bot (Blackhole Media) | LinkedIn-célzás, leadek, üzenetsor, válaszok | Sales Bot connector (MCP); a hozzáférést és a bekötést a helyszínen, a 03-as blokk elején kapod; ma sandbox | A Sales Bot-fiókodban | Kampány a Claude-ból nem indítható; küldés: te |
 | EstiWise | Igényfelmérés, árazás, ajánlattervezet, értékesítési szakasz | EstiWise-kapcsolat a Claude-ban; a 04-es blokkban együtt kötjük be | Az EstiWise-fiókodban | Ajánlat kiküldése: te |
