@@ -1,160 +1,230 @@
 <!doctype html>
 <!-- Generated from materials/modules/03-lead-generation.md; edit Markdown and run npm run render. -->
-<html lang="hu"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Ügyfélszerzés és leadkezelés</title><link rel="stylesheet" href="../assets/notebook.css"></head><body>
-<a class="skip" href="#main">Ugrás a tartalomhoz</a><header class="topbar"><a class="brand" href="../index.html">WENOVA · Workshop</a><a href="03-lead-generation.md">Markdown-forrás</a></header>
+<html lang="hu"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Ügyfélszerzés és leadkezelés · AI Sales &amp; Marketing Workshop</title><link rel="stylesheet" href="../assets/notebook.css"></head><body class="page page--module lead--blackhole">
+<a class="skip" href="#main">Ugrás a tartalomhoz</a><header class="site-head"><div class="site-head__bar"><a class="site-head__brand" href="../index.html"><img src="../assets/logos/wenova-wordmark.png" alt="Wenova" width="154" height="18"><span>AI Sales &amp; Marketing Workshop</span></a><nav class="site-head__nav" aria-label="Fő navigáció"><a href="../index.html">Kezdőlap</a><a href="../schedule.html" class="is-cta">A nap menete</a><a href="03-lead-generation.md">Markdown-forrás</a></nav></div><div class="partner-band partner-band--head has-lead"><p class="partner-band__label">Wenova × Brandiseer × Blackhole Media × EstiWise</p><ul class="partner-band__list" aria-label="Partnerek"><li class="partner partner--wenova"><span class="partner__logo"><img class="logo logo--wenova" src="../assets/logos/wenova-wordmark.png" alt="Wenova" width="239" height="28"></span><span class="partner__role">Szervező · AI-működés</span></li><li class="partner partner--brandiseer"><span class="partner__logo"><img class="logo logo--brandiseer" src="../assets/logos/brandiseer-icon.png" alt="" width="24" height="28"><span class="logo-word">Brandiseer</span></span><span class="partner__role">Márkaazonos tartalom</span></li><li class="partner partner--blackhole is-lead"><span class="partner__logo"><img class="logo logo--blackhole" src="../assets/logos/black-hole-media-logo.png" alt="Blackhole Media" width="299" height="28"></span><span class="partner__role"><span class="partner__lead">Blokkgazda</span> · Ügyfélszerzés · Sales-bot</span></li><li class="partner partner--estiwise"><span class="partner__logo"><img class="logo logo--estiwise" src="../assets/logos/estiwise-logo-feher.svg" alt="EstiWise" width="99" height="28"></span><span class="partner__role">Ajánlatadás 0–24</span></li></ul></div></header>
 <div class="layout"><nav class="toc" aria-label="Tartalom"><p>Tartalom</p><ol><li><a href="#overview">Cél, bemenet és eredmény</a></li><li><a href="#03-lead-generation.01-qualify-leads">Öt lead minősítése</a></li><li><a href="#03-lead-generation.02-personalize-outreach">Személyre szabott megkeresés és utánkövetés</a></li><li><a href="#03-lead-generation.03-process-reply">Ügyfélválasz feldolgozása</a></li><li><a href="#recovery">Segítség elakadáskor</a></li><li><a href="#examples">Gyakorlópéldák</a></li><li><a href="#continue">Folytatás</a></li></ol></nav><main id="main" data-module-id="03-lead-generation">
+<header class="page-hero">
 <h1>Ügyfélszerzés és leadkezelés</h1>
-<p><strong>Állapot: draft.</strong></p>
-<p><a href="03-lead-generation.html">HTML-változat</a></p>
-<p>03-lead-generation · draft</p>
-<p>A modul állapotát és a leckék készültségét az alábbi jelölések mutatják.</p>
+<p class="state"><strong>Állapot: draft.</strong></p>
+<p class="kicker">03-lead-generation · draft</p>
+<p class="lead">A modul állapotát és a leckék készültségét az alábbi jelölések mutatják.</p>
+<div class="block-banner block-banner--blackhole"><p class="block-banner__when"><span class="chip chip--time">13:00–14:30</span> <span class="block-banner__title">A nap menetében: 3. LinkedIn-ügyfélszerzés és lead-kezelés</span></p><p class="block-banner__lead"><span class="logo-tile"><img class="logo logo--blackhole" src="../assets/logos/black-hole-media-logo.png" alt="Blackhole Media" width="299" height="28"></span><span><span class="block-banner__label">Blokkgazda</span> <strong>Blackhole Media / Sales-bot</strong> · Bölcskei Balázs, Nagy Bogáta</span></p><p class="block-banner__builds"><span class="block-banner__label">Ezt építed</span> Minősített leadlista, személyre szabott megkeresés és utánkövetés, feldolgozott válasz</p></div>
+</header>
 <a id="overview"></a>
 <h2>Cél, bemenet és eredmény</h2>
 <p><strong>Státusz: szerkesztői váz, partneri kidolgozás és próba szükséges.</strong></p>
 <p>15 perc bemutató + 3 × 20 perc gyakorlat + 15 perc ellenőrzés és pótlás.</p>
+<div class="cell cell--input">
 <a id="overview-1"></a>
-<h3>Bemenet</h3>
+<h3 class="cell-title">Bemenet</h3>
 <p>business-profile.md, campaign-plan.md</p>
+</div>
+<div class="cell cell--output">
 <a id="overview-2"></a>
-<h3>Kimenet</h3>
+<h3 class="cell-title">Kimenet</h3>
 <p>leads.csv, outreach.md, customer-brief.md</p>
+</div>
+<div class="cell cell--help">
 <a id="overview-3"></a>
-<h3>Folytatás elakadás esetén</h3>
+<h3 class="cell-title">Folytatás elakadás esetén</h3>
 <p>Használd a <a href="#recovery">mentőútvonalat</a>. A kimeneteket a közös adatátadási szabály alapján ellenőrizzük.</p>
+</div>
+<div class="cell cell--info">
 <a id="overview-4"></a>
-<h3>Moduladatok</h3>
+<h3 class="cell-title">Moduladatok</h3>
 <ul>
 <li>Azonosító: <code>03-lead-generation</code></li>
 <li>Szakmai gazda: Blackhole Media</li>
 <li>Időkeret: 90 perc</li>
 <li>Állapot: draft – kidolgozás és próba szükséges.</li>
 </ul>
+</div>
 <a id="03-lead-generation.01-qualify-leads" data-lesson-id="03-lead-generation.01-qualify-leads"></a>
-<h2>Öt lead minősítése</h2>
+<h2 class="lesson-heading">Öt lead minősítése</h2>
 <p><strong>Állapot: draft.</strong></p>
 <p><strong>Azonosító:</strong> <code>03-lead-generation.01-qualify-leads</code> · <strong>Állapot:</strong> draft · <strong>Időkeret:</strong> 20 perc</p>
 <p><strong>Szerkesztői váz: a szakmai felelősnek ki kell dolgoznia és próbálnia.</strong></p>
+<div class="cell cell--goal">
 <a id="03-lead-generation.01-qualify-leads--section-1"></a>
-<h3>Ezt készíted el</h3>
+<h3 class="cell-title">Ezt készíted el</h3>
 <p>A(z) „Öt lead minősítése” feladat saját vagy mintaüzletre alkalmazott eredményét. A konkrét ellenőrizhető minimumot a partner rögzíti.</p>
+</div>
+<div class="cell cell--input">
 <a id="03-lead-generation.01-qualify-leads--section-2"></a>
-<h3>Erre lesz szükséged</h3>
+<h3 class="cell-title">Erre lesz szükséged</h3>
 <p>business-profile.md, campaign-plan.md</p>
+</div>
+<div class="cell cell--how">
 <a id="03-lead-generation.01-qualify-leads--section-3"></a>
-<h3>Így működik</h3>
+<h3 class="cell-title">Így működik</h3>
 <p>A partner röviden mutassa be az üzleti összefüggést és egy kész mintát.</p>
+</div>
+<div class="cell cell--decide">
 <a id="03-lead-generation.01-qualify-leads--section-4"></a>
-<h3>Ezekről te döntesz</h3>
+<h3 class="cell-title">Ezekről te döntesz</h3>
 <p>A célról, a felhasznált üzleti adatok megfelelőségéről és az eredmény elfogadásáról.</p>
+</div>
+<div class="cell cell--prompt">
 <a id="03-lead-generation.01-qualify-leads--section-5"></a>
-<h3>Ezt kérd Claude-tól</h3>
+<h3 class="cell-title">Ezt kérd Claude-tól</h3>
 <blockquote>
 <p>Vezess végig ezen a leckén a tananyag alapján, egyszerre egy feladattal. Ha a lecke még draft, jelezd, és csak az előkészített példát magyarázd el; hiányzó eszközlépést ne találj ki.</p>
 </blockquote>
+</div>
+<div class="cell cell--steps">
 <a id="03-lead-generation.01-qualify-leads--section-6"></a>
-<h3>Haladj végig ezeken</h3>
+<h3 class="cell-title">Haladj végig ezeken</h3>
 <ol>
 <li>Nyisd meg a bemenetet.</li>
 <li>A kidolgozott partneri feladat alapján készítsd el a munkadarabot.</li>
 <li>Mentsd és ellenőrizd az eredményt.</li>
 </ol>
 <p>A partner a második lépést konkrét, kipróbált útmutatóval egészíti ki.</p>
+</div>
+<div class="cell cell--check">
 <a id="03-lead-generation.01-qualify-leads--section-7"></a>
-<h3>Ellenőrizd az eredményt</h3>
+<h3 class="cell-title">Ellenőrizd az eredményt</h3>
 <p>A partner definiáljon megfigyelhető feltételeket. Amíg ez hiányzik, a lecke nem ready.</p>
+</div>
+<div class="cell cell--help">
 <a id="03-lead-generation.01-qualify-leads--section-8"></a>
-<h3>Ha elakadtál</h3>
+<h3 class="cell-title">Ha elakadtál</h3>
 <p>Öt perc után használd a <a href="#recovery">mentőcsomagot</a>.</p>
+</div>
+<div class="cell cell--output">
 <a id="03-lead-generation.01-qualify-leads--section-9"></a>
-<h3>Ezt viszed tovább</h3>
+<h3 class="cell-title">Ezt viszed tovább</h3>
 <p>A modul kimeneteiből a leckéhez tartozó eredményt: leads.csv, outreach.md, customer-brief.md. A pontos leckénkénti átadást a partner rögzíti.</p>
+</div>
+<div class="cell cell--extra">
 <a id="03-lead-generation.01-qualify-leads--section-10"></a>
-<h3>Ha maradt időd</h3>
+<h3 class="cell-title">Ha maradt időd</h3>
 <p>Választható bővítést csak a kötelező út kipróbálása után adjunk hozzá.</p>
+</div>
 <a id="03-lead-generation.02-personalize-outreach" data-lesson-id="03-lead-generation.02-personalize-outreach"></a>
-<h2>Személyre szabott megkeresés és utánkövetés</h2>
+<h2 class="lesson-heading">Személyre szabott megkeresés és utánkövetés</h2>
 <p><strong>Állapot: draft.</strong></p>
 <p><strong>Azonosító:</strong> <code>03-lead-generation.02-personalize-outreach</code> · <strong>Állapot:</strong> draft · <strong>Időkeret:</strong> 20 perc</p>
 <p><strong>Szerkesztői váz: a szakmai felelősnek ki kell dolgoznia és próbálnia.</strong></p>
+<div class="cell cell--goal">
 <a id="03-lead-generation.02-personalize-outreach--section-1"></a>
-<h3>Ezt készíted el</h3>
+<h3 class="cell-title">Ezt készíted el</h3>
 <p>A(z) „Személyre szabott megkeresés és utánkövetés” feladat saját vagy mintaüzletre alkalmazott eredményét. A konkrét ellenőrizhető minimumot a partner rögzíti.</p>
+</div>
+<div class="cell cell--input">
 <a id="03-lead-generation.02-personalize-outreach--section-2"></a>
-<h3>Erre lesz szükséged</h3>
+<h3 class="cell-title">Erre lesz szükséged</h3>
 <p>business-profile.md, campaign-plan.md</p>
+</div>
+<div class="cell cell--how">
 <a id="03-lead-generation.02-personalize-outreach--section-3"></a>
-<h3>Így működik</h3>
+<h3 class="cell-title">Így működik</h3>
 <p>A partner röviden mutassa be az üzleti összefüggést és egy kész mintát.</p>
+</div>
+<div class="cell cell--decide">
 <a id="03-lead-generation.02-personalize-outreach--section-4"></a>
-<h3>Ezekről te döntesz</h3>
+<h3 class="cell-title">Ezekről te döntesz</h3>
 <p>A célról, a felhasznált üzleti adatok megfelelőségéről és az eredmény elfogadásáról.</p>
+</div>
+<div class="cell cell--prompt">
 <a id="03-lead-generation.02-personalize-outreach--section-5"></a>
-<h3>Ezt kérd Claude-tól</h3>
+<h3 class="cell-title">Ezt kérd Claude-tól</h3>
 <blockquote>
 <p>Vezess végig ezen a leckén a tananyag alapján, egyszerre egy feladattal. Ha a lecke még draft, jelezd, és csak az előkészített példát magyarázd el; hiányzó eszközlépést ne találj ki.</p>
 </blockquote>
+</div>
+<div class="cell cell--steps">
 <a id="03-lead-generation.02-personalize-outreach--section-6"></a>
-<h3>Haladj végig ezeken</h3>
+<h3 class="cell-title">Haladj végig ezeken</h3>
 <ol>
 <li>Nyisd meg a bemenetet.</li>
 <li>A kidolgozott partneri feladat alapján készítsd el a munkadarabot.</li>
 <li>Mentsd és ellenőrizd az eredményt.</li>
 </ol>
 <p>A partner a második lépést konkrét, kipróbált útmutatóval egészíti ki.</p>
+</div>
+<div class="cell cell--check">
 <a id="03-lead-generation.02-personalize-outreach--section-7"></a>
-<h3>Ellenőrizd az eredményt</h3>
+<h3 class="cell-title">Ellenőrizd az eredményt</h3>
 <p>A partner definiáljon megfigyelhető feltételeket. Amíg ez hiányzik, a lecke nem ready.</p>
+</div>
+<div class="cell cell--help">
 <a id="03-lead-generation.02-personalize-outreach--section-8"></a>
-<h3>Ha elakadtál</h3>
+<h3 class="cell-title">Ha elakadtál</h3>
 <p>Öt perc után használd a <a href="#recovery">mentőcsomagot</a>.</p>
+</div>
+<div class="cell cell--output">
 <a id="03-lead-generation.02-personalize-outreach--section-9"></a>
-<h3>Ezt viszed tovább</h3>
+<h3 class="cell-title">Ezt viszed tovább</h3>
 <p>A modul kimeneteiből a leckéhez tartozó eredményt: leads.csv, outreach.md, customer-brief.md. A pontos leckénkénti átadást a partner rögzíti.</p>
+</div>
+<div class="cell cell--extra">
 <a id="03-lead-generation.02-personalize-outreach--section-10"></a>
-<h3>Ha maradt időd</h3>
+<h3 class="cell-title">Ha maradt időd</h3>
 <p>Választható bővítést csak a kötelező út kipróbálása után adjunk hozzá.</p>
+</div>
 <a id="03-lead-generation.03-process-reply" data-lesson-id="03-lead-generation.03-process-reply"></a>
-<h2>Ügyfélválasz feldolgozása</h2>
+<h2 class="lesson-heading">Ügyfélválasz feldolgozása</h2>
 <p><strong>Állapot: draft.</strong></p>
 <p><strong>Azonosító:</strong> <code>03-lead-generation.03-process-reply</code> · <strong>Állapot:</strong> draft · <strong>Időkeret:</strong> 20 perc</p>
 <p><strong>Szerkesztői váz: a szakmai felelősnek ki kell dolgoznia és próbálnia.</strong></p>
+<div class="cell cell--goal">
 <a id="03-lead-generation.03-process-reply--section-1"></a>
-<h3>Ezt készíted el</h3>
+<h3 class="cell-title">Ezt készíted el</h3>
 <p>A(z) „Ügyfélválasz feldolgozása” feladat saját vagy mintaüzletre alkalmazott eredményét. A konkrét ellenőrizhető minimumot a partner rögzíti.</p>
+</div>
+<div class="cell cell--input">
 <a id="03-lead-generation.03-process-reply--section-2"></a>
-<h3>Erre lesz szükséged</h3>
+<h3 class="cell-title">Erre lesz szükséged</h3>
 <p>business-profile.md, campaign-plan.md</p>
+</div>
+<div class="cell cell--how">
 <a id="03-lead-generation.03-process-reply--section-3"></a>
-<h3>Így működik</h3>
+<h3 class="cell-title">Így működik</h3>
 <p>A partner röviden mutassa be az üzleti összefüggést és egy kész mintát.</p>
+</div>
+<div class="cell cell--decide">
 <a id="03-lead-generation.03-process-reply--section-4"></a>
-<h3>Ezekről te döntesz</h3>
+<h3 class="cell-title">Ezekről te döntesz</h3>
 <p>A célról, a felhasznált üzleti adatok megfelelőségéről és az eredmény elfogadásáról.</p>
+</div>
+<div class="cell cell--prompt">
 <a id="03-lead-generation.03-process-reply--section-5"></a>
-<h3>Ezt kérd Claude-tól</h3>
+<h3 class="cell-title">Ezt kérd Claude-tól</h3>
 <blockquote>
 <p>Vezess végig ezen a leckén a tananyag alapján, egyszerre egy feladattal. Ha a lecke még draft, jelezd, és csak az előkészített példát magyarázd el; hiányzó eszközlépést ne találj ki.</p>
 </blockquote>
+</div>
+<div class="cell cell--steps">
 <a id="03-lead-generation.03-process-reply--section-6"></a>
-<h3>Haladj végig ezeken</h3>
+<h3 class="cell-title">Haladj végig ezeken</h3>
 <ol>
 <li>Nyisd meg a bemenetet.</li>
 <li>A kidolgozott partneri feladat alapján készítsd el a munkadarabot.</li>
 <li>Mentsd és ellenőrizd az eredményt.</li>
 </ol>
 <p>A partner a második lépést konkrét, kipróbált útmutatóval egészíti ki.</p>
+</div>
+<div class="cell cell--check">
 <a id="03-lead-generation.03-process-reply--section-7"></a>
-<h3>Ellenőrizd az eredményt</h3>
+<h3 class="cell-title">Ellenőrizd az eredményt</h3>
 <p>A partner definiáljon megfigyelhető feltételeket. Amíg ez hiányzik, a lecke nem ready.</p>
+</div>
+<div class="cell cell--help">
 <a id="03-lead-generation.03-process-reply--section-8"></a>
-<h3>Ha elakadtál</h3>
+<h3 class="cell-title">Ha elakadtál</h3>
 <p>Öt perc után használd a <a href="#recovery">mentőcsomagot</a>.</p>
+</div>
+<div class="cell cell--output">
 <a id="03-lead-generation.03-process-reply--section-9"></a>
-<h3>Ezt viszed tovább</h3>
+<h3 class="cell-title">Ezt viszed tovább</h3>
 <p>A modul kimeneteiből a leckéhez tartozó eredményt: leads.csv, outreach.md, customer-brief.md. A pontos leckénkénti átadást a partner rögzíti.</p>
+</div>
+<div class="cell cell--extra">
 <a id="03-lead-generation.03-process-reply--section-10"></a>
-<h3>Ha maradt időd</h3>
+<h3 class="cell-title">Ha maradt időd</h3>
 <p>Választható bővítést csak a kötelező út kipróbálása után adjunk hozzá.</p>
+</div>
 <a id="recovery"></a>
 <h2>Segítség elakadáskor</h2>
 <ol>
@@ -172,5 +242,7 @@
 <h2>Folytatás</h2>
 <p><a href="../index.html#modules">Modulok</a><a href="04-proposals-handoff.html">Következő modul →</a></p>
 <p>Wenova × Brandiseer × Blackhole Media × EstiWise</p>
+<nav class="pager" aria-label="Modulok"><a class="pager__prev" href="02-content-marketing.html"><span>← Előző modul</span>Márkaazonos tartalom és kampány</a><a class="pager__next" href="04-proposals-handoff.html"><span>Következő modul →</span>Ajánlatadás és belső átadás</a></nav>
 </main></div>
+<footer class="site-foot"><div class="partner-band partner-band--foot has-lead"><p class="partner-band__label">Wenova × Brandiseer × Blackhole Media × EstiWise</p><ul class="partner-band__list" aria-label="Partnerek"><li class="partner partner--wenova"><span class="partner__logo"><img class="logo logo--wenova" src="../assets/logos/wenova-wordmark.png" alt="Wenova" width="239" height="28"></span><span class="partner__role">Szervező · AI-működés</span></li><li class="partner partner--brandiseer"><span class="partner__logo"><img class="logo logo--brandiseer" src="../assets/logos/brandiseer-icon.png" alt="" width="24" height="28"><span class="logo-word">Brandiseer</span></span><span class="partner__role">Márkaazonos tartalom</span></li><li class="partner partner--blackhole is-lead"><span class="partner__logo"><img class="logo logo--blackhole" src="../assets/logos/black-hole-media-logo.png" alt="Blackhole Media" width="299" height="28"></span><span class="partner__role"><span class="partner__lead">Blokkgazda</span> · Ügyfélszerzés · Sales-bot</span></li><li class="partner partner--estiwise"><span class="partner__logo"><img class="logo logo--estiwise" src="../assets/logos/estiwise-logo-feher.svg" alt="EstiWise" width="99" height="28"></span><span class="partner__role">Ajánlatadás 0–24</span></li></ul></div><p class="site-foot__meta">AI Sales &amp; Marketing Workshop · 2026. november 19. · CEU, Budapest · a Wenova szervezésében</p></footer>
 </body></html>

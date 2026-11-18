@@ -43,4 +43,22 @@ test('raw HTML injections and duplicate anchors in generated source fail',()=>fi
  put('README.md','# Cím\n\n<script>alert(1)</script>\n');assert.throws(()=>run({root}),/use Markdown/);
  put('README.md','# Cím\n\n<a name="same"></a>\n\n## Egy\n\n<a name="same"></a>\n\n## Kettő\n');assert.throws(()=>run({root}),/duplicate anchor/);
 }));
+test('partner band on every page, block lead, step cards and schedule-driven timeline',()=>fixture((root,put)=>{
+ put('materials/assets/logos/brandiseer-icon.png','x');
+ put('materials/schedule.md','<!-- presentation -->\n# A nap menete\n\n| Idő | Blokk | Partner | Előadók | Mit építesz |\n| --- | --- | --- | --- | --- |\n| 10:45–12:15 | [2. Tartalom](modules/02-demo.md) | Brandiseer | Sorok Dániel | Márkabrief |\n| 12:15–13:00 | Ebéd |  |  |  |\n');
+ put('materials/modules/02-demo.md','# Tartalom\n\n[HTML-változat](02-demo.html)\n\n<a name="02-demo.01-brief"></a>\n\n## Brief\n\n<a name="02-demo.01-brief--section-1"></a>\n\n### Ezt kérd Claude-tól\n\n```text\nprompt\n```\n\n### Ellenőrizd az eredményt\n\n- kész\n');
+ put('operations/instructor-notes/02-demo.md','# Oktató\n');
+ run({root});
+ const html=fs.readFileSync(path.join(root,'materials/modules/02-demo.html'),'utf8');
+ assert.equal((html.match(/<div class="partner-band /g)||[]).length,2);
+ assert.match(html,/partner partner--brandiseer is-lead/);assert.match(html,/src="\.\.\/assets\/logos\/brandiseer-icon\.png"/);
+ assert.match(html,/<span class="logo-word">EstiWise<\/span>/,'missing logo file falls back to text');
+ assert.match(html,/block-banner block-banner--brandiseer.*10:45–12:15.*Sorok Dániel/s);
+ assert.match(html,/<div class="cell cell--prompt">\n<a id="02-demo.01-brief--section-1"><\/a>\n<h3 class="cell-title"/);
+ assert.match(html,/<div class="cell cell--check">/);assert.match(html,/class="lesson-heading"/);
+ assert.doesNotMatch(html,/HTML-változat/);
+ const day=fs.readFileSync(path.join(root,'materials/schedule.html'),'utf8');
+ assert.match(day,/<ol class="timeline">/);assert.match(day,/slot slot--brandiseer slot--module/);assert.match(day,/href="modules\/02-demo.html"/);assert.match(day,/slot slot--pause/);
+ assert.match(fs.readFileSync(path.join(root,'operations/instructor-notes/02-demo.html'),'utf8'),/is-lead/);
+}));
 module.exports={fixture};
