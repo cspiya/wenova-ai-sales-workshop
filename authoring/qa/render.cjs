@@ -267,7 +267,10 @@ function render(source, root = ROOT, pages = new Set(inventory(root))) {
   if (!noteModule && toc.length) tocSlot.content = '<details class="toc-mobile"><summary>Tartalom</summary><nav aria-label="Tartalom"><ol>'+tocItems+'</ol></nav></details>\n';
   const body = md.renderer.render(rendered,md.options,{});
   const sidebar = '<nav class="toc" aria-label="Tartalom"><p>Tartalom</p><ol>'+tocItems+'</ol></nav>';
-  const frame = noteModule ? '<div class="lesson-pane"><iframe name="lesson" src="../../materials/modules/'+noteModule+'.html" title="Résztvevői tananyag"></iframe></div>' : sidebar;
+  // The lesson pane opens on the module overview, so the page header is not repeated beside the note.
+  const lessonSource = 'materials/modules/'+noteModule+'.md';
+  const lessonStart = noteModule && fs.existsSync(path.join(root,lessonSource)) && /^<a name="overview"><\/a>$/m.test(fs.readFileSync(path.join(root,lessonSource),'utf8')) ? '#overview' : '';
+  const frame = noteModule ? '<div class="lesson-pane"><iframe name="lesson" src="../../materials/modules/'+noteModule+'.html'+lessonStart+'" title="Résztvevői tananyag"></iframe></div>' : sidebar;
   const kind = noteModule ? 'notes' : moduleId ? 'module' : isSchedule ? 'schedule' : isHome ? 'home' : 'doc';
   return '<!doctype html>\n<!-- Generated from '+source+'; edit Markdown and run npm run render. -->\n'+
     '<html lang="hu"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>'+escape(title)+' · AI Sales &amp; Marketing Workshop</title><link rel="stylesheet" href="'+css+'">'+

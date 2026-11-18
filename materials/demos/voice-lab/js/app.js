@@ -44,12 +44,15 @@ let persona = null, locks = {};
 let run = null;            // { conv, kind, stop() }
 let lastAnalysis = null;
 let brokerRejected = false;   // set on a 401 from the broker; cleared when the access code changes
-let credsChecked = false;     // the primary button stays neutral until the first credential check has finished
+let credsChecking = true;     // while a credential check runs, the primary button is disabled and says so
+let credsCheckId = 0;         // only the latest check may publish its result
 
 const servedByHelper = () => /^http:\/\/(127\.0\.0\.1|localhost):\d+$/.test(location.origin);
 
 // ------------------------------------------------------------------ credentials
 async function resolveCreds() {
+  const checkId = ++credsCheckId;
+  credsChecking = true; syncStartBtn();
   const tries = [];
   const s = settings.source;
   // Auto mode uses the broker only with an access code (its health check needs none, the credential calls do),
@@ -61,22 +64,25 @@ async function resolveCreds() {
   if ((s === "auto" || s === "keys") && (keys.openai || keys.google || keys.elevenlabs)) tries.push(new KeySource(keys, CONFIG.textModels));
   creds = null; health = null; const fails = [...skipped];
   let fallback = null;   // a reachable source without any provider key: used only if nothing better answers
+  let found = null, foundHealth = null;
   for (const c of tries) {
     try {
       const h = await c.health();
-      if (Object.values(h.providers || {}).some(Boolean)) { health = h; creds = c; break; }
+      if (Object.values(h.providers || {}).some(Boolean)) { foundHealth = h; found = c; break; }
       if (!fallback) fallback = [c, h];
       fails.push(c.label + ": elérhető, de nincs rajta API-kulcs");
     } catch (e) { fails.push(c.label + ": " + e.message); }
   }
-  if (!creds && fallback) [creds, health] = fallback;
+  if (checkId !== credsCheckId) return;   // a newer check is running and will update the page
+  if (!found && fallback) [found, foundHealth] = fallback;
+  creds = found; health = foundHealth;
   if (creds && creds.kind === "broker") creds.onUnauthorized = () => {   // a wrong code shows up only on a real call
     if (brokerRejected) return;
     brokerRejected = true;
     resolveCreds().then(() => setStatus("#status", "A távoli broker elutasította a hozzáférési kódot (401). " +
       (creds ? "Átváltottam erre: " + creds.label + ". Indítsd újra." : "Adj meg helyes kódot vagy saját kulcsot a Beállításokban."), true));
   };
-  credsChecked = true;
+  credsChecking = false;
   renderCredState(fails);
   renderPickers();
 }
@@ -166,11 +172,10 @@ function canStart() {
   return pickers.every(sel => { const p = $(sel).get?.(); return !!p && optionState(p.opt).ok; });
 }
 function syncStartBtn() {
-  if (!credsChecked) return;
-  const ready = canStart(), btn = $("#startBtn"), status = $("#status");
-  btn.textContent = ready ? "Indítás" : "Kapcsolat beállítása";
-  btn.disabled = !!run;
-  if ([IDLE_READY, IDLE_SETUP, IDLE_CHECKING].includes(status.textContent)) status.textContent = ready ? IDLE_READY : IDLE_SETUP;
+  const ready = !credsChecking && canStart(), btn = $("#startBtn"), status = $("#status");
+  btn.textContent = credsChecking ? IDLE_CHECKING : ready ? "Indítás" : "Kapcsolat beállítása";
+  btn.disabled = credsChecking || !!run;
+  if ([IDLE_READY, IDLE_SETUP, IDLE_CHECKING].includes(status.textContent)) status.textContent = credsChecking ? IDLE_CHECKING : ready ? IDLE_READY : IDLE_SETUP;
 }
 
 // ------------------------------------------------------------------ scripts (versions in IndexedDB)
@@ -300,7 +305,7 @@ function renderLive(conv) {
   $("#metrics").innerHTML = metricsHtml(live);
 }
 function setRunning(on) {
-  $("#startBtn").disabled = on; $("#stopBtn").disabled = !on;
+  syncStartBtn(); $("#stopBtn").disabled = !on;
   $$("input[name=mode], input[name=engine]").forEach(x => { x.disabled = on; });
 }
 
