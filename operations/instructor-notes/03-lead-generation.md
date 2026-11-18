@@ -22,13 +22,17 @@ Előadók: Bölcskei Balázs (bemutató és gyakorlat), Nagy Bogáta (mentor a g
 - A belépő linket a workshop előtt e-mailben ki kell küldeni.
 - A workshop-profilok **nincsenek LinkedInhez kötve**; a leadlista 100 főben van korlátozva, hogy senki ne húzza le a teljes adatbázist, és semmi ne menjen ki.
 - Ellenőrizni kell, hogy az MCP-n keresztül működik-e az AI brain kitöltése, a lista- és kampánylétrehozás, valamint a válaszok listázása.
-- Elő kell készíteni a gyakorló válaszok generálását: kampánylétrehozás után résztvevőnként kb. 10 kitalált lead-választ küldünk be.
+- Elő kell készíteni a gyakorló válaszok generálását: a 2. leckében létrehozott kampányra résztvevőnként kb. 10 kitalált lead-választ küldünk be.
 - MCP-próba (2026-11-16, tesztfiókban): a piszkozat kampány, a háttérben futó leadkeresés, a lead státusza és jegyzete, valamint az üzenetsorozat mentése és visszaolvasása működik. A kampányt MCP-ről nem lehet elindítani.
-- Az AI brain írása az MCP-ben elkészült (2026-11-17-i próba): a szöveges forrás (cég-DNS) és a mezők kézi javítása működik. A weboldalas forrás a próbán még üres brain-t adott; javítás alatt, a workshop előtt újra ki kell próbálni.
+- Az AI brain írása az MCP-ben elkészült (2026-11-17-i próba): a szöveges forrás (cég-DNS) és a mezők kézi javítása működik. A weboldalas forrás a 2026-11-18-i próbán már kitöltötte az ajánlat összes mezőjét, 1–2 perc alatt; a szöveges forrás kb. 45 másodperc. Mindkettő a háttérben fut: hívás után egy percig várni kell, és utána megnézni a brain-t.
 - A gyakorló válaszokat a demo-válaszokat betöltő eszközzel (admin) töltjük be a résztvevők workspace-ébe; semmi nem megy ki.
 - Connector a résztvevőknél: Beállítások → Connectors → „Add custom connector”, URL `https://app.sales-bot.io/api/mcp`, Connect, belépés és engedélyezés.
 - A résztvevők csak a saját workspace-ükhöz kötött tokent kapjanak. A kivetítőn ne admin tokennel mutassunk, mert az minden ügyfél-workspace-t látja.
-- A cégméret-szűrő a próbán pontatlan volt (11–50 főre nagyvállalatok is jöttek): ez jó példa a minősítés fontosságára, a gyakorlat elején mondjuk el.
+- A cégméret-szűrő javult: a rossz méretű cégeket kihagyja, és nem von le rájuk kreditet (20 kértből 14 jött). Az iparág viszont téved (szoftveres szűrőre felsőoktatási, pénzügyi cégek is jöttek): ez jó példa a minősítés fontosságára, a gyakorlat elején mondjuk el.
+- Végigpróba (2026-11-18): a sorrend leadlista → kampány a listára. Ha a keresést a kampányhoz kötjük lista nélkül, a kampány visszaolvasva „nincs közönség”, és a leadeket nehéz kilistázni.
+- Leadstátusznak a CRM státuszait használjuk (Interested, Later, Not Interested); a „Qualified” és „Replied” értéket elfogadja, de a CRM nem számolja.
+- Kampányonként adjunk meg válaszcélt, különben az AI angol alapcélt használ („20-minute demo call”). Foglalási link nélkül a válaszjavaslat időpontot kérdez.
+- A {COMPANY} változóra ne kerüljön rag: a próbán „a Innomedio Kft.-nál” lett belőle.
 - A leadkvótát ellenőrizni kell: a kis csomag havi 500 lead, a workshopon fejenként legfeljebb 100.
 
 <a name="notes-2"></a>

@@ -90,9 +90,9 @@ Saját fiók nélkül: [IrodaLiget mintaalaplap](../scenarios/office-plants/outp
 
 Az **AI brain** a Sales Bot tudásbázisa: ebből ír minden üzenetet és válaszjavaslatot. Cégszinten a cégleírást, a hangnemet és a linkeket tárolja; ajánlatonként a szolgáltatásokat, az ideális ügyfelet, az iparágakat, az USP-t, a pozicionálást, a fájdalompontokat, a bizonyítékokat, az esettanulmányokat, az ellenvetéseket, az árazást és a folyamatot. Háromféleképpen töltheted ki: a **weboldalad** alapján, az 01-es modulban készült **cég-DNS-ből** (`business-profile.md`), vagy **kézzel**. Több ajánlatot is felvehetsz.
 
-A célzás négy szűrőn múlik: **ország**, **cégméret** (létszámsáv), **iparág** és **döntéshozó** (pozíció és senioritás). A Sales Bot ezek alapján keres; nem kell adatbázist vásárolni. A szűrők nem pontosak: a próbán a 11–50 fős szűrőre több ezer fős cégek is bejöttek, és az iparág is tévedett néhány leadnél. Ezért a listát átnézzük, és csak a valóban illeszkedő leadeket visszük tovább.
+A célzás négy szűrőn múlik: **ország**, **cégméret** (létszámsáv), **iparág** és **döntéshozó** (pozíció és senioritás). A Sales Bot ezek alapján keres; nem kell adatbázist vásárolni. Először ingyen megszámolja, hány ember felel meg a szűrőknek, és csak utána húzza le őket. A cégméretet a rendszer már ellenőrzi: a rossz méretű cégeket kihagyja, és nem von le rájuk kreditet. Az iparág viszont nem mindig pontos: a próbán a szoftverfejlesztő szűrőre felsőoktatási és pénzügyi cégek is bejöttek. Ezért a listát átnézzük, és csak a valóban illeszkedő leadeket visszük tovább.
 
-A keresés a háttérben fut, a leadek néhány perc alatt érkeznek meg. A leadeket egy piszkozat kampányhoz kötjük, erre épül a következő lecke.
+A keresés a háttérben fut, a leadek néhány perc alatt érkeznek meg. A leadeket egy saját **leadlistába** gyűjtjük; a következő leckében erre a listára épül a kampány.
 
 **Kitalált példa:** az IrodaLiget 10–40 fős budapesti irodák irodavezetőit és ügyvezetőit célozza.
 
@@ -111,11 +111,11 @@ Saját üzlet vagy minta; melyik ajánlatodra keresel; a négy szűrő értéke;
 ```text
 A Sales Bot eszközeivel dolgozunk a workshopon, sandbox módban: semmit ne küldj ki.
 1. Töltsd ki a Sales Bot AI brainjét. Válaszd ki, melyik utat használjuk: (A) a weboldalam alapján: [weboldal]; (B) a csatolt business-profile.md (cég-DNS) alapján; (C) kézzel, a kérdéseid alapján. Utána mutasd meg a kitöltött mezőket (cégleírás, hangnem, ajánlat, ideális ügyfél, USP, fájdalompontok, ellenvetések), és javítsuk, amit kell.
-2. Hozz létre egy piszkozat kampányt a fő ajánlatomra „Workshop – [cégnév]” néven. Ne indítsd el.
-3. Kérdezd meg tőlem egyenként: ország, cégméret (például 11-50 fő), iparág, döntéshozói szint. Ezután keress leadeket ehhez a kampányhoz: először 20-at, és ha a minta jó, bővítsd legfeljebb 100-ra.
-4. A keresés a háttérben fut. Néhány perc múlva nézd meg az állapotát, és listázd ki a leadeket.
+2. Hozz létre egy új leadlistát „Workshop – [cégnév]” néven.
+3. Kérdezd meg tőlem egyenként: ország, cégméret (például 11-50 fő), iparág, döntéshozói pozíció. Először számold meg ingyen, hány ember felel meg, és mondd meg a számot. Ezután keress leadeket ebbe a listába: először 20-at, és ha a minta jó, bővítsd legfeljebb 100-ra.
+4. A keresés a háttérben fut. Néhány perc múlva nézd meg az állapotát, és listázd ki a lista leadjeit.
 5. Mutass öt leadet. Mindegyiknél ellenőrizd a cégméretet és az iparágat is, mert a szűrő nem mindig pontos, és írd le egy mondatban, miért illik vagy miért nem.
-6. A jóváhagyásom után a jó leadeket állítsd Qualified státuszra a Sales Botban, és készíts leads.csv tartalmat ezekkel az oszlopokkal: lead_id,company,fit_reason,status,next_action. A status értéke qualified vagy open legyen.
+6. A jóváhagyásom után a jó leadeket állítsd Interested státuszra a Sales Botban, és készíts leads.csv tartalmat ezekkel az oszlopokkal: lead_id,company,fit_reason,status,next_action. A status értéke qualified vagy open legyen.
 ```
 
 Ha a cég-DNS-ből dolgozol, csatold a `business-profile.md` fájlodat.
@@ -127,7 +127,7 @@ Ha a cég-DNS-ből dolgozol, csatold a `business-profile.md` fájlodat.
 1. **0–3 perc:** a Claude-ban add hozzá a connectort (Beállítások → Connectors → „Add custom connector”, URL: `https://app.sales-bot.io/api/mcp`, Connect), lépj be a Sales Bot-fiókoddal, és ellenőrizd, hogy a Claude látja az eszközöket („Milyen Sales Bot eszközeid vannak?”).
 2. **3–8 perc:** másold be a promptot, válaszd ki az AI brain kitöltésének útját (weboldal, cég-DNS vagy kézi), és nézd át a kitöltött mezőket.
 3. **8–14 perc:** válaszold meg a szűrőkre vonatkozó kérdéseket, és indítsd el a keresést. Amíg a leadek megérkeznek (2–3 perc), írd le magadnak, milyen lead lenne a legjobb ügyfeled.
-4. **14–18 perc:** nézd át az öt leadet. Ami illik, kerüljön Qualified státuszba; ami nem, maradjon `open`.
+4. **14–18 perc:** nézd át az öt leadet. Ami illik, kerüljön Interested státuszba a Sales Botban és `qualified` jelöléssel a CSV-be; ami nem, maradjon `open`.
 5. **18–20 perc:** mentsd a `leads.csv` fájlt a saját munkacsomagodba.
 
 <a name="03-lead-generation.01-qualify-leads--check"></a>
@@ -149,7 +149,7 @@ Ha öt perc után sem éri el a Claude a Sales Botot, jelezd egy mentornak. Ha a
 
 ### Ezt viszed tovább
 
-A `leads.csv` és a kitöltött AI brain a következő lecke bemenete: erre a listára készül a kampány.
+A leadlista, a `leads.csv` és a kitöltött AI brain a következő lecke bemenete: erre a listára készül a kampány.
 
 <a name="03-lead-generation.01-qualify-leads--extra"></a>
 
@@ -184,7 +184,7 @@ Saját fiók nélkül: [Minta megkeresés](../scenarios/office-plants/outputs/ou
 
 ### Így működik
 
-A kampány három dologból áll: **leadlista**, **üzenetsorozat** és **ütemezés**. A Claude az AI brainben tárolt ajánlatból és a kiválasztott kampánytípusból megírja az üzeneteket, és a te jóváhagyásod után piszkozatként menti az előző leckében létrehozott kampányba. Egy üzenet kevés: a sorozat a bejelölésből, egy első üzenetből és utánkövetésekből áll, amelyek leállnak, ha a lead válaszol vagy elutasít.
+A kampány három dologból áll: **leadlista**, **üzenetsorozat** és **ütemezés**. A Claude piszkozat kampányt hoz létre az előző leckében készült leadlistára, az AI brainben tárolt ajánlatból és a kiválasztott kampánytípusból megírja az üzeneteket, és a te jóváhagyásod után a kampányba menti őket. Megadjuk a kampány **válaszcélját** is (például igényfelmérő beszélgetés): az AI a beérkező válaszokra ebből ír javaslatot. Egy üzenet kevés: a sorozat a bejelölésből, egy első üzenetből és utánkövetésekből áll, amelyek leállnak, ha a lead válaszol vagy elutasít.
 
 Három kampánytípus van: **bejelöléses kampány** (kapcsolódási kérés rövid üzenettel, utána üzenetsorozat), **üzenetkampány az 1. fokú kapcsolataidnak**, és **InMail** (csak Sales Navigatorral). A workshopon a bejelöléses kampányt használjuk.
 
@@ -194,7 +194,7 @@ A kampányt a Claude-ból nem lehet elindítani, mindig piszkozat marad. Ma kül
 
 ### Ezekről te döntesz
 
-Melyik ajánlatról szól a kampány; a kampánytípus; hány üzenetből álljon a sorozat; mit módosítasz az AI által írt szövegen; mikor álljon le a megkeresés.
+Melyik ajánlatról szól a kampány; mi a válaszcél; a kampánytípus; hány üzenetből álljon a sorozat; mit módosítasz az AI által írt szövegen; mikor álljon le a megkeresés.
 
 <a name="03-lead-generation.02-personalize-outreach--prompt"></a>
 
@@ -202,10 +202,10 @@ Melyik ajánlatról szól a kampány; a kampánytípus; hány üzenetből álljo
 
 ```text
 Sandbox módban dolgozunk: semmit ne küldj ki.
-Az előző leckében létrehozott piszkozat kampánnyal dolgozz. Ne indítsd el, és küldőt se állíts be.
+Hozz létre piszkozat kampányt „Workshop – [cégnév]” néven az előző leckében készült leadlistára és a fő ajánlatomra. A válaszcél legyen: [például igényfelmérő beszélgetés]. Ne indítsd el, és küldőt se állíts be.
 Az üzenetek a campaign-plan.md-ben szereplő ajánlatról szóljanak. Kérdezd meg, hány üzenetet szeretnék, és tegeződve vagy magázódva írjunk.
-Írd meg a sorozatot: kapcsolódási üzenet, első üzenet, utánkövetések, a lépések közötti várakozási napokkal. Mutasd meg, és csak a jóváhagyásom után mentsd a kampányba.
-Mentés után olvasd vissza a kampányt, és ellenőrizd, hogy minden lépés benne van.
+Írd meg a sorozatot: kapcsolódási üzenet, első üzenet, utánkövetések, a lépések közötti várakozási napokkal. A {COMPANY} változóra ne tegyél ragot (például ne „{COMPANY}-nál”), mert a cégnévvel magyarul hibás lesz. Mutasd meg, és csak a jóváhagyásom után mentsd a kampányba.
+Mentés után futtass egy próbamegjelenítést (preview) két leadre, és ellenőrizd, hogy minden lépés benne van, és a szöveg a valódi nevekkel is jól hangzik.
 A javításaim után készíts outreach.md tartalmat egy általam kiválasztott leadhez ezekkel a mezőkkel: lead_id, first_message, followup, stop_condition.
 ```
 
@@ -225,7 +225,7 @@ Csatold a `leads.csv` és a `campaign-plan.md` fájlt.
 
 ### Ellenőrizd az eredményt
 
-- A kampány a te leadlistádra és a választott ajánlatodra épül, és visszaolvasva minden lépés benne van.
+- A kampány a te leadlistádra és a választott ajánlatodra épül, van válaszcélja, és a próbamegjelenítésben minden lépés benne van.
 - Az első üzenet személyes, rövid, és nem ad el azonnal.
 - Az utánkövetés új értéket ad, nem ismétli az első üzenetet.
 - Az `outreach.md` tartalmazza a négy mezőt, a `stop_condition` pedig kimondja, mikor áll le a megkeresés.
@@ -293,7 +293,7 @@ Melyik válasz kategóriája helyes; melyik válaszjavaslatot fogadod el vagy í
 ```text
 Sandbox módban dolgozunk: semmit ne küldj ki.
 Listázd ki a Sales Bot beérkező beszélgetéseit, nyisd meg a válaszokat, és csoportosítsd őket: érdeklődő, később, nem releváns.
-Az érdeklődő leadeket állítsd Replied státuszra.
+Ellenőrizd a leadek státuszát (Interested, Later, Not Interested), és ahol nem illik a válaszhoz, javítsd.
 Válassz ki egy érdeklődő választ, és írj rá válaszjavaslatot. A jóváhagyásom után mentsd piszkozatként a beszélgetéshez; ne küldd el.
 Ezután készíts customer-brief.md tartalmat ebből a válaszból ezekkel a mezőkkel: lead_id, offer_id, need, quantity, constraints, open_questions.
 Amit a válasz nem mond ki, azt ne találd ki: tedd az open_questions mezőbe.
