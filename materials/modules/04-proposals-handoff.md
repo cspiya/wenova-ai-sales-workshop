@@ -60,12 +60,9 @@ Használd a [mentőútvonalat](#recovery). A kimeneteket a közös adatátadási
 
 <a name="overview-5"></a>
 
-### Bemutató (0–15. perc)
+### A modul célja
 
-1. **Miért kell AI az ajánlatadásba (kb. 8 perc):** a lassú, kézi ajánlatadás ára; mit csinál a szabályalapú árazás; mikor marad emberi döntés.
-2. **Élő bemutató (kb. 7 perc):** egy ajánlatkérés beérkezik → az EstiWise kérdez és kalkulál → ellenőrzött ajánlattervezet → átadás. Kész mintán, nem kitalált referenciával.
-
-**A modul célja egy mondatban:** a nap végére a saját szolgáltatásaiddal és áraiddal működő ajánlatadód van, amit Claude-ból finomhangolsz.
+A nap végére a saját szolgáltatásaiddal és áraiddal működő ajánlatadód van, amit Claude-ból finomhangolsz.
 
 <a name="04-proposals-handoff.01-discover-needs"></a>
 
@@ -81,13 +78,13 @@ Egy ügyféligény. A hiányzó adatok kérdéssé alakítva. Árazható alap.
 
 20 perc · Próbára vár · review · EstiWise · Gyömrei Máté
 
-<a name="04-proposals-handoff.01-discover-needs--section-1"></a>
+<a name="04-proposals-handoff.01-discover-needs--result"></a>
 
 ### Ezt készíted el
 
 Az EstiWise-fiókodban a `business-profile.md` ajánlatához tartozó szolgáltatást, ellenőrzött árazási alappal és az ügyfélnek feltett kérdésekkel. Ezzel a `customer-brief.md` igényéből látszik, mi árazható már, és mi hiányzik még.
 
-<a name="04-proposals-handoff.01-discover-needs--section-2"></a>
+<a name="04-proposals-handoff.01-discover-needs--needs"></a>
 
 ### Erre lesz szükséged
 
@@ -97,7 +94,7 @@ Az EstiWise-fiókodban a `business-profile.md` ajánlatához tartozó szolgálta
 
 Ha nincs saját üzleted vagy fiókod: [IrodaLiget alaplap](../scenarios/office-plants/outputs/business-profile.md) · [igény](../scenarios/office-plants/outputs/customer-brief.md) · [árlista](../scenarios/office-plants/price-list.csv), és a mentor által kiosztott demófiók.
 
-<a name="04-proposals-handoff.01-discover-needs--section-3"></a>
+<a name="04-proposals-handoff.01-discover-needs--explanation"></a>
 
 ### Így működik
 
@@ -105,13 +102,13 @@ Ha nincs saját üzleted vagy fiókod: [IrodaLiget alaplap](../scenarios/office-
 
 **Kitalált példa:** az IrodaLiget „havi növénygondozás” szolgáltatásának egy kérdése: „Hány növényt gondozzunk?” Ha az igényben nincs mennyiség, az a hiányzó adat, nem nulla.
 
-<a name="04-proposals-handoff.01-discover-needs--section-4"></a>
+<a name="04-proposals-handoff.01-discover-needs--decisions"></a>
 
 ### Ezekről te döntesz
 
 Mely szolgáltatás kerüljön a katalógusba; az ár és az egység (nettó/bruttó, HUF/EUR); mely kérdéseket tegye fel a rendszer az ügyfélnek; mi számít nyitott adatnak. Az AI nem talál ki árat: ha nincs jóváhagyott ár, a mező `open`.
 
-<a name="04-proposals-handoff.01-discover-needs--section-5"></a>
+<a name="04-proposals-handoff.01-discover-needs--prompt"></a>
 
 ### Ezt kérd Claude-tól
 
@@ -125,7 +122,7 @@ Az EstiWise-kapcsolattal dolgozunk a workshop 04-es moduljában. Csatoltam a bus
 Minden módosítás előtt mutasd meg, mit változtatnál, és kérd a jóváhagyásomat. Semmit ne küldj ki ügyfélnek.
 ```
 
-<a name="04-proposals-handoff.01-discover-needs--section-6"></a>
+<a name="04-proposals-handoff.01-discover-needs--steps"></a>
 
 ### Haladj végig ezeken
 
@@ -135,7 +132,7 @@ Minden módosítás előtt mutasd meg, mit változtatnál, és kérd a jóváhag
 4. **15–18 perc:** a hiányzó adatokkal frissítsd és mentsd a `customer-brief.md` fájlt.
 5. **18–20 perc:** mondd el egy mondatban, mi hiányzik még az ajánlathoz.
 
-<a name="04-proposals-handoff.01-discover-needs--section-7"></a>
+<a name="04-proposals-handoff.01-discover-needs--check"></a>
 
 ### Ellenőrizd az eredményt
 
@@ -145,7 +142,7 @@ Minden módosítás előtt mutasd meg, mit változtatnál, és kérd a jóváhag
 - A `customer-brief.md` `open_questions` mezője tartalmazza a hiányzó adatokat.
 - Semmilyen üzenet nem ment ki ügyfélnek.
 
-<a name="04-proposals-handoff.01-discover-needs--section-8"></a>
+<a name="04-proposals-handoff.01-discover-needs--help"></a>
 
 ### Ha elakadtál
 
@@ -153,13 +150,13 @@ Minden módosítás előtt mutasd meg, mit változtatnál, és kérd a jóváhag
 - **Nincs használható weboldal vagy leírás:** az alaplap mezőiből dolgozzon a rendszer; ha ez sem megy, válts az IrodaLiget mintára.
 - Öt perc után használd a [mentőcsomagot](#recovery).
 
-<a name="04-proposals-handoff.01-discover-needs--section-9"></a>
+<a name="04-proposals-handoff.01-discover-needs--handoff"></a>
 
 ### Ezt viszed tovább
 
 A közzétett szolgáltatás és a frissített `customer-brief.md` a következő lecke bemenete. A naplóban rögzítsd a végrehajtási módot (live / simulation).
 
-<a name="04-proposals-handoff.01-discover-needs--section-10"></a>
+<a name="04-proposals-handoff.01-discover-needs--extra"></a>
 
 ### Ha maradt időd
 
@@ -179,31 +176,31 @@ Egy igény. Egy kiszámolt, ellenőrzött ajánlattervezet. Kiküldés nélkül.
 
 20 perc · Próbára vár · review · EstiWise · Gyömrei Máté
 
-<a name="04-proposals-handoff.02-prepare-proposal--section-1"></a>
+<a name="04-proposals-handoff.02-prepare-proposal--result"></a>
 
 ### Ezt készíted el
 
 Egy EstiWise-ban kiszámolt ajánlattervezetet a `customer-brief.md` igényére, és annak közös formátumú változatát `proposal.md` néven. Az ajánlat `draft` marad: nem küldöd ki, és nem fogadja el senki.
 
-<a name="04-proposals-handoff.02-prepare-proposal--section-2"></a>
+<a name="04-proposals-handoff.02-prepare-proposal--needs"></a>
 
 ### Erre lesz szükséged
 
 Az előző leckében közzétett szolgáltatás, a frissített `customer-brief.md`, az árlista. Mintával: [IrodaLiget ajánlatminta](../scenarios/office-plants/outputs/proposal.md).
 
-<a name="04-proposals-handoff.02-prepare-proposal--section-3"></a>
+<a name="04-proposals-handoff.02-prepare-proposal--explanation"></a>
 
 ### Így működik
 
 Igény → belső kalkuláció (a rendszer kérdez, te válaszolsz az ügyfél nevében) → árazott sorok → ajánlattervezet → közös `proposal.md`. A számítás ellenőrizhető: mennyiség × egységár = összeg. Ha egy sorban hiányzik a mennyiség, az a sor 0 és kimarad az összegből: ezt észre kell venni és javítani.
 
-<a name="04-proposals-handoff.02-prepare-proposal--section-4"></a>
+<a name="04-proposals-handoff.02-prepare-proposal--decisions"></a>
 
 ### Ezekről te döntesz
 
 A hiányzó adatokra adott válaszok; az ajánlat sorai, ára és feltételei; hogy az ajánlat tervezet marad. Kiküldés csak a te kifejezett döntéseddel, a workshopon nem.
 
-<a name="04-proposals-handoff.02-prepare-proposal--section-5"></a>
+<a name="04-proposals-handoff.02-prepare-proposal--prompt"></a>
 
 ### Ezt kérd Claude-tól
 
@@ -216,7 +213,7 @@ Az EstiWise-kapcsolattal készítsünk ajánlattervezetet. Csatoltam a customer-
 5. Ellenőrizd a számítást (mennyiség × egységár = total), és írd le egy sorban.
 ```
 
-<a name="04-proposals-handoff.02-prepare-proposal--section-6"></a>
+<a name="04-proposals-handoff.02-prepare-proposal--steps"></a>
 
 ### Haladj végig ezeken
 
@@ -226,7 +223,7 @@ Az EstiWise-kapcsolattal készítsünk ajánlattervezetet. Csatoltam a customer-
 4. **13–17 perc:** készüljön el az ajánlattervezet; nézd meg az EstiWise-ban is.
 5. **17–20 perc:** mentsd a `proposal.md` fájlt, és ellenőrizd a számítást.
 
-<a name="04-proposals-handoff.02-prepare-proposal--section-7"></a>
+<a name="04-proposals-handoff.02-prepare-proposal--check"></a>
 
 ### Ellenőrizd az eredményt
 
@@ -236,7 +233,7 @@ Az EstiWise-kapcsolattal készítsünk ajánlattervezetet. Csatoltam a customer-
 - A feltételezések az `assumptions` mezőben, a `status` értéke `draft`.
 - Össze tudod hasonlítani egy korábbi saját ajánlatoddal: hol tér el, és miért.
 
-<a name="04-proposals-handoff.02-prepare-proposal--section-8"></a>
+<a name="04-proposals-handoff.02-prepare-proposal--help"></a>
 
 ### Ha elakadtál
 
@@ -244,13 +241,13 @@ Az EstiWise-kapcsolattal készítsünk ajánlattervezetet. Csatoltam a customer-
 - **Egy sor 0 Ft:** hiányzik a mennyiség. Ha a kalkuláció már árazott, a mentor segít javítani az EstiWise felületén.
 - Öt perc után használd a [mentőcsomagot](#recovery).
 
-<a name="04-proposals-handoff.02-prepare-proposal--section-9"></a>
+<a name="04-proposals-handoff.02-prepare-proposal--handoff"></a>
 
 ### Ezt viszed tovább
 
 A `proposal.md` a belső átadás és a 05-ös folyamatpróba bemenete.
 
-<a name="04-proposals-handoff.02-prepare-proposal--section-10"></a>
+<a name="04-proposals-handoff.02-prepare-proposal--extra"></a>
 
 ### Ha maradt időd
 
@@ -270,31 +267,31 @@ Egy ajánlat. Egy felelős. Egy következő lépés határidővel.
 
 20 perc · Próbára vár · review · EstiWise, Wenova · Gyömrei Máté
 
-<a name="04-proposals-handoff.03-handoff--section-1"></a>
+<a name="04-proposals-handoff.03-handoff--result"></a>
 
 ### Ezt készíted el
 
 Az ajánlathoz tartozó értékesítési lehetőséget a megfelelő szakaszban az EstiWise értékesítési folyamatában, és egy `handoff.md` fájlt: ki a felelős, mi a következő feladat, mikorra.
 
-<a name="04-proposals-handoff.03-handoff--section-2"></a>
+<a name="04-proposals-handoff.03-handoff--needs"></a>
 
 ### Erre lesz szükséged
 
 A `proposal.md` és az EstiWise-ban elkészült ajánlattervezet. Mintával: [IrodaLiget átadásminta](../scenarios/office-plants/outputs/handoff.md).
 
-<a name="04-proposals-handoff.03-handoff--section-3"></a>
+<a name="04-proposals-handoff.03-handoff--explanation"></a>
 
 ### Így működik
 
 Ajánlattervezet → értékesítési szakasz → felelős → következő feladat és határidő. Az átadás akkor jó, ha egy másik kolléga a fájlból tudja, mi a dolga, anélkül hogy rákérdezne. Tervezet állapotú ajánlatból nem indul teljesítés.
 
-<a name="04-proposals-handoff.03-handoff--section-4"></a>
+<a name="04-proposals-handoff.03-handoff--decisions"></a>
 
 ### Ezekről te döntesz
 
 Ki a felelős; mi a következő lépés (pl. egyeztetés, ajánlat felülvizsgálata, kiküldés jóváhagyása); a határidő; az értékesítési szakasz.
 
-<a name="04-proposals-handoff.03-handoff--section-5"></a>
+<a name="04-proposals-handoff.03-handoff--prompt"></a>
 
 ### Ezt kérd Claude-tól
 
@@ -306,7 +303,7 @@ Az EstiWise-kapcsolattal készítsük el az ajánlat belső átadását. Csatolt
 4. Írd meg a handoff.md tartalmát a közös mezőkkel: proposal_id, decision_status, owner, next_task, due. A proposal_id a proposal.md-ből jöjjön; a decision_status maradjon draft, amíg nincs elfogadott ajánlat.
 ```
 
-<a name="04-proposals-handoff.03-handoff--section-6"></a>
+<a name="04-proposals-handoff.03-handoff--steps"></a>
 
 ### Haladj végig ezeken
 
@@ -315,7 +312,7 @@ Az EstiWise-kapcsolattal készítsük el az ajánlat belső átadását. Csatolt
 3. **10–15 perc:** mentsd a `handoff.md` fájlt.
 4. **15–20 perc:** cserélj a szomszédoddal: értse-e a fájlodból, mi a következő lépés?
 
-<a name="04-proposals-handoff.03-handoff--section-7"></a>
+<a name="04-proposals-handoff.03-handoff--check"></a>
 
 ### Ellenőrizd az eredményt
 
@@ -325,19 +322,19 @@ Az EstiWise-kapcsolattal készítsük el az ajánlat belső átadását. Csatolt
 - A szomszédod a fájlból elmondja, mi a teendő.
 - Nem indult teljesítés, és nem ment ki ajánlat.
 
-<a name="04-proposals-handoff.03-handoff--section-8"></a>
+<a name="04-proposals-handoff.03-handoff--help"></a>
 
 ### Ha elakadtál
 
 Ha az értékesítési folyamat nem érhető el, a `handoff.md` fájlt az [átadásminta](../scenarios/office-plants/outputs/handoff.md) szerkezetével kézzel is elkészítheted. Öt perc után használd a [mentőcsomagot](#recovery).
 
-<a name="04-proposals-handoff.03-handoff--section-9"></a>
+<a name="04-proposals-handoff.03-handoff--handoff"></a>
 
 ### Ezt viszed tovább
 
 A `proposal.md` és a `handoff.md` a 05-ös folyamatpróba bemenete.
 
-<a name="04-proposals-handoff.03-handoff--section-10"></a>
+<a name="04-proposals-handoff.03-handoff--extra"></a>
 
 ### Ha maradt időd: élesítés a weboldaladon (75–90. perc)
 
