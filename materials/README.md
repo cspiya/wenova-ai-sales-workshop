@@ -128,7 +128,7 @@ Kitekintésként, nem kötelező: **[Demók](demos/README.md)**, például a han
 
 A telepítés a [starter-kit](starter-kit/README.md) sablonjait is a munkamappádba teszi; feltölteni semmit nem kell ([felkészülés](modules/00-prework.md)). Az [asszisztens instrukciója](assistant.md) a tanulási kísérő: a „Kezdjük az 1. blokkot” mondatra végigvezet. Saját cégből vagy az alábbi minták egyikéből dolgozz.
 
-[AGENTS.md](AGENTS.md) · [Telepítés](TELEPITES.md) · [Projektutasítás](starter-kit/project-instructions.md) · [Ütemezett feladatok](starter-kit/scheduled-tasks.md) · [Cég-DNS sablon](starter-kit/company-dna.md) · [Agentek](starter-kit/agents/README.md) · [Haladási napló](starter-kit/progress.json)
+[Indulás a kivetítőn](indulas.md) · [AGENTS.md](AGENTS.md) · [Telepítés](TELEPITES.md) · [Projektutasítás](starter-kit/project-instructions.md) · [Ütemezett feladatok](starter-kit/scheduled-tasks.md) · [Cég-DNS sablon](starter-kit/company-dna.md) · [Agentek](starter-kit/agents/README.md) · [Haladási napló](starter-kit/progress.json)
 
 <a name="scenarios"></a>
 

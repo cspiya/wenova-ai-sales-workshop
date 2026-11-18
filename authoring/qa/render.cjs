@@ -247,7 +247,7 @@ function render(source, root = ROOT, pages = new Set(inventory(root))) {
   const body = md.renderer.render(rendered,md.options,{});
   const sidebar = '<nav class="toc" aria-label="Tartalom"><p>Tartalom</p><ol>'+toc.map(t=>'<li><a href="#'+escape(t.id)+'">'+escape(t.label)+'</a></li>').join('')+'</ol></nav>';
   const frame = noteModule ? '<div class="lesson-pane"><iframe name="lesson" src="../../materials/modules/'+noteModule+'.html" title="Résztvevői tananyag"></iframe></div>' : sidebar;
-  const kind = noteModule ? 'notes' : moduleId ? 'module' : isSchedule ? 'schedule' : isHome ? 'home' : 'doc';
+  const kind = noteModule ? 'notes' : moduleId ? 'module' : isSchedule ? 'schedule' : isHome ? 'home' : source === 'materials/indulas.md' ? 'projection' : 'doc';
   return '<!doctype html>\n<!-- Generated from '+source+'; edit Markdown and run npm run render. -->\n'+
     '<html lang="hu"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>'+escape(title)+' · AI Sales &amp; Marketing Workshop</title><link rel="stylesheet" href="'+css+'">'+
     (noteModule?'<link rel="stylesheet" href="notes.css">':'')+'</head><body class="page page--'+kind+(lead?' lead--'+lead:'')+'">\n'+
