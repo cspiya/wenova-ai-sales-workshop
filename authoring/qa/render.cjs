@@ -65,6 +65,8 @@ const kindOf = (label,id) => {
   return byId || KINDS.find(([p])=>label.startsWith(p))?.[1] || null;
 };
 const SCHEDULE = 'materials/schedule.md';
+// Participant pages have no JavaScript: code blocks are selected whole by CSS, and this line says how to copy them.
+const COPY_HINT = 'Másolás: kattints a szövegbe, majd Ctrl+C (Macen Cmd+C). Telefonon tartsd rajta az ujjad, és válaszd a „Másolás” pontot.';
 // Reads the agenda table of materials/schedule.md; the single source for times, partners and speakers.
 function schedule(root = ROOT) {
   const file = path.join(root, SCHEDULE);
@@ -127,8 +129,10 @@ function render(source, root = ROOT, pages = new Set(inventory(root))) {
   const agenda = schedule(root);
   const raw = s => { const t = new tokens[0].constructor('html_block','',0); t.content = s; return t; };
   const inlineHtml = t => { for (const c of t.children||[]) if (c.type==='link_open') c.attrSet('href',rewrite(c.attrGet('href'),source,pages)); return md.renderer.renderInline(t.children||[],md.options,{}); };
+  const inMaterials = source.startsWith('materials/');
   const toc = [], used = new Set([mainId]);
-  let title = '', skipToc = false, hero = false, heroParas = 0, cell = false;
+  let title = '', skipToc = false, hero = false, heroParas = 0, cell = false, copyHinted = false;
+  const tocSlot = raw('');
   const rendered = [];
   const closeCell = () => { if (cell) { rendered.push(raw('</div>\n')); cell = false; } };
   const closeHero = () => {
@@ -153,7 +157,7 @@ function render(source, root = ROOT, pages = new Set(inventory(root))) {
           (p?'<span class="logo-tile">'+logoImg(p,relative,root)+'</span>':'')+'</li>';
       }).join('')+'</ol>\n'));
     }
-    rendered.push(raw('</header>\n')); hero = false;
+    rendered.push(raw('</header>\n'), tocSlot); hero = false;
   };
   for (let i=0; i<tokens.length; i++) {
     const token = tokens[i];
@@ -187,7 +191,7 @@ function render(source, root = ROOT, pages = new Set(inventory(root))) {
         if (title) throw Error(source+': expected one h1');
         title = label; rendered.push(raw('<header class="page-hero">\n')); hero = true;
       } else {
-        if (['h2','h3'].includes(token.tag)) { closeHero(); closeCell(); }
+        if (['h2','h3'].includes(token.tag)) { closeHero(); closeCell(); copyHinted = false; }
         let id = token.meta?.anchor;
         if (!id) { const base = slug(label) || 'section'; id = base; let n=0; while(used.has(id)) id=base+'-'+(++n); used.add(id); token.attrSet('id',id); }
         if (token.tag === 'h2') toc.push({id,label});
@@ -197,8 +201,21 @@ function render(source, root = ROOT, pages = new Set(inventory(root))) {
       }
     }
     if (hero && token.type === 'paragraph_open') {
-      const content = tokens[i+1]?.content || '';
-      token.attrSet('class', /^\*\*(?:Állapot|Státusz):/.test(content) ? 'state' : /^\[[^\]]*\]\([^)]*\)$/.test(content) ? 'hero-links' : heroParas++ === 0 && content.length < 90 ? 'kicker' : 'lead');
+      const inline = tokens[i+1], kids = inline?.children || [];
+      // The status stays a short label; any text after it becomes the normal intro paragraph.
+      const label = /^\*\*(?:Állapot|Státusz):[^*]*\*\*(?=\s*\S)/.exec(inline?.content || '')?.[0];
+      const labelEnd = kids.findIndex(k=>k.type === 'strong_close') + 1;
+      if (label && labelEnd) {
+        const Token = token.constructor, close = new Token('paragraph_close','p',-1), open = new Token('paragraph_open','p',1), intro = new Token('inline','',0);
+        close.block = open.block = intro.block = true; open.meta = {intro:true};
+        intro.content = inline.content.slice(label.length).trim();
+        intro.children = kids.slice(labelEnd); while (intro.children[0]?.type === 'softbreak') intro.children.shift();
+        if (intro.children[0]?.type === 'text') intro.children[0].content = intro.children[0].content.trimStart();
+        inline.content = label; inline.children = kids.slice(0,labelEnd);
+        tokens.splice(i+2,0,close,open,intro);
+      }
+      const content = inline?.content || '';
+      token.attrSet('class', token.meta?.intro ? 'lead' : /^\*\*(?:Állapot|Státusz):/.test(content) ? 'state' : /^\[[^\]]*\]\([^)]*\)$/.test(content) ? 'hero-links' : heroParas++ === 0 && content.length < 90 ? 'kicker' : 'lead');
     }
     if (isSchedule && token.type === 'ordered_list_open') token.attrSet('class','flow');
     if (isSchedule && token.type === 'table_open') {
@@ -216,7 +233,8 @@ function render(source, root = ROOT, pages = new Set(inventory(root))) {
     for (const child of token.children || []) {
       if (child.type === 'link_open') {
         const href = rewrite(child.attrGet('href'),source,pages); child.attrSet('href',href);
-        if (noteModule && href.startsWith('../../materials/modules/'+noteModule+'.html')) child.attrSet('target','lesson');
+        // Section links open beside the note; the plain module link leads to the module page itself.
+        if (noteModule && href.startsWith('../../materials/modules/'+noteModule+'.html#')) child.attrSet('target','lesson');
       }
       if (child.type === 'image') child.attrSet('src',rewrite(child.attrGet('src'),source,pages));
     }
@@ -225,12 +243,12 @@ function render(source, root = ROOT, pages = new Set(inventory(root))) {
       if (prev?.type === 'html_block' && /^<a id=/.test(prev.content)) rendered.splice(rendered.length-1,0,opener); else rendered.push(opener);
       cell = true;
     }
+    if (token.type === 'fence' && inMaterials && !copyHinted) { rendered.push(raw('<p class="copy-hint">'+escape(COPY_HINT)+'</p>\n')); copyHinted = true; }
     rendered.push(token);
   }
   closeHero(); closeCell();
   if (!title) throw Error(source+': missing h1');
   const css = relative('materials/assets/notebook.css');
-  const inMaterials = source.startsWith('materials/');
   const home = inMaterials ? relative('materials/index.html') : relative('index.html');
   const nav = [['Kezdőlap',home]];
   if (pages.has(SCHEDULE)) nav.push(['A nap menete',relative(output(SCHEDULE))]);
@@ -244,8 +262,11 @@ function render(source, root = ROOT, pages = new Set(inventory(root))) {
     const link = (p,dir) => p ? '<a class="pager__'+dir+'" href="'+relative(output(p))+'"><span>'+(dir==='prev'?'← Előző modul':'Következő modul →')+'</span>'+label(p)+'</a>' : '<span></span>';
     pager = '<nav class="pager" aria-label="Modulok">'+link(mods[at-1],'prev')+link(mods[at+1],'next')+'</nav>\n';
   }
+  const tocItems = toc.map(t=>'<li><a href="#'+escape(t.id)+'">'+escape(t.label)+'</a></li>').join('');
+  // Phones get the contents after the page title, collapsed; the desktop sidebar stays as it is.
+  if (!noteModule && toc.length) tocSlot.content = '<details class="toc-mobile"><summary>Tartalom</summary><nav aria-label="Tartalom"><ol>'+tocItems+'</ol></nav></details>\n';
   const body = md.renderer.render(rendered,md.options,{});
-  const sidebar = '<nav class="toc" aria-label="Tartalom"><p>Tartalom</p><ol>'+toc.map(t=>'<li><a href="#'+escape(t.id)+'">'+escape(t.label)+'</a></li>').join('')+'</ol></nav>';
+  const sidebar = '<nav class="toc" aria-label="Tartalom"><p>Tartalom</p><ol>'+tocItems+'</ol></nav>';
   const frame = noteModule ? '<div class="lesson-pane"><iframe name="lesson" src="../../materials/modules/'+noteModule+'.html" title="Résztvevői tananyag"></iframe></div>' : sidebar;
   const kind = noteModule ? 'notes' : moduleId ? 'module' : isSchedule ? 'schedule' : isHome ? 'home' : 'doc';
   return '<!doctype html>\n<!-- Generated from '+source+'; edit Markdown and run npm run render. -->\n'+

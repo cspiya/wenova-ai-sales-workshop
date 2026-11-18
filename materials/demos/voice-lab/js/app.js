@@ -44,6 +44,7 @@ let persona = null, locks = {};
 let run = null;            // { conv, kind, stop() }
 let lastAnalysis = null;
 let brokerRejected = false;   // set on a 401 from the broker; cleared when the access code changes
+let credsChecked = false;     // the primary button stays neutral until the first credential check has finished
 
 const servedByHelper = () => /^http:\/\/(127\.0\.0\.1|localhost):\d+$/.test(location.origin);
 
@@ -75,6 +76,7 @@ async function resolveCreds() {
     resolveCreds().then(() => setStatus("#status", "A távoli broker elutasította a hozzáférési kódot (401). " +
       (creds ? "Átváltottam erre: " + creds.label + ". Indítsd újra." : "Adj meg helyes kódot vagy saját kulcsot a Beállításokban."), true));
   };
+  credsChecked = true;
   renderCredState(fails);
   renderPickers();
 }
@@ -149,11 +151,27 @@ function buildPicker(el, role) {
   const kind = document.createElement("p"); kind.className = "hint";
   const wrap = (label, sel) => { const l = document.createElement("label"); l.className = "field"; l.append(label, sel); return l; };
   el.replaceChildren(wrap("Modell / szolgáltató", optSel), wrap("Modellváltozat", modelSel), wrap("Hang", voiceSel), kind);
-  optSel.onchange = () => { fill(); persist(); }; modelSel.onchange = persist; voiceSel.onchange = persist;
+  optSel.onchange = () => { fill(); persist(); syncStartBtn(); }; modelSel.onchange = persist; voiceSel.onchange = persist;
   fill();
   el.get = () => ({ opt: optionById(optSel.value), model: modelSel.value, voice: voiceSel.value });
 }
-function renderPickers() { buildPicker($("#pickHuman"), "human"); buildPicker($("#pickSeller"), "seller"); buildPicker($("#pickBuyer"), "buyer"); }
+function renderPickers() { buildPicker($("#pickHuman"), "human"); buildPicker($("#pickSeller"), "seller"); buildPicker($("#pickBuyer"), "buyer"); syncStartBtn(); }
+
+// ------------------------------------------------------------------ primary action: start only when the chosen mode can run
+const IDLE_READY = "Kész.", IDLE_SETUP = "Nincs használható modell. Előbb állítsd be a kapcsolatot.", IDLE_CHECKING = "Kapcsolat ellenőrzése…";
+function canStart() {
+  if (!creds || !health) return false;
+  if (settings.mode === "duel" && settings.engine === "text") return textChoice().ok;
+  const pickers = settings.mode === "human" ? ["#pickHuman"] : ["#pickSeller", "#pickBuyer"];
+  return pickers.every(sel => { const p = $(sel).get?.(); return !!p && optionState(p.opt).ok; });
+}
+function syncStartBtn() {
+  if (!credsChecked) return;
+  const ready = canStart(), btn = $("#startBtn"), status = $("#status");
+  btn.textContent = ready ? "Indítás" : "Kapcsolat beállítása";
+  btn.disabled = !!run;
+  if ([IDLE_READY, IDLE_SETUP, IDLE_CHECKING].includes(status.textContent)) status.textContent = ready ? IDLE_READY : IDLE_SETUP;
+}
 
 // ------------------------------------------------------------------ scripts (versions in IndexedDB)
 const KIND_LABEL = { alap: "alap", kezi: "kézi", generalt: "AI-generált", finomitott: "AI-finomított", elemzesbol: "elemzésből", import: "importált" };
@@ -511,7 +529,7 @@ function syncMode() {
   const text = settings.engine === "text";
   $("#pickSeller").closest("fieldset").hidden = $("#pickBuyer").hidden = text;
   $("#maxTurnsWrap").hidden = $("#speakWrap").hidden = !text; $("#maxSec").closest("label").hidden = text;
-  saveSettings();
+  saveSettings(); syncStartBtn();
 }
 
 async function init() {
@@ -545,7 +563,7 @@ async function init() {
     for (const s of ["convs", "audio", "scripts", "kv"]) await store.clear(s);
     scripts = []; activeId = null; await loadScripts(); await renderHistory(); $("#histDetail").innerHTML = ""; $("#anaView").innerHTML = "";
   };
-  $("#startBtn").onclick = start; $("#stopBtn").onclick = () => stop("leállítva");
+  $("#startBtn").onclick = () => (canStart() ? start() : openSettings()); $("#stopBtn").onclick = () => stop("leállítva");
   $("#firstName").oninput = renderAssembled;
   $("#verSel").onchange = () => { selectedId = $("#verSel").value; renderScripts(); };
   $("#editor").oninput = () => { renderLint(); renderDiff(); renderAssembled(); };

@@ -21,6 +21,19 @@ test('deterministic Hungarian Markdown, prompt whitespace, tables, anchors and i
  run({root});assert.equal(fs.readFileSync(path.join(root,'materials/modules/01-demo.html'),'utf8'),html);
  assert.equal(run({root,check:true}),2);
 }));
+test('copy hint, collapsible phone contents, status label and direct module link',()=>fixture((root,put)=>{
+ put('materials/modules/01-demo.md','# Modul\n\n**Állapot: draft.** Ez a bevezető.\n\n<a name="01-demo.01-start"></a>\n\n## Lecke\n\n### Ezt kérd Claude-tól\n\n```text\negy\nkettő\n```\n\n```text\nhárom\n```\n');
+ put('operations/instructor-notes/01-demo.md','# Oktató\n\n[Kapcsolódó tananyag](../../materials/modules/01-demo.md)\n\n[Lecke](../../materials/modules/01-demo.md#01-demo.01-start)\n');
+ run({root});
+ const html=fs.readFileSync(path.join(root,'materials/modules/01-demo.html'),'utf8');
+ assert.equal((html.match(/class="copy-hint"/g)||[]).length,1,'one hint per section');
+ assert.match(html,/<p class="state"><strong>Állapot: draft\.<\/strong><\/p>\n<p class="lead">Ez a bevezető\.<\/p>/);
+ assert.match(html,/<\/header>\n<details class="toc-mobile"><summary>Tartalom<\/summary>.*href="#01-demo\.01-start"/);
+ assert.match(html,/<nav class="toc" aria-label="Tartalom">/);assert.doesNotMatch(html,/<script/);
+ const notes=fs.readFileSync(path.join(root,'operations/instructor-notes/01-demo.html'),'utf8');
+ assert.match(notes,/<a href="\.\.\/\.\.\/materials\/modules\/01-demo\.html">Kapcsolódó tananyag<\/a>/);
+ assert.match(notes,/01-demo\.html#01-demo\.01-start" target="lesson"/);assert.doesNotMatch(notes,/toc-mobile|copy-hint/);
+}));
 test('stale output and changed Markdown fail check without repairing files',()=>fixture((root,put)=>{
  put('README.md','# Cím\n');run({root});put('index.html','manual change');
  assert.throws(()=>run({root,check:true}),/stale HTML/);assert.equal(fs.readFileSync(path.join(root,'index.html'),'utf8'),'manual change');

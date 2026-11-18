@@ -6,9 +6,11 @@
 <!-- presentation -->
 <header class="page-hero">
 <h1>Hangügynök-labor: AI-telefonos asszisztens kipróbálása</h1>
-<p class="state"><strong>Állapot: draft.</strong> A felület és a helyi segéd technikailag ellenőrzött; valódi API-kulccsal élő hanghívással ez a változat még nincs kipróbálva.</p>
+<p class="state"><strong>Állapot: draft.</strong></p>
+<p class="lead">A felület és a helyi segéd technikailag ellenőrzött; valódi API-kulccsal élő hanghívással ez a változat még nincs kipróbálva.</p>
 <p class="lead">A labor egy böngészőben futó demó: egy magyarul beszélő AI-hangasszisztens telefonos értékesítési forgatókönyv szerint beszélget. Te veszed fel a „telefont”, vagy két AI-modell beszélget egymással: az egyik az eladó, a másik egy kitalált érdeklődő. Minden beszélgetés átirata, mérőszámai és (ha kéred) hangja elmentődik a böngésződben, utána egy szövegmodell értékeli, és javaslatot tesz a forgatókönyv javítására. Ez a kitekintő bemutatóhoz tartozik, nem kötelező gyakorlat. Valódi telefonhívás nincs.</p>
 </header>
+<details class="toc-mobile"><summary>Tartalom</summary><nav aria-label="Tartalom"><ol><li><a href="#megnyitás">Megnyitás</a></li><li><a href="#mit-mutat-a-demó">Mit mutat a demó?</a></li><li><a href="#honnan-jönnek-a-kulcsok">Honnan jönnek a kulcsok?</a></li><li><a href="#adatvédelem">Adatvédelem</a></li><li><a href="#helyi-futtatás">Helyi futtatás</a></li><li><a href="#ismert-korlátok">Ismert korlátok</a></li></ol></nav></details>
 <h2 id="megnyitás">Megnyitás</h2>
 <ul>
 <li><strong>A böngészőben:</strong> <a href="https://cspiya.github.io/wenova-ai-sales-workshop/materials/demos/voice-lab/app.htm">https://cspiya.github.io/wenova-ai-sales-workshop/materials/demos/voice-lab/app.htm</a>. Ez a cím akkor él, amikor a tananyag-repóban a GitHub Pages be van kapcsolva, és ez a változat bekerült a közzétett ágba. Addig használd a helyi indítást.</li>
@@ -74,6 +76,7 @@
 <li>A Google ingyenes szintjén a beszélgetést a Google felhasználhatja a termékei fejlesztésére. Valódi ügyféladattal ne használd.</li>
 </ul>
 <h2 id="helyi-futtatás">Helyi futtatás</h2>
+<p class="copy-hint">Másolás: kattints a szövegbe, majd Ctrl+C (Macen Cmd+C). Telefonon tartsd rajta az ujjad, és válaszd a „Másolás” pontot.</p>
 <pre><code class="language-text">cd materials/demos/voice-lab
 python server.py
 </code></pre>

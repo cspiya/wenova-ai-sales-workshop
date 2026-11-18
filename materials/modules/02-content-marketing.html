@@ -10,6 +10,7 @@
 <p class="lead">A modul kidolgozott, élő Brandiseer-kapcsolattal kipróbált tananyag. A teljes résztvevői próba még hátravan.</p>
 <div class="block-banner block-banner--brandiseer"><p class="block-banner__when"><span class="chip chip--time">10:45–12:15</span> <span class="block-banner__title">A nap menetében: 2. Tartalom a céged hangján</span></p><p class="block-banner__lead"><span class="logo-tile"><img class="logo logo--brandiseer" src="../assets/logos/brandiseer-icon.png" alt="" width="24" height="28"><span class="logo-word">Brandiseer</span></span><span><span class="block-banner__label">Blokkgazda</span> <strong>Brandiseer</strong> · Sorok Dániel</span></p><p class="block-banner__builds"><span class="block-banner__label">Ezt építed</span> Egy hétre való márkahű posztkép szöveggel, kampányterv</p></div>
 </header>
+<details class="toc-mobile"><summary>Tartalom</summary><nav aria-label="Tartalom"><ol><li><a href="#overview">Cél, bemenet és eredmény</a></li><li><a href="#connect">A Brandiseer bekötése a Claude-ba</a></li><li><a href="#02-content-marketing.01-brand-brief">A márkád a Brandiseerben</a></li><li><a href="#02-content-marketing.02-create-content">Két márkahű poszt Claude-dal</a></li><li><a href="#02-content-marketing.03-prepare-publishing">Egy hét posztjai és kampányterv</a></li><li><a href="#recovery">Segítség elakadáskor</a></li><li><a href="#examples">Gyakorlópéldák</a></li><li><a href="#continue">Folytatás</a></li></ol></nav></details>
 <a id="overview"></a>
 <h2>Cél, bemenet és eredmény</h2>
 <p><strong>Státusz: kidolgozva, résztvevői próbára vár.</strong></p>
@@ -56,6 +57,7 @@
 <h2>A Brandiseer bekötése a Claude-ba</h2>
 <p><strong>Az 1. lecke előtt, kb. 3 perc.</strong> Ha előre már bekötötted, csak az ellenőrzést csináld meg.</p>
 <p>A Brandiseer connector címe:</p>
+<p class="copy-hint">Másolás: kattints a szövegbe, majd Ctrl+C (Macen Cmd+C). Telefonon tartsd rajta az ujjad, és válaszd a „Másolás” pontot.</p>
 <pre><code class="language-text">https://brandiseer.com/api/mcp
 </code></pre>
 <p><strong>Claude Desktop (Cowork) vagy claude.ai:</strong></p>
@@ -102,6 +104,7 @@
 <div class="cell cell--prompt">
 <a id="02-content-marketing.01-brand-brief--prompt"></a>
 <h3 class="cell-title">Ezt kérd Claude-tól</h3>
+<p class="copy-hint">Másolás: kattints a szövegbe, majd Ctrl+C (Macen Cmd+C). Telefonon tartsd rajta az ujjad, és válaszd a „Másolás” pontot.</p>
 <pre><code class="language-text">Ellenőrizd a Brandiseer-kapcsolatot: listázd a márkáimat (brandiseer_list_brands), és nézd meg a kreditegyenlegemet (brandiseer_check_credits).
 Ha egy márkám van, azzal dolgozunk; ha több, kérdezd meg, melyikkel. Ha nincs márkám, szólj, és ne hozz létre semmit kérdés nélkül.
 Utána készíts egy próbaképet a márkámmal a brandiseer_generate_image eszközzel: egyszerű bemutatkozó poszt, rajta a cégnév és egy rövid mondat arról, mivel foglalkozunk (a Munka/01-DNS/company-dna.md alapján).
@@ -178,6 +181,7 @@ A képpromptba csak tartalmat és elrendezést írj; színt, betűtípust, hangu
 <div class="cell cell--prompt">
 <a id="02-content-marketing.02-create-content--prompt"></a>
 <h3 class="cell-title">Ezt kérd Claude-tól</h3>
+<p class="copy-hint">Másolás: kattints a szövegbe, majd Ctrl+C (Macen Cmd+C). Telefonon tartsd rajta az ujjad, és válaszd a „Másolás” pontot.</p>
 <pre><code class="language-text">Most a márkahű közösségimédia-tartalomkészítőm vagy. A képekhez a Brandiseer connectort használod, az előző lépésben kiválasztott márkámmal.
 
 Először olvasd el a Munka/01-DNS/ mappából: company-dna.md, voice-profile.md, sales-strategy.md.
@@ -276,6 +280,7 @@ Ha megvan a két téma:
 <a id="02-content-marketing.03-prepare-publishing--prompt"></a>
 <h3 class="cell-title">Ezt kérd Claude-tól</h3>
 <p><strong>1. A hét többi posztja:</strong></p>
+<p class="copy-hint">Másolás: kattints a szövegbe, majd Ctrl+C (Macen Cmd+C). Telefonon tartsd rajta az ujjad, és válaszd a „Másolás” pontot.</p>
 <pre><code class="language-text">A két jóváhagyott poszt mellé tervezz még hármat, hogy meglegyen egy hét: hétfőtől péntekig napi egy poszt, ugyanarra a csatornára, ugyanabban a hangnemben, ugyanazzal a felhívással.
 Először írd le táblázatban: nap, téma, a képre kerülő szöveg (legfeljebb 6–8 szó), felhívás. A két meglévő posztot is tedd be egy-egy napra. Várd meg a jóváhagyásomat.
 Jóváhagyás után generáld le a három új képet a brandiseer_generate_image eszközzel (mode design, useLogo true, resolution 1K, a csatorna oldalaránya), és írd meg mindegyikhez a posztszöveget.
@@ -390,6 +395,7 @@ Előtte írd le, melyik csatornára mi kerül, és várd meg az igenemet.
 </tbody>
 </table></div>
 <p>Az első kép promptja, ahogy Claude megírta (csak tartalom és elrendezés, szín és stílus nélkül):</p>
+<p class="copy-hint">Másolás: kattints a szövegbe, majd Ctrl+C (Macen Cmd+C). Telefonon tartsd rajta az ujjad, és válaszd a „Másolás” pontot.</p>
 <pre><code class="language-text">Instagram-poszt tipp formátumban. Felül a cím: „Tipp: a képet írd le, ne a stílust”. Alatta két panel egymás mellett.
 Bal panel „Így” felirattal, pipával és egy rövid példakártyával: „Latte faasztalon, az ablak mellett, felül a szöveg: Új őszi menü”.
 Jobb panel „Ne így” felirattal, X-szel és egy áthúzott példakártyával: „meleg tónusú, minimalista, pasztell, elegáns betű”. Lent kis lábléc: „brandiseer.hu”.
