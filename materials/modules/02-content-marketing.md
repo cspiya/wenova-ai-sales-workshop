@@ -34,13 +34,13 @@ A modul végére egy hétre való, öt kész, letölthető, márkahű posztod le
 
 ### Bemenet
 
-business-profile.md, sales-strategy.md (a délelőtti modulból), a saját Brandiseer-fiókod a felvett márkáddal.
+A délelőtti 01-es modul fájljai a `Munka/01-DNS/` mappában: `company-dna.md` (Cég-DNS), `voice-profile.md` (hangprofil), `business-profile.md` és `sales-strategy.md`; a saját Brandiseer-fiókod a felvett márkáddal.
 
 <a name="overview-2"></a>
 
 ### Kimenet
 
-campaign-plan.md, öt letöltött posztkép a hét napjaira, posztszövegekkel.
+A `Munka/02-Tartalom/` mappában: `campaign-plan.md`, öt letöltött posztkép a hét napjaira, posztszövegekkel.
 
 <a name="overview-3"></a>
 
@@ -93,7 +93,7 @@ Ellenőrzöd, hogy Claude eléri a Brandiseer-fiókodat és a márkádat, majd e
 
 ### Erre lesz szükséged
 
-Claude Desktop (Cowork) a bekötött Brandiseer connectorral, a felvett márkád, és a délelőtti `business-profile.md`. Ha még nincs felvett márkád, a [lépéseknél](#02-content-marketing.01-brand-brief--steps) megtalálod, hogyan pótold.
+Claude Desktop (Cowork) a bekötött Brandiseer connectorral, a felvett márkád, és a délelőtti Cég-DNS (`Munka/01-DNS/company-dna.md`). Ha még nincs felvett márkád, a [lépéseknél](#02-content-marketing.01-brand-brief--steps) megtalálod, hogyan pótold.
 
 <a name="02-content-marketing.01-brand-brief--explanation"></a>
 
@@ -114,7 +114,7 @@ Melyik márkáddal dolgozol, ha több is van. A próbakép alapján: jól tükr�
 ```text
 Ellenőrizd a Brandiseer-kapcsolatot: listázd a márkáimat (brandiseer_list_brands), és nézd meg a kreditegyenlegemet (brandiseer_check_credits).
 Ha egy márkám van, azzal dolgozunk; ha több, kérdezd meg, melyikkel. Ha nincs márkám, szólj, és ne hozz létre semmit kérdés nélkül.
-Utána készíts egy próbaképet a márkámmal a brandiseer_generate_image eszközzel: egyszerű bemutatkozó poszt, rajta a cégnév és egy rövid mondat arról, mivel foglalkozunk (a business-profile.md alapján).
+Utána készíts egy próbaképet a márkámmal a brandiseer_generate_image eszközzel: egyszerű bemutatkozó poszt, rajta a cégnév és egy rövid mondat arról, mivel foglalkozunk (a Munka/01-DNS/company-dna.md alapján).
 Beállítás: aspectRatio 1:1, mode design, useLogo true, resolution 1K.
 A képpromptba csak tartalmat és elrendezést írj; színt, betűtípust, hangulatot vagy stílust ne. Mutasd meg a képet és a használt promptot.
 ```
@@ -167,7 +167,7 @@ Kérj ugyanarra a tartalomra egy 9:16-os (Story) változatot, és hasonlítsd ö
 
 **Azonosító:** `02-content-marketing.02-create-content` · **Állapot:** review · **Időkeret:** 20 perc · **Végrehajtás:** live
 
-Rövid kérdéssor. Két kép. Két posztszöveg.
+A Cég-DNS-ből dolgozik. Pár kérdés. Két kép, két posztszöveg.
 
 <a name="02-content-marketing.02-create-content--result"></a>
 
@@ -179,13 +179,13 @@ Két publikálásra kész posztot a választott csatornára: mindkettő egy már
 
 ### Erre lesz szükséged
 
-Az előző lecke beszélgetése a kiválasztott márkával, a `business-profile.md` és a `sales-strategy.md`.
+Az előző lecke beszélgetése a kiválasztott márkával, és a `Munka/01-DNS/` mappa: `company-dna.md`, `voice-profile.md`, `sales-strategy.md`.
 
 <a name="02-content-marketing.02-create-content--explanation"></a>
 
 ### Így működik
 
-Claude egy rövid kérdéssorral felveszi a briefet, ahogy egy ügynökség tenné: csatorna, nyelv, téma, felhívás, hangnem, tiltólista. Amit a délelőtti üzleti alaplapból már tud, azt nem kérdezi újra. Ezután két képötletet ad, a jóváhagyásod után legenerálja a képeket design módban, és mindegyikhez csatornára szabott szöveget ír. Ugyanez a folyamat később automatizálható is: a Brandiseer [közösségi média automatizálási útmutatója](https://blog.brandiseer.com/use-cases/social-media-automation) ugyanezt ütemezett, minden héten lefutó feladattá alakítja.
+A briefet nagyrészt már megírtad délelőtt: a Cég-DNS-ben ott a célközönség, az ajánlat, a bizonyíték, a hangnem és az, amit nem mondasz; a hangprofilban a kerülendő kifejezések. Claude ezeket felolvassa, három sorban összefoglalja, és csak azt kérdezi meg, ami hiányzik: a csatornát, és hogy a javasolt témák és felhívás közül melyik legyen. Ahol a DNS-ben „Nincs megadva” áll, ott rákérdez. Ezután két képötletet ad, a jóváhagyásod után legenerálja a képeket design módban, és mindegyikhez csatornára szabott szöveget ír. Ugyanez a folyamat később automatizálható is: a Brandiseer [közösségi média automatizálási útmutatója](https://blog.brandiseer.com/use-cases/social-media-automation) ugyanezt ütemezett, minden héten lefutó feladattá alakítja.
 
 <a name="02-content-marketing.02-create-content--decisions"></a>
 
@@ -200,28 +200,27 @@ A csatorna, a két poszt témája, a felhívás és a hangnem. A két képötlet
 ```text
 Most a márkahű közösségimédia-tartalomkészítőm vagy. A képekhez a Brandiseer connectort használod, az előző lépésben kiválasztott márkámmal.
 
+Először olvasd el a Munka/01-DNS/ mappából: company-dna.md, voice-profile.md, sales-strategy.md.
+Foglald össze három sorban, mit használsz belőlük: kinek szól (ICP), mit ajánlunk és milyen felhívással, milyen hangon, és mit nem mondunk. Amit ott megtalálsz, azt ne kérdezd meg tőlem.
+
+Utána egyenként, csak ezt kérdezd:
+1. Melyik csatornára készüljön a két poszt? (Instagram, Facebook, LinkedIn, X, TikTok)
+2. Javasolj három poszttémát a Cég-DNS ajánlataiból és bizonyítékaiból, mindegyikhez egy felhívással. Válasszak kettőt.
+3. Csak ha a DNS-ben „Nincs megadva” áll a hangnemnél vagy a célközönségnél: kérdezz rá egy mondatban.
+A nyelv magyar, a képen is, hacsak másképp nem kérem.
+
 Szabályok:
-- Magyarul válaszolj. Egyszerre csak egy kérdést tegyél fel, és várd meg a válaszomat.
-- Amit a business-profile.md-ből és a sales-strategy.md-ből már tudsz, azt ne kérdezd újra, csak erősítsd meg egy mondatban.
+- Egyszerre csak egy kérdést tegyél fel, és várd meg a válaszomat.
 - Képgenerálás mindig: mode design, useLogo true, resolution 1K. A fast módot csak akkor használd, ha a design hibát ad, és ilyenkor szólj.
 - A képpromptban csak tartalmat és elrendezést írj le: mi látszik, milyen szöveg kerül a képre és hová, mi kerül a középpontba. Színt, betűtípust, hangulatot vagy stílust soha ne írj bele, ezt a Brandiseer a márkából hozza.
 - Az oldalarányt a csatornához válaszd: Instagram és Facebook poszt 1:1, Story és Reels 9:16, LinkedIn 1:1 vagy 4:3, X 16:9.
+- A posztszöveg a hangprofil szerint szóljon; ár, akció, referencia vagy vállalás csak az lehet, ami a Cég-DNS-ben forrással szerepel.
 - Semmit ne publikálj és ne ütemezz a kifejezett kérésem nélkül.
 
-Kérdezd meg egyenként:
-1. Melyik csatornára készüljön a két poszt? (Instagram, Facebook, LinkedIn, X, TikTok)
-2. Milyen nyelven legyen a posztszöveg?
-3. Milyen nyelven legyen a képen lévő szöveg?
-4. Miről szóljon a két poszt? (termék, szolgáltatás, akció, esemény, tipp, ügyfélsztori)
-5. Mi legyen a felhívás? (pl. foglalj időpontot, kérj ajánlatot, nézd meg a webshopot)
-6. Milyen a márkád hangneme? (pl. közvetlen, szakmai, játékos)
-7. Van olyan szó, téma vagy stílus, amit kerülni kell?
-8. Opcionális: van stratégiai anyagod, referenciaképed vagy jól teljesítő régi posztod? Csatold, vagy hagyd ki.
-
-Ha minden megvan:
-- Írj két rövid képötletet (mi látszik a képen, milyen szöveg kerül rá), és kérd a jóváhagyásomat.
+Ha megvan a két téma:
+- Írj két rövid képötletet (mi látszik a képen, milyen szöveg kerül rá, legfeljebb 6–8 szó), és kérd a jóváhagyásomat.
 - Jóváhagyás után generáld le a két képet a brandiseer_generate_image eszközzel.
-- Mindkét képhez írj csatornára szabott posztszöveget a megadott nyelven és hangnemben, a felhívással a végén.
+- Mindkét képhez írj csatornára szabott posztszöveget, a felhívással a végén.
 - Mutasd meg a két képet a szövegükkel, és kérdezd meg, mit javítsunk. Egy képet legfeljebb kétszer generálj újra.
 ```
 
@@ -230,7 +229,7 @@ Ha minden megvan:
 ### Haladj végig ezeken
 
 1. **0–2 perc:** ugyanabban a beszélgetésben másold be a fenti promptot.
-2. **2–8 perc:** válaszolj a kérdésekre. Egy-két mondat elég; ahol nincs véleményed, írd: „döntsd el te”.
+2. **2–8 perc:** nézd át a három soros összefoglalót: ha valami nem stimmel, javítsd egy mondatban. Válaszd ki a csatornát és a két témát; ahol nincs véleményed, írd: „döntsd el te”.
 3. **8–10 perc:** nézd át a két képötletet. Ha kell, módosíts (pl. „a második képen a termék legyen nagyobb”), majd hagyd jóvá.
 4. **10–14 perc:** várd meg a két képet (képenként 1–1,5 perc). Közben olvasd el a posztszövegeket.
 5. **14–20 perc:** kérj legfeljebb egy-két javítást a képen vagy a szövegben. Ha a kép nem márkahű, nézd meg a promptot: van benne szín vagy stílus?
@@ -249,7 +248,8 @@ Ha minden megvan:
 
 ### Ha elakadtál
 
-- **Nincs ötleted a témára:** írd: „Javasolj három poszttémát a business-profile.md alapján, és válassz egyet.”
+- **Nincs meg a Cég-DNS:** ha a délelőtti `Munka/01-DNS/company-dna.md` hiányzik, mondd meg Claude-nak, hogy a weboldaladból és a válaszaidból dolgozzon, és tegye fel a hiányzó kérdéseket (célközönség, ajánlat, hangnem, kerülendő). Végső esetben a választott minta `company-dna.md` fájlja a [mentőútvonal](#recovery) szerint.
+- **Nincs ötleted a témára:** írd: „döntsd el te”, és Claude a DNS fő ajánlatából választ.
 - **A kép szövege hibás vagy elírt:** kérd Claude-ot, hogy a képre kerülő szöveget rövidebbre írja (legfeljebb 6–8 szó), és generálja újra.
 - **A generálás hibát ad:** Claude egyszer próbálja újra; ha a design továbbra sem megy, a fast mód tartalék. Ha az sem, folytasd a mentorral.
 - **Öt perc után sincs kép:** használd a [mentőútvonalat](#recovery), és a szövegeket a minta képötleteivel készítsd el.
@@ -280,7 +280,7 @@ Kérj az egyik poszthoz egy másik csatornára szabott változatot (más oldalar
 
 ### Ezt készíted el
 
-A két meglévő poszt mellé még három márkahű posztot, így egy teljes hétre (hétfőtől péntekig) meglesz a tartalmad. Mind az öt képet letöltöd a munkacsomagodba, és elkészíted a `campaign-plan.md` fájlt a heti beosztással, amelyből a délutáni ügyfélszerzési modul dolgozik.
+A két meglévő poszt mellé még három márkahű posztot, így egy teljes hétre (hétfőtől péntekig) meglesz a tartalmad. Mind az öt képet letöltöd a `Munka/02-Tartalom/` mappába, és elkészíted a `campaign-plan.md` fájlt a heti beosztással, amelyből a délutáni ügyfélszerzési modul dolgozik.
 
 <a name="02-content-marketing.03-prepare-publishing--needs"></a>
 
@@ -317,8 +317,8 @@ Végül add meg mind az öt kép linkjét naponként, egy listában.
 **2. Kampányterv:**
 
 ```text
-Készítsd el a campaign-plan.md tartalmát ebben a szerkezetben: offer_id (a business-profile.md-ből, ha van), audience, posts (az öt poszt: nap, téma, szöveg), image_urls (az öt kép linkje naponként), channel, call_to_action.
-Csak azt írd bele, amit ma jóváhagytam. Add meg letölthető fájlként, vagy ha tudod, mentsd a munkacsomagom outputs mappájába.
+Készítsd el a campaign-plan.md tartalmát ebben a szerkezetben: offer_id (a Munka/01-DNS/sales-strategy.md-ből), audience, posts (az öt poszt: nap, téma, szöveg), image_urls (az öt kép linkje naponként), channel, call_to_action.
+Csak azt írd bele, amit ma jóváhagytam. Mentsd Munka/02-Tartalom/campaign-plan.md néven.
 ```
 
 **3. Bónusz – Buffer-piszkozat (csak ha bekötötted a Buffert):**
@@ -333,7 +333,7 @@ Előtte írd le, melyik csatornára mi kerül, és várd meg az igenemet.
 ### Haladj végig ezeken
 
 1. **0–3 perc:** másold be az első promptot, nézd át a heti táblázatot, módosíts, ha kell, majd hagyd jóvá.
-2. **3–9 perc:** amíg a három kép készül (képenként 1–1,5 perc), töltsd le az előző lecke két képét (a linkre kattintva vagy jobb klikk → mentés) a munkacsomagod `outputs` mappájába.
+2. **3–9 perc:** amíg a három kép készül (képenként 1–1,5 perc), töltsd le az előző lecke két képét (a linkre kattintva vagy jobb klikk → mentés) a `Munka/02-Tartalom/` mappába.
 3. **9–12 perc:** nézd meg az új képeket egymás mellett: egy márkának látszik az öt poszt? Kérj legfeljebb egy javítást, majd töltsd le mindet.
 4. **12–17 perc:** másold be a kampánytervhez tartozó promptot, és mentsd a `campaign-plan.md` fájlt.
 5. **17–20 perc, bónusz:** ha bekötötted a Buffert, futtasd a harmadik promptot, és ellenőrizd a Bufferben a piszkozatokat.
