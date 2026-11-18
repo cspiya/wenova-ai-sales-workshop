@@ -280,3 +280,8 @@ ol.flow > li:not(:last-child)::after { content:"→" / ""; position:absolute; ri
 .day-strip__item a { color:var(--ink); text-decoration:none; }
 .day-strip__item a:hover { color:var(--link); text-decoration:underline; }
 .day-strip__item .logo-tile { margin-top:auto; }
+
+/* Szótörés: a szavak egészben maradnak, csak elválasztással törünk (hu); a logófelirat nem törik */
+h1, h2, h3, h4, .day-strip__item a, .tl-title, .day-strip__item { overflow-wrap:normal; word-break:normal; hyphens:auto; }
+.logo-word, .logo-tile { white-space:nowrap; }
+.day-strip__item .logo-tile { max-width:100%; }
