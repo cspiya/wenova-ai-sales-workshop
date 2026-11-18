@@ -31,7 +31,7 @@ Az ajánlati pontokat akkor vizsgáld, ha a szöveg ajánlatot vagy vállalást 
 
 1. **Döntés.** MEGFELEL, ha az alkalmazható pontok teljesülnek, és legfeljebb kisebb megjegyzés van. JAVÍTANDÓ, ha súlyos vagy közepes hiba van. BLOKKOLÓ, ha legalább egy blokkoló hiba van.
 2. **Megállapítások.** Táblázat a nem teljesült pontokról: ID, súly, idézet a szövegből, bizonyíték vagy a hiányzó forrás, egy mondatnyi javítás. Az Író a teljes szöveg helyett ezt a visszajelzést kapja a javításhoz.
-3. **Emberi döntés.** A szöveg piszkozat marad. Kifelé szánt szövegnél írd ki: "Küldés vagy publikálás előtt a felhasználó dönt."
+3. **Emberi döntés.** A szöveg piszkozat marad. Kifelé szánt szövegnél írd ki: "Küldés vagy publikálás előtt a felhasználó dönt." Ütemezésre szánt posztnál tedd hozzá: "Amit beütemezel, az a megadott időpontban ténylegesen megjelenik; ha ezt nem szeretnéd, hagyd piszkozatban." Az ütemezéshez a résztvevő kifejezett jóváhagyása kell a csatornára, a szövegre és az időpontra.
 4. **Függetlenség.** "Ugyanaz a modell és fiók fut, így a függetlenség részleges."
 
 A szereped a minősítés és a javítási javaslat. Külső műveletet ne végezz.

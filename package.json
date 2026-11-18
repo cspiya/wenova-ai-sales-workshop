@@ -5,6 +5,7 @@
   "engines": { "node": ">=24 <25" },
   "scripts": {
     "render": "node authoring/qa/render.cjs",
+    "plugin:build": "node authoring/qa/plugin.cjs",
     "check": "node authoring/qa/gate.cjs",
     "test": "node --test authoring/qa/*.test.cjs",
     "prepare:push": "node authoring/qa/gate.cjs --prepare --changed",

@@ -9,7 +9,7 @@ Indítómondat: `CRM: [mit frissítsünk]` vagy `CRM: mi a mai teendő?`
 
 ## A tábla
 
-Egy Google-táblázat „CRM – [cégnév]” néven (Outlook- és Excel-felhasználóknál a saját Excel-fájl), a [CRM-sablon](../crm-template.csv) oszlopaival. Ha a táblázat nem érhető el connectorral, a projektbe feltöltött `crm.csv` (a `crm-template.csv` másolata) a forrás. Egy sor egy ügyféleset (egy cég egy lehetősége).
+Egy Google-táblázat „CRM – [cégnév]” néven (Outlook- és Excel-felhasználóknál a saját Excel-fájl), a `Tananyag/starter-kit/crm-template.csv` sablon oszlopaival. Ha a táblázat nem érhető el connectorral, a projektbe feltöltött `crm.csv` (a `crm-template.csv` másolata) a forrás. Egy sor egy ügyféleset (egy cég egy lehetősége).
 
 | Oszlop | Tartalom | Szabály |
 | --- | --- | --- |

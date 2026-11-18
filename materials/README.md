@@ -86,19 +86,19 @@ Minden partnerblokk felépítése: rövid bevezető, vezetett gyakorlat a saját
 
 ### A nap eszköze: Claude Desktop, Cowork mód
 
-Egész nap egyetlen Cowork-projektben dolgozol, a gépeden lévő `Wenova-AI-Sales-Workshop` munkamappában: a `Tananyag/` a workshop anyaga, a `Munka/` a te eredményeid. A Claude a mappa [AGENTS.md](AGENTS.md) fájlja szerint dolgozik; a Cég-DNS, a hangprofil és az öt agent (Karmester, Író, Ellenőr, Postás, CRM) innen dolgozik. Vizuális eredményeket (kampányváz, posztelőnézet, a nap összefoglalója) HTML-fájlként kapsz, a böngészőben nyitod meg. A levelezőt, a Google-táblázatot és a három partnerrendszert connectorral (engedélyezett kapcsolattal) éred el a Claude-ból. Ahol egy kapcsolat nem működik, mintafájllal vagy kézi lépéssel folytatod, és ezt jelöljük.
+Egész nap egyetlen Cowork-projektben dolgozol, a gépeden lévő `Wenova-AI-Sales-Workshop` munkamappában: a `Tananyag/` a workshop anyaga, a `Munka/` a te eredményeid. A Claude a mappa [AGENTS.md](AGENTS.md) fájlja szerint dolgozik; a Cég-DNS, a hangprofil és a nyolc agent (Karmester, Író, Ellenőr, CEO, Marketing, Sales, Postás, CRM) innen dolgozik. Vizuális eredményeket (kampányváz, posztelőnézet, a nap összefoglalója) HTML-fájlként kapsz, a böngészőben nyitod meg. A levelezőt, a Google-táblázatot és a három partnerrendszert connectorral (engedélyezett kapcsolattal) éred el a Claude-ból. Ahol egy kapcsolat nem működik, mintafájllal vagy kézi lépéssel folytatod, és ezt jelöljük.
 
 <a name="agenda-7"></a>
 
 ### Elakadás esetén is folytatható
 
-A személyes LinkedIn bekötése nem feltétel: a Sales Bot-gyakorlat ma sandboxban (gyakorló környezetben) fut. Minden modulhoz mentőcsomag tartozik a kitalált IrodaLiget-mintán; a saját munka megtartása mellett abból folytatható a következő lépés. Kifelé semmi nem megy ki: levél, üzenet, poszt és ajánlat piszkozat marad.
+A személyes LinkedIn bekötése nem feltétel: a Sales Bot-gyakorlat ma sandboxban (gyakorló környezetben) fut. Minden modulhoz mentőcsomag tartozik a kitalált IrodaLiget-mintán; a saját munka megtartása mellett abból folytatható a következő lépés. Kifelé semmi nem megy ki a jóváhagyásod nélkül: levél, üzenet és ajánlat piszkozat marad. Posztot a Claude csak akkor ütemezhet, ha kifejezetten jóváhagytad a csatornát, a szöveget és az időpontot; ami be van ütemezve, az ténylegesen megjelenik, ezért ha ezt nem szeretnéd, hagyd piszkozatban.
 
 <a name="agenda-8"></a>
 
 ### Hazavihető eredmény
 
-Claude-projekt a saját Cég-DNS-eddel és hangprofiloddal; öt agent; kampányanyagok; minősített leadek és üzenetsor; ajánlattervezet; CRM-tábla heti méréssel; egy végigvitt ügyféleset; holnapi indulási terv és heti rutin.
+Claude-projekt a saját Cég-DNS-eddel és hangprofiloddal; nyolc agent; kampányanyagok; minősített leadek és üzenetsor; ajánlattervezet; CRM-tábla heti méréssel; egy végigvitt ügyféleset; holnapi indulási terv és heti rutin.
 
 **Szervező: Wenova · Szakmai partnerek: Brandiseer, Blackhole Media, EstiWise.**
 

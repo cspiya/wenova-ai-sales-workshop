@@ -8,7 +8,7 @@ Ezekből a fájlokból építed fel a saját AI-csapatodat a Claude-ban. Másold
 | [company-dna.md](company-dna.md) | Cég-DNS sablon: kinek, mit, milyen hangon adsz el | 1. blokk |
 | [voice-profile.md](voice-profile.md) | Hangprofil sablon a küldött leveleidből | 1. blokk |
 | [voice-checklist.md](voice-checklist.md) | Hangkinyerési ellenőrzőlista | 1. blokk |
-| [agents/](agents/README.md) | Öt agent: Karmester, Író, Ellenőr, Postás, CRM | 1. és 5. blokk |
+| [agents/](agents/README.md) | Nyolc agent: Karmester, Író, Ellenőr, CEO, Marketing, Sales, Postás, CRM | 1. és 5. blokk |
 | [crm-template.csv](crm-template.csv) | A CRM-tábla oszlopai, Google-táblázatba importálható | Felkészülés, 5. blokk |
 | [metrics-template.csv](metrics-template.csv) | A CRM-táblázat „Heti mérés” lapja: mérőszámok szakaszonként | 5. blokk |
 | [weekly-review.md](weekly-review.md) | Heti mérés, Karmester-prompt a heti jelentéshez, visszacsatolás | 5. blokk, utána hetente |
@@ -20,6 +20,6 @@ Ezekből a fájlokból építed fel a saját AI-csapatodat a Claude-ban. Másold
 
 ## Mi kerül a Claude-projektbe?
 
-Alapút: a Claude Desktop Cowork a telepített `Tananyag/` mappából olvassa ezeket a fájlokat, és az eredményeidet a `Munka/` mappába menti; feltölteni semmit nem kell ([telepítés](../TELEPITES.md)). Tartalékút (claude.ai-projekt a böngészőben): a projekt tudásába töltsd fel az `assistant.md`, `AGENTS.md`, a modulok Markdown-fájljait, a fenti sablonokat és az öt agentfájlt, a projektutasítás mezőjébe pedig a `project-instructions.md` keretes szövegét. A pontos lépéseket a [felkészülési modul](../modules/00-prework.md) adja.
+Alapút: a Claude Desktop Cowork a telepített `Tananyag/` mappából olvassa ezeket a fájlokat, és az eredményeidet a `Munka/` mappába menti; feltölteni semmit nem kell ([telepítés](../TELEPITES.md)). Tartalékút (claude.ai-projekt a böngészőben): a projekt tudásába töltsd fel az `assistant.md`, `AGENTS.md`, a modulok Markdown-fájljait, a fenti sablonokat és a nyolc agentfájlt, a projektutasítás mezőjébe pedig a `project-instructions.md` keretes szövegét. A pontos lépéseket a [felkészülési modul](../modules/00-prework.md) adja.
 
 A kitöltött DNS, hangprofil és CRM a te üzleti adatod. Csak a saját Claude-fiókodban és a saját táblázatodban tárold.

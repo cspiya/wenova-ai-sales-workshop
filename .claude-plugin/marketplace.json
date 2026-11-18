@@ -1,0 +1,12 @@
+{
+  "name": "wenova-workshop",
+  "description": "Wenova AI Sales & Marketing Workshop",
+  "owner": { "name": "Wenova" },
+  "plugins": [
+    {
+      "name": "wenova-sales-workshop",
+      "source": "./materials/plugin/wenova-sales-workshop",
+      "description": "Karmester, Író, Ellenőr, CEO, Marketing és Sales szerep a workshop blokkjaihoz"
+    }
+  ]
+}
