@@ -63,7 +63,21 @@ A workshop előtt kb. 50 perc a [felkészülési modul](modules/00-prework.md) s
 
 ### Napi program
 
+<<<<<<< HEAD
 A pontos idővonal, előadók és blokkonkénti eredmények: **[A nap menete](schedule.md)**.
+=======
+| Időpont | Téma és partner | Elkészülő eredmény |
+| --- | --- | --- |
+| 09:00–09:15 | Közös nyitás — mind a négy csapat | Saját alaplap és tanulási út megnyitása |
+| 09:15–10:45 | Üzleti alapok és AI-működés — Wenova | Ajánlat, célcsoport, stratégia, AI-munkautasítás és tesztművelet |
+| 10:45–11:00 | Szünet |  |
+| 11:00–12:30 | Márkaazonos kampány — Brandiseer | Márkabrief, két poszt, kép, rövid videó terve, publikálási terv |
+| 12:30–13:15 | Ebéd és szakmai beszélgetések |  |
+| 13:15–14:45 | Ügyfélszerzés és leadkezelés — Blackhole Media | AI brain, öt minősített lead, kampány a Sales Botban, feldolgozott ügyfélválasz |
+| 14:45–15:00 | Szünet |  |
+| 15:00–16:30 | Ajánlatadás és belső átadás — EstiWise, Wenova közreműködésével | Igényfelmérés, ellenőrzött ajánlat, belső átadás |
+| 16:30–17:00 | Közös folyamatpróba — minden partner | Egy végigkövetett ügyféleset, működési állapotlap és másnapi terv |
+>>>>>>> origin/main
 
 | Időpont | Blokk | Gazda |
 | --- | --- | --- |
