@@ -1,62 +1,287 @@
-/* Közös tananyagstílus. Minden HTML ugyanide hivatkozik. */
-:root { color-scheme: light; --ink:#202d3d; --muted:#556478; --accent:#2458a6; --paper:#fff; --canvas:#f3f5f7; --line:#dbe2ea; }
-* { box-sizing:border-box; }
-html { scroll-padding-top:2rem; }
-body { margin:0; color:var(--ink); background:var(--canvas); font:17px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif; overflow-wrap:anywhere; }
-a { color:var(--accent); text-underline-offset:.2em; }
-a:hover { text-decoration-thickness:2px; }
-:focus-visible { outline:3px solid #b45309; outline-offset:4px; }
-.skip { position:absolute; left:1rem; top:-6rem; background:white; padding:.5rem; }
-.skip:focus { top:1rem; z-index:2; }
-.topbar { border-bottom:1px solid var(--line); background:var(--paper); padding:1rem max(1rem,calc((100vw - 1200px)/2)); display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap; font-size:.85rem; }
-.brand { font-size:1.15rem; font-weight:800; letter-spacing:.03em; }
-.layout { max-width:1200px; margin:auto; display:grid; grid-template-columns:235px minmax(0,1fr); gap:3rem; padding:2.5rem 1.5rem; }
-.toc { align-self:start; position:sticky; top:2rem; font-size:.84rem; }
-.toc p { text-transform:uppercase; letter-spacing:.12em; font-size:.72rem; font-weight:750; color:var(--muted); }
-.toc ol { padding-left:1.3rem; }
-.toc li { margin:.6rem 0; padding-left:.25rem; }
-.toc a { color:var(--muted); text-decoration:none; }
-.toc a:hover { color:var(--accent); text-decoration:underline; }
-main { min-width:0; background:var(--paper); border:1px solid var(--line); border-radius:8px; padding:clamp(1.2rem,4vw,3.5rem); }
-.eyebrow { color:var(--accent); text-transform:uppercase; letter-spacing:.12em; font-size:.75rem; font-weight:750; }
-h1 { font-size:clamp(2rem,4vw,3.1rem); line-height:1.15; letter-spacing:-.035em; margin:.6rem 0 1rem; }
-h2 { font-size:1.35rem; line-height:1.3; letter-spacing:-.02em; }
-.lead { color:var(--muted); font-size:1.1rem; }
-.meta { display:flex; flex-wrap:wrap; gap:.5rem; margin:1.3rem 0 2rem; font-size:.8rem; }
-.meta span { border:1px solid var(--line); border-radius:4px; padding:.2rem .6rem; }
-section { margin:2.4rem 0; scroll-margin-top:2rem; }
-.cell { padding:1.2rem 1.4rem; border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:4px; background:#f6f9ff; }
-.cell h2 { margin-top:0; }
-.cell > :last-child { margin-bottom:0; }
-.exercise { border-left-color:#8b5a1b; background:#fffbf2; }
-.check { border-left-color:#297052; background:#f3faf6; }
-.help { border-left-color:#75618c; background:#f8f5fb; }
-pre { font: .9rem/1.7 ui-monospace,Consolas,monospace; white-space:pre-wrap; overflow-wrap:anywhere; background:white; border:1px solid var(--line); padding:1rem; border-radius:4px; }
-code { font-size:.9em; }
-li { margin:.35rem 0; }
-.page-nav { display:flex; justify-content:space-between; flex-wrap:wrap; gap:1rem; padding-top:1.5rem; border-top:1px solid var(--line); font-size:.9rem; }
-.footer { color:var(--muted); font-size:.75rem; margin-top:2rem; }
-@media(max-width:850px) { .layout { grid-template-columns:1fr; gap:1rem; padding:1rem; } .toc { position:static; } .toc ol { columns:2; } }
-@media(max-width:480px) { body { font-size:16px; } .toc ol { columns:1; } .cell { padding:1rem; } }
-@media print { body { background:white; font-size:11pt; } .topbar,.toc,.skip,.page-nav { display:none; } .layout { display:block; padding:0; max-width:none; } main { border:0; padding:0; } h1 { font-size:25pt; } h2 { break-after:avoid; } pre { white-space:pre-wrap; } .cell { box-shadow:none; } a { color:inherit; } }
+/* AI Sales & Marketing Workshop – közös tananyagstílus (Wenova design, v2 · 2026-11-18).
+   Minden generált HTML ide hivatkozik. Offline: helyi betűk, külső erőforrás nincs, JavaScript nincs.
+   Szerkezet: 1 tokenek · 2 alap · 3 fejléc és partnersáv · 4 elrendezés · 5 oldalfej és blokksáv
+   6 lépéskártyák · 7 tipográfia, táblázat · 8 a nap menete · 9 lábléc · 10 reszponzív · 11 nyomtatás */
 
-/* Shared handbook and module layout. */
-h3 { font-size:1.1rem; line-height:1.4; margin:1.7rem 0 .7rem; }
+/* ============================== 1. TOKENEK ============================== */
+@font-face { font-family:'Geist'; font-style:normal; font-weight:400 700; font-display:swap; src:url(fonts/geist-latin-ext.woff2) format('woff2'); unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family:'Geist'; font-style:normal; font-weight:400 700; font-display:swap; src:url(fonts/geist-latin.woff2) format('woff2'); unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family:'Fraunces'; font-style:italic; font-weight:400; font-display:swap; src:url(fonts/fraunces-latin-ext.woff2) format('woff2'); unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family:'Fraunces'; font-style:italic; font-weight:400; font-display:swap; src:url(fonts/fraunces-latin.woff2) format('woff2'); unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family:'JetBrains Mono'; font-style:normal; font-weight:500; font-display:swap; src:url(fonts/jetbrains-mono-latin-ext.woff2) format('woff2'); unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family:'JetBrains Mono'; font-style:normal; font-weight:500; font-display:swap; src:url(fonts/jetbrains-mono-latin.woff2) format('woff2'); unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+
+:root {
+  color-scheme: light;
+  /* Wenova márka: éjkék alap, narancs kiemelés, kék–lila átmenet */
+  --navy:#07081a; --navy-2:#0e1030; --navy-3:#1b1f4a; --on-navy:#eef1fa; --on-navy-2:#b4bcd6;
+  --orange:#ff7a2f; --orange-deep:#b3460c; --orange-soft:#fff3eb;
+  --grad:linear-gradient(90deg,#4f8cf7,#8b5cf6);
+  --ink:#14162e; --ink-2:#3c4163; --muted:#5a6080; --paper:#fff; --canvas:#f4f5fa; --line:#e1e3ef; --line-2:#c9cde0;
+  --link:#4338ca; --link-hover:#312e81; --focus:#ff7a2f;
+  /* partnerszínek (csak kiemelő csíkokhoz; a logókat nem színezzük át) */
+  --p-wenova:#ff7a2f; --p-brandiseer:#1757ff; --p-blackhole:#27272a; --p-estiwise:#0d84fc;
+  /* lépéskártya-színek: alap · háttér */
+  --k-goal:#c2410c; --k-goal-bg:#fff4ec;
+  --k-input:#55607a; --k-input-bg:#f6f7fb;
+  --k-how:#5146e0; --k-how-bg:#f3f3ff;
+  --k-decide:#a14a06; --k-decide-bg:#fffaeb;
+  --k-prompt:#4338ca; --k-prompt-bg:#eef0ff;
+  --k-steps:#1d4ed8; --k-steps-bg:#eff5ff;
+  --k-check:#15803d; --k-check-bg:#effbf3;
+  --k-help:#a21caf; --k-help-bg:#fcf2fe;
+  --k-output:#0f766e; --k-output-bg:#ecfbf8;
+  --k-extra:#55607a; --k-extra-bg:#fff;
+  --k-info:#475569; --k-info-bg:#f6f7fb;
+  --sans:'Geist',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --serif:'Fraunces',Georgia,serif;
+  --mono:'JetBrains Mono',ui-monospace,Consolas,Menlo,monospace;
+  --r:12px; --r-lg:18px; --shadow:0 1px 2px rgba(7,8,26,.05),0 8px 28px rgba(7,8,26,.06);
+  --wrap:1240px;
+}
+
+/* ============================== 2. ALAP ============================== */
+* { box-sizing:border-box; }
+html { scroll-padding-top:1.5rem; -webkit-text-size-adjust:100%; }
+body { margin:0; color:var(--ink); background:var(--canvas); font:17px/1.7 var(--sans); overflow-wrap:anywhere; }
+img { max-width:100%; }
+a { color:var(--link); text-underline-offset:.2em; text-decoration-thickness:1px; }
+a:hover { color:var(--link-hover); text-decoration-thickness:2px; }
+:focus-visible { outline:3px solid var(--focus); outline-offset:3px; border-radius:4px; }
+.skip { position:absolute; left:1rem; top:-6rem; background:#fff; color:var(--ink); padding:.5rem .8rem; border-radius:6px; z-index:5; }
+.skip:focus { top:1rem; }
+strong { font-weight:650; }
+
+/* ============================== 3. FEJLÉC ÉS PARTNERSÁV ============================== */
+.site-head, .site-foot { background:var(--navy); color:var(--on-navy); background-image:radial-gradient(60rem 18rem at 0% 0%,rgba(79,140,247,.16),transparent 60%),radial-gradient(50rem 16rem at 100% 0%,rgba(255,122,47,.12),transparent 60%); }
+.site-head__bar { max-width:var(--wrap); margin:auto; padding:.9rem 1.5rem; display:flex; align-items:center; justify-content:space-between; gap:.6rem 1.5rem; flex-wrap:wrap; }
+.site-head__brand { display:inline-flex; align-items:center; gap:.9rem; color:var(--on-navy); text-decoration:none; font-weight:650; font-size:.95rem; letter-spacing:.01em; }
+.site-head__brand img { height:18px; width:auto; display:block; }
+.site-head__brand span { padding-left:.9rem; border-left:1px solid rgba(255,255,255,.22); }
+.site-head__brand:hover { color:#fff; }
+.site-head__nav { display:flex; flex-wrap:wrap; gap:.3rem; font-size:.86rem; }
+.site-head__nav a { color:var(--on-navy-2); text-decoration:none; padding:.3rem .7rem; border-radius:999px; border:1px solid transparent; }
+.site-head__nav a:hover { color:#fff; border-color:rgba(255,255,255,.25); }
+.site-head__nav a.is-cta { color:var(--navy); background:var(--orange); font-weight:650; }
+.site-head__nav a.is-cta:hover { background:#ff9150; }
+
+.partner-band { max-width:var(--wrap); margin:auto; padding:.2rem 1.5rem 1rem; }
+.partner-band__label { margin:0 0 .5rem; font:500 .68rem/1.4 var(--mono); letter-spacing:.14em; text-transform:uppercase; color:var(--on-navy-2); }
+.partner-band__list { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:.6rem; }
+.partner { margin:0; padding:.65rem .8rem .55rem; border:1px solid rgba(255,255,255,.1); border-radius:10px; background:rgba(255,255,255,.03); display:flex; flex-direction:column; gap:.35rem; min-width:0; }
+.partner__logo { display:flex; align-items:center; min-height:28px; gap:.45rem; }
+.partner__role { font-size:.74rem; line-height:1.35; color:var(--on-navy-2); }
+.partner__lead { color:var(--orange); font-weight:650; text-transform:uppercase; letter-spacing:.08em; font-size:.68rem; }
+.partner.is-lead { border-color:var(--orange); background:rgba(255,122,47,.1); box-shadow:inset 0 3px 0 var(--orange); }
+.partner-band.has-lead .partner:not(.is-lead) { opacity:.72; }
+
+/* logók: arányos magasság, nincs átszínezés; a világos szövegű logók mindig sötét alapon állnak */
+.logo { display:block; width:auto; height:22px; max-width:100%; object-fit:contain; }
+.logo--wenova { height:17px; }
+.logo--blackhole { height:15px; }
+.logo--estiwise { height:24px; }
+.logo--brandiseer { height:26px; }
+.logo-word { font-weight:700; font-size:1.05rem; letter-spacing:-.01em; color:#fff; line-height:1; }
+.logo-tile { display:inline-flex; align-items:center; gap:.4rem; background:var(--navy); border-radius:9px; padding:.45rem .7rem; flex:none; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+.logo-tile .logo { height:18px; }
+.logo-tile .logo--wenova { height:13px; }
+.logo-tile .logo--blackhole { height:11px; }
+.logo-tile .logo--estiwise { height:19px; }
+.logo-tile .logo--brandiseer { height:21px; }
+.logo-tile .logo-word { font-size:.9rem; }
+
+/* ============================== 4. ELRENDEZÉS ============================== */
+.layout { max-width:var(--wrap); margin:auto; display:grid; grid-template-columns:240px minmax(0,1fr); gap:2.5rem; padding:2.2rem 1.5rem 3rem; }
+.toc { align-self:start; position:sticky; top:1.5rem; font-size:.85rem; max-height:calc(100vh - 3rem); overflow:auto; }
+.toc p { margin:0 0 .6rem; font:500 .68rem/1.4 var(--mono); letter-spacing:.14em; text-transform:uppercase; color:var(--muted); }
+.toc ol { margin:0; padding:0; list-style:none; border-left:2px solid var(--line); }
+.toc li { margin:0; }
+.toc a { display:block; padding:.38rem .3rem .38rem .9rem; margin-left:-2px; border-left:2px solid transparent; color:var(--ink-2); text-decoration:none; line-height:1.4; }
+.toc a:hover { color:var(--link); border-left-color:var(--orange); background:linear-gradient(90deg,var(--orange-soft),transparent); }
+main { min-width:0; background:var(--paper); border:1px solid var(--line); border-radius:var(--r-lg); padding:clamp(1.2rem,4vw,3.2rem); box-shadow:var(--shadow); }
+main > :first-child { margin-top:0; }
+
+/* ============================== 5. OLDALFEJ ÉS BLOKKSÁV ============================== */
+.page-hero { margin:0 0 2.2rem; padding-bottom:1.6rem; border-bottom:1px solid var(--line); }
+.page-hero::before { content:""; display:block; width:3.2rem; height:4px; border-radius:4px; background:var(--grad); margin-bottom:1.1rem; }
+.lead--wenova .page-hero::before { background:linear-gradient(90deg,var(--orange),#8b5cf6); }
+.lead--brandiseer .page-hero::before { background:var(--p-brandiseer); }
+.lead--blackhole .page-hero::before { background:var(--p-blackhole); }
+.lead--estiwise .page-hero::before { background:var(--p-estiwise); }
+h1 { font-size:clamp(2rem,4.2vw,3.1rem); line-height:1.1; letter-spacing:-.035em; font-weight:700; margin:0 0 1rem; text-wrap:balance; }
+.page-hero .state { display:inline-block; margin:0 .5rem .6rem 0; padding:.15rem .7rem; border-radius:999px; background:var(--k-decide-bg); border:1px solid #f3d9a4; color:#7c3a06; font-size:.8rem; }
+.page-hero .state strong { font-weight:600; }
+.page-hero .kicker { margin:.2rem 0 .5rem; font:500 .78rem/1.5 var(--mono); letter-spacing:.08em; text-transform:uppercase; color:var(--orange-deep); }
+.page-hero .lead { margin:.4rem 0 0; font-size:1.15rem; line-height:1.6; color:var(--ink-2); max-width:62ch; }
+.page-hero .hero-links { margin:.2rem 0 .6rem; font-size:.9rem; }
+.hero-actions { display:flex; flex-wrap:wrap; gap:.7rem; margin:1.5rem 0 0; }
+.btn { display:inline-flex; align-items:center; gap:.4rem; padding:.62rem 1.15rem; border-radius:999px; border:1.5px solid var(--navy); color:var(--navy); font-weight:650; text-decoration:none; font-size:.95rem; }
+.btn:hover { background:var(--navy); color:#fff; }
+.btn--primary { background:var(--orange); border-color:var(--orange); color:var(--navy); box-shadow:0 6px 18px rgba(255,122,47,.28); }
+.btn--primary:hover { background:#ff9150; border-color:#ff9150; color:var(--navy); }
+
+.block-banner { margin:1.4rem 0 0; padding:1rem 1.2rem; border:1px solid var(--line); border-left:5px solid var(--p, var(--orange)); border-radius:var(--r); background:linear-gradient(180deg,#fbfbfe,#f6f7fc); display:grid; gap:.55rem; }
+.block-banner p { margin:0; }
+.block-banner--wenova { --p:var(--p-wenova); } .block-banner--brandiseer { --p:var(--p-brandiseer); }
+.block-banner--blackhole { --p:var(--p-blackhole); } .block-banner--estiwise { --p:var(--p-estiwise); }
+.block-banner__when { display:flex; flex-wrap:wrap; align-items:center; gap:.3rem .7rem; font-weight:650; }
+.block-banner__lead { display:flex; flex-wrap:wrap; align-items:center; gap:.5rem .8rem; font-size:.95rem; }
+.block-banner__builds { font-size:.95rem; color:var(--ink-2); }
+.block-banner__label, .slot__label { display:inline-block; margin-right:.35rem; font:500 .68rem/1.4 var(--mono); letter-spacing:.1em; text-transform:uppercase; color:var(--muted); }
+.chip { display:inline-block; padding:.12rem .6rem; border-radius:999px; font:500 .8rem/1.5 var(--mono); white-space:nowrap; }
+.chip--time { background:var(--navy); color:#fff; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+
+/* ============================== 6. LÉPÉSKÁRTYÁK ============================== */
+main[data-module-id] { counter-reset:lesson; }
+.lesson-heading { counter-increment:lesson; margin:3.2rem 0 1.2rem; padding-top:1.6rem; border-top:1px solid var(--line); font-size:clamp(1.45rem,2.6vw,1.9rem); line-height:1.2; letter-spacing:-.025em; }
+.lesson-heading::before { content:"Lecke " counter(lesson); display:block; margin-bottom:.4rem; font:500 .74rem/1.4 var(--mono); letter-spacing:.14em; text-transform:uppercase; color:var(--orange-deep); }
+.cell { --k:var(--k-info); --kb:var(--k-info-bg); margin:1.1rem 0; padding:1rem 1.25rem 1.05rem; border:1px solid color-mix(in srgb,var(--k) 22%,#fff); border-left:5px solid var(--k); border-radius:var(--r); background:var(--kb); }
+.cell > :last-child { margin-bottom:0; }
+.cell .cell-title { display:flex; align-items:center; gap:.6rem; margin:0 0 .55rem; font-size:1.02rem; letter-spacing:0; line-height:1.35; color:var(--k); }
+.cell-title::before { content:"•" / ""; flex:none; display:inline-grid; place-items:center; width:1.65rem; height:1.65rem; border-radius:50%; background:var(--k); color:#fff; font:700 .85rem/1 var(--sans); -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+.cell--goal { --k:var(--k-goal); --kb:var(--k-goal-bg); }       .cell--goal .cell-title::before { content:"★" / ""; }
+.cell--input { --k:var(--k-input); --kb:var(--k-input-bg); }    .cell--input .cell-title::before { content:"↓" / ""; }
+.cell--how { --k:var(--k-how); --kb:var(--k-how-bg); }          .cell--how .cell-title::before { content:"i" / ""; font-family:var(--serif); font-style:italic; }
+.cell--decide { --k:var(--k-decide); --kb:var(--k-decide-bg); } .cell--decide .cell-title::before { content:"!" / ""; }
+.cell--prompt { --k:var(--k-prompt); --kb:var(--k-prompt-bg); } .cell--prompt .cell-title::before { content:"›" / ""; font-size:1.1rem; }
+.cell--steps { --k:var(--k-steps); --kb:var(--k-steps-bg); }    .cell--steps .cell-title::before { content:"≡" / ""; }
+.cell--check { --k:var(--k-check); --kb:var(--k-check-bg); }    .cell--check .cell-title::before { content:"✓" / ""; }
+.cell--help { --k:var(--k-help); --kb:var(--k-help-bg); }       .cell--help .cell-title::before { content:"?" / ""; }
+.cell--output { --k:var(--k-output); --kb:var(--k-output-bg); } .cell--output .cell-title::before { content:"→" / ""; }
+.cell--extra { --k:var(--k-extra); --kb:var(--k-extra-bg); border-style:dashed; border-left-style:solid; } .cell--extra .cell-title::before { content:"+" / ""; }
+.cell--info .cell-title::before { content:"i" / ""; font-family:var(--serif); font-style:italic; }
+
+/* prompt: sötét, másolható blokk */
+.cell--prompt pre { background:var(--navy-2); color:#e6e8ff; border:0; border-radius:10px; padding:1.1rem 1.2rem; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+.cell--prompt pre code { color:inherit; background:none; border:0; padding:0; }
+/* lépések: számozott körök, időcímke */
+.cell--steps ol { list-style:none; counter-reset:step; padding-left:0; }
+.cell--steps ol > li { counter-increment:step; position:relative; padding-left:2.4rem; margin:.55rem 0; }
+.cell--steps ol > li::before { content:counter(step); position:absolute; left:0; top:.1rem; width:1.6rem; height:1.6rem; border-radius:50%; display:grid; place-items:center; background:#fff; border:1.5px solid var(--k); color:var(--k); font:650 .8rem/1 var(--sans); }
+.cell--steps li > strong:first-child { display:inline-block; margin-right:.25rem; padding:0 .5rem; border-radius:999px; background:#fff; border:1px solid color-mix(in srgb,var(--k) 35%,#fff); color:var(--k); font:500 .78rem/1.6 var(--mono); }
+/* ellenőrzés: pipák */
+.cell--check ul { list-style:none; padding-left:0; }
+.cell--check ul > li { position:relative; padding-left:1.8rem; }
+.cell--check ul > li::before { content:"✓" / ""; position:absolute; left:.2rem; top:0; color:var(--k); font-weight:700; }
+
+/* ============================== 7. TIPOGRÁFIA, TÁBLÁZAT ============================== */
+h2 { font-size:1.5rem; line-height:1.25; letter-spacing:-.025em; margin:2.6rem 0 1rem; }
+h3 { font-size:1.12rem; line-height:1.4; margin:1.8rem 0 .7rem; }
 h4 { font-size:1rem; }
-.cell-heading { border-left:4px solid var(--accent); padding:.7rem 1rem; background:#f6f9ff; }
-.cell-heading.steps { border-color:#8b5a1b; background:#fffbf2; }
-.cell-heading.check { border-color:#297052; background:#f3faf6; }
-.cell-heading.help { border-color:#75618c; background:#f8f5fb; }
-.table-wrap { max-width:100%; overflow-x:auto; margin:1rem 0; }
-table { width:100%; border-collapse:collapse; font-size:.87rem; }
-th,td { padding:.65rem .75rem; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
-th { background:#f3f6fa; }
-blockquote { margin:1rem 0; border-left:3px solid var(--accent); padding:.8rem 1.1rem; background:#f6f9ff; white-space:pre-wrap; }
-.cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr)); gap:1rem; margin:1.5rem 0; }
-.card { display:block; padding:1.2rem; border:1px solid var(--line); border-radius:6px; text-decoration:none; color:var(--ink); background:#f8fafc; }
-.card strong { display:block; color:var(--accent); margin-bottom:.4rem; }
-.card:hover { border-color:var(--accent); }
-.status { padding:.7rem 1rem; border-left:4px solid #ad7832; background:#fffbf2; }
-details { border:1px solid var(--line); padding:.8rem 1rem; margin:1rem 0; border-radius:5px; }
+p, ul, ol { margin:.75rem 0; }
+li { margin:.3rem 0; }
+pre { font:.86rem/1.7 var(--mono); white-space:pre-wrap; overflow-wrap:anywhere; background:#f7f8fc; border:1px solid var(--line); padding:1rem; border-radius:10px; }
+code { font-family:var(--mono); font-size:.86em; }
+:not(pre) > code { background:#f0f1f8; border:1px solid var(--line); border-radius:5px; padding:.05rem .35rem; color:#2b2f55; }
+blockquote { margin:1rem 0; border-left:4px solid var(--orange); padding:.8rem 1.1rem; background:var(--orange-soft); border-radius:0 10px 10px 0; white-space:pre-wrap; }
+hr { border:0; border-top:1px solid var(--line); margin:2rem 0; }
+.table-wrap { max-width:100%; overflow-x:auto; margin:1rem 0; border:1px solid var(--line); border-radius:var(--r); }
+table { width:100%; border-collapse:collapse; font-size:.88rem; }
+th, td { padding:.65rem .8rem; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
+tr:last-child td { border-bottom:0; }
+th { background:#f1f2fa; font-weight:650; color:var(--ink); }
+details { border:1px solid var(--line); padding:.8rem 1rem; margin:1rem 0; border-radius:10px; }
 summary { cursor:pointer; font-weight:650; }
-@media print { .table-wrap { overflow:visible; } details > * { display:block; } td,th { padding:.3rem; } }
+.pager { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:3rem; padding-top:1.5rem; border-top:1px solid var(--line); }
+.pager a { display:block; padding:.9rem 1.1rem; border:1px solid var(--line); border-radius:var(--r); text-decoration:none; color:var(--ink); font-weight:650; line-height:1.35; }
+.pager a span { display:block; margin-bottom:.25rem; font:500 .7rem/1.4 var(--mono); letter-spacing:.1em; text-transform:uppercase; color:var(--orange-deep); }
+.pager a:hover { border-color:var(--orange); background:var(--orange-soft); }
+.pager__next { text-align:right; grid-column:2; }
+
+/* ============================== 8. A NAP MENETE ============================== */
+ol.flow { list-style:none; padding:0; margin:1.2rem 0; display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:.7rem; counter-reset:flow; }
+ol.flow > li { counter-increment:flow; position:relative; margin:0; padding:.8rem .9rem; border-radius:var(--r); background:var(--navy); color:var(--on-navy-2); font-size:.86rem; line-height:1.4; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+ol.flow > li::before { content:counter(flow); display:block; font:500 .7rem/1.4 var(--mono); color:var(--orange); letter-spacing:.1em; margin-bottom:.2rem; }
+ol.flow > li strong { display:block; color:#fff; font-size:1rem; margin-bottom:.15rem; }
+ol.flow > li:not(:last-child)::after { content:"→" / ""; position:absolute; right:-.68rem; top:50%; transform:translateY(-50%); z-index:1; width:1.25rem; height:1.25rem; display:grid; place-items:center; border-radius:50%; background:var(--orange); color:var(--navy); font-size:.75rem; font-weight:700; }
+
+.timeline { list-style:none; padding:0; margin:1.5rem 0; position:relative; }
+.timeline::before { content:""; position:absolute; left:7.15rem; top:.6rem; bottom:.6rem; width:2px; background:var(--line); }
+.slot { --p:var(--line-2); display:grid; grid-template-columns:6.4rem minmax(0,1fr); gap:1.6rem; margin:0 0 .8rem; position:relative; }
+.slot--wenova { --p:var(--p-wenova); } .slot--brandiseer { --p:var(--p-brandiseer); } .slot--blackhole { --p:var(--p-blackhole); } .slot--estiwise { --p:var(--p-estiwise); }
+.slot::before { content:""; position:absolute; left:6.85rem; top:1.05rem; width:.75rem; height:.75rem; border-radius:50%; background:#fff; border:3px solid var(--p); }
+.slot__time { margin:.8rem 0 0; font:500 .84rem/1.4 var(--mono); text-align:right; color:var(--ink-2); white-space:nowrap; }
+.slot__body { padding:.85rem 1.1rem; border:1px solid var(--line); border-radius:var(--r); background:#fff; }
+.slot--module .slot__body { border-left:5px solid var(--p); box-shadow:var(--shadow); }
+.slot__body p { margin:0; }
+.slot__title { font-weight:700; font-size:1.06rem; line-height:1.35; }
+.slot--module .slot__title { font-size:1.2rem; letter-spacing:-.015em; }
+.slot__body .slot__who { display:flex; flex-wrap:wrap; align-items:center; gap:.5rem .8rem; margin-top:.6rem; font-size:.9rem; line-height:1.4; }
+.slot__body .slot__builds { margin-top:.6rem; padding-top:.6rem; border-top:1px dashed var(--line); font-size:.92rem; color:var(--ink-2); }
+.slot--pause .slot__body { background:transparent; border-style:dashed; padding:.4rem 1.1rem; color:var(--muted); }
+.slot--pause .slot__title { font-weight:500; font-size:.95rem; }
+.slot--pause .slot__time { margin-top:.45rem; color:var(--muted); }
+.slot--pause::before { top:.75rem; border-width:2px; border-color:var(--line-2); }
+
+/* ============================== 9. LÁBLÉC ============================== */
+.site-foot { margin-top:1rem; padding:1.2rem 0 .4rem; }
+.site-foot .partner-band { padding-bottom:.6rem; }
+.site-foot .partner { padding:.5rem .7rem; }
+.site-foot__meta { max-width:var(--wrap); margin:0 auto; padding:.3rem 1.5rem 1rem; font-size:.78rem; color:var(--on-navy-2); }
+
+/* ============================== 10. RESZPONZÍV ============================== */
+@media (max-width:980px) {
+  .layout { grid-template-columns:1fr; gap:1rem; padding:1rem 1rem 2rem; }
+  .toc { position:static; max-height:none; background:var(--paper); border:1px solid var(--line); border-radius:var(--r); padding:.9rem 1rem; }
+  .toc ol { columns:2; column-gap:1.5rem; border-left:0; }
+  .toc a { border-left:0; padding-left:0; margin-left:0; break-inside:avoid; }
+  .partner-band__list { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  ol.flow { grid-template-columns:1fr; }
+  ol.flow > li:not(:last-child)::after { content:"↓" / ""; right:auto; left:50%; top:auto; bottom:-.72rem; transform:translateX(-50%); }
+}
+@media (max-width:560px) {
+  body { font-size:16px; }
+  .site-head__bar { padding:.75rem 1rem; }
+  .site-head__brand span { display:none; }
+  .site-head__nav { width:100%; }
+  .partner-band { padding:.1rem 1rem .8rem; }
+  .partner { padding:.5rem .6rem; }
+  .partner__role { font-size:.7rem; }
+  .toc ol { columns:1; }
+  main { border-radius:var(--r); padding:1.1rem 1rem 1.5rem; }
+  .cell { padding:.85rem .9rem; }
+  .pager { grid-template-columns:1fr; }
+  .pager__next { grid-column:1; }
+  .timeline::before { left:.3rem; }
+  .slot { grid-template-columns:minmax(0,1fr); gap:.3rem; padding-left:1.4rem; }
+  .slot::before { left:0; top:.3rem; }
+  .slot__time { text-align:left; margin:0; }
+  .slot--pause .slot__time { margin:0; }
+  .slot--pause::before { top:.3rem; }
+}
+
+/* ============================== 11. NYOMTATÁS ============================== */
+@media print {
+  @page { margin:14mm 14mm 16mm; }
+  body { background:#fff; font-size:10.5pt; line-height:1.5; }
+  .site-head, .site-foot { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .site-head__nav, .toc, .skip, .pager, .hero-actions { display:none !important; }
+  .site-head__bar { padding:.4rem 0; }
+  .partner-band { padding:0 0 .5rem; }
+  .partner-band__label { display:none; }
+  .partner { padding:.3rem .5rem; }
+  .site-foot { break-inside:avoid; }
+  .layout { display:block; padding:0; max-width:none; }
+  main { border:0; padding:1rem 0 0; box-shadow:none; }
+  h1 { font-size:24pt; }
+  h2, h3, .cell-title, .lesson-heading { break-after:avoid; }
+  .cell, .slot, pre, tr { break-inside:avoid; }
+  .cell { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .table-wrap { overflow:visible; }
+  details > * { display:block; }
+  a { color:inherit; }
+  .timeline::before { display:none; }
+}
+
+/* Kezdőlap: a nap blokkjai röviden (a materials/schedule.md-ből generálva) */
+.day-strip { --p:var(--line-2); list-style:none; padding:0; margin:1.6rem 0 0; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,145px),1fr)); gap:.7rem; }
+.day-strip__item { margin:0; display:flex; flex-direction:column; align-items:flex-start; gap:.55rem; padding:.85rem .9rem; border:1px solid var(--line); border-top:4px solid var(--p); border-radius:var(--r); background:#fff; }
+.day-strip__item a, .day-strip__item strong { font-weight:650; line-height:1.3; flex:1; }
+.day-strip__item a { color:var(--ink); text-decoration:none; }
+.day-strip__item a:hover { color:var(--link); text-decoration:underline; }
+.day-strip__item .logo-tile { margin-top:auto; }
+
+/* Szótörés: a szavak egészben maradnak, csak elválasztással törünk (hu); a logófelirat nem törik */
+h1, h2, h3, h4, .day-strip__item a, .tl-title, .day-strip__item { overflow-wrap:normal; word-break:normal; hyphens:auto; }
+.logo-word, .logo-tile { white-space:nowrap; }
+.day-strip__item .logo-tile { max-width:100%; }

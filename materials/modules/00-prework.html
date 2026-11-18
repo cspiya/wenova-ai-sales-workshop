@@ -1,176 +1,502 @@
 <!doctype html>
 <!-- Generated from materials/modules/00-prework.md; edit Markdown and run npm run render. -->
-<html lang="hu"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Felkészülés</title><link rel="stylesheet" href="../assets/notebook.css"></head><body>
-<a class="skip" href="#main">Ugrás a tartalomhoz</a><header class="topbar"><a class="brand" href="../index.html">WENOVA · Workshop</a><a href="00-prework.md">Markdown-forrás</a></header>
-<div class="layout"><nav class="toc" aria-label="Tartalom"><p>Tartalom</p><ol><li><a href="#overview">Cél, bemenet és eredmény</a></li><li><a href="#00-prework.01-business-profile">Állítsd össze üzleti alaplapodat</a></li><li><a href="#00-prework.02-account-check">Ellenőrizd a hozzáféréseidet</a></li><li><a href="#00-prework.03-coach-check">Próbáld ki a tanulási kísérőt</a></li><li><a href="#recovery">Segítség elakadáskor</a></li><li><a href="#examples">Gyakorlópéldák</a></li><li><a href="#continue">Folytatás</a></li></ol></nav><main id="main" data-module-id="00-prework">
-<h1>Felkészülés</h1>
-<p><strong>Állapot: draft.</strong></p>
-<p><a href="00-prework.html">HTML-változat</a></p>
-<p>00-prework · draft</p>
-<p>A modul állapotát és a leckék készültségét az alábbi jelölések mutatják.</p>
+<html lang="hu"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Felkészülés: telepítés, kapcsolatok és saját források · AI Sales &amp; Marketing Workshop</title><link rel="stylesheet" href="../assets/notebook.css"></head><body class="page page--module lead--wenova">
+<a class="skip" href="#main">Ugrás a tartalomhoz</a><header class="site-head"><div class="site-head__bar"><a class="site-head__brand" href="../index.html"><img src="../assets/logos/wenova-wordmark.png" alt="Wenova" width="154" height="18"><span>AI Sales &amp; Marketing Workshop</span></a><nav class="site-head__nav" aria-label="Fő navigáció"><a href="../index.html">Kezdőlap</a><a href="../schedule.html" class="is-cta">A nap menete</a><a href="00-prework.md">Markdown-forrás</a></nav></div><div class="partner-band partner-band--head has-lead"><p class="partner-band__label">Wenova × Brandiseer × Blackhole Media × EstiWise</p><ul class="partner-band__list" aria-label="Partnerek"><li class="partner partner--wenova is-lead"><span class="partner__logo"><img class="logo logo--wenova" src="../assets/logos/wenova-wordmark.png" alt="Wenova" width="239" height="28"></span><span class="partner__role"><span class="partner__lead">Blokkgazda</span> · Szervező · AI-működés</span></li><li class="partner partner--brandiseer"><span class="partner__logo"><img class="logo logo--brandiseer" src="../assets/logos/brandiseer-icon.png" alt="" width="24" height="28"><span class="logo-word">Brandiseer</span></span><span class="partner__role">Márkaazonos tartalom</span></li><li class="partner partner--blackhole"><span class="partner__logo"><img class="logo logo--blackhole" src="../assets/logos/black-hole-media-logo.png" alt="Blackhole Media" width="299" height="28"></span><span class="partner__role">Ügyfélszerzés · Sales Bot</span></li><li class="partner partner--estiwise"><span class="partner__logo"><img class="logo logo--estiwise" src="../assets/logos/estiwise-logo-feher.svg" alt="EstiWise" width="99" height="28"></span><span class="partner__role">Ajánlatadás 0–24</span></li></ul></div></header>
+<div class="layout"><nav class="toc" aria-label="Tartalom"><p>Tartalom</p><ol><li><a href="#overview">Cél, bemenet és eredmény</a></li><li><a href="#00-prework.01-install">Telepítés: Claude Desktop és a tananyag egy mondattal</a></li><li><a href="#00-prework.02-account-check">Connectorok és biztonsági beállítás</a></li><li><a href="#00-prework.03-partner-accounts">Partnerfiókok: Brandiseer, Buffer, EstiWise, Sales Bot</a></li><li><a href="#00-prework.04-sources">Saját források és adatkezelés</a></li><li><a href="#00-prework.05-coach-check">Indulási próba és CRM-tábla</a></li><li><a href="#recovery">Segítség elakadáskor</a></li><li><a href="#examples">Gyakorlópéldák</a></li><li><a href="#continue">Folytatás</a></li></ol></nav><main id="main" data-module-id="00-prework">
+<header class="page-hero">
+<h1>Felkészülés: telepítés, kapcsolatok és saját források</h1>
+<p class="state"><strong>Állapot: review.</strong></p>
+<p class="kicker">00-prework · review</p>
+<p class="lead">Egy működő Claude-munkamappa a tananyaggal, bekötött levelezés és táblázat, partnerfiókok és a saját anyagaid. Ezzel indulsz reggel 9-kor.</p>
+<p class="lead"><strong>Honnan töltöd le az anyagot?</strong> Nem kell külön letöltened: az 1. leckében a Claude egyetlen mondatra telepíti. Kézi letöltés (ZIP): <a href="https://github.com/cspiya/wenova-ai-sales-workshop/archive/refs/heads/main.zip">main.zip</a>; böngészőben olvasható: <a href="https://github.com/cspiya/wenova-ai-sales-workshop/tree/main/materials">github.com/cspiya/wenova-ai-sales-workshop/tree/main/materials</a>.</p>
+<div class="block-banner block-banner--wenova"><p class="block-banner__when"><span class="chip chip--time">Előtte</span> <span class="block-banner__title">A nap menetében: Felkészülés</span></p><p class="block-banner__lead"><span class="logo-tile"><img class="logo logo--wenova" src="../assets/logos/wenova-wordmark.png" alt="Wenova" width="239" height="28"></span><span><span class="block-banner__label">Blokkgazda</span> <strong>Wenova</strong> · Wenova csapat</span></p><p class="block-banner__builds"><span class="block-banner__label">Ezt építed</span> Claude-projekt a sablonokkal, levelező- és Google-kapcsolat, CRM-tábla, Sales Bot- és EstiWise-belépés, saját források</p></div>
+</header>
 <a id="overview"></a>
 <h2>Cél, bemenet és eredmény</h2>
-<p><strong>Státusz: szerkesztői váz, partneri kidolgozás és próba szükséges.</strong></p>
-<p>Workshop előtt: 20–30 perc üzleti felkészülés és külön technikai ellenőrzés.</p>
+<p><strong>Státusz: kidolgozott útmutató, a helyszíni technikai próbára vár.</strong></p>
+<p>A workshop 2026. november 19-én, csütörtökön 09:00–17:00 között lesz a CEU Nádor Event Centerben (Budapest V., Nádor u. 15., N13 412/A terem, 4. emelet; a belépőkártyát a recepción kapod). Az egész napot a saját cégeden, a Claude-ban dolgozod végig. A felkészülés kb. 55 perc: otthon, előző este a legjobb. Ami nem sikerül, azt reggel 08:30 és 09:00 között a technikai pultnál befejezzük.</p>
+<p>A nap eszköze a <strong>Claude Desktop</strong> fizetős előfizetéssel (Pro vagy magasabb), azon belül a <strong>Cowork</strong> mód. A partnereszközökre (Brandiseer, Buffer, Sales Bot, EstiWise) nem kell előfizetned: a napra mindenki megkapja a használati keretet. Három fogalom, amit egész nap használunk:</p>
+<ul>
+<li><strong>Cowork:</strong> a Claude Desktop munkamódja, amelyben a Claude a gépeden lévő, általad kijelölt mappában olvas és ír, és több lépésből álló feladatot végez el. A fájlokat nem kell feltöltened.</li>
+<li><strong>Munkamappa:</strong> <code>Wenova-AI-Sales-Workshop</code> a felhasználói mappádban, benne a <code>Tananyag/</code> (a workshop anyaga, csak olvassuk) és a <code>Munka/</code> (a te eredményeid).</li>
+<li><strong>Connector (kapcsolat):</strong> engedélyezett kapcsolat a Claude és egy másik szolgáltatás között, például a Gmail vagy a Buffer. A technikai neve MCP (Model Context Protocol).</li>
+</ul>
+<div class="cell cell--input">
 <a id="overview-1"></a>
-<h3>Bemenet</h3>
-<p>Választott saját üzlet vagy mintavállalkozás.</p>
+<h3 class="cell-title">Bemenet</h3>
+<p>Claude-előfizetés, a céged weboldala, árlistád, 1–2 korábbi ajánlatod, a levelezésed, a LinkedIn-belépésed.</p>
+</div>
+<div class="cell cell--output">
 <a id="overview-2"></a>
-<h3>Kimenet</h3>
-<p>business-profile.md</p>
+<h3 class="cell-title">Kimenet</h3>
+<p>A <code>Wenova-AI-Sales-Workshop</code> munkamappa a telepített tananyaggal; egy Cowork-projekt erre a mappára; bekapcsolt levelező-, Google Drive- és Buffer-kapcsolat, a levélküldés tiltva; Brandiseer-, Buffer- és EstiWise-fiók; a forrásaid a <code>Munka/00-Felkeszules/forrasok/</code> mappában; „CRM – [cégnév]” Google-táblázat; a tanulási kísérő ellenőrzőlistája.</p>
+</div>
+<div class="cell cell--help">
 <a id="overview-3"></a>
-<h3>Folytatás elakadás esetén</h3>
-<p>Használd a <a href="#recovery">mentőútvonalat</a>. A kimeneteket a közös adatátadási szabály alapján ellenőrizzük.</p>
+<h3 class="cell-title">Folytatás elakadás esetén</h3>
+<p>Ami otthon nem sikerül, írd fel, és hozd a 08:30-as technikai pulthoz. Minden lépésnek van kézi útja: <a href="#recovery">mentőútvonal</a>.</p>
+</div>
+<div class="cell cell--info">
 <a id="overview-4"></a>
-<h3>Moduladatok</h3>
+<h3 class="cell-title">Moduladatok</h3>
 <ul>
 <li>Azonosító: <code>00-prework</code></li>
-<li>Szakmai gazda: Wenova</li>
-<li>Időkeret: 20–30 perc üzleti felkészülés és külön hozzáférési próba</li>
-<li>Állapot: draft – kidolgozás és próba szükséges.</li>
+<li>Szakmai gazda: Wenova (Piya Csaba, Kemény Krisztián)</li>
+<li>Időkeret: kb. 55 perc a workshop előtt, plusz 08:30–09:00 technikai pult</li>
+<li>Végrehajtási mód: <code>live</code> (saját fiókok)</li>
+<li>Állapot: review – kidolgozva, a helyszíni próba még hátravan.</li>
 </ul>
-<a id="00-prework.01-business-profile" data-lesson-id="00-prework.01-business-profile"></a>
-<h2>Állítsd össze üzleti alaplapodat</h2>
-<p><strong>Állapot: draft.</strong></p>
-<p><strong>Azonosító:</strong> <code>00-prework.01-business-profile</code> · <strong>Állapot:</strong> draft · <strong>Időkeret:</strong> 10 perc</p>
-<p><strong>Szerkesztői váz: a szakmai felelősnek ki kell dolgoznia és próbálnia.</strong></p>
-<a id="00-prework.01-business-profile--section-1"></a>
-<h3>Ezt készíted el</h3>
-<p>A(z) „Állítsd össze üzleti alaplapodat” feladat saját vagy mintaüzletre alkalmazott eredményét. A konkrét ellenőrizhető minimumot a partner rögzíti.</p>
-<a id="00-prework.01-business-profile--section-2"></a>
-<h3>Erre lesz szükséged</h3>
-<p>Saját ötlet vagy a scenarios/ egyik mintavállalkozása.</p>
-<a id="00-prework.01-business-profile--section-3"></a>
-<h3>Így működik</h3>
-<p>A partner röviden mutassa be az üzleti összefüggést és egy kész mintát.</p>
-<a id="00-prework.01-business-profile--section-4"></a>
-<h3>Ezekről te döntesz</h3>
-<p>A célról, a felhasznált üzleti adatok megfelelőségéről és az eredmény elfogadásáról.</p>
-<a id="00-prework.01-business-profile--section-5"></a>
-<h3>Ezt kérd Claude-tól</h3>
-<blockquote>
-<p>Vezess végig ezen a leckén a tananyag alapján, egyszerre egy feladattal. Ha a lecke még draft, jelezd, és csak az előkészített példát magyarázd el; hiányzó eszközlépést ne találj ki.</p>
-</blockquote>
-<a id="00-prework.01-business-profile--section-6"></a>
-<h3>Haladj végig ezeken</h3>
+</div>
+<a id="00-prework.01-install" data-lesson-id="00-prework.01-install"></a>
+<h2 class="lesson-heading">Telepítés: Claude Desktop és a tananyag egy mondattal</h2>
+<p><strong>Állapot: review.</strong></p>
+<p><strong>Azonosító:</strong> <code>00-prework.01-install</code> · <strong>Állapot:</strong> review · <strong>Időkeret:</strong> 15 perc</p>
+<p><strong>Hogyan futtasd:</strong> a Claude Desktopban, Cowork módban; a telepítést maga a Claude végzi el egy mondatra.</p>
+<div class="cell cell--goal">
+<a id="00-prework.01-install--result"></a>
+<h3 class="cell-title">Ezt készíted el</h3>
+<p>A gépeden egy <code>Wenova-AI-Sales-Workshop</code> mappát, benne a teljes tananyaggal (<code>Tananyag/</code>) és a saját eredményeid helyével (<code>Munka/</code>), valamint egy Cowork-projektet, amely ezzel a mappával dolgozik.</p>
+</div>
+<div class="cell cell--input">
+<a id="00-prework.01-install--needs"></a>
+<h3 class="cell-title">Erre lesz szükséged</h3>
+<ul>
+<li>Fizetős Claude-előfizetés (Pro vagy magasabb). A Cowork az asztali alkalmazásban minden fizetős csomagban elérhető.</li>
+<li>A <strong>Claude Desktop</strong> alkalmazás Windowsra vagy macOS-re: <a href="https://claude.com/download">claude.com/download</a>.</li>
+</ul>
+</div>
+<div class="cell cell--how">
+<a id="00-prework.01-install--explanation"></a>
+<h3 class="cell-title">Így működik</h3>
+<p>Cowork módban a Claude csak abban a mappában olvas és ír, amelyet te csatolsz. Ezért előbb létrehozod a mappát, és Cowork-projektet készítesz rá. Utána egy mondattal megkéred a Claude-ot, hogy telepítse a tananyagot: ő letölti a nyilvános tananyagot, a <code>Tananyag/</code> mappába teszi, létrehozza a <code>Munka/</code> mappát, és ellenőrzi az eredményt. A telepítés újrafuttatva frissít: az új tananyagot teszi a helyére, a <code>Munka/</code> mappádhoz nem nyúl.</p>
+<p>A telepítés lépéseit a <a href="../TELEPITES.md">TELEPITES.md</a> futtatókönyv írja le; a Claude ezt követi.</p>
+</div>
+<div class="cell cell--decide">
+<a id="00-prework.01-install--decisions"></a>
+<h3 class="cell-title">Ezekről te döntesz</h3>
+<p>Hol legyen a munkamappa (javasolt: a felhasználói mappád). Engedélyezed-e a Claude-nak a letöltést a github.com-ról.</p>
+</div>
+<div class="cell cell--prompt">
+<a id="00-prework.01-install--prompt"></a>
+<h3 class="cell-title">Ezt kérd Claude-tól</h3>
+<p>A Cowork-projektben, új munkamenetben, pontosan ezt az egy mondatot:</p>
+<pre><code class="language-text">Telepítsd a workshop tananyagát: https://raw.githubusercontent.com/cspiya/wenova-ai-sales-workshop/main/materials/TELEPITES.md
+</code></pre>
+</div>
+<div class="cell cell--steps">
+<a id="00-prework.01-install--steps"></a>
+<h3 class="cell-title">Haladj végig ezeken</h3>
 <ol>
-<li>Nyisd meg a bemenetet.</li>
-<li>A kidolgozott partneri feladat alapján készítsd el a munkadarabot.</li>
-<li>Mentsd és ellenőrizd az eredményt.</li>
+<li><strong>0–3 perc:</strong> telepítsd és indítsd el a Claude Desktopot, lépj be a fizetős fiókoddal.</li>
+<li><strong>3–5 perc:</strong> a fájlkezelőben hozz létre egy <code>Wenova-AI-Sales-Workshop</code> mappát a felhasználói mappádban (Windows: <code>C:\Users\&lt;neved&gt;\</code>, macOS: a saját mappád, a házikó ikon).</li>
+<li><strong>5–7 perc:</strong> a Claude Desktopban válts <strong>Cowork</strong> módra. Bal oldalt <strong>Projects</strong> → <strong>+</strong> → <strong>Use an existing folder</strong>, válaszd ki a <code>Wenova-AI-Sales-Workshop</code> mappát. A projekt neve: „AI Sales Workshop – [cégnév]”.</li>
+<li><strong>7–12 perc:</strong> a projektben új munkamenet, és írd be a fenti mondatot. Ha a Claude engedélyt kér a letöltésre vagy a mappába írásra, engedd. A végén ✅/⚠️ listát ad.</li>
+<li><strong>12–15 perc:</strong> kövesd a Claude záró üzenetét: a projekt <strong>Instructions</strong> mezőjébe írd be: „Kövesd a munkamappa AGENTS.md fájlját. A cégem neve: [cégnév].”, és nyisd meg a böngészőben a <code>Tananyag/index.html</code> fájlt.</li>
 </ol>
-<p>A partner a második lépést konkrét, kipróbált útmutatóval egészíti ki.</p>
-<a id="00-prework.01-business-profile--section-7"></a>
-<h3>Ellenőrizd az eredményt</h3>
-<p>A partner definiáljon megfigyelhető feltételeket. Amíg ez hiányzik, a lecke nem ready.</p>
-<a id="00-prework.01-business-profile--section-8"></a>
-<h3>Ha elakadtál</h3>
-<p>Öt perc után használd a <a href="#recovery">mentőcsomagot</a>.</p>
-<a id="00-prework.01-business-profile--section-9"></a>
-<h3>Ezt viszed tovább</h3>
-<p>A modul kimeneteiből a leckéhez tartozó eredményt: business-profile.md. A pontos leckénkénti átadást a partner rögzíti.</p>
-<a id="00-prework.01-business-profile--section-10"></a>
-<h3>Ha maradt időd</h3>
-<p>Választható bővítést csak a kötelező út kipróbálása után adjunk hozzá.</p>
+</div>
+<div class="cell cell--check">
+<a id="00-prework.01-install--check"></a>
+<h3 class="cell-title">Ellenőrizd az eredményt</h3>
+<ul>
+<li>A munkamappában ott a <code>Tananyag/</code> (benne <code>index.html</code>, <code>VERSION</code>, <code>modules/</code>, <code>starter-kit/</code>) és a <code>Munka/</code> mappa a hat almappával.</li>
+<li>A Claude ✅/⚠️ listájában a verzió és a fájlszám (legalább 90) szerepel.</li>
+<li>A <code>Tananyag/index.html</code> megnyílik a böngészőben.</li>
+<li>A Cowork-projekt Instructions mezőjében ott az AGENTS.md-re utaló mondat.</li>
+</ul>
+</div>
+<div class="cell cell--help">
+<a id="00-prework.01-install--help"></a>
+<h3 class="cell-title">Ha elakadtál</h3>
+<ul>
+<li><strong>A Claude szerint a letöltés hálózati okból nem megy:</strong> Beállítások → Képességek (Settings → Capabilities): kapcsold be az <strong>Allow network egress</strong> kapcsolót, a <strong>Domain allowlist</strong> legyen <strong>Package managers only</strong> (ez engedi a github.com-ot). Utána: „Próbáld újra.”</li>
+<li><strong>Így sem megy:</strong> kézi út, 3 perc: töltsd le a <a href="https://github.com/cspiya/wenova-ai-sales-workshop/archive/refs/heads/main.zip">ZIP-et</a>, bontsd ki (Windows: jobb klikk → Összes kibontása; macOS: dupla kattintás), a kibontott mappában a <code>materials</code> mappa <strong>tartalmát</strong> másold a <code>Wenova-AI-Sales-Workshop/Tananyag/</code> mappába, és hozz létre mellette egy <code>Munka</code> mappát. Utána írd a Claude-nak: „Ellenőrizd a telepítést a Tananyag/TELEPITES.md 5–7. lépése szerint.”</li>
+<li><strong>Nincs Cowork a gépeden, vagy nem indul:</strong> tartalékút a böngészőben: a claude.ai-on hozz létre egy projektet („AI Sales Workshop – [cégnév]”), töltsd fel a tudásába az <code>assistant.md</code>, <code>AGENTS.md</code>, a 00–05 modulok <code>.md</code> fájljait és a <code>starter-kit</code> sablonjait, a projektutasításba pedig a <a href="../starter-kit/project-instructions.md">projektutasítás</a> keretes szövegét. Ilyenkor a „Munka/” helyett az eredményeket letöltöd és visszatöltöd a projektbe.</li>
+<li><strong>Terminált szívesen használsz:</strong> a <a href="../CLAUDE-CODE.html">haladó út a Claude Code-dal</a> ugyanezt a telepítést a terminálban végzi.</li>
+</ul>
+</div>
+<div class="cell cell--output">
+<a id="00-prework.01-install--handoff"></a>
+<h3 class="cell-title">Ezt viszed tovább</h3>
+<p>A munkamappát és a Cowork-projektet egész nap használod, a partnerblokkokban is: minden új munkamenetet ebben a projektben indíts.</p>
+</div>
+<div class="cell cell--extra">
+<a id="00-prework.01-install--extra"></a>
+<h3 class="cell-title">Ha maradt időd</h3>
+<p>Lapozd át a böngészőben a <a href="../schedule.html">nap menetét</a>.</p>
+</div>
 <a id="00-prework.02-account-check" data-lesson-id="00-prework.02-account-check"></a>
-<h2>Ellenőrizd a hozzáféréseidet</h2>
-<p><strong>Állapot: draft.</strong></p>
-<p><strong>Azonosító:</strong> <code>00-prework.02-account-check</code> · <strong>Állapot:</strong> draft · <strong>Időkeret:</strong> 10 perc</p>
-<p><strong>Szerkesztői váz: a szakmai felelősnek ki kell dolgoznia és próbálnia.</strong></p>
-<a id="00-prework.02-account-check--section-1"></a>
-<h3>Ezt készíted el</h3>
-<p>A(z) „Ellenőrizd a hozzáféréseidet” feladat saját vagy mintaüzletre alkalmazott eredményét. A konkrét ellenőrizhető minimumot a partner rögzíti.</p>
-<a id="00-prework.02-account-check--section-2"></a>
-<h3>Erre lesz szükséged</h3>
-<p>Saját ötlet vagy a scenarios/ egyik mintavállalkozása.</p>
-<a id="00-prework.02-account-check--section-3"></a>
-<h3>Így működik</h3>
-<p>A partner röviden mutassa be az üzleti összefüggést és egy kész mintát.</p>
-<a id="00-prework.02-account-check--section-4"></a>
-<h3>Ezekről te döntesz</h3>
-<p>A célról, a felhasznált üzleti adatok megfelelőségéről és az eredmény elfogadásáról.</p>
-<a id="00-prework.02-account-check--section-5"></a>
-<h3>Ezt kérd Claude-tól</h3>
-<blockquote>
-<p>Vezess végig ezen a leckén a tananyag alapján, egyszerre egy feladattal. Ha a lecke még draft, jelezd, és csak az előkészített példát magyarázd el; hiányzó eszközlépést ne találj ki.</p>
-</blockquote>
-<a id="00-prework.02-account-check--section-6"></a>
-<h3>Haladj végig ezeken</h3>
+<h2 class="lesson-heading">Connectorok és biztonsági beállítás</h2>
+<p><strong>Állapot: review.</strong></p>
+<p><strong>Azonosító:</strong> <code>00-prework.02-account-check</code> · <strong>Állapot:</strong> review · <strong>Időkeret:</strong> 10 perc</p>
+<p><strong>Hogyan futtasd:</strong> a beállításokat a Claude Desktopban kattintod végig; elakadásnál a lenti promptot írd be egy új munkamenetbe.</p>
+<div class="cell cell--goal">
+<a id="00-prework.02-account-check--result"></a>
+<h3 class="cell-title">Ezt készíted el</h3>
+<p>Bekapcsolt levelező-, Google Drive- és Buffer-kapcsolatot, a levelező írási eszközei tiltva.</p>
+</div>
+<div class="cell cell--input">
+<a id="00-prework.02-account-check--needs"></a>
+<h3 class="cell-title">Erre lesz szükséged</h3>
+<ul>
+<li><strong>Levelezés:</strong> Gmail- vagy Google Workspace-fiók, vagy Microsoft 365 / Outlook-fiók.</li>
+<li><strong>Google-fiók</strong> a CRM-táblázathoz. Ha csak Microsoft-fiókod van, a CRM a saját Excel-fájlod lesz.</li>
+<li>A Buffer-fiók (a 3. lecke része; ha még nincs, előbb azt csináld meg).</li>
+</ul>
+</div>
+<div class="cell cell--how">
+<a id="00-prework.02-account-check--explanation"></a>
+<h3 class="cell-title">Így működik</h3>
+<p>A connectorok a fiókodhoz tartoznak, a Coworkben és a chatben is működnek. Egy munkamenetben a szövegmező melletti <strong>+</strong> menüben kapcsolhatod be vagy ki őket. Minden connector saját oldalán beállíthatod, melyik eszközét használhatja a Claude (Tool permissions, eszközengedélyek). A levelezőnél a küldés, válasz, továbbítás és törlés legyen <strong>Tiltva (Blocked)</strong>. Írási műveletnél soha ne kattints a „Mindig engedélyez” (Always allow) gombra.</p>
+<p>A Brandiseer, a Sales Bot és az EstiWise connectorát a partnerek a saját blokkjukban kötik be veled; előre nincs teendő.</p>
+</div>
+<div class="cell cell--decide">
+<a id="00-prework.02-account-check--decisions"></a>
+<h3 class="cell-title">Ezekről te döntesz</h3>
+<p>Melyik levelezőt kötöd be (Gmail vagy Outlook), vagy egyiket sem. Mit engedsz a Claude-nak: olvasást igen, küldést nem.</p>
+</div>
+<div class="cell cell--prompt">
+<a id="00-prework.02-account-check--prompt"></a>
+<h3 class="cell-title">Ezt kérd Claude-tól</h3>
+<p>Ha egy beállítási lépésnél elakadsz:</p>
+<pre><code class="language-text">A Claude Desktopban vagyok. Ezt szeretném beállítani: [például: Gmail connector bekapcsolása].
+Ezt látom a képernyőn: [írd le, vagy csatolj képernyőképet].
+Lépésenként mondd meg, hova kattintsak. Ha a felületed eltér, kérdezz vissza, ne találgass.
+Jelszót és belépőkódot ne kérj tőlem.
+</code></pre>
+</div>
+<div class="cell cell--steps">
+<a id="00-prework.02-account-check--steps"></a>
+<h3 class="cell-title">Haladj végig ezeken</h3>
 <ol>
-<li>Nyisd meg a bemenetet.</li>
-<li>A kidolgozott partneri feladat alapján készítsd el a munkadarabot.</li>
-<li>Mentsd és ellenőrizd az eredményt.</li>
+<li><strong>0–5 perc:</strong> Testreszabás → Connectorok (Customize → Connectors; az asztali appban a bal oldali sávban). Kapcsold be:
+<ul>
+<li>a <strong>Gmail</strong> és a <strong>Google Drive</strong> connectort, ha Google-t használsz;</li>
+<li>a <strong>Microsoft 365</strong> connectort, ha Outlookot használsz. Személyes Outlook.com-fiókot a webes Claude-ban (claude.ai) köss be. Céges fióknál a cég rendszergazdájának jóvá kell hagynia; ha te vagy a Microsoft 365 rendszergazda, a belépéskor jóváhagyhatod. Ha ez nem megy, a leveleket bemásolva dolgozzuk fel;</li>
+<li>a <strong>Buffer</strong> connectort (keresd a listában, Connect, belépés a Bufferbe).</li>
+</ul>
+</li>
+<li><strong>5–8 perc:</strong> nyisd meg a levelező connector oldalát, és az eszközengedélyeknél a küldés, válasz, továbbítás és törlés eszközt állítsd <strong>Tiltva (Blocked)</strong> állásba.</li>
+<li><strong>8–10 perc:</strong> a Cowork-projektben új munkamenet, kapcsold be a connectorokat a + menüben, és írd: „Milyen connectorok vannak bekapcsolva, és melyik eszközük van tiltva?”</li>
 </ol>
-<p>A partner a második lépést konkrét, kipróbált útmutatóval egészíti ki.</p>
-<a id="00-prework.02-account-check--section-7"></a>
-<h3>Ellenőrizd az eredményt</h3>
-<p>A partner definiáljon megfigyelhető feltételeket. Amíg ez hiányzik, a lecke nem ready.</p>
-<a id="00-prework.02-account-check--section-8"></a>
-<h3>Ha elakadtál</h3>
-<p>Öt perc után használd a <a href="#recovery">mentőcsomagot</a>.</p>
-<a id="00-prework.02-account-check--section-9"></a>
-<h3>Ezt viszed tovább</h3>
-<p>A modul kimeneteiből a leckéhez tartozó eredményt: business-profile.md. A pontos leckénkénti átadást a partner rögzíti.</p>
-<a id="00-prework.02-account-check--section-10"></a>
-<h3>Ha maradt időd</h3>
-<p>Választható bővítést csak a kötelező út kipróbálása után adjunk hozzá.</p>
-<a id="00-prework.03-coach-check" data-lesson-id="00-prework.03-coach-check"></a>
-<h2>Próbáld ki a tanulási kísérőt</h2>
-<p><strong>Állapot: draft.</strong></p>
-<p><strong>Azonosító:</strong> <code>00-prework.03-coach-check</code> · <strong>Állapot:</strong> draft · <strong>Időkeret:</strong> 10 perc</p>
-<p><strong>Szerkesztői váz: a szakmai felelősnek ki kell dolgoznia és próbálnia.</strong></p>
-<a id="00-prework.03-coach-check--section-1"></a>
-<h3>Ezt készíted el</h3>
-<p>A(z) „Próbáld ki a tanulási kísérőt” feladat saját vagy mintaüzletre alkalmazott eredményét. A konkrét ellenőrizhető minimumot a partner rögzíti.</p>
-<a id="00-prework.03-coach-check--section-2"></a>
-<h3>Erre lesz szükséged</h3>
-<p>Saját ötlet vagy a scenarios/ egyik mintavállalkozása.</p>
-<a id="00-prework.03-coach-check--section-3"></a>
-<h3>Így működik</h3>
-<p>A partner röviden mutassa be az üzleti összefüggést és egy kész mintát.</p>
-<a id="00-prework.03-coach-check--section-4"></a>
-<h3>Ezekről te döntesz</h3>
-<p>A célról, a felhasznált üzleti adatok megfelelőségéről és az eredmény elfogadásáról.</p>
-<a id="00-prework.03-coach-check--section-5"></a>
-<h3>Ezt kérd Claude-tól</h3>
-<blockquote>
-<p>Vezess végig ezen a leckén a tananyag alapján, egyszerre egy feladattal. Ha a lecke még draft, jelezd, és csak az előkészített példát magyarázd el; hiányzó eszközlépést ne találj ki.</p>
-</blockquote>
-<a id="00-prework.03-coach-check--section-6"></a>
-<h3>Haladj végig ezeken</h3>
+</div>
+<div class="cell cell--check">
+<a id="00-prework.02-account-check--check"></a>
+<h3 class="cell-title">Ellenőrizd az eredményt</h3>
+<ul>
+<li>A Claude felsorolja a levelező, a Google Drive és a Buffer connectort.</li>
+<li>A levelezőben a küldés, válasz, továbbítás és törlés Tiltva (Blocked).</li>
+</ul>
+</div>
+<div class="cell cell--help">
+<a id="00-prework.02-account-check--help"></a>
+<h3 class="cell-title">Ha elakadtál</h3>
+<ul>
+<li><strong>A levelező connector nem kapcsolódik:</strong> folytasd nélküle. Az 1. és 5. blokkban a leveleidet bemásolva vagy a <a href="../scenarios/office-plants/outputs/mailbox-sample.md">kitalált mintapostafiókkal</a> dolgozol.</li>
+<li><strong>A Buffer connector nem található:</strong> a 02-es blokkban a Buffer felületén, kézzel dolgozol.</li>
+</ul>
+</div>
+<div class="cell cell--output">
+<a id="00-prework.02-account-check--handoff"></a>
+<h3 class="cell-title">Ezt viszed tovább</h3>
+<p>A connectorokat egész nap használod. A partnerek connectorai a 02–04-es blokkban kerülnek mellé.</p>
+</div>
+<div class="cell cell--extra">
+<a id="00-prework.02-account-check--extra"></a>
+<h3 class="cell-title">Ha maradt időd</h3>
+<p>Kapcsold be a Google Naptár connectort is. Az 5. blokkban a holnapi teendőidet ide is felveheted.</p>
+</div>
+<a id="00-prework.03-partner-accounts" data-lesson-id="00-prework.03-partner-accounts"></a>
+<h2 class="lesson-heading">Partnerfiókok: Brandiseer, Buffer, EstiWise, Sales Bot</h2>
+<p><strong>Állapot: review.</strong></p>
+<p><strong>Azonosító:</strong> <code>00-prework.03-partner-accounts</code> · <strong>Állapot:</strong> review · <strong>Időkeret:</strong> 10 perc</p>
+<p><strong>Hogyan futtasd:</strong> a regisztrációkat a böngészőben végzed; Claude nem kell hozzá.</p>
+<div class="cell cell--goal">
+<a id="00-prework.03-partner-accounts--result"></a>
+<h3 class="cell-title">Ezt készíted el</h3>
+<p>Ingyenes Brandiseer-fiókot, ingyenes Buffer-fiókot legalább egy bekötött közösségimédia-oldallal, és EstiWise-fiókot. A partnereszközökre nem kell előfizetned: a napra mindenki megkapja a használati keretet.</p>
+</div>
+<div class="cell cell--input">
+<a id="00-prework.03-partner-accounts--needs"></a>
+<h3 class="cell-title">Erre lesz szükséged</h3>
+<p>Egy e-mail-cím a regisztrációkhoz, legalább egy közösségimédia-oldal (például a céges LinkedIn- vagy Facebook-oldal) a Bufferhez, a weboldalad címe vagy szolgáltatásleírásod az EstiWise-hoz, és a LinkedIn-belépésed.</p>
+</div>
+<div class="cell cell--how">
+<a id="00-prework.03-partner-accounts--explanation"></a>
+<h3 class="cell-title">Így működik</h3>
+<p>A partnerrendszereket a saját blokkjukban használod, a délutáni 5. blokkban pedig egy ügyfélesetben kapcsoljuk össze őket. Mindhárom partnernek saját connectora van a Claude-hoz; ezeket a partnerek a saját blokkjukban kötik be és mutatják meg.</p>
+<div class="table-wrap" role="region" aria-label="Táblázat" tabindex="0"><table>
+<thead>
+<tr>
+<th>Partner és blokk</th>
+<th>Mit csinálsz előre?</th>
+<th>Mi történik a helyszínen?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Brandiseer</strong> (<a href="02-content-marketing.html">02-es modul</a>)</td>
+<td>Ingyenes fiók: <a href="https://brandiseer.com/auth">brandiseer.com/auth</a>.</td>
+<td>A 02-es blokkban a Brandiseer connectorát is bekötitek.</td>
+</tr>
+<tr>
+<td><strong>Buffer</strong> (posztok ütemezése, a 02-es blokkhoz kötelező)</td>
+<td>Ingyenes fiók: <a href="https://buffer.com">buffer.com</a>, és köss be legalább egy közösségimédia-oldalt. A Claude-connectort a 2. leckében kapcsolod be.</td>
+<td>A 02-es blokkban ide kerülnek a posztok.</td>
+</tr>
+<tr>
+<td><strong>EstiWise</strong> (<a href="04-proposals-handoff.html">04-es modul</a>)</td>
+<td>Regisztráció: <a href="https://admin.estiwise.ai/auth/register">admin.estiwise.ai/auth/register</a>. Bankkártya és előfizetés nem kell.</td>
+<td>A Claude-összekötést a 04-es blokkban együtt csináljuk; előre ne próbáld.</td>
+</tr>
+<tr>
+<td><strong>Blackhole Media – Sales Bot</strong> (<a href="03-lead-generation.html">03-as modul</a>)</td>
+<td>Előre nincs teendőd. Ha kíváncsi vagy: <a href="https://sales-bot.io">sales-bot.io</a>. A LinkedIn-belépésed legyen kéznél.</td>
+<td>A hozzáférést és a connectort a 03-as blokk elején kapod.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="cell cell--decide">
+<a id="00-prework.03-partner-accounts--decisions"></a>
+<h3 class="cell-title">Ezekről te döntesz</h3>
+<p>Saját céggel vagy gyakorlóvállalkozással regisztrálsz. Melyik közösségimédia-oldalt kötöd be a Bufferbe. A workshopon semmi nem kerül ki nyilvánosan a jóváhagyásod nélkül.</p>
+</div>
+<div class="cell cell--prompt">
+<a id="00-prework.03-partner-accounts--prompt"></a>
+<h3 class="cell-title">Ezt kérd Claude-tól</h3>
+<p>Ennél a leckénél nem kell Claude.</p>
+</div>
+<div class="cell cell--steps">
+<a id="00-prework.03-partner-accounts--steps"></a>
+<h3 class="cell-title">Haladj végig ezeken</h3>
 <ol>
-<li>Nyisd meg a bemenetet.</li>
-<li>A kidolgozott partneri feladat alapján készítsd el a munkadarabot.</li>
-<li>Mentsd és ellenőrizd az eredményt.</li>
+<li><strong>0–3 perc:</strong> Brandiseer-fiók a <a href="https://brandiseer.com/auth">brandiseer.com/auth</a> oldalon.</li>
+<li><strong>3–7 perc:</strong> Buffer-fiók a <a href="https://buffer.com">buffer.com</a> oldalon, legalább egy közösségimédia-oldal bekötésével.</li>
+<li><strong>7–10 perc:</strong> EstiWise-regisztráció az <a href="https://admin.estiwise.ai/auth/register">admin.estiwise.ai/auth/register</a> oldalon. A Claude-kapcsolatot ne állítsd be.</li>
 </ol>
-<p>A partner a második lépést konkrét, kipróbált útmutatóval egészíti ki.</p>
-<a id="00-prework.03-coach-check--section-7"></a>
-<h3>Ellenőrizd az eredményt</h3>
-<p>A partner definiáljon megfigyelhető feltételeket. Amíg ez hiányzik, a lecke nem ready.</p>
-<a id="00-prework.03-coach-check--section-8"></a>
-<h3>Ha elakadtál</h3>
-<p>Öt perc után használd a <a href="#recovery">mentőcsomagot</a>.</p>
-<a id="00-prework.03-coach-check--section-9"></a>
-<h3>Ezt viszed tovább</h3>
-<p>A modul kimeneteiből a leckéhez tartozó eredményt: business-profile.md. A pontos leckénkénti átadást a partner rögzíti.</p>
-<a id="00-prework.03-coach-check--section-10"></a>
-<h3>Ha maradt időd</h3>
-<p>Választható bővítést csak a kötelező út kipróbálása után adjunk hozzá.</p>
+</div>
+<div class="cell cell--check">
+<a id="00-prework.03-partner-accounts--check"></a>
+<h3 class="cell-title">Ellenőrizd az eredményt</h3>
+<ul>
+<li>Be tudsz lépni a Brandiseerbe.</li>
+<li>A Bufferben legalább egy közösségimédia-oldal be van kötve.</li>
+<li>Be tudsz lépni az EstiWise-ba.</li>
+<li>Kéznél van a LinkedIn-belépésed.</li>
+</ul>
+</div>
+<div class="cell cell--help">
+<a id="00-prework.03-partner-accounts--help"></a>
+<h3 class="cell-title">Ha elakadtál</h3>
+<p>Egyik partnerfiók sem feltétele a délelőttnek. Ha valami nem működik, írd fel, és szólj reggel a technikai pultnál vagy a blokk elején a partner mentorainak.</p>
+</div>
+<div class="cell cell--output">
+<a id="00-prework.03-partner-accounts--handoff"></a>
+<h3 class="cell-title">Ezt viszed tovább</h3>
+<p>A fiókok a 02-es és 04-es blokk bemenetei; a Sales Bot-hozzáférést a 03-as blokkban kapod. Az 5. blokkban a Karmester mindhárom partner connectorát használja.</p>
+</div>
+<div class="cell cell--extra">
+<a id="00-prework.03-partner-accounts--extra"></a>
+<h3 class="cell-title">Ha maradt időd</h3>
+<p>Nézd meg 5 percig a Brandiseer és az EstiWise felületét. Elég, ha tudod, hol vannak a fő menük.</p>
+</div>
+<a id="00-prework.04-sources" data-lesson-id="00-prework.04-sources"></a>
+<h2 class="lesson-heading">Saját források és adatkezelés</h2>
+<p><strong>Állapot: review.</strong></p>
+<p><strong>Azonosító:</strong> <code>00-prework.04-sources</code> · <strong>Állapot:</strong> review · <strong>Időkeret:</strong> 10 perc</p>
+<p><strong>Hogyan futtasd:</strong> a fájlkezelőben; Claude nem kell hozzá.</p>
+<div class="cell cell--goal">
+<a id="00-prework.04-sources--result"></a>
+<h3 class="cell-title">Ezt készíted el</h3>
+<p>A <code>Munka/00-Felkeszules/forrasok/</code> mappában a saját forrásaidat. Ebből építed reggel a Cég-DNS-t. A <strong>Cég-DNS</strong> egy oldal arról, kinek, mit és milyen hangon ad el a céged; a nap minden blokkja ebből dolgozik.</p>
+</div>
+<div class="cell cell--input">
+<a id="00-prework.04-sources--needs"></a>
+<h3 class="cell-title">Erre lesz szükséged</h3>
+<p>Fájlkezelő és 10 perc. Ha nincs saját céged, vagy nem szeretnéd a saját adataidat használni, válassz egy <a href="../index.html#scenarios">kitalált gyakorlóvállalkozást</a>; ilyenkor ezt a leckét kihagyhatod.</p>
+</div>
+<div class="cell cell--how">
+<a id="00-prework.04-sources--explanation"></a>
+<h3 class="cell-title">Így működik</h3>
+<p>A DNS annyira jó, amennyire a forrásai. A Claude nem emlékezetből ír a cégedről, hanem a te anyagaidból, és minden állításhoz megjelöli a forrást. Ami egyik forrásban sincs, az „Nincs megadva” lesz.</p>
+<div class="table-wrap" role="region" aria-label="Táblázat" tabindex="0"><table>
+<thead>
+<tr>
+<th>Forrás</th>
+<th>Mire jó?</th>
+<th>Kötelező?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A weboldalad címe (URL)</td>
+<td>Kik vagytok, mit kínáltok</td>
+<td>Igen</td>
+</tr>
+<tr>
+<td>Árlista vagy szolgáltatásleírás (PDF, Word, táblázat)</td>
+<td>Ajánlat és árazási alap; a 04-es EstiWise-blokk is ezt kéri</td>
+<td>Ha van</td>
+</tr>
+<tr>
+<td>1–2 korábbi ajánlat</td>
+<td>Mit, milyen formában ajánlasz</td>
+<td>Ha van</td>
+</tr>
+<tr>
+<td>1–2 referencia vagy esettanulmány</td>
+<td>Bizonyíték</td>
+<td>Csak ha nyilvános vagy engedélyezett</td>
+</tr>
+<tr>
+<td>Küldött leveleid</td>
+<td>A saját hangod kinyerése</td>
+<td>A levelező connectoron át, az 1. blokkban</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="cell cell--decide">
+<a id="00-prework.04-sources--decisions"></a>
+<h3 class="cell-title">Ezekről te döntesz</h3>
+<p>Melyik dokumentum mehet AI-feldolgozásra, és mit takarsz ki előtte. Saját céggel vagy gyakorlóvállalkozással dolgozol.</p>
+<p><strong>Adatkezelési szabályok a napra:</strong></p>
+<ol>
+<li>Korábbi ajánlatból töröld vagy takard ki az ügyfél nevét, a kapcsolattartót és az egyedi kedvezményt (például „[ügyfél]”).</li>
+<li>Jelszót, API-kulcsot, belépőkódot, bankkártyaadatot soha ne írj be a Claude-ba.</li>
+<li>Ha a cégednél szabályzat vagy vezetői engedély kell a levelezés vagy az ügyféladatok AI-feldolgozásához, ezt a workshop előtt kérd meg. Ha nincs engedélyed, a kitalált mintákkal dolgozz.</li>
+<li>A Claude beállításainál (Settings → Privacy, Adatvédelem) nézd meg, engedélyezted-e, hogy a beszélgetéseidet a modell fejlesztésére használják. Céges adatnál javasoljuk kikapcsolni.</li>
+<li>A terem nyitott tér: levelet és ügyféladatot ne vetíts ki, és figyelj, ki látja a képernyődet. A közös bemutatókhoz a kitalált mintát használjuk.</li>
+</ol>
+</div>
+<div class="cell cell--prompt">
+<a id="00-prework.04-sources--prompt"></a>
+<h3 class="cell-title">Ezt kérd Claude-tól</h3>
+<p>Ha bizonytalan vagy, mi mehet be, ezt kérdezheted egy új munkamenetben:</p>
+<pre><code class="language-text">Egy workshopon a cégem árlistájából és egy korábbi ajánlatomból készítünk összefoglalót.
+Felsorolom, milyen adatok vannak a dokumentumokban. Mondd meg, melyiket érdemes kitakarnom, és miért.
+Ne nyisd meg a dokumentumokat, csak a felsorolásomból dolgozz.
+Adatok: [például: ügyfélnév, kapcsolattartó e-mail-címe, egyedi kedvezmény, termékár, szállítási határidő]
+</code></pre>
+</div>
+<div class="cell cell--steps">
+<a id="00-prework.04-sources--steps"></a>
+<h3 class="cell-title">Haladj végig ezeken</h3>
+<ol>
+<li><strong>0–3 perc:</strong> hozd létre a <code>Munka/00-Felkeszules/forrasok/</code> mappát, és írd be egy <code>weboldal.txt</code> fájlba a weboldalad címét.</li>
+<li><strong>3–7 perc:</strong> másold a mappába az árlistát és 1–2 korábbi ajánlatot.</li>
+<li><strong>7–10 perc:</strong> takard ki az ajánlatokból az ügyféladatokat a fenti szabály szerint.</li>
+</ol>
+</div>
+<div class="cell cell--check">
+<a id="00-prework.04-sources--check"></a>
+<h3 class="cell-title">Ellenőrizd az eredményt</h3>
+<ul>
+<li>A mappában ott a weboldal címe és legalább egy további forrás, vagy kiválasztottál egy gyakorlóvállalkozást.</li>
+<li>Egyik fájlban sincs ügyfélnév, személyes elérhetőség vagy jelszó.</li>
+<li>Tudod, hogy a cégednél kell-e engedély a levelezés AI-feldolgozásához.</li>
+</ul>
+</div>
+<div class="cell cell--help">
+<a id="00-prework.04-sources--help"></a>
+<h3 class="cell-title">Ha elakadtál</h3>
+<p>Ha nincs árlistád vagy ajánlatod, elég a weboldal: a hiányzó részek „Nincs megadva” jelölést kapnak, és a DNS-ben teendőként látszanak. Ha weboldalad sincs, írj 5–6 mondatot arról, kinek mit adsz el; ez is forrás.</p>
+</div>
+<div class="cell cell--output">
+<a id="00-prework.04-sources--handoff"></a>
+<h3 class="cell-title">Ezt viszed tovább</h3>
+<p>A DNS-t az 1. blokkban ezekből a forrásokból építed.</p>
+</div>
+<div class="cell cell--extra">
+<a id="00-prework.04-sources--extra"></a>
+<h3 class="cell-title">Ha maradt időd</h3>
+<p>Írd le 3 mondatban, kik a legjobb ügyfeleid és miért. A DNS ideális ügyfél (ICP) részéhez ez lesz a legerősebb forrás.</p>
+</div>
+<a id="00-prework.05-coach-check" data-lesson-id="00-prework.05-coach-check"></a>
+<h2 class="lesson-heading">Indulási próba és CRM-tábla</h2>
+<p><strong>Állapot: review.</strong></p>
+<p><strong>Azonosító:</strong> <code>00-prework.05-coach-check</code> · <strong>Állapot:</strong> review · <strong>Időkeret:</strong> 10 perc</p>
+<p><strong>Hogyan futtasd:</strong> a táblázatot a böngészőben hozod létre, az ellenőrzést a tanulási kísérő végzi („Kezdjük a felkészülés ellenőrzését”).</p>
+<div class="cell cell--goal">
+<a id="00-prework.05-coach-check--result"></a>
+<h3 class="cell-title">Ezt készíted el</h3>
+<p>Egy „CRM – [cégnév]” Google-táblázatot a közös oszlopokkal, és a tanulási kísérő ✅/⚠️ ellenőrzőlistáját arról, mi működik.</p>
+</div>
+<div class="cell cell--input">
+<a id="00-prework.05-coach-check--needs"></a>
+<h3 class="cell-title">Erre lesz szükséged</h3>
+<p>A telepített munkamappa, a bekapcsolt connectorok és a <a href="../starter-kit/crm-template.csv">CRM-sablon</a> (a munkamappában: <code>Tananyag/starter-kit/crm-template.csv</code>).</p>
+</div>
+<div class="cell cell--how">
+<a id="00-prework.05-coach-check--explanation"></a>
+<h3 class="cell-title">Így működik</h3>
+<p>A <strong>CRM</strong> (ügyfélkapcsolat-kezelő) itt egy egyszerű táblázat: soronként egy ügyféleset, szakasszal és következő lépéssel. Azért Google-táblázat, mert nem kell hozzá fejlesztő, és a Claude a Google Drive connectorral el tudja olvasni. A frissítést a CRM-agent CSV-sorokként adja, te bemásolod; ha a connectorod írni is tud, közvetlenül is írhat. Outlook- és Excel-felhasználóknál ugyanez működik a saját Excel-fájloddal, a <code>Munka/05-Folyamat/</code> mappában. Ide érkeznek a Sales Bot leadjei, az EstiWise-ajánlatok és a levelekből kinyert érdeklődők. Ha már használsz HubSpotot vagy Pipedrive-ot, és van hozzá connector a Claude-ban, később azt is bekötheted; a workshopon a táblázattal dolgozunk.</p>
+<p>A <strong>tanulási kísérő</strong> a Claude a munkamappádban, a <code>Tananyag/assistant.md</code> utasítás szerint. Indítómondatra vezet végig egy blokkon.</p>
+</div>
+<div class="cell cell--decide">
+<a id="00-prework.05-coach-check--decisions"></a>
+<h3 class="cell-title">Ezekről te döntesz</h3>
+<p>Google-táblázat, vagy saját Excel-fájl, ha nincs Google-fiókod. Kivel osztod meg a táblát: a workshopon senkivel.</p>
+</div>
+<div class="cell cell--prompt">
+<a id="00-prework.05-coach-check--prompt"></a>
+<h3 class="cell-title">Ezt kérd Claude-tól</h3>
+<p>A Cowork-projektben, új munkamenetben, a connectorokat bekapcsolva:</p>
+<pre><code class="language-text">Kezdjük a felkészülés ellenőrzését.
+</code></pre>
+<p>A kísérő ellenőrzi: megvan-e a <code>Tananyag/</code> és a <code>Munka/</code>, a projekt Instructions mezője és a gyökérben az <code>AGENTS.md</code>; a levelező connectorral ki tudja-e olvasni a legutóbbi beérkezett levél tárgyát (a tartalmát nem mutatja); a levélküldés tiltva van-e; megtalálja-e a Google Drive-ban a „CRM – [cégnév]” táblázatot; él-e a Buffer connector. A partnerek connectorát nem ellenőrzi: azokat a blokkjukban kötjük be. Az eredmény egy ✅/⚠️ lista teendőkkel.</p>
+</div>
+<div class="cell cell--steps">
+<a id="00-prework.05-coach-check--steps"></a>
+<h3 class="cell-title">Haladj végig ezeken</h3>
+<ol>
+<li><strong>0–4 perc:</strong> Google Táblázatok → üres táblázat, neve „CRM – [cégnév]”. Fájl → Importálás → Feltöltés: a <code>crm-template.csv</code>. Importálási hely: „Jelenlegi munkalap cseréje”. Töröld a MINTA-01 sort.</li>
+<li><strong>4–9 perc:</strong> futtasd a fenti indítómondatot, és válaszolj a kísérő kérdéseire.</li>
+<li><strong>9–10 perc:</strong> a ⚠️ sorokat írd fel a reggeli technikai pulthoz.</li>
+</ol>
+</div>
+<div class="cell cell--check">
+<a id="00-prework.05-coach-check--check"></a>
+<h3 class="cell-title">Ellenőrizd az eredményt</h3>
+<ul>
+<li>A CRM-táblázat létezik, az első sorban a 15 oszlopnév van.</li>
+<li>A kísérő listájában a munkamappa és az utasítások ✅.</li>
+<li>A levelezés, a levélküldés tiltása, a CRM és a Buffer ✅, vagy ⚠️ és tudod a kézi utat.</li>
+<li>A Brandiseer-, Buffer- és EstiWise-fiókod megvan.</li>
+</ul>
+</div>
+<div class="cell cell--help">
+<a id="00-prework.05-coach-check--help"></a>
+<h3 class="cell-title">Ha elakadtál</h3>
+<p>Ha a Claude nem találja a táblázatot, kérd: „Keresd a Google Drive-ban a CRM nevű táblázatot.” Ha a Drive connector nincs bekötve, mentsd a táblázatot CSV-ként <code>Munka/05-Folyamat/crm.csv</code> néven; az 5. blokkban a Claude ebből olvas, a frissített sorokat pedig te másolod be.</p>
+</div>
+<div class="cell cell--output">
+<a id="00-prework.05-coach-check--handoff"></a>
+<h3 class="cell-title">Ezt viszed tovább</h3>
+<p>Működő munkamappa, CRM-tábla és ellenőrzőlista. Reggel 09:20-kor az 1. blokk ebből indul: „Kezdjük az 1. blokkot.”</p>
+</div>
+<div class="cell cell--extra">
+<a id="00-prework.05-coach-check--extra"></a>
+<h3 class="cell-title">Ha maradt időd</h3>
+<p>Nyisd meg a <a href="../scenarios/office-plants/outputs/company-dna.md">kitalált IrodaLiget Cég-DNS-t</a>. Így reggel már tudod, mit fogsz építeni.</p>
+</div>
 <a id="recovery"></a>
 <h2>Segítség elakadáskor</h2>
 <ol>
-<li>Mentsd a saját eddigi munkádat.</li>
-<li>Válaszd ugyanazt a mintavállalkozást, amellyel elkezdtél dolgozni.</li>
-<li>A <code>scenarios/&lt;scenario&gt;/outputs/</code> mappából vedd át az aktuális modul hiányzó kimeneteit.</li>
-<li>A haladási naplóban jelöld: <code>completed_with_example</code>, végrehajtás: <code>simulation</code>.</li>
-<li>Mondd el saját szavaiddal, mit készített volna a lépés, majd folytasd a következő leckével.</li>
+<li>Mentsd a saját eddigi munkádat, és írd fel, melyik lépésnél akadtál el.</li>
+<li>Reggel 08:30 és 09:00 között a technikai pultnál befejezzük a beállítást.</li>
+<li>Ami ott sem megy, annak a kézi útján haladsz: tananyag ZIP-ből, levelek bemásolva, CRM CSV-fájlban, partnerrendszer helyett demófiók vagy mintafájl.</li>
+<li>A haladási naplóban az érintett lépésnél a végrehajtás <code>simulation</code>; a beállítási hibát a <code>gaps</code> listába írd.</li>
 </ol>
-<p>Saját üzletről mintára váltáskor külön munkapéldányban a teljes kapcsolódó mintaláncot használd; ne keverd a minta árait a saját ajánlatoddal. A statikus csomag nem bizonyít működő partnerintegrációt.</p>
+<p>Saját cégről mintára váltáskor külön munkapéldányt használj, és ne keverd a minta árait a saját ajánlatoddal. A statikus mintacsomag nem bizonyít működő partnerintegrációt.</p>
 <a id="examples"></a>
 <h2>Gyakorlópéldák</h2>
-<p>A közös, összefüggő kitalált példák a repó <code>scenarios/</code> mappájában találhatók. A partner ide adhat eszközspecifikus kimenetet; jelölje a teszt dátumát és a példavállalkozás azonosítóját.</p>
+<p>Három kitalált vállalkozás van a <code>scenarios/</code> mappában. A Cég-DNS, a hangprofil, a mintapostafiók és a CRM-minta az <a href="../scenarios/office-plants/README.md">IrodaLiget</a> példán készült el; a 03-as és 04-es blokk mentőútja is erre épül.</p>
 <a id="continue"></a>
 <h2>Folytatás</h2>
-<p><a href="../index.html#modules">Modulok</a><a href="01-business-foundations.html">Következő modul →</a></p>
+<p><a href="../index.html#modules">Modulok</a> · <a href="../CLAUDE-CODE.html">Haladó út: Claude Code</a> · <a href="01-business-foundations.html">Következő modul →</a></p>
 <p>Wenova × Brandiseer × Blackhole Media × EstiWise</p>
+<nav class="pager" aria-label="Modulok"><span></span><a class="pager__next" href="01-business-foundations.html"><span>Következő modul →</span>Cég-DNS és saját AI-csapat</a></nav>
 </main></div>
+<footer class="site-foot"><div class="partner-band partner-band--foot has-lead"><p class="partner-band__label">Wenova × Brandiseer × Blackhole Media × EstiWise</p><ul class="partner-band__list" aria-label="Partnerek"><li class="partner partner--wenova is-lead"><span class="partner__logo"><img class="logo logo--wenova" src="../assets/logos/wenova-wordmark.png" alt="Wenova" width="239" height="28"></span><span class="partner__role"><span class="partner__lead">Blokkgazda</span> · Szervező · AI-működés</span></li><li class="partner partner--brandiseer"><span class="partner__logo"><img class="logo logo--brandiseer" src="../assets/logos/brandiseer-icon.png" alt="" width="24" height="28"><span class="logo-word">Brandiseer</span></span><span class="partner__role">Márkaazonos tartalom</span></li><li class="partner partner--blackhole"><span class="partner__logo"><img class="logo logo--blackhole" src="../assets/logos/black-hole-media-logo.png" alt="Blackhole Media" width="299" height="28"></span><span class="partner__role">Ügyfélszerzés · Sales Bot</span></li><li class="partner partner--estiwise"><span class="partner__logo"><img class="logo logo--estiwise" src="../assets/logos/estiwise-logo-feher.svg" alt="EstiWise" width="99" height="28"></span><span class="partner__role">Ajánlatadás 0–24</span></li></ul></div><p class="site-foot__meta">AI Sales &amp; Marketing Workshop · 2026. november 19. · CEU, Budapest · a Wenova szervezésében</p></footer>
 </body></html>

@@ -1,0 +1,5 @@
+Helyben kiszolgált betűkészletek (nincs külső betöltés):
+- Geist (változó, 400-700), Fraunces (italic 400), JetBrains Mono (500); latin + latin-ext subset.
+- Forrás: Google Fonts; a Wenova Academy oldal (edu.wenova.io) assets/fonts mappájából átvéve.
+- Licenc: SIL Open Font License 1.1 (mindhárom) - https://openfontlicense.org
+  Az OFL engedi a beágyazást és a változatlan terjesztést.
