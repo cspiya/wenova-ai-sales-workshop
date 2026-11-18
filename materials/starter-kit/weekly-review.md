@@ -27,7 +27,7 @@ Kevés szám, amit tényleg meg tudsz nézni. A célértéket a saját első 2�
 | Minőség | Ellenőri BLOKKOLÓ/JAVÍTANDÓ (M15) az ellenőrzött szövegekből (M16) | Ellenőri jelentések | Elég jó-e a DNS és az Író utasítása |
 | Idő | Megtakarított idő (M17) | Saját becslés | Megéri-e; becslés, nem mérés |
 
-Arányok, amiket a Karmester számol: elfogadási arány = M05 / M04; válaszarány = M06 / M05; ajánlat → megnyert = M12 / M11; ellenőri visszadobási arány = M15 / M16.
+Arányok, amiket a Karmester számol: elfogadási arány = M05 / M04; válaszarány = M06 / M05; ajánlat → megnyert = M12 / M11 (M11 a kiküldés hete szerint számol, a mostani CRM-szakasztól függetlenül); ellenőri visszadobási arány = M15 / M16.
 
 ## Heti átnézés: a prompt
 

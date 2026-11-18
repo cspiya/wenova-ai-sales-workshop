@@ -206,7 +206,7 @@ A hiányzó adatokra adott válaszok; az ajánlat sorai, ára és feltételei; h
 
 ```text
 Az EstiWise-kapcsolattal készítsünk ajánlattervezetet. Csatoltam a customer-brief.md és a business-profile.md fájlomat, és az árlistámat.
-1. Indíts belső kalkulációt a customer-brief.md igényéből. A rendszer kérdéseit egyenként tedd fel nekem; az ügyfél nevében válaszolok. Ügyfélként a business_name mezőben szereplő kitalált vagy jóváhagyott tesztügyfelet használd.
+1. Indíts belső kalkulációt a customer-brief.md igényéből. A rendszer kérdéseit egyenként tedd fel nekem; az ügyfél nevében válaszolok. Ügyfélként azt a céget használd, amelyhez a customer-brief.md lead_id mezője tartozik a leadlistában (leads.csv); ha ott nincs ilyen, kérdezz rá egy kitalált tesztügyfélre. A business_name a saját cégem, nem az ügyfél.
 2. Ha kész, mutasd meg a kalkulációt soronként. Jelezd, ha egy sorban hiányzik a mennyiség, és kérdezz rá.
 3. Készíts belőle ajánlattervezetet, de NE küldd ki.
 4. Írd meg a proposal.md tartalmát a közös mezőkkel: proposal_id, lead_id, offer_id, scope, quantity, unit_price, currency, price_basis, total, assumptions, status: draft. Az azonosítókat a customer-brief.md-ből vedd.

@@ -9,7 +9,7 @@ week,stage,metric_id,metric,value,unit,source,note
 2026-W47,Bejövő,M08,Új érdeklődés e-mailben,,db,CRM (source=E-mail),
 2026-W47,Bejövő,M09,Ajánlatkérés az EstiWise-on,,db,EstiWise,
 2026-W47,Ajánlat,M10,Elkészült ajánlattervezet,,db,CRM / EstiWise,
-2026-W47,Ajánlat,M11,Kiküldött ajánlat,,db,CRM (stage=Ajánlat kint),
+2026-W47,Ajánlat,M11,Kiküldött ajánlat,,db,CRM (a héten kiküldött ajánlatok a mostani szakasztól függetlenül: Ajánlat kint / Tárgyalás / Megnyert / Elvesztett),Ne csak a mostani Ajánlat kint sorokat számold: a később megnyert ajánlat is ide tartozik
 2026-W47,Ajánlat,M12,Megnyert ügy,,db,CRM (stage=Megnyert),
 2026-W47,Ajánlat,M13,Megnyert érték nettó,,HUF,CRM,
 2026-W47,Sebesség,M14,Első válasz átlagos ideje,,óra,Postás-átnézés,
