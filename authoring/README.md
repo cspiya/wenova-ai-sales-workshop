@@ -112,6 +112,8 @@ Magyar tartalom, angol fájl- és mappanevek. A sablon másolásakor az AI igaz�
 
 <a name="review"></a>
 
+**Sorkizárt folyószöveg.** Bárhol írunk tartalmat, a folyószöveg sorkizárt, magyar elválasztással: weboldalon, dokumentumban és generált HTML-ben is. Nem folyószöveg a cím, a táblázat, a kód, a prompt, a navigáció, a gomb, a rövid címke és a vetített dia. A közös szabály a `materials/assets/notebook.css` fájlban van, oldalanként nem írjuk felül.
+
 ## Review és elfogadás
 
 <a name="review-1"></a>
