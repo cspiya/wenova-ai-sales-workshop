@@ -81,3 +81,16 @@ A résztvevői és az oktatói webes anyag átnézése 1440 és 390 px széless�
 | --- | --- | --- | --- |
 | A panel kezdőhorgonya telefonon több ezer pixelt ugratott az oldalon. | A javítás csak a panel tartalmát nézte, a külső oldal görgetését nem. | A horgony kikerült. | Beágyazott tartalom módosításakor a külső oldal viselkedését is mérni kell. |
 | Az orchestrator először a hibabizonyítékot a ticketen kívül akarta tartani. | A repó megőrzési szabályát a ticketre is kiterjesztette. | A bizonyíték a ticketben van (WEN-1220/D1). | A hibák reprodukálásához szükséges adat helye a ticket. |
+
+
+## Hallgatói és oktatói arculat (WEN-1224, 2026-11-19)
+
+**Szempont:** két közönség, két megjelenés, állandó területjelző sáv, és hallgatói oldalról nem vezet link oktatói oldalra.
+
+| Kör | Vizsgált revízió | Ítélet | Megállapítások | Javítás |
+| --- | --- | --- | --- | --- |
+| 1. | `94ae0b6` | REVISE | VA-01 BLOKKOLÓ: a portszámos oktatói cím átment a kapun. VA-02 FONTOS: az idézőjel nélküli link kimaradt. VA-03 FONTOS: a hanglaborból hiányzott a sáv. | `7d2f850` |
+| 2. | `7d2f850` | REVISE | VA-01, VA-02, VA-03 lezárva. VA-04 KISEBB: keskeny nézetben a fókuszált ugrólink takarta a sáv feliratát. | `f95f220` |
+| 3. | `f95f220` | REVISE | VA-04 lezárva. VA-05 FONTOS: hibás döntésazonosító ebben a jegyzőkönyvben. VA-06 KISEBB: keskeny nézetben a fókuszkeret kilógott a képből. | `c368bb7` |
+
+**Végső állapot:** a VA-05 és VA-06 javítása után új független kör nem futott, mert a tulajdonos legfeljebb egy további kört engedett, és blokkoló hiba nem maradt (WEN-1220/D14). A keskeny nézetű fókusz böngészős próbája nyitott. Lefedettség: PARTIAL, az élő görgetést és a kattintásos promptkijelölést a reviewer nem tudta megismételni.
