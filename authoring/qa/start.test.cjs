@@ -21,7 +21,7 @@ test('root README never links to a repository HTML file',()=>{
 });
 test('runbook updates safely and never names restricted plans',()=>{
  const text=read('materials/TELEPITES.md');
- for(const s of ['Tananyag.uj-','hashlista','claude plugin marketplace update wenova-workshop','raw.githubusercontent.com','bármilyen okból'])assert.ok(text.includes(s),s);
+ for(const s of ['Tananyag.uj-','hashlist','claude plugin marketplace update wenova-workshop','raw.githubusercontent.com','bármilyen okból'])assert.ok(text.includes(s),s);
  assert.doesNotMatch(text,/Enterprise/);
 });
 test('projection page is generated, script-free and linked from the start page',()=>{

@@ -39,6 +39,9 @@ A következő, `1223-readiness.md` brief alapján a felkészülés első indít�
 | WEN-1223/D8 | 2026-11-19 | A Cég-DNS nem igényel kapcsolatot. A márkahangnál levelezésre akkor van szükség, ha a résztvevő onnan olvas levelet | AI (maker) | A 01-es blokk meglévő kézi és mintás útja használható marad. A Buffer a 02-es blokkban választható | WEN-1223/D6, 01-es és 02-es modul | nincs | Codex, jelen munkamenet |
 | WEN-1223/D9 | 2026-11-19 | A Codex-vizsgálat a helyi parancs elérhetőségét mutatja, az ellenőrzés külön résztvevői munkamenetben indul | AI (maker) | A verziószám nem igazolja a bejelentkezést. A felmérés egyik alkalmazást sem állítja át | WEN-1223/D6, readiness brief | nincs | Codex, jelen munkamenet |
 
+| WEN-1223/D6 | 2026-11-19 | A partnerpromptok változatlanok, a Wenova réteg alkalmazza a H-01 – H-11 pontokat | ember (tulajdonos) | A nap így a partneri anyagok átírása nélkül is összefügg | WEN-1220/D13 | nincs | az agent rögzítette a koordinátor üzenetéből, 6b54de9a session |
+| WEN-1223/D7 | 2026-11-19 | Az engedély a résztvevő döntése, a tiltó szövegek helyett a következményt mondjuk el | ember (tulajdonos) | A kényelmes automatizáláshoz engedélyek kellenek | Tulajdonosi kérés | nincs | az agent rögzítette a koordinátor üzenetéből, 6b54de9a session |
+
 ## Review körök
 
 Független review még nem futott. A readiness brief önálló maker munkát kért. A forrásban ellenőriztem az első és a kézi indítást, a három kapcsolatállapotot, az olvasási és mentőutat, a napi próba újrafelhasználását és az Ellenőr átadását. A forrásellenőrzés eredménye PASS, a lefedettség PARTIAL, a minősítés NOT_READY. Nyitott maradt a független review és az élő, időmért résztvevői próba.
@@ -70,6 +73,8 @@ Korlátok: Cowork, Mac, connector-belépés és a nyers GitHub-cím nem volt pr�
 | Célzott forrásellenőrzés | PASS. A sablon kötelező mezői, a nyolc szerepfájl, a hat blokk-skill, a három kapcsolatállapot, az Ellenőr két útja és a sablon hivatkozása ellenőrizve. |
 
 A szakmai elfogadás, a három perc betarthatósága, az új folyamat futása Coworkben és Claude Code-ban, a szolgáltatói belépés és füstpróba, a Codex tényleges indíthatósága, illetve a Node 24-es futás nyitott. A jelen módosításhoz nem készült külön böngészős próba. A szolgáltatók olvasási lehetőségeit a szöveg a munkamenetben ténylegesen felkínált eszközhöz köti.
+
+Második kör, vizsgált revízió `16b27bf`, tiszta profil: újrafuttatás 91,4 mp (a plugin `23b98012a8fb` verzióról a letöltött commitra frissült, a `Munka/` hashlistája azonos), friss telepítés 71,1 mp (plugin 1,6, tananyag 69,5), induló felmérés 99,1 mp. Scoop-próba elszigetelt mappában: Scoop 29,0 mp, kötelező csomagok 36,4 mp, választható csomagok 52,5 mp. A felhasználói környezet, a Scoop-beállítás és a végrehajtási házirend változatlan maradt, a próbamappa törölve.
 
 ## Tanulságok és javasolt feladatok
 
