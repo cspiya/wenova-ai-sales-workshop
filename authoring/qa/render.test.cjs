@@ -34,13 +34,11 @@ test('copy hint, collapsible phone contents, status label and direct module link
  assert.match(notes,/<a href="\.\.\/\.\.\/materials\/modules\/01-demo\.html">Kapcsolódó tananyag<\/a>/);
  assert.match(notes,/01-demo\.html#01-demo\.01-start" target="lesson"/);assert.doesNotMatch(notes,/toc-mobile|copy-hint/);
 }));
-test('instructor lesson pane opens on the module overview when the anchor exists',()=>fixture((root,put)=>{
+test('instructor lesson pane src has no fragment, so opening a note does not scroll the page',()=>fixture((root,put)=>{
  put('materials/modules/01-demo.md','# Modul\n\n<a name="overview"></a>\n\n## Áttekintés\n');
- put('materials/modules/02-demo.md','# Modul\n\n## Áttekintés\n');
- put('operations/instructor-notes/01-demo.md','# Oktató\n');put('operations/instructor-notes/02-demo.md','# Oktató\n');
+ put('operations/instructor-notes/01-demo.md','# Oktató\n');
  run({root});
- assert.match(fs.readFileSync(path.join(root,'operations/instructor-notes/01-demo.html'),'utf8'),/<iframe name="lesson" src="\.\.\/\.\.\/materials\/modules\/01-demo\.html#overview"/);
- assert.match(fs.readFileSync(path.join(root,'operations/instructor-notes/02-demo.html'),'utf8'),/<iframe name="lesson" src="\.\.\/\.\.\/materials\/modules\/02-demo\.html"/);
+ assert.match(fs.readFileSync(path.join(root,'operations/instructor-notes/01-demo.html'),'utf8'),/<iframe name="lesson" src="\.\.\/\.\.\/materials\/modules\/01-demo\.html"/);
 }));
 test('stale output and changed Markdown fail check without repairing files',()=>fixture((root,put)=>{
  put('README.md','# Cím\n');run({root});put('index.html','manual change');
