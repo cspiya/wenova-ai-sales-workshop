@@ -26,7 +26,7 @@ A Cég-DNS-től az ajánlatig és a CRM-ig: saját AI-csapat a Claude-ban, a saj
 
 **Wenova × Brandiseer × Blackhole Media × EstiWise**
 
-**2026. november 19., csütörtök, 09:00–17:00 (érkezés és technikai ellenőrzés 08:30-tól) · CEU Nádor Event Center, Budapest V., Nádor u. 15., N13 412/A terem (4. emelet; belépőkártya a recepción) · legfeljebb 30 résztvevő**
+**2026. november 19., csütörtök, 09:00–17:00 (érkezés és technikai ellenőrzés 08:30-tól) · CEU Nádor Event Center, Budapest V., Nádor u. 15., N13 412/A terem (4. emelet; belépőkártya a recepción)**
 
 **Honnan töltöd le az anyagot?** A Claude Desktop Cowork módjában egy mondattal telepíted: „Telepítsd a workshop tananyagát: https://raw.githubusercontent.com/cspiya/wenova-ai-sales-workshop/main/materials/TELEPITES.md”. Részletek: [felkészülés](modules/00-prework.md#00-prework.01-install) és [telepítési futtatókönyv](TELEPITES.md). Kézi letöltés: [ZIP](https://github.com/cspiya/wenova-ai-sales-workshop/archive/refs/heads/main.zip); böngészőben: [github.com/cspiya/wenova-ai-sales-workshop/tree/main/materials](https://github.com/cspiya/wenova-ai-sales-workshop/tree/main/materials). Terminálhoz szokottaknak: [haladó út Claude Code-dal](CLAUDE-CODE.md).
 
@@ -59,7 +59,7 @@ Cég-DNS és saját AI-csapat → tartalom a céged hangján → LinkedIn-megker
 
 ### Előzetes felkészülés
 
-A workshop előtt kb. 55 perc a [felkészülési modul](modules/00-prework.md) szerint: Claude-előfizetés és Claude Desktop, a tananyag telepítése egy mondattal egy saját munkamappába, a levelező és a Google-táblázat bekötése, Brandiseer- és EstiWise-fiók (a Buffer-fiók választható), a saját források összegyűjtése. Ami nem sikerül, azt reggel 08:30-tól a technikai pultnál befejezzük.
+A [felkészülés](modules/00-prework.md) kb. 55 perc. Készítsd elő a Claude-előfizetésedet és a Claude Desktopot, telepítsd a tananyagot, kösd be a levelezőt és a Google-táblázatot, és gyűjtsd össze a saját forrásaidat. A Brandiseer- és EstiWise-fiókot a workshopon is létrehozhatod a saját laptopodon. A Buffer-fiók választható. Érkezz 08:30-ra a közös technikai ellenőrzésre, amely 09:00-ig tart. Ha elakadsz, szólj egy oktatónak, aki a helyeden segít.
 
 <a name="agenda-5"></a>
 
@@ -144,7 +144,11 @@ A telepítés a [starter-kit](starter-kit/README.md) sablonjait is a munkamappá
 
 ## Eszközök és hozzáférések
 
-Fizetős Claude-előfizetés (Pro vagy magasabb) és a Claude Desktop (Cowork mód); Gmail- vagy Microsoft 365-levelezés; Google-fiók a CRM-táblához. Előre: Brandiseer-fiók a felvett márkáddal ([brandiseer.hu](https://brandiseer.hu): Try My Brand → Add Brand) és Pro csomag a WENOVA kóddal (az első hónap ingyenes), választhatóan ingyenes Buffer-fiók ([buffer.com](https://buffer.com)) legalább egy közösségimédia-oldallal (a 02-es blokk bónuszfeladatához), EstiWise-regisztráció bankkártya nélkül ([admin.estiwise.ai/auth/register](https://admin.estiwise.ai/auth/register)). A Sales Bothoz ([sales-bot.io](https://sales-bot.io)) előre nincs teendőd: a hozzáférést a helyszínen, a 03-as blokk elején kapod; a LinkedIn-belépésed legyen kéznél. A partnereszközökre nem kell fizetned: a Brandiseerhez a WENOVA kód ad egy hónap ingyenes Pro csomagot, a többi eszközhöz a napra mindenki megkapja a használati keretet. A részletes lépések a [felkészülési modulban](modules/00-prework.md) vannak. Személyes LinkedIn-kapcsolat nélkül is végig lehet menni a napon.
+Készítsd elő a fizetős Claude-előfizetést (Pro vagy magasabb), a Claude Desktopot (Cowork mód), a Gmail- vagy Microsoft 365-levelezést és a CRM-táblához használt Google-fiókot.
+
+Ha még nincs Brandiseer- vagy EstiWise-fiókod, a workshopon is regisztrálhatsz a saját laptopodon. A [Brandiseerben](https://brandiseer.hu) vedd fel a márkádat (Try My Brand → Add Brand). A WENOVA kód az első hónapra ingyenes Pro csomagot ad. Az [EstiWise-regisztrációhoz](https://admin.estiwise.ai/auth/register) nem kell bankkártya. A Blackhole Media előre létrehozza a [Sales Bot](https://sales-bot.io)-hozzáférésedet, és a 03-as blokk elején adja át. A LinkedIn-belépésed legyen kéznél. Személyes LinkedIn-kapcsolat nélkül is végigmehetsz a napon. A partnereszközökre a naphoz nem kell előfizetned. A regisztrációhoz és a beállításhoz a helyeden kérhetsz segítséget az oktatótól. A részleteket a [felkészülési modulban](modules/00-prework.md#00-prework.03-partner-accounts) találod.
+
+A [Buffer](https://buffer.com) a 02-es blokk választható bónuszához kell. Ha használod, legalább egy közösségimédia-oldalt köss be. A Claude ütemezés előtt megmutatja a csatornát, a szöveget és az időpontot, majd megvárja a kifejezett jóváhagyásodat. **Ami be van ütemezve, az ki is megy.** Ha ezt nem szeretnéd, hagyd piszkozatban. Azonnali közzétételt te indíthatsz.
 
 <a name="outputs"></a>
 
@@ -154,7 +158,7 @@ Minden output a résztvevő saját munkacsomagjába kerül. A példavállalkozá
 
 | Fájl | Kötelező mezők |
 | --- | --- |
-| company-dna.md | Metaadat (verzió, státusz, gazda), ICP, ajánlatok offer\_id-val, bizonyíték, hangnem, Mondjuk / Nem mondjuk, források, hiányok |
+| company-dna.md | Metaadat (verzió, státusz, gazda), ICP, ajánlatok offer\_id-val, bizonyíték, hangnem, Mondjuk / Nem mondjuk, források, hiányok, a cég következő célja, az ügyfélszerzés fő lépései és az emberi döntési pont |
 | voice-profile.md | Tegezés/magázás, megszólítás, mondathossz, következő lépés, záróformula, kerülendő kifejezések |
 | business-profile.md | business\_id, business\_name, offer\_id, offer, audience, problem, outcome, scope, exclusions, pricing\_basis, channel, next\_action, assumptions |
 | post-review.md | Szövegazonosító, vizsgált verzió, Ellenőr ítélete, függőben lévő újraellenőrzés (ha van) |

@@ -22,7 +22,7 @@ A tananyag [célja](../../materials/modules/04-proposals-handoff.md#overview) ut
    - **Nem működik?** Team és Enterprise csomagnál a könyvtári csatlakozókat előbb a szervezet tulajdonosának kell engedélyeznie. Kézzel: a megnyíló oldalon „Add custom connector”, majd az MCP-szerver URL beillesztése: `https://mcp.estiwise.ai/mcp` (a kártyán az „MCP szerver URL másolása” gombbal másolható).
    - **Más eszközök:** ugyanazon a kártyán Cursorba és VS Code-ba egy kattintással telepíthető („Hozzáadás Cursorhoz”, „Hozzáadás VS Code-hoz”); Claude Code-nál a „Claude Code parancs másolása” gombbal másolt parancsot a terminálba kell illeszteni.
 2. **Miért kell AI az ajánlatadásba (kb. 6 perc):** a lassú, kézi ajánlatadás ára; mit csinál a szabályalapú árazás; mikor marad emberi döntés.
-3. **Élő bemutató (kb. 7 perc):** egy ajánlatkérés beérkezik, az EstiWise kérdez és kalkulál, ellenőrzött ajánlattervezet készül, majd átadás. Kész mintán mutassuk, nem kitalált referenciával.
+3. **Az EstiWise csapatának ajánlatadó-bemutatója (kb. 7 perc):** mutassátok be a 0–24-ben elérhető ajánlatadót. A mintában egy ajánlatkérés beérkezik, az EstiWise kérdez és kalkulál, ellenőrzött ajánlattervezet készül, majd átadás. Kész mintán mutassuk, nem kitalált referenciával.
 
 <a name="notes-2"></a>
 
@@ -37,6 +37,8 @@ Minden leckénél mondd meg az aktuális feladatot, a mentendő eredményt és a
 <a name="notes-3"></a>
 
 ### Partneri feladatok
+
+Aki még nem regisztrált az EstiWise-ba, a workshopon a saját laptopján megteheti. Ha elakad, segíts neki a helyén.
 
 Rögzítendő: eszközbemutató, tényleges kapcsolatok, időmért próba, gyakori hibák és mentorbeosztás.
 

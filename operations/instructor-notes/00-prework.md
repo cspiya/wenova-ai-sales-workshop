@@ -8,7 +8,7 @@
 
 Belső oktatói jegyzet · review
 
-**Státusz: review.** Felkészülés a workshop előtt, technikai pult 08:30–09:00.
+**Státusz: review.** Felkészülés a workshop előtt. Érkezés 08:30-kor, közös technikai ellenőrzés 08:30-tól 09:00-ig.
 
 <a name="notes-1"></a>
 
@@ -16,16 +16,18 @@ Belső oktatói jegyzet · review
 
 - A résztvevők 2026-11-18-án e-mailt kaptak: fizetős Claude kell; Brandiseer-fiók és legalább egy közösségimédia-oldallal összekötött Buffer-fiók (a levél még kötelezőként kérte a Buffert); EstiWise-regisztráció bankkártya nélkül; a Sales Bothoz előre nincs teendő, a hozzáférést a 03-as blokk elején kapják, csak a LinkedIn-belépés legyen kéznél. Partnereszközre senkinek nem kell előfizetnie. Terem: N13 412/A (4. emelet), belépőkártya a recepción.
 - Az alapút **Claude Desktop, Cowork mód**, munkamappa: `Wenova-AI-Sales-Workshop` (`Tananyag/` + `Munka/`). A tananyag a nyilvános repó `main` ágáról települ egy mondattal ([telepítés](../../materials/modules/00-prework.md#00-prework.01-install)). A PR-nak 19-én reggelig a `main`-en kell lennie, különben a telepítés a régi anyagot hozza.
-- Érvényes pontosítás a korábbi levélhez: a Buffer választható. A pultnál Buffer nélkül is kész lehet a felkészülés.
-- A partnerek MCP-connectorát (Brandiseer, Sales Bot, EstiWise) a partnerek a saját blokkjukban kötik be. A pultnál ezekkel nem foglalkozunk.
+- A Buffer választható. Aki még nem regisztrált a Brandiseerbe, az EstiWise-ba vagy a választott Bufferbe, a workshopon a saját laptopján megteheti. A Sales Bot-hozzáférést a Blackhole Media előre létrehozza, és a 03-as blokk elején adja át.
+- A partnerek MCP-connectorát (Brandiseer, Sales Bot, EstiWise) a partnerek a saját blokkjukban kötik be.
 
 <a name="notes-2"></a>
 
-### Technikai pult 08:30–09:00
+### Közös technikai ellenőrzés (08:30-09:00)
+
+Járd körbe a termet. Ha valaki elakad a regisztrációban vagy a beállításban, menj oda hozzá, és segíts a saját laptopján.
 
 Sorrend: [telepítés](../../materials/modules/00-prework.md#00-prework.01-install--steps) → [connectorok és tiltás](../../materials/modules/00-prework.md#00-prework.02-account-check--steps) → [indulási próba](../../materials/modules/00-prework.md#00-prework.05-coach-check--prompt). Egy résztvevőre legfeljebb 5 perc; ami addig nem megy, az a kézi úton indul, és a blokkban a körbejáró oktató pótolja.
 
-Pultlap (papíron, név nélkül, asztalszámmal): Cowork + munkamappa ✅/⚠️ · `Tananyag/` verzió ✅/⚠️ · Instructions-mondat ✅/⚠️ · levelező ✅/⚠️ · levelező küldés/válasz/továbbítás/törlés Tiltva (Blocked) ✅/⚠️ · Google Drive + CRM-tábla ✅/⚠️ · Buffer-fiók + connector ✅/⚠️/nem választotta · Brandiseer ✅/⚠️ · EstiWise-fiók ✅/⚠️.
+Ellenőrzőlap (papíron, név nélkül, asztalszámmal): Cowork + munkamappa ✅/⚠️ · `Tananyag/` verzió ✅/⚠️ · Instructions-mondat ✅/⚠️ · levelező ✅/⚠️ · levelező küldés/válasz/továbbítás/törlés Tiltva (Blocked) ✅/⚠️ · Google Drive + CRM-tábla ✅/⚠️ · Buffer-fiók + connector ✅/⚠️/nem választotta · Brandiseer ✅/⚠️ · EstiWise-fiók ✅/⚠️.
 
 Levelezőbiztonság: a résztvevő a connector engedélyoldalán ellenőrzi a küldés, válasz, továbbítás és törlés Tiltva (Blocked) állását. Az olvasási próba eredményét külön jelöljük; írási műveletnél senki ne kattintson a „Mindig engedélyez” (Always allow) gombra.
 
@@ -33,7 +35,7 @@ Levelezőbiztonság: a résztvevő a connector engedélyoldalán ellenőrzi a k�
 
 ### Gyakori hibák
 
-| Hiba | Tünet | Megoldás a pultnál |
+| Hiba | Tünet | Helyszíni segítség |
 | --- | --- | --- |
 | Ingyenes csomag | Nincs Cowork | Előfizetés helyben (Pro), vagy párban dolgozik |
 | Nincs csatolt mappa | A Claude kéri, hogy válasszon mappát | Projects → + → Use an existing folder → `Wenova-AI-Sales-Workshop` |
@@ -56,13 +58,13 @@ A dokumentáció alapján írtuk, élő próbán nem futott:
 4. A Buffer connector neve és a „Connect” lépés a Customize → Connectors listában (a Buffer dokumentációja szerint létezik).
 5. A Cowork ütemezett feladata helyi mappa nélkül (Pro) a Google Drive-ból olvassa-e a DNS-t.
 
-Ha az 1–2. pont nem működik: a pultnál mindenki a kézi ZIP-utat kapja, ez 3 perc.
+Ha az 1. vagy 2. pont elakad, mutasd meg a résztvevőnek a kézi ZIP-utat a helyén. Erre 3 percet szánj.
 
 <a name="notes-5"></a>
 
 ### Adatvédelem
 
-A pultnál is ismételd el: jelszó és belépőkód nem kerül a Claude-ba; céges levelezés csak akkor, ha a résztvevőnek van rá engedélye. Ha bizonytalan, mintával dolgozik. Az [adatkezelési szabályok](../../materials/modules/00-prework.md#00-prework.04-sources--decisions) a tananyagban vannak; a jegyzet nem ismétli őket.
+Az ellenőrzéskor is ismételd el: jelszó és belépőkód nem kerül a Claude-ba; céges levelezés csak akkor, ha a résztvevőnek van rá engedélye. Ha bizonytalan, mintával dolgozik. Az [adatkezelési szabályok](../../materials/modules/00-prework.md#00-prework.04-sources--decisions) a tananyagban vannak; a jegyzet nem ismétli őket.
 
 ## Kapcsolódó tananyagrészek
 

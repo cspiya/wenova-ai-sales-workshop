@@ -30,7 +30,7 @@ Egy működő Claude-munkamappa a tananyaggal, bekötött levelezés és táblá
 
 **Státusz: kidolgozott útmutató, a helyszíni technikai próbára vár.**
 
-A workshop 2026. november 19-én, csütörtökön 09:00–17:00 között lesz a CEU Nádor Event Centerben (Budapest V., Nádor u. 15., N13 412/A terem, 4. emelet; a belépőkártyát a recepción kapod). Az egész napot a saját cégeden, a Claude-ban dolgozod végig. A felkészülés kb. 55 perc: otthon, előző este a legjobb. Ami nem sikerül, azt reggel 08:30 és 09:00 között a technikai pultnál befejezzük.
+A workshop 2026. november 19-én, csütörtökön 09:00–17:00 között lesz a CEU Nádor Event Centerben (Budapest V., Nádor u. 15., N13 412/A terem, 4. emelet; a belépőkártyát a recepción kapod). Az egész napot a saját cégeden, a Claude-ban dolgozod végig. A felkészülés kb. 55 perc. Érkezz 08:30-ra. A közös technikai ellenőrzés 08:30-tól 09:00-ig tart. Ha elakadtál, szólj egy oktatónak, és a helyeden segít a saját laptopodon.
 
 A nap eszköze a **Claude Desktop** fizetős előfizetéssel (Pro vagy magasabb), azon belül a **Cowork** mód. A partnereszközökre (Brandiseer, Buffer, Sales Bot, EstiWise) nem kell fizetned: a Brandiseerhez a WENOVA kód ad egy hónap ingyenes Pro csomagot, a többihez a napra mindenki megkapja a használati keretet. Három fogalom, amit egész nap használunk:
 
@@ -54,7 +54,7 @@ A `Wenova-AI-Sales-Workshop` munkamappa a telepített tananyaggal; egy Cowork-pr
 
 ### Folytatás elakadás esetén
 
-Ami otthon nem sikerül, írd fel, és hozd a 08:30-as technikai pulthoz. Minden lépésnek van kézi útja: [mentőútvonal](#recovery).
+Ami otthon nem sikerül, írd fel, és szólj az oktatónak a 08:30-as közös technikai ellenőrzésen. A helyeden segít. Minden lépésnek van kézi útja: [mentőútvonal](#recovery).
 
 <a name="overview-4"></a>
 
@@ -62,7 +62,7 @@ Ami otthon nem sikerül, írd fel, és hozd a 08:30-as technikai pulthoz. Minden
 
 - Azonosító: `00-prework`
 - Szakmai gazda: Wenova (Piya Csaba, Kemény Krisztián)
-- Időkeret: kb. 55 perc a workshop előtt, plusz 08:30–09:00 technikai pult
+- Időkeret: kb. 55 perc a workshop előtt, plusz közös technikai ellenőrzés 08:30-tól 09:00-ig
 - Végrehajtási mód: `live` (saját fiókok)
 - Állapot: review – kidolgozva, a helyszíni próba még hátravan.
 
@@ -269,18 +269,20 @@ Egy e-mail-cím a regisztrációkhoz, ha a Buffert is bekötöd, legalább egy k
 
 A partnerrendszereket a saját blokkjukban használod, a délutáni 5. blokkban pedig egy ügyfélesetben kapcsoljuk össze őket. Mindhárom partnernek saját connectora van a Claude-hoz; ezeket a partnerek a saját blokkjukban kötik be és mutatják meg.
 
-| Partner és blokk | Mit csinálsz előre? | Mi történik a helyszínen? |
+Ha még nincs fiókod valamelyik eszközhöz, amelyet használni szeretnél, a workshopon is regisztrálhatsz a saját laptopodon. Ha elakadsz, az oktató odamegy hozzád és segít.
+
+| Partner és blokk | Mit állítasz be a saját laptopodon? | Mi történik a blokkban? |
 | --- | --- | --- |
 | **Brandiseer** ([02-es modul](02-content-marketing.md)) | A [brandiseer.hu](https://brandiseer.hu) oldalon add meg a céged weboldalát → **Try My Brand** → töröld a nem odaillő képeket → **Add Brand** → fiók létrehozása. Utána Pro csomag a **WENOVA** kóddal (az első hónap ingyenes). | A 02-es blokkban a Brandiseer connectorát is bekötitek. |
-| **Buffer** (posztok ütemezése, választható) | Ingyenes fiók: [buffer.com](https://buffer.com), és köss be legalább egy közösségimédia-oldalt. A Claude-connectort a 2. leckében kapcsolod be. | A 02-es blokk bónuszfeladatában ide kerülnek a posztok piszkozatként. Nélküle is végig lehet menni a blokkon. |
+| **Buffer** (posztok ütemezése, választható) | Ingyenes fiók: [buffer.com](https://buffer.com), és köss be legalább egy közösségimédia-oldalt. A Claude-connectort a 2. leckében kapcsolod be. | A 02-es blokk bónuszában piszkozatot menthetsz vagy ütemezhetsz. Ütemezés előtt a Claude megmutatja a csatornát, a szöveget és az időpontot, majd megvárja a kifejezett jóváhagyásodat. Ami be van ütemezve, az ki is megy. Ha ezt nem szeretnéd, hagyd piszkozatban. |
 | **EstiWise** ([04-es modul](04-proposals-handoff.md)) | Regisztráció: [admin.estiwise.ai/auth/register](https://admin.estiwise.ai/auth/register). Bankkártya és előfizetés nem kell. | A Claude-összekötést a 04-es blokkban együtt csináljuk; előre ne próbáld. |
-| **Blackhole Media – Sales Bot** ([03-as modul](03-lead-generation.md)) | Előre nincs teendőd. Ha kíváncsi vagy: [sales-bot.io](https://sales-bot.io). A LinkedIn-belépésed legyen kéznél. | A hozzáférést és a connectort a 03-as blokk elején kapod. |
+| **Blackhole Media – Sales Bot** ([03-as modul](03-lead-generation.md)) | Előre nincs teendőd. Ha kíváncsi vagy: [sales-bot.io](https://sales-bot.io). A LinkedIn-belépésed legyen kéznél. | A Blackhole Media előre létrehozza a hozzáférésedet, és a 03-as blokk elején adja át. Ekkor a connectort is bekötitek. |
 
 <a name="00-prework.03-partner-accounts--decisions"></a>
 
 ### Ezekről te döntesz
 
-Saját céggel vagy gyakorlóvállalkozással regisztrálsz. Bekötöd-e a Buffert, és ha igen, melyik közösségimédia-oldalt. A workshopon piszkozatokkal dolgozol. A közzétételről később külön döntesz.
+Te választod ki, hogy saját céggel vagy gyakorlóvállalkozással regisztrálsz. Azt is te döntöd el, hogy használod-e a Buffert, és melyik közösségimédia-oldalt kötöd be.
 
 <a name="00-prework.03-partner-accounts--prompt"></a>
 
@@ -309,7 +311,7 @@ Ennél a leckénél nem kell Claude.
 
 ### Ha elakadtál
 
-Egyik partnerfiók sem feltétele a délelőttnek. Ha valami nem működik, írd fel, és szólj reggel a technikai pultnál vagy a blokk elején a partner mentorainak.
+A Brandiseer- és az EstiWise-regisztrációt a workshopon is elvégezheted a saját laptopodon. Ha valami nem működik, szólj egy oktatónak, aki a helyeden segít.
 
 <a name="00-prework.03-partner-accounts--handoff"></a>
 
@@ -474,7 +476,7 @@ A kísérő ellenőrzi a munkamappát, a projektutasítást, a CRM-tábla elér�
 
 1. **0–4 perc:** Google Táblázatok → üres táblázat, neve „CRM – [cégnév]”. Fájl → Importálás → Feltöltés: a `crm-template.csv`. Importálási hely: „Jelenlegi munkalap cseréje”. Töröld a MINTA-01 sort.
 2. **4–9 perc:** futtasd a fenti indítómondatot, és válaszolj a kísérő kérdéseire.
-3. **9–10 perc:** a ⚠️ sorokat írd fel a reggeli technikai pulthoz.
+3. **9–10 perc:** a ⚠️ sorokat írd fel, és a reggeli közös ellenőrzésen szólj az oktatónak.
 
 <a name="00-prework.05-coach-check--check"></a>
 
@@ -483,7 +485,7 @@ A kísérő ellenőrzi a munkamappát, a projektutasítást, a CRM-tábla elér�
 - A CRM-táblázat létezik, az első sorban a 15 oszlopnév van.
 - A kísérő listájában a munkamappa és az utasítások ✅.
 - Külön látod, hogy működött-e a levélolvasás, és hogy te ellenőrizted-e az írási műveletek tiltását. Ha a beállítást nem láttad, az eredmény „nem ellenőrzött”. A CRM és a választott Buffer-kapcsolat mellett ott az eredmény vagy a kézi út.
-- A Brandiseer- és EstiWise-fiókod megvan (a Buffer-fiók választható).
+- A Brandiseer- és EstiWise-fiókod megvan, vagy felírtad, melyiket hozod létre a workshopon. A Buffer-fiók választható.
 
 <a name="00-prework.05-coach-check--help"></a>
 
@@ -508,7 +510,7 @@ Nyisd meg a [kitalált IrodaLiget Cég-DNS-t](../scenarios/office-plants/outputs
 ## Segítség elakadáskor
 
 1. Mentsd a saját eddigi munkádat, és írd fel, melyik lépésnél akadtál el.
-2. Reggel 08:30 és 09:00 között a technikai pultnál befejezzük a beállítást.
+2. A reggeli közös technikai ellenőrzésen, 08:30 és 09:00 között szólj egy oktatónak. A saját helyeden segít befejezni a beállítást.
 3. Ami ott sem megy, annak a kézi útján haladsz: tananyag ZIP-ből, levelek bemásolva, CRM CSV-fájlban, partnerrendszer helyett demófiók vagy mintafájl.
 4. A haladási naplóban az érintett lépésnél a végrehajtás `simulation`; a beállítási hibát a `gaps` listába írd.
 

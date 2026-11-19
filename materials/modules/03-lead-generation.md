@@ -30,7 +30,7 @@ Leadlistától a feldolgozott ügyfélválaszig, a Sales Bot és a Claude közö
 
 A modulban a Blackhole Media saját sales eszközét, a [Sales Botot](https://sales-bot.io/) használjuk. A Sales Bot MCP-n keresztül kapcsolódik a Claude-hoz, így minden lépést a Claude-ban, hétköznapi mondatokkal végzel: nem kell egy új felületen kattintgatnod.
 
-**Fontos: ma semmi nem megy ki élesben.** A workshop-fiókok nincsenek LinkedIn-profilhoz kötve, a leadlista legfeljebb 100 fős, a válaszokat pedig mi generáljuk a gyakorláshoz. A végrehajtási mód: `sandbox`.
+**A Sales Bot gyakorlófiókjából ma nem indul éles megkeresés.** A workshop-fiókok nincsenek LinkedIn-profilhoz kötve, a leadlista legfeljebb 100 fős, a válaszokat pedig mi generáljuk a gyakorláshoz. A végrehajtási mód: `sandbox`.
 
 <a name="overview-1"></a>
 
@@ -79,7 +79,7 @@ A Sales Bot **AI brainjét** kitöltöd a saját vagy a mintavállalkozásod ada
 ### Erre lesz szükséged
 
 - Az 01-es modulban mentett `business-profile.md` és a 02-es modul `campaign-plan.md` fájlja.
-- A workshop-fiókod a Sales Botban. A hozzáférést a 03-as blokk elején, a helyszínen kapod meg.
+- A Sales Bot-hozzáférésedet a Blackhole Media előre létrehozza, és a 03-as blokk elején adja át.
 - Claude, amelyben be van kapcsolva a Sales Bot connector (MCP): **Beállítások → Connectors → „Add custom connector”**, név például `Sales-Bot.io`, URL: `https://app.sales-bot.io/api/mcp`, majd **Connect**, belépés a Sales Bot-fiókkal és engedélyezés. Ha elakadsz, a mentorok segítenek.
 
 Saját fiók nélkül: [IrodaLiget mintaalaplap](../scenarios/office-plants/outputs/business-profile.md) · [Minta leadlista](../scenarios/office-plants/outputs/leads.csv)

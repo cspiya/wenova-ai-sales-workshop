@@ -77,11 +77,11 @@ A bemutató ezt a részt mutatja meg. Később kézikönyvként visszalapozhatsz
 
 | Szerep | Mit csinál? | Mit nem csinál? |
 | --- | --- | --- |
-| **Cég-DNS** (közös alap) | Kimondja, kinek, mit, milyen hangon adunk el, és mit nem ígérünk. Minden állítás forrással. | Nem tartalmaz kitalált tényt; a hiány „Nincs megadva”. |
+| **Cég-DNS** (közös alap) | Rögzíti, kinek, mit és milyen hangon adunk el, mi a következő célunk, hogyan szerzünk ügyfelet és hol dönt ember. Minden állítás forrással. | Nem tartalmaz kitalált tényt; a hiány „Nincs megadva”. |
 | **Karmester** (orchestrator) | Felbontja a feladatot lépésekre, kiosztja a szerepeknek és a kapcsolatoknak, megáll a kapuknál, naplóz. | Nem ír szöveget, nem minősít, nem dönt. |
 | **Író** (maker) | Elkészíti a szöveget: poszt, LinkedIn-üzenet, e-mail-válasz, ajánlat kísérőszövege. Önellenőrzést és ellenőrzési csomagot ad. | Nem küld, nem publikál. |
 | **Ellenőr** (reviewer) | Új beszélgetésben, csak a szövegből, a DNS-ből és ellenőrzőlistából minősít: MEGFELEL / JAVÍTANDÓ / BLOKKOLÓ. | Nem írja át a szöveget, és nem látja az Író indoklását. |
-| **Te** | Jóváhagyod a tervet, döntesz az Ellenőr után, és te küldesz, publikálsz, indítasz. | – |
+| **Te** | Jóváhagyod a tervet, döntesz az Ellenőr után, és te küldesz, teszel közzé azonnal vagy indítasz kampányt. A Buffer-ütemezést te hagyod jóvá. | – |
 
 Őszintén: a Claude Desktopban ezek az agentek szerepleírások a tananyagban (`Tananyag/starter-kit/agents/`), nem külön futó programok. A Karmester ugyanabban a beszélgetésben vált szerepet (Író, Postás, CRM); az Ellenőr függetlenségét az adja, hogy új beszélgetésben fut. Az agentek a projekt fájljaiból működnek: a projektutasítás köti össze az indítómondatot („Író: …”) az agentfájllal (`writer.md`). Később ugyanezek a fájlok Skillé alakíthatók; a Skill olyan feladatleírás, amelyet a Claude magától betölt, ha illik a kéréshez.
 
@@ -125,8 +125,8 @@ Például az ajánlat kísérőlevelét az Író készíti és az Ellenőr ellen
 | Gmail vagy Microsoft 365 (Outlook) | Levelek olvasása, hangkinyerés | A Claude saját connectora; a válaszpiszkozat a beszélgetésben készül, te másolod a levelezőbe (a levelezőbe menteni csak akkor, ha a connectorod tud piszkozatot menteni, például Outlook) | A levelezésedben | Küldés, válasz, továbbítás, törlés: Tiltva (Blocked) |
 | Google Táblázatok / Drive (vagy saját Excel) | CRM és Heti mérés lap | Olvasás: Google Drive connector. Írás: a CRM-agent CSV-sorokat és változáslistát ad, te bemásolod; közvetlen írás csak, ha a connectorod írni is tud | A Google-fiókodban vagy a gépeden | Felülírás: változáslista, a bemásolás a te döntésed |
 | Brandiseer | Márkahű posztkép | A Brandiseer saját connectora; a 02-es blokkban kötöd be. Ha kiesik: letöltés és bemásolás | A Brandiseer-fiókodban | Publikálás: mindig te |
-| Buffer (választható, ingyenes fiók) | Posztok ütemezése a közösségimédia-oldaladra | A 02-es blokk bónuszfeladatában használod, piszkozatként; a Claude connectorlistájában van Buffer connector. Nélküle a posztokat kézzel teszed ki | A Buffer-fiókodban | Publikálás és ütemezés: mindig te |
-| Sales Bot (Blackhole Media) | LinkedIn-célzás, leadek, üzenetsor, válaszok | Sales Bot connector (MCP); a hozzáférést és a bekötést a helyszínen, a 03-as blokk elején kapod; ma sandbox | A Sales Bot-fiókodban | Kampány a Claude-ból nem indítható; küldés: te |
+| Buffer (választható, ingyenes fiók) | Posztok ütemezése a közösségimédia-oldaladra | A 02-es blokk bónuszfeladata: piszkozat vagy ütemezés a Claude Buffer connectorával | A Buffer-fiókodban | A Claude előre megmutatja a csatornát, a szöveget és az időpontot. Csak a kifejezett jóváhagyásoddal ütemezhet. Ami be van ütemezve, az ki is megy. Ha ezt nem szeretnéd, hagyd piszkozatban. Azonnal te tehetsz közzé. |
+| Sales Bot (Blackhole Media) | LinkedIn-célzás, leadek, üzenetsor, válaszok | Sales Bot connector (MCP); a hozzáférést a Blackhole Media előre létrehozza, és a 03-as blokk elején adja át. A connectort ekkor kötitek be. Ma sandbox | A Sales Bot-fiókodban | Kampány a Claude-ból nem indítható; küldés: te |
 | EstiWise | Igényfelmérés, árazás, ajánlattervezet, értékesítési szakasz | EstiWise-kapcsolat a Claude-ban; a 04-es blokkban együtt kötjük be | Az EstiWise-fiókodban | Ajánlat kiküldése: te |
 | HubSpot, Notion, Linear (opcionális) | Ha már ezt használod CRM-nek vagy feladatkövetésre | A Claude connectorlistájában elérhetők; ma nem kötjük be | A saját rendszeredben | Ugyanaz a szabály: írás előtt változáslista |
 
@@ -156,7 +156,7 @@ Egy oldal. Minden állítás forrással. A hiány is látszik.
 
 ### Ezt készíted el
 
-A céged Cég-DNS-ének 0.1-es változatát (`company-dna.md`): ideális ügyfél, ajánlatok, bizonyíték, hangnem röviden, mit mondunk és mit nem, források, hiányok. Belőle kivonatot is készítesz a partnerblokkoknak: `business-profile.md` (13 közös mező) és `sales-strategy.md`.
+A céged Cég-DNS-ének 0.1-es változatát (`company-dna.md`): ideális ügyfél, ajánlatok, bizonyíték, hangnem, állítási határok, források és hiányok. A 11–13. szakaszban rögzíted a céged következő célját, az ügyfélszerzés fő lépéseit és azt a pontot, ahol ember dönt. Belőle kivonatot is készítesz a partnerblokkoknak: `business-profile.md` (13 közös mező) és `sales-strategy.md`.
 
 <a name="01-business-foundations.01-offer-and-audience--needs"></a>
 
@@ -182,7 +182,7 @@ A promptot a **hét elem** szerint írjuk: Cél → Címzett → Forrás és hat
 
 ### Ezekről te döntesz
 
-Ki az ideális ügyfél, és kinek nem adsz el. Melyik a fő ajánlat (O01). Mi számít bizonyítéknak, és mi nem mondható ki. Ki a DNS gazdája. A Claude javaslata nem döntés.
+Ki az ideális ügyfél, és kinek nem adsz el. Melyik a fő ajánlat (O01). Mi számít bizonyítéknak, és mi nem mondható ki. Ki a DNS gazdája. Te mondod meg a következő célt, sorolod fel az ügyfélszerzés lépéseit, és nevezed meg, hogy melyik ponton miről és ki dönt. A Claude javaslata nem döntés.
 
 <a name="01-business-foundations.01-offer-and-audience--prompt"></a>
 
@@ -195,8 +195,8 @@ Cég-DNS-t készítünk a cégemről a Tananyag/starter-kit/company-dna.md sablo
 Cél: kitöltött company-dna.md, 0.1-es verzió. Kész, ha minden állítás mellett forrás-ID van vagy „Nincs megadva”, és minden hiány a 9. szakaszban teendőként szerepel.
 Címzett: a projekt agentjei és a partnerblokkok (Brandiseer, Sales Bot, EstiWise); és én, aki jóváhagyom.
 Forrás és határ: a weboldalam: [URL]; a Munka/00-Felkeszules/forrasok/ mappa árlistája és ajánlata(i); a kérdéseidre adott válaszaim. Mást nem használsz, a saját tudásodból nem egészítesz ki. Ügyfélnevet és személyes adatot nem írsz be.
-Kimeneti séma: a sablon 0–10. szakasza; legfeljebb 3 ajánlat O01, O02, O03 azonosítóval; az O01 a fő ajánlat.
-Szabályok: ahol a forrás hallgat, tegyél fel kérdést, egyszerre egyet, összesen legfeljebb ötöt. A javaslatot jelöld javaslatnak.
+Kimeneti séma: a sablon 0–13. szakasza. Legfeljebb 3 ajánlat O01, O02, O03 azonosítóval. Az O01 a fő ajánlat.
+Szabályok: ha a forrásokban nincs a cég következő célja, az ügyfélszerzés fő lépései vagy az emberi döntési pont, kérdezz rá ezekre először. A döntési pontnál kérdezd meg, ki és miről dönt. Egyszerre egy kérdést tegyél fel, összesen legfeljebb ötöt. A válaszaimat F-05 forrásként rögzítsd. A javaslatot jelöld javaslatnak.
 Ellenőrzés: a végén mutass két fontos állítást a forrásszöveg szó szerinti idézetével, hogy ellenőrizni tudjam.
 Mentés: Munka/01-DNS/company-dna.md. Utána a DNS-ből készíts kivonatot ugyanide: business-profile.md (a Tananyag/starter-kit/business-profile.md 13 mezőjével) és sales-strategy.md (offer_id, audience, channel, message, next_action, success_metric). A legutóbbi progress.json új változatában jelöld ki az aktív céget, a DNS verzióját és a DNS, illetve az alaplap útvonalát. A hangprofil útvonalát a következő leckében töltjük ki.
 ```
@@ -218,6 +218,7 @@ Mentés: Munka/01-DNS/company-dna.md. Utána a DNS-ből készíts kivonatot ugya
 - A metaadatban verzió (0.1), státusz, gazda és dátum szerepel.
 - Az ICP-ben van kizáró jel, és van egy fő ajánlat (O01) tartalommal, kizárással és árazási alappal, vagy „Nincs megadva” jelöléssel.
 - Minden állítás mellett forrás-ID vagy „Nincs megadva” áll; a 9. szakaszban legalább egy teendő van gazdával.
+- A 11–13. szakasz a következő célt, az ügyfélszerzés lépéseit sorrendben és az emberi döntés pontját, tárgyát és felelősét rögzíti. A hiányzó válaszok a 9. szakaszban teendőként szerepelnek.
 - A „Nem mondjuk” oszlopban legalább három saját tétel van.
 - Két állítást magad ellenőriztél a forrásban.
 - A három fájl a `Munka/01-DNS/` mappában van.
@@ -452,7 +453,7 @@ Ellenőr: itt a teljes javított v2 változat [bemásolva]. Ellenőrizd a koráb
 
 A munkamappádban ott van a Cég-DNS és a hangprofil. A `post-review.md` fájlt add át az 05-ös blokk méréséhez is. Ugyanilyen ellenőri menettel nézheted át a Brandiseer-tartalmat, a Sales Bot-üzeneteket és az ajánlat kísérőszövegét. Az 5. blokkban a Postás és a CRM-agent is munkába áll, és a Karmester egy teljes ügyfélesetet visz végig.
 
-**Wenova-kiegészítés a 02-es blokkhoz (választható, ha a Brandiseer-oktató is így kéri):** a kampányvázból (lásd lent, „Ha maradt időd”) egy poszthoz képet kérsz a Brandiseer connectorával; a Claude a képet a `Munka/02-Tartalom/` mappába menti, és posztelőnézetet készít belőle HTML-ben. Jóváhagyás után a Claude `draft` állapotú piszkozatként menti a posztot a Bufferbe. Ellenőrizd a Buffer Piszkozatok (Drafts) nézetében. Ha a kép nem jön vissza a connectoron át, töltsd le a Brandiseerből a `Munka/02-Tartalom/` mappába; ha a Buffer-piszkozathoz nem csatolható, a Buffer felületén töltsd fel kézzel.
+**Wenova-kiegészítés a 02-es blokkhoz (választható, ha a Brandiseer-oktató is így kéri):** a kampányvázból (lásd lent, „Ha maradt időd”) egy poszthoz képet kérsz a Brandiseer connectorával; a Claude a képet a `Munka/02-Tartalom/` mappába menti, és posztelőnézetet készít belőle HTML-ben. Ha bekötötted a Buffert, választhatsz piszkozatot vagy ütemezést. Ütemezés előtt a Claude megmutatja a csatornát, a szöveget és az időpontot, majd megvárja a kifejezett jóváhagyásodat. Ami be van ütemezve, az ki is megy. Ha ezt nem szeretnéd, kérj piszkozatot. A Bufferben ellenőrizd a mentett állapotot. Ha a kép nem jön vissza a connectoron át, töltsd le a Brandiseerből a `Munka/02-Tartalom/` mappába. Ha a poszthoz nem csatolható a connectorral, a Buffer felületén töltsd fel. Ha az ütemezési művelet nem érhető el a Claude-ban, használd a [02-es blokk kézi útját](02-content-marketing.md#02-content-marketing.03-prepare-publishing--help).
 
 <a name="01-business-foundations.03-ai-workspace--extra"></a>
 

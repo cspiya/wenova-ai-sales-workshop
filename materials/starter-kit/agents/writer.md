@@ -43,4 +43,4 @@ Ha a felhasználó bemásolja az Ellenőr megállapításait, javítsd a megneve
 
 ## Soha
 
-Nem küldesz, nem publikálsz, nem mentesz piszkozatot külső rendszerbe a felhasználó kifejezett kérése nélkül. A „kész” szöveg nem küldési engedély.
+A szöveget átnézésre adod át. Külső rendszerbe piszkozatot a felhasználó kifejezett kérésére menthetsz. A küldést és az azonnali közzétételt a felhasználó végzi. A választható Buffer-ütemezéshez kövesd a projektutasítás jóváhagyási szabályát.

@@ -10,11 +10,29 @@ Belső oktatói jegyzet · review
 
 **Státusz: review.** 09:20–10:30, 70 perc. Vezeti: Piya Csaba; körbejár: Kemény Krisztián.
 
+### Nyitás (09:00-09:20)
+
+A nyitás témái a Cég-DNS, az agentikus működés és a Karmester, Író és Ellenőr együttműködése. A résztvevő a szerepleírásokat a telepített tananyagban kapja meg (`starter-kit/agents/`).
+
+#### Röviden elmondható pontosítás
+
+> Ma elkészíted a saját posztjaidat és a hozzájuk kapcsolódó megkeresést. Megnézzük, hogyan támaszkodhatsz a tartalmaidra és a LinkedIn-kapcsolataidra, amikor szakmai közösséget építesz.
+>
+> A Sales Botban a saját célzásodat és üzenetsorodat készíted el. Gyakorló válaszokkal dolgozunk. A fiókodból ma nem indul valódi megkeresés vagy időpontfoglalás.
+>
+> A záró próbán ugyanannak az ügynek a leadjét, ajánlatát és CRM-sorát kötjük össze. Felírjuk, melyik lépés futott élőben, melyik gyakorló fiókban és melyiket vittük tovább fájlból.
+>
+> Holnap a saját fájljaiddal, az asszisztenseiddel és a háromlépéses terved alapján tudsz kezdeni. A küldésről te döntesz. A nap végén megjelöljük, mely kapcsolatok működtek a saját fiókodban.
+>
+> A saját workshopkampányunkból a ténylegesen elvégzett lépéseket hozzuk példának. Ha marad rá idő, a záráskor a hirdetésből, a CRM-ből és a visszahívásokból mutatunk részleteket.
+>
+> Minden blokkhoz adunk mentett mintafájlokat. A partnerblokk elején jelezzük, milyen gyakorló fiók érhető el, és hogyan folytasd fájlból, ha a belépés elakad.
+>
+> A Buffer választható. Ha nincs fiókod vagy bekötött közösségi oldalad, ugyanúgy elkészítheted és letöltheted a posztjaidat.
+
 <a name="notes-1"></a>
 
 ### Bemutató 09:20–09:28 (8 perc)
-
-A nyitásban (09:00–09:20) elhangzik: miért kell a Cég-DNS, mi az agentikus működés, és hogyan lehet az agenteket jó minőségű munkára rávenni (Karmester–Készítő–Ellenőr minta és a mögötte lévő utasításkészlet). A résztvevő ezeket a telepített tananyagban készen megkapja (`starter-kit/agents/`), nem kézzel hozza létre.
 
 
 Egy kivetített Claude-projekt az IrodaLiget mintával. Forgatókönyv:
@@ -66,7 +84,7 @@ A következő blokkok a legutóbbi `progress.json` fájlban kijelölt DNS-re, ha
 
 - A résztvevők Cowork-munkamappában dolgoznak: az eredmények a `Munka/01-DNS/` mappába kerülnek, nem a projekt tudásába. Ha valaki claude.ai-projekt tartalékúton van, a letöltés–feltöltés lépést kell csinálnia.
 - A kampányváz HTML a 03-as lecke „Ha maradt időd” része; a bemutatóban elég megmutatni, hogy a fájl a böngészőben nyílik.
-- A „Wenova-kiegészítés a 02-es blokkhoz” csak akkor kerüljön elő, ha Sorok Dániel is így akarja. A Brandiseer connectort a 02-es blokkban a Brandiseer köti be; a pontos lépéseket és azt, hogy a kép a connectoron át visszajön-e, ő erősíti meg. A Buffer connector a Claude connectorlistájában van; a kép csatolását a Buffer-piszkozathoz nem próbáltuk.
+- A „Wenova-kiegészítés a 02-es blokkhoz” csak akkor kerüljön elő, ha Sorok Dániel is így akarja. A Brandiseer connectort a 02-es blokkban a Brandiseer köti be; a pontos lépéseket és azt, hogy a kép a connectoron át visszajön-e, ő erősíti meg. A Buffer connector a Claude connectorlistájában van; a kép csatolását a Buffer-piszkozathoz nem próbáltuk. A Buffer választható. Ütemezés előtt a Claude mutassa meg a csatornát, a szöveget és az időpontot, majd várja meg a résztvevő kifejezett jóváhagyását. Mondd el: ami be van ütemezve, az ki is megy. Aki ezt nem szeretné, hagyja piszkozatban.
 
 ## Kapcsolódó tananyagrészek
 

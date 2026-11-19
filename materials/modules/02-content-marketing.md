@@ -29,6 +29,8 @@ A modul kidolgozott, élő Brandiseer-kapcsolattal kipróbált tananyag. A telje
 
 20 perc bemutató és élő demó + 3 × 20 perc gyakorlat + 10 perc ellenőrzés és kérdések.
 
+A Brandiseer a saját blokkjában megmutatja, hogyan készül a márkához illő kép és videó. A bemutatón 2D-s mozgóképes videó is szerepelhet narrációval. A hangalámondáshoz ElevenLabs szükséges.
+
 A modul végére egy hétre való, öt kész, letölthető, márkahű posztod lesz posztszöveggel, és egy kampányterv, amellyel a délutáni ügyfélszerzési modul dolgozik. Minden képet a Brandiseer készít a saját márkádból, Claude pedig végigvezet a folyamaton: kérdez, megírja a szövegeket, és a Brandiseer connectoron keresztül legenerálja a vizuálokat. A Brandiseer felületét közben nem kell kezelned.
 
 <a name="overview-1"></a>
@@ -182,7 +184,7 @@ A képpromptba csak tartalmat és elrendezést írj; színt, betűtípust, hangu
 
 - **Claude nem látja a Brandiseer eszközöket:** a beszélgetés bal alsó **+** gombja → **Connectors** alatt kapcsold be a Brandiseert. Ha nincs ott: **Customize → Connectors → + → Add custom connector**, URL: `https://brandiseer.com/api/mcp`, majd jelentkezz be. Bekapcsolás után indíts új beszélgetést, ha az eszközök még mindig nem látszanak.
 - **Üres a márkalista:** ugyanazzal az e-mail-címmel léptél be a connectorba, mint a brandiseer.hu-n? Ha igen, vedd fel a márkát a 3. lépés szerint.
-- **A weboldalad gyenge vagy nincs:** a Brandiseerben felvehetsz egy olyan nyilvános weboldalt is gyakorlásra, amelynek a márkáját jól ismered (pl. kedvenc kávézód). Ezzel csak gyakorolsz, semmit nem publikálsz.
+- **A weboldalad gyenge vagy nincs:** a Brandiseerben felvehetsz egy olyan nyilvános weboldalt is gyakorlásra, amelynek a márkáját jól ismered (pl. kedvenc kávézód). Az így készült képeket és posztszövegeket tartsd meg a saját gyakorlómappádban.
 - **Öt perc után sincs kép:** szólj a mentornak, és nézd az előadó kivetített példáját; a következő leckét a mentor segítségével folytasd.
 
 <a name="02-content-marketing.01-brand-brief--handoff"></a>
@@ -253,7 +255,7 @@ Szabályok:
 - A képpromptban csak tartalmat és elrendezést írj le: mi látszik, milyen szöveg kerül a képre és hová, mi kerül a középpontba. Színt, betűtípust, hangulatot vagy stílust soha ne írj bele, ezt a Brandiseer a márkából hozza.
 - Az oldalarányt a csatornához válaszd: Instagram és Facebook poszt 1:1, Story és Reels 9:16, LinkedIn 1:1 vagy 4:3, X 16:9.
 - A posztszöveg a hangprofil szerint szóljon; ár, akció, referencia vagy vállalás csak az lehet, ami a Cég-DNS-ben forrással szerepel.
-- Semmit ne publikálj és ne ütemezz a kifejezett kérésem nélkül.
+- Ebben a lépésben a képeket és a posztszövegeket készítsd elő. Az esetleges Buffer-ütemezésről a következő leckében döntök.
 
 Ha megvan a két téma:
 - Írj két rövid képötletet (mi látszik a képen, milyen szöveg kerül rá, legfeljebb 6–8 szó), és kérd a jóváhagyásomat.
@@ -330,13 +332,13 @@ Az előző lecke két jóváhagyott képe és posztszövege, ugyanabban a beszé
 
 ### Így működik
 
-Claude az előző lecke briefjéből (csatorna, hangnem, felhívás) javasol három további témát, hogy kijöjjön egy hét. Előbb heti táblázatot kapsz, és csak a jóváhagyásod után generál. A szabály ugyanaz: a képkérésben csak tartalom és elrendezés, a márkát a Brandiseer hozza, így az öt poszt egymás mellett is egy márkának látszik. A publikálás ma kézzel történik: letöltöd a képeket, és a posztszöveggel együtt kiteszed, amikor te jónak látod. A Buffer-bónusz megmutatja, hogyan kerülhet ez automatikusan a közösségi felületeid piszkozatai közé.
+Claude az előző lecke briefjéből (csatorna, hangnem, felhívás) javasol három további témát, hogy kijöjjön egy hét. Előbb heti táblázatot kapsz, és csak a jóváhagyásod után generál. A képkérésben csak tartalom és elrendezés szerepel, a márkát a Brandiseer hozza. A letöltött képeket és a posztszövegeket kézzel is közzéteheted. Ha használod a választható Buffert, a posztokat piszkozatként mentheted, vagy jóváhagyás után beütemezheted.
 
 <a name="02-content-marketing.03-prepare-publishing--decisions"></a>
 
 ### Ezekről te döntesz
 
-A három új téma és a heti sorrend, és hogy mi kerül ki valójában. Semmi nem kerül ki a közösségi oldaladra a kifejezett jóváhagyásod nélkül; a bónuszfeladat is csak piszkozatot készít.
+A három új témáról, a heti sorrendről és az esetleges ütemezésről te döntesz. A Claude előre megmutatja a csatornát, a végleges posztszöveget és a megjelenés pontos időpontját, és csak a kifejezett jóváhagyásod után ütemezhet. **Ami be van ütemezve, az ki is megy.** Ha ezt nem szeretnéd, hagyd piszkozatban. Azonnali közzétételt te indíthatsz a közösségi felületen.
 
 <a name="02-content-marketing.03-prepare-publishing--prompt"></a>
 
@@ -359,11 +361,12 @@ Készítsd el a campaign-plan.md tartalmát ebben a szerkezetben: offer_id (az a
 Csak azt írd bele, amit ma jóváhagytam. Mentsd Munka/02-Tartalom/campaign-plan.md néven.
 ```
 
-**3. Bónusz – Buffer-piszkozat (csak ha bekötötted a Buffert):**
+**3. Bónusz: piszkozat vagy ütemezés a Bufferben**
 
 ```text
-A Buffer connectorral tedd be az öt posztot piszkozatként (draft) a bekötött csatornámra, a képpel és a szöveggel együtt. Ne ütemezd és ne publikáld.
-Előtte írd le, melyik csatornára mi kerül, és várd meg az igenemet.
+A Bufferbe szánt posztokhoz mutasd meg a csatornát, a végleges szöveget és a hozzá tartozó képet. Kérdezd meg, melyik maradjon piszkozat, és melyiket szeretném ütemezni.
+Az ütemezésre kiválasztott posztoknál mutasd meg a csatornát, a végleges szöveget és a pontos dátumot, időt és időzónát. Mondd el: ami be van ütemezve, az ki is megy. Várd meg a kifejezett jóváhagyásomat erre a listára, mielőtt ütemezel. Ha valamelyik poszt megjelenését nem kérem, hagyd piszkozatban. A piszkozat Bufferbe mentése előtt is kérj jóváhagyást.
+Használd a Buffer connectorban elérhető műveleteket. Olvasd vissza a mentett állapotot és az ütemezett időpontot. Ha valamelyik művelet vagy a kép csatolása nem érhető el, szólj, hogy a Bufferben kézzel végezhessem el. Azonnali közzétételt ne indíts.
 ```
 
 <a name="02-content-marketing.03-prepare-publishing--steps"></a>
@@ -374,7 +377,7 @@ Előtte írd le, melyik csatornára mi kerül, és várd meg az igenemet.
 2. **3–9 perc:** amíg a három kép készül (képenként 1–1,5 perc), töltsd le az előző lecke két képét (a linkre kattintva vagy jobb klikk → mentés) a `Munka/02-Tartalom/` mappába.
 3. **9–12 perc:** nézd meg az új képeket egymás mellett: egy márkának látszik az öt poszt? Kérj legfeljebb egy javítást, majd töltsd le mindet.
 4. **12–17 perc:** másold be a kampánytervhez tartozó promptot, és mentsd a `campaign-plan.md` fájlt.
-5. **17–20 perc, bónusz:** ha bekötötted a Buffert, futtasd a harmadik promptot, és ellenőrizd a Bufferben a piszkozatokat.
+5. **17–20 perc, bónusz:** ha bekötötted a Buffert, futtasd a harmadik promptot. Ütemezés előtt nézd át a csatornát, a szöveget és az időpontot. Utána a Bufferben ellenőrizd a választott állapotot.
 
 <a name="02-content-marketing.03-prepare-publishing--check"></a>
 
@@ -384,8 +387,7 @@ Előtte írd le, melyik csatornára mi kerül, és várd meg az igenemet.
 - A képek promptjaiban nincs szín, betűtípus, hangulat vagy stílus.
 - Mind az öt kép le van töltve a munkacsomagodba.
 - A `campaign-plan.md` elmentve, benne az öt posztszöveg, a napok, a csatorna, a felhívás és a képek linkje.
-- Az öt poszt piszkozat. Ellenőrizd, hogy a bónuszfeladatban sem ütemeztél be és nem tettél közzé posztot.
-- Bónusz: a posztok piszkozatként látszanak a Bufferben.
+- Bónusz: a Bufferben a posztok a választott állapotban látszanak. Az ütemezett posztok csatornája, szövege és időpontja egyezik azzal, amit jóváhagytál.
 
 <a name="02-content-marketing.03-prepare-publishing--help"></a>
 
@@ -393,7 +395,7 @@ Előtte írd le, melyik csatornára mi kerül, és várd meg az igenemet.
 
 - **Kevés az idő:** elég, ha egy vagy két új kép készül el; a táblázat akkor is lefedi a hetet, a hiányzó képeket otthon ugyanígy pótolod.
 - **A generálás hibát ad:** Claude egyszer próbálja újra; ha a design továbbra sem megy, a fast mód tartalék. Ha az sem, folytasd a mentorral.
-- **A Buffer nem látszik a Claude-ban:** Customize → Connectors → Buffer → Connect, majd a beszélgetés **+** gombja alatt kapcsold be. Ha a piszkozat nem jelenik meg, nézd meg a Bufferben, melyik csatornára készült.
+- **A Buffer nem látszik a Claude-ban:** Customize → Connectors → Buffer → Connect, majd a beszélgetés **+** gombja alatt kapcsold be. Ha a connector nem kínálja fel a választott műveletet, dolgozz a Buffer felületén. Ütemezés előtt ott is nézd át a csatornát, a szöveget és az időpontot. Ami be van ütemezve, az ki is megy. Ha ezt nem szeretnéd, hagyd piszkozatban.
 - **Nincs Buffer:** ez bónusz, nyugodtan hagyd ki. Otthon a [teljes automatizálási útmutatóval](https://blog.brandiseer.com/use-cases/social-media-automation) pótolhatod.
 - **Nem készül el a kampányterv:** használd a választott minta `campaign-plan.md` fájlját a [mentőútvonal](#recovery) szerint.
 
@@ -401,7 +403,7 @@ Előtte írd le, melyik csatornára mi kerül, és várd meg az igenemet.
 
 ### Ezt viszed tovább
 
-A `campaign-plan.md` a délutáni ügyfélszerzési modul bemenete (Blackhole Media): ebből készül a megkeresés üzenete. A letöltött képek a tieid; a workshop után, külön döntéssel kézzel vagy a Bufferrel közzéteheted őket.
+A `campaign-plan.md` a délutáni ügyfélszerzési modul bemenete (Blackhole Media): ebből készül a megkeresés üzenete. A letöltött képeket a workshop után is felhasználhatod a posztokhoz.
 
 <a name="02-content-marketing.03-prepare-publishing--extra"></a>
 

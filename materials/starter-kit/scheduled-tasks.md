@@ -4,7 +4,7 @@ Az ütemezett feladat (scheduled task) egy prompt, amelyet a Claude magától le
 
 ## Szabályok
 
-- Az ütemezett feladat csak **olvas, összefoglal és piszkozatot készít**. Nem küld, nem publikál, nem ütemez posztot, nem ír a CRM-táblába.
+- A Claude ismétlődő feladata **olvas, összefoglal és helyi vagy beszélgetésbeli piszkozatot készít**. A választható Buffer-posztok ütemezését külön beszélgetésben hagyhatod jóvá a [02-es blokk szabálya szerint](../modules/02-content-marketing.md#02-content-marketing.03-prepare-publishing--decisions).
 - A levelező connector írási eszközei maradjanak **Tiltva (Blocked)** állásban.
 - A Cowork ütemezett feladatai a felhőben futnak, akkor is, ha a gép alszik. Helyi mappát csak bizonyos szervezeti beállítással érnek el, ezért a feladat a connectorokból dolgozzon: a Cég-DNS-t és a hangprofilt tedd fel a Google Drive-odra egy „Workshop” mappába (`company-dna.md`, `voice-profile.md`), a CRM-tábla már ott van.
 - Ha egy connector eszköze „Always ask” (mindig kérdez) állásban van, a futás megállhat, és a válaszodra vár. Ezt a feladat munkamenetében látod.
@@ -35,7 +35,7 @@ Szerdánként 10:00-kor fuss.
 Cél: egy heti hírlevél- vagy ügyféllevél-piszkozat a fő ajánlatunkról; kész, ha 120–180 szó, egy cselekvésre hívással, és minden tény a Cég-DNS-ből jön.
 Forrás: a Google Drive „Workshop” mappájából a company-dna.md és a voice-profile.md. Ami nincs bennük: „Nincs megadva”, nem találsz ki.
 Kimenet: tárgysor (3 változat), a levél szövege, alatta ellenőrzőlista a writer.md szerint (ajánlat egyezik, minden tény forrásból, hang, hossz, cselekvésre hívás).
-Szabályok: csak piszkozat ebben a munkamenetben. Nem küldöd ki, nem mented hírlevélküldő rendszerbe, nem ütemezed.
+Szabály: a hírlevél szövegét piszkozatként add át a beszélgetésben.
 ```
 
 ## 3. Hétfői heti átnézés (hétfő 8:30)

@@ -34,7 +34,7 @@ A modul végére a résztvevő saját (vagy minta-) vállalkozásához tartozó 
 
 ### Bemenet
 
-Weboldal link, business-profile.md, leads.csv, outreach.md, customer-brief.md, saját árlista (ha van; PDF vagy táblázat), a felkészülés során létrehozott EstiWise-fiók és a 04-es blokk bemutatójában beállított Claude-kapcsolat.
+Weboldal link, business-profile.md, leads.csv, outreach.md, customer-brief.md, saját árlista (ha van; PDF vagy táblázat), az EstiWise-fiókod és a 04-es blokk bemutatójában beállított Claude-kapcsolat. Az EstiWise-fiókot a workshopon is létrehozhatod.
 
 <a name="overview-2"></a>
 
@@ -62,7 +62,7 @@ Használd a [mentőútvonalat](#recovery). A kimeneteket a közös adatátadási
 
 ### A modul célja
 
-A nap végére a saját szolgáltatásaiddal és áraiddal működő ajánlatadód van, amit Claude-ból finomhangolsz.
+Az EstiWise csapata a blokk elején bemutatja a 0–24-ben elérhető ajánlatadót. A gyakorlaton a saját vagy a választott mintacég adataival ellenőrzött ajánlattervezetet és belső átadást készítesz.
 
 <a name="04-proposals-handoff.01-discover-needs"></a>
 
@@ -89,7 +89,7 @@ Az EstiWise-fiókodban a `business-profile.md` ajánlatához tartozó szolgálta
 ### Erre lesz szükséged
 
 - A `progress.json`-ban kijelölt üzleti alaplap, az ehhez tartozó `customer-brief.md` és a vállalkozás weboldala.
-- A felkészülésben létrehozott EstiWise-fiók (Standard próbacsomag, bankkártya nélkül) és a 04-es blokk bemutatójában beállított Claude-kapcsolat.
+- EstiWise-fiók (Standard próbacsomag, bankkártya nélkül) és a 04-es blokk bemutatójában beállított Claude-kapcsolat. A fiókot a workshopon is létrehozhatod.
 - Ha van: saját árlista vagy szolgáltatásleírás PDF-ben vagy táblázatban.
 
 Ha nincs saját üzleted vagy fiókod: [IrodaLiget alaplap](../scenarios/office-plants/outputs/business-profile.md) · [igény](../scenarios/office-plants/outputs/customer-brief.md) · [árlista](../scenarios/office-plants/price-list.csv), és a mentor által kiosztott demófiók.

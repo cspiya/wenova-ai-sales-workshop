@@ -18,8 +18,8 @@ Előadók: Bölcskei Balázs (bemutató és gyakorlat), Nagy Bogáta (mentor a g
 
 ### Előkészítés a workshop előtt
 
-- A résztvevők Sales Bot regisztrációját mi töltjük ki előre; mindenkinek legyen profilja.
-- A hozzáférést a helyszínen, a 03-as blokk elején adjuk át.
+- A Blackhole Media előre létrehozza a résztvevők Sales Bot-hozzáférését.
+- A hozzáférést a helyszínen, a 03-as blokk elején adjuk át. Ha valaki elakad, az oktató a résztvevő helyén, a saját laptopján segít.
 - A workshop-profilok **nincsenek LinkedInhez kötve**; a leadlista 100 főben van korlátozva, hogy senki ne húzza le a teljes adatbázist, és semmi ne menjen ki.
 - Ellenőrizni kell, hogy az MCP-n keresztül működik-e az AI brain kitöltése, a lista- és kampánylétrehozás, valamint a válaszok listázása.
 - A 2. lecke végén kérd el a résztvevő által a CSV-ből kiválasztott `lead_id`-t. Ehhez a leadhez tölts be kitalált érdeklődő választ, ha a gyakorlókörnyezetben egyeztethető az azonosító. Ha nincs egyező válasz, adj teljes mintaláncot.
