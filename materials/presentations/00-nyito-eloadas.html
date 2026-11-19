@@ -33,7 +33,7 @@ h1,h2{margin:0;font-size:6.6rem;line-height:1.22;letter-spacing:-.028em;font-wei
 .foot a{color:var(--on2);text-decoration:none;padding:.2rem 1rem;border-radius:.6rem}
 .foot a:hover,.foot a:focus-visible{color:#fff;outline:.2rem solid var(--or)}
 .count{font-family:var(--mono)}
-.count::after{content:counter(dia) " / 22"}
+.count::after{content:counter(dia) " / 24"}
 .hint{padding:.2rem 1.2rem;border:.15rem solid var(--line);border-radius:.8rem;color:var(--on)}
 /* feliratok */
 .prog{flex:none;height:.5rem;background:var(--navy-3);border-radius:1rem;overflow:hidden}
@@ -162,6 +162,14 @@ svg .b{font-weight:700}svg .m{font-family:var(--mono)}svg .dk{fill:var(--navy)}s
 .which .wl0{border-color:transparent;padding:0;white-space:normal;width:17rem;text-align:left;font-weight:700;color:var(--or2)}
 .which b{display:block;color:var(--on)}
 .which .on{background:#b3460c;border-color:var(--or);color:#fff}.which .on b{color:#fff}
+/* léptékdiák */
+.facts{flex:none;display:grid;grid-template-columns:1.3fr 1fr;gap:1.2rem}
+.facts p{margin:0;padding:1rem 1.6rem;background:var(--navy-2);border:.25rem solid var(--line);border-radius:1.4rem;font-size:2.7rem;line-height:1.18;font-weight:500}
+.facts b{color:var(--or2)}
+.src{flex:none;margin:0;font-size:2.1rem;line-height:1.2;color:var(--on2)}
+.note{flex:none;margin:0;font-size:3.2rem;line-height:1.2;font-weight:600}
+svg .mu{fill:var(--on2)}
+.tick{stroke:var(--navy);stroke-width:3}
 /* tartalom */
 .toc{display:none;position:fixed;inset:0;z-index:9;padding:4rem 6.4rem;background:rgba(7,8,26,.97);overflow:auto}
 .toc:target{display:block}
@@ -182,10 +190,10 @@ svg .b{font-weight:700}svg .m{font-family:var(--mono)}svg .dk{fill:var(--navy)}s
 .caps{grid-template-columns:repeat(var(--n),1fr);gap:1.6rem;align-items:start}
 .caps li{grid-area:auto;display:block;opacity:1!important;font-size:2.6rem}
 .caps .n{display:block;font-size:2.6rem}
-#s19 .stage,#s19 .caps{display:none}
-#s19 .rm3{flex:1;display:grid;grid-template-columns:repeat(3,1fr);gap:2.4rem;list-style:none;margin:0;padding:0}
-#s19 .rm3 span{font-size:3.6rem;font-weight:500;color:var(--or2)}
-#s19 .rm3 li{display:flex;flex-direction:column;justify-content:center;gap:3rem;text-align:center;padding:3rem;font-size:5.2rem;line-height:1.15;background:var(--navy-2);border:.3rem solid var(--or);border-radius:2.2rem}
+#s21 .stage,#s21 .caps{display:none}
+#s21 .rm3{flex:1;display:grid;grid-template-columns:repeat(3,1fr);gap:2.4rem;list-style:none;margin:0;padding:0}
+#s21 .rm3 span{font-size:3.6rem;font-weight:500;color:var(--or2)}
+#s21 .rm3 li{display:flex;flex-direction:column;justify-content:center;gap:3rem;text-align:center;padding:3rem;font-size:5.2rem;line-height:1.15;background:var(--navy-2);border:.3rem solid var(--or);border-radius:2.2rem}
 }
 @media print{html{scroll-snap-type:none}.slide{break-after:page}}
 
@@ -614,6 +622,92 @@ svg .b{font-weight:700}svg .m{font-family:var(--mono)}svg .dk{fill:var(--navy)}s
 .d19k62{animation:d19k62 125s ease-in-out 1 both}
 @keyframes d19k63{0%{opacity:0}39.2%{opacity:0}39.44%{opacity:1}46.4%{opacity:1}46.64%{opacity:0}100%{opacity:0}}
 .d19k63{animation:d19k63 125s ease-in-out 1 both}
+@keyframes a03b0{0%{transform:scaleX(0)}4%{transform:scaleX(0)}18%{transform:scaleX(1)}100%{transform:scaleX(1)}}
+.a03b0{animation:a03b0 16s ease-in-out 1 both}
+@keyframes a03v0{0%{opacity:0}17%{opacity:0}20%{opacity:1}100%{opacity:1}}
+.a03v0{animation:a03v0 16s ease-in-out 1 both}
+@keyframes a03b1{0%{transform:scaleX(0)}24%{transform:scaleX(0)}38%{transform:scaleX(1)}100%{transform:scaleX(1)}}
+.a03b1{animation:a03b1 16s ease-in-out 1 both}
+@keyframes a03v1{0%{opacity:0}37%{opacity:0}40%{opacity:1}100%{opacity:1}}
+.a03v1{animation:a03v1 16s ease-in-out 1 both}
+@keyframes a03b2{0%{transform:scaleX(0)}44%{transform:scaleX(0)}58%{transform:scaleX(1)}100%{transform:scaleX(1)}}
+.a03b2{animation:a03b2 16s ease-in-out 1 both}
+@keyframes a03v2{0%{opacity:0}57%{opacity:0}60%{opacity:1}100%{opacity:1}}
+.a03v2{animation:a03v2 16s ease-in-out 1 both}
+@keyframes a03b3{0%{transform:scaleX(0)}64%{transform:scaleX(0)}78%{transform:scaleX(1)}100%{transform:scaleX(1)}}
+.a03b3{animation:a03b3 16s ease-in-out 1 both}
+@keyframes a03v3{0%{opacity:0}77%{opacity:0}80%{opacity:1}100%{opacity:1}}
+.a03v3{animation:a03v3 16s ease-in-out 1 both}
+@keyframes a03f1{0%{opacity:0}84%{opacity:0}87%{opacity:1}100%{opacity:1}}
+.a03f1{animation:a03f1 16s ease-in-out 1 both}
+@keyframes a03f2{0%{opacity:0}90%{opacity:0}93%{opacity:1}100%{opacity:1}}
+.a03f2{animation:a03f2 16s ease-in-out 1 both}
+@keyframes a03g{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+.a03g{animation:a03g 16s ease-in-out 1 both}
+@keyframes a04m0{0%{opacity:0}4%{opacity:0}7%{opacity:1}100%{opacity:1}}
+.a04m0{animation:a04m0 20s ease-in-out 1 both}
+@keyframes a04m1{0%{opacity:0}15%{opacity:0}18%{opacity:1}100%{opacity:1}}
+.a04m1{animation:a04m1 20s ease-in-out 1 both}
+@keyframes a04m2{0%{opacity:0}26%{opacity:0}29%{opacity:1}100%{opacity:1}}
+.a04m2{animation:a04m2 20s ease-in-out 1 both}
+@keyframes a04n{0%{opacity:0}36%{opacity:0}39%{opacity:1}100%{opacity:1}}
+.a04n{animation:a04n 20s ease-in-out 1 both}
+@keyframes a04b0{0%{opacity:0}44%{opacity:0}47%{opacity:1}100%{opacity:1}}
+.a04b0{animation:a04b0 20s ease-in-out 1 both}
+@keyframes a04b1{0%{opacity:0}61%{opacity:0}64%{opacity:1}100%{opacity:1}}
+.a04b1{animation:a04b1 20s ease-in-out 1 both}
+@keyframes a04b2{0%{opacity:0}78%{opacity:0}81%{opacity:1}100%{opacity:1}}
+.a04b2{animation:a04b2 20s ease-in-out 1 both}
+@keyframes a04c0{0%{opacity:1}42%{opacity:1}44%{opacity:0}100%{opacity:0}}
+.a04c0{animation:a04c0 20s ease-in-out 1 both}
+@keyframes a04c1{0%{opacity:0}42%{opacity:0}44%{opacity:1}76%{opacity:1}78%{opacity:0}100%{opacity:0}}
+.a04c1{animation:a04c1 20s ease-in-out 1 both}
+@keyframes a04c2{0%{opacity:0}76%{opacity:0}79%{opacity:1}100%{opacity:1}}
+.a04c2{animation:a04c2 20s ease-in-out 1 both}
+@keyframes a04g{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+.a04g{animation:a04g 20s ease-in-out 1 both}
+@keyframes a05a{0%{transform:scaleX(0)}3%{transform:scaleX(0)}44%{transform:scaleX(1)}100%{transform:scaleX(1)}}
+.a05a{animation:a05a 24s ease-in-out 1 both}
+@keyframes a05p0{0%{opacity:0}4%{opacity:0}7%{opacity:1}100%{opacity:1}}
+.a05p0{animation:a05p0 24s ease-in-out 1 both}
+@keyframes a05p1{0%{opacity:0}18.9%{opacity:0}21.9%{opacity:1}100%{opacity:1}}
+.a05p1{animation:a05p1 24s ease-in-out 1 both}
+@keyframes a05p2{0%{opacity:0}20.3%{opacity:0}23.3%{opacity:1}100%{opacity:1}}
+.a05p2{animation:a05p2 24s ease-in-out 1 both}
+@keyframes a05p3{0%{opacity:0}25.9%{opacity:0}28.9%{opacity:1}100%{opacity:1}}
+.a05p3{animation:a05p3 24s ease-in-out 1 both}
+@keyframes a05p4{0%{opacity:0}33.9%{opacity:0}36.9%{opacity:1}100%{opacity:1}}
+.a05p4{animation:a05p4 24s ease-in-out 1 both}
+@keyframes a05p5{0%{opacity:0}36%{opacity:0}39%{opacity:1}100%{opacity:1}}
+.a05p5{animation:a05p5 24s ease-in-out 1 both}
+@keyframes a05p6{0%{opacity:0}40.8%{opacity:0}43.8%{opacity:1}100%{opacity:1}}
+.a05p6{animation:a05p6 24s ease-in-out 1 both}
+@keyframes a05p7{0%{opacity:0}42%{opacity:0}45%{opacity:1}100%{opacity:1}}
+.a05p7{animation:a05p7 24s ease-in-out 1 both}
+@keyframes a05x{0%{opacity:0}30%{opacity:0}33%{opacity:1}100%{opacity:1}}
+.a05x{animation:a05x 24s ease-in-out 1 both}
+@keyframes a05c00{0%{opacity:0}48%{opacity:0}51%{opacity:1}100%{opacity:1}}
+.a05c00{animation:a05c00 24s ease-in-out 1 both}
+@keyframes a05c01{0%{opacity:0}53.2%{opacity:0}56.2%{opacity:1}100%{opacity:1}}
+.a05c01{animation:a05c01 24s ease-in-out 1 both}
+@keyframes a05c02{0%{opacity:0}58.4%{opacity:0}61.4%{opacity:1}100%{opacity:1}}
+.a05c02{animation:a05c02 24s ease-in-out 1 both}
+@keyframes a05c03{0%{opacity:0}63.6%{opacity:0}66.6%{opacity:1}100%{opacity:1}}
+.a05c03{animation:a05c03 24s ease-in-out 1 both}
+@keyframes a05c10{0%{opacity:0}74%{opacity:0}77%{opacity:1}100%{opacity:1}}
+.a05c10{animation:a05c10 24s ease-in-out 1 both}
+@keyframes a05c11{0%{opacity:0}79.2%{opacity:0}82.2%{opacity:1}100%{opacity:1}}
+.a05c11{animation:a05c11 24s ease-in-out 1 both}
+@keyframes a05c12{0%{opacity:0}84.4%{opacity:0}87.4%{opacity:1}100%{opacity:1}}
+.a05c12{animation:a05c12 24s ease-in-out 1 both}
+@keyframes a05c13{0%{opacity:0}89.6%{opacity:0}92.6%{opacity:1}100%{opacity:1}}
+.a05c13{animation:a05c13 24s ease-in-out 1 both}
+@keyframes a05c14{0%{opacity:0}94%{opacity:0}97%{opacity:1}100%{opacity:1}}
+.a05c14{animation:a05c14 24s ease-in-out 1 both}
+@keyframes a05n{0%{opacity:0}90%{opacity:0}93%{opacity:1}100%{opacity:1}}
+.a05n{animation:a05n 24s ease-in-out 1 both}
+@keyframes a05g{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+.a05g{animation:a05g 24s ease-in-out 1 both}
 </style>
 </head>
 <body>
@@ -671,25 +765,54 @@ svg .b{font-weight:700}svg .m{font-family:var(--mono)}svg .dk{fill:var(--navy)}s
 </div>
 </section>
 
-<!-- ========== DIA 03: Mekkora léptékről beszélünk? ========== -->
-<section class="slide " id="s03">
+<!-- ========== DIA 03: Számítási kapacitás ========== -->
+<section class="slide tight" id="s03">
 <div class="frame">
-<header class="head"><h2>Mekkora léptékről beszélünk?</h2></header>
+<header class="head"><h2>Számítási kapacitás: az 1950-es évektől máig</h2></header>
 <div class="stage ">
-<p class="lead">GPT-3, 2020</p>
-<div class="nums">
-<div><b>300 milliárd</b> <span>feldolgozott tanítótoken</span></div>
-<div><b>175 milliárd</b> <span>paraméter</span></div>
-<div><b>kb. 3,14 × 10²³</b> <span>művelet a tanításban</span></div>
+<svg viewBox="0 0 1792 610" role="img" aria-label="Négy mérce logaritmikus sávon: műveletek kb. 14, tranzisztor 8,2, memória 11,8, tárolás 7,1 nagyságrend"><text x="520" y="28" class="f34 b" text-anchor="start">Minden osztás tízszeres növekedés</text><text x="1792" y="28" class="f34 b" text-anchor="end">nagyságrend</text><text x="0" y="80" class="f38 b" text-anchor="start">Műveletek másodpercenként</text><text x="572" y="80" class="f34 b am" text-anchor="start">A mérce közben változik. Linpackkel, 1993–2026: 7,6 nagyságrend.</text><text x="0" y="128" class="f34 mu" text-anchor="start">1952 · IBM 701</text><text x="0" y="170" class="f34 b" text-anchor="start">több mint 16 000 összeadás/s</text><rect x="520" y="106" width="700" height="56" rx="8" class="track"></rect><g class="a03b0 fb" style="transform:scaleX(1)"><rect x="520" y="106" width="700" height="56" rx="8" class="hot"></rect></g><line x1="569.5" y1="106" x2="569.5" y2="162" class="tick"></line><line x1="619" y1="106" x2="619" y2="162" class="tick"></line><line x1="668.5" y1="106" x2="668.5" y2="162" class="tick"></line><line x1="718" y1="106" x2="718" y2="162" class="tick"></line><line x1="767.5" y1="106" x2="767.5" y2="162" class="tick"></line><line x1="817" y1="106" x2="817" y2="162" class="tick"></line><line x1="866.5" y1="106" x2="866.5" y2="162" class="tick"></line><line x1="916" y1="106" x2="916" y2="162" class="tick"></line><line x1="965.5" y1="106" x2="965.5" y2="162" class="tick"></line><line x1="1015" y1="106" x2="1015" y2="162" class="tick"></line><line x1="1064.5" y1="106" x2="1064.5" y2="162" class="tick"></line><line x1="1114" y1="106" x2="1114" y2="162" class="tick"></line><line x1="1163.5" y1="106" x2="1163.5" y2="162" class="tick"></line><line x1="1213" y1="106" x2="1213" y2="162" class="tick"></line><g class="a03v0" style="opacity:1"><text x="1242" y="128" class="f34 mu" text-anchor="start">2026 · LineShine</text><text x="1242" y="170" class="f34 b" text-anchor="start">2,198 EFLOPS</text><text x="1792" y="156" class="f56 b or" text-anchor="end">kb. 14</text></g><text x="0" y="221" class="f38 b" text-anchor="start">Tranzisztor egy chipen</text><text x="0" y="269" class="f34 mu" text-anchor="start">1971 · Intel 4004</text><text x="0" y="311" class="f34 b" text-anchor="start">2 300</text><rect x="520" y="247" width="700" height="56" rx="8" class="track"></rect><g class="a03b1 fb" style="transform:scaleX(1)"><rect x="520" y="247" width="406" height="56" rx="8" class="pb"></rect></g><line x1="569.5" y1="247" x2="569.5" y2="303" class="tick"></line><line x1="619" y1="247" x2="619" y2="303" class="tick"></line><line x1="668.5" y1="247" x2="668.5" y2="303" class="tick"></line><line x1="718" y1="247" x2="718" y2="303" class="tick"></line><line x1="767.5" y1="247" x2="767.5" y2="303" class="tick"></line><line x1="817" y1="247" x2="817" y2="303" class="tick"></line><line x1="866.5" y1="247" x2="866.5" y2="303" class="tick"></line><line x1="916" y1="247" x2="916" y2="303" class="tick"></line><line x1="965.5" y1="247" x2="965.5" y2="303" class="tick"></line><line x1="1015" y1="247" x2="1015" y2="303" class="tick"></line><line x1="1064.5" y1="247" x2="1064.5" y2="303" class="tick"></line><line x1="1114" y1="247" x2="1114" y2="303" class="tick"></line><line x1="1163.5" y1="247" x2="1163.5" y2="303" class="tick"></line><line x1="1213" y1="247" x2="1213" y2="303" class="tick"></line><g class="a03v1" style="opacity:1"><text x="1242" y="269" class="f34 mu" text-anchor="start">2026 · NVIDIA Rubin GPU</text><text x="1242" y="311" class="f34 b" text-anchor="start">336 milliárd</text><text x="1792" y="297" class="f56 b or" text-anchor="end">8,2</text></g><text x="0" y="362" class="f38 b" text-anchor="start">Operatív memória, csúcsgépek</text><text x="0" y="410" class="f34 mu" text-anchor="start">1952 · IBM 701</text><text x="0" y="452" class="f34 b" text-anchor="start">kb. 9,2 kB</text><rect x="520" y="388" width="700" height="56" rx="8" class="track"></rect><g class="a03b2 fb" style="transform:scaleX(1)"><rect x="520" y="388" width="584" height="56" rx="8" class="pb"></rect></g><line x1="569.5" y1="388" x2="569.5" y2="444" class="tick"></line><line x1="619" y1="388" x2="619" y2="444" class="tick"></line><line x1="668.5" y1="388" x2="668.5" y2="444" class="tick"></line><line x1="718" y1="388" x2="718" y2="444" class="tick"></line><line x1="767.5" y1="388" x2="767.5" y2="444" class="tick"></line><line x1="817" y1="388" x2="817" y2="444" class="tick"></line><line x1="866.5" y1="388" x2="866.5" y2="444" class="tick"></line><line x1="916" y1="388" x2="916" y2="444" class="tick"></line><line x1="965.5" y1="388" x2="965.5" y2="444" class="tick"></line><line x1="1015" y1="388" x2="1015" y2="444" class="tick"></line><line x1="1064.5" y1="388" x2="1064.5" y2="444" class="tick"></line><line x1="1114" y1="388" x2="1114" y2="444" class="tick"></line><line x1="1163.5" y1="388" x2="1163.5" y2="444" class="tick"></line><line x1="1213" y1="388" x2="1213" y2="444" class="tick"></line><g class="a03v2" style="opacity:1"><text x="1242" y="410" class="f34 mu" text-anchor="start">2024 · El Capitan</text><text x="1242" y="452" class="f34 b" text-anchor="start">kb. 6,3 PB</text><text x="1792" y="438" class="f56 b or" text-anchor="end">11,8</text></g><text x="0" y="503" class="f38 b" text-anchor="start">Egy merevlemez kapacitása</text><text x="0" y="551" class="f34 mu" text-anchor="start">1956 · IBM 350 RAMAC</text><text x="0" y="593" class="f34 b" text-anchor="start">3,75 MB</text><rect x="520" y="529" width="700" height="56" rx="8" class="track"></rect><g class="a03b3 fb" style="transform:scaleX(1)"><rect x="520" y="529" width="351" height="56" rx="8" class="pb"></rect></g><line x1="569.5" y1="529" x2="569.5" y2="585" class="tick"></line><line x1="619" y1="529" x2="619" y2="585" class="tick"></line><line x1="668.5" y1="529" x2="668.5" y2="585" class="tick"></line><line x1="718" y1="529" x2="718" y2="585" class="tick"></line><line x1="767.5" y1="529" x2="767.5" y2="585" class="tick"></line><line x1="817" y1="529" x2="817" y2="585" class="tick"></line><line x1="866.5" y1="529" x2="866.5" y2="585" class="tick"></line><line x1="916" y1="529" x2="916" y2="585" class="tick"></line><line x1="965.5" y1="529" x2="965.5" y2="585" class="tick"></line><line x1="1015" y1="529" x2="1015" y2="585" class="tick"></line><line x1="1064.5" y1="529" x2="1064.5" y2="585" class="tick"></line><line x1="1114" y1="529" x2="1114" y2="585" class="tick"></line><line x1="1163.5" y1="529" x2="1163.5" y2="585" class="tick"></line><line x1="1213" y1="529" x2="1213" y2="585" class="tick"></line><g class="a03v3" style="opacity:1"><text x="1242" y="551" class="f34 mu" text-anchor="start">2026 · Seagate Mozaic 4+</text><text x="1242" y="593" class="f34 b" text-anchor="start">44 TB</text><text x="1792" y="579" class="f56 b or" text-anchor="end">7,1</text></g></svg>
 </div>
-</div>
-
+<div class="prog"><i class="a03g" style="transform:scaleX(1)"></i></div>
+<div class="facts"><p class="a03f1" style="opacity:1"><b>Egy 2024-es csúcstelefon lapkája</b> valós, dupla pontosságú mérésben másodpercenként 57 milliárd lebegőpontos műveletet végez: 1993 júniusában ezzel a világ második leggyorsabb számítógépe lett volna.</p><p class="a03f2" style="opacity:1"><b>Egy mai csúcstelefonban</b> kb. 1 900-szor több memória van, mint amennyivel a legendás Cray-1 szuperszámítógép legnagyobb kiépítésben rendelkezett.</p></div>
+<p class="src">Telefon: Apple A18 Pro, HPL Linpack, 57,012 GFLOPS, MacBook Neóban mérve, összevetés a TOP500 1993. júniusi listájával. Memória: Galaxy S26 Ultra 16 GB, Cray-1 legfeljebb 8 MiB. A Rubin két szilíciumlapka egy tokban. Források: IBM, TOP500, Intel, NVIDIA, LLNL, Computer History Museum, Seagate, Apple, Samsung, Cray.</p>
 <footer class="foot"><img src="../assets/logos/wenova-wordmark.png" alt="Wenova"><span class="sp"></span><a href="#tartalom">Tartalom</a><span class="count"></span></footer>
 </div>
 </section>
 
-<!-- ========== DIA 04: Mitől javult a teljesítmény? ========== -->
-<section class="slide " id="s04">
+<!-- ========== DIA 04: A digitalizált adat ========== -->
+<section class="slide tight" id="s04">
+<div class="frame">
+<header class="head"><h2>A digitalizált adat: mi jut el a tanításig?</h2><span class="tag">Becslések</span></header>
+<div class="stage ">
+<svg viewBox="0 0 1792 680" role="img" aria-label="Balra a világ tárolókapacitása 1986 és 2007 között, jobbra tölcsér: létező adat, nyilvánosan elérhető adat, dokumentált tanítóanyag"><text x="0" y="44" class="f38 b" text-anchor="start">A világ tárolókapacitása</text><text x="0" y="88" class="f34 mu" text-anchor="start">becslés, tömörítve</text><line x1="24" y1="130" x2="24" y2="540" class="ln"></line><g class="a04m0" style="opacity:1"><circle cx="24" cy="162" r="16" class="dot"></circle><text x="62" y="180" class="f52 b or" text-anchor="start">1986</text><text x="226" y="164" class="f38 b" text-anchor="start">2,6 EB</text><text x="226" y="210" class="f34" text-anchor="start">0,8% digitális</text></g><g class="a04m1" style="opacity:1"><circle cx="24" cy="312" r="16" class="dot"></circle><text x="62" y="330" class="f52 b or" text-anchor="start">2002</text><text x="226" y="314" class="f38 b" text-anchor="start">A digitális tárolás</text><text x="226" y="360" class="f34" text-anchor="start">megelőzi az analógot</text></g><g class="a04m2" style="opacity:1"><circle cx="24" cy="462" r="16" class="dot"></circle><text x="62" y="480" class="f52 b or" text-anchor="start">2007</text><text x="226" y="464" class="f38 b" text-anchor="start">295 EB</text><text x="226" y="510" class="f34" text-anchor="start">94% digitális</text></g><g class="a04n" style="opacity:1"><text x="0" y="606" class="f34 b am" text-anchor="start">Másik mérce, mint a jobb oldal:</text><text x="0" y="650" class="f34 b am" text-anchor="start">a kettő nem szorozható össze.</text></g><line x1="606" y1="10" x2="606" y2="670" class="div"></line><g class="a04b0" style="opacity:1"><polygon points="641,10 1791,10 1661,216 771,216" class="nest2"></polygon><text x="1216" y="50" class="f38 b" text-anchor="middle">Létező adat</text><text x="1216" y="112" class="f56 b or" text-anchor="middle">132 ZB egy év alatt (2023)</text><text x="1216" y="156" class="f34" text-anchor="middle">létrehozott, rögzített, másolt és fogyasztott adat</text><text x="1216" y="196" class="f34 mu" text-anchor="middle">IDC-becslés, másolatokkal együtt</text></g><g class="a04b1" style="opacity:1"><polygon points="781,232 1651,232 1521,446 911,446" class="nest3"></polygon><text x="1216" y="274" class="f38 b" text-anchor="middle">Nyilvánosan elérhető</text><text x="1216" y="334" class="f56 b or" text-anchor="middle">több mint 10 PB</text><text x="1216" y="380" class="f34" text-anchor="middle">Common Crawl teljes archívuma</text><text x="1216" y="420" class="f34 mu" text-anchor="middle">jogvédett tartalom is lehet benne</text></g><g class="a04b2" style="opacity:1"><polygon points="921,462 1511,462 1416,670 1016,670" class="hot"></polygon><text x="1216" y="512" class="f38 b dk" text-anchor="middle">Dokumentált tanítóanyag</text><text x="1216" y="578" class="f56 b dk" text-anchor="middle">4,7 TB</text><text x="1216" y="628" class="f34 b dk" text-anchor="middle">egy modell: LLaMA 65B</text></g></svg>
+</div>
+<div class="prog"><i class="a04g" style="transform:scaleX(1)"></i></div>
+<ol class="caps" style="--n:3">
+<li class="a04c0" style="opacity:0"><span class="n">1/3</span><span>A világ tárolókapacitása néhány évtized alatt digitálissá vált.</span></li>
+<li class="a04c1" style="opacity:0"><span class="n">2/3</span><span>Ami nyilvánosan elérhető, az még lehet jogvédett.</span></li>
+<li class="a04c2" style="opacity:1"><span class="n">3/3</span><span>Egy modell dokumentált tanítóanyaga ennél is kisebb. A zárt modellek adatai nem ismertek.</span></li>
+</ol>
+<p class="src">A sávok szélessége nem arányos. Források: Hilbert és López (2011), University of Southern California, IDC (2024), Common Crawl, Touvron és mtsai. (2023).</p>
+<footer class="foot"><img src="../assets/logos/wenova-wordmark.png" alt="Wenova"><span class="sp"></span><a href="#tartalom">Tartalom</a><span class="count"></span></footer>
+</div>
+</section>
+
+<!-- ========== DIA 05: A modellek mérete ========== -->
+<section class="slide tight" id="s05">
+<div class="frame">
+<header class="head"><h2>A modellek mérete: 60 ezertől 2,8 billióig</h2></header>
+<div class="stage ">
+<svg viewBox="0 0 1792 760" role="img" aria-label="Paraméterek száma logaritmikus skálán 60 ezertől 2,8 billióig, alatta a tanítóadat modellenként, saját mértékegységben"><text x="0" y="34" class="f34 b" text-anchor="start">Paraméterek száma, logaritmikus skálán: minden osztás tízszeres</text><line x1="60" y1="205" x2="1740" y2="205" class="ln"></line><g class="a05a fb" style="transform:scaleX(1)"><rect x="60" y="201" width="1657" height="8" class="hot"></rect></g><line x1="108" y1="193" x2="108" y2="217" class="ar"></line><line x1="324" y1="193" x2="324" y2="217" class="ar"></line><line x1="540" y1="193" x2="540" y2="217" class="ar"></line><line x1="756" y1="193" x2="756" y2="217" class="ar"></line><line x1="972" y1="193" x2="972" y2="217" class="ar"></line><line x1="1188" y1="193" x2="1188" y2="217" class="ar"></line><line x1="1404" y1="193" x2="1404" y2="217" class="ar"></line><line x1="1620" y1="193" x2="1620" y2="217" class="ar"></line><g class="a05p0" style="opacity:1"><circle cx="60" cy="205" r="14" class="dot"></circle><text x="60" y="122" class="f34 b" text-anchor="start">LeNet-5, 1998</text><text x="60" y="164" class="f34 or" text-anchor="start">60 ezer</text></g><g class="a05p1" style="opacity:1"><circle cx="708" cy="205" r="14" class="dot"></circle><text x="708" y="122" class="f34 b" text-anchor="middle">AlexNet, 2012</text><text x="708" y="164" class="f34 or" text-anchor="middle">60 millió</text></g><g class="a05p2" style="opacity:1"><circle cx="771" cy="205" r="14" class="dot"></circle><text x="771" y="268" class="f34 b" text-anchor="middle">GPT-1, 2018</text><text x="771" y="310" class="f34 or" text-anchor="middle">117 millió</text></g><g class="a05p3" style="opacity:1"><circle cx="1013" cy="205" r="14" class="dot"></circle><text x="1013" y="122" class="f34 b" text-anchor="middle">GPT-2, 2019</text><text x="1013" y="164" class="f34 or" text-anchor="middle">1,542 milliárd</text></g><g class="a05p4" style="opacity:1"><circle cx="1364" cy="205" r="14" class="dot"></circle><text x="1341" y="268" class="f34 b" text-anchor="end">LLaMA 65B, 2023</text><text x="1341" y="310" class="f34 or" text-anchor="end">65,2 milliárd</text></g><g class="a05p5" style="opacity:1"><circle cx="1456" cy="205" r="14" class="dot"></circle><text x="1456" y="122" class="f34 b" text-anchor="middle">GPT-3, 2020</text><text x="1456" y="164" class="f34 or" text-anchor="middle">175 milliárd</text></g><g class="a05p6" style="opacity:1"><circle cx="1664" cy="205" r="14" class="dot"></circle><text x="1792" y="268" class="f34 b" text-anchor="end">DeepSeek-V4-Pro, 2026</text><text x="1792" y="310" class="f34 or" text-anchor="end">1,6 billió</text></g><g class="a05p7" style="opacity:1"><circle cx="1717" cy="205" r="14" class="dot"></circle><line x1="1717" y1="118" x2="1717" y2="191" class="ar"></line><text x="1792" y="66" class="f34 b" text-anchor="end">Kimi K3, 2026</text><text x="1792" y="108" class="f34 or" text-anchor="end">2,8 billió</text></g><g class="a05x" style="opacity:1"><circle cx="30" cy="290" r="18" class="dash"></circle><text x="62" y="278" class="f34 b" text-anchor="start">GPT-4, 2023</text><text x="62" y="320" class="f34 b am" text-anchor="start">nem publikált</text></g><text x="0" y="386" class="f34 b" text-anchor="start">Tanítóadat, modellenként a saját mértékegységében</text><text x="1792" y="386" class="f34 am" text-anchor="end">A mértékegységek nem válthatók át egymásba.</text><g class="a05c00" style="opacity:1"><rect x="0" y="404" width="433" height="166" rx="14" class="pn"></rect><text x="216.5" y="450" class="f34 b" text-anchor="middle">LeNet-5</text><text x="216.5" y="504" class="f38 b or" text-anchor="middle">60 000</text><text x="216.5" y="550" class="f34" text-anchor="middle">kép</text></g><g class="a05c01" style="opacity:1"><rect x="453" y="404" width="433" height="166" rx="14" class="pn"></rect><text x="669.5" y="450" class="f34 b" text-anchor="middle">AlexNet</text><text x="669.5" y="504" class="f38 b or" text-anchor="middle">1,2 millió</text><text x="669.5" y="550" class="f34" text-anchor="middle">kép</text></g><g class="a05c02" style="opacity:1"><rect x="906" y="404" width="433" height="166" rx="14" class="pn"></rect><text x="1122.5" y="450" class="f34 b" text-anchor="middle">GPT-1</text><text x="1122.5" y="504" class="f38 b or" text-anchor="middle">több mint 7 000</text><text x="1122.5" y="550" class="f34" text-anchor="middle">könyv</text></g><g class="a05c03" style="opacity:1"><rect x="1359" y="404" width="433" height="166" rx="14" class="pn"></rect><text x="1575.5" y="450" class="f34 b" text-anchor="middle">GPT-2</text><text x="1575.5" y="504" class="f38 b or" text-anchor="middle">több mint 8 millió</text><text x="1575.5" y="550" class="f34" text-anchor="middle">dokumentum, 40 GB</text></g><g class="a05c10" style="opacity:1"><rect x="0" y="584" width="316" height="166" rx="14" class="pn"></rect><text x="158" y="630" class="f34 b" text-anchor="middle">GPT-3</text><text x="158" y="684" class="f38 b or" text-anchor="middle">300 milliárd</text><text x="158" y="730" class="f34" text-anchor="middle">feldolgozott token</text></g><g class="a05c11" style="opacity:1"><rect x="336" y="584" width="316" height="166" rx="14" class="pn"></rect><text x="494" y="630" class="f34 b" text-anchor="middle">LLaMA 65B</text><text x="494" y="684" class="f38 b or" text-anchor="middle">1,4 billió</text><text x="494" y="730" class="f34" text-anchor="middle">feldolgozott token</text></g><g class="a05c12" style="opacity:1"><rect x="672" y="584" width="290" height="166" rx="14" class="pn"></rect><text x="817" y="630" class="f34 b" text-anchor="middle">GPT-4</text><text x="817" y="684" class="f38 b am" text-anchor="middle">nem publikált</text></g><g class="a05c13" style="opacity:1"><rect x="982" y="584" width="440" height="166" rx="14" class="pn"></rect><text x="1202" y="630" class="f34 b" text-anchor="middle">DeepSeek-V4-Pro</text><text x="1202" y="684" class="f38 b or" text-anchor="middle">több mint 32 billió</text><text x="1202" y="730" class="f34" text-anchor="middle">token</text></g><g class="a05c14" style="opacity:1"><rect x="1442" y="584" width="350" height="166" rx="14" class="pn"></rect><text x="1617" y="630" class="f34 b" text-anchor="middle">Kimi K3</text><text x="1617" y="684" class="f38 b am" text-anchor="middle">nem publikált</text></g></svg>
+</div>
+<div class="prog"><i class="a05g" style="transform:scaleX(1)"></i></div>
+<p class="note a05n" style="opacity:1">A legnagyobb mai modellekben tokenenként a paramétereknek csak egy része aktív: a Kimi K3-ban 104 milliárd.</p>
+<p class="src">Források: LeCun és mtsai. (1998), Krizhevsky és mtsai. (2012), Radford és mtsai. (2018, 2019), Brown és mtsai. (2020), Touvron és mtsai. (2023), OpenAI (2023), DeepSeek és Moonshot AI modellkártyák.</p>
+<footer class="foot"><img src="../assets/logos/wenova-wordmark.png" alt="Wenova"><span class="sp"></span><a href="#tartalom">Tartalom</a><span class="count"></span></footer>
+</div>
+</section>
+
+<!-- ========== DIA 06: Mitől javult a teljesítmény? ========== -->
+<section class="slide " id="s06">
 <div class="frame">
 <header class="head"><h2>Mitől javult a teljesítmény?</h2></header>
 <div class="stage ">
@@ -705,8 +828,8 @@ svg .b{font-weight:700}svg .m{font-family:var(--mono)}svg .dk{fill:var(--navy)}s
 </div>
 </section>
 
-<!-- ========== DIA 05: Machine learning | Minták a példákból ========== -->
-<section class="slide " id="s05">
+<!-- ========== DIA 07: Machine learning | Minták a példákból ========== -->
+<section class="slide " id="s07">
 <div class="frame">
 <header class="head"><h2><span class="em">Machine learning</span><span class="pipe"> | </span>Minták a példákból</h2><span class="tag">Szemléltetés</span></header>
 <div class="stage ">
@@ -723,8 +846,8 @@ svg .b{font-weight:700}svg .m{font-family:var(--mono)}svg .dk{fill:var(--navy)}s
 </div>
 </section>
 
-<!-- ========== DIA 06: Deep learning | Mit csinálnak a rétegek? ========== -->
-<section class="slide " id="s06">
+<!-- ========== DIA 08: Deep learning | Mit csinálnak a rétegek? ========== -->
+<section class="slide " id="s08">
 <div class="frame">
 <header class="head"><h2><span class="em">Deep learning</span><span class="pipe"> | </span>Mit csinálnak a rétegek?</h2><span class="tag">Szemléltetés</span></header>
 <div class="stage ">
@@ -741,8 +864,8 @@ svg .b{font-weight:700}svg .m{font-family:var(--mono)}svg .dk{fill:var(--navy)}s
 </div>
 </section>
 
-<!-- ========== DIA 07: Backpropagation | Így tanul a hibából ========== -->
-<section class="slide tight" id="s07">
+<!-- ========== DIA 09: Backpropagation | Így tanul a hibából ========== -->
+<section class="slide tight" id="s09">
 <div class="frame">
 <header class="head"><h2><span class="em">Backpropagation</span><span class="pipe"> | </span>Így tanul a hibából</h2><span class="tag">Szemléltetés</span></header>
 <p class="say">A backpropagation tanítás közben kiszámolja, melyik súly mennyire hat a hibára, így a tanítás tudja, merre állítsa a súlyokat, hogy a modell legközelebb kevesebbet tévedjen.</p>
@@ -762,8 +885,8 @@ svg .b{font-weight:700}svg .m{font-family:var(--mono)}svg .dk{fill:var(--navy)}s
 </div>
 </section>
 
-<!-- ========== DIA 08: A szövegből tokenek lesznek ========== -->
-<section class="slide " id="s08">
+<!-- ========== DIA 10: A szövegből tokenek lesznek ========== -->
+<section class="slide " id="s10">
 <div class="frame">
 <header class="head"><h2>A szövegből tokenek lesznek</h2><span class="tag">Valódi példa: o200k_base</span></header>
 <div class="stage ">
@@ -780,8 +903,8 @@ svg .b{font-weight:700}svg .m{font-family:var(--mono)}svg .dk{fill:var(--navy)}s
 </div>
 </section>
 
-<!-- ========== DIA 09: Attention | A környezet adja a jelentést ========== -->
-<section class="slide tight" id="s09">
+<!-- ========== DIA 11: Attention | A környezet adja a jelentést ========== -->
+<section class="slide tight" id="s11">
 <div class="frame">
 <header class="head"><h2><span class="em">Attention</span><span class="pipe"> | </span>A környezet adja a jelentést</h2><span class="tag">Szemléltetés</span></header>
 <p class="say">A figyelem súlyozza, mennyi információt vegyen át egy szövegrész a környezetéből. A példában ettől kap más jelentést az ügyfél levele és a növény levele.</p>
@@ -799,8 +922,8 @@ svg .b{font-weight:700}svg .m{font-family:var(--mono)}svg .dk{fill:var(--navy)}s
 </div>
 </section>
 
-<!-- ========== DIA 10: Transformer | Figyelem, rétegről rétegre ========== -->
-<section class="slide tight" id="s10">
+<!-- ========== DIA 12: Transformer | Figyelem, rétegről rétegre ========== -->
+<section class="slide tight" id="s12">
 <div class="frame">
 <header class="head"><h2><span class="em">Transformer</span><span class="pipe"> | </span>Figyelem, rétegről rétegre</h2><span class="tag">Szemléltetés</span></header>
 <p class="say">A Transformer rétegei összekapcsolják a szöveg részeit, majd továbbalakítják őket. A már rendelkezésre álló tokeneken belüli számítás párhuzamosítható.</p>
@@ -819,8 +942,8 @@ svg .b{font-weight:700}svg .m{font-family:var(--mono)}svg .dk{fill:var(--navy)}s
 </div>
 </section>
 
-<!-- ========== DIA 11: A kimenet lépésenként készül ========== -->
-<section class="slide " id="s11">
+<!-- ========== DIA 13: A kimenet lépésenként készül ========== -->
+<section class="slide " id="s13">
 <div class="frame">
 <header class="head"><h2>A kimenet lépésenként készül</h2><span class="tag">Valódi tokenek, kitalált esélyek</span></header>
 <p class="flow"><span><i class="d11k20" style="opacity:0"></i><b>Prompt + ügyféllevél</b></span> <em>→</em> <span><i class="d11k21" style="opacity:0"></i><b>LLM</b></span> <em>→</em> <span><i class="d11k22" style="opacity:0"></i><b>Következő token</b></span> <em>→</em> <span><i class="d11k23" style="opacity:1"></i><b>Kimenet</b></span></p>
@@ -838,8 +961,8 @@ svg .b{font-weight:700}svg .m{font-family:var(--mono)}svg .dk{fill:var(--navy)}s
 </div>
 </section>
 
-<!-- ========== DIA 12: Mit kap meg a modell minden körben? ========== -->
-<section class="slide " id="s12">
+<!-- ========== DIA 14: Mit kap meg a modell minden körben? ========== -->
+<section class="slide " id="s14">
 <div class="frame">
 <header class="head"><h2>Mit kap meg a modell minden körben?</h2><span class="tag">Szemléltetés</span></header>
 <div class="stage ">
@@ -856,8 +979,8 @@ svg .b{font-weight:700}svg .m{font-family:var(--mono)}svg .dk{fill:var(--navy)}s
 </div>
 </section>
 
-<!-- ========== DIA 13: Hallucináció, drift, felejtés ========== -->
-<section class="slide " id="s13">
+<!-- ========== DIA 15: Hallucináció, drift, felejtés ========== -->
+<section class="slide " id="s15">
 <div class="frame">
 <header class="head"><h2>Hallucináció, drift, felejtés</h2><span class="tag">Kitalált példa</span></header>
 <div class="stage ">
@@ -872,8 +995,8 @@ svg .b{font-weight:700}svg .m{font-family:var(--mono)}svg .dk{fill:var(--navy)}s
 </div>
 </section>
 
-<!-- ========== DIA 14: Adj elég hátteret, és hagyj helyet a válasznak ========== -->
-<section class="slide " id="s14">
+<!-- ========== DIA 16: Adj elég hátteret, és hagyj helyet a válasznak ========== -->
+<section class="slide " id="s16">
 <div class="frame">
 <header class="head"><h2>Adj elég hátteret, és hagyj helyet a válasznak</h2></header>
 <div class="stage ">
@@ -884,8 +1007,8 @@ svg .b{font-weight:700}svg .m{font-family:var(--mono)}svg .dk{fill:var(--navy)}s
 </div>
 </section>
 
-<!-- ========== DIA 15: A jó prompt megadja a feladatot ========== -->
-<section class="slide " id="s15">
+<!-- ========== DIA 17: A jó prompt megadja a feladatot ========== -->
+<section class="slide " id="s17">
 <div class="frame">
 <header class="head"><h2>A jó prompt megadja a feladatot</h2></header>
 <div class="stage ">
@@ -898,8 +1021,8 @@ svg .b{font-weight:700}svg .m{font-family:var(--mono)}svg .dk{fill:var(--navy)}s
 </div>
 </section>
 
-<!-- ========== DIA 16: A jó prompt megmondja, mikor kész ========== -->
-<section class="slide " id="s16">
+<!-- ========== DIA 18: A jó prompt megmondja, mikor kész ========== -->
+<section class="slide " id="s18">
 <div class="frame">
 <header class="head"><h2>A jó prompt megmondja, mikor kész</h2></header>
 <div class="stage ">
@@ -913,8 +1036,8 @@ svg .b{font-weight:700}svg .m{font-family:var(--mono)}svg .dk{fill:var(--navy)}s
 </div>
 </section>
 
-<!-- ========== DIA 17: Két mondat, amivel elindulsz ========== -->
-<section class="slide " id="s17">
+<!-- ========== DIA 19: Két mondat, amivel elindulsz ========== -->
+<section class="slide " id="s19">
 <div class="frame">
 <header class="head"><h2>Két mondat, amivel elindulsz</h2></header>
 <div class="stage ">
@@ -925,8 +1048,8 @@ svg .b{font-weight:700}svg .m{font-family:var(--mono)}svg .dk{fill:var(--navy)}s
 </div>
 </section>
 
-<!-- ========== DIA 18: Egy kérés, három AI-szerep ========== -->
-<section class="slide " id="s18">
+<!-- ========== DIA 20: Egy kérés, három AI-szerep ========== -->
+<section class="slide " id="s20">
 <div class="frame">
 <header class="head"><h2>Egy kérés, három AI-szerep</h2></header>
 <div class="stage ">
@@ -937,8 +1060,8 @@ svg .b{font-weight:700}svg .m{font-family:var(--mono)}svg .dk{fill:var(--navy)}s
 </div>
 </section>
 
-<!-- ========== DIA 19: Egy levél útja az emberi döntésig ========== -->
-<section class="slide loop19" id="s19">
+<!-- ========== DIA 21: Egy levél útja az emberi döntésig ========== -->
+<section class="slide loop19" id="s21">
 <div class="frame">
 <header class="head"><h2>Egy levél útja az emberi döntésig</h2><span class="tag">Kitalált eset</span></header>
 <div class="stage ">
@@ -962,8 +1085,8 @@ svg .b{font-weight:700}svg .m{font-family:var(--mono)}svg .dk{fill:var(--navy)}s
 </div>
 </section>
 
-<!-- ========== DIA 20: 09:20 | Kezdjük a Cég-DNS-sel ========== -->
-<section class="slide " id="s20">
+<!-- ========== DIA 22: 09:20 | Kezdjük a Cég-DNS-sel ========== -->
+<section class="slide " id="s22">
 <div class="frame">
 <header class="head"><h2><span class="em">09:20</span><span class="pipe"> | </span>Kezdjük a Cég-DNS-sel</h2></header>
 <div class="stage ">
@@ -974,8 +1097,8 @@ svg .b{font-weight:700}svg .m{font-family:var(--mono)}svg .dk{fill:var(--navy)}s
 </div>
 </section>
 
-<!-- ========== DIA 21: Tartalék dia | Ugyanannyi számítás, több szöveg ========== -->
-<section class="slide " id="s21">
+<!-- ========== DIA 23: Tartalék dia | Ugyanannyi számítás, több szöveg ========== -->
+<section class="slide " id="s23">
 <div class="frame">
 <header class="head"><h2><span class="em">Tartalék dia</span><span class="pipe"> | </span>Ugyanannyi számítás, több szöveg</h2></header>
 <div class="stage ">
@@ -990,8 +1113,8 @@ svg .b{font-weight:700}svg .m{font-family:var(--mono)}svg .dk{fill:var(--navy)}s
 </div>
 </section>
 
-<!-- ========== DIA 22: Tartalék dia | Egyben a kipróbálható prompt ========== -->
-<section class="slide " id="s22">
+<!-- ========== DIA 24: Tartalék dia | Egyben a kipróbálható prompt ========== -->
+<section class="slide " id="s24">
 <div class="frame">
 <header class="head"><h2><span class="em">Tartalék dia</span><span class="pipe"> | </span>Egyben a kipróbálható prompt</h2></header>
 <div class="stage ">
@@ -1001,6 +1124,6 @@ svg .b{font-weight:700}svg .m{font-family:var(--mono)}svg .dk{fill:var(--navy)}s
 <footer class="foot"><img src="../assets/logos/wenova-wordmark.png" alt="Wenova"><span class="sp"></span><a href="#tartalom">Tartalom</a><span class="count"></span></footer>
 </div>
 </section>
-<nav class="toc" id="tartalom" aria-label="Tartalom"><p class="toc-h">Tartalom</p><ol><li><a href="#s01">AI dióhéjban</a></li><li><a href="#s02">Melyik AI-val dolgozunk ma?</a></li><li><a href="#s03">Mekkora léptékről beszélünk?</a></li><li><a href="#s04">Mitől javult a teljesítmény?</a></li><li><a href="#s05">Machine learning | Minták a példákból</a></li><li><a href="#s06">Deep learning | Mit csinálnak a rétegek?</a></li><li><a href="#s07">Backpropagation | Így tanul a hibából</a></li><li><a href="#s08">A szövegből tokenek lesznek</a></li><li><a href="#s09">Attention | A környezet adja a jelentést</a></li><li><a href="#s10">Transformer | Figyelem, rétegről rétegre</a></li><li><a href="#s11">A kimenet lépésenként készül</a></li><li><a href="#s12">Mit kap meg a modell minden körben?</a></li><li><a href="#s13">Hallucináció, drift, felejtés</a></li><li><a href="#s14">Adj elég hátteret, és hagyj helyet a válasznak</a></li><li><a href="#s15">A jó prompt megadja a feladatot</a></li><li><a href="#s16">A jó prompt megmondja, mikor kész</a></li><li><a href="#s17">Két mondat, amivel elindulsz</a></li><li><a href="#s18">Egy kérés, három AI-szerep</a></li><li><a href="#s19">Egy levél útja az emberi döntésig</a></li><li><a href="#s20">09:20 | Kezdjük a Cég-DNS-sel</a></li><li><a href="#s21">Tartalék dia | Ugyanannyi számítás, több szöveg</a></li><li><a href="#s22">Tartalék dia | Egyben a kipróbálható prompt</a></li></ol><p class="toc-n"><a href="00-nyito-eloadas-jegyzet.html">Előadói jegyzet</a></p></nav>
+<nav class="toc" id="tartalom" aria-label="Tartalom"><p class="toc-h">Tartalom</p><ol><li><a href="#s01">AI dióhéjban</a></li><li><a href="#s02">Melyik AI-val dolgozunk ma?</a></li><li><a href="#s03">Számítási kapacitás: az 1950-es évektől máig</a></li><li><a href="#s04">A digitalizált adat: mi jut el a tanításig?</a></li><li><a href="#s05">A modellek mérete: 60 ezertől 2,8 billióig</a></li><li><a href="#s06">Mitől javult a teljesítmény?</a></li><li><a href="#s07">Machine learning | Minták a példákból</a></li><li><a href="#s08">Deep learning | Mit csinálnak a rétegek?</a></li><li><a href="#s09">Backpropagation | Így tanul a hibából</a></li><li><a href="#s10">A szövegből tokenek lesznek</a></li><li><a href="#s11">Attention | A környezet adja a jelentést</a></li><li><a href="#s12">Transformer | Figyelem, rétegről rétegre</a></li><li><a href="#s13">A kimenet lépésenként készül</a></li><li><a href="#s14">Mit kap meg a modell minden körben?</a></li><li><a href="#s15">Hallucináció, drift, felejtés</a></li><li><a href="#s16">Adj elég hátteret, és hagyj helyet a válasznak</a></li><li><a href="#s17">A jó prompt megadja a feladatot</a></li><li><a href="#s18">A jó prompt megmondja, mikor kész</a></li><li><a href="#s19">Két mondat, amivel elindulsz</a></li><li><a href="#s20">Egy kérés, három AI-szerep</a></li><li><a href="#s21">Egy levél útja az emberi döntésig</a></li><li><a href="#s22">09:20 | Kezdjük a Cég-DNS-sel</a></li><li><a href="#s23">Tartalék dia | Ugyanannyi számítás, több szöveg</a></li><li><a href="#s24">Tartalék dia | Egyben a kipróbálható prompt</a></li></ol><p class="toc-n"><a href="00-nyito-eloadas-jegyzet.html">Előadói jegyzet</a></p></nav>
 </body>
 </html>

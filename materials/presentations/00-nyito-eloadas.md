@@ -21,21 +21,43 @@
 
 **Forrás:** AI, gépi tanulás és mélytanulás viszonya [F02] · Generatív nyelvi modell és szöveges feladatok [F06].
 
-## Dia 3: Mekkora léptékről beszélünk?
+## Dia 3: Számítási kapacitás: az 1950-es évektől máig
 
-**A dián látható szöveg:** GPT-3, 2020 · 300 milliárd feldolgozott tanítótoken · 175 milliárd paraméter · kb. 3,14 × 10²³ művelet a tanításban
+**A dián látható szöveg:** Számítási kapacitás: az 1950-es évektől máig · Minden osztás tízszeres növekedés · nagyságrend · Műveletek másodpercenként: 1952, IBM 701, több mint 16 000 összeadás/s; 2026, LineShine, 2,198 EFLOPS; kb. 14 · A mérce közben változik. Linpackkel, 1993–2026: 7,6 nagyságrend. · Tranzisztor egy chipen: 1971, Intel 4004, 2 300; 2026, NVIDIA Rubin GPU, 336 milliárd; 8,2 · Operatív memória, csúcsgépek: 1952, IBM 701, kb. 9,2 kB; 2024, El Capitan, kb. 6,3 PB; 11,8 · Egy merevlemez kapacitása: 1956, IBM 350 RAMAC, 3,75 MB; 2026, Seagate Mozaic 4+, 44 TB; 7,1 · Egy 2024-es csúcstelefon lapkája valós, dupla pontosságú mérésben másodpercenként 57 milliárd lebegőpontos műveletet végez: 1993 júniusában ezzel a világ második leggyorsabb számítógépe lett volna. · Egy mai csúcstelefonban kb. 1 900-szor több memória van, mint amennyivel a legendás Cray-1 szuperszámítógép legnagyobb kiépítésben rendelkezett. · Telefon: Apple A18 Pro, HPL Linpack, 57,012 GFLOPS, MacBook Neóban mérve, összevetés a TOP500 1993. júniusi listájával. Memória: Galaxy S26 Ultra 16 GB, Cray-1 legfeljebb 8 MiB. A Rubin két szilíciumlapka egy tokban. Források: IBM, TOP500, Intel, NVIDIA, LLNL, Computer History Museum, Seagate, Apple, Samsung, Cray.
 
-**Ábra:** Három azonos méretű számkártya egymás mellett. Balra a tanítás során feldolgozott szövegegységek, középen a modellben hangolt értékek, jobbra a becsült összes számítási művelet. Három külön mértékegység szerepel, oszlopdiagram nélkül.
+**Mozgó ábra:** Négy sor, soronként a kezdő érték, egy logaritmikus sáv és a záró érték. A sávon minden osztás tízszeres növekedés, a sáv hossza a nagyságrendek számával arányos. 0–3 mp: a műveletek narancs sávja kinő, megjelenik a záró érték és a kb. 14. 3–6 mp: a tranzisztorok sora. 7–10 mp: a memória sora. 10–13 mp: a merevlemez sora. 13–16 mp: megjelenik a két telefonos tény. Teljes hossz 16 mp. A műveletek sorának szorzója szemléltető, mert a mérce összeadásról lebegőpontos műveletre vált. Az azonos mérővel számolt szakasz a Linpack 1993 és 2026 között.
 
-**Forrás:** GPT-3, 2.1. táblázat és D.1 függeléktáblázat [F06] · Az időanalógia kerekített átszámítás a közölt műveletszámból, évi 365,25 nappal · Token [F11] · Paraméter [F09] · GPT-4, 2. szakasz [F08].
+**Forrás:** Műveletek [F21], [F22], [F24] · Tranzisztorok [F25], [F26] · Memória [F27], [F29] · Merevlemez [F30], [F31] · Telefonos összevetés [F22], [F32], [F33] · Memória-összevetés [F28], [F34]. A nagyságrendek a közölt adatokból számolt értékek. A LineShine memóriája nem ismert, ezért szerepel az El Capitan, és nem állítjuk, hogy ez a világ legnagyobb memóriája.
 
-## Dia 4: Mitől javult a teljesítmény?
+## Dia 4: A digitalizált adat: mi jut el a tanításig?
+
+**A dián látható szöveg:** A digitalizált adat: mi jut el a tanításig? · Becslések · A világ tárolókapacitása, becslés, tömörítve · 1986: 2,6 EB, 0,8% digitális · 2002: A digitális tárolás megelőzi az analógot · 2007: 295 EB, 94% digitális · Másik mérce, mint a jobb oldal: a kettő nem szorozható össze. · Létező adat: 132 ZB egy év alatt (2023), létrehozott, rögzített, másolt és fogyasztott adat, IDC-becslés, másolatokkal együtt · Nyilvánosan elérhető: több mint 10 PB, Common Crawl teljes archívuma, jogvédett tartalom is lehet benne · Dokumentált tanítóanyag: 4,7 TB, egy modell: LLaMA 65B · A sávok szélessége nem arányos. Források: Hilbert és López (2011), University of Southern California, IDC (2024), Common Crawl, Touvron és mtsai. (2023).
+
+**Mozgó ábra:** Balra idővonal három mérföldkővel, jobbra háromszintű tölcsér. 0–8 mp: sorban megjelenik az 1986, a 2002 és a 2007, majd a figyelmeztetés a két mérce különbségéről. 9–12 mp: a tölcsér felső szintje. 12–15 mp: a középső szint. 15–18 mp: az alsó szint. Teljes hossz 20 mp. A tölcsér szintjei nem arányosak, és nem azt állítják, hogy a felső szint teljes tartalma eljut az alsóig.
+
+**Lépésfeliratok:**
+
+1. A világ tárolókapacitása néhány évtized alatt digitálissá vált.
+2. Ami nyilvánosan elérhető, az még lehet jogvédett.
+3. Egy modell dokumentált tanítóanyaga ennél is kisebb. A zárt modellek adatai nem ismertek.
+
+**Forrás:** Tárolókapacitás [F35], [F36] · Éves adatmennyiség [F37] · Nyilvános archívum és felhasználási feltételek [F38], [F39] · Dokumentált tanítóanyag [F40]. A tárolt és az éves adatmennyiség két külön adatsor, ezért közöttük nincs szorzó.
+
+## Dia 5: A modellek mérete: 60 ezertől 2,8 billióig
+
+**A dián látható szöveg:** A modellek mérete: 60 ezertől 2,8 billióig · Paraméterek száma, logaritmikus skálán: minden osztás tízszeres · LeNet-5, 1998: 60 ezer · AlexNet, 2012: 60 millió · GPT-1, 2018: 117 millió · GPT-2, 2019: 1,542 milliárd · GPT-3, 2020: 175 milliárd · LLaMA 65B, 2023: 65,2 milliárd · GPT-4, 2023: nem publikált · DeepSeek-V4-Pro, 2026: 1,6 billió · Kimi K3, 2026: 2,8 billió · Tanítóadat, modellenként a saját mértékegységében · A mértékegységek nem válthatók át egymásba. · LeNet-5: 60 000 kép · AlexNet: 1,2 millió kép · GPT-1: több mint 7 000 könyv · GPT-2: több mint 8 millió dokumentum, 40 GB · GPT-3: 300 milliárd feldolgozott token · LLaMA 65B: 1,4 billió feldolgozott token · GPT-4: nem publikált · DeepSeek-V4-Pro: több mint 32 billió token · Kimi K3: nem publikált · A legnagyobb mai modellekben tokenenként a paramétereknek csak egy része aktív: a Kimi K3-ban 104 milliárd. · Források: LeCun és mtsai. (1998), Krizhevsky és mtsai. (2012), Radford és mtsai. (2018, 2019), Brown és mtsai. (2020), Touvron és mtsai. (2023), OpenAI (2023), DeepSeek és Moonshot AI modellkártyák.
+
+**Mozgó ábra:** Felül egyetlen logaritmikus vonal, rajta a modellek paraméterszáma méret szerinti sorrendben. Alul kilenc kártya mutatja a tanítóadatot, mindegyik a saját mértékegységében. 0–11 mp: a vonal balról jobbra kinő, a pontok és a feliratok sorban megjelennek. 7 mp körül megjelenik a GPT-4 szaggatott jele a „nem publikált” felirattal. 12–23 mp: sorban megjelennek a kártyák. 22 mp után: megjelenik az aktív paraméterekről szóló mondat. Teljes hossz 24 mp.
+
+**Forrás:** LeNet-5 [F41] · AlexNet [F03] · GPT-1 [F42] · GPT-2 [F43] · GPT-3 [F06] · LLaMA 65B [F40] · GPT-4 [F08] · DeepSeek-V4-Pro [F44] · Kimi K3 [F45]. A GPT-3 300 milliárd tokenje feldolgozott mennyiség, egyes adathalmazokat a modell akár 3,4-szer is látott.
+
+## Dia 6: Mitől javult a teljesítmény?
 
 **A dián látható szöveg:** Sok, szűrt szöveg · Párhuzamos számítás · Jobb modellfelépítés · Tanítás a párbeszédre
 
 **Forrás:** Adatszűrés és párhuzamos tanítás [F06] · Transformer, 1. és 4. szakasz [F04] · Chinchilla és Gopher azonos tanítási számítás mellett [F07] · ChatGPT és párbeszédre hangolás [F05].
 
-## Dia 5: Machine learning | Minták a példákból
+## Dia 7: Machine learning | Minták a példákból
 
 **A dián látható szöveg:** Machine learning · Tanítópéldák · Modell · Új levél · Becslés: ajánlatkérés · Tanítás · Használat · Szemléltetés
 
@@ -50,7 +72,7 @@
 
 **Forrás:** Felügyelt tanulás, tanítópéldák és modellértékelés [F10]. A levelek szemléltető minták.
 
-## Dia 6: Deep learning | Mit csinálnak a rétegek?
+## Dia 8: Deep learning | Mit csinálnak a rétegek?
 
 **A dián látható szöveg:** Deep learning · Neuron · Súly · Élek · Formák · Tárgy · Cserepes növény · esély: 92% · Szemléltetés
 
@@ -65,7 +87,7 @@
 
 **Forrás:** Rétegek, neuronok, súlyok és tanult képi reprezentáció [F02], [F09] · ImageNet-tanulmány és hardver [F03].
 
-## Dia 7: Backpropagation | Így tanul a hibából
+## Dia 9: Backpropagation | Így tanul a hibából
 
 **A dián látható szöveg:** Backpropagation · Így tanul a hibából · A backpropagation tanítás közben kiszámolja, melyik súly mennyire hat a hibára, így a tanítás tudja, merre állítsa a súlyokat, hogy a modell legközelebb kevesebbet tévedjen. · „Kérek árat 25 növényre.” · A háló tippje: Egyéb levél · Helyes válasz: Ajánlatkérés · Hiba · Az ajánlatkérés esélye: 24%, majd 31% · Egy lépés után: kicsit jobb · Minden súlyra számolunk, a frissítésből csak néhányat rajzoltunk ki. · Szemléltetés · Melyik mire való? Backpropagation: kiszámolja, merre változzanak a súlyok · Attention: súlyozza, mit vegyen át a szöveg többi részéből · Transformer: a rétegek felépítése
 
@@ -81,7 +103,7 @@
 
 **Forrás:** Az 1986-os közlemény szerzői jegyzéke [F15] · Visszaterjesztés és optimalizálás, 6.5. szakasz [F09] · Szöveges feladat súlyfrissítés nélkül [F06].
 
-## Dia 8: A szövegből tokenek lesznek
+## Dia 10: A szövegből tokenek lesznek
 
 **A dián látható szöveg:** Valódi példa: o200k_base · Input: Írj rövid választ. · Prompt · Tokenek: Í · r · j · ␣rö · vid · ␣választ · . · Azonosítók: 8463 · 81 · 73 · 76568 · 1429 · 161394 · 13 · Vektorok · Szemléltetés: sok-sok szám
 
@@ -96,7 +118,7 @@
 
 **Forrás:** Szöveges utasítás és háttéranyag [F16] · Token és tokenizálás [F11] · Valódi felosztás és azonosítók, saját futtatás [F20] · Tanult beágyazás, 3.4. szakasz [F04].
 
-## Dia 9: Attention | A környezet adja a jelentést
+## Dia 11: Attention | A környezet adja a jelentést
 
 **A dián látható szöveg:** Attention · A környezet adja a jelentést · A figyelem súlyozza, mennyi információt vegyen át egy szövegrész a környezetéből. A példában ettől kap más jelentést az ügyfél levele és a növény levele. · Az ügyfél levele: elküldött üzenet · A növény levele: a növény része · Szemléltetés · Melyik mire való? Backpropagation: kiszámolja, merre változzanak a súlyok · Attention: súlyozza, mit vegyen át a szöveg többi részéből · Transformer: a rétegek felépítése
 
@@ -110,11 +132,11 @@
 
 **Forrás:** Súlyozott figyelem és több figyelmi fej, 3.2. szakasz [F04] · Modellfüggő tokenhatárok [F11], [F20].
 
-## Dia 10: Transformer | Figyelem, rétegről rétegre
+## Dia 12: Transformer | Figyelem, rétegről rétegre
 
 **A dián látható szöveg:** Transformer · Figyelem, rétegről rétegre · A Transformer rétegei összekapcsolják a szöveg részeit, majd továbbalakítják őket. A már rendelkezésre álló tokeneken belüli számítás párhuzamosítható. · A válasz eleje: K, öszön, jük · még üres · 1. réteg: Figyelem, Átalakítás · 2. réteg · 3. réteg · A következő token esélyei: ! 64%, ␣a 28%, , 8% · Kitalált esélyek. · A kártyák a tokenekhez tartozó számsorokat jelölik. A „jük” korábbi tokenekből vesz át információt. · Szemléltetés · Melyik mire való? Backpropagation: kiszámolja, merre változzanak a súlyok · Attention: súlyozza, mit vegyen át a szöveg többi részéből · Transformer: a rétegek felépítése
 
-**Mozgó ábra:** Balra a válasz eddigi három tokenje és egy üres hely, középen az 1. réteg Figyelem és Átalakítás részével, utána a 2. és a 3. réteg, jobbra a következő token esélyei. 0–3 mp: a három kártya megjelenik. 3–6 mp: a három kártya együtt halad a Figyelem részbe. 6–11 mp: a „jük” felé egy vastag és egy vékony ív nyílik a korábbi tokenektől, a kártya gyűrűt kap. 11–16 mp: a három kártya együtt az Átalakításba lép, és színt vált. 16–22 mp: együtt áthaladnak a 2. és a 3. rétegen. 22–28 mp: megjelennek a következő token esélyei. Teljes hossz 28 mp. A rétegszám és a kapcsolatok szemléltetők, az esélyek kitaláltak. A tokenek valódiak, az ábra a 11. dia utolsó választását készíti elő.
+**Mozgó ábra:** Balra a válasz eddigi három tokenje és egy üres hely, középen az 1. réteg Figyelem és Átalakítás részével, utána a 2. és a 3. réteg, jobbra a következő token esélyei. 0–3 mp: a három kártya megjelenik. 3–6 mp: a három kártya együtt halad a Figyelem részbe. 6–11 mp: a „jük” felé egy vastag és egy vékony ív nyílik a korábbi tokenektől, a kártya gyűrűt kap. 11–16 mp: a három kártya együtt az Átalakításba lép, és színt vált. 16–22 mp: együtt áthaladnak a 2. és a 3. rétegen. 22–28 mp: megjelennek a következő token esélyei. Teljes hossz 28 mp. A rétegszám és a kapcsolatok szemléltetők, az esélyek kitaláltak. A tokenek valódiak, az ábra a 13. dia utolsó választását készíti elő.
 
 **Lépésfeliratok:**
 
@@ -125,7 +147,7 @@
 
 **Forrás:** Transformer, párhuzamosíthatóság, sorrend, figyelem, pozíciónkénti háló és a későbbi helyek elfedése [F04] · Rétegszám és Transformer-alapú szöveggenerálás [F06], [F08] · Valódi tokenek [F20].
 
-## Dia 11: A kimenet lépésenként készül
+## Dia 13: A kimenet lépésenként készül
 
 **A dián látható szöveg:** Valódi tokenek, kitalált esélyek · Prompt + ügyféllevél → LLM → Következő token → Kimenet · T 23%, K 62%, J 15% · ér 5%, ed 24%, öszön 71% · jük 36%, öm 58%, et 6% · Most a 36%-os „jük” kerül a válaszba. · ␣a 28%, ! 64%, , 8%
 
@@ -140,7 +162,7 @@
 
 **Forrás:** Következő token előrejelzése és autoregresszív generálás [F06], [F08] · Mintavételezés és temperature [F11] · Kimenet és tokenkeret [F12] · Valódi tokenek [F20]. Az esélyek kitaláltak.
 
-## Dia 12: Mit kap meg a modell minden körben?
+## Dia 14: Mit kap meg a modell minden körben?
 
 **A dián látható szöveg:** Chatelőzmény · Aktuális kontextus · Minden körben újra elküldve. Egy kártya sok tokent jelent. · Alapcsomag: 20 növény · Válaszhely · Írj rövidebben · Szemléltetés
 
@@ -155,7 +177,7 @@
 
 **Forrás:** Beszélgetési állapot, bemeneti és kimeneti tokenek [F12] · Előzmények tömörítése [F17] · A kitalált csomaghatár [H05].
 
-## Dia 13: Hallucináció, drift, felejtés
+## Dia 15: Hallucináció, drift, felejtés
 
 **A dián látható szöveg:** Hallucináció: kitalált ár · Feladatcsúszás (drift): levélből kampány · Felejtés: kimaradt vagy elsikkadt szabály · Kitalált példa
 
@@ -163,13 +185,13 @@
 
 **Forrás:** Valószerű téves állítások [F13] · Korai feltételezések továbbélése több fordulóban [F14] · Kontextusablak és a kontextuson belüli hely hatása [F12], [F18] · Mintapélda [H05].
 
-## Dia 14: Adj elég hátteret, és hagyj helyet a válasznak
+## Dia 16: Adj elég hátteret, és hagyj helyet a válasznak
 
 **A dián látható szöveg:** Friss cél · Döntések · Forrásrészlet · Hely a válasznak
 
 **Forrás:** Releváns kontextus és tömörítés [F17] · Kontextuskeret [F12] · Mintaforrás [H05].
 
-## Dia 15: A jó prompt megadja a feladatot
+## Dia 17: A jó prompt megadja a feladatot
 
 **A dián látható szöveg:**
 
@@ -179,7 +201,7 @@
 
 **Forrás:** Feladat, szerep és forrás megadása [F16] · A Cég-DNS jelentése és a kitalált ajánlatkérés [H01], [H05], [H06].
 
-## Dia 16: A jó prompt megmondja, mikor kész
+## Dia 18: A jó prompt megmondja, mikor kész
 
 **A dián látható szöveg:**
 
@@ -190,13 +212,13 @@
 
 **Forrás:** Kimenet, korlát, példák és forrás [F16] · Ellenőrizhető állítás és emberi döntés [H02], [H04] · Kitalált üzleti példa [H05].
 
-## Dia 17: Két mondat, amivel elindulsz
+## Dia 19: Két mondat, amivel elindulsz
 
 **A dián látható szöveg:** Írj nekem egy jó promptot arra, hogy… · Először kérdezz rá arra, ami hiányzik.
 
 **Forrás:** Promptírási összetevők [F16] · Kitalált megfogalmazás.
 
-## Dia 18: Egy kérés, három AI-szerep
+## Dia 20: Egy kérés, három AI-szerep
 
 **A dián látható szöveg:** Ember: célt ad · Karmester: szervez, továbbít · Készítő: piszkozatot ír · Ellenőr: friss beszélgetésben · cél · átnézett piszkozat · feladat · piszkozat · csomag · leletek · A csomagot te másolod át az Ellenőr új beszélgetésébe. · Ember dönt
 
@@ -204,7 +226,7 @@
 
 **Forrás:** Agentek és összehangolt munkamenetek [F19] · A workshop szerepei és működése [H01], [H02], [H06] · Független ellenőrzés [H03], [H04].
 
-## Dia 19: Egy levél útja az emberi döntésig
+## Dia 21: Egy levél útja az emberi döntésig
 
 **A dián látható szöveg:** Kitalált eset · Ember · Karmester · Készítő · Ellenőr · 25 növény · Cég-DNS · Brief · Piszkozat · Forrás nélküli ár · közepes · a Készítő válasza után: közepes · vitatott · A csomagot te másolod át az Ellenőr új beszélgetésébe. · Javítva · Dátum tisztázva: időpontot kérünk · Ha maradt javítandó hiba · Bejárás · Nyitott pont · Küldés? · Munkanapló
 
@@ -242,7 +264,7 @@ A teljes animáció 124 mp. A dia megnyitásakor magától indul, kattintás né
 
 **Forrás:** Cél, terv, jóváhagyás, szerepkiosztás és küldési kapu [H01] · Friss beszélgetés, bemenet, súlyosság és döntés [H02] · Korlátozott ciklus, bizonyíték, vitás lelet, ismételt ellenőrzés [H03], [H04] · Kitalált üzleti szabály [H05]. A feladatkezelő választható lépés. A szemléltetésben a naptárészrevételt a friss ellenőrzés feloldja. Fennmaradó vita esetén független harmadik ellenőr dönt. Az idő- vagy körkeret elérésekor a Karmester a bizonyítékot és a döntendő kérdést adja tovább. Apró nyitott pontot jegyzünk fel, a workshop ellenőrzőlistáján közepes vagy súlyos hiba javítást kér.
 
-## Dia 20: 09:20 | Kezdjük a Cég-DNS-sel
+## Dia 22: 09:20 | Kezdjük a Cég-DNS-sel
 
 **A dián látható szöveg:** 09:20 Cég-DNS · Kinek? Mit? Milyen hangon? · Tartalom → Ügyfélszerzés → Ajánlat → Folyamatpróba
 
@@ -250,7 +272,7 @@ A teljes animáció 124 mp. A dia megnyitásakor magától indul, kattintás né
 
 **Forrás:** A nap fonala és 09:20-as kezdés [H07] · A blokk bemenete, mentőút és várható kimenete [H06], [H08].
 
-## Dia 21: Tartalék dia | Ugyanannyi számítás, több szöveg
+## Dia 23: Tartalék dia | Ugyanannyi számítás, több szöveg
 
 **A dián látható szöveg:** Gopher: 280 milliárd paraméter · Chinchilla: 70 milliárd paraméter · Azonos tanítási számítás · Tanítótokenek, arányosan · Kb. 4,7-szer annyi tanítótoken: 1400 milliárd és 300 milliárd
 
@@ -258,7 +280,7 @@ A teljes animáció 124 mp. A dia megnyitásakor magától indul, kattintás né
 
 **Forrás:** Chinchilla összehasonlítás, kivonat, 1. táblázat és 4. szakasz [F07].
 
-## Dia 22: Tartalék dia | Egyben a kipróbálható prompt
+## Dia 24: Tartalék dia | Egyben a kipróbálható prompt
 
 **A dián látható szöveg:** Írj hárommondatos magyar válaszpiszkozatot egy irodavezetőnek, aki ezt írta: „Huszonöt irodai növény rendszeres gondozására kérünk ajánlatot.” A kitalált IrodaLiget Cég-DNS-ének szabálya: az alapcsomag legfeljebb húsz növényre szól. Húsz növény felett kérj bejárást, a gondozás díja nincs megadva. Használj barátságos, gyakorlatias hangot. Mintakérdés: „Mikor lenne jó a bejárás?” A levél után külön sorban írd le, melyik forrásmondat támasztja alá a következő lépést. A levélben hagyd nyitva az árat. · Mit kérdeznél még az ügyféltől?
 
@@ -290,6 +312,31 @@ A sorszámok a diák állításaihoz tartoznak. A H jelű workshopanyagokat és 
 | F18 | A hosszú bemeneten belüli elhelyezés hatása az információ használatára a vizsgált feladatokon. | Lost in the Middle: How Language Models Use Long Contexts | [ACL Anthology, eredeti kutatás](https://aclanthology.org/2024.tacl-1.9/) | 2026-11-19 |
 | F19 | Munkafolyamat, eszközt használó agentek, koordinálás és ellenőrző ciklus. | Building effective agents | [Anthropic Engineering](https://www.anthropic.com/research/building-effective-agents) | 2026-11-19 |
 | F20 | Valódi tokenek és azonosítók az o200k_base kódolásból: „Írj rövid választ.” és „Köszönjük!”. Saját futtatás, tiktoken 0.14.0, a dekódolás visszaadta az eredeti szöveget. | tiktoken | [OpenAI, nyílt forráskódú tokenizáló](https://github.com/openai/tiktoken) | 2026-11-19 |
+| F21 | IBM 701: több mint 16 000 összeadás másodpercenként. | IBM 700 Series | [Megnyitott forrás](https://www.ibm.com/history/700) | 2026-11-19 |
+| F22 | TOP500, 1993. június: első hely 59,7 GFLOPS, második hely 30,4 GFLOPS. | TOP500 List, June 1993 | [Megnyitott forrás](https://top500.org/lists/top500/list/1993/06/) | 2026-11-19 |
+| F23 | TOP500, 2006. november: BlueGene/L, 280,6 TFLOPS. | TOP500 List, November 2006 | [Megnyitott forrás](https://top500.org/lists/top500/2006/11/) | 2026-11-19 |
+| F24 | TOP500, 2026. november: LineShine, 2 198,4 PFLOPS. | TOP500 List, November 2026 | [Megnyitott forrás](https://top500.org/lists/top500/2026/11/) | 2026-11-19 |
+| F25 | Intel 4004: 2 300 tranzisztor. | Intel Microprocessor Quick Reference Guide | [Megnyitott forrás](https://www.intel.com/pressroom/kits/quickreffam.htm) | 2026-11-19 |
+| F26 | NVIDIA Rubin GPU: 336 milliárd tranzisztor, két szilíciumlapka egy tokban. | Inside NVIDIA Rubin GPU Architecture | [Megnyitott forrás](https://developer.nvidia.com/blog/inside-nvidia-rubin-gpu-architecture-powering-the-era-of-agentic-ai/) | 2026-11-19 |
+| F27 | IBM 701: 2 048 darab 36 bites szó, kb. 9,2 kB. Másodlagos forrás. | IBM 701 | [Megnyitott forrás](https://en.wikipedia.org/wiki/IBM_701) | 2026-11-19 |
+| F28 | Cray-1: legfeljebb 1 048 576 darab 64 bites szó, azaz 8 MiB. | Cray-1 Hardware Reference Manual, HR-0004-F | [Megnyitott forrás](https://cray.modularcircuits.com/cray_docs/hw/cray-1/HR-0004-F-CRAY-1_Computer_Systems_Hardware_Reference_Manual-May_1982.pdf) | 2026-11-19 |
+| F29 | El Capitan: 5 898 240 GiB memória, kb. 6,3 PB. | El Capitan | [Megnyitott forrás](https://hpc.llnl.gov/hardware/compute-platforms/el-capitan) | 2026-11-19 |
+| F30 | IBM 350 RAMAC, 1956: 3,75 MB. | First commercial hard disk drive shipped | [Megnyitott forrás](https://www.computerhistory.org/storageengine/first-commercial-hard-disk-drive-shipped/) | 2026-11-19 |
+| F31 | Seagate Mozaic 4+: 44 TB. | Seagate Mozaic 4+ | [Megnyitott forrás](https://www.seagate.com/stories/articles/seagate-delivers-industrys-highest-capacity-hard-drives-with-next-generation-mozaic-4/) | 2026-11-19 |
+| F32 | Az A18 Pro lapka az iPhone 16 Pro-ban. | Apple debuts iPhone 16 Pro | [Megnyitott forrás](https://www.apple.com/newsroom/2024/09/apple-debuts-iphone-16-pro-and-iphone-16-pro-max/) | 2026-11-19 |
+| F33 | Apple A18 Pro: mért HPL Linpack, 57,012 GFLOPS, dupla pontosság, MacBook Neóban. | A18 Pro HPL benchmark | [Megnyitott forrás](https://github.com/geerlingguy/top500-benchmark/issues/95) | 2026-11-19 |
+| F34 | Galaxy S26 Ultra: 16 GB memória. | Samsung Galaxy S26 comparison | [Megnyitott forrás](https://www.samsung.com/us/support/answer/ANS10010342/) | 2026-11-19 |
+| F35 | A világ tárolókapacitása: 1986: 2,6 EB, 0,8% digitális. 2007: 295 EB, 94% digitális. | The World’s Technological Capacity to Store, Communicate, and Compute Information | [Megnyitott forrás](https://www.uvm.edu/pdodds/research/papers/others/2011/hilbert2011a.pdf) | 2026-11-19 |
+| F36 | 2002: a digitális tárolás megelőzi az analógot. | How much information is there in the world? | [Megnyitott forrás](https://today.usc.edu/how-much-information-is-there-in-the-world) | 2026-11-19 |
+| F37 | 2023: 132,4 ZB létrehozott, rögzített, másolt és fogyasztott adat, IDC-becslés. | IDC #US52554824e, harmadik félnél tárolt másolat | [Megnyitott forrás](https://techcontentwave.com/files/1763389937_64b594fd4f7f5607256a.pdf) | 2026-11-19 |
+| F38 | Common Crawl teljes archívuma: több mint 10 PB. | Common Crawl: About | [Megnyitott forrás](https://commoncrawl.org/about) | 2026-11-19 |
+| F39 | A Common Crawl felhasználójának tiszteletben kell tartania harmadik felek szerzői jogait. | Common Crawl: Terms of Use | [Megnyitott forrás](https://commoncrawl.org/terms-of-use) | 2026-11-19 |
+| F40 | LLaMA 65B: 65,2 milliárd paraméter, 1,4 billió feldolgozott token, 4,7 TB tanítóanyag az 1. táblázat összegeként. | LLaMA: Open and Efficient Foundation Language Models | [Megnyitott forrás](https://arxiv.org/pdf/2302.13971) | 2026-11-19 |
+| F41 | LeNet-5: 60 000 paraméter, 60 000 tanítókép. | Gradient-Based Learning Applied to Document Recognition | [Megnyitott forrás](http://vision.stanford.edu/cs598_spring07/papers/Lecun98.pdf) | 2026-11-19 |
+| F42 | GPT-1: 117 millió paraméter, több mint 7 000 könyv. | Improving Language Understanding by Generative Pre-Training | [Megnyitott forrás](https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf) | 2026-11-19 |
+| F43 | GPT-2: 1,542 milliárd paraméter, több mint 8 millió dokumentum, 40 GB. | Language Models are Unsupervised Multitask Learners | [Megnyitott forrás](https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf) | 2026-11-19 |
+| F44 | DeepSeek-V4-Pro: 1,6 billió paraméter, 49 milliárd aktív, több mint 32 billió token. | DeepSeek-V4-Pro modellkártya | [Megnyitott forrás](https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro) | 2026-11-19 |
+| F45 | Kimi K3: 2,8 billió paraméter, 104 milliárd aktív. | Kimi K3 modellkártya | [Megnyitott forrás](https://huggingface.co/moonshotai/Kimi-K3) | 2026-11-19 |
 | H01 | Karmester: cél, forrás, terv, kiosztás, emberi jóváhagyás és küldési kapu. | Karmester (orchestrator) | [Workshop szerepleírás](../starter-kit/agents/orchestrator.md) | 2026-11-19 |
 | H02 | Ellenőr: friss beszélgetés, forrásból ellenőrzés, súlyosság, emberi döntés. | Ellenőr (reviewer) | [Workshop szerepleírás](../starter-kit/agents/reviewer.md) | 2026-11-19 |
 | H03 | Emberi cél, pontos átadási feltételek, független ellenőrzés és a ciklus korlátja. | Agentic engineering method: Principles | [Wenova OS, a helyben megnyitott revízió](https://github.com/cspiya/wenova-os/blob/f450f6fd91e87eca4c24725e1b1541aa61ecc817/09-engineering/agentic-engineering-method/01-principles.md) | 2026-11-19 |
