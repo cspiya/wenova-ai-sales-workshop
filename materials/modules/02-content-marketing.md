@@ -2,7 +2,7 @@
 
 **Állapot: review.**
 
-[HTML-változat](02-content-marketing.html)
+[HTML-változat](https://cspiya.github.io/wenova-ai-sales-workshop/materials/modules/02-content-marketing.html)
 
 ## Tartalom
 

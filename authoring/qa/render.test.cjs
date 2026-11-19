@@ -1,7 +1,7 @@
 'use strict';
 const {test}=require('node:test'),assert=require('node:assert/strict');
 const fs=require('node:fs'),path=require('node:path');
-const {run,acceptCustom,render}=require('./render.cjs');
+const {run,acceptCustom,render,files,output,ROOT,SITE_URL}=require('./render.cjs');
 function fixture(fn){
  const root=fs.mkdtempSync(path.join(__dirname,'.validation-test-'));
  const put=(p,s)=>{fs.mkdirSync(path.dirname(path.join(root,p)),{recursive:true});fs.writeFileSync(path.join(root,p),s);};
@@ -85,6 +85,19 @@ test('each schedule row shows its exact workbook target and the presenter note a
   ['16:50–17:00','<a href="modules/05-pipeline-review.html#05-pipeline-review.03-measure-launch">Munkafüzet</a> · '+note],
  ])assert.ok(row(time).includes('<p class="slot__links">'+links+'</p>'),time);
 });
+test('every HTML-változat link in a Markdown source points to its published page',()=>{
+ const sources=files().filter(p=>/^(?:materials|operations|authoring)\/.*\.md$/.test(p));let found=0;
+ for(const source of sources)for(const [,target] of fs.readFileSync(path.join(ROOT,source),'utf8').matchAll(/\[HTML-változat\]\(([^)]*)\)/g)){
+  found++;assert.equal(target,SITE_URL+output(source),source);assert.ok(fs.existsSync(path.join(ROOT,output(source))),output(source));
+ }
+ assert.ok(found>0,'no HTML-változat link found');
+});
+test('the published HTML-változat link stays hidden on the rendered page',()=>fixture((root,put)=>{
+ put('materials/modules/01-demo.md','# Modul\n\n[HTML-változat]('+SITE_URL+'materials/modules/01-demo.html)\n');
+ put('materials/README.md','# Kezdőlap\n\n[HTML-változat]('+SITE_URL+'materials/index.html)\n');
+ run({root});
+ for(const page of ['materials/modules/01-demo.html','materials/index.html'])assert.doesNotMatch(fs.readFileSync(path.join(root,page),'utf8'),/HTML-változat/,page);
+}));
 test('stale output and changed Markdown fail check without repairing files',()=>fixture((root,put)=>{
  put('README.md','# Cím\n');run({root});put('index.html','manual change');
  assert.throws(()=>run({root,check:true}),/stale HTML/);assert.equal(fs.readFileSync(path.join(root,'index.html'),'utf8'),'manual change');

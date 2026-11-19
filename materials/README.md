@@ -1,6 +1,6 @@
 # AI Sales & Marketing Workshop
 
-[HTML-változat](index.html)
+[HTML-változat](https://cspiya.github.io/wenova-ai-sales-workshop/materials/index.html)
 
 ## Tartalom
 

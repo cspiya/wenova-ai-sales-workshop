@@ -36,6 +36,7 @@ function acceptCustom(source,root=ROOT){
   const html=reviewBody(fs.readFileSync(target,'utf8'));
   fs.writeFileSync(target,'<!-- Presentation-review SHA-256: '+sourceHash(source,root)+' -->\n'+html);
 }
+const SITE_URL = 'https://cspiya.github.io/wenova-ai-sales-workshop/';
 // Links to a repository page that has a published page stay inside the published material.
 // The published site address stays absolute: the voice lab does not work from a local file.
 const REPO_URL = /^https:\/\/github\.com\/cspiya\/wenova-ai-sales-workshop\/(?:blob|tree)\/main\/([^?#]*?)\/?([?#].*)?$/;
@@ -205,7 +206,7 @@ function render(source, root = ROOT, pages = new Set(inventory(root))) {
     // A Markdown-only self link ("HTML-változat") is noise on the HTML page itself.
     if (token.type === 'paragraph_open') {
       const kids = tokens[i+1]?.children || [];
-      if (kids.length===3 && kids[0].type==='link_open' && kids[0].attrGet('href')===path.posix.basename(output(source))) { i+=2; continue; }
+      if (kids.length===3 && kids[0].type==='link_open' && [path.posix.basename(output(source)),SITE_URL+output(source)].includes(kids[0].attrGet('href'))) { i+=2; continue; }
     }
     if (token.type === 'html_block') {
       const anchor = token.content.trim().match(/^<a (?:name|id)="([\w.:-]+)"><\/a>$/);
@@ -339,4 +340,4 @@ function run({root=ROOT, check=false, selected=null}={}) {
   return count;
 }
 if (require.main === module) { try { const i=process.argv.indexOf('--accept-custom');if(i>=0)acceptCustom(process.argv[i+1]);else console.log('PASS: '+run({check:process.argv.includes('--check')})+' presentation sources.'); } catch(e) { console.error(e.message); process.exitCode=1; } }
-module.exports = {ROOT, files, inventory, output, slug, rewrite, render, run,custom,sourceHash,acceptCustom,isLessonId,PARTNERS,partnerOf,schedule};
+module.exports = {ROOT, SITE_URL, files, inventory, output, slug, rewrite, render, run,custom,sourceHash,acceptCustom,isLessonId,PARTNERS,partnerOf,schedule};

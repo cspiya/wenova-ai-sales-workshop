@@ -1,6 +1,6 @@
 # Szervezés, marketing és sales
 
-[HTML-változat](index.html)
+[HTML-változat](https://cspiya.github.io/wenova-ai-sales-workshop/operations/index.html)
 
 ## Tartalom
 

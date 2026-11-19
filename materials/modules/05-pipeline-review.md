@@ -2,7 +2,7 @@
 
 **Állapot: review.**
 
-[HTML-változat](05-pipeline-review.html)
+[HTML-változat](https://cspiya.github.io/wenova-ai-sales-workshop/materials/modules/05-pipeline-review.html)
 
 ## Tartalom
 

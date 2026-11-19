@@ -2,7 +2,7 @@
 
 **Állapot: review.**
 
-[HTML-változat](04-proposals-handoff.html)
+[HTML-változat](https://cspiya.github.io/wenova-ai-sales-workshop/materials/modules/04-proposals-handoff.html)
 
 ## Tartalom
 

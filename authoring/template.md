@@ -1,6 +1,6 @@
 # Másolható tananyag-munkafüzet
 
-[HTML-változat](template.html)
+[HTML-változat](https://cspiya.github.io/wenova-ai-sales-workshop/authoring/template.html)
 
 ## Tartalom
 

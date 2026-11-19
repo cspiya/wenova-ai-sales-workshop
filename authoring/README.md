@@ -1,6 +1,6 @@
 # Szerzői kézikönyv
 
-[HTML-változat](index.html)
+[HTML-változat](https://cspiya.github.io/wenova-ai-sales-workshop/authoring/index.html)
 
 ## Tartalom
 
