@@ -4,30 +4,9 @@
 
 ## Indulás: itt kezdd
 
-- **Hallgatóknak:** [a résztvevői oldal](https://cspiya.github.io/wenova-ai-sales-workshop/materials/)
+- **Hallgatóknak:** [a résztvevői oldal](https://cspiya.github.io/wenova-ai-sales-workshop/materials/), itt van a QR-kód és az első három lépés
 - **Oktatóknak, a prezentációhoz és a workshop levezetéséhez:** [az oktatói oldal](https://cspiya.github.io/wenova-ai-sales-workshop/operations/)
 - **Oktatóknak, az oktatási anyag fejlesztéséhez:** [a szerzői kézikönyv](https://cspiya.github.io/wenova-ai-sales-workshop/authoring/)
-
-### Hallgatóknak
-
-**A tananyag kezdőlapja: [https://cspiya.github.io/wenova-ai-sales-workshop/materials/](https://cspiya.github.io/wenova-ai-sales-workshop/materials/)**
-
-[![QR-kód a tananyag kezdőlapjához: https://cspiya.github.io/wenova-ai-sales-workshop/materials/](materials/assets/indulas-qr.png)](https://cspiya.github.io/wenova-ai-sales-workshop/materials/)
-
-**Letöltés:** [nyilvános repó](https://github.com/cspiya/wenova-ai-sales-workshop) · [ZIP-csomag](https://github.com/cspiya/wenova-ai-sales-workshop/archive/refs/heads/main.zip)
-
-#### Az első három lépés
-
-1. Hozz létre egy `Wenova-AI-Sales-Workshop` nevű mappát, majd a Claude Desktopban nyiss rá Cowork-projektet: Projects → + → Use an existing folder.
-2. A projekt új munkamenetébe illeszd be ezt az egy mondatot:
-
-   ```text
-   Telepítsd a workshop tananyagát: https://raw.githubusercontent.com/cspiya/wenova-ai-sales-workshop/main/materials/TELEPITES.md
-   ```
-
-   Ha a mondat nem működik, töltsd le a [ZIP-csomagot](https://github.com/cspiya/wenova-ai-sales-workshop/archive/refs/heads/main.zip), és kövesd a [kézi utat](https://github.com/cspiya/wenova-ai-sales-workshop/blob/main/materials/TELEPITES.md#kezi-ut).
-
-3. Kövesd a Claude által kiírt lépéseket (plugin hozzáadása, Instructions, új munkamenet), majd írd be: **Kezdjük a felkészülést.**
 
 [HTML-változat](https://cspiya.github.io/wenova-ai-sales-workshop/index.html)
 

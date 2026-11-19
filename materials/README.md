@@ -1,9 +1,33 @@
 # AI Sales & Marketing Workshop
 
+<a name="indulas"></a>
+
+## Indulás: itt kezdd
+
+**A tananyag kezdőlapja: [https://cspiya.github.io/wenova-ai-sales-workshop/materials/](https://cspiya.github.io/wenova-ai-sales-workshop/materials/)**
+
+[![QR-kód a tananyag kezdőlapjához: https://cspiya.github.io/wenova-ai-sales-workshop/materials/](assets/indulas-qr.png)](https://cspiya.github.io/wenova-ai-sales-workshop/materials/)
+
+**Letöltés:** [nyilvános repó](https://github.com/cspiya/wenova-ai-sales-workshop) · [ZIP-csomag](https://github.com/cspiya/wenova-ai-sales-workshop/archive/refs/heads/main.zip)
+
+### Az első három lépés
+
+1. Hozz létre egy `Wenova-AI-Sales-Workshop` nevű mappát, majd a Claude Desktopban nyiss rá Cowork-projektet: Projects → + → Use an existing folder.
+2. A projekt új munkamenetébe illeszd be ezt az egy mondatot:
+
+   ```text
+   Telepítsd a workshop tananyagát: https://raw.githubusercontent.com/cspiya/wenova-ai-sales-workshop/main/materials/TELEPITES.md
+   ```
+
+   Ha a mondat nem működik, töltsd le a [ZIP-csomagot](https://github.com/cspiya/wenova-ai-sales-workshop/archive/refs/heads/main.zip), és kövesd a [kézi utat](https://github.com/cspiya/wenova-ai-sales-workshop/blob/main/materials/TELEPITES.md#kezi-ut).
+
+3. Kövesd a Claude által kiírt lépéseket (plugin hozzáadása, Instructions, új munkamenet), majd írd be: **Kezdjük a felkészülést.**
+
 [HTML-változat](https://cspiya.github.io/wenova-ai-sales-workshop/materials/index.html)
 
 ## Tartalom
 
+- [Indulás: itt kezdd](#indulas)
 - [Program és célközönség](#agenda)
 - [A tanulási út](#modules)
 - [Saját munkacsomag és AI-kísérő](#start)
