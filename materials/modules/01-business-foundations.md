@@ -126,7 +126,7 @@ Például az ajánlat kísérőlevelét az Író készíti és az Ellenőr ellen
 | Rendszer | Mire? | Hogyan kötjük be? | Hol az adat? | Kockázat és jóváhagyási pont |
 | --- | --- | --- | --- | --- |
 | Claude Desktop Cowork, munkamappa, agentfájlok, opcionálisan Skills | Közös alap: DNS, agentek, tanulási kísérő | A telepített `Tananyag/` és a `Munka/` mappa, a projekt Instructions mezője (00-s modul); Skill-feltöltés opcionális | A gépeden (`Munka/`) és a Claude-fiókodban | A hibás DNS minden agentet ront: a DNS-verziót a gazda hagyja jóvá |
-| Gmail vagy Microsoft 365 (Outlook) | Levelek olvasása, hangkinyerés | A Claude saját connectora; a válaszpiszkozat a beszélgetésben készül, te másolod a levelezőbe (a levelezőbe menteni csak akkor, ha a connectorod tud piszkozatot menteni, például Outlook) | A levelezésedben | Küldés, válasz, továbbítás, törlés: Tiltva (Blocked) |
+| Gmail vagy Microsoft 365 (Outlook) | Levelek olvasása, hangkinyerés | A Claude saját connectora; a válaszpiszkozat a beszélgetésben készül, te másolod a levelezőbe (a levelezőbe menteni csak akkor, ha a connectorod tud piszkozatot menteni, például Outlook) | A levelezésedben | Az eszközengedélyekről te döntesz, a teljes engedély is elfogadható. Amit engedélyezel, azt a Claude kérdés nélkül megteheti, a levélküldést is. A workshop szabálya: a Claude magától nem küld, a levelet te küldöd. |
 | Google Táblázatok / Drive (vagy saját Excel) | CRM és Heti mérés lap | Olvasás: Google Drive connector. Írás: a CRM-agent CSV-sorokat és változáslistát ad, te bemásolod; közvetlen írás csak, ha a connectorod írni is tud | A Google-fiókodban vagy a gépeden | Felülírás: változáslista, a bemásolás a te döntésed |
 | Brandiseer | Márkahű posztkép | A Brandiseer saját connectora; a 02-es blokkban kötöd be. Ha kiesik: letöltés és bemásolás | A Brandiseer-fiókodban | Publikálás: mindig te |
 | Buffer (választható, ingyenes fiók) | Posztok ütemezése a közösségimédia-oldaladra | A 02-es blokk bónuszfeladata: piszkozat vagy ütemezés a Claude Buffer connectorával | A Buffer-fiókodban | A Claude előre megmutatja a csatornát, a szöveget és az időpontot. Csak a kifejezett jóváhagyásoddal ütemezhet. Ami be van ütemezve, az ki is megy. Ha ezt nem szeretnéd, hagyd piszkozatban. Azonnal te tehetsz közzé. |
@@ -302,7 +302,7 @@ Forrás és határ: a [Gmail / Outlook] connectorral az elküldött leveleim kö
 Kimeneti séma: a voice-profile.md szerkezete; példának legfeljebb egy-egy anonimizált mondat.
 Szabályok: előbb mutasd meg a kiválasztott levelek listáját (dátum, tárgy, a címzett szerepe), és csak a jóváhagyásom után elemezz. Semmit ne küldj, ne címkézz, ne törölj.
 Ellenőrzés: írj egy legfeljebb 80 szavas választ a hangomon erre a kitalált levélre: „Jó napot! Érdeklődnék, hogy jövő hónapban tudnának-e nálunk egy felmérést tartani? Üdvözlettel: Kata”. Utána kérdezd meg, 1–5 mennyire érzem a sajátomnak.
-Mentés: Munka/01-DNS/voice-profile.md. Jóváhagyásom után frissítsd a DNS 5. szakaszát új verzióként (company-dna-v0.1b.md). A legutóbbi progress.json új változatában töltsd ki az active_business mezőt: cégnév, aktív DNS-verzió, DNS, márkahang és cégprofil pontos útvonala. Ha nem hagyom jóvá az új DNS-t, a korábbi jóváhagyott útvonalat rögzítsd.
+Mentés: Munka/01-DNS/voice-profile.md. Jóváhagyásom után frissítsd a DNS 5. szakaszát új verzióként (company-dna-v0.1b.md). A legutóbbi progress.json új változatában töltsd ki az active_business mezőt: cégnév, aktív DNS-verzió, valamint a DNS, a márkahang, a cégprofil és az értékesítési stratégia pontos útvonala. Ha nem hagyom jóvá az új DNS-t, a korábbi jóváhagyott útvonalat rögzítsd.
 ```
 
 <a name="01-business-foundations.02-voice-profile--steps"></a>
@@ -312,7 +312,7 @@ Mentés: Munka/01-DNS/voice-profile.md. Jóváhagyásom után frissítsd a DNS 5
 1. **0–2 perc:** új beszélgetés, connector be, prompt beillesztve.
 2. **2–5 perc:** nézd át a levéllistát. Vegyél ki mindent, ami bizalmas vagy nem ügyfélnek ment.
 3. **5–10 perc:** olvasd el a márkahangot és a próbaválaszt. Értékeld 1–5-ig; 4 alatt mondd meg, mi idegen benne.
-4. **10–14 perc:** ellenőrizd a márkahangot és a DNS-frissítést. A mentett naplóban nézd meg a cég nevét, a jóváhagyott DNS verzióját és a három aktív fájl útvonalát.
+4. **10–14 perc:** ellenőrizd a márkahangot és a DNS-frissítést. A mentett naplóban nézd meg a cég nevét, a jóváhagyott DNS verzióját és a négy aktív fájl útvonalát.
 
 <a name="01-business-foundations.02-voice-profile--check"></a>
 
@@ -479,7 +479,7 @@ Szabályok: minden tény a DNS-ből jön; ami nincs, „Nincs megadva”. Küls�
 
 1. A saját félkész munkád maradjon a `Munka/01-DNS/` mappában.
 2. Az IrodaLiget mintából vedd át, ami hiányzik: [Cég-DNS](../scenarios/office-plants/outputs/company-dna.md), [márkahang](../scenarios/office-plants/outputs/voice-profile.md), [cégprofil](../scenarios/office-plants/outputs/business-profile.md), [stratégia](../scenarios/office-plants/outputs/sales-strategy.md).
-3. Kérd a Claude-ot, hogy az összetartozó mintafájlokat másolja a `Munka/01-DNS/minta/` mappába. A napló `active_business` mezőjébe az IrodaLiget nevét, a minta DNS-verzióját és a három itteni fájl útvonalát írja. A saját félkész változatod megmarad.
+3. Kérd a Claude-ot, hogy az összetartozó mintafájlokat másolja a `Munka/01-DNS/minta/` mappába. A napló `active_business` mezőjébe az IrodaLiget nevét, a minta DNS-verzióját és a négy itteni fájl útvonalát írja. A saját félkész változatod megmarad.
 4. A haladási naplóban jelöld: `completed_with_example`, végrehajtás: `simulation`.
 5. Mondd el saját szavaiddal, mi lenne a te DNS-edben más, majd folytasd a következő leckével.
 

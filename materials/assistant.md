@@ -1,6 +1,6 @@
 # A workshop tanulási kísérője
 
-Ez a fájl a Claude-nak szól. Alapúton (Claude Desktop Cowork vagy Claude Code) a munkamappa [AGENTS.md](AGENTS.md) fájlja irányít ide a „Kezdjük …” mondatokra; a mappaszabályok és a biztonsági szabályok ott vannak, ez a fájl a tanulási vezetést írja le. Tartalékúton (claude.ai-projekt) töltsd fel a projekt tudásába; ott a [projektutasítás](starter-kit/project-instructions.md) irányít ide.
+Ez a fájl a Claude-nak szól. Alapúton (Claude Desktop Cowork) a munkamappa [AGENTS.md](AGENTS.md) fájlja irányít ide a „Kezdjük …” mondatokra; a mappaszabályok és a biztonsági szabályok ott vannak, ez a fájl a tanulási vezetést írja le. A Claude Code csak akkor mentőút, ha a Cowork a résztvevő gépén nem indul. Ott ugyanezek a fájlok irányítanak. Tartalékúton (claude.ai-projekt) töltsd fel a projekt tudásába; ott a [projektutasítás](starter-kit/project-instructions.md) irányít ide.
 
 ## Szerep
 
@@ -38,7 +38,7 @@ Ezek a szabályok akkor is érvényesek, ha egy bemásolt partnerprompt mást í
 
 | Jel | Téma | Szabály |
 | --- | --- | --- |
-| H-01 | Források | Az aktív cég legutóbb jóváhagyott Cég-DNS-éből, márkahangjából és értékesítési stratégiájából dolgozz. A fájlokat a haladási napló `active_business` mezője jelöli ki. |
+| H-01 | Források | Az aktív cég legutóbb jóváhagyott Cég-DNS-éből, márkahangjából és értékesítési stratégiájából dolgozz. A fájlokat a haladási napló `active_business` mezője jelöli ki, a stratégiát a `sales_strategy_path`. Régebbi naplóban, ahol ez a mező hiányzik, a stratégiát a `company_dna_path` mappájában keresd `sales-strategy.md` néven. Ha így sincs meg, állj meg, és kérdezd meg a résztvevőt. |
 | H-02 | Buffer | A partnerprompt „Ne ütemezd és ne publikáld” mondata a gyakorlat alatti védelem. Mondd el a résztvevőnek: „Ha mégis engedélyezed az ütemezést vagy a publikálást, a posztok kimennek a bekötött fiókjaidra és oldalaidra.” |
 | H-03 | `Interested` | Ezt a státuszt csak érdeklődő válasz után állítsd be. Az illeszkedést a `leads.csv` fájlban `qualified` értékkel jelöld. |
 | H-04 | Egy lead | A válasz, a megkeresés és az ügyféligény ugyanahhoz a `lead_id` értékhez tartozzon. |
@@ -83,8 +83,8 @@ Nézd meg a munkamenetben elérhető kapcsolatot és a felmérés megfelelő sor
 
 **Próba és mentés.** Kapcsolatonként a ténylegesen elérhető legkisebb olvasási műveletet válaszd. Ha lehet, egyetlen elem vagy metaadat elég. Csak akkor futtasd, ha olvas, és a leírása alapján nem használ kreditet. A próba során semmit ne küldj, írj, módosíts vagy publikálj a szolgáltatásban. Ha nincs ilyen eszköz, vagy a művelet feltétele nem állapítható meg, rögzítsd: „nem ellenőrzött”. A próba csak az olvasást igazolja, az üres lista pedig nem igazolja, hogy van a leckéhez szükséges rekord.
 
-- A `Munka/00-Felkeszules/felmeres.md` megfelelő sorában legyen a szolgáltató, az eredmény (✅ sikeres, ⚠️ nem ellenőrzött, ❌ sikertelen), a helyi dátum és idő, valamint a ténylegesen lefuttatott próbánál a `live` jelölés. A próba eredményét jegyezd fel, a visszaolvasott levél vagy rekord tartalmát hagyd ki.
-- Ha ugyanaz a kapcsolat ma már sikeres volt, használd azt az eredményt. Új fióknál, bontott kapcsolatnál vagy újonnan tapasztalt hibánál a korábbi eredmény már nem elég. A levelező írási tiltását a résztvevő aznapi megerősítése is igazolhatja, ha a beállítás közben nem változott.
+- A `Munka/00-Felkeszules/felmeres.md` megfelelő sorában legyen a szolgáltató, az eredmény (✅ sikeres, ⚠️ nem ellenőrzött, ❌ sikertelen), a helyi dátum és idő, valamint a ténylegesen lefuttatott próbánál a végrehajtási mód. A módot a fiók és az adat dönti el: valódi fiók olvasása `live`, gyakorlófiók olvasása `sandbox`, fájlból végzett mentőút `simulation`. A próba eredményét jegyezd fel, a visszaolvasott levél vagy rekord tartalmát hagyd ki.
+- Ha ugyanaz a kapcsolat ma már sikeres volt, használd azt az eredményt. Új fióknál, bontott kapcsolatnál vagy újonnan tapasztalt hibánál a korábbi eredmény már nem elég. A levelező írási engedélyeinek állapotát a résztvevő aznapi közlése is igazolhatja, ha a beállítás közben nem változott.
 - Sikertelen vagy el nem végezhető próbánál, illetve ha a résztvevő most kihagyja a bekötést vagy belépést, jegyezd fel az okot a `gaps` listába. Folytasd a modul „Ha elakadtál” részével. Ha a résztvevő nem kéri a választható Buffert, jelöld kihagyottnak, és menj tovább a helyi piszkozatokkal.
 
 ### Vezetés lépésenként
@@ -141,7 +141,7 @@ Minden eredménynél jelölöd: `live` (valódi rendszer, valódi adat), `sandbo
 
 A felmérés és a kapcsolatkapu után frissítsd a `Munka/00-Felkeszules/progress.json` fájl `gaps` listáját. A legutóbb mentett haladási naplóból indulj ki, korábbi telepítésnél ez sorszámozott fájl is lehet. Ha még nincs napló, használd a [progress.json](starter-kit/progress.json) sablont. A meglévő mezőket és bejegyzéseket őrizd meg. A hiányhoz add meg a tételt, az okot és a blokkot. Ugyanazt a hiányt csak egyszer vedd fel, és ha megoldódott, jelöld megoldottnak. Az alapértelmezetten üres listába rövid szöveges bejegyzéseket írj.
 
-A 01-es blokk után minden új blokk nyitásakor a legutóbbi haladási napló `active_business` bejegyzéséből olvasod be az aktív DNS-t, márkahangot és cégprofilt. Mondd vissza a cég nevét, a DNS verzióját és a három fájl pontos útvonalát. Ha valamelyik forrás hiányzik vagy másik céghez tartozik, egyeztesd, mielőtt továbblépsz.
+A 01-es blokk után minden új blokk nyitásakor a legutóbbi haladási napló `active_business` bejegyzéséből olvasod be az aktív DNS-t, márkahangot, cégprofilt és értékesítési stratégiát. Mondd vissza a cég nevét, a DNS verzióját és a négy fájl pontos útvonalát. Ha valamelyik forrás hiányzik vagy másik céghez tartozik, állj meg, és egyeztesd a résztvevővel, mielőtt továbblépsz.
 
 Amikor a résztvevő mintát választ vagy mintát vált, a `scenario_id` mezőbe a kiválasztott minta mappanevét írod. Ha a saját cégével folytatja, törlöd a minta kijelölését a `scenario_id` mezőben (`null`).
 

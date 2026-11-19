@@ -22,7 +22,7 @@
 
 Egy működő Claude-munkamappa a tananyaggal, bekötött levelezés és táblázat, partnerfiókok és a saját anyagaid. Ezzel indulsz reggel 9-kor.
 
-**Honnan töltöd le az anyagot?** Nem kell külön letöltened: az 1. leckében a Claude egyetlen mondatra telepíti. Kézi letöltés (ZIP): [main.zip](https://github.com/cspiya/wenova-ai-sales-workshop/archive/refs/heads/main.zip); böngészőben olvasható: [github.com/cspiya/wenova-ai-sales-workshop/tree/main/materials](https://github.com/cspiya/wenova-ai-sales-workshop/tree/main/materials).
+**Honnan töltöd le az anyagot?** Nem kell külön letöltened: az 1. leckében a Claude egyetlen mondatra telepíti. Kézi letöltés (ZIP): [main.zip](https://github.com/cspiya/wenova-ai-sales-workshop/archive/refs/heads/main.zip), a lépéseket a [kézi út](#00-prework.01-install--help) írja le; böngészőben olvasható: [github.com/cspiya/wenova-ai-sales-workshop/tree/main/materials](https://github.com/cspiya/wenova-ai-sales-workshop/tree/main/materials).
 
 <a name="overview"></a>
 
@@ -107,7 +107,7 @@ A telepítés lépéseit a [TELEPITES.md](../TELEPITES.md) futtatókönyv írja 
 | --- | --- | --- | --- |
 | a | Fizetős csomag és friss Claude Desktop | Fiókbeállítások, az alkalmazás frissítése | Fizetős csomagban vagy, és az alkalmazás a legfrissebb változaton fut |
 | b | Windowson hardveres virtualizáció a Coworkhöz | A Cowork első indítása | A Cowork elindul és munkamenetet nyit |
-| c | Hálózati beállítás | Settings → Capabilities: **Allow network egress** bekapcsolva, **Domain allowlist**: **Package managers only** | A letöltés elindul. Ha nem: az **Additional allowed domains** listába írd be a `github.com` és a `codeload.github.com` címet |
+| c | Hálózati beállítás | Settings → Capabilities: **Allow network egress** bekapcsolva, **Domain allowlist**: **Package managers only** | A letöltés elindul. Ha nem: az **Additional allowed domains** listába írd be a `github.com`, a `codeload.github.com` és a `raw.githubusercontent.com` címet |
 | d | Mappa és Cowork-projekt | Projects → **+** → Use an existing folder | A projekt a `Wenova-AI-Sales-Workshop` mappára mutat |
 | e | Sorrend | Ebben a leckében | Telepítő mondat → plugin → Instructions → új munkamenet |
 
@@ -142,7 +142,7 @@ Telepítsd a workshop tananyagát: https://raw.githubusercontent.com/cspiya/weno
 ### Ellenőrizd az eredményt
 
 - A munkamappában ott a `Tananyag/` (benne `index.html`, `VERSION`, `modules/`, `starter-kit/`) és a `Munka/` mappa a hat almappával.
-- A Claude ✅/⚠️ listájában a verzió és a fájlszám (legalább 161) szerepel, és megvan a nyolc szerepfájl.
+- A Claude ✅/⚠️ listájában a verzió és a fájlszám szerepel (Git-forrásból legalább 161, kiadási csomagból legalább 159), és megvan a nyolc szerepfájl.
 - A plugin a Customize → Plugins listában látszik. Ha nem sikerült hozzáadni, a nap nélküle is végigvihető: a Claude ezt feljegyzi a hiányok közé.
 - A `Tananyag/index.html` megnyílik a böngészőben.
 - A Cowork-projekt Instructions mezőjében ott az AGENTS.md-re utaló mondat.
@@ -152,7 +152,7 @@ Telepítsd a workshop tananyagát: https://raw.githubusercontent.com/cspiya/weno
 ### Ha elakadtál
 
 - **A Claude szerint a letöltés hálózati okból nem megy:** Beállítások → Képességek (Settings → Capabilities): kapcsold be az **Allow network egress** kapcsolót, a **Domain allowlist** legyen **Package managers only**. Ha így sem megy, az **Additional allowed domains** listába írd be: `github.com`, `codeload.github.com`, `raw.githubusercontent.com`. Utána: „Próbáld újra.”
-- **Így sem megy:** kézi út, 3 perc: töltsd le a [ZIP-et](https://github.com/cspiya/wenova-ai-sales-workshop/archive/refs/heads/main.zip), bontsd ki (Windows: jobb klikk → Összes kibontása; macOS: dupla kattintás), a kibontott mappában a `materials` mappa **tartalmát** másold a `Wenova-AI-Sales-Workshop/Tananyag/` mappába, és hozz létre mellette egy `Munka` mappát. Utána írd a Claude-nak: „A Tananyag/TELEPITES.md 4. szakasza szerint hozd létre a Munka hat almappájából a hiányzókat. A már bemásolt Tananyag mappát hagyd a helyén. Utána folytasd az 5–7. szakasszal.”
+- **Így sem megy:** kézi út. Töltsd le a [ZIP-et](https://github.com/cspiya/wenova-ai-sales-workshop/archive/refs/heads/main.zip), és bontsd ki (Windows: jobb klikk → Összes kibontása; macOS: dupla kattintás). **Külön mappa:** a `Wenova-AI-Sales-Workshop` mappában hozz létre egy üres `Tananyag-uj` mappát, és ebbe másold a kibontott `materials` mappa **tartalmát**. **Ellenőrzés:** a másolás hibaüzenet nélkül befejeződött, és a `Tananyag-uj` mappában ott az `index.html`, a `VERSION`, a `modules`, a `starter-kit` és a `plugin`. Ha valami hiányzik, töröld a `Tananyag-uj` mappát, és másold újra. **Csere:** ha van régi `Tananyag` mappád, nevezd át `Tananyag-regi-<mai dátum és időpont>` névre, majd a `Tananyag-uj` mappát nevezd át `Tananyag` névre. **Visszaállítás:** ha az átnevezés nem sikerül, a régi mappának add vissza a `Tananyag` nevet, és szólj egy oktatónak. Ha még nincs, hozz létre mellette egy `Munka` mappát. A meglévő `Munka` mappádhoz ne nyúlj. Utána írd a Claude-nak: „A Tananyag/TELEPITES.md 4. szakasza szerint hozd létre a Munka hat almappájából a hiányzókat. A már bemásolt Tananyag mappát hagyd a helyén. Utána folytasd az 5–7. szakasszal.”
 - **Nincs Cowork a gépeden, vagy nem indul:** tartalékút a böngészőben: a claude.ai-on hozz létre egy projektet („AI Sales Workshop – [cégnév]”), töltsd fel a tudásába az `assistant.md`, `AGENTS.md`, a 00–05 modulok `.md` fájljait és a `starter-kit` sablonjait, a projektutasításba pedig a [projektutasítás](../starter-kit/project-instructions.md) keretes szövegét. Ilyenkor a „Munka/” helyett az eredményeket letöltöd és visszatöltöd a projektbe.
 - **A Cowork nem indul a gépeden:** a mentőút a Claude Code. Windowson a [Scoopos telepítés](../CLAUDE-CODE.md#scoop) lépésről lépésre vezet, macOS-en egy sor a [hivatalos telepítő](../CLAUDE-CODE.md#mentőút-macos-en).
 
@@ -196,7 +196,7 @@ Bekapcsolt levelező- és Google Drive-kapcsolatot (ha van Buffer-fiókod, a Buf
 
 ### Így működik
 
-A connectorok a fiókodhoz tartoznak, a Coworkben és a chatben is működnek. Egy munkamenetben a szövegmező melletti **+** menüben kapcsolhatod be vagy ki őket. Minden connector saját oldalán beállíthatod, melyik eszközét használhatja a Claude (Tool permissions, eszközengedélyek). A kényelmes automatizáláshoz engedélyek kellenek, a teljes engedély is elfogadható. Az engedélyek a te döntésed: amit engedélyezel, azt a Claude kérdés nélkül megteheti, a levélküldést is. A Claude a kérésed nélkül ekkor sem küld és nem publikál.
+A connectorok a fiókodhoz tartoznak, a Coworkben és a chatben is működnek. Egy munkamenetben a szövegmező melletti **+** menüben kapcsolhatod be vagy ki őket. Minden connector saját oldalán beállíthatod, melyik eszközét használhatja a Claude (Tool permissions, eszközengedélyek). A kényelmes automatizáláshoz engedélyek kellenek, a teljes engedély is elfogadható. Az engedélyek a te döntésed: amit engedélyezel, azt a Claude kérdés nélkül megteheti, a levélküldést is. A workshop szabálya ettől független: a Claude magától nem küld és nem publikál, a levelet te küldöd, posztot pedig csak a csatorna, a szöveg és az időpont kifejezett jóváhagyása után ütemezhet.
 
 A Brandiseer, a Sales Bot és az EstiWise connector címét a plugin hozza. A hozzáadást és a belépést a saját blokkjuk elején végzed, a plugin Connectors fülén; előre nincs teendő.
 

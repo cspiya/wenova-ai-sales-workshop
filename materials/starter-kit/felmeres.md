@@ -12,7 +12,7 @@ A ✅ jel igazolt állapotot, a ⚠️ teendőt vagy nem ellenőrzött állapoto
 | Hardveres virtualizáció (Windows) | | | 00 | Ha a Cowork nem indul, használd a Claude Code mentőutat. |
 | Allow network egress bekapcsolva | | | 00 | Settings → Capabilities → Allow network egress. |
 | Domain allowlist: Package managers only | | | 00 | Settings → Capabilities → Domain allowlist. |
-| Additional allowed domains | | | 00 | Ha a letöltés nem megy: `github.com` és `codeload.github.com`. |
+| Additional allowed domains | | | 00 | Ha a letöltés nem megy: `github.com`, `codeload.github.com` és `raw.githubusercontent.com`. |
 | Cowork-projekt a munkamappán | | | 00 | Projects → + → Use an existing folder. |
 | Sorrend: telepítő mondat, plugin, Instructions, új munkamenet | | | 00 | Pótold a kimaradt lépést, majd nyiss új munkamenetet. |
 | Operációs rendszer | | | 00 | Kérdezd meg, milyen rendszer fut a résztvevő gépén. |

@@ -113,3 +113,35 @@ Vizsgált alap HEAD `3e015ba687fd5c2d754f54fbd68d40eaacfbeb76`. A helyi, commito
 | Célzott szerkezeti ellenőrzés | 11 szakasz és tartalomjegyzék-link, 44 címke, 4 Markdown- és 3 HTML-belépési pont, 2 mentőúticél. A 02–04-es modulok és oktatói jegyzeteik változatlanok. |
 
 Környezet: Windows, Node `24.22.1`, npm `11.19.1`. Saját ellenőrzés, technikai PASS, lefedettség PARTIAL, ajánlás NOT_READY. A maker brief önálló munkát kér. A független tartalmi review, a böngészős megjelenés vizsgálata és a résztvevői Cowork-próba nyitott.
+
+## A második review-kör javításai
+
+A független műszaki és tartalmi ellenőrzés a `680e129` revízión REVISE ítéletet adott. A tételes lista és a javítások: [review-jegyzőkönyv](2026-11-18-agentic-keretrendszer.md). A próbák: [telepítési próba](2026-11-18-telepites.md).
+
+| # | Dátum | Session | Lépés | Eredmény |
+|---|---|---|---|---|
+| 8 | 2026-11-19 | 6b54de9a, maker agent | AT-02–AT-06, AT-08, AT-09, AC-10–AC-16 javítása, két jegyzőkönyv | Helyi commit ezen az ágon, push nélkül |
+
+| Azonosító | Dátum | Döntés | Döntéshozó típusa és szerepköre | Indoklás | Alapja | Leváltja | Forrás |
+|---|---|---|---|---|---|---|---|
+| WEN-1223/D12 | 2026-11-19 | Az eszközengedélyekről a résztvevő dönt, a teljes engedély is elfogadható, a következményt közöljük. A Claude magától nem küld és nem publikál, a küldést a résztvevő végzi, az ütemezéshez a csatorna, a szöveg és az időpont kifejezett jóváhagyása kell | ember (tulajdonos) | Egy szabály szerepeljen minden résztvevői úton | AT-06, AC-13 | nincs | az agent rögzítette a koordinátor üzenetéből, 6b54de9a session |
+| WEN-1223/D13 | 2026-11-19 | A `sales_strategy_path` új, opcionális mező, a `schema_version` marad 1. Hiányakor a `company_dna_path` mappájából keresünk, utána megállunk és kérdezünk | AI (maker) | A régi haladási naplók így tovább működnek | AT-08, AC-12 | nincs | 6b54de9a session |
+| WEN-1223/D14 | 2026-11-19 | A futtatókönyv a beolvasott példányt összeveti a letöltött `materials/TELEPITES.md` fájllal. A verzióellenőrzés a commitra épül, mert a `VERSION` értéke két commit között azonos lehet. Coworkben a plugin pontos verziója „nem ellenőrzött” | AI (maker) | Olyat nem ígérünk, amit az adott felületen nem lehet igazolni | AT-04 | nincs | 6b54de9a session |
+| WEN-1223/D15 | 2026-11-19 | A felsorolt helyeken túl ugyanazt a szabályt vezettem át a `materials/README.md`, a `materials/starter-kit/felmeres.md`, a `materials/AGENTS.md` biztonsági szabálya és a 00-s modul engedélybekezdése soraiban | AI (maker) | Ezek a sorok ugyanannak a megállapításnak a másik felét tartalmazták | AT-03, AT-06, AC-14, AC-15 | nincs | 6b54de9a session |
+
+| # | Mikor, hol | Szándék | Mi történt | Ki vette észre | Ok | Javítás | Tanulság |
+|---|---|---|---|---|---|---|---|
+| C5 | 2026-11-19, szövegcserék | A javítások egyszerre, pontos egyezéssel | Az első szkript a shellben hibával leállt, fájl nem változott | Maker | A hosszú, idézőjeleket tartalmazó beágyazott szöveg | A szkript külön fájlba került, minden cserét egyezésszámmal ellenőrzött | Hosszú magyar szöveget fájlból érdemes alkalmazni |
+
+Vizsgált alap: `680e129`, a commit előtti munkafa. Node `v26.13.1`. A repó Node 24-et ír elő, ezen a futáson nem volt Node 24.
+
+| Parancs | Eredmény |
+|---|---|
+| `npm run plugin:build` | 0. `PASS: 8 plugin copies and materials/plugin/wenova-sales-workshop.plugin` |
+| `npm run prepare:push` | 0. `PASS: 24 current HTML pages; 1463 local references; 20 lessons.` |
+| `npm run check` | 0. `PASS: 24 current HTML pages; 1463 local references; 20 lessons.` |
+| `npm test` | 0. 29 teszt, 29 sikeres, 0 hibás, 0 kihagyott. |
+| `node materials/demos/voice-lab/selftest.mjs` | 0. 20 OK sor, 0 hiba. |
+| Fájlszám | A `materials/` 161 fájl, a kiadási lista (`packaged()`) 159 fájl. |
+
+Maker saját ellenőrzése, nem független review. Lefedettség PARTIAL, állapot NOT_READY. A javítások független újraellenőrzése, valamint az élő Cowork-, macOS- és connector-próba nyitott. AT-01, AT-10, AT-11 és AC-17 a kapott utasítás szerint nyitva maradt.

@@ -28,7 +28,7 @@ A Cég-DNS-től az ajánlatig és a CRM-ig: saját AI-csapat a Claude-ban, a saj
 
 **2026. november 19., csütörtök, 09:00–17:00 (érkezés és technikai ellenőrzés 08:30-tól) · CEU Nádor Event Center, Budapest V., Nádor u. 15., N13 412/A terem (4. emelet; belépőkártya a recepción)**
 
-**Honnan töltöd le az anyagot?** A Claude Desktop Cowork módjában egy mondattal telepíted: „Telepítsd a workshop tananyagát: https://raw.githubusercontent.com/cspiya/wenova-ai-sales-workshop/main/materials/TELEPITES.md”. Részletek: [felkészülés](modules/00-prework.md#00-prework.01-install) és [telepítési futtatókönyv](TELEPITES.md). Kézi letöltés: [ZIP](https://github.com/cspiya/wenova-ai-sales-workshop/archive/refs/heads/main.zip); böngészőben: [github.com/cspiya/wenova-ai-sales-workshop/tree/main/materials](https://github.com/cspiya/wenova-ai-sales-workshop/tree/main/materials). Terminálhoz szokottaknak: [haladó út Claude Code-dal](CLAUDE-CODE.md).
+**Honnan töltöd le az anyagot?** A Claude Desktop Cowork módjában egy mondattal telepíted: „Telepítsd a workshop tananyagát: https://raw.githubusercontent.com/cspiya/wenova-ai-sales-workshop/main/materials/TELEPITES.md”. Részletek: [felkészülés](modules/00-prework.md#00-prework.01-install) és [telepítési futtatókönyv](TELEPITES.md). Kézi letöltés: [ZIP](https://github.com/cspiya/wenova-ai-sales-workshop/archive/refs/heads/main.zip), a lépéseket a [kézi út](modules/00-prework.md#00-prework.01-install--help) írja le; böngészőben: [github.com/cspiya/wenova-ai-sales-workshop/tree/main/materials](https://github.com/cspiya/wenova-ai-sales-workshop/tree/main/materials). Ha a Cowork a gépeden nem indul: [mentőút Claude Code-dal](CLAUDE-CODE.md).
 
 <a name="agenda-1"></a>
 

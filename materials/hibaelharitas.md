@@ -35,7 +35,7 @@ Először írd a Claude-nak: „Elakadtam.” Ha ez nem segít, szólj egy oktat
    - `raw.githubusercontent.com`
 4. Írd a Claude-nak: „Próbáld újra.”
 
-**Ha így sem megy.** Töltsd le a tananyagot a böngésződben, és kövesd a [kézi ZIP-út](modules/00-prework.md#00-prework.01-install--help) lépéseit.
+**Ha így sem megy.** Töltsd le a tananyagot a böngésződben, és kövesd a [kézi ZIP-út](modules/00-prework.md#00-prework.01-install--help) lépéseit. A sorrend: külön mappába másolod, ellenőrzöd, kicseréled a régit, hiba esetén visszaállítod.
 
 <a name="git"></a>
 
@@ -47,7 +47,7 @@ Először írd a Claude-nak: „Elakadtam.” Ha ez nem segít, szólj egy oktat
 
 **Ezt csináld.** A Claude ZIP-ből is le tudja tölteni a tananyagot. Írd be: „Töltsd le ZIP-ből a tananyagot a telepítési útmutató szerint.”
 
-**Ha így sem megy.** Kövesd a [kézi ZIP-út](modules/00-prework.md#00-prework.01-install--help) lépéseit.
+**Ha így sem megy.** Kövesd a [kézi ZIP-út](modules/00-prework.md#00-prework.01-install--help) lépéseit. A sorrend itt is ugyanaz: külön mappa, ellenőrzés, csere, hiba esetén visszaállítás.
 
 <a name="plugin"></a>
 

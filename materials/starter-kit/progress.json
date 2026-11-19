@@ -9,7 +9,8 @@
     "dna_version": null,
     "company_dna_path": null,
     "voice_profile_path": null,
-    "business_profile_path": null
+    "business_profile_path": null,
+    "sales_strategy_path": null
   },
   "execution_mode": "simulation",
   "checkpoints": [],

@@ -1,12 +1,11 @@
 <!-- presentation -->
 # Haladó út: Claude Code a terminálban
 
-**Mentőút.** A nap kötelező módja a Claude Desktop Cowork. Ezt az utat akkor használd, ha a Cowork a gépeden nem indul ([Windows-mentőút Scooppal](#scoop)), vagy ha szívesen dolgozol a terminálban (karakteres képernyőn). Ugyanazt a tananyagot, ugyanazokkal a lépésekkel járod végig, csak a Claude Code-ban.
+**Mentőút.** A nap kötelező módja a Claude Desktop Cowork. Ezt az utat csak akkor használd, ha a Cowork a gépeden nem indul ([Windows-mentőút Scooppal](#scoop)). Ugyanazt a tananyagot, ugyanazokkal a lépésekkel járod végig, csak a Claude Code-ban.
 
-## Mikor jó ez neked?
+## Mi kell hozzá?
 
-- Ismered a terminált (Windowson PowerShell, macOS-en Terminal), vagy szeretnéd megtanulni.
-- Azt szeretnéd, hogy a Claude közvetlenül a saját gépeden, a munkamappádban dolgozzon, és a változásokat fájlonként lásd.
+- Terminál (Windowson PowerShell, macOS-en Terminal). A parancsokat innen másolod be.
 - Pro, Max vagy magasabb Claude-előfizetésed van. Az ingyenes csomag nem tartalmazza a Claude Code-ot.
 
 ## 1. Telepítés (5 perc)
@@ -102,7 +101,7 @@ Utána nyiss új Terminal-ablakot, és írd be: `claude --version`. **Akkor jó,
 Telepítsd a workshop tananyagát: https://raw.githubusercontent.com/cspiya/wenova-ai-sales-workshop/main/materials/TELEPITES.md
 ```
 
-A Claude Code a saját gépeden tölti le és csomagolja ki a tananyagot a `Tananyag/` mappába, létrehozza a `Munka/` mappát, és a gyökérbe másolja a `CLAUDE.md` és `AGENTS.md` fájlt. Minden parancs előtt engedélyt kér: olvasd el, mit futtatna, és csak akkor engedd, ha érted. A futtatókönyv: [TELEPITES.md](TELEPITES.md).
+A Claude Code a saját gépeden tölti le és csomagolja ki a tananyagot a `Tananyag/` mappába, létrehozza a `Munka/` mappát, és a gyökérbe másolja a `CLAUDE.md` és `AGENTS.md` fájlt. Az engedélyezési módtól függ, hogy a parancsok előtt rákérdez-e. Ha rákérdez, olvasd el, mit futtatna, és csak akkor engedd, ha érted. A futtatókönyv: [TELEPITES.md](TELEPITES.md).
 
 4. A futtatókönyv a plugint is felteszi. Ellenőrzés: `claude plugin list`, a listában ott a `wenova-sales-workshop`.
 5. Lépj ki (`/exit`), és indítsd újra a `claude` parancsot ugyanebben a mappában. A Claude Code ekkor automatikusan betölti a `CLAUDE.md` fájlt, az pedig az `AGENTS.md`-t: így tudja a mappaszabályokat, az indítómondatokat és a biztonsági szabályokat.
@@ -114,12 +113,12 @@ A Claude Code a saját gépeden tölti le és csomagolja ki a tananyagot a `Tana
 
 ## 5. Engedélyek
 
-Az engedélyek a te döntésed. A kényelmes automatizáláshoz engedélyek kellenek, a teljes engedély is elfogadható. Amit engedélyezel, azt a Claude kérdés nélkül megteheti, a levélküldést is. A Claude a kérésed nélkül ekkor sem küld és nem publikál. A beállításokat a `/permissions` paranccsal nézheted meg és módosíthatod.
+Az engedélyek a te döntésed. A kényelmes automatizáláshoz engedélyek kellenek, a teljes engedély is elfogadható. Az engedélyezési mód és a tartós engedélyek szabják meg, mikor kérdez rá a Claude Code. Amit engedélyezel, azt a Claude kérdés nélkül megteheti, a levélküldést is. A workshop szabálya ettől független: a Claude magától nem küld és nem publikál, a levelet te küldöd, posztot pedig csak a csatorna, a szöveg és az időpont kifejezett jóváhagyása után ütemezhet. A beállításokat a `/permissions` paranccsal nézheted meg és módosíthatod.
 
 ## 6. Így dolgozol a blokkokban
 
 - Indítómondatok ugyanazok: „Kezdjük a felkészülést”, „Kezdjük az 1. blokkot”, „Hol tartok?”, „Karmester: …”, „Író: …”, és így tovább.
-- Az eredmények a `Munka/` mappába kerülnek; a Claude Code minden fájlírás előtt megmutatja a változást. Nézd át, és csak utána engedd.
+- Az eredmények a `Munka/` mappába kerülnek; ha az engedélyezési módod rákérdez a fájlírásra, a Claude Code előtte megmutatja a változást. Nézd át, és csak utána engedd. Ha a fájlírást tartósan engedélyezted, a kész fájlt nézd át.
 - A vizuális eredmények (kampányáttekintés, posztelőnézet, a nap összefoglalója) HTML-fájlok a `Munka/` alatt. Nyisd meg őket a böngészőben (dupla kattintás); claude.ai-os artifact itt nincs.
 - Az Ellenőrt új munkamenetben futtasd: `/clear`, vagy nyiss új terminálablakot, és ott indíts új `claude` munkamenetet.
 - Hasznos parancsok: `/mcp` (connectorok), `/permissions` (engedélyek), `/clear` (új, tiszta beszélgetés), `/resume` (korábbi beszélgetés folytatása), `/exit` (kilépés). A `/init` parancs itt nem kell: a `CLAUDE.md` már megvan.
