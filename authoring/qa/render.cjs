@@ -36,12 +36,11 @@ function acceptCustom(source,root=ROOT){
   const html=reviewBody(fs.readFileSync(target,'utf8'));
   fs.writeFileSync(target,'<!-- Presentation-review SHA-256: '+sourceHash(source,root)+' -->\n'+html);
 }
-// Links to this site or to a repository page that has a published page stay inside the published material.
-const SITE_URL = 'https://cspiya.github.io/wenova-ai-sales-workshop/';
+// Links to a repository page that has a published page stay inside the published material.
+// The published site address stays absolute: the voice lab does not work from a local file.
 const REPO_URL = /^https:\/\/github\.com\/cspiya\/wenova-ai-sales-workshop\/(?:blob|tree)\/main\/([^?#]*?)\/?([?#].*)?$/;
 function rewrite(href, source, pages) {
   const from = path.posix.dirname(output(source));
-  if (href.startsWith(SITE_URL)) { const [, file, rest] = href.slice(SITE_URL.length).match(/^([^?#]*)(.*)$/); return path.posix.relative(from, file || 'index.html')+rest; }
   const repo = REPO_URL.exec(href);
   if (repo) { const page = [repo[1], repo[1]+'/README.md'].find(p=>pages.has(p)); return page ? path.posix.relative(from,output(page))+(repo[2]||'') : href; }
   if (/^[a-z][\w+.-]*:|^\/\//i.test(href)) return href;

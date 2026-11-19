@@ -1,7 +1,7 @@
 'use strict';
 const {test}=require('node:test'),assert=require('node:assert/strict');
 const fs=require('node:fs'),path=require('node:path');
-const {run,acceptCustom}=require('./render.cjs');
+const {run,acceptCustom,render}=require('./render.cjs');
 function fixture(fn){
  const root=fs.mkdtempSync(path.join(__dirname,'.validation-test-'));
  const put=(p,s)=>{fs.mkdirSync(path.dirname(path.join(root,p)),{recursive:true});fs.writeFileSync(path.join(root,p),s);};
@@ -45,7 +45,8 @@ test('internal links stay on published pages, working files stay direct and prom
  put('materials/modules/01-demo.md','# Modul\n\n<a name="01-demo.01-start"></a>\n\n## Lecke\n\nMásold a lenti promptot.\n\n<a name="01-demo.01-start--prompt"></a>\n\n### Ezt kérd Claude-tól\n\n```text\negy\n```\n');
  run({root});
  const html=fs.readFileSync(path.join(root,'materials/index.html'),'utf8'),links=[...html.matchAll(/<a href="([^"]+)"[^>]*>([^<]*)<\/a>/g)].map(m=>m[1]);
- for(const href of ['modules/01-demo.html#01-demo.01-start','index.html','modules/01-demo.html','demos/app.htm','starter/leads.csv','starter/plan.md'])assert.ok(links.includes(href),href);
+ for(const href of ['modules/01-demo.html#01-demo.01-start','index.html','modules/01-demo.html','starter/leads.csv','starter/plan.md'])assert.ok(links.includes(href),href);
+ assert.match(html,/<a href="https:\/\/cspiya\.github\.io\/wenova-ai-sales-workshop\/materials\/demos\/app\.htm" target="_blank" rel="noopener noreferrer">Labor<\/a>/,'the published lab address stays absolute');
  assert.doesNotMatch(html,/<a href="[^"]*(?:modules\/01-demo\.md|\/blob\/main|\/tree\/main)/);
  assert.match(html,/<code class="language-text">https:\/\/github\.com\/cspiya\/wenova-ai-sales-workshop\/blob\/main\/materials\/modules\/01-demo\.md/);
  assert.match(fs.readFileSync(path.join(root,'materials/modules/01-demo.html'),'utf8'),/<a href="#01-demo\.01-start--prompt">lenti promptot<\/a>/);
@@ -69,6 +70,21 @@ test('Markdown source is only an invisible alternate link and instructor pages a
  assert.doesNotMatch(html,/Markdown-forrás|HTML-változat|<a [^>]*href="01-demo\.md"|<script|instructor-flag|page--instructor/);
  for(const page of ['operations/index.html','operations/instructor-notes/01-demo.html']){const notes=fs.readFileSync(path.join(root,page),'utf8');assert.match(notes,/page--instructor/);assert.match(notes,/<div class="instructor-flag" role="note">OKTATÓI OLDAL<\/div>/);assert.match(notes,/instructor-notes\/notes\.css|href="notes\.css"/);}
 }));
+test('each schedule row shows its exact workbook target and the presenter note as plain text',()=>{
+ const html=render('materials/schedule.md');
+ const row=time=>{const part=html.split('<li class="slot').find(s=>s.includes('<p class="slot__time">'+time+'</p>'));assert.ok(part,time);return part;};
+ const note='Az előadó vetíti';
+ for(const [time,links] of [
+  ['08:30–09:00','<a href="modules/00-prework.html">Munkafüzet</a>'],
+  ['09:00–09:20',note],
+  ['09:20–10:30','<a href="modules/01-business-foundations.html">Munkafüzet</a> · '+note],
+  ['10:45–12:15','<a href="modules/02-content-marketing.html">Munkafüzet</a> · '+note],
+  ['13:00–14:30','<a href="modules/03-lead-generation.html">Munkafüzet</a> · '+note],
+  ['14:45–16:15','<a href="modules/04-proposals-handoff.html">Munkafüzet</a> · '+note],
+  ['16:15–16:50','<a href="modules/05-pipeline-review.html">Munkafüzet</a> · '+note],
+  ['16:50–17:00','<a href="modules/05-pipeline-review.html#05-pipeline-review.03-measure-launch">Munkafüzet</a> · '+note],
+ ])assert.ok(row(time).includes('<p class="slot__links">'+links+'</p>'),time);
+});
 test('stale output and changed Markdown fail check without repairing files',()=>fixture((root,put)=>{
  put('README.md','# Cím\n');run({root});put('index.html','manual change');
  assert.throws(()=>run({root,check:true}),/stale HTML/);assert.equal(fs.readFileSync(path.join(root,'index.html'),'utf8'),'manual change');

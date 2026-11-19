@@ -21,10 +21,10 @@ A **Cég-DNS-ed** (kinek adsz el, mit és milyen hangon) minden blokk bemenete. 
 
 ## Idővonal
 
-| Idő | Blokk | Partner | Előadók | Mit építesz | Előadás |
+| Idő | Blokk | Partner | Előadók | Mit építesz | Munkafüzet, előadás |
 | --- | --- | --- | --- | --- | --- |
 | Előtte | [Felkészülés](modules/00-prework.md) | Wenova | Wenova csapat | Claude-projekt a sablonokkal, levelező- és Google-kapcsolat, CRM-tábla, Sales Bot- és EstiWise-belépés, saját források |  |
-| 08:30–09:00 | Érkezés, technikai check | Wenova | Wenova csapat | Működő gép, Claude-fiók és megnyitott munkacsomag |  |
+| 08:30–09:00 | Érkezés, technikai check | Wenova | Wenova csapat | Működő gép, Claude-fiók és megnyitott munkacsomag | [Munkafüzet](modules/00-prework.md) |
 | 09:00–09:20 | Nyitás | Wenova | Piya Csaba | A nap célja és fonala: egy ügyfél útja a Cég-DNS-től az ajánlatig | Az előadó vetíti |
 | 09:20–10:30 | [1. Cég-DNS és saját AI-csapat](modules/01-business-foundations.md) | Wenova | Piya Csaba, Kemény Krisztián | Cég-DNS forrásokkal, hangprofil a küldött leveleidből, saját AI-csapat (Karmester, Író, Ellenőr) első próbafutással | Az előadó vetíti |
 | 10:30–10:45 | Szünet |  |  |  |  |
@@ -34,7 +34,7 @@ A **Cég-DNS-ed** (kinek adsz el, mit és milyen hangon) minden blokk bemenete. 
 | 14:30–14:45 | Szünet |  |  |  |  |
 | 14:45–16:15 | [4. Igényfelmérés és ajánlatadás 0–24-ben](modules/04-proposals-handoff.md) | EstiWise / CommIT Smart | Gyömrei Máté | Szolgáltatáskatalógus és árazási szabály, ellenőrzött ajánlattervezet, belső átadás | Az előadó vetíti |
 | 16:15–16:50 | [5. Folyamatpróba: levelek, CRM, egy ügyfél végig](modules/05-pipeline-review.md) | Wenova | Kemény Krisztián, Piya Csaba | Postás és válaszpiszkozat a saját hangodon, frissített CRM, egy ügyfél végig a Karmesterrel, heti mérés és visszacsatolás | Az előadó vetíti |
-| 16:50–17:00 | Zárás | Wenova |  | Indulási terv: három holnapi lépés és heti rutin | Az előadó vetíti |
+| 16:50–17:00 | Zárás | Wenova |  | Indulási terv: három holnapi lépés és heti rutin | [Munkafüzet](modules/05-pipeline-review.md#05-pipeline-review.03-measure-launch) · Az előadó vetíti |
 
 <a name="partners"></a>
 
