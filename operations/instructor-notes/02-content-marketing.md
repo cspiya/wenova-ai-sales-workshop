@@ -30,7 +30,7 @@ Mondandó, amit érdemes kimondani: „A márka a rendszerben él, nem a promptb
 
 - Minden leckénél mondd meg az aktuális feladatot, a mentendő eredményt és a kész feltételt.
 - Az első lecke 3–5. percében járd körbe a termet: a leggyakoribb hiba a ki nem kapcsolt connector és az üres márkalista.
-- A második leckében Claude a Cég-DNS-ből dolgozik, és csak a csatornát és a témát kérdezi; akinél hiányzik a `Munka/01-DNS/company-dna.md`, annál a Ha elakadtál pont segít. Figyeld, ki ír színt vagy stílust a képkérésbe; ez a modul fő tanulsága, mutasd meg egy résztvevő példáján.
+- A második leckében a legutóbbi `progress.json` `active_business` mezőjében kijelölt céget és Cég-DNS-t ellenőrizd. Claude ebből a DNS-ből dolgozik, és csak a csatornát és a témát kérdezi. Ha a kijelölt fájl hiányzik, segíts megkeresni a cég jóváhagyott változatát. Mutasd meg egy résztvevő példáján, hogyan hagyhatja a színt és a stílust a márkaprofilra.
 - A harmadik leckében, amíg a három új kép készül, terelj mindenkit az első két kép letöltésére; a végén nézzék meg az öt posztot egymás mellett.
 - Öt perc sikertelen hibaelhárítás után ajánld fel a mentőcsomagot; a saját munka maradjon meg.
 
@@ -65,7 +65,7 @@ A deckben előre generált, design módban készült képek vannak (címkép, pr
 
 ### Átadás
 
-Ellenőrizd, hogy mindenkinél elkészült a `campaign-plan.md`: ez a Blackhole Media délutáni moduljának bemenete. Akinél nem, az a minta `campaign-plan.md` fájljával menjen tovább.
+Ellenőrizd, hogy a `campaign-plan.md` és az üzleti alaplap a legutóbbi `progress.json`-ban kijelölt céghez tartozik. Ez a két fájl a Blackhole Media délutáni moduljának bemenete. Ha hiányzik a kampányterv, segíts pótolni ugyanannak a cégnek a tervét. Ha a résztvevővel a teljes mintaláncra váltotok, a minta alaplapját és kampánytervét együtt vegyétek át. Frissítsétek a naplóban az aktív cég nevét, a DNS verzióját, a DNS, a hangprofil és az alaplap tényleges útvonalát, valamint a `business_mode` és a `scenario_id` értékét. Ha a mintához még nincs DNS vagy hangprofil, a korábbi útvonal helyett rögzítsétek a hiányt a `gaps` listában. A saját fájlok maradjanak meg külön.
 
 ## Kapcsolódó tananyagrészek
 

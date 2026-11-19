@@ -112,8 +112,9 @@ A piszkozatot itt mutasd meg, én másolom a levelezőbe. Semmit ne küldj el.
 </code></pre>
 <p>Ha a piszkozat jó, ugyanitt:</p>
 <pre><code class="language-text">CRM: olvasd be a jelenlegi CRM-táblát vagy a crm.csv-t, a Postás javaslatait és a 03-as, 04-es blokk csatolt fájljait. A kapcsolt ajánlatnál a case_id a lead_id, a partner_ref a proposal_id. Egyeztesd az azonosítókat a leads.csv, outreach.md, customer-brief.md, proposal.md és handoff.md fájlban. Eltérésnél állj meg. A teendőt, határidőt és felelőst a handoff.md-ből vedd.
+Az ajánlat value_net mezőjébe csak a proposal.md-ben vagy az EstiWise-ban dokumentált nettó összeget írd. Ha csak bruttó összeg ismert, kérd a dokumentált nettó értéket. Amíg az hiányzik, hagyd üresen a value_net mezőt. A currency mezőbe a dokumentált pénznemet írd.
 Case_id alapján mutasd meg, melyik sor új és melyik meglévő sort módosítanád. Egy kulcshoz egy CSV-sort adj a tábla oszlopsorrendjében. Többszörös találat esetén kérj egyeztetést.
-Beillesztés után olvasd vissza a táblát vagy a mentett crm.csv-t. Ellenőrizd az érintett case_id-k egyediségét és a jóváhagyott mezőértékeket.
+Beillesztés után olvasd vissza a táblát vagy a mentett crm.csv-t. Ellenőrizd az érintett case_id-k egyediségét és a jóváhagyott mezőértékeket, köztük a nettó összeget vagy az összeg hiányát, valamint a pénznemet.
 </code></pre>
 </div>
 <div class="cell cell--steps">
@@ -133,7 +134,7 @@ Beillesztés után olvasd vissza a táblát vagy a mentett crm.csv-t. Ellenőriz
 <li>A Postás táblázatában a próbalevél „Új érdeklődés” típusú, javasolt következő lépéssel.</li>
 <li>A piszkozat a te hangodon szól, csak a DNS-ben lévő árat és ígéretet tartalmazza, és a leveleződben piszkozatként vár. Nincs elküldve.</li>
 <li>A CRM-agent változáslistát és CSV-sorokat adott; te bemásoltad őket.</li>
-<li>A Claude visszaolvasta a táblát. Minden érintett <code>case_id</code> egyedi. A kiválasztott lead és a hozzá tartozó ajánlat egy sorban van. Ellenőrizd a szakaszt, a <code>partner_ref</code>-et, a teendőt, a határidőt és a felelőst.</li>
+<li>A Claude visszaolvasta a táblát vagy a mentett CSV-t. Minden érintett <code>case_id</code> egyedi. A kiválasztott lead és a hozzá tartozó ajánlat egy sorban van. Ellenőrizd a szakaszt, a <code>partner_ref</code>-et, a teendőt, a határidőt és a felelőst. A <code>value_net</code> egyezik a dokumentált nettó összeggel, vagy üres, ha ilyen összeg nincs. A <code>currency</code> egyezik a dokumentált pénznemmel.</li>
 </ul>
 </div>
 <div class="cell cell--help">

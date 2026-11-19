@@ -271,7 +271,7 @@ A kampányodra érkezett gyakorló válaszokat kilistázod és kategorizálod, e
 ### Erre lesz szükséged
 
 - Az előző lecke kampánya, a `leads.csv`, az `outreach.md` és a `campaign-plan.md`.
-- A mentor által betöltött kitalált gyakorló válasz a kiválasztott `lead_id)-hoz.
+- A mentor által betöltött kitalált gyakorló válasz a kiválasztott leadhez, annak `lead_id` értéke alapján.
 
 Saját fiók nélkül: [Minta ügyféligény](../scenarios/office-plants/outputs/customer-brief.md)
 

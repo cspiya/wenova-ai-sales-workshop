@@ -227,7 +227,8 @@ Az EstiWise-kapcsolattal készítsünk ajánlattervezetet. Csatoltam a customer-
 
 ### Ellenőrizd az eredményt
 
-- Az EstiWise-ban létezik az ajánlattervezet, és nincs kiküldve.
+- **Fiókkal.** Az EstiWise-ból visszaolvastad az ajánlattervezet azonosítóját és állapotát, és ellenőrizted, hogy a tervezet kiküldetlen.
+- **Fájlból.** A `proposal.md` tartalmazza a kiválasztott ügyhöz tartozó ajánlattervezetet. A fájlos gyakorlatot `simulation` módban rögzítetted.
 - A `proposal.md` minden kötelező mezőt tartalmaz; a `lead_id` és az `offer_id` egyezik a `customer-brief.md`-vel.
 - A `proposal_id` az EstiWise-tervezetből visszaolvasott azonosító, fájlos szimulációnál pedig a tervezethez rendelt egyedi azonosító.
 - A pénznem és a nettó/bruttó jelölés megvan; a `total` a jóváhagyott kedvezménnyel korrigált sorösszeg, több sornál a sorösszegek összege.
@@ -317,7 +318,8 @@ Az EstiWise-kapcsolattal készítsük el az ajánlat belső átadását. Csatolt
 
 ### Ellenőrizd az eredményt
 
-- A lehetőség a jóváhagyott szakaszban van az EstiWise-ban.
+- **Fiókkal.** Az EstiWise-ból visszaolvastad, hogy az ajánlathoz tartozó lehetőség a jóváhagyott szakaszban van.
+- **Fájlból.** A `proposal.md`, a `handoff.md` és az ügy CRM-sora egyezik. A CRM-ben a `case_id` a `lead_id`, a `partner_ref` a `proposal_id`. A szakasz a jóváhagyott szakasz (a mintában `Ajánlattervezet`), a teendő, a felelős és a határidő az átadásból jön. A fájlos gyakorlatot `simulation` módban rögzítetted.
 - A `handoff.md` minden mezőt tartalmaz; a `proposal_id` és a `lead_id` egyezik a `proposal.md`-vel.
 - A következő feladat konkrét, van felelőse és határideje.
 - A szomszédod a fájlból elmondja, mi a teendő.
@@ -327,7 +329,7 @@ Az EstiWise-kapcsolattal készítsük el az ajánlat belső átadását. Csatolt
 
 ### Ha elakadtál
 
-Ha az értékesítési folyamat nem érhető el, a `handoff.md` fájlt az [átadásminta](../scenarios/office-plants/outputs/handoff.md) szerkezetével kézzel is elkészítheted. Öt perc után használd a [mentőcsomagot](#recovery).
+Ha az értékesítési folyamat nem érhető el, a `handoff.md` fájlt az [átadásminta](../scenarios/office-plants/outputs/handoff.md) szerkezetével kézzel is elkészítheted. Az ügyhöz tartozó sort készítsd el a [CRM-sablon](../starter-kit/crm-template.csv) oszlopaival, vagy a teljes minta útján keresd ki ugyanennek az ügynek a sorát a minta `crm.csv` fájljából. Öt perc után használd a [mentőcsomagot](#recovery).
 
 <a name="04-proposals-handoff.03-handoff--handoff"></a>
 

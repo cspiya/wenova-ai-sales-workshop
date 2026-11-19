@@ -183,7 +183,8 @@ Minden módosítás előtt mutasd meg, mit változtatnál, és kérd a jóváhag
 <a id="04-proposals-handoff.02-prepare-proposal--check"></a>
 <h3 class="cell-title">Ellenőrizd az eredményt</h3>
 <ul>
-<li>Az EstiWise-ban létezik az ajánlattervezet, és nincs kiküldve.</li>
+<li><strong>Fiókkal.</strong> Az EstiWise-ból visszaolvastad az ajánlattervezet azonosítóját és állapotát, és ellenőrizted, hogy a tervezet kiküldetlen.</li>
+<li><strong>Fájlból.</strong> A <code>proposal.md</code> tartalmazza a kiválasztott ügyhöz tartozó ajánlattervezetet. A fájlos gyakorlatot <code>simulation</code> módban rögzítetted.</li>
 <li>A <code>proposal.md</code> minden kötelező mezőt tartalmaz; a <code>lead_id</code> és az <code>offer_id</code> egyezik a <code>customer-brief.md</code>-vel.</li>
 <li>A <code>proposal_id</code> az EstiWise-tervezetből visszaolvasott azonosító, fájlos szimulációnál pedig a tervezethez rendelt egyedi azonosító.</li>
 <li>A pénznem és a nettó/bruttó jelölés megvan; a <code>total</code> a jóváhagyott kedvezménnyel korrigált sorösszeg, több sornál a sorösszegek összege.</li>
@@ -261,7 +262,8 @@ Minden módosítás előtt mutasd meg, mit változtatnál, és kérd a jóváhag
 <a id="04-proposals-handoff.03-handoff--check"></a>
 <h3 class="cell-title">Ellenőrizd az eredményt</h3>
 <ul>
-<li>A lehetőség a jóváhagyott szakaszban van az EstiWise-ban.</li>
+<li><strong>Fiókkal.</strong> Az EstiWise-ból visszaolvastad, hogy az ajánlathoz tartozó lehetőség a jóváhagyott szakaszban van.</li>
+<li><strong>Fájlból.</strong> A <code>proposal.md</code>, a <code>handoff.md</code> és az ügy CRM-sora egyezik. A CRM-ben a <code>case_id</code> a <code>lead_id</code>, a <code>partner_ref</code> a <code>proposal_id</code>. A szakasz a jóváhagyott szakasz (a mintában <code>Ajánlattervezet</code>), a teendő, a felelős és a határidő az átadásból jön. A fájlos gyakorlatot <code>simulation</code> módban rögzítetted.</li>
 <li>A <code>handoff.md</code> minden mezőt tartalmaz; a <code>proposal_id</code> és a <code>lead_id</code> egyezik a <code>proposal.md</code>-vel.</li>
 <li>A következő feladat konkrét, van felelőse és határideje.</li>
 <li>A szomszédod a fájlból elmondja, mi a teendő.</li>
@@ -271,7 +273,7 @@ Minden módosítás előtt mutasd meg, mit változtatnál, és kérd a jóváhag
 <div class="cell cell--help">
 <a id="04-proposals-handoff.03-handoff--help"></a>
 <h3 class="cell-title">Ha elakadtál</h3>
-<p>Ha az értékesítési folyamat nem érhető el, a <code>handoff.md</code> fájlt az <a href="../scenarios/office-plants/outputs/handoff.md">átadásminta</a> szerkezetével kézzel is elkészítheted. Öt perc után használd a <a href="#recovery">mentőcsomagot</a>.</p>
+<p>Ha az értékesítési folyamat nem érhető el, a <code>handoff.md</code> fájlt az <a href="../scenarios/office-plants/outputs/handoff.md">átadásminta</a> szerkezetével kézzel is elkészítheted. Az ügyhöz tartozó sort készítsd el a <a href="../starter-kit/crm-template.csv">CRM-sablon</a> oszlopaival, vagy a teljes minta útján keresd ki ugyanennek az ügynek a sorát a minta <code>crm.csv</code> fájljából. Öt perc után használd a <a href="#recovery">mentőcsomagot</a>.</p>
 </div>
 <div class="cell cell--output">
 <a id="04-proposals-handoff.03-handoff--handoff"></a>
