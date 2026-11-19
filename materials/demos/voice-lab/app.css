@@ -36,7 +36,7 @@ body { margin:0; background:var(--bg); color:var(--ink); font:15px/1.5 var(--san
 .skip { position:absolute; left:1rem; top:-6rem; background:#fff; color:#14162e; padding:.5rem .8rem; border-radius:6px; z-index:30; }
 .skip:focus { top:1rem; }
 /* Keskeny nézetben a fókuszált ugrólink a sáv fölött kap helyet, így nem takarja a feliratot. */
-@media (max-width:640px) { .skip:focus { position:static; display:block; border-radius:0; } }
+@media (max-width:640px) { .skip:focus { position:static; display:block; border-radius:0; } .skip:focus-visible { outline-offset:-3px; } }
 /* Hallgatói sáv: a közös tananyagoldalakkal azonos színek, világos és sötét témában is. */
 .area-band { position:sticky; top:0; z-index:20; min-height:var(--band-h); padding:.45rem 1rem; background:#7dd3fc; color:#06204d; border-bottom:3px solid #0b2f6b; font:700 .95rem/1.4 var(--sans); letter-spacing:.14em; text-align:center; }
 [id] { scroll-margin-top:calc(var(--band-h) + .5rem); }
