@@ -44,7 +44,18 @@ Forrás: `https://cspiya.github.io/wenova-ai-sales-workshop/`, névtelen HTTP-k�
 
 ### 2.2 Telepítési próba a közzétett forrásból
 
-**Eredmény: nem fejeződött be.** Az ok a próba saját engedélybeállítása, a futás nem igazol tananyaghibát, de a telepítés sikerét sem.
+**Eredmény: két kísérlet futott, egyik sem fejeződött be.** Mindkettőt a próba saját engedélybeállítása állította meg, ezek tesztbeállítási hibák. A futások nem igazolnak tananyaghibát, de a telepítés sikerét sem.
+
+| Kísérlet | Mappa | Idő a leállásig | Leállás oka | Eredmény a lemezen |
+| --- | --- | --- | --- | --- |
+| 1. (tesztbeállítási hiba) | `C:\zulu\_wt\_clean\final-test\Wenova-AI-Sales-Workshop` | 68,6 másodperc | A szűk engedélylista elutasította a `cp -R` másolást | Üres `Tananyag.uj-20261119-040134` mappa, 0 fájl |
+| 2. (tesztbeállítási hiba) | `C:\zulu\_wt\_clean\final-test-2\Wenova-AI-Sales-Workshop` | 31,3 másodperc | A próbához hozzáadott `Bash(claude:*)` tiltás mellett elutasítást kapott az összetett letöltő parancs, amelyben a `claude plugin list` is szerepelt | Üres munkamappa, 0 fájl |
+
+A 2. kísérlet munkamenet-azonosítója `7f3c3476-095f-492f-857a-238550a08b27`, 5 kör, 1 elutasított parancs, 04:09:30 és 04:10:01 között. A Claude az elutasítás után nem próbált más utat, hanem jóváhagyást kért.
+
+A 2. kísérlet új mappában futott, mert az 1. kísérlet mappájának törlését és újralétrehozását tartalmazó parancsot a futtatókörnyezet engedélyezési rétege elutasította. A régi mappa változatlanul a helyén maradt. További kísérlet nem indult, mert a megbízás egyetlen újrafuttatást engedett.
+
+Az alábbi két táblázat az 1. kísérlet adatait és lemezállapotát rögzíti.
 
 | Adat | Érték |
 | --- | --- |
@@ -69,7 +80,7 @@ A futás a `cp -R` másolásnál állt meg, mert a próba engedélybeállítása
 | `Munka/` almappák | **Nem jöttek létre** |
 | Gyökérben `AGENTS.md`, `CLAUDE.md` | **Nem jöttek létre** |
 
-**„Kezdjük a felkészülést.” új munkamenetben: nem futott.** Az előfeltétele, a kész telepítés hiányzik, ezért az első indítás felméréséről nincs megfigyelés. A megbízás két futást engedett, ezért a telepítést nem indítottam újra.
+**„Kezdjük a felkészülést.” új munkamenetben: nem futott.** Az előfeltétele, a kész telepítés egyik kísérletben sem jött létre, ezért az első indítás felméréséről nincs megfigyelés.
 
 **A próba korlátai:** a profilban már volt egy korábbi plugin (`wenova-sales-workshop`, `16b27bf77067`, helyi mappából telepítve), tehát a profil nem teljesen tiszta. A `claude plugin` parancsokat a próba szándékosan tiltotta, mert a profilt módosítanák, így a plugin telepítési útja nem volt próbálva.
 
