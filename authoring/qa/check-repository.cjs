@@ -18,6 +18,15 @@ const unix=p=>p.split(path.sep).join('/');
 const attrs=tag=>Object.fromEntries([...tag.matchAll(/([\w:-]+)\s*=\s*(["'])(.*?)\2/gs)].map(m=>[m[1].toLowerCase(),m[3]]));
 const clean=s=>s.replace(/<!--[\s\S]*?-->/g,'');
 const elements=s=>[...clean(s).matchAll(/<[a-z][^>]*>/gi)].map(m=>({name:m[0].match(/^<(\w+)/)[1].toLowerCase(),a:attrs(m[0])}));
+// Participant pages stay in materials/: the root home page, operations/ and authoring/ are instructor pages.
+const SITE_ADDRESS=/^(?:(?:https?:)?\/\/cspiya\.github\.io)?\/wenova-ai-sales-workshop(?=[/?#]|$)/i;
+function leavesParticipantArea(target,file,root){
+ let url=target.trim();try{url=decodeURIComponent(url);}catch{/* an invalid URL is reported by the link check */}
+ const site=SITE_ADDRESS.exec(url),dest=(site?url.slice(site[0].length):url).split(/[?#]/)[0];
+ if(!site&&(/^(?:[a-z][\w+.-]*:|\/\/)/i.test(url)||!dest))return false;
+ const resolved=site?path.join(root,dest):path.resolve(path.dirname(file),dest),publicRoot=path.join(root,'materials');
+ return resolved!==publicRoot&&!resolved.startsWith(publicRoot+path.sep);
+}
 function check(root=ROOT){
  const errors=[],files=[],hashes={},external=new Set();let links=0,htmlCount=0,materialLinks=0;const lessonIds=[];
  function walk(dir){for(const d of fs.readdirSync(dir,{withFileTypes:true})){if(['.git','node_modules','artifacts'].includes(d.name)||d.name.startsWith('.validation-test-'))continue;const p=path.join(dir,d.name);if(d.isSymbolicLink()){errors.push('Symlink requires explicit review: '+unix(path.relative(root,p)));continue;}if(d.isDirectory())walk(p);else files.push(p);}}
@@ -55,6 +64,12 @@ function check(root=ROOT){
    if(fragment&&path.extname(resolved)==='.md'){
     if(!markdownInfo(fs.readFileSync(resolved,'utf8')).anchors.includes(fragment))errors.push(relative+': missing Markdown anchor '+target);
    }
+  }
+ }
+ for(const file of files){
+  if(!file.startsWith(publicRoot+path.sep)||!/\.html?$/i.test(file))continue;
+  for(const {a} of elements(fs.readFileSync(file,'utf8')))for(const value of [a.href,a.src,a.action].filter(Boolean)){
+   if(leavesParticipantArea(value.replace(/&amp;/g,'&'),file,root))errors.push(unix(path.relative(root,file))+': participant page links to an instructor page: '+value);
   }
  }
  if(new Set(lessonIds).size!==lessonIds.length)errors.push('Duplicate lesson IDs');

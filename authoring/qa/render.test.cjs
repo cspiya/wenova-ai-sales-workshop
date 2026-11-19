@@ -1,7 +1,7 @@
 'use strict';
 const {test}=require('node:test'),assert=require('node:assert/strict');
 const fs=require('node:fs'),path=require('node:path');
-const {run,acceptCustom,render,files,output,ROOT,SITE_URL}=require('./render.cjs');
+const {run,acceptCustom,render,files,output,inventory,ROOT,SITE_URL,AREAS}=require('./render.cjs');
 function fixture(fn){
  const root=fs.mkdtempSync(path.join(__dirname,'.validation-test-'));
  const put=(p,s)=>{fs.mkdirSync(path.dirname(path.join(root,p)),{recursive:true});fs.writeFileSync(path.join(root,p),s);};
@@ -67,8 +67,8 @@ test('Markdown source is only an invisible alternate link and instructor pages a
  run({root});
  const html=fs.readFileSync(path.join(root,'materials/modules/01-demo.html'),'utf8');
  assert.match(html,/<head>.*<link rel="alternate" type="text\/markdown" href="01-demo\.md">.*<\/head>/s);
- assert.doesNotMatch(html,/Markdown-forrás|HTML-változat|<a [^>]*href="01-demo\.md"|<script|instructor-flag|page--instructor/);
- for(const page of ['operations/index.html','operations/instructor-notes/01-demo.html']){const notes=fs.readFileSync(path.join(root,page),'utf8');assert.match(notes,/page--instructor/);assert.match(notes,/<div class="instructor-flag" role="note">OKTATÓI OLDAL<\/div>/);assert.match(notes,/instructor-notes\/notes\.css|href="notes\.css"/);}
+ assert.doesNotMatch(html,/Markdown-forrás|HTML-változat|<a [^>]*href="01-demo\.md"|<script|area--instructor/);
+ for(const page of ['operations/index.html','operations/instructor-notes/01-demo.html']){const notes=fs.readFileSync(path.join(root,page),'utf8');assert.match(notes,/area--instructor/);assert.match(notes,/<div class="area-band" role="note">OKTATÓI OLDAL<\/div>/);assert.match(notes,/instructor-notes\/notes\.css|href="notes\.css"/);}
 }));
 test('each schedule row shows its exact workbook target and the presenter note as plain text',()=>{
  const html=render('materials/schedule.md');
@@ -98,6 +98,19 @@ test('the published HTML-változat link stays hidden on the rendered page',()=>f
  run({root});
  for(const page of ['materials/modules/01-demo.html','materials/index.html'])assert.doesNotMatch(fs.readFileSync(path.join(root,page),'utf8'),/HTML-változat/,page);
 }));
+test('every page carries exactly its own audience band and theme class',()=>{
+ const expected=p=>p.startsWith('materials/')?'participant':'instructor';
+ const seen=new Set();
+ assert.deepEqual(AREAS,{participant:'HALLGATÓI ANYAG',instructor:'OKTATÓI OLDAL'});
+ for(const source of ['README.md','authoring/README.md','authoring/template.md','operations/README.md'])assert.equal(expected(source),'instructor',source);
+ for(const source of inventory()){
+  const html=render(source),area=expected(source);seen.add(area);
+  assert.deepEqual([...html.matchAll(/<div class="area-band" role="note">([^<]*)<\/div>/g)].map(m=>m[1]),[AREAS[area]],source);
+  assert.deepEqual([...html.match(/<body class="([^"]*)"/)[1].matchAll(/area--(\w+)/g)].map(m=>m[1]),[area],source);
+  if(area==='participant')assert.doesNotMatch(html,/<script/,source);
+ }
+ assert.deepEqual([...seen].sort(),Object.keys(AREAS).sort());
+});
 test('stale output and changed Markdown fail check without repairing files',()=>fixture((root,put)=>{
  put('README.md','# Cím\n');run({root});put('index.html','manual change');
  assert.throws(()=>run({root,check:true}),/stale HTML/);assert.equal(fs.readFileSync(path.join(root,'index.html'),'utf8'),'manual change');
