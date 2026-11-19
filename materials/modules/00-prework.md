@@ -339,7 +339,7 @@ Nézd meg 5 percig a Brandiseer és az EstiWise felületét. Elég, ha tudod, ho
 
 ### Ezt készíted el
 
-A `Munka/00-Felkeszules/forrasok/` mappában a saját forrásaidat. Ebből építed reggel a Cég-DNS-t. A **Cég-DNS** egy oldal arról, kinek, mit és milyen hangon ad el a céged; a nap minden blokkja ebből dolgozik.
+A `Munka/00-Felkeszules/forrasok/` mappában a saját forrásaidat. Ebből építed reggel a Cég-DNS-t. A **Cég-DNS** a céged teljes leírása. A későbbi blokkok a belőle készült cégprofilt használják.
 
 <a name="00-prework.04-sources--needs"></a>
 
@@ -520,7 +520,7 @@ Saját cégről mintára váltáskor külön munkapéldányt használj, és ne k
 
 ## Gyakorlópéldák
 
-Három kitalált vállalkozás van a `scenarios/` mappában. A Cég-DNS, a hangprofil, a mintapostafiók és a CRM-minta az [IrodaLiget](../scenarios/office-plants/README.md) példán készült el; a 03-as és 04-es blokk mentőútja is erre épül.
+Három kitalált vállalkozás van a `scenarios/` mappában. A Cég-DNS, a márkahang, a mintapostafiók és a CRM-minta az [IrodaLiget](../scenarios/office-plants/README.md) példán készült el; a 03-as és 04-es blokk mentőútja is erre épül.
 
 <a name="continue"></a>
 

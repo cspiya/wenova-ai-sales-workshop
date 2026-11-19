@@ -42,7 +42,7 @@ A nap végén minden kifelé menő művelet piszkozat marad: levél, Sales Bot-�
 
 ### Bemenet
 
-A legutóbbi `progress.json`-ban kijelölt aktív DNS és hangprofil, az öt agentfájl a `Tananyag/starter-kit/agents/` mappában. A három partner connectora (Brandiseer, Sales Bot, EstiWise), amelyet a 02–04-es blokkban kötöttél be. A nap eredményei: a 02-es blokk tartalma (vagy `campaign-plan.md`), a 03-as blokk `leads.csv`, `outreach.md`, `customer-brief.md` fájlja és Sales Bot-kampánya, a 04-es blokk `proposal.md`, `handoff.md` fájlja és EstiWise-ajánlata. A „CRM – [cégnév]” táblázat (vagy a saját Excel-fájlod).
+A legutóbbi `progress.json`-ban kijelölt aktív DNS és márkahang, az öt agentfájl a `Tananyag/starter-kit/agents/` mappában. A három partner connectora (Brandiseer, Sales Bot, EstiWise), amelyet a 02–04-es blokkban kötöttél be. A nap eredményei: a 02-es blokk tartalma (vagy `campaign-plan.md`), a 03-as blokk `leads.csv`, `outreach.md`, `customer-brief.md` fájlja és Sales Bot-kampánya, a 04-es blokk `proposal.md`, `handoff.md` fájlja és EstiWise-ajánlata. A „CRM – [cégnév]” táblázat (vagy a saját Excel-fájlod).
 
 <a name="overview-2"></a>
 
@@ -112,7 +112,7 @@ Elfogadod-e a piszkozatot. Mely sorok kerüljenek a CRM-be, és milyen szakaszba
 
 ```text
 Postás: keresd meg a WORKSHOP-TESZT tárgyú levelemet, és mellette legfeljebb 5 mai levélszálat. A hírleveleket és az automatikus értesítéseket hagyd ki.
-Add meg a táblázatot az inbox.md szerint. Utána a WORKSHOP-TESZT levélre írj válaszpiszkozatot a legutóbbi progress.json-ban kijelölt hangprofil alapján; árat és határidőt csak az aktív DNS-ből vehetsz.
+Add meg a táblázatot az inbox.md szerint. Utána a WORKSHOP-TESZT levélre írj válaszpiszkozatot a legutóbbi progress.json-ban kijelölt márkahang alapján; árat és határidőt csak az aktív DNS-ből vehetsz.
 A piszkozatot itt mutasd meg, én másolom a levelezőbe. Semmit ne küldj el.
 ```
 
@@ -356,7 +356,7 @@ Ha a táblázat nem érhető el, a sort a `launch-plan.md` végére írd. Ha az 
 
 ### Ezt viszed tovább
 
-**Mit viszel haza:** egy Claude-projektet a saját Cég-DNS-eddel és hangprofiloddal; öt agentet (Karmester, Író, Ellenőr, Postás, CRM); a partnerrendszerek bekötését a saját fiókjaidban; egy CRM-táblát „Heti mérés” lappal; egy végigvitt ügyféleset leírását; és egy holnapi tervet heti rutinnal. A tananyag és a [tanulási kísérő](../assistant.md) hazavihető: bármelyik blokk újraindítható a „Kezdjük az N. blokkot” mondattal.
+**Mit viszel haza:** egy Claude-projektet a saját Cég-DNS-eddel és márkahangoddal; öt agentet (Karmester, Író, Ellenőr, Postás, CRM); a partnerrendszerek bekötését a saját fiókjaidban; egy CRM-táblát „Heti mérés” lappal; egy végigvitt ügyféleset leírását; és egy holnapi tervet heti rutinnal. A tananyag és a [tanulási kísérő](../assistant.md) hazavihető: bármelyik blokk újraindítható a „Kezdjük az N. blokkot” mondattal.
 
 <a name="05-pipeline-review.03-measure-launch--extra"></a>
 
@@ -388,7 +388,11 @@ Saját cégről mintára váltáskor ne keverd a minta árait a saját ajánlato
 
 ## Gyakorlópéldák
 
-Az [IrodaLiget](../scenarios/office-plants/README.md) teljes kitalált lánca: alaplap → DNS → lead → igény → ajánlat → átadás → CRM → folyamatpróba → indulási terv. A végrehajtási mód mindenhol `simulation`.
+A teljes kitalált lánc az [IrodaLiget](../scenarios/office-plants/README.md) példáján.
+
+Cég-DNS és cégprofil → lead → igény → ajánlat → átadás → CRM → folyamatpróba → indulási terv.
+
+A végrehajtási mód mindenhol `simulation`.
 
 <a name="outlook"></a>
 

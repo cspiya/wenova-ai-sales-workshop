@@ -53,7 +53,7 @@ Magyar KKV-k, közép- és nagyvállalatok tulajdonosainak, marketing- és ért�
 
 ### Mit építünk?
 
-Cég-DNS és saját AI-csapat → tartalom a céged hangján → LinkedIn-megkeresés és leadkezelés → igényfelmérés és ajánlat → levelek, CRM és egy ügyfél végig. A **Cég-DNS** egy oldal arról, kinek, mit és milyen hangon adsz el; reggel készül, és minden blokk ebből dolgozik. A nap végére lesz egy dokumentált ügyféleseted, amelyben jelölöd, mely lépéseket próbáltad ki és melyeket végezted el mintából. A másnapi tervedet is elkészíted.
+Cég-DNS és saját AI-csapat → tartalom a céged hangján → LinkedIn-megkeresés és leadkezelés → igényfelmérés és ajánlat → levelek, CRM és egy ügyfél végig. Reggel elkészíted a céged teljes leírását, a Cég-DNS-t. A partnerblokkok a belőle készült cégprofilra épülnek. A nap végére lesz egy dokumentált ügyféleseted, amelyben jelölöd, mely lépéseket próbáltad ki és melyeket végezted el mintából. A másnapi tervedet is elkészíted.
 
 <a name="agenda-4"></a>
 
@@ -86,7 +86,7 @@ Minden partnerblokk felépítése: rövid bevezető, vezetett gyakorlat a saját
 
 ### A nap eszköze: Claude Desktop, Cowork mód
 
-Egész nap egyetlen Cowork-projektben dolgozol, a gépeden lévő `Wenova-AI-Sales-Workshop` munkamappában: a `Tananyag/` a workshop anyaga, a `Munka/` a te eredményeid. A Claude a mappa [AGENTS.md](AGENTS.md) fájlja szerint dolgozik; a Cég-DNS, a hangprofil és az öt agent (Karmester, Író, Ellenőr, Postás, CRM) innen dolgozik. Vizuális eredményeket (kampányváz, posztelőnézet, a nap összefoglalója) HTML-fájlként kapsz, a böngészőben nyitod meg. A levelezőt, a Google-táblázatot és a három partnerrendszert connectorral (engedélyezett kapcsolattal) éred el a Claude-ból. Ahol egy kapcsolat nem működik, mintafájllal vagy kézi lépéssel folytatod, és ezt jelöljük.
+Egész nap egyetlen Cowork-projektben dolgozol, a gépeden lévő `Wenova-AI-Sales-Workshop` munkamappában: a `Tananyag/` a workshop anyaga, a `Munka/` a te eredményeid. A Claude a mappa [AGENTS.md](AGENTS.md) fájlja szerint dolgozik. A projektben használod a Cég-DNS-t, a márkahangot és az öt agentet (Karmester, Író, Ellenőr, Postás, CRM). Vizuális eredményeket (kampányváz, posztelőnézet, a nap összefoglalója) HTML-fájlként kapsz, a böngészőben nyitod meg. A levelezőt, a Google-táblázatot és a három partnerrendszert connectorral (engedélyezett kapcsolattal) éred el a Claude-ból. Ahol egy kapcsolat nem működik, mintafájllal vagy kézi lépéssel folytatod, és ezt jelöljük.
 
 <a name="agenda-7"></a>
 
@@ -98,7 +98,7 @@ A személyes LinkedIn bekötése nem feltétel: a Sales Bot-gyakorlat ma sandbox
 
 ### Hazavihető eredmény
 
-Claude-projekt a saját Cég-DNS-eddel és hangprofiloddal; öt agent; kampányanyagok; minősített leadek és üzenetsor; ajánlattervezet; CRM-tábla heti méréssel; egy végigvitt ügyféleset; holnapi indulási terv és heti rutin.
+Claude-projekt a saját Cég-DNS-eddel és márkahangoddal; öt agent; kampányanyagok; minősített leadek és üzenetsor; ajánlattervezet; CRM-tábla heti méréssel; egy végigvitt ügyféleset; holnapi indulási terv és heti rutin.
 
 **Szervező: Wenova · Szakmai partnerek: Brandiseer, Blackhole Media, EstiWise.**
 
@@ -154,6 +154,10 @@ A [Buffer](https://buffer.com) a 02-es blokk választható bónuszához kell. Ha
 
 ## Az elkészülő munkadarabok
 
+- A **Cég-DNS** a céged teljes leírása. Összefoglalja, kik vagytok, kinek és mit adtok el, milyen bizonyítékaitok vannak, mit mondtok és mit nem.
+- A **márkahang** a céged stílusa és szóhasználata (angolul *brand voice*). A küldött leveleidből állítod össze.
+- A **cégprofil** a Cég-DNS rövid, mezőkre bontott kivonata. A későbbi blokkok és a partnereszközök ezt használják.
+
 Minden output a résztvevő saját munkacsomagjába kerül. A példavállalkozás és az ügyfél azonosítója a láncon végig azonos. A nyitott adat értéke `open`; nem nullából vagy kitalált számból számolunk. Pénz: pénznem, nettó/bruttó jelölés és egység mindig kell.
 
 | Fájl | Kötelező mezők |
@@ -192,7 +196,7 @@ Az ajánlat számítását az árlista és a mennyiség alapján külön ellenő
 
 ## Fogalomtár
 
-- **Cég-DNS:** egy oldal arról, kinek, mit és milyen hangon ad el a cég; minden állítás forrással, a hiány „Nincs megadva”.
+- A **Cég-DNS** a céged teljes leírása. Az állítások mellett ott a forrásuk, a hiányt a „Nincs megadva” jelöli.
 - **ICP (ideal customer profile):** az ideális ügyfél leírása: iparág, méret, döntéshozó, probléma, kizáró jel.
 - **Agent:** állandó feladatleírás, amelyet a Claude egy indítómondatra követ.
 - **Karmester (orchestrator), Író (maker), Ellenőr (reviewer):** a koordináló, a készítő és a friss beszélgetésben független ellenőrző szerep.

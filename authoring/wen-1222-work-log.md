@@ -116,3 +116,18 @@ A Buffer piszkozat és ütemezett sor eltérését a [Buffer súgója](https://s
 **Ellenőrzés.** Node `24.22.1`, npm `11.19.1`. Az offline `npm ci --ignore-scripts` 7 csomagot telepített, kilépési kódja 0. Az `npm run render` eredménye 22 prezentációforrás, kilépési kódja 0. Az `npm run check` eredménye 22 aktuális HTML-oldal, 1214 helyi hivatkozás, 20 lecke, kilépési kódja 0. Mind a 176 követett fájl SHA-256 lenyomata változatlan maradt e parancs alatt. Az `npm test` eredménye 10 sikeres teszt, 0 hiba, 0 kihagyás, kilépési kódja 0. A 20 lecke azonosítója, állapota és időkerete egyezik a kiinduló változattal. A `git diff --check` sikeres. A `materials/` és `operations/` alatt ellenőrzött 144 követett fájl összesített SHA-256 lenyomata a rendezett útvonal és fájllenyomat párok tömör JSON-szótára alapján `285b71c1acf5a690f54e30ed450f4a37200c708c416170309749b567e3d70ad5`.
 
 **Review.** A független második kör `REVISE` eredménye a `b55578b` revízióra vonatkozik. A harmadik körben statikus szerzői ellenőrzés és gépi ellenőrzés történt. A módosított változat független review-ja, böngészős és időmért résztvevői próbája nyitott. Állapot `NOT_READY`.
+
+## Terminológiai szerkesztés
+
+**Munkamenet** `01a1f14c-80c5-79a0-96a5-ed94fe286daf`. Magyar résztvevői és oktatói anyag, DECISION_OR_LEARNING profil, alacsony kockázatú terminológiai szerkesztés. A `term-sweep.md` brief a forrás. Kiinduló revízió `70700a7c209d124b7d186a48acfc98dd7122ab47`, Wenova OS-forrás `f450f6fd91e87eca4c24725e1b1541aa61ecc817`.
+
+| Döntés | Döntéshozó és forrás | Szerzői végrehajtás |
+| --- | --- | --- |
+| WEN-1222/D8 | Tulajdonos, a `term-sweep.md` tulajdonosi döntése | A magyar tananyagban márkahang és cégprofil szerepel. A 01-es blokk nyitánya és a résztvevői kimenet tisztázza a kapcsolatukat a Cég-DNS-sel. |
+| WEN-1222/D9 | Tulajdonos, a `term-sweep.md` D) pontja | A zárójegyzet a Wenova rövid, ElevenLabs-narrációs animációját és a Brandiseer állóképes blokkját rögzíti. |
+
+A 83 szócsere 30 Markdown-fájlt érintett. A zárójegyzettel együtt 31 tananyagforrás és 11 generált HTML-nézet módosult. A hat partnerforrás a célzott alakok és névelők visszacserélése után bájtra egyezik az `a8a73c4` változattal. A különbség tíz sorra esik: 02-es modul 38., 226., 255., illetve 03-as modul 85., illetve 04-es modul 95., 118., 119., 129., 140., 150. sor. A `materials/` és `operations/` teljes szöveges keresése nulla régi alakot talált. A módosított források horgonyai, linkcéljai, státuszai, időpontjai és perckeretei egyeznek a kiinduló változattal.
+
+Node 24.22.1 és npm 11.19.1 alatt az `npm run render` 22 prezentációforrást, az `npm run check` 22 aktuális HTML-oldalt, 1220 helyi hivatkozást és 20 leckét jelzett. Az `npm test` 10 tesztet futtatott sikeresen. Mindhárom kilépési kód 0. A 42 módosított tananyagfájl rendezett útvonal- és SHA-256-párjainak összesített lenyomata `d046db9acb9de0d275fa3b734a23a879593a746fcbc8435d60fbd9ac43c8543b`.
+
+A záró videóról a briefben leírt műsorelemet rögzítettem. Az operations kézikönyv saját workshopmarketingre vonatkozó vizuális javaslatai másik felhasználási helyzetet írnak le. A munka szerzői ellenőrzés, a független review és a demó próbája nyitott. Állapot `NOT_READY`.

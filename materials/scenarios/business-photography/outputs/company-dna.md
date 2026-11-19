@@ -60,7 +60,7 @@ Kis szakértői csapatoknak készítünk egységes céges portrékat. (F-01)
 
 | ID | Forrás | Típus | Dátum |
 | --- | --- | --- | --- |
-| F-01 | [Üzleti alaplap](business-profile.md) és [értékesítési terv](sales-strategy.md) | fájl | 2026-11 |
+| F-01 | [Cégprofil](business-profile.md) és [értékesítési terv](sales-strategy.md) | fájl | 2026-11 |
 | F-02 | [Árlista](../price-list.csv) | fájl | 2026-11 |
 | F-05 | A mintacég ügyvezetőjének kitalált közlése | oktatási minta | 2026-11 |
 

@@ -1,6 +1,6 @@
 # Agent-sablonok: a saját AI-csapatod
 
-Öt szerep, öt fájl. Mindegyik egy „agent”: egy állandó feladatleírás, amelyet Claude a megfelelő indítómondatra követ. A sablonok a Cég-DNS-re (`company-dna.md`) és a hangprofilra (`voice-profile.md`) épülnek, ezért céges adatot nem kell beléjük írnod. Csak a `[cégnév]` helyére írd a céged nevét.
+Öt szerep, öt fájl. Mindegyik egy „agent”: egy állandó feladatleírás, amelyet Claude a megfelelő indítómondatra követ. A sablonok a Cég-DNS-re (`company-dna.md`) és a márkahangra (`voice-profile.md`) épülnek, ezért céges adatot nem kell beléjük írnod. Csak a `[cégnév]` helyére írd a céged nevét.
 
 | Fájl | Szerep | Indítómondat | Mikor használod először? |
 | --- | --- | --- | --- |

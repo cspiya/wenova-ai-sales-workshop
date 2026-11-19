@@ -1,6 +1,6 @@
 # Cég-DNS – [cégnév]
 
-A Cég-DNS-ben rögzíted, kinek, mit és milyen hangon ad el a céged, mi a következő célja, hogyan szerez ügyfelet, és hol dönt ember. Minden agent és minden partnerblokk ebből dolgozik. Minden állítás mellett ott a forrása (F-01, F-02 …); amit egyik forrás sem mond ki, az „Nincs megadva”. A „Nincs megadva” nem hiba, hanem teendő: a 9. szakaszba kerül.
+A Cég-DNS-ben rögzíted, kinek, mit és milyen hangon ad el a céged, mi a következő célja, hogyan szerez ügyfelet, és hol dönt ember. Az agentek ebből dolgoznak, a partnerblokkokhoz pedig a belőle készült cégprofilt adod tovább. Minden állítás mellett ott a forrása (F-01, F-02 …); amit egyik forrás sem mond ki, az „Nincs megadva”. A „Nincs megadva” nem hiba, hanem teendő: a 9. szakaszba kerül.
 
 Kitöltött, kitalált minta: [IrodaLiget Cég-DNS](../scenarios/office-plants/outputs/company-dna.md).
 
@@ -12,7 +12,7 @@ Kitöltött, kitalált minta: [IrodaLiget Cég-DNS](../scenarios/office-plants/o
 | Státusz | tervezet / jóváhagyott |
 | Gazda (ki felel érte) | Nincs megadva |
 | Utolsó módosítás | ÉÉÉÉ-HH-NN |
-| Kapcsolódó fájlok | voice-profile.md (hangprofil), business-profile.md és sales-strategy.md (kivonat a partnerblokkokhoz) |
+| Kapcsolódó fájlok | voice-profile.md (márkahang), business-profile.md (cégprofil), sales-strategy.md (értékesítési kivonat) |
 
 ## 1. Kik vagyunk
 
@@ -75,7 +75,7 @@ A részletes szabályok a `voice-profile.md` fájlban.
 | F-01 | A cég weboldala | weboldal |  |
 | F-02 | Árlista | fájl |  |
 | F-03 | Korábbi ajánlat (anonimizált) | fájl |  |
-| F-04 | Küldött levelek (hangprofilhoz) | levelezés |  |
+| F-04 | Küldött levelek (márkahanghoz) | levelezés |  |
 | F-05 | A gazda szóbeli közlése | szóbeli |  |
 
 ## 9. Hiányok és nyitott kérdések

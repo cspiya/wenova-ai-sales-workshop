@@ -52,7 +52,7 @@ Ne mutass élő Gmailt; a demó a [mintapostafiókkal](../../materials/scenarios
 | --- | --- | --- |
 | 09:40 | A Claude már kérdez a DNS-hez | [Promptsegítség](../../materials/modules/01-business-foundations.md#01-business-foundations.01-offer-and-audience--help): weboldal-szöveg bemásolása |
 | 09:53 | A DNS letöltve és a projektben | A kivonatot (business-profile.md) a 10:27-es zárásban pótolja; a 03-as és 04-es blokknak ez kell |
-| 10:07 | Hangprofil kész | [IrodaLiget hangprofil](../../materials/scenarios/office-plants/outputs/voice-profile.md) átírása |
+| 10:07 | Márkahang kész | [IrodaLiget márkahang](../../materials/scenarios/office-plants/outputs/voice-profile.md) átírása |
 | 10:20 | Az Ellenőr lefutott | Csak Író + Ellenőr, Karmester nélkül |
 
 10:27–10:30 zárás, egy mondat a teremnek: „A DNS-t és a `business-profile.md`-t a projektben hagyjátok; Dani, Balázs és Máté ebből dolgozik.”
@@ -63,7 +63,7 @@ Ne mutass élő Gmailt; a demó a [mintapostafiókkal](../../materials/scenarios
 
 - **A Claude kitalál referenciát vagy árat:** mutasd meg a [kész feltételeket](../../materials/modules/01-business-foundations.md#01-business-foundations.01-offer-and-audience--check), és kérd a forrás-ID-t állításonként.
 - **Túl sok ajánlat:** legfeljebb három, egy fő (O01). A [döntések](../../materials/modules/01-business-foundations.md#01-business-foundations.01-offer-and-audience--decisions) a résztvevőé.
-- **A hangprofilban nevek vannak:** törlés, szerep a név helyett.
+- **A márkahangban nevek vannak:** törlés, szerep a név helyett.
 - **Az Ellenőr ugyanabban a beszélgetésben fut:** állítsd le, új beszélgetés. Ez a blokk legfontosabb tanulsága.
 - **Az Ellenőr mindent MEGFELEL-re tesz:** kérdezd meg, ellenőrizte-e K1-et forrással; a „nem ellenőrizhető” nem teljesült.
 - **Régi sablon a projektben a kitöltött mellett:** törlés.
@@ -72,7 +72,7 @@ Ne mutass élő Gmailt; a demó a [mintapostafiókkal](../../materials/scenarios
 
 ### Átadás a partnereknek
 
-A következő blokkok a legutóbbi `progress.json` fájlban kijelölt DNS-re, hangprofilra és üzleti alaplapra építenek ([átadás](../../materials/modules/01-business-foundations.md#01-business-foundations.01-offer-and-audience--handoff)). Szólj a partner előadóinak, hány résztvevő dolgozik mintával (IrodaLiget), hogy a demófiókokat erre készítsék.
+A következő blokkok a legutóbbi `progress.json` fájlban kijelölt DNS-re, márkahangra és cégprofilra építenek ([átadás](../../materials/modules/01-business-foundations.md#01-business-foundations.01-offer-and-audience--handoff)). Szólj a partner előadóinak, hány résztvevő dolgozik mintával (IrodaLiget), hogy a demófiókokat erre készítsék.
 
 **A blokk itt ér véget (egyeztetés, november 18.):** a Wenova-blokk a kész Cég-DNS-sel és az első Karmester–Író–Ellenőr próbafutással zárul. Partnerconnectort ebben a blokkban nem kötünk be: a Brandiseer, a Sales Bot és az EstiWise connectorát minden partner a saját blokkja elején köti be a résztvevőkkel (a résztvevő csak annyit mond: „Kösd be nekem a Brandiseert”, a hitelesítést maga végzi). A nap célja, hogy zárásra mindenkinél mindhárom partnerrendszer be legyen kötve, és a Claude-ból vezérelje őket.
 

@@ -9,7 +9,7 @@
 - [Közös kampányszövegek és kreatívbrief](#campaign)
 - [Sales beszélgetés és utánkövetés](#sales)
 - [Saját workshop mint valós esettanulmány](#dogfooding)
-- [A workshop üzleti alaplapja](#business-profile)
+- [A workshop cégprofilja](#business-profile)
 - [Döntési és végrehajtási napló](#tracker)
 - [Eszközök, hozzáférések és próba](#tools)
 - [A tanfolyam lebonyolítása](#delivery)
@@ -240,7 +240,7 @@ Egy nap alatt vezetett gyakorlatokon kapcsoljuk össze az üzleti ajánlatot, a 
 
 **Kinek szól?** Cégvezetőknek, marketing- és értékesítési szakembereknek, akik egy konkrét üzleti feladaton szeretnének dolgozni. A pontos eszköz- és hozzáférési feltételeket a jelentkezés előtt megadjuk.
 
-**Mivel dolgozol?** Üzleti alaplap, kampánybrief és tartalmak, mintaleadek és üzenetek, igényfelmérés, ajánlattervezet, folytatási terv. A program részletes eredményeit az elfogadott agenda tartalmazza.
+**Mivel dolgozol?** Cégprofil, kampánybrief és tartalmak, mintaleadek és üzenetek, igényfelmérés, ajánlattervezet, folytatási terv. A program részletes eredményeit az elfogadott agenda tartalmazza.
 
 **Program:** Üzleti alapok → márkaazonos kampány → ügyfélszerzés és leadkezelés → ajánlatadás és átadás → közös folyamatpróba.
 
@@ -326,7 +326,7 @@ Egyik állapotból sem következik automatikusan a következő. A hibát, kézi 
 
 | Lépés | Tanított eszköz / szerep | Saját workshopfeladat | Bizonyíték | Emberi döntés |
 | --- | --- | --- | --- | --- |
-| 1. Üzleti alap | Claude; szerkesztéshez Codex is használható | Célközönség, ajánlat, dátum, létszám, nyitott feltételek | [Üzleti alaplap](#business-profile) és jóváhagyott döntések | Partnerek elfogadják az ajánlatot |
+| 1. Üzleti alap | Claude; szerkesztéshez Codex is használható | Célközönség, ajánlat, dátum, létszám, nyitott feltételek | [Cégprofil](#business-profile) és jóváhagyott döntések | Partnerek elfogadják az ajánlatot |
 | 2. Kampány | Brandiseer | Közös kép/videó és partnerenként igazított üzenet | Tényleges export, felhasznált brief, jóváhagyás | Kreatív és állítások elfogadása |
 | 3. Publikálás | Buffer, ha a próba igazolja a szükséges működést | Közös kampány ütemezése | Beütemezett/bejelentkezett poszt és élő URL | Csatorna, időzítés és végső szöveg |
 | 4. Érdeklődők | Sales Bot / Blackhole Media | Releváns megkeresés, válaszfeldolgozás, utánkövetés | Anonimizált aktivitás és összesített eredmény | Címzettkör és küldés jóváhagyása |
@@ -358,7 +358,7 @@ A „hogyan adtuk el” történet csak a tényleges eredményekkel válik lezá
 
 <a name="business-profile"></a>
 
-## A workshop üzleti alaplapja
+## A workshop cégprofilja
 
 **Állapot: partneri egyeztetésre előkészítve, 2026. szeptember 15.** Valós kezdeményezés; a nyitott adat nem végleges ajánlat.
 
@@ -477,7 +477,7 @@ Ha nincs fájlmentési hozzáférése, a résztvevő menti a visszaadott eredmé
 
 | Mikor | Feladat | Kész feltétel |
 | --- | --- | --- |
-| Egy héttel előtte | Résztvevői felkészülés és hozzáférések | Üzleti alaplap, mintaválasztás, eszközpróba és elérhető segítség |
+| Egy héttel előtte | Résztvevői felkészülés és hozzáférések | Cégprofil, mintaválasztás, eszközpróba és elérhető segítség |
 | Főpróba | Egy ügyféleset végigvezetése az összes partnerrel | Minden átadás működik, a kieső eszközre van mintaút |
 | Kezdés előtt | Helyszín, internet, vetítés, résztvevői linkek | Oktatói és résztvevői nézet külön ellenőrizve |
 | Modul közben | Időkeret és elakadók követése | Öt perc elakadás után mentor vagy konkrét mintaút |

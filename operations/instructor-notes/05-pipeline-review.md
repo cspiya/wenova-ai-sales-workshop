@@ -63,6 +63,8 @@ A 35 perc csak a rövid úttal fér bele: a Postás csak a WORKSHOP-TESZT levele
 3. Az Író újrafuttatása ugyanarra a levélre egy új beszélgetésben: a piszkozat már nem ígér árat; az Ellenőr MEGFELEL-t ad.
 4. Kulcsmondat: „Ez a hétfői 30 perc kicsiben: szám vagy ellenőri jelzés → DNS-sor → új verzió → minden agent jobb.”
 
+A zárásban a Wenova egy külön, rövid, színes demóban vetíti le a nap összefoglalóját. A 2D-s animált videó narrációjához ElevenLabs kell. A Brandiseer a saját blokkjában állóképet mutat be.
+
 Utána három résztvevő mondja el a saját holnapi első lépését; végül partneri ajánlatok és visszajelzés.
 
 <a name="notes-6"></a>

@@ -1,4 +1,4 @@
-# Üzleti alaplap
+# Cégprofil
 
 - business_id: open
 - business_name: open

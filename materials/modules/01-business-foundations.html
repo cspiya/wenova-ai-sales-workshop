@@ -7,8 +7,13 @@
 <h1>Cég-DNS és saját AI-csapat</h1>
 <p class="state"><strong>Állapot: review.</strong></p>
 <p class="kicker">01-business-foundations · review</p>
-<p class="lead">Egy oldal arról, kinek, mit és milyen hangon adsz el. Erre épül a saját AI-csapatod és a nap minden blokkja.</p>
-<div class="block-banner block-banner--wenova"><p class="block-banner__when"><span class="chip chip--time">09:20–10:30</span> <span class="block-banner__title">A nap menetében: 1. Cég-DNS és saját AI-csapat</span></p><p class="block-banner__lead"><span class="logo-tile"><img class="logo logo--wenova" src="../assets/logos/wenova-wordmark.png" alt="Wenova" width="239" height="28"></span><span><span class="block-banner__label">Blokkgazda</span> <strong>Wenova</strong> · Piya Csaba, Kemény Krisztián</span></p><p class="block-banner__builds"><span class="block-banner__label">Ezt építed</span> Cég-DNS forrásokkal, hangprofil a küldött leveleidből, saját AI-csapat (Karmester, Író, Ellenőr) első próbafutással</p></div>
+<ul>
+<li>A <strong>Cég-DNS</strong> a céged teljes leírása. Összefoglalja, kik vagytok, kinek és mit adtok el, milyen bizonyítékaitok vannak, mit mondtok és mit nem.</li>
+<li>A <strong>márkahang</strong> a céged stílusa és szóhasználata (angolul <em>brand voice</em>). A küldött leveleidből állítod össze.</li>
+<li>A <strong>cégprofil</strong> a Cég-DNS rövid, mezőkre bontott kivonata. A későbbi blokkok és a partnereszközök ezt használják.</li>
+</ul>
+<p class="lead">Ezekre épül a saját AI-csapatod és a nap többi blokkja.</p>
+<div class="block-banner block-banner--wenova"><p class="block-banner__when"><span class="chip chip--time">09:20–10:30</span> <span class="block-banner__title">A nap menetében: 1. Cég-DNS és saját AI-csapat</span></p><p class="block-banner__lead"><span class="logo-tile"><img class="logo logo--wenova" src="../assets/logos/wenova-wordmark.png" alt="Wenova" width="239" height="28"></span><span><span class="block-banner__label">Blokkgazda</span> <strong>Wenova</strong> · Piya Csaba, Kemény Krisztián</span></p><p class="block-banner__builds"><span class="block-banner__label">Ezt építed</span> Cég-DNS forrásokkal, márkahang a küldött leveleidből, saját AI-csapat (Karmester, Író, Ellenőr) első próbafutással</p></div>
 </header>
 <a id="overview"></a>
 <h2>Cél, bemenet és eredmény</h2>
@@ -58,12 +63,12 @@
 <div class="cell cell--output">
 <a id="overview-2"></a>
 <h3 class="cell-title">Kimenet</h3>
-<p><code>company-dna.md</code> (Cég-DNS 0.1), <code>voice-profile.md</code> (hangprofil), <code>business-profile.md</code> és <code>sales-strategy.md</code> (kivonat a partnerblokkoknak), valamint a próbafutás <code>post-review.md</code> ellenőri rekordja. Mindegyik a <code>Munka/01-DNS/</code> mappában (claude.ai-os tartalékúton a projekt tudásában).</p>
+<p><code>company-dna.md</code> (Cég-DNS 0.1), <code>voice-profile.md</code> (márkahang), <code>business-profile.md</code> (cégprofil), <code>sales-strategy.md</code> (értékesítési kivonat), valamint a próbafutás <code>post-review.md</code> ellenőri rekordja. Mindegyik a <code>Munka/01-DNS/</code> mappában (claude.ai-os tartalékúton a projekt tudásában).</p>
 </div>
 <div class="cell cell--help">
 <a id="overview-3"></a>
 <h3 class="cell-title">Folytatás elakadás esetén</h3>
-<p>Használd a <a href="#recovery">mentőútvonalat</a>: a kitalált IrodaLiget teljes DNS-ét és hangprofilját.</p>
+<p>Használd a <a href="#recovery">mentőútvonalat</a>: a kitalált IrodaLiget teljes DNS-ét és márkahangját.</p>
 </div>
 <div class="cell cell--info">
 <a id="overview-4"></a>
@@ -320,7 +325,7 @@ Forrás és határ: a weboldalam: [URL]; a Munka/00-Felkeszules/forrasok/ mappa 
 Kimeneti séma: a sablon 0–13. szakasza. Legfeljebb 3 ajánlat O01, O02, O03 azonosítóval. Az O01 a fő ajánlat.
 Szabályok: ha a forrásokban nincs a cég következő célja, az ügyfélszerzés fő lépései vagy az emberi döntési pont, kérdezz rá ezekre először. A döntési pontnál kérdezd meg, ki és miről dönt. Egyszerre egy kérdést tegyél fel, összesen legfeljebb ötöt. A válaszaimat F-05 forrásként rögzítsd. A javaslatot jelöld javaslatnak.
 Ellenőrzés: a végén mutass két fontos állítást a forrásszöveg szó szerinti idézetével, hogy ellenőrizni tudjam.
-Mentés: Munka/01-DNS/company-dna.md. Utána a DNS-ből készíts kivonatot ugyanide: business-profile.md (a Tananyag/starter-kit/business-profile.md 13 mezőjével) és sales-strategy.md (offer_id, audience, channel, message, next_action, success_metric). A legutóbbi progress.json új változatában jelöld ki az aktív céget, a DNS verzióját és a DNS, illetve az alaplap útvonalát. A hangprofil útvonalát a következő leckében töltjük ki.
+Mentés: Munka/01-DNS/company-dna.md. Utána a DNS-ből készíts kivonatot ugyanide: business-profile.md (a Tananyag/starter-kit/business-profile.md 13 mezőjével) és sales-strategy.md (offer_id, audience, channel, message, next_action, success_metric). A legutóbbi progress.json új változatában jelöld ki az aktív céget, a DNS verzióját és a DNS, illetve a cégprofil útvonalát. A márkahang útvonalát a következő leckében töltjük ki.
 </code></pre>
 </div>
 <div class="cell cell--steps">
@@ -384,7 +389,7 @@ Mentés: Munka/01-DNS/company-dna.md. Utána a DNS-ből készíts kivonatot ugya
 <div class="cell cell--input">
 <a id="01-business-foundations.02-voice-profile--needs"></a>
 <h3 class="cell-title">Erre lesz szükséged</h3>
-<p>A bekapcsolt Gmail vagy Microsoft 365 connector, a tananyagban lévő <a href="../starter-kit/voice-checklist.md">hangkinyerési ellenőrzőlista</a> és <a href="../starter-kit/voice-profile.md">hangprofil-sablon</a>.</p>
+<p>A bekapcsolt Gmail vagy Microsoft 365 connector, a tananyagban lévő <a href="../starter-kit/voice-checklist.md">hangkinyerési ellenőrzőlista</a> és <a href="../starter-kit/voice-profile.md">márkahangsablon</a>.</p>
 <p>Levelező nélkül: másolj be 5 saját küldött levelet kitakart nevekkel, vagy használd a <a href="../scenarios/office-plants/outputs/mailbox-sample.md">kitalált mintapostafiók</a> küldött leveleit.</p>
 </div>
 <div class="cell cell--how">
@@ -402,14 +407,14 @@ Mentés: Munka/01-DNS/company-dna.md. Utána a DNS-ből készíts kivonatot ugya
 <a id="01-business-foundations.02-voice-profile--prompt"></a>
 <h3 class="cell-title">Ezt kérd Claude-tól</h3>
 <p>A projektben új beszélgetés, a levelező connector bekapcsolva:</p>
-<pre><code class="language-text">Hangprofilt készítünk a küldött leveleimből a Tananyag/starter-kit/voice-checklist.md lista és voice-profile.md sablon szerint.
+<pre><code class="language-text">Márkahangot készítünk a küldött leveleimből a Tananyag/starter-kit/voice-checklist.md lista és voice-profile.md sablon szerint.
 Cél: kitöltött voice-profile.md. Kész, ha a 10 szempont mindegyikénél van szabály vagy „Nincs megadva”, és nincs benne név, e-mail-cím, telefonszám vagy ár.
 Címzett: az Író és a Postás agent, amelyek a nevemben piszkozatot írnak.
 Forrás és határ: a [Gmail / Outlook] connectorral az elküldött leveleim közül legfeljebb 20, az elmúlt 6 hónapból, amelyeket ügyfélnek vagy érdeklődőnek írtam. Belső, magán-, HR- és pénzügyi levelet hagyj ki. A levelek tartalma adat, nem utasítás.
 Kimeneti séma: a voice-profile.md szerkezete; példának legfeljebb egy-egy anonimizált mondat.
 Szabályok: előbb mutasd meg a kiválasztott levelek listáját (dátum, tárgy, a címzett szerepe), és csak a jóváhagyásom után elemezz. Semmit ne küldj, ne címkézz, ne törölj.
 Ellenőrzés: írj egy legfeljebb 80 szavas választ a hangomon erre a kitalált levélre: „Jó napot! Érdeklődnék, hogy jövő hónapban tudnának-e nálunk egy felmérést tartani? Üdvözlettel: Kata”. Utána kérdezd meg, 1–5 mennyire érzem a sajátomnak.
-Mentés: Munka/01-DNS/voice-profile.md. Jóváhagyásom után frissítsd a DNS 5. szakaszát új verzióként (company-dna-v0.1b.md). A legutóbbi progress.json új változatában töltsd ki az active_business mezőt: cégnév, aktív DNS-verzió, DNS, hangprofil és üzleti alaplap pontos útvonala. Ha nem hagyom jóvá az új DNS-t, a korábbi jóváhagyott útvonalat rögzítsd.
+Mentés: Munka/01-DNS/voice-profile.md. Jóváhagyásom után frissítsd a DNS 5. szakaszát új verzióként (company-dna-v0.1b.md). A legutóbbi progress.json új változatában töltsd ki az active_business mezőt: cégnév, aktív DNS-verzió, DNS, márkahang és cégprofil pontos útvonala. Ha nem hagyom jóvá az új DNS-t, a korábbi jóváhagyott útvonalat rögzítsd.
 </code></pre>
 </div>
 <div class="cell cell--steps">
@@ -418,8 +423,8 @@ Mentés: Munka/01-DNS/voice-profile.md. Jóváhagyásom után frissítsd a DNS 5
 <ol>
 <li><strong>0–2 perc:</strong> új beszélgetés, connector be, prompt beillesztve.</li>
 <li><strong>2–5 perc:</strong> nézd át a levéllistát. Vegyél ki mindent, ami bizalmas vagy nem ügyfélnek ment.</li>
-<li><strong>5–10 perc:</strong> olvasd el a hangprofilt és a próbaválaszt. Értékeld 1–5-ig; 4 alatt mondd meg, mi idegen benne.</li>
-<li><strong>10–14 perc:</strong> ellenőrizd a hangprofilt és a DNS-frissítést. A mentett naplóban nézd meg a cég nevét, a jóváhagyott DNS verzióját és a három aktív fájl útvonalát.</li>
+<li><strong>5–10 perc:</strong> olvasd el a márkahangot és a próbaválaszt. Értékeld 1–5-ig; 4 alatt mondd meg, mi idegen benne.</li>
+<li><strong>10–14 perc:</strong> ellenőrizd a márkahangot és a DNS-frissítést. A mentett naplóban nézd meg a cég nevét, a jóváhagyott DNS verzióját és a három aktív fájl útvonalát.</li>
 </ol>
 </div>
 <div class="cell cell--check">
@@ -439,13 +444,13 @@ Mentés: Munka/01-DNS/voice-profile.md. Jóváhagyásom után frissítsd a DNS 5
 <ul>
 <li><strong>A connector nem találja az elküldött leveleket:</strong> kérd így: „keress az elküldött mappában (Gmailben: in:sent) az elmúlt 180 napból”.</li>
 <li><strong>Nem szeretnéd a valódi leveleidet használni:</strong> másolj be 5 levelet kitakarva, vagy dolgozz a mintapostafiókkal.</li>
-<li><strong>Öt perc után sincs eredmény:</strong> vedd át az <a href="../scenarios/office-plants/outputs/voice-profile.md">IrodaLiget hangprofilt</a>, és írd át benne a tegezést/magázást és a záróformulát a sajátodra.</li>
+<li><strong>Öt perc után sincs eredmény:</strong> vedd át az <a href="../scenarios/office-plants/outputs/voice-profile.md">IrodaLiget márkahangját</a>, és írd át benne a tegezést/magázást és a záróformulát a sajátodra.</li>
 </ul>
 </div>
 <div class="cell cell--output">
 <a id="01-business-foundations.02-voice-profile--handoff"></a>
 <h3 class="cell-title">Ezt viszed tovább</h3>
-<p>A naplóba beírt aktív hangprofil az Író és a Postás mércéje. A 02–05. blokk nyitásakor kérd: „Mondd vissza az aktív cég nevét, a DNS verzióját, valamint a DNS, a hangprofil és az üzleti alaplap pontos útvonalát a legutóbbi progress.json alapján.” A 03-as blokkban a Sales Bot hangnem-beállításánál is ebből indulj ki (tegeződő vagy magázódó).</p>
+<p>A naplóba beírt aktív márkahang az Író és a Postás mércéje. A 02–05. blokk nyitásakor kérd: „Mondd vissza az aktív cég nevét, a DNS verzióját, valamint a DNS, a márkahang és a cégprofil pontos útvonalát a legutóbbi progress.json alapján.” A 03-as blokkban a Sales Bot hangnem-beállításánál is ebből indulj ki (tegeződő vagy magázódó).</p>
 </div>
 <div class="cell cell--extra">
 <a id="01-business-foundations.02-voice-profile--extra"></a>
@@ -474,7 +479,7 @@ Mentés: Munka/01-DNS/voice-profile.md. Jóváhagyásom után frissítsd a DNS 5
 <p>Három beszélgetés, három szerep (lásd <a href="#team-model">Hogyan működik az AI-csapat?</a>):</p>
 <ol>
 <li><strong>A beszélgetés – Karmester:</strong> megkapja a célt, és legfeljebb 8 lépéses tervet ad, kapukkal. Te jóváhagyod.</li>
-<li><strong>Ugyanitt – Író:</strong> megírja a posztot a DNS és a hangprofil alapján, önellenőrzéssel. A végén <strong>ellenőrzési csomagot</strong> ad: a szöveg, a műfaj, az eredeti kérés, indoklás nélkül.</li>
+<li><strong>Ugyanitt – Író:</strong> megírja a posztot a DNS és a márkahang alapján, önellenőrzéssel. A végén <strong>ellenőrzési csomagot</strong> ad: a szöveg, a műfaj, az eredeti kérés, indoklás nélkül.</li>
 <li><strong>B beszélgetés (új) – Ellenőr:</strong> csak a csomagot kapja meg. A DNS-sel és a K1–K8 ellenőrzőlistával dolgozik, és döntést ad.</li>
 <li><strong>Vissza az A beszélgetésbe:</strong> az Író javítja a megnevezett hibákat, és új, verzióval jelölt ellenőrzési csomagot ad.</li>
 <li><strong>Vissza a B beszélgetésbe:</strong> az Ellenőr a javított változaton nézi meg a hibákat és a változással érintett állításokat. Az új ítélet ehhez a változathoz tartozik.</li>
@@ -543,7 +548,7 @@ A döntés mellé írd oda a szöveg azonosítóját (01-LinkedIn-poszt) és a v
 <div class="cell cell--output">
 <a id="01-business-foundations.03-ai-workspace--handoff"></a>
 <h3 class="cell-title">Ezt viszed tovább</h3>
-<p>A munkamappádban ott van a Cég-DNS és a hangprofil. A <code>post-review.md</code> fájlt add át az 05-ös blokk méréséhez is. Ugyanilyen ellenőri menettel nézheted át a Brandiseer-tartalmat, a Sales Bot-üzeneteket és az ajánlat kísérőszövegét. Az 5. blokkban a Postás és a CRM-agent is munkába áll, és a Karmester egy teljes ügyfélesetet visz végig.</p>
+<p>A munkamappádban ott van a Cég-DNS és a márkahang. A <code>post-review.md</code> fájlt add át az 05-ös blokk méréséhez is. Ugyanilyen ellenőri menettel nézheted át a Brandiseer-tartalmat, a Sales Bot-üzeneteket és az ajánlat kísérőszövegét. Az 5. blokkban a Postás és a CRM-agent is munkába áll, és a Karmester egy teljes ügyfélesetet visz végig.</p>
 <p><strong>Wenova-kiegészítés a 02-es blokkhoz (választható, ha a Brandiseer-oktató is így kéri):</strong> a kampányvázból (lásd lent, „Ha maradt időd”) egy poszthoz képet kérsz a Brandiseer connectorával; a Claude a képet a <code>Munka/02-Tartalom/</code> mappába menti, és posztelőnézetet készít belőle HTML-ben. Ha bekötötted a Buffert, választhatsz piszkozatot vagy ütemezést. Ütemezés előtt a Claude megmutatja a csatornát, a szöveget és az időpontot, majd megvárja a kifejezett jóváhagyásodat. Ami be van ütemezve, az ki is megy. Ha ezt nem szeretnéd, kérj piszkozatot. A Bufferben ellenőrizd a mentett állapotot. Ha a kép nem jön vissza a connectoron át, töltsd le a Brandiseerből a <code>Munka/02-Tartalom/</code> mappába. Ha a poszthoz nem csatolható a connectorral, a Buffer felületén töltsd fel. Ha az ütemezési művelet nem érhető el a Claude-ban, használd a <a href="02-content-marketing.html#02-content-marketing.03-prepare-publishing--help">02-es blokk kézi útját</a>.</p>
 </div>
 <div class="cell cell--extra">
@@ -563,7 +568,7 @@ Szabályok: minden tény a DNS-ből jön; ami nincs, „Nincs megadva”. Küls�
 <h2>Segítség elakadáskor</h2>
 <ol>
 <li>A saját félkész munkád maradjon a <code>Munka/01-DNS/</code> mappában.</li>
-<li>Az IrodaLiget mintából vedd át, ami hiányzik: <a href="../scenarios/office-plants/outputs/company-dna.md">Cég-DNS</a>, <a href="../scenarios/office-plants/outputs/voice-profile.md">hangprofil</a>, <a href="../scenarios/office-plants/outputs/business-profile.md">alaplap</a>, <a href="../scenarios/office-plants/outputs/sales-strategy.md">stratégia</a>.</li>
+<li>Az IrodaLiget mintából vedd át, ami hiányzik: <a href="../scenarios/office-plants/outputs/company-dna.md">Cég-DNS</a>, <a href="../scenarios/office-plants/outputs/voice-profile.md">márkahang</a>, <a href="../scenarios/office-plants/outputs/business-profile.md">cégprofil</a>, <a href="../scenarios/office-plants/outputs/sales-strategy.md">stratégia</a>.</li>
 <li>Kérd a Claude-ot, hogy az összetartozó mintafájlokat másolja a <code>Munka/01-DNS/minta/</code> mappába. A napló <code>active_business</code> mezőjébe az IrodaLiget nevét, a minta DNS-verzióját és a három itteni fájl útvonalát írja. A saját félkész változatod megmarad.</li>
 <li>A haladási naplóban jelöld: <code>completed_with_example</code>, végrehajtás: <code>simulation</code>.</li>
 <li>Mondd el saját szavaiddal, mi lenne a te DNS-edben más, majd folytasd a következő leckével.</li>
@@ -571,7 +576,7 @@ Szabályok: minden tény a DNS-ből jön; ami nincs, „Nincs megadva”. Küls�
 <p>Saját cégről mintára váltáskor a partnerblokkokban is a teljes IrodaLiget-láncot használd; ne keverd a minta árait a saját ajánlatoddal. A statikus csomag nem bizonyít működő partnerintegrációt.</p>
 <a id="examples"></a>
 <h2>Gyakorlópéldák</h2>
-<p>A kitalált <a href="../scenarios/office-plants/README.md">IrodaLiget</a> teljes 1. blokkos eredménye megvan: DNS, hangprofil, mintapostafiók és ellenőri jelentés. A másik két gyakorlóvállalkozásnál (CégesKép, WebŐr) a <code>business-profile.md</code> alapján a Claude ugyanígy elkészíti a DNS-t.</p>
+<p>A kitalált <a href="../scenarios/office-plants/README.md">IrodaLiget</a> teljes 1. blokkos eredménye megvan: DNS, márkahang, mintapostafiók és ellenőri jelentés. A másik két gyakorlóvállalkozásnál (CégesKép, WebŐr) is találsz kész Cég-DNS-mintát. Ha gyakorolni szeretnéd a készítését, indulj ki a mintaként megadott cégprofilból (<code>business-profile.md</code>), és jelöld, amihez további forrás kell.</p>
 <a id="continue"></a>
 <h2>Folytatás</h2>
 <p><a href="../index.html#modules">Modulok</a><a href="02-content-marketing.html">Következő modul →</a></p>

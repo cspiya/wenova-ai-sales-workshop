@@ -49,7 +49,7 @@
 <div class="cell cell--input">
 <a id="overview-1"></a>
 <h3 class="cell-title">Bemenet</h3>
-<p>A legutóbbi <code>progress.json</code>-ban kijelölt aktív DNS és hangprofil, az öt agentfájl a <code>Tananyag/starter-kit/agents/</code> mappában. A három partner connectora (Brandiseer, Sales Bot, EstiWise), amelyet a 02–04-es blokkban kötöttél be. A nap eredményei: a 02-es blokk tartalma (vagy <code>campaign-plan.md</code>), a 03-as blokk <code>leads.csv</code>, <code>outreach.md</code>, <code>customer-brief.md</code> fájlja és Sales Bot-kampánya, a 04-es blokk <code>proposal.md</code>, <code>handoff.md</code> fájlja és EstiWise-ajánlata. A „CRM – [cégnév]” táblázat (vagy a saját Excel-fájlod).</p>
+<p>A legutóbbi <code>progress.json</code>-ban kijelölt aktív DNS és márkahang, az öt agentfájl a <code>Tananyag/starter-kit/agents/</code> mappában. A három partner connectora (Brandiseer, Sales Bot, EstiWise), amelyet a 02–04-es blokkban kötöttél be. A nap eredményei: a 02-es blokk tartalma (vagy <code>campaign-plan.md</code>), a 03-as blokk <code>leads.csv</code>, <code>outreach.md</code>, <code>customer-brief.md</code> fájlja és Sales Bot-kampánya, a 04-es blokk <code>proposal.md</code>, <code>handoff.md</code> fájlja és EstiWise-ajánlata. A „CRM – [cégnév]” táblázat (vagy a saját Excel-fájlod).</p>
 </div>
 <div class="cell cell--output">
 <a id="overview-2"></a>
@@ -107,7 +107,7 @@
 <a id="05-pipeline-review.01-inbox-crm--prompt"></a>
 <h3 class="cell-title">Ezt kérd Claude-tól</h3>
 <pre><code class="language-text">Postás: keresd meg a WORKSHOP-TESZT tárgyú levelemet, és mellette legfeljebb 5 mai levélszálat. A hírleveleket és az automatikus értesítéseket hagyd ki.
-Add meg a táblázatot az inbox.md szerint. Utána a WORKSHOP-TESZT levélre írj válaszpiszkozatot a legutóbbi progress.json-ban kijelölt hangprofil alapján; árat és határidőt csak az aktív DNS-ből vehetsz.
+Add meg a táblázatot az inbox.md szerint. Utána a WORKSHOP-TESZT levélre írj válaszpiszkozatot a legutóbbi progress.json-ban kijelölt márkahang alapján; árat és határidőt csak az aktív DNS-ből vehetsz.
 A piszkozatot itt mutasd meg, én másolom a levelezőbe. Semmit ne küldj el.
 </code></pre>
 <p>Ha a piszkozat jó, ugyanitt:</p>
@@ -405,7 +405,7 @@ Adj egy sort a Heti mérés laphoz CSV-ben (week, stage, metric_id, metric, valu
 <div class="cell cell--output">
 <a id="05-pipeline-review.03-measure-launch--handoff"></a>
 <h3 class="cell-title">Ezt viszed tovább</h3>
-<p><strong>Mit viszel haza:</strong> egy Claude-projektet a saját Cég-DNS-eddel és hangprofiloddal; öt agentet (Karmester, Író, Ellenőr, Postás, CRM); a partnerrendszerek bekötését a saját fiókjaidban; egy CRM-táblát „Heti mérés” lappal; egy végigvitt ügyféleset leírását; és egy holnapi tervet heti rutinnal. A tananyag és a <a href="../assistant.md">tanulási kísérő</a> hazavihető: bármelyik blokk újraindítható a „Kezdjük az N. blokkot” mondattal.</p>
+<p><strong>Mit viszel haza:</strong> egy Claude-projektet a saját Cég-DNS-eddel és márkahangoddal; öt agentet (Karmester, Író, Ellenőr, Postás, CRM); a partnerrendszerek bekötését a saját fiókjaidban; egy CRM-táblát „Heti mérés” lappal; egy végigvitt ügyféleset leírását; és egy holnapi tervet heti rutinnal. A tananyag és a <a href="../assistant.md">tanulási kísérő</a> hazavihető: bármelyik blokk újraindítható a „Kezdjük az N. blokkot” mondattal.</p>
 </div>
 <div class="cell cell--extra">
 <a id="05-pipeline-review.03-measure-launch--extra"></a>
@@ -429,7 +429,9 @@ Utána töltsd ki a launch-plan.md többi részét: heti rutin, ami még nem mű
 <p>Saját cégről mintára váltáskor ne keverd a minta árait a saját ajánlatoddal. A statikus csomag nem bizonyít működő partnerintegrációt.</p>
 <a id="examples"></a>
 <h2>Gyakorlópéldák</h2>
-<p>Az <a href="../scenarios/office-plants/README.md">IrodaLiget</a> teljes kitalált lánca: alaplap → DNS → lead → igény → ajánlat → átadás → CRM → folyamatpróba → indulási terv. A végrehajtási mód mindenhol <code>simulation</code>.</p>
+<p>A teljes kitalált lánc az <a href="../scenarios/office-plants/README.md">IrodaLiget</a> példáján.</p>
+<p>Cég-DNS és cégprofil → lead → igény → ajánlat → átadás → CRM → folyamatpróba → indulási terv.</p>
+<p>A végrehajtási mód mindenhol <code>simulation</code>.</p>
 <a id="outlook"></a>
 <h2>Kitekintés: demó</h2>
 <p>Nem része a 35 percnek, és nem kell hozzá semmit telepítened. Ha kíváncsi vagy, hogyan beszél egy magyar AI-telefonos asszisztens egy értékesítési forgatókönyv szerint, és hogyan javítható a forgatókönyv a rögzített beszélgetések elemzéséből, nézd meg a <a href="../demos/voice-lab/index.html">hangügynök-labort</a>. Otthon is kipróbálható, saját API-kulccsal vagy a szervezőtől kapott hozzáféréssel. Ugyanaz a hurok, mint a heti átnézésnél: beszélgetés → elemzés → javaslat → új verzió.</p>
