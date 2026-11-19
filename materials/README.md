@@ -28,7 +28,7 @@ A Cég-DNS-től az ajánlatig és a CRM-ig: saját AI-csapat a Claude-ban, a saj
 
 **2026. november 19., csütörtök, 09:00–17:00 (érkezés és technikai ellenőrzés 08:30-tól) · CEU Nádor Event Center, Budapest V., Nádor u. 15., N13 412/A terem (4. emelet; belépőkártya a recepción)**
 
-**Honnan töltöd le az anyagot?** A Claude Desktop Cowork módjában egy mondattal telepíted: „Telepítsd a workshop tananyagát: https://raw.githubusercontent.com/cspiya/wenova-ai-sales-workshop/main/materials/TELEPITES.md”. Részletek: [felkészülés](modules/00-prework.md#00-prework.01-install) és [telepítési futtatókönyv](TELEPITES.md). Kézi letöltés: [ZIP](https://github.com/cspiya/wenova-ai-sales-workshop/archive/refs/heads/main.zip); böngészőben: [github.com/cspiya/wenova-ai-sales-workshop/tree/main/materials](https://github.com/cspiya/wenova-ai-sales-workshop/tree/main/materials). Terminálhoz szokottaknak: [haladó út Claude Code-dal](CLAUDE-CODE.md).
+**Honnan töltöd le az anyagot?** A Claude Desktop Cowork módjában egy mondattal telepíted: „Telepítsd a workshop tananyagát: https://raw.githubusercontent.com/cspiya/wenova-ai-sales-workshop/main/materials/TELEPITES.md”. Részletek: [felkészülés](modules/00-prework.md#00-prework.01-install) és [telepítési futtatókönyv](TELEPITES.md). Kézi letöltés: [ZIP](https://github.com/cspiya/wenova-ai-sales-workshop/archive/refs/heads/main.zip), a lépéseket a [kézi út](modules/00-prework.md#00-prework.01-install--help) írja le; böngészőben: [github.com/cspiya/wenova-ai-sales-workshop/tree/main/materials](https://github.com/cspiya/wenova-ai-sales-workshop/tree/main/materials). Ha a Cowork a gépeden nem indul: [mentőút Claude Code-dal](CLAUDE-CODE.md).
 
 <a name="agenda-1"></a>
 
@@ -59,7 +59,7 @@ Cég-DNS és saját AI-csapat → tartalom a céged hangján → LinkedIn-megker
 
 ### Előzetes felkészülés
 
-A [felkészülés](modules/00-prework.md) kb. 55 perc. Készítsd elő a Claude-előfizetésedet és a Claude Desktopot, telepítsd a tananyagot, kösd be a levelezőt és a Google-táblázatot, és gyűjtsd össze a saját forrásaidat. A Brandiseer- és EstiWise-fiókot a workshopon is létrehozhatod a saját laptopodon. A Buffer-fiók választható. Érkezz 08:30-ra a közös technikai ellenőrzésre, amely 09:00-ig tart. Ha elakadsz, szólj egy oktatónak, aki a helyeden segít.
+A [felkészülés](modules/00-prework.md) kb. 55 perc. Készítsd elő a Claude-előfizetésedet és a Claude Desktopot, telepítsd a tananyagot, kösd be a levelezőt és a Google-táblázatot, és gyűjtsd össze a saját forrásaidat. A Brandiseer- és EstiWise-fiókot a workshopon is létrehozhatod a saját laptopodon. A Buffer-fiók választható. Érkezz 08:30-ra a közös technikai ellenőrzésre, amely 09:00-ig tart. Ha elakadsz, keresd a [Claude Desktop hibaelhárítási útmutatóját](hibaelharitas.md), vagy szólj egy oktatónak, aki a helyeden segít.
 
 <a name="agenda-5"></a>
 
@@ -86,19 +86,19 @@ Minden partnerblokk felépítése: rövid bevezető, vezetett gyakorlat a saját
 
 ### A nap eszköze: Claude Desktop, Cowork mód
 
-Egész nap egyetlen Cowork-projektben dolgozol, a gépeden lévő `Wenova-AI-Sales-Workshop` munkamappában: a `Tananyag/` a workshop anyaga, a `Munka/` a te eredményeid. A Claude a mappa [AGENTS.md](AGENTS.md) fájlja szerint dolgozik. A projektben használod a Cég-DNS-t, a márkahangot és az öt agentet (Karmester, Író, Ellenőr, Postás, CRM). Vizuális eredményeket (kampányváz, posztelőnézet, a nap összefoglalója) HTML-fájlként kapsz, a böngészőben nyitod meg. A levelezőt, a Google-táblázatot és a három partnerrendszert connectorral (engedélyezett kapcsolattal) éred el a Claude-ból. Ahol egy kapcsolat nem működik, mintafájllal vagy kézi lépéssel folytatod, és ezt jelöljük.
+Egész nap egyetlen Cowork-projektben dolgozol, a gépeden lévő `Wenova-AI-Sales-Workshop` munkamappában: a `Tananyag/` a workshop anyaga, a `Munka/` a te eredményeid. A Claude a mappa [AGENTS.md](AGENTS.md) fájlja szerint dolgozik; a Cég-DNS, a márkahang és a nyolc agent (Karmester, Író, Ellenőr, CEO, Marketing, Sales, Postás, CRM) innen dolgozik. Vizuális eredményeket (kampányváz, posztelőnézet, a nap összefoglalója) HTML-fájlként kapsz, a böngészőben nyitod meg. A levelezőt, a Google-táblázatot és a három partnerrendszert connectorral (engedélyezett kapcsolattal) éred el a Claude-ból. Ahol egy kapcsolat nem működik, mintafájllal vagy kézi lépéssel folytatod, és ezt jelöljük.
 
 <a name="agenda-7"></a>
 
 ### Elakadás esetén is folytatható
 
-A személyes LinkedIn bekötése nem feltétel: a Sales Bot-gyakorlat ma sandboxban (gyakorló környezetben) fut. Minden modulhoz mentőcsomag tartozik a kitalált IrodaLiget-mintán; a saját munka megtartása mellett abból folytatható a következő lépés. A levelek, üzenetek és ajánlatok piszkozatban maradnak. A Bufferben a jóváhagyásoddal beütemezett poszt a megadott időpontban megjelenik.
+A személyes LinkedIn bekötése nem feltétel: a Sales Bot-gyakorlat ma sandboxban (gyakorló környezetben) fut. Minden modulhoz mentőcsomag tartozik a kitalált IrodaLiget-mintán; a saját munka megtartása mellett abból folytatható a következő lépés. Kifelé semmi nem megy ki a jóváhagyásod nélkül: levél, üzenet és ajánlat piszkozat marad. Posztot a Claude csak akkor ütemezhet, ha kifejezetten jóváhagytad a csatornát, a szöveget és az időpontot; ami be van ütemezve, az ténylegesen megjelenik, ezért ha ezt nem szeretnéd, hagyd piszkozatban.
 
 <a name="agenda-8"></a>
 
 ### Hazavihető eredmény
 
-Claude-projekt a saját Cég-DNS-eddel és márkahangoddal; öt agent; kampányanyagok; minősített leadek és üzenetsor; ajánlattervezet; CRM-tábla heti méréssel; egy végigvitt ügyféleset; holnapi indulási terv és heti rutin.
+Claude-projekt a saját Cég-DNS-eddel és márkahangoddal; nyolc agent; kampányanyagok; minősített leadek és üzenetsor; ajánlattervezet; CRM-tábla heti méréssel; egy végigvitt ügyféleset; holnapi indulási terv és heti rutin.
 
 **Szervező: Wenova · Szakmai partnerek: Brandiseer, Blackhole Media, EstiWise.**
 
@@ -128,7 +128,7 @@ Kitekintésként, nem kötelező: **[Demók](demos/README.md)**, például a han
 
 A telepítés a [starter-kit](starter-kit/README.md) sablonjait is a munkamappádba teszi; feltölteni semmit nem kell ([felkészülés](modules/00-prework.md)). Az [asszisztens instrukciója](assistant.md) a tanulási kísérő: a „Kezdjük az 1. blokkot” mondatra végigvezet. Saját cégből vagy az alábbi minták egyikéből dolgozz.
 
-[AGENTS.md](AGENTS.md) · [Telepítés](TELEPITES.md) · [Projektutasítás](starter-kit/project-instructions.md) · [Ütemezett feladatok](starter-kit/scheduled-tasks.md) · [Cég-DNS sablon](starter-kit/company-dna.md) · [Agentek](starter-kit/agents/README.md) · [Haladási napló](starter-kit/progress.json)
+[Indulás a kivetítőn](indulas.md) · [AGENTS.md](AGENTS.md) · [Telepítés](TELEPITES.md) · [Projektutasítás](starter-kit/project-instructions.md) · [Ütemezett feladatok](starter-kit/scheduled-tasks.md) · [Cég-DNS sablon](starter-kit/company-dna.md) · [Agentek](starter-kit/agents/README.md) · [Haladási napló](starter-kit/progress.json)
 
 <a name="scenarios"></a>
 

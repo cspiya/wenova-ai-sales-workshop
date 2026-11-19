@@ -123,7 +123,7 @@
 </tr>
 </tbody>
 </table></div>
-<p>Őszintén: a Claude Desktopban ezek az agentek szerepleírások a tananyagban (<code>Tananyag/starter-kit/agents/</code>), nem külön futó programok. A Karmester ugyanabban a beszélgetésben vált szerepet (Író, Postás, CRM); az Ellenőr függetlenségét az adja, hogy új beszélgetésben fut. Az agentek a projekt fájljaiból működnek: a projektutasítás köti össze az indítómondatot („Író: …”) az agentfájllal (<code>writer.md</code>). Később ugyanezek a fájlok Skillé alakíthatók; a Skill olyan feladatleírás, amelyet a Claude magától betölt, ha illik a kéréshez.</p>
+<p>Őszintén: az agentek szerepleírások a tananyagban (<code>Tananyag/starter-kit/agents/</code>). A pluginnal a Karmester külön alügynökként indítja az Írót és az Ellenőrt, friss kontextusban. Plugin nélkül ugyanabban a beszélgetésben vált szerepet (Író, Postás, CRM), az Ellenőr pedig új beszélgetésben fut. Az agentek a projekt fájljaiból működnek: a projektutasítás köti össze az indítómondatot („Író: …”) az agentfájllal (<code>writer.md</code>). Később ugyanezek a fájlok Skillé alakíthatók; a Skill olyan feladatleírás, amelyet a Claude magától betölt, ha illik a kéréshez.</p>
 <p><strong>Miért új beszélgetés az Ellenőrnek?</strong> Ha ugyanaz a beszélgetés ellenőriz, amelyik írt, az ugyanazokat a feltételezéseket látja helyesnek. Az új beszélgetés csak azt kapja, amit az ügyfél is látna: a szöveget és az eredeti kérést. Ez a friss kontextus.</p>
 <a id="team-model-2"></a>
 <h3>Mikor kell emberi jóváhagyás?</h3>
@@ -231,7 +231,7 @@
 <td>Levelek olvasása, hangkinyerés</td>
 <td>A Claude saját connectora; a válaszpiszkozat a beszélgetésben készül, te másolod a levelezőbe (a levelezőbe menteni csak akkor, ha a connectorod tud piszkozatot menteni, például Outlook)</td>
 <td>A levelezésedben</td>
-<td>Küldés, válasz, továbbítás, törlés: Tiltva (Blocked)</td>
+<td>Az eszközengedélyekről te döntesz, a teljes engedély is elfogadható. Amit engedélyezel, azt a Claude kérdés nélkül megteheti, a levélküldést is. A workshop szabálya: a Claude magától nem küld, a levelet te küldöd.</td>
 </tr>
 <tr>
 <td>Google Táblázatok / Drive (vagy saját Excel)</td>
@@ -417,7 +417,7 @@ Forrás és határ: a [Gmail / Outlook] connectorral az elküldött leveleim kö
 Kimeneti séma: a voice-profile.md szerkezete; példának legfeljebb egy-egy anonimizált mondat.
 Szabályok: előbb mutasd meg a kiválasztott levelek listáját (dátum, tárgy, a címzett szerepe), és csak a jóváhagyásom után elemezz. Semmit ne küldj, ne címkézz, ne törölj.
 Ellenőrzés: írj egy legfeljebb 80 szavas választ a hangomon erre a kitalált levélre: „Jó napot! Érdeklődnék, hogy jövő hónapban tudnának-e nálunk egy felmérést tartani? Üdvözlettel: Kata”. Utána kérdezd meg, 1–5 mennyire érzem a sajátomnak.
-Mentés: Munka/01-DNS/voice-profile.md. Jóváhagyásom után frissítsd a DNS 5. szakaszát új verzióként (company-dna-v0.1b.md). A legutóbbi progress.json új változatában töltsd ki az active_business mezőt: cégnév, aktív DNS-verzió, DNS, márkahang és cégprofil pontos útvonala. Ha nem hagyom jóvá az új DNS-t, a korábbi jóváhagyott útvonalat rögzítsd.
+Mentés: Munka/01-DNS/voice-profile.md. Jóváhagyásom után frissítsd a DNS 5. szakaszát új verzióként (company-dna-v0.1b.md). A legutóbbi progress.json új változatában töltsd ki az active_business mezőt: cégnév, aktív DNS-verzió, valamint a DNS, a márkahang, a cégprofil és az értékesítési stratégia pontos útvonala. Ha nem hagyom jóvá az új DNS-t, a korábbi jóváhagyott útvonalat rögzítsd.
 </code></pre>
 </div>
 <div class="cell cell--steps">
@@ -427,7 +427,7 @@ Mentés: Munka/01-DNS/voice-profile.md. Jóváhagyásom után frissítsd a DNS 5
 <li><strong>0–2 perc:</strong> új beszélgetés, connector be, prompt beillesztve.</li>
 <li><strong>2–5 perc:</strong> nézd át a levéllistát. Vegyél ki mindent, ami bizalmas vagy nem ügyfélnek ment.</li>
 <li><strong>5–10 perc:</strong> olvasd el a márkahangot és a próbaválaszt. Értékeld 1–5-ig; 4 alatt mondd meg, mi idegen benne.</li>
-<li><strong>10–14 perc:</strong> ellenőrizd a márkahangot és a DNS-frissítést. A mentett naplóban nézd meg a cég nevét, a jóváhagyott DNS verzióját és a három aktív fájl útvonalát.</li>
+<li><strong>10–14 perc:</strong> ellenőrizd a márkahangot és a DNS-frissítést. A mentett naplóban nézd meg a cég nevét, a jóváhagyott DNS verzióját és a négy aktív fájl útvonalát.</li>
 </ol>
 </div>
 <div class="cell cell--check">
@@ -519,7 +519,7 @@ A döntés mellé írd oda a szöveg azonosítóját (01-LinkedIn-poszt) és a v
 <a id="01-business-foundations.03-ai-workspace--steps"></a>
 <h3 class="cell-title">Haladj végig ezeken</h3>
 <ol>
-<li><strong>0–2 perc:</strong> kérdezd meg a Claude-ot: „Látod az öt agentfájlt és az AGENTS.md-t?” Ha nem, a <a href="00-prework.html#00-prework.01-install">telepítés</a> 5. lépése hiányzik.</li>
+<li><strong>0–2 perc:</strong> kérdezd meg a Claude-ot: „Látod a nyolc agentfájlt és az AGENTS.md-t?” Ha nem, a <a href="00-prework.html#00-prework.01-install">telepítés</a> 5. lépése hiányzik.</li>
 <li><strong>2–5 perc:</strong> A beszélgetés: Karmester-prompt; nézd át és hagyd jóvá a tervet.</li>
 <li><strong>5–9 perc:</strong> az Író megírja a posztot. Olvasd el az önellenőrzést, és másold ki az ellenőrzési csomagot.</li>
 <li><strong>9–14 perc:</strong> B beszélgetés: Ellenőr. Olvasd el a döntést és a táblázatot. Mentsd az első tényleges ítéletet a <code>Munka/01-DNS/post-review.md</code> fájlba. A sorba írd a szövegazonosítót (<code>01-LinkedIn-poszt</code>), a vizsgált verziót, az ítélet dátumát (ÉÉÉÉ-HH-NN) és az ítéletet.</li>
@@ -574,7 +574,7 @@ Szabályok: minden tény a DNS-ből jön; ami nincs, „Nincs megadva”. Küls�
 <ol>
 <li>A saját félkész munkád maradjon a <code>Munka/01-DNS/</code> mappában.</li>
 <li>Az IrodaLiget mintából vedd át, ami hiányzik: <a href="../scenarios/office-plants/outputs/company-dna.md">Cég-DNS</a>, <a href="../scenarios/office-plants/outputs/voice-profile.md">márkahang</a>, <a href="../scenarios/office-plants/outputs/business-profile.md">cégprofil</a>, <a href="../scenarios/office-plants/outputs/sales-strategy.md">stratégia</a>.</li>
-<li>Kérd a Claude-ot, hogy az összetartozó mintafájlokat másolja a <code>Munka/01-DNS/minta/</code> mappába. A napló <code>active_business</code> mezőjébe az IrodaLiget nevét, a minta DNS-verzióját és a három itteni fájl útvonalát írja. A saját félkész változatod megmarad.</li>
+<li>Kérd a Claude-ot, hogy az összetartozó mintafájlokat másolja a <code>Munka/01-DNS/minta/</code> mappába. A napló <code>active_business</code> mezőjébe az IrodaLiget nevét, a minta DNS-verzióját és a négy itteni fájl útvonalát írja. A saját félkész változatod megmarad.</li>
 <li>A haladási naplóban jelöld: <code>completed_with_example</code>, végrehajtás: <code>simulation</code>.</li>
 <li>Mondd el saját szavaiddal, mi lenne a te DNS-edben más, majd folytasd a következő leckével.</li>
 </ol>

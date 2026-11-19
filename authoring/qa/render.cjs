@@ -313,7 +313,7 @@ function render(source, root = ROOT, pages = new Set(inventory(root))) {
   const sidebar = '<nav class="toc" aria-label="Tartalom"><p>Tartalom</p><ol>'+tocItems+'</ol></nav>';
   // No fragment on this src: a fragment in the iframe scrolls the outer page down to the panel when the note opens.
   const frame = noteModule ? '<div class="lesson-pane"><iframe name="lesson" src="../../materials/modules/'+noteModule+'.html" title="Résztvevői tananyag"></iframe></div>' : sidebar;
-  const kind = noteModule ? 'notes' : moduleId ? 'module' : isSchedule ? 'schedule' : isHome ? 'home' : 'doc';
+  const kind = noteModule ? 'notes' : moduleId ? 'module' : isSchedule ? 'schedule' : isHome ? 'home' : source === 'materials/indulas.md' ? 'projection' : 'doc';
   return '<!doctype html>\n<!-- Generated from '+source+'; edit Markdown and run npm run render. -->\n'+
     '<html lang="hu"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>'+(isInstructor?'OKTATÓI OLDAL · ':'')+escape(title)+' · AI Sales &amp; Marketing Workshop</title><link rel="alternate" type="text/markdown" href="'+escape(path.posix.basename(source))+'"><link rel="stylesheet" href="'+css+'">'+
     (isInstructor?'<link rel="stylesheet" href="'+relative('operations/instructor-notes/notes.css')+'">':'')+'</head><body class="page page--'+kind+' area--'+areaOf(source)+(lead?' lead--'+lead:'')+'">\n'+

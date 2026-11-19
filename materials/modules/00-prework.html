@@ -8,7 +8,7 @@
 <p class="state"><strong>Állapot: review.</strong></p>
 <p class="kicker">00-prework · review</p>
 <p class="lead">Egy működő Claude-munkamappa a tananyaggal, bekötött levelezés és táblázat, partnerfiókok és a saját anyagaid. Ezzel indulsz reggel 9-kor.</p>
-<p class="lead"><strong>Honnan töltöd le az anyagot?</strong> Nem kell külön letöltened: az 1. leckében a Claude egyetlen mondatra telepíti. Kézi letöltés (ZIP): <a href="https://github.com/cspiya/wenova-ai-sales-workshop/archive/refs/heads/main.zip" target="_blank" rel="noopener noreferrer">main.zip</a>; böngészőben olvasható: <a href="../index.html">AI Sales &amp; Marketing Workshop</a>.</p>
+<p class="lead"><strong>Honnan töltöd le az anyagot?</strong> Nem kell külön letöltened: az 1. leckében a Claude egyetlen mondatra telepíti. Kézi letöltés (ZIP): <a href="https://github.com/cspiya/wenova-ai-sales-workshop/archive/refs/heads/main.zip" target="_blank" rel="noopener noreferrer">main.zip</a>, a lépéseket a <a href="#00-prework.01-install--help">kézi út</a> írja le; böngészőben olvasható: <a href="../index.html">AI Sales &amp; Marketing Workshop</a>.</p>
 <div class="block-banner block-banner--wenova"><p class="block-banner__when"><span class="chip chip--time">Előtte</span> <span class="block-banner__title">A nap menetében: Felkészülés</span></p><p class="block-banner__lead"><span class="logo-tile"><img class="logo logo--wenova" src="../assets/logos/wenova-wordmark.png" alt="Wenova" width="239" height="28"></span><span><span class="block-banner__label">Blokkgazda</span> <strong>Wenova</strong> · Wenova csapat</span></p><p class="block-banner__builds"><span class="block-banner__label">Ezt építed</span> Claude-projekt a sablonokkal, levelező- és Google-kapcsolat, CRM-tábla, EstiWise-fiók (a workshopon a saját laptopodon is létrehozhatod), saját források</p></div>
 </header>
 <details class="toc-mobile"><summary>Tartalom</summary><nav aria-label="Tartalom"><ol><li><a href="#overview">Cél, bemenet és eredmény</a></li><li><a href="#00-prework.01-install">Telepítés: Claude Desktop és a tananyag egy mondattal</a></li><li><a href="#00-prework.02-account-check">Connectorok és biztonsági beállítás</a></li><li><a href="#00-prework.03-partner-accounts">Partnerfiókok: Brandiseer, Buffer, EstiWise, Sales Bot</a></li><li><a href="#00-prework.04-sources">Saját források és adatkezelés</a></li><li><a href="#00-prework.05-coach-check">Indulási próba és CRM-tábla</a></li><li><a href="#recovery">Segítség elakadáskor</a></li><li><a href="#examples">Gyakorlópéldák</a></li><li><a href="#continue">Folytatás</a></li></ol></nav></details>
@@ -30,7 +30,7 @@
 <div class="cell cell--output">
 <a id="overview-2"></a>
 <h3 class="cell-title">Kimenet</h3>
-<p>A <code>Wenova-AI-Sales-Workshop</code> munkamappa a telepített tananyaggal; egy Cowork-projekt erre a mappára; bekapcsolt levelező- és Google Drive-kapcsolat (ha van Buffer-fiókod, a Buffer-kapcsolat is), a levélküldés tiltva; Brandiseer- és EstiWise-fiók, választhatóan Buffer-fiók; a forrásaid a <code>Munka/00-Felkeszules/forrasok/</code> mappában; „CRM – [cégnév]” Google-táblázat; a tanulási kísérő ellenőrzőlistája.</p>
+<p>A <code>Wenova-AI-Sales-Workshop</code> munkamappa a telepített tananyaggal; egy Cowork-projekt erre a mappára; bekapcsolt levelező- és Google Drive-kapcsolat (ha van Buffer-fiókod, a Buffer-kapcsolat is), a levelező engedélyei a saját döntésed szerint; Brandiseer- és EstiWise-fiók, választhatóan Buffer-fiók; a forrásaid a <code>Munka/00-Felkeszules/forrasok/</code> mappában; „CRM – [cégnév]” Google-táblázat; a tanulási kísérő ellenőrzőlistája.</p>
 </div>
 <div class="cell cell--help">
 <a id="overview-3"></a>
@@ -72,6 +72,51 @@
 <p>Cowork módban a Claude csak abban a mappában olvas és ír, amelyet te csatolsz. Ezért előbb létrehozod a mappát, és Cowork-projektet készítesz rá. Utána egy mondattal megkéred a Claude-ot, hogy telepítse a tananyagot: ő letölti a nyilvános tananyagot, a <code>Tananyag/</code> mappába teszi, létrehozza a <code>Munka/</code> mappát, és ellenőrzi az eredményt. A telepítés újrafuttatva frissít: az új tananyagot teszi a helyére, a <code>Munka/</code> mappádhoz nem nyúl.</p>
 <p>A telepítés lépéseit a <a href="../TELEPITES.md">TELEPITES.md</a> futtatókönyv írja le; a Claude ezt követi.</p>
 </div>
+<a id="00-prework.01-install--settings"></a>
+<h3>Claude Desktop beállítási lista</h3>
+<p><strong>A nap a Cowork módban fut. Nem a Chat és nem a Code fülön.</strong> A Claude Code csak akkor mentőút, ha a Cowork a gépeden nem indul. Az induló felmérés minden pontot megnéz veled, és amit nem lát, azt „nem ellenőrzött” jelöléssel írja fel.</p>
+<div class="table-wrap" role="region" aria-label="Táblázat" tabindex="0"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Mit nézz meg?</th>
+<th>Hol?</th>
+<th>Akkor jó, ha</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a</td>
+<td>Fizetős csomag és friss Claude Desktop</td>
+<td>Fiókbeállítások, az alkalmazás frissítése</td>
+<td>Fizetős csomagban vagy, és az alkalmazás a legfrissebb változaton fut</td>
+</tr>
+<tr>
+<td>b</td>
+<td>Windowson hardveres virtualizáció a Coworkhöz</td>
+<td>A Cowork első indítása</td>
+<td>A Cowork elindul és munkamenetet nyit</td>
+</tr>
+<tr>
+<td>c</td>
+<td>Hálózati beállítás</td>
+<td>Settings → Capabilities: <strong>Allow network egress</strong> bekapcsolva, <strong>Domain allowlist</strong>: <strong>Package managers only</strong></td>
+<td>A letöltés elindul. Ha nem: az <strong>Additional allowed domains</strong> listába írd be a <code>github.com</code>, a <code>codeload.github.com</code> és a <code>raw.githubusercontent.com</code> címet</td>
+</tr>
+<tr>
+<td>d</td>
+<td>Mappa és Cowork-projekt</td>
+<td>Projects → <strong>+</strong> → Use an existing folder</td>
+<td>A projekt a <code>Wenova-AI-Sales-Workshop</code> mappára mutat</td>
+</tr>
+<tr>
+<td>e</td>
+<td>Sorrend</td>
+<td>Ebben a leckében</td>
+<td>Telepítő mondat → plugin → Instructions → új munkamenet</td>
+</tr>
+</tbody>
+</table></div>
 <div class="cell cell--decide">
 <a id="00-prework.01-install--decisions"></a>
 <h3 class="cell-title">Ezekről te döntesz</h3>
@@ -93,7 +138,7 @@
 <li><strong>3–5 perc:</strong> a fájlkezelőben hozz létre egy <code>Wenova-AI-Sales-Workshop</code> mappát a felhasználói mappádban (Windows: <code>C:\Users\&lt;neved&gt;\</code>, macOS: a saját mappád, a házikó ikon).</li>
 <li><strong>5–7 perc:</strong> a Claude Desktopban válts <strong>Cowork</strong> módra. Bal oldalt <strong>Projects</strong> → <strong>+</strong> → <strong>Use an existing folder</strong>, válaszd ki a <code>Wenova-AI-Sales-Workshop</code> mappát. A projekt neve: „AI Sales Workshop – [cégnév]”.</li>
 <li><strong>7–12 perc:</strong> a projektben új munkamenet, és írd be a fenti mondatot. Ha a Claude engedélyt kér a letöltésre vagy a mappába írásra, engedd. A végén ✅/⚠️ listát ad.</li>
-<li><strong>12–15 perc:</strong> kövesd a Claude záró üzenetét: a projekt <strong>Instructions</strong> mezőjébe írd be: „Kövesd a munkamappa AGENTS.md fájlját. A cégem neve: [cégnév].”, és nyisd meg a böngészőben a <code>Tananyag/index.html</code> fájlt.</li>
+<li><strong>12–15 perc:</strong> kövesd a Claude záró üzenetét, ebben a sorrendben: add hozzá a plugint (Customize → Plugins → Add → Add marketplace, cím: <code>cspiya/wenova-ai-sales-workshop</code>, majd Install; ha ez nem megy, Upload plugin a <code>Tananyag/plugin/wenova-sales-workshop.plugin</code> fájllal). A projekt <strong>Instructions</strong> mezőjébe írd be: „Kövesd a munkamappa AGENTS.md fájlját. A cégem neve: [cégnév].” Nyiss új munkamenetet, és nyisd meg a böngészőben a <code>Tananyag/index.html</code> fájlt.</li>
 </ol>
 </div>
 <div class="cell cell--check">
@@ -101,7 +146,8 @@
 <h3 class="cell-title">Ellenőrizd az eredményt</h3>
 <ul>
 <li>A munkamappában ott a <code>Tananyag/</code> (benne <code>index.html</code>, <code>VERSION</code>, <code>modules/</code>, <code>starter-kit/</code>) és a <code>Munka/</code> mappa a hat almappával.</li>
-<li>A Claude ✅/⚠️ listájában a verzió és a fájlszám (legalább 90) szerepel.</li>
+<li>A Claude ✅/⚠️ listájában a verzió és a fájlszám szerepel (Git-forrásból legalább 161, kiadási csomagból legalább 159), és megvan a nyolc szerepfájl.</li>
+<li>A plugin a Customize → Plugins listában látszik. Ha nem sikerült hozzáadni, a nap nélküle is végigvihető: a Claude ezt feljegyzi a hiányok közé.</li>
 <li>A <code>Tananyag/index.html</code> megnyílik a böngészőben.</li>
 <li>A Cowork-projekt Instructions mezőjében ott az AGENTS.md-re utaló mondat.</li>
 </ul>
@@ -110,10 +156,10 @@
 <a id="00-prework.01-install--help"></a>
 <h3 class="cell-title">Ha elakadtál</h3>
 <ul>
-<li><strong>A Claude szerint a letöltés hálózati okból nem megy:</strong> Beállítások → Képességek (Settings → Capabilities): kapcsold be az <strong>Allow network egress</strong> kapcsolót, a <strong>Domain allowlist</strong> legyen <strong>Package managers only</strong> (ez engedi a github.com-ot). Utána: „Próbáld újra.”</li>
-<li><strong>Így sem megy:</strong> kézi út, 3 perc: töltsd le a <a href="https://github.com/cspiya/wenova-ai-sales-workshop/archive/refs/heads/main.zip" target="_blank" rel="noopener noreferrer">ZIP-et</a>, bontsd ki (Windows: jobb klikk → Összes kibontása; macOS: dupla kattintás), a kibontott mappában a <code>materials</code> mappa <strong>tartalmát</strong> másold a <code>Wenova-AI-Sales-Workshop/Tananyag/</code> mappába, és hozz létre mellette egy <code>Munka</code> mappát. Utána írd a Claude-nak: „A Tananyag/TELEPITES.md 4. szakasza szerint hozd létre a Munka hat almappájából a hiányzókat. A már bemásolt Tananyag mappát hagyd a helyén. Utána folytasd az 5–7. szakasszal.”</li>
+<li><strong>A Claude szerint a letöltés hálózati okból nem megy:</strong> Beállítások → Képességek (Settings → Capabilities): kapcsold be az <strong>Allow network egress</strong> kapcsolót, a <strong>Domain allowlist</strong> legyen <strong>Package managers only</strong>. Ha így sem megy, az <strong>Additional allowed domains</strong> listába írd be: <code>github.com</code>, <code>codeload.github.com</code>, <code>raw.githubusercontent.com</code>. Utána: „Próbáld újra.”</li>
+<li><strong>Így sem megy:</strong> kézi út. Töltsd le a <a href="https://github.com/cspiya/wenova-ai-sales-workshop/archive/refs/heads/main.zip" target="_blank" rel="noopener noreferrer">ZIP-et</a>, és bontsd ki (Windows: jobb klikk → Összes kibontása; macOS: dupla kattintás). <strong>Külön mappa:</strong> a <code>Wenova-AI-Sales-Workshop</code> mappában hozz létre egy üres <code>Tananyag-uj</code> mappát, és ebbe másold a kibontott <code>materials</code> mappa <strong>tartalmát</strong>. <strong>Ellenőrzés:</strong> a másolás hibaüzenet nélkül befejeződött, és a <code>Tananyag-uj</code> mappában ott az <code>index.html</code>, a <code>VERSION</code>, a <code>modules</code>, a <code>starter-kit</code> és a <code>plugin</code>. Ha valami hiányzik, töröld a <code>Tananyag-uj</code> mappát, és másold újra. <strong>Csere:</strong> ha van régi <code>Tananyag</code> mappád, nevezd át <code>Tananyag-regi-&lt;mai dátum és időpont&gt;</code> névre, majd a <code>Tananyag-uj</code> mappát nevezd át <code>Tananyag</code> névre. <strong>Visszaállítás:</strong> ha az átnevezés nem sikerül, a régi mappának add vissza a <code>Tananyag</code> nevet, és szólj egy oktatónak. Ha még nincs, hozz létre mellette egy <code>Munka</code> mappát. A meglévő <code>Munka</code> mappádhoz ne nyúlj. Utána írd a Claude-nak: „A Tananyag/TELEPITES.md 4. szakasza szerint hozd létre a Munka hat almappájából a hiányzókat. A már bemásolt Tananyag mappát hagyd a helyén. Utána folytasd az 5–7. szakasszal.”</li>
 <li><strong>Nincs Cowork a gépeden, vagy nem indul:</strong> tartalékút a böngészőben: a claude.ai-on hozz létre egy projektet („AI Sales Workshop – [cégnév]”), töltsd fel a tudásába az <code>assistant.md</code>, <code>AGENTS.md</code>, a 00–05 modulok <code>.md</code> fájljait és a <code>starter-kit</code> sablonjait, a projektutasításba pedig a <a href="../starter-kit/project-instructions.md">projektutasítás</a> keretes szövegét. Ilyenkor a „Munka/” helyett az eredményeket letöltöd és visszatöltöd a projektbe.</li>
-<li><strong>Terminált szívesen használsz:</strong> a <a href="../CLAUDE-CODE.html">haladó út a Claude Code-dal</a> ugyanezt a telepítést a terminálban végzi.</li>
+<li><strong>A Cowork nem indul a gépeden:</strong> a mentőút a Claude Code. Windowson a <a href="../CLAUDE-CODE.html#scoop">Scoopos telepítés</a> lépésről lépésre vezet, macOS-en egy sor a <a href="../CLAUDE-CODE.html#ment%C5%91%C3%BAt-macos-en">hivatalos telepítő</a>.</li>
 </ul>
 </div>
 <div class="cell cell--output">
@@ -134,7 +180,7 @@
 <div class="cell cell--goal">
 <a id="00-prework.02-account-check--result"></a>
 <h3 class="cell-title">Ezt készíted el</h3>
-<p>Bekapcsolt levelező- és Google Drive-kapcsolatot (ha van Buffer-fiókod, a Buffer-kapcsolatot is), a levelező írási eszközei tiltva.</p>
+<p>Bekapcsolt levelező- és Google Drive-kapcsolatot (ha van Buffer-fiókod, a Buffer-kapcsolatot is), a levelező engedélyei a saját döntésed szerint beállítva.</p>
 </div>
 <div class="cell cell--input">
 <a id="00-prework.02-account-check--needs"></a>
@@ -148,13 +194,13 @@
 <div class="cell cell--how">
 <a id="00-prework.02-account-check--explanation"></a>
 <h3 class="cell-title">Így működik</h3>
-<p>A connectorok a fiókodhoz tartoznak, a Coworkben és a chatben is működnek. Egy munkamenetben a szövegmező melletti <strong>+</strong> menüben kapcsolhatod be vagy ki őket. Minden connector saját oldalán beállíthatod, melyik eszközét használhatja a Claude (Tool permissions, eszközengedélyek). A levelezőnél a küldés, válasz, továbbítás és törlés legyen <strong>Tiltva (Blocked)</strong>. Írási műveletnél soha ne kattints a „Mindig engedélyez” (Always allow) gombra.</p>
-<p>A Brandiseer, a Sales Bot és az EstiWise connectorát a partnerek a saját blokkjukban kötik be veled; előre nincs teendő.</p>
+<p>A connectorok a fiókodhoz tartoznak, a Coworkben és a chatben is működnek. Egy munkamenetben a szövegmező melletti <strong>+</strong> menüben kapcsolhatod be vagy ki őket. Minden connector saját oldalán beállíthatod, melyik eszközét használhatja a Claude (Tool permissions, eszközengedélyek). A kényelmes automatizáláshoz engedélyek kellenek, a teljes engedély is elfogadható. Az engedélyek a te döntésed: amit engedélyezel, azt a Claude kérdés nélkül megteheti, a levélküldést is. A workshop szabálya ettől független: a Claude magától nem küld és nem publikál, a levelet te küldöd, posztot pedig csak a csatorna, a szöveg és az időpont kifejezett jóváhagyása után ütemezhet.</p>
+<p>A Brandiseer, a Sales Bot és az EstiWise connector címét a plugin hozza. A hozzáadást és a belépést a saját blokkjuk elején végzed, a plugin Connectors fülén; előre nincs teendő.</p>
 </div>
 <div class="cell cell--decide">
 <a id="00-prework.02-account-check--decisions"></a>
 <h3 class="cell-title">Ezekről te döntesz</h3>
-<p>Melyik levelezőt kötöd be (Gmail vagy Outlook), vagy egyiket sem. Mit engedsz a Claude-nak: olvasást igen, küldést nem.</p>
+<p>Melyik levelezőt kötöd be (Gmail vagy Outlook), vagy egyiket sem. Mit engedsz a Claude-nak. Az engedélyek a te döntésed: amit engedélyezel, azt a Claude kérdés nélkül megteheti, a levélküldést is.</p>
 </div>
 <div class="cell cell--prompt">
 <a id="00-prework.02-account-check--prompt"></a>
@@ -178,7 +224,7 @@ Jelszót és belépőkódot ne kérj tőlem.
 <li>választhatóan a <strong>Buffer</strong> connectort (keresd a listában, Connect, belépés a Bufferbe), ha van Buffer-fiókod.</li>
 </ul>
 </li>
-<li><strong>5–8 perc:</strong> nyisd meg a levelező connector oldalát, és az eszközengedélyeknél a küldés, válasz, továbbítás és törlés eszközt állítsd <strong>Tiltva (Blocked)</strong> állásba.</li>
+<li><strong>5–8 perc:</strong> nyisd meg a levelező connector oldalát, és az eszközengedélyeknél döntsd el, mit engedsz a küldésre, válaszra, továbbításra és törlésre. Az engedélyek a te döntésed: amit engedélyezel, azt a Claude kérdés nélkül megteheti, a levélküldést is.</li>
 <li><strong>8–10 perc:</strong> a Cowork-projektben új munkamenet, kapcsold be a connectorokat a + menüben, és írd: „Milyen connectorokat látsz ebben a munkamenetben?”</li>
 </ol>
 </div>
@@ -187,7 +233,7 @@ Jelszót és belépőkódot ne kérj tőlem.
 <h3 class="cell-title">Ellenőrizd az eredményt</h3>
 <ul>
 <li>A Claude felsorolja a levelező és a Google Drive connectort (és a Buffert, ha bekötötted).</li>
-<li>A levelező connector engedélyoldalán te ellenőrizted a küldés, válasz, továbbítás és törlés Tiltva (Blocked) beállítását.</li>
+<li>A levelező connector engedélyoldalán megnézted, mit engedélyeztél, és tudod, mi a következménye.</li>
 </ul>
 </div>
 <div class="cell cell--help">
@@ -450,7 +496,7 @@ Adatok: [például: ügyfélnév, kapcsolattartó e-mail-címe, egyedi kedvezmé
 <p class="copy-hint">Másolás: kattints a szövegbe, majd Ctrl+C (Macen Cmd+C). Telefonon tartsd rajta az ujjad, és válaszd a „Másolás” pontot.</p>
 <pre><code class="language-text">Kezdjük a felkészülés ellenőrzését.
 </code></pre>
-<p>A kísérő ellenőrzi a munkamappát, a projektutasítást, a CRM-tábla elérését, a levél tárgyának olvasását és a Buffer-kapcsolatot, ha azt választottad. Nyisd meg a levelező connector eszközengedélyeit, ellenőrizd a küldés, válasz, továbbítás és törlés Tiltva (Blocked) beállítását, majd mondd meg a kísérőnek, mit látsz. A listában külön sorban rögzítsétek az olvasás eredményét és az általad ellenőrzött engedélyeket. Ehhez elég a beállítási oldal, próbaüzenetet nem kell küldened.</p>
+<p>A kísérő ellenőrzi a munkamappát, a projektutasítást, a CRM-tábla elérését, a levél tárgyának olvasását és a Buffer-kapcsolatot, ha azt választottad. Nyisd meg a levelező connector eszközengedélyeit, majd mondd meg a kísérőnek, mit engedélyeztél. A listában külön sorban rögzítsétek az olvasás eredményét és az általad választott engedélyeket. Ehhez elég a beállítási oldal, próbaüzenetet nem kell küldened.</p>
 </div>
 <div class="cell cell--steps">
 <a id="00-prework.05-coach-check--steps"></a>
@@ -467,7 +513,7 @@ Adatok: [például: ügyfélnév, kapcsolattartó e-mail-címe, egyedi kedvezmé
 <ul>
 <li>A CRM-táblázat létezik, az első sorban a 15 oszlopnév van.</li>
 <li>A kísérő listájában a munkamappa és az utasítások ✅.</li>
-<li>Külön látod, hogy működött-e a levélolvasás, és hogy te ellenőrizted-e az írási műveletek tiltását. Ha a beállítást nem láttad, az eredmény „nem ellenőrzött”. A CRM és a választott Buffer-kapcsolat mellett ott az eredmény vagy a kézi út.</li>
+<li>Külön látod, hogy működött-e a levélolvasás, és mit engedélyeztél az írási műveleteknél. Ha a beállítást nem láttad, az eredmény „nem ellenőrzött”. A CRM és a választott Buffer-kapcsolat mellett ott az eredmény vagy a kézi út.</li>
 <li>A Brandiseer- és EstiWise-fiókod megvan, vagy felírtad, melyiket hozod létre a workshopon. A Buffer-fiók választható.</li>
 </ul>
 </div>
@@ -488,6 +534,7 @@ Adatok: [például: ügyfélnév, kapcsolattartó e-mail-címe, egyedi kedvezmé
 </div>
 <a id="recovery"></a>
 <h2>Segítség elakadáskor</h2>
+<p>A gyakori Claude Desktop-hibákhoz keresd a <a href="../hibaelharitas.html">hibaelhárítási útmutatót</a>.</p>
 <ol>
 <li>Mentsd a saját eddigi munkádat, és írd fel, melyik lépésnél akadtál el.</li>
 <li>A reggeli közös technikai ellenőrzésen, 08:30 és 09:00 között szólj egy oktatónak. A saját helyeden segít befejezni a beállítást.</li>

@@ -25,11 +25,11 @@ Belső oktatói jegyzet · review
 
 Járd körbe a termet. Ha valaki elakad a regisztrációban vagy a beállításban, menj oda hozzá, és segíts a saját laptopján.
 
-Sorrend: [telepítés](../../materials/modules/00-prework.md#00-prework.01-install--steps) → [connectorok és tiltás](../../materials/modules/00-prework.md#00-prework.02-account-check--steps) → [indulási próba](../../materials/modules/00-prework.md#00-prework.05-coach-check--prompt). Egy résztvevőre legfeljebb 5 perc; ami addig nem megy, az a kézi úton indul, és a blokkban a körbejáró oktató pótolja.
+Sorrend: [telepítés](../../materials/modules/00-prework.md#00-prework.01-install--steps) → [connectorok és engedélyek](../../materials/modules/00-prework.md#00-prework.02-account-check--steps) → [indulási próba](../../materials/modules/00-prework.md#00-prework.05-coach-check--prompt). Egy résztvevőre legfeljebb 5 perc; ami addig nem megy, az a kézi úton indul, és a blokkban a körbejáró oktató pótolja.
 
-Ellenőrzőlap (papíron, név nélkül, asztalszámmal): Cowork + munkamappa ✅/⚠️ · `Tananyag/` verzió ✅/⚠️ · Instructions-mondat ✅/⚠️ · levelező ✅/⚠️ · levelező küldés/válasz/továbbítás/törlés Tiltva (Blocked) ✅/⚠️ · Google Drive + CRM-tábla ✅/⚠️ · Buffer-fiók + connector ✅/⚠️/nem választotta · Brandiseer ✅/⚠️ · EstiWise-fiók ✅/⚠️.
+Ellenőrzőlap (papíron, név nélkül, asztalszámmal): Cowork + munkamappa ✅/⚠️ · `Tananyag/` verzió ✅/⚠️ · Instructions-mondat ✅/⚠️ · levelező ✅/⚠️ · levelező engedélyei megbeszélve ✅/⚠️ · Google Drive + CRM-tábla ✅/⚠️ · Buffer-fiók + connector ✅/⚠️/nem választotta · Brandiseer ✅/⚠️ · EstiWise-fiók ✅/⚠️.
 
-Levelezőbiztonság: a résztvevő a connector engedélyoldalán ellenőrzi a küldés, válasz, továbbítás és törlés Tiltva (Blocked) állását. Az olvasási próba eredményét külön jelöljük; írási műveletnél senki ne kattintson a „Mindig engedélyez” (Always allow) gombra.
+Levelezőengedélyek: az engedély a résztvevő saját döntése, a teljes engedély is elfogadható. Mondd el a következményt: amit engedélyez, azt a Claude kérdés nélkül megteheti, a levélküldést is. Az olvasási próba eredményét külön jelöljük.
 
 <a name="notes-3"></a>
 

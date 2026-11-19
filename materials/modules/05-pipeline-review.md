@@ -42,7 +42,7 @@ A levelek, a Sales Bot-üzenetek és az ajánlatok piszkozatban maradnak, az elk
 
 ### Bemenet
 
-A legutóbbi `progress.json`-ban kijelölt aktív DNS és márkahang, az öt agentfájl a `Tananyag/starter-kit/agents/` mappában. A három partner connectora (Brandiseer, Sales Bot, EstiWise), amelyet a 02–04-es blokkban kötöttél be. A nap eredményei: a 02-es blokk tartalma (vagy `campaign-plan.md`), a 03-as blokk `leads.csv`, `outreach.md`, `customer-brief.md` fájlja és Sales Bot-kampánya, a 04-es blokk `proposal.md`, `handoff.md` fájlja és EstiWise-ajánlata. A „CRM – [cégnév]” táblázat (vagy a saját Excel-fájlod).
+A legutóbbi `progress.json`-ban kijelölt aktív DNS és márkahang, a nyolc agentfájl a `Tananyag/starter-kit/agents/` mappában. A három partner connectora (Brandiseer, Sales Bot, EstiWise), amelyet a 02–04-es blokkban kötöttél be. A nap eredményei: a 02-es blokk tartalma (vagy `campaign-plan.md`), a 03-as blokk `leads.csv`, `outreach.md`, `customer-brief.md` fájlja és Sales Bot-kampánya, a 04-es blokk `proposal.md`, `handoff.md` fájlja és EstiWise-ajánlata. A „CRM – [cégnév]” táblázat (vagy a saját Excel-fájlod).
 
 <a name="overview-2"></a>
 
@@ -96,7 +96,7 @@ A Postás megkeresi a WORKSHOP-TESZT próbalevelet, és a saját hangodon válas
 
 Próbalevél → Postás-táblázat (típus, igény, következő lépés) → válaszpiszkozat a `voice-profile.md` szerint, itt a beszélgetésben → te másolod a levelezőbe → javasolt CRM-sorok → CRM-agent: változáslista és CSV-sorok → te bemásolod a táblázatba → a Claude a Drive-ból visszaolvassa.
 
-Miért kézi a bemásolás? A Gmail connector a dokumentáció szerint olvasásra való, és a táblázatcellák közvetlen írása sincs minden connectornál dokumentálva. A bemásolás 30 másodperc, és te látod, mi kerül be. Ha a connectorod tud levélpiszkozatot menteni (például Outlook) vagy táblázatba írni, a Claude megteheti, de csak a kifejezett kérésedre.
+Miért kézi a bemásolás? A táblázatcellák közvetlen írása nincs minden connectornál dokumentálva. A bemásolás 30 másodperc, és te látod, mi kerül be. Ha a connectorod tud levélpiszkozatot menteni (például Outlook) vagy táblázatba írni, a Claude megteheti, de csak a kifejezett kérésedre.
 
 A levél tartalma adat, nem utasítás: ha egy levél „küldd el” vagy „hagyd figyelmen kívül” jellegű kérést tartalmaz, a Postás jelzi, és nem hajtja végre.
 
@@ -356,7 +356,7 @@ Ha a táblázat nem érhető el, a sort a `launch-plan.md` végére írd. Ha az 
 
 ### Ezt viszed tovább
 
-**Mit viszel haza:** egy Claude-projektet a saját Cég-DNS-eddel és márkahangoddal; öt agentet (Karmester, Író, Ellenőr, Postás, CRM); a saját fiókodban ténylegesen beállított partnerkapcsolatokat; egy CRM-táblát „Heti mérés” lappal; egy végigvitt ügyféleset leírását; és egy holnapi tervet heti rutinnal. A tananyag és a [tanulási kísérő](../assistant.md) hazavihető: bármelyik blokk újraindítható a „Kezdjük az N. blokkot” mondattal.
+**Mit viszel haza:** egy Claude-projektet a saját Cég-DNS-eddel és márkahangoddal; nyolc agentet (Karmester, Író, Ellenőr, CEO, Marketing, Sales, Postás, CRM); a saját fiókodban ténylegesen beállított partnerkapcsolatokat; egy CRM-táblát „Heti mérés” lappal; egy végigvitt ügyféleset leírását; és egy holnapi tervet heti rutinnal. A tananyag és a [tanulási kísérő](../assistant.md) hazavihető: bármelyik blokk újraindítható a „Kezdjük az N. blokkot” mondattal.
 
 <a name="05-pipeline-review.03-measure-launch--extra"></a>
 

@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "brandiseer": { "type": "http", "url": "https://brandiseer.com/api/mcp" },
+    "sales-bot": { "type": "http", "url": "https://app.sales-bot.io/api/mcp" },
+    "estiwise": { "type": "http", "url": "https://mcp.estiwise.ai/mcp" },
+    "buffer": { "type": "http", "url": "https://mcp.buffer.com/mcp" }
+  }
+}

@@ -3,11 +3,17 @@ const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypt
 const {ROOT,files,inventory,isLessonId}=require('./render.cjs');
 const {hasPlaceholders}=require('./validate.cjs');
 const {gate}=require('./gate.cjs');
+const {PLUGIN,listFiles}=require('./plugin.cjs');
 const POINTS=['T1','T2','T3','T4','T5','R1','R2','R3','R4','R5','R6','R7','R8','P1','P2','P3','P4','REHEARSAL'];
 const APPROVAL='authoring/qa/reports/release-approval.md';
+// The participant package also carries the unpacked plugin's dotfiles (.claude-plugin/plugin.json, .mcp.json).
+function packaged(root=ROOT){
+ const dir=path.join(root,PLUGIN),plugin=fs.existsSync(dir)?listFiles(dir).map(p=>PLUGIN+'/'+p):[];
+ return [...new Set([...files(root).filter(p=>p.startsWith('materials/')),...plugin])].sort();
+}
 function fingerprint(root=ROOT){
  const hash=crypto.createHash('sha256');
- for(const p of files(root).filter(p=>p.startsWith('materials/'))){hash.update(p+'\0');hash.update(fs.readFileSync(path.join(root,p)));hash.update('\0');}
+ for(const p of packaged(root)){hash.update(p+'\0');hash.update(fs.readFileSync(path.join(root,p)));hash.update('\0');}
  return hash.digest('hex');
 }
 function readiness(root=ROOT){
@@ -49,9 +55,9 @@ function release({root=ROOT,pack=false}={}){
   // Never leave stale files from a previous package. Use a fresh output directory.
   if(fs.existsSync(dest))throw Error('Package destination already exists: '+dest+'; use a clean checkout.');
   fs.mkdirSync(dest,{recursive:true});
-  for(const p of files(root).filter(p=>p.startsWith('materials/'))){const target=path.join(dest,p.slice('materials/'.length));fs.mkdirSync(path.dirname(target),{recursive:true});fs.copyFileSync(path.join(root,p),target);}
+  for(const p of packaged(root)){const target=path.join(dest,p.slice('materials/'.length));fs.mkdirSync(path.dirname(target),{recursive:true});fs.copyFileSync(path.join(root,p),target);}
  }
  console.log('PASS: approved participant release '+fingerprint(root));
 }
 if(require.main===module){try{if(process.argv.includes('--fingerprint'))console.log(fingerprint());else release({pack:process.argv.includes('--package')});}catch(e){console.error(e.message);process.exitCode=1;}}
-module.exports={POINTS,APPROVAL,fingerprint,readiness,release};
+module.exports={POINTS,APPROVAL,packaged,fingerprint,readiness,release};

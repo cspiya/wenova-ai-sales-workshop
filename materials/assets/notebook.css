@@ -302,3 +302,18 @@ ol.flow > li:not(:last-child)::after { content:"→" / ""; position:absolute; ri
 h1, h2, h3, h4, .day-strip__item a, .tl-title, .day-strip__item { overflow-wrap:normal; word-break:normal; hyphens:auto; }
 .logo-word, .logo-tile { white-space:nowrap; }
 .day-strip__item .logo-tile { max-width:100%; }
+
+/* Projection page (materials/indulas.md): readable from the back of the room at 1920x1080. */
+.page--projection { background:#fff; }
+.page--projection .site-head, .page--projection .site-foot, .page--projection .toc, .page--projection .skip { display:none; }
+.page--projection .layout { display:block; max-width:none; margin:0; padding:0; }
+.page--projection main { max-width:none; margin:0; padding:2vh 3vw; border:0; border-radius:0; box-shadow:none; }
+.page--projection .page-hero { display:grid; grid-template-columns:auto 1fr; grid-template-areas:"title title" "url url" "qr steps"; column-gap:4vw; align-items:center; margin:0; padding:0; border:0; }
+.page--projection .page-hero::before { display:none; }
+.page--projection .page-hero h1 { grid-area:title; margin:0 0 1vh; font-size:2.6vw; line-height:1.15; }
+.page--projection .page-hero .hero-links { grid-area:url; margin:0 0 2vh; font-size:3.4vw; font-weight:700; line-height:1.2; white-space:nowrap; }
+.page--projection .page-hero p:has(img) { grid-area:qr; margin:0; max-width:none; }
+.page--projection .page-hero p:has(img) img { display:block; width:min(40vw,74vh); height:auto; }
+.page--projection .page-hero ol { grid-area:steps; margin:0; padding-left:1.2em; font-size:2.5vw; line-height:1.3; }
+.page--projection .page-hero li { margin:0 0 2.5vh; }
+.page--projection .page-hero code { font-size:.85em; white-space:nowrap; }
