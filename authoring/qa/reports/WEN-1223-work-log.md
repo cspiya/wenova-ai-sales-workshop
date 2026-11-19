@@ -26,6 +26,7 @@ A telepítési futtatókönyv frissítése a pluginnal, felületenként őszinte
 |---|---|---|---|---|---|---|---|
 | WEN-1223/D2 | 2026-11-19 | A README elején indulási blokk, a webes linkek a publikált címre mutatnak | ember (tulajdonos) | A megosztás a nap elején legyen nagyon egyszerű, a GitHub fájlnézete HTML-forrást mutatna | Tulajdonosi kérés | nincs | az agent rögzítette a koordinátor üzenetéből, 6b54de9a session |
 | WEN-1223/D3 | 2026-11-19 | Kivetítő oldal Markdownból generálva, szkript nélkül | ember (tulajdonos) | Teremben, a terem végéből is olvasható indulás | Tulajdonosi kérés | nincs | az agent rögzítette a koordinátor üzenetéből, 6b54de9a session |
+| WEN-1223/D5 | 2026-11-19 | A README eleje három közönséget irányít a publikált oldalakra, a telepítési segítséget az oktatók a résztvevő helyénél adják | ember (tulajdonos) | Nincs regisztrációs pult, és mindenki egy linket kapjon | Tulajdonosi kérés | nincs | az agent rögzítette a koordinátor üzenetéből, 6b54de9a session |
 | WEN-1223/D4 | 2026-11-19 | A README harmadik lépése megnevezi a plugint, az Instructions mezőt és az új munkamenetet | AI (maker) | A futtatókönyv sorrendjéhez hű maradjon | WEN-1223/D2, TELEPITES.md 6/a | nincs | 6b54de9a session |
 
 ## Review körök
