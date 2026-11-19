@@ -2,7 +2,7 @@
 
 **Állapot: review.**
 
-[HTML-változat](03-lead-generation.html)
+[HTML-változat](https://cspiya.github.io/wenova-ai-sales-workshop/materials/modules/03-lead-generation.html)
 
 ## Tartalom
 

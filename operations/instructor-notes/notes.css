@@ -1,14 +1,19 @@
-/* Oktatói jegyzet: a notebook.css-re épül. Bal oldalon a résztvevői lecke, jobbra a jegyzet.
-   Belső anyag: a fejlécsáv jelzi, hogy nem résztvevői oldal. */
-.page--notes .site-head { box-shadow:inset 0 -4px 0 #8b5cf6; }
-.page--notes .site-head__bar::after { content:"Belső oktatói jegyzet"; order:-1; flex-basis:100%; font:500 .68rem/1.4 var(--mono); letter-spacing:.14em; text-transform:uppercase; color:#c4b5fd; }
+/* Oktatói oldalak: a notebook.css-re épülnek, minden operations alatti oldal ezt tölti be.
+   Saját zöld–sárga színvilág és állandó „OKTATÓI OLDAL” sáv különíti el őket a résztvevői oldalaktól.
+   A jegyzetoldalon bal oldalon a résztvevői lecke, jobbra a jegyzet. */
+html { scroll-padding-top:3.5rem; }
+.page--instructor { --navy:#0b3d2e; --navy-2:#0a2f25; --navy-3:#14523f; --on-navy:#effaf5; --on-navy-2:#c5e4d8; --orange:#ffc83d; --orange-deep:#7a5600; --orange-soft:#fff8e1; --canvas:#e3f2eb; --line:#cfe5db; --line-2:#aed1c2; --link:#0b5c45; --link-hover:#073f30; --focus:#b7791f; --grad:linear-gradient(90deg,#0f766e,#ffc83d); --instructor:#0f766e; }
+.instructor-flag { position:sticky; top:0; z-index:20; padding:.45rem 1rem; background:#ffc83d; color:#0b2a20; border-bottom:3px solid #0b3d2e; font:700 .95rem/1.4 var(--sans); letter-spacing:.14em; text-align:center; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+.page--instructor .site-head, .page--instructor .site-foot { background-image:none; }
+.page--instructor .site-head__nav a.is-cta:hover { background:#ffd866; }
+.page--instructor .toc { top:3.5rem; max-height:calc(100vh - 4.5rem); }
 .instructor-grid { display:grid; grid-template-columns:minmax(0,1.7fr) minmax(320px,1fr); gap:1.2rem; padding:1.2rem 1.5rem 2rem; max-width:1800px; margin:auto; }
-.lesson-pane { position:sticky; top:1rem; align-self:start; }
-.lesson-pane iframe { display:block; width:100%; height:calc(100vh - 2rem); border:1px solid var(--line); border-radius:var(--r-lg); background:#fff; box-shadow:var(--shadow); }
-main.notes { padding:clamp(1.1rem,2.5vw,1.8rem); border-top:5px solid #8b5cf6; }
+.lesson-pane { position:sticky; top:3.5rem; align-self:start; }
+.lesson-pane iframe { display:block; width:100%; height:calc(100vh - 4.5rem); border:1px solid var(--line); border-radius:var(--r-lg); background:#fff; box-shadow:var(--shadow); }
+main.notes { padding:clamp(1.1rem,2.5vw,1.8rem); border-top:5px solid var(--instructor); }
 .notes h1 { font-size:clamp(1.5rem,2.4vw,1.9rem); }
 .notes h2 { font-size:1.2rem; margin-top:2rem; }
-.notes h3:not(.cell-title) { font-size:1.02rem; margin:1.5rem 0 .5rem; padding-left:.7rem; border-left:3px solid #8b5cf6; }
+.notes h3:not(.cell-title) { font-size:1.02rem; margin:1.5rem 0 .5rem; padding-left:.7rem; border-left:3px solid var(--instructor); }
 .notes a[target="lesson"]::after { content:" ↗" / ""; font-size:.8em; }
 @media (max-width:980px) {
   .instructor-grid { grid-template-columns:1fr; padding:1rem; }

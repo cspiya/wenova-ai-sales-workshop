@@ -1,13 +1,14 @@
 <!doctype html>
 <!-- Generated from materials/CLAUDE-CODE.md; edit Markdown and run npm run render. -->
-<html lang="hu"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Haladó út: Claude Code a terminálban · AI Sales &amp; Marketing Workshop</title><link rel="stylesheet" href="assets/notebook.css"></head><body class="page page--doc">
-<a class="skip" href="#main">Ugrás a tartalomhoz</a><header class="site-head"><div class="site-head__bar"><a class="site-head__brand" href="index.html"><img src="assets/logos/wenova-wordmark.png" alt="Wenova" width="154" height="18"><span>AI Sales &amp; Marketing Workshop</span></a><nav class="site-head__nav" aria-label="Fő navigáció"><a href="index.html">Kezdőlap</a><a href="schedule.html" class="is-cta">A nap menete</a><a href="CLAUDE-CODE.md">Markdown-forrás</a></nav></div><div class="partner-band partner-band--head"><p class="partner-band__label">Négy hazai csapat, egy közös értékesítési folyamat</p><ul class="partner-band__list" aria-label="Partnerek"><li class="partner partner--wenova"><span class="partner__logo"><img class="logo logo--wenova" src="assets/logos/wenova-wordmark.png" alt="Wenova" width="239" height="28"></span><span class="partner__role">Szervező · AI-működés</span></li><li class="partner partner--brandiseer"><span class="partner__logo"><img class="logo logo--brandiseer" src="assets/logos/brandiseer-icon.png" alt="" width="24" height="28"><span class="logo-word">Brandiseer</span></span><span class="partner__role">Márkaazonos tartalom</span></li><li class="partner partner--blackhole"><span class="partner__logo"><img class="logo logo--blackhole" src="assets/logos/black-hole-media-logo.png" alt="Blackhole Media" width="299" height="28"></span><span class="partner__role">Ügyfélszerzés · Sales Bot</span></li><li class="partner partner--estiwise"><span class="partner__logo"><img class="logo logo--estiwise" src="assets/logos/estiwise-logo-feher.svg" alt="EstiWise" width="99" height="28"></span><span class="partner__role">Ajánlatadás 0–24</span></li></ul></div></header>
+<html lang="hu"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Haladó út: Claude Code a terminálban · AI Sales &amp; Marketing Workshop</title><link rel="alternate" type="text/markdown" href="CLAUDE-CODE.md"><link rel="stylesheet" href="assets/notebook.css"></head><body class="page page--doc">
+<a class="skip" href="#main">Ugrás a tartalomhoz</a><header class="site-head"><div class="site-head__bar"><a class="site-head__brand" href="index.html"><img src="assets/logos/wenova-wordmark.png" alt="Wenova" width="154" height="18"><span>AI Sales &amp; Marketing Workshop</span></a><nav class="site-head__nav" aria-label="Fő navigáció"><a href="index.html">Kezdőlap</a><a href="schedule.html" class="is-cta">A nap menete</a></nav></div><div class="partner-band partner-band--head"><p class="partner-band__label">Négy hazai csapat, egy közös értékesítési folyamat</p><ul class="partner-band__list" aria-label="Partnerek"><li class="partner partner--wenova"><span class="partner__logo"><img class="logo logo--wenova" src="assets/logos/wenova-wordmark.png" alt="Wenova" width="239" height="28"></span><span class="partner__role">Szervező · AI-működés</span></li><li class="partner partner--brandiseer"><span class="partner__logo"><img class="logo logo--brandiseer" src="assets/logos/brandiseer-icon.png" alt="" width="24" height="28"><span class="logo-word">Brandiseer</span></span><span class="partner__role">Márkaazonos tartalom</span></li><li class="partner partner--blackhole"><span class="partner__logo"><img class="logo logo--blackhole" src="assets/logos/black-hole-media-logo.png" alt="Blackhole Media" width="299" height="28"></span><span class="partner__role">Ügyfélszerzés · Sales Bot</span></li><li class="partner partner--estiwise"><span class="partner__logo"><img class="logo logo--estiwise" src="assets/logos/estiwise-logo-feher.svg" alt="EstiWise" width="99" height="28"></span><span class="partner__role">Ajánlatadás 0–24</span></li></ul></div></header>
 <div class="layout"><nav class="toc" aria-label="Tartalom"><p>Tartalom</p><ol><li><a href="#mikor-jó-ez-neked">Mikor jó ez neked?</a></li><li><a href="#1-telepítés-5-perc">1. Telepítés (5 perc)</a></li><li><a href="#scoop">Mentőút Windowson: Claude Code Scooppal</a></li><li><a href="#mentőút-macos-en">Mentőút macOS-en</a></li><li><a href="#2-belépés">2. Belépés</a></li><li><a href="#3-a-tananyag-telepítése-egy-mondattal">3. A tananyag telepítése egy mondattal</a></li><li><a href="#4-connectorok">4. Connectorok</a></li><li><a href="#5-engedélyek">5. Engedélyek</a></li><li><a href="#6-így-dolgozol-a-blokkokban">6. Így dolgozol a blokkokban</a></li><li><a href="#7-ütemezett-feladatok">7. Ütemezett feladatok</a></li><li><a href="#8-biztonság-röviden">8. Biztonság röviden</a></li></ol></nav><main id="main">
 <!-- presentation -->
 <header class="page-hero">
 <h1>Haladó út: Claude Code a terminálban</h1>
 <p class="lead"><strong>Mentőút.</strong> A nap kötelező módja a Claude Desktop Cowork. Ezt az utat akkor használd, ha a Cowork a gépeden nem indul (<a href="#scoop">Windows-mentőút Scooppal</a>), vagy ha szívesen dolgozol a terminálban (karakteres képernyőn). Ugyanazt a tananyagot, ugyanazokkal a lépésekkel járod végig, csak a Claude Code-ban.</p>
 </header>
+<details class="toc-mobile"><summary>Tartalom</summary><nav aria-label="Tartalom"><ol><li><a href="#mikor-jó-ez-neked">Mikor jó ez neked?</a></li><li><a href="#1-telepítés-5-perc">1. Telepítés (5 perc)</a></li><li><a href="#scoop">Mentőút Windowson: Claude Code Scooppal</a></li><li><a href="#mentőút-macos-en">Mentőút macOS-en</a></li><li><a href="#2-belépés">2. Belépés</a></li><li><a href="#3-a-tananyag-telepítése-egy-mondattal">3. A tananyag telepítése egy mondattal</a></li><li><a href="#4-connectorok">4. Connectorok</a></li><li><a href="#5-engedélyek">5. Engedélyek</a></li><li><a href="#6-így-dolgozol-a-blokkokban">6. Így dolgozol a blokkokban</a></li><li><a href="#7-ütemezett-feladatok">7. Ütemezett feladatok</a></li><li><a href="#8-biztonság-röviden">8. Biztonság röviden</a></li></ol></nav></details>
 <h2 id="mikor-jó-ez-neked">Mikor jó ez neked?</h2>
 <ul>
 <li>Ismered a terminált (Windowson PowerShell, macOS-en Terminal), vagy szeretnéd megtanulni.</li>
@@ -15,7 +16,7 @@
 <li>Pro, Max vagy magasabb Claude-előfizetésed van. Az ingyenes csomag nem tartalmazza a Claude Code-ot.</li>
 </ul>
 <h2 id="1-telepítés-5-perc">1. Telepítés (5 perc)</h2>
-<p>A hivatalos parancsok (<a href="https://code.claude.com/docs/en/setup">Claude Code telepítési leírás</a>):</p>
+<p>A hivatalos parancsok (<a href="https://code.claude.com/docs/en/setup" target="_blank" rel="noopener noreferrer">Claude Code telepítési leírás</a>):</p>
 <div class="table-wrap" role="region" aria-label="Táblázat" tabindex="0"><table>
 <thead>
 <tr>
@@ -51,6 +52,7 @@
 <h2>Mentőút Windowson: Claude Code Scooppal</h2>
 <p>Akkor használd, ha a Cowork nem indul a gépeden. A Scoop egy ingyenes programtelepítő, amely a saját felhasználói mappádba dolgozik, ezért rendszergazdai jog nem kell. Minden parancsot egy sima <strong>PowerShell</strong> ablakba másolj: Start menü, írd be, hogy PowerShell, és nyisd meg. Ne válaszd a „Futtatás rendszergazdaként” lehetőséget.</p>
 <p><strong>1. A Scoop telepítése.</strong> Ez az egy sor közvetlenül a memóriából futtatja a hivatalos telepítőt, fájlt nem ment le, ezért nem jön elő a „letöltött fájl nem futtatható” hiba.</p>
+<p class="copy-hint">Másolás: kattints a szövegbe, majd Ctrl+C (Macen Cmd+C). Telefonon tartsd rajta az ujjad, és válaszd a „Másolás” pontot.</p>
 <pre><code class="language-powershell">Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force; Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
 </code></pre>
 <ul>
@@ -113,9 +115,10 @@
 <p>Ellenőrzés: <code>scoop list</code>. <strong>Akkor jó, ha</strong> mind a hat csomag ott van a listában a verziószámával. Ha egy csomag hibát ad, a Claude Code enélkül is működik: futtasd újra a sort, vagy hagyd ki azt a csomagot.</p>
 <h2 id="mentőút-macos-en">Mentőút macOS-en</h2>
 <p>Nyisd meg a <strong>Terminal</strong> alkalmazást, és másold be a hivatalos telepítő sort:</p>
+<p class="copy-hint">Másolás: kattints a szövegbe, majd Ctrl+C (Macen Cmd+C). Telefonon tartsd rajta az ujjad, és válaszd a „Másolás” pontot.</p>
 <pre><code class="language-bash">curl -fsSL https://claude.ai/install.sh | bash
 </code></pre>
-<p>Utána nyiss új Terminal-ablakot, és írd be: <code>claude --version</code>. <strong>Akkor jó, ha</strong> egy verziószámot látsz. Ha a <code>claude</code> parancs ismeretlen, nézd meg a <a href="https://code.claude.com/docs/en/setup">telepítési leírás</a> „Fix your PATH” részét, vagy szólj egy oktatónak.</p>
+<p>Utána nyiss új Terminal-ablakot, és írd be: <code>claude --version</code>. <strong>Akkor jó, ha</strong> egy verziószámot látsz. Ha a <code>claude</code> parancs ismeretlen, nézd meg a <a href="https://code.claude.com/docs/en/setup" target="_blank" rel="noopener noreferrer">telepítési leírás</a> „Fix your PATH” részét, vagy szólj egy oktatónak.</p>
 <h2 id="2-belépés">2. Belépés</h2>
 <p>Írd be: <code>claude</code>. A böngészőben lépj be a Pro vagy Max Claude-fiókoddal. Jelszót a terminálba ne írj.</p>
 <h2 id="3-a-tananyag-telepítése-egy-mondattal">3. A tananyag telepítése egy mondattal</h2>
@@ -129,6 +132,7 @@
 <li>Indítsd: <code>claude</code>. Amikor rákérdez, jelöld megbízhatónak a mappát.</li>
 <li>Írd be:</li>
 </ol>
+<p class="copy-hint">Másolás: kattints a szövegbe, majd Ctrl+C (Macen Cmd+C). Telefonon tartsd rajta az ujjad, és válaszd a „Másolás” pontot.</p>
 <pre><code class="language-text">Telepítsd a workshop tananyagát: https://raw.githubusercontent.com/cspiya/wenova-ai-sales-workshop/main/materials/TELEPITES.md
 </code></pre>
 <p>A Claude Code a saját gépeden tölti le és csomagolja ki a tananyagot a <code>Tananyag/</code> mappába, létrehozza a <code>Munka/</code> mappát, és a gyökérbe másolja a <code>CLAUDE.md</code> és <code>AGENTS.md</code> fájlt. Minden parancs előtt engedélyt kér: olvasd el, mit futtatna, és csak akkor engedd, ha érted. A futtatókönyv: <a href="TELEPITES.md">TELEPITES.md</a>.</p>
@@ -153,7 +157,7 @@
 </ul>
 <h2 id="7-ütemezett-feladatok">7. Ütemezett feladatok</h2>
 <ul>
-<li>A <strong>Claude Desktop Code fülén</strong> van <strong>Scheduled</strong> oldal. Ott a feladat a saját gépeden, a munkamappádban is futhat („Only on this computer”); ehhez a gépnek ébren kell lennie, és az alkalmazásnak nyitva (<a href="https://code.claude.com/docs/en/desktop-scheduled-tasks">leírás</a>).</li>
+<li>A <strong>Claude Desktop Code fülén</strong> van <strong>Scheduled</strong> oldal. Ott a feladat a saját gépeden, a munkamappádban is futhat („Only on this computer”); ehhez a gépnek ébren kell lennie, és az alkalmazásnak nyitva (<a href="https://code.claude.com/docs/en/desktop-scheduled-tasks" target="_blank" rel="noopener noreferrer">leírás</a>).</li>
 <li>A terminálban a <code>/loop</code> csak a nyitott munkamenet alatt ismétel; hosszabb távra a fenti Desktop-feladat vagy a felhőben futó ütemezett feladat való.</li>
 <li>Kész promptok: <a href="starter-kit/scheduled-tasks.md">ütemezett feladatok</a>. Ugyanaz a szabály: csak olvas, összefoglal, piszkozatot ír; nem küld.</li>
 </ul>

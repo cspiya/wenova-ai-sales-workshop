@@ -1,6 +1,6 @@
 # 01-business-foundations
 
-[HTML-változat](01-business-foundations.html)
+[HTML-változat](https://cspiya.github.io/wenova-ai-sales-workshop/operations/instructor-notes/01-business-foundations.html)
 
 [Kapcsolódó tananyag](../../materials/modules/01-business-foundations.md)
 

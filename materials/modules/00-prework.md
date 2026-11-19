@@ -2,7 +2,7 @@
 
 **Állapot: review.**
 
-[HTML-változat](00-prework.html)
+[HTML-változat](https://cspiya.github.io/wenova-ai-sales-workshop/materials/modules/00-prework.html)
 
 ## Tartalom
 

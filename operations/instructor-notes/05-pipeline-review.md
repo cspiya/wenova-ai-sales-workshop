@@ -1,6 +1,6 @@
 # 05-pipeline-review
 
-[HTML-változat](05-pipeline-review.html)
+[HTML-változat](https://cspiya.github.io/wenova-ai-sales-workshop/operations/instructor-notes/05-pipeline-review.html)
 
 [Kapcsolódó tananyag](../../materials/modules/05-pipeline-review.md)
 

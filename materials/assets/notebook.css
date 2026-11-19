@@ -98,6 +98,11 @@ strong { font-weight:650; }
 .toc li { margin:0; }
 .toc a { display:block; padding:.38rem .3rem .38rem .9rem; margin-left:-2px; border-left:2px solid transparent; color:var(--ink-2); text-decoration:none; line-height:1.4; }
 .toc a:hover { color:var(--link); border-left-color:var(--orange); background:linear-gradient(90deg,var(--orange-soft),transparent); }
+.toc-mobile { display:none; margin:-1rem 0 1.6rem; padding:0; background:var(--paper); }
+.toc-mobile summary { padding:.7rem 1rem; min-height:2.75rem; }
+.toc-mobile ol { margin:0; padding:0 1rem .6rem; list-style:none; }
+.toc-mobile li { margin:0; }
+.toc-mobile a { display:block; padding:.45rem 0; line-height:1.4; text-decoration:none; }
 main { min-width:0; background:var(--paper); border:1px solid var(--line); border-radius:var(--r-lg); padding:clamp(1.2rem,4vw,3.2rem); box-shadow:var(--shadow); }
 main > :first-child { margin-top:0; }
 
@@ -170,7 +175,11 @@ h3 { font-size:1.12rem; line-height:1.4; margin:1.8rem 0 .7rem; }
 h4 { font-size:1rem; }
 p, ul, ol { margin:.75rem 0; }
 li { margin:.3rem 0; }
-pre { font:.86rem/1.7 var(--mono); white-space:pre-wrap; overflow-wrap:anywhere; background:#f7f8fc; border:1px solid var(--line); padding:1rem; border-radius:10px; }
+/* másolható blokk: olvasható méret, egy kattintás a teljes szöveget jelöli ki (JavaScript nélkül) */
+pre { font:1rem/1.6 var(--mono); white-space:pre-wrap; overflow-wrap:anywhere; background:#f7f8fc; border:1px solid var(--line); padding:1rem; border-radius:10px; -webkit-user-select:all; user-select:all; }
+pre code { font-size:inherit; }
+pre::selection, pre ::selection { background:var(--orange); color:var(--navy); }
+.copy-hint { margin:.6rem 0 .4rem; font-size:.85rem; line-height:1.45; color:var(--ink-2); }
 code { font-family:var(--mono); font-size:.86em; }
 :not(pre) > code { background:#f0f1f8; border:1px solid var(--line); border-radius:5px; padding:.05rem .35rem; color:#2b2f55; }
 blockquote { margin:1rem 0; border-left:4px solid var(--orange); padding:.8rem 1.1rem; background:var(--orange-soft); border-radius:0 10px 10px 0; white-space:pre-wrap; }
@@ -208,6 +217,7 @@ ol.flow > li:not(:last-child)::after { content:"→" / ""; position:absolute; ri
 .slot--module .slot__title { font-size:1.2rem; letter-spacing:-.015em; }
 .slot__body .slot__who { display:flex; flex-wrap:wrap; align-items:center; gap:.5rem .8rem; margin-top:.6rem; font-size:.9rem; line-height:1.4; }
 .slot__body .slot__builds { margin-top:.6rem; padding-top:.6rem; border-top:1px dashed var(--line); font-size:.92rem; color:var(--ink-2); }
+.slot__body .slot__links { margin-top:.6rem; font-size:.92rem; color:var(--ink-2); }
 .slot--pause .slot__body { background:transparent; border-style:dashed; padding:.4rem 1.1rem; color:var(--muted); }
 .slot--pause .slot__title { font-weight:500; font-size:.95rem; }
 .slot--pause .slot__time { margin-top:.45rem; color:var(--muted); }
@@ -222,9 +232,8 @@ ol.flow > li:not(:last-child)::after { content:"→" / ""; position:absolute; ri
 /* ============================== 10. RESZPONZÍV ============================== */
 @media (max-width:980px) {
   .layout { grid-template-columns:1fr; gap:1rem; padding:1rem 1rem 2rem; }
-  .toc { position:static; max-height:none; background:var(--paper); border:1px solid var(--line); border-radius:var(--r); padding:.9rem 1rem; }
-  .toc ol { columns:2; column-gap:1.5rem; border-left:0; }
-  .toc a { border-left:0; padding-left:0; margin-left:0; break-inside:avoid; }
+  .layout > .toc { display:none; }
+  .toc-mobile { display:block; }
   .partner-band__list { grid-template-columns:repeat(2,minmax(0,1fr)); }
   ol.flow { grid-template-columns:1fr; }
   ol.flow > li:not(:last-child)::after { content:"↓" / ""; right:auto; left:50%; top:auto; bottom:-.72rem; transform:translateX(-50%); }
@@ -237,7 +246,7 @@ ol.flow > li:not(:last-child)::after { content:"→" / ""; position:absolute; ri
   .partner-band { padding:.1rem 1rem .8rem; }
   .partner { padding:.5rem .6rem; }
   .partner__role { font-size:.7rem; }
-  .toc ol { columns:1; }
+  pre, .cell--prompt pre { padding:.8rem .75rem; }
   main { border-radius:var(--r); padding:1.1rem 1rem 1.5rem; }
   .cell { padding:.85rem .9rem; }
   .pager { grid-template-columns:1fr; }
@@ -255,7 +264,8 @@ ol.flow > li:not(:last-child)::after { content:"→" / ""; position:absolute; ri
   @page { margin:14mm 14mm 16mm; }
   body { background:#fff; font-size:10.5pt; line-height:1.5; }
   .site-head, .site-foot { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
-  .site-head__nav, .toc, .skip, .pager, .hero-actions { display:none !important; }
+  .site-head__nav, .toc, .toc-mobile, .copy-hint, .skip, .pager, .hero-actions { display:none !important; }
+  pre { font-size:9.5pt; line-height:1.5; }
   .site-head__bar { padding:.4rem 0; }
   .partner-band { padding:0 0 .5rem; }
   .partner-band__label { display:none; }

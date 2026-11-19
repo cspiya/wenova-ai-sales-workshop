@@ -44,11 +44,15 @@ let persona = null, locks = {};
 let run = null;            // { conv, kind, stop() }
 let lastAnalysis = null;
 let brokerRejected = false;   // set on a 401 from the broker; cleared when the access code changes
+let credsChecking = true;     // while a credential check runs, the primary button is disabled and says so
+let credsCheckId = 0;         // only the latest check may publish its result
 
 const servedByHelper = () => /^http:\/\/(127\.0\.0\.1|localhost):\d+$/.test(location.origin);
 
 // ------------------------------------------------------------------ credentials
 async function resolveCreds() {
+  const checkId = ++credsCheckId;
+  credsChecking = true; syncStartBtn();
   const tries = [];
   const s = settings.source;
   // Auto mode uses the broker only with an access code (its health check needs none, the credential calls do),
@@ -60,21 +64,25 @@ async function resolveCreds() {
   if ((s === "auto" || s === "keys") && (keys.openai || keys.google || keys.elevenlabs)) tries.push(new KeySource(keys, CONFIG.textModels));
   creds = null; health = null; const fails = [...skipped];
   let fallback = null;   // a reachable source without any provider key: used only if nothing better answers
+  let found = null, foundHealth = null;
   for (const c of tries) {
     try {
       const h = await c.health();
-      if (Object.values(h.providers || {}).some(Boolean)) { health = h; creds = c; break; }
+      if (Object.values(h.providers || {}).some(Boolean)) { foundHealth = h; found = c; break; }
       if (!fallback) fallback = [c, h];
       fails.push(c.label + ": elérhető, de nincs rajta API-kulcs");
     } catch (e) { fails.push(c.label + ": " + e.message); }
   }
-  if (!creds && fallback) [creds, health] = fallback;
+  if (checkId !== credsCheckId) return;   // a newer check is running and will update the page
+  if (!found && fallback) [found, foundHealth] = fallback;
+  creds = found; health = foundHealth;
   if (creds && creds.kind === "broker") creds.onUnauthorized = () => {   // a wrong code shows up only on a real call
     if (brokerRejected) return;
     brokerRejected = true;
     resolveCreds().then(() => setStatus("#status", "A távoli broker elutasította a hozzáférési kódot (401). " +
       (creds ? "Átváltottam erre: " + creds.label + ". Indítsd újra." : "Adj meg helyes kódot vagy saját kulcsot a Beállításokban."), true));
   };
+  credsChecking = false;
   renderCredState(fails);
   renderPickers();
 }
@@ -149,11 +157,26 @@ function buildPicker(el, role) {
   const kind = document.createElement("p"); kind.className = "hint";
   const wrap = (label, sel) => { const l = document.createElement("label"); l.className = "field"; l.append(label, sel); return l; };
   el.replaceChildren(wrap("Modell / szolgáltató", optSel), wrap("Modellváltozat", modelSel), wrap("Hang", voiceSel), kind);
-  optSel.onchange = () => { fill(); persist(); }; modelSel.onchange = persist; voiceSel.onchange = persist;
+  optSel.onchange = () => { fill(); persist(); syncStartBtn(); }; modelSel.onchange = persist; voiceSel.onchange = persist;
   fill();
   el.get = () => ({ opt: optionById(optSel.value), model: modelSel.value, voice: voiceSel.value });
 }
-function renderPickers() { buildPicker($("#pickHuman"), "human"); buildPicker($("#pickSeller"), "seller"); buildPicker($("#pickBuyer"), "buyer"); }
+function renderPickers() { buildPicker($("#pickHuman"), "human"); buildPicker($("#pickSeller"), "seller"); buildPicker($("#pickBuyer"), "buyer"); syncStartBtn(); }
+
+// ------------------------------------------------------------------ primary action: start only when the chosen mode can run
+const IDLE_READY = "Kész.", IDLE_SETUP = "Nincs használható modell. Előbb állítsd be a kapcsolatot.", IDLE_CHECKING = "Kapcsolat ellenőrzése…";
+function canStart() {
+  if (!creds || !health) return false;
+  if (settings.mode === "duel" && settings.engine === "text") return textChoice().ok;
+  const pickers = settings.mode === "human" ? ["#pickHuman"] : ["#pickSeller", "#pickBuyer"];
+  return pickers.every(sel => { const p = $(sel).get?.(); return !!p && optionState(p.opt).ok; });
+}
+function syncStartBtn() {
+  const ready = !credsChecking && canStart(), btn = $("#startBtn"), status = $("#status");
+  btn.textContent = credsChecking ? IDLE_CHECKING : ready ? "Indítás" : "Kapcsolat beállítása";
+  btn.disabled = credsChecking || !!run;
+  if ([IDLE_READY, IDLE_SETUP, IDLE_CHECKING].includes(status.textContent)) status.textContent = credsChecking ? IDLE_CHECKING : ready ? IDLE_READY : IDLE_SETUP;
+}
 
 // ------------------------------------------------------------------ scripts (versions in IndexedDB)
 const KIND_LABEL = { alap: "alap", kezi: "kézi", generalt: "AI-generált", finomitott: "AI-finomított", elemzesbol: "elemzésből", import: "importált" };
@@ -282,7 +305,7 @@ function renderLive(conv) {
   $("#metrics").innerHTML = metricsHtml(live);
 }
 function setRunning(on) {
-  $("#startBtn").disabled = on; $("#stopBtn").disabled = !on;
+  syncStartBtn(); $("#stopBtn").disabled = !on;
   $$("input[name=mode], input[name=engine]").forEach(x => { x.disabled = on; });
 }
 
@@ -511,7 +534,7 @@ function syncMode() {
   const text = settings.engine === "text";
   $("#pickSeller").closest("fieldset").hidden = $("#pickBuyer").hidden = text;
   $("#maxTurnsWrap").hidden = $("#speakWrap").hidden = !text; $("#maxSec").closest("label").hidden = text;
-  saveSettings();
+  saveSettings(); syncStartBtn();
 }
 
 async function init() {
@@ -545,7 +568,7 @@ async function init() {
     for (const s of ["convs", "audio", "scripts", "kv"]) await store.clear(s);
     scripts = []; activeId = null; await loadScripts(); await renderHistory(); $("#histDetail").innerHTML = ""; $("#anaView").innerHTML = "";
   };
-  $("#startBtn").onclick = start; $("#stopBtn").onclick = () => stop("leállítva");
+  $("#startBtn").onclick = () => (canStart() ? start() : openSettings()); $("#stopBtn").onclick = () => stop("leállítva");
   $("#firstName").oninput = renderAssembled;
   $("#verSel").onchange = () => { selectedId = $("#verSel").value; renderScripts(); };
   $("#editor").oninput = () => { renderLint(); renderDiff(); renderAssembled(); };

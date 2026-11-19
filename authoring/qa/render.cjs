@@ -36,7 +36,14 @@ function acceptCustom(source,root=ROOT){
   const html=reviewBody(fs.readFileSync(target,'utf8'));
   fs.writeFileSync(target,'<!-- Presentation-review SHA-256: '+sourceHash(source,root)+' -->\n'+html);
 }
+const SITE_URL = 'https://cspiya.github.io/wenova-ai-sales-workshop/';
+// Links to a repository page that has a published page stay inside the published material.
+// The published site address stays absolute: the voice lab does not work from a local file.
+const REPO_URL = /^https:\/\/github\.com\/cspiya\/wenova-ai-sales-workshop\/(?:blob|tree)\/main\/([^?#]*?)\/?([?#].*)?$/;
 function rewrite(href, source, pages) {
+  const from = path.posix.dirname(output(source));
+  const repo = REPO_URL.exec(href);
+  if (repo) { const page = [repo[1], repo[1]+'/README.md'].find(p=>pages.has(p)); return page ? path.posix.relative(from,output(page))+(repo[2]||'') : href; }
   if (/^[a-z][\w+.-]*:|^\/\//i.test(href)) return href;
   const match = href.match(/^([^?#]*)(.*)$/), file = match[1];
   if (!file) return href;
@@ -65,6 +72,8 @@ const kindOf = (label,id) => {
   return byId || KINDS.find(([p])=>label.startsWith(p))?.[1] || null;
 };
 const SCHEDULE = 'materials/schedule.md';
+// Participant pages have no JavaScript: code blocks are selected whole by CSS, and this line says how to copy them.
+const COPY_HINT = 'Másolás: kattints a szövegbe, majd Ctrl+C (Macen Cmd+C). Telefonon tartsd rajta az ujjad, és válaszd a „Másolás” pontot.';
 // Reads the agenda table of materials/schedule.md; the single source for times, partners and speakers.
 function schedule(root = ROOT) {
   const file = path.join(root, SCHEDULE);
@@ -105,6 +114,11 @@ function render(source, root = ROOT, pages = new Set(inventory(root))) {
   const md = new MarkdownIt({html:true, linkify:false, typographer:false});
   md.renderer.rules.table_open=()=>'<div class="table-wrap" role="region" aria-label="Táblázat" tabindex="0"><table>\n';
   md.renderer.rules.table_close=()=>'</table></div>\n';
+  // Every external link opens in a new window; internal links stay in the same one.
+  md.renderer.rules.link_open=(list,at,options,env,self)=>{
+    if(/^(?:https?:)?\/\//i.test(list[at].attrGet('href')||'')){list[at].attrSet('target','_blank');list[at].attrSet('rel','noopener noreferrer');}
+    return self.renderToken(list,at,options);
+  };
   md.block.ruler.before('html_block','stable_anchor',(state,start,end,silent)=>{
     const line=state.src.slice(state.bMarks[start]+state.tShift[start],state.eMarks[start]);
     if(!/^<a (?:name|id)="[\w.:-]+"><\/a>$/.test(line))return false;
@@ -120,17 +134,44 @@ function render(source, root = ROOT, pages = new Set(inventory(root))) {
   }
   const moduleId = /^materials\/modules\/([^/]+)\.md$/.exec(source)?.[1];
   const noteModule = /^operations\/instructor-notes\/([^/]+)\.md$/.exec(source)?.[1];
+  const isInstructor = source.startsWith('operations/');
   const isSchedule = source === SCHEDULE, isHome = source === 'materials/README.md';
   const lead = LEAD[(moduleId||noteModule||'').slice(0,2)] || null;
   const mainId = noteModule ? 'notes' : 'main';
   const relative = p => path.posix.relative(path.posix.dirname(output(source)),p);
   const agenda = schedule(root);
   const raw = s => { const t = new tokens[0].constructor('html_block','',0); t.content = s; return t; };
+  // Workbook and presentation of a schedule block; the presentation cell comes from materials/schedule.md.
+  const slotLinks = r => {
+    const module = r.moduleId && 'materials/modules/'+r.moduleId+'.md';
+    const items = [module && pages.has(module) ? '<a href="'+relative(output(module))+'">Munkafüzet</a>' : '', r.cells[5]?.content.trim() ? inlineHtml(r.cells[5]) : ''].filter(Boolean);
+    return items.length ? '<p class="slot__links">'+items.join(' · ')+'</p>' : '';
+  };
   const inlineHtml = t => { for (const c of t.children||[]) if (c.type==='link_open') c.attrSet('href',rewrite(c.attrGet('href'),source,pages)); return md.renderer.renderInline(t.children||[],md.options,{}); };
+  const inMaterials = source.startsWith('materials/');
   const toc = [], used = new Set([mainId]);
-  let title = '', skipToc = false, hero = false, heroParas = 0, cell = false;
+  let title = '', skipToc = false, hero = false, heroParas = 0, cell = false, copyHinted = false;
+  const tocSlot = raw('');
   const rendered = [];
   const closeCell = () => { if (cell) { rendered.push(raw('</div>\n')); cell = false; } };
+  const pageTitle = p => /^# (.+)$/m.exec(fs.readFileSync(path.join(root,p),'utf8').replace(/\r\n/g,'\n'))?.[1].trim();
+  // "lenti prompt" in a lesson becomes a link to that lesson's own prompt block.
+  const linkPromptMention = (inline, at) => {
+    const kids = inline.children || [], index = kids.findIndex(k=>k.type==='text' && /\blenti prompt\p{L}*/u.test(k.content));
+    if (index < 0) return;
+    let target = null;
+    for (let j=at+1; j<tokens.length && !target; j++) {
+      const id = tokens[j].type==='html_block' && /^<a (?:name|id)="([\w.:-]+)"><\/a>/.exec(tokens[j].content.trim())?.[1];
+      if (!id) continue;
+      if (isLessonId(id,moduleId)) break;
+      if (id.endsWith('--prompt')) target = id;
+    }
+    if (!target) return;
+    const Token = inline.constructor, text = kids[index], match = /\blenti prompt\p{L}*/u.exec(text.content);
+    const piece = content => { const t = new Token('text','',0); t.content = content; return t; };
+    const open = new Token('link_open','a',1), close = new Token('link_close','a',-1); open.attrSet('href','#'+target);
+    kids.splice(index,1,piece(text.content.slice(0,match.index)),open,piece(match[0]),close,piece(text.content.slice(match.index+match[0].length)));
+  };
   const closeHero = () => {
     if (!hero) return;
     const slot = agenda.find(r => r.moduleId && r.moduleId === (moduleId||noteModule));
@@ -153,7 +194,7 @@ function render(source, root = ROOT, pages = new Set(inventory(root))) {
           (p?'<span class="logo-tile">'+logoImg(p,relative,root)+'</span>':'')+'</li>';
       }).join('')+'</ol>\n'));
     }
-    rendered.push(raw('</header>\n')); hero = false;
+    rendered.push(raw('</header>\n'), tocSlot); hero = false;
   };
   for (let i=0; i<tokens.length; i++) {
     const token = tokens[i];
@@ -165,7 +206,7 @@ function render(source, root = ROOT, pages = new Set(inventory(root))) {
     // A Markdown-only self link ("HTML-változat") is noise on the HTML page itself.
     if (token.type === 'paragraph_open') {
       const kids = tokens[i+1]?.children || [];
-      if (kids.length===3 && kids[0].type==='link_open' && kids[0].attrGet('href')===path.posix.basename(output(source))) { i+=2; continue; }
+      if (kids.length===3 && kids[0].type==='link_open' && [path.posix.basename(output(source)),SITE_URL+output(source)].includes(kids[0].attrGet('href'))) { i+=2; continue; }
     }
     if (token.type === 'html_block') {
       const anchor = token.content.trim().match(/^<a (?:name|id)="([\w.:-]+)"><\/a>$/);
@@ -187,7 +228,7 @@ function render(source, root = ROOT, pages = new Set(inventory(root))) {
         if (title) throw Error(source+': expected one h1');
         title = label; rendered.push(raw('<header class="page-hero">\n')); hero = true;
       } else {
-        if (['h2','h3'].includes(token.tag)) { closeHero(); closeCell(); }
+        if (['h2','h3'].includes(token.tag)) { closeHero(); closeCell(); copyHinted = false; }
         let id = token.meta?.anchor;
         if (!id) { const base = slug(label) || 'section'; id = base; let n=0; while(used.has(id)) id=base+'-'+(++n); used.add(id); token.attrSet('id',id); }
         if (token.tag === 'h2') toc.push({id,label});
@@ -197,8 +238,21 @@ function render(source, root = ROOT, pages = new Set(inventory(root))) {
       }
     }
     if (hero && token.type === 'paragraph_open') {
-      const content = tokens[i+1]?.content || '';
-      token.attrSet('class', /^\*\*(?:Állapot|Státusz):/.test(content) ? 'state' : /^\[[^\]]*\]\([^)]*\)$/.test(content) ? 'hero-links' : heroParas++ === 0 && content.length < 90 ? 'kicker' : 'lead');
+      const inline = tokens[i+1], kids = inline?.children || [];
+      // The status stays a short label; any text after it becomes the normal intro paragraph.
+      const label = /^\*\*(?:Állapot|Státusz):[^*]*\*\*(?=\s*\S)/.exec(inline?.content || '')?.[0];
+      const labelEnd = kids.findIndex(k=>k.type === 'strong_close') + 1;
+      if (label && labelEnd) {
+        const Token = token.constructor, close = new Token('paragraph_close','p',-1), open = new Token('paragraph_open','p',1), intro = new Token('inline','',0);
+        close.block = open.block = intro.block = true; open.meta = {intro:true};
+        intro.content = inline.content.slice(label.length).trim();
+        intro.children = kids.slice(labelEnd); while (intro.children[0]?.type === 'softbreak') intro.children.shift();
+        if (intro.children[0]?.type === 'text') intro.children[0].content = intro.children[0].content.trimStart();
+        inline.content = label; inline.children = kids.slice(0,labelEnd);
+        tokens.splice(i+2,0,close,open,intro);
+      }
+      const content = inline?.content || '';
+      token.attrSet('class', token.meta?.intro ? 'lead' : /^\*\*(?:Állapot|Státusz):/.test(content) ? 'state' : /^\[[^\]]*\]\([^)]*\)$/.test(content) ? 'hero-links' : heroParas++ === 0 && content.length < 90 ? 'kicker' : 'lead');
     }
     if (isSchedule && token.type === 'ordered_list_open') token.attrSet('class','flow');
     if (isSchedule && token.type === 'table_open') {
@@ -209,14 +263,19 @@ function render(source, root = ROOT, pages = new Set(inventory(root))) {
         return '<li class="slot'+(r.pause?' slot--pause':'')+(p?' slot--'+p.key:'')+(r.moduleId?' slot--module':'')+'"><p class="slot__time">'+escape(r.time)+'</p><div class="slot__body">'+
           '<p class="slot__title">'+inlineHtml(r.cells[1])+'</p>'+
           (p ? '<p class="slot__who"><span class="logo-tile">'+logoImg(p,relative,root)+'</span><span><strong>'+escape(r.partner)+'</strong>'+(r.speakers?'<br>'+escape(r.speakers):'')+'</span></p>' : '')+
-          (r.builds ? '<p class="slot__builds"><span class="slot__label">Mit építesz</span> '+inlineHtml(r.cells[4])+'</p>' : '')+'</div></li>\n';
+          (r.builds ? '<p class="slot__builds"><span class="slot__label">Mit építesz</span> '+inlineHtml(r.cells[4])+'</p>' : '')+slotLinks(r)+'</div></li>\n';
       }).join('')+'</ol>\n'));
       continue;
     }
-    for (const child of token.children || []) {
+    if (moduleId && token.type === 'inline') linkPromptMention(token,i);
+    for (const [at, child] of (token.children || []).entries()) {
       if (child.type === 'link_open') {
-        const href = rewrite(child.attrGet('href'),source,pages); child.attrSet('href',href);
-        if (noteModule && href.startsWith('../../materials/modules/'+noteModule+'.html')) child.attrSet('target','lesson');
+        const original = child.attrGet('href'), href = rewrite(original,source,pages); child.attrSet('href',href);
+        // A repository address shown as link text would no longer match where the link leads.
+        const label = token.children[at+1], page = REPO_URL.test(original) && href !== original && [...pages].find(p=>relative(output(p))===href.split('#')[0]);
+        if (page && label?.type === 'text' && label.content.includes('github.com')) label.content = pageTitle(page) || label.content;
+        // Section links open beside the note; the plain module link leads to the module page itself.
+        if (noteModule && href.startsWith('../../materials/modules/'+noteModule+'.html#')) child.attrSet('target','lesson');
       }
       if (child.type === 'image') child.attrSet('src',rewrite(child.attrGet('src'),source,pages));
     }
@@ -225,17 +284,16 @@ function render(source, root = ROOT, pages = new Set(inventory(root))) {
       if (prev?.type === 'html_block' && /^<a id=/.test(prev.content)) rendered.splice(rendered.length-1,0,opener); else rendered.push(opener);
       cell = true;
     }
+    if (token.type === 'fence' && inMaterials && !copyHinted) { rendered.push(raw('<p class="copy-hint">'+escape(COPY_HINT)+'</p>\n')); copyHinted = true; }
     rendered.push(token);
   }
   closeHero(); closeCell();
   if (!title) throw Error(source+': missing h1');
   const css = relative('materials/assets/notebook.css');
-  const inMaterials = source.startsWith('materials/');
   const home = inMaterials ? relative('materials/index.html') : relative('index.html');
   const nav = [['Kezdőlap',home]];
   if (pages.has(SCHEDULE)) nav.push(['A nap menete',relative(output(SCHEDULE))]);
   if (!inMaterials) nav.push(['Résztvevői tananyag',relative('materials/index.html')]);
-  nav.push(['Markdown-forrás',path.posix.basename(source)]);
   // Previous / next module links keep the day's order visible at the end of every module.
   let pager = '';
   if (moduleId) {
@@ -244,14 +302,18 @@ function render(source, root = ROOT, pages = new Set(inventory(root))) {
     const link = (p,dir) => p ? '<a class="pager__'+dir+'" href="'+relative(output(p))+'"><span>'+(dir==='prev'?'← Előző modul':'Következő modul →')+'</span>'+label(p)+'</a>' : '<span></span>';
     pager = '<nav class="pager" aria-label="Modulok">'+link(mods[at-1],'prev')+link(mods[at+1],'next')+'</nav>\n';
   }
+  const tocItems = toc.map(t=>'<li><a href="#'+escape(t.id)+'">'+escape(t.label)+'</a></li>').join('');
+  // Phones get the contents after the page title, collapsed; the desktop sidebar stays as it is.
+  if (!noteModule && toc.length) tocSlot.content = '<details class="toc-mobile"><summary>Tartalom</summary><nav aria-label="Tartalom"><ol>'+tocItems+'</ol></nav></details>\n';
   const body = md.renderer.render(rendered,md.options,{});
-  const sidebar = '<nav class="toc" aria-label="Tartalom"><p>Tartalom</p><ol>'+toc.map(t=>'<li><a href="#'+escape(t.id)+'">'+escape(t.label)+'</a></li>').join('')+'</ol></nav>';
+  const sidebar = '<nav class="toc" aria-label="Tartalom"><p>Tartalom</p><ol>'+tocItems+'</ol></nav>';
+  // No fragment on this src: a fragment in the iframe scrolls the outer page down to the panel when the note opens.
   const frame = noteModule ? '<div class="lesson-pane"><iframe name="lesson" src="../../materials/modules/'+noteModule+'.html" title="Résztvevői tananyag"></iframe></div>' : sidebar;
   const kind = noteModule ? 'notes' : moduleId ? 'module' : isSchedule ? 'schedule' : isHome ? 'home' : source === 'materials/indulas.md' ? 'projection' : 'doc';
   return '<!doctype html>\n<!-- Generated from '+source+'; edit Markdown and run npm run render. -->\n'+
-    '<html lang="hu"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>'+escape(title)+' · AI Sales &amp; Marketing Workshop</title><link rel="stylesheet" href="'+css+'">'+
-    (noteModule?'<link rel="stylesheet" href="notes.css">':'')+'</head><body class="page page--'+kind+(lead?' lead--'+lead:'')+'">\n'+
-    '<a class="skip" href="#'+mainId+'">Ugrás a tartalomhoz</a><header class="site-head"><div class="site-head__bar"><a class="site-head__brand" href="'+home+'">'+(fs.existsSync(path.join(root,'materials/assets/logos/wenova-wordmark.png'))?'<img src="'+relative('materials/assets/logos/wenova-wordmark.png')+'" alt="Wenova" width="154" height="18">':'<strong>Wenova</strong>')+'<span>AI Sales &amp; Marketing Workshop</span></a>'+
+    '<html lang="hu"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>'+(isInstructor?'OKTATÓI OLDAL · ':'')+escape(title)+' · AI Sales &amp; Marketing Workshop</title><link rel="alternate" type="text/markdown" href="'+escape(path.posix.basename(source))+'"><link rel="stylesheet" href="'+css+'">'+
+    (isInstructor?'<link rel="stylesheet" href="'+relative('operations/instructor-notes/notes.css')+'">':'')+'</head><body class="page page--'+kind+(isInstructor?' page--instructor':'')+(lead?' lead--'+lead:'')+'">\n'+
+    '<a class="skip" href="#'+mainId+'">Ugrás a tartalomhoz</a>'+(isInstructor?'<div class="instructor-flag" role="note">OKTATÓI OLDAL</div>':'')+'<header class="site-head"><div class="site-head__bar"><a class="site-head__brand" href="'+home+'">'+(fs.existsSync(path.join(root,'materials/assets/logos/wenova-wordmark.png'))?'<img src="'+relative('materials/assets/logos/wenova-wordmark.png')+'" alt="Wenova" width="154" height="18">':'<strong>Wenova</strong>')+'<span>AI Sales &amp; Marketing Workshop</span></a>'+
     '<nav class="site-head__nav" aria-label="Fő navigáció">'+nav.map(([l,h])=>'<a href="'+h+'"'+(l==='A nap menete'?' class="is-cta"':'')+'>'+l+'</a>').join('')+'</nav></div>'+partnerBand(relative,lead,'head',root)+'</header>\n'+
     '<div class="'+(noteModule?'instructor-grid':'layout')+'">'+frame+'<main id="'+mainId+'"'+(moduleId?' data-module-id="'+moduleId+'"':'')+(noteModule?' class="notes"':'')+'>\n'+body+pager+'</main></div>\n'+
     '<footer class="site-foot">'+partnerBand(relative,lead,'foot',root)+'<p class="site-foot__meta">AI Sales &amp; Marketing Workshop · 2026. november 19. · CEU, Budapest · a Wenova szervezésében</p></footer>\n</body></html>\n';
@@ -278,4 +340,4 @@ function run({root=ROOT, check=false, selected=null}={}) {
   return count;
 }
 if (require.main === module) { try { const i=process.argv.indexOf('--accept-custom');if(i>=0)acceptCustom(process.argv[i+1]);else console.log('PASS: '+run({check:process.argv.includes('--check')})+' presentation sources.'); } catch(e) { console.error(e.message); process.exitCode=1; } }
-module.exports = {ROOT, files, inventory, output, slug, rewrite, render, run,custom,sourceHash,acceptCustom,isLessonId,PARTNERS,partnerOf,schedule};
+module.exports = {ROOT, SITE_URL, files, inventory, output, slug, rewrite, render, run,custom,sourceHash,acceptCustom,isLessonId,PARTNERS,partnerOf,schedule};

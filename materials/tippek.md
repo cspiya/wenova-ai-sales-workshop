@@ -3,7 +3,9 @@
 
 AI Sales & Marketing Workshop · 2026. november 19. · Piya Csaba blokkjához
 
-**Állapot: draft.** Rövid, általános tanácsok kis- és középvállalkozásoknak, amelyek AI-segítséggel hirdetnek, gyűjtenek érdeklődőket és írnak leveleket. Minden tanács mögött legalább két független, nyilvános forrás áll (platformdokumentáció, hatósági útmutató vagy kutatás); a linkeket a tanácsnál találod. A platformok felülete és szabályai változnak: alkalmazás előtt nézd meg a hivatkozott oldal friss változatát.
+**Állapot: draft.**
+
+Rövid, általános tanácsok kis- és középvállalkozásoknak, amelyek AI-segítséggel hirdetnek, gyűjtenek érdeklődőket és írnak leveleket. Minden tanács mögött legalább két független, nyilvános forrás áll (platformdokumentáció, hatósági útmutató vagy kutatás); a linkeket a tanácsnál találod. A platformok felülete és szabályai változnak: alkalmazás előtt nézd meg a hivatkozott oldal friss változatát.
 
 <a name="terv"></a>
 

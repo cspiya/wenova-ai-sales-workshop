@@ -1,6 +1,6 @@
 # 02-content-marketing
 
-[HTML-változat](02-content-marketing.html)
+[HTML-változat](https://cspiya.github.io/wenova-ai-sales-workshop/operations/instructor-notes/02-content-marketing.html)
 
 [Kapcsolódó tananyag](../../materials/modules/02-content-marketing.md)
 
