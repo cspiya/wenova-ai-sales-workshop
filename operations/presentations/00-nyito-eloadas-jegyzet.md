@@ -116,8 +116,8 @@
 
 **Előadói szöveg:**
 
-- *0–6 mp, a szabálykártya belép.* „Figyeld a húsz növényes szabályt. A kontextus az az anyag, amelyhez a modell egy válasz készítésekor hozzáfér.”
-- *6–13 mp, a sáv megtelik.* „Ide kerülhet az aktuális kérés, a korábbi üzenetekből vagy forrásokból átadott rész, és az alkalmazás utasítása. Minden újabb körben gyarapodhat ez a csomag.”
+- *0–6 mp, a szabálykártya belép.* „Figyeld a húsz növényes szabályt. A kontextus az, amihez a modell hozzáfér.”
+- *6–13 mp, a sáv megtelik.* „Ide kerül a kérés, az előzmény, a forrás és az alkalmazás utasítása. Minden körben gyarapodhat.”
 - *13–21 mp, a szabálykártya kikerül.* „A kontextusablak véges. Tokennel mérjük, és helyet kell hagyni a válasznak is.”
 - *21 mp után, a kártya már kimaradt.* „A chat bal oldalán továbbra is olvasható, pedig ebben a példában már kimaradt abból, amit a modell megkapott. Az alkalmazás válogathat vagy tömöríthet is. Az számít, mi jut be az adott válaszhoz.”
 
@@ -187,7 +187,7 @@
 - *82–94 mp.* „Kiveszi az árat, és bejárást kér. A módosított változat visszamegy az Ellenőrhöz. Az új változatra kell az ellenőrzés.”
 - *94–105 mp.* „Az Ellenőr ezt újra összeveti a szabállyal. Blokkoló, súlyos vagy közepes hibánál javítunk. Az aprót feljegyezzük. Ha elakad a kör, továbbadjuk a bizonyítékot és a nyitott kérdést.”
 - *105–116 mp.* „Most kapsz egy ellenőrzött piszkozatot, mellé az apró nyitott pontot. Te döntesz, javítod-e még, és elküldöd-e.”
-- *116–125 mp.* „A kör végén a Karmester beírja a munkanaplóba, mi történt, hol értettük félre egymást, és mi lett a megoldás. Ebből javítjuk a folyamatot és az utasításokat.”
+- *116–125 mp.* „A Karmester feljegyzi, mi történt, mit értettünk félre, és mit javítunk legközelebb.”
 
 **Forrás:** Cél, terv, jóváhagyás, szerepkiosztás és küldési kapu [H01] · Friss beszélgetés, bemenet, súlyosság és döntés [H02] · Korlátozott ciklus, bizonyíték, vitás lelet, ismételt ellenőrzés [H03], [H04] · Kitalált üzleti szabály [H05]. A feladatkezelő a briefben kért választható lépés. A szemléltetésben a naptárészrevételt a friss ellenőrzés feloldja. Fennmaradó vita esetén független harmadik ellenőr dönt. Az idő- vagy körkeret elérésekor a Karmester a bizonyítékot és a döntendő kérdést adja tovább. Apró nyitott pontot jegyzünk fel, a workshop ellenőrzőlistáján közepes vagy súlyos hiba javítást kér.
 

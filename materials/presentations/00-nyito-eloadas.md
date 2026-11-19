@@ -67,9 +67,9 @@
 
 ## Dia 7: Backpropagation | Melyik súlyon állítsunk?
 
-**A dián látható szöveg:** Backpropagation · Becsülj · Mérd a hibát · Számolj visszafelé · Frissítsd a súlyokat · Szemléltetés
+**A dián látható szöveg:** Backpropagation · Becsülj · Mérd a hibát · Számolj visszafelé · Frissítsd a súlyokat · Első becslés · Frissítés után · Szemléltetés
 
-**Mozgó ábra:** Háromrétegű háló, balra kitalált ajánlatkérő levél, jobbra a modell téves becslésének üres köre és a helyes címke pipája. 0–5 mp: tömör nyíl viszi előre a jelet, megjelenik a kör. 5–9 mp: keret fogja össze a kört és a pipát, feltűnik a „Hiba”. 9–16 mp: szaggatott nyilak futnak visszafelé rétegről rétegre. A súlyok még változatlanok. 16–21 mp: külön lépésben két él vastagabb, egy vékonyabb lesz. 21–26 mp: új előrehaladás a módosított hálón, a helyes címke becsült valószínűségét mutató sáv megnő. Teljes hossz 26 mp. A végső javulás az illusztrált lépés eredménye.
+**Mozgó ábra:** Háromrétegű háló, balra kitalált ajánlatkérő levél, jobbra a modell téves becslésének üres köre és a helyes címke pipája. 0–5 mp: tömör nyíl viszi előre a jelet, megjelenik a kör. 5–9 mp: keret fogja össze a kört és a pipát, feltűnik a „Hiba”. 9–16 mp: szaggatott nyilak futnak visszafelé rétegről rétegre. A súlyok még változatlanok. 16–21 mp: külön lépésben két él vastagabb, egy vékonyabb lesz. 21–26 mp: új előrehaladás a módosított hálón, a helyes címke becsült valószínűségét mutató sáv megnő. A hibapanel az „Első becslés”, a sáv a „Frissítés után” állapotot jelöli. Teljes hossz 26 mp. A végső javulás az illusztrált lépés eredménye.
 
 **Lépésfeliratok:**
 
@@ -99,7 +99,7 @@
 
 **A dián látható szöveg:** Transformer · Sorrend · Figyelem · Átalakítás · Következő réteg · Szemléltetés
 
-**Mozgó ábra:** Balra három számozott jel három szövegpozícióhoz, jobbra három egymás utáni rétegkeret. Az elsőben figyelmi és átalakító rész van. 0–4 mp: a jelek sorba állnak. 4–9 mp: a harmadik pozíciót az előző kettővel nyilak kötik össze. A jövőbeli hely szaggatott keret, nyíl nélkül. 9–14 mp: a három módosult jel belép az átalakító részbe, és külön-külön alakot vált. 14–20 mp: átjutnak még két összevont rétegen és megállnak. Teljes hossz 20 mp. A rétegszám és a kiemelt kapcsolatok szemléltetők.
+**Mozgó ábra:** Balra három számozott jel három szövegpozícióhoz, jobbra három egymás utáni rétegkeret. Az elsőben figyelmi és átalakító rész van. 0–4 mp: a jelek sorba állnak. 4–9 mp: a harmadik pozíciót az előző kettővel nyilak kötik össze. A jövőbeli hely szaggatott keret, nyíl nélkül. 9–14 mp: a három módosult jel belép az átalakító részbe, és külön-külön alakot vált. 14–20 mp: átjutnak még két összevont rétegen és megállnak. A három jel végig külön pályán, azonos sorrendben halad. Teljes hossz 20 mp. A rétegszám és a kiemelt kapcsolatok szemléltetők.
 
 **Lépésfeliratok:**
 
@@ -144,7 +144,7 @@
 
 **A dián látható szöveg:** Chatelőzmény · Aktuális kontextus · Alapcsomag: 20 növény · Válaszhely · Írj rövidebben · Szemléltetés
 
-**Mozgó ábra:** Balra függőleges chatelőzmény. Jobbra véges hosszú, hatrészes „Aktuális kontextus” sáv, jobb szélén csíkozott „Válaszhely”. A hat rekesz szemléltető, egy kártya sok tokent jelképez. 0–6 mp: a bal oldali „Alapcsomag: 20 növény” forráskártya és két jelöletlen beszédbuborék másolata bekerül a jobb oldali sávba. 6–13 mp: még egy korábbi válasz jön be, megtelik a sáv használható része az „Írj rövidebben” kártyával együtt. 13–21 mp: egy válasz és egy új kérés érkezik. A bemutatott alkalmazás a jobb oldali sávból kiveszi a két legrégebbi kártyát, köztük a forrás másolatát. Az eredeti kártyák balra a chatben maradnak. A két felszabadult helyre csúszik a válasz és az új kérés. 21–26 mp: látszik, mi maradt a modell bemenetében, és a csíkozott hely a következő válasznak. Teljes hossz 26 mp. Ez egy lehetséges előzménykezelés szemléltetése.
+**Mozgó ábra:** Balra függőleges chatelőzmény. Jobbra véges hosszú, hatrészes „Aktuális kontextus” sáv, jobb szélén csíkozott „Válaszhely”. A hat rekesz szemléltető, egy kártya sok tokent jelképez. 0–6 mp: a bal oldali „Alapcsomag: 20 növény” forráskártya és két jelöletlen beszédbuborék másolata bekerül a jobb oldali sávba. 6–13 mp: még egy korábbi válasz jön be, megtelik a sáv használható része az „Írj rövidebben” kártyával együtt. 13–21 mp: egy válasz és egy új kérés érkezik. A bemutatott alkalmazás a jobb oldali sávból kiveszi a két legrégebbi kártyát, köztük a forrás másolatát. Az eredeti kártyák balra a chatben maradnak. A megmaradt kártyák balra csúsznak, a válasz és az új kérés a sor végére, közvetlenül a válaszhely elé érkezik. 21–26 mp: látszik, mi maradt a modell bemenetében, és a csíkozott hely a következő válasznak. Teljes hossz 26 mp. Ez egy lehetséges előzménykezelés szemléltetése.
 
 **Lépésfeliratok:**
 
@@ -206,7 +206,7 @@
 
 ## Dia 19: Egy levél útja az emberi döntésig
 
-**A dián látható szöveg:** Kitalált eset · Ember · Karmester · Készítő · Ellenőr · 25 növény · Cég-DNS · Brief · Piszkozat · Forrás nélküli ár · Feloldva: időpontot kérünk · Bejárás · Nyitott pont · Küldés? · Munkanapló
+**A dián látható szöveg:** Kitalált eset · Ember · Karmester · Készítő · Ellenőr · 25 növény · Cég-DNS · Brief · Piszkozat · Forrás nélküli ár · közepes · vitatott · Javítva · Dátum tisztázva: időpontot kérünk · Ha maradt javítandó hiba · Bejárás · Nyitott pont · Küldés? · Munkanapló
 
 **Mozgó ábra:** Négy függőleges sáv balról jobbra: „Ember”, „Karmester”, „Készítő”, „Ellenőr”. A felső sorban mindig maradjon látható a „Kitalált eset”. A sávok közt csak az éppen átadott kártya mozog. Az átadást folytonos nyíl, a javítási kört visszahajló szaggatott nyíl jelzi. A külön beszélgetést az Ellenőrnél megjelenő üres, dupla keret mutatja. A nyitott pont jelölése feliratos borostyánszínű kör, a blokkolóé feliratos piros nyolcszög.
 
@@ -217,14 +217,14 @@
 | 22–34 mp | Az Embertől második pipa érkezik a lezárt feladatkeretre, ez a terv jóváhagyása. A Karmester feladatlista-ikonnal jelzi a választható előzetes rögzítést. A „Brief” kártya átcsúszik a Készítőhöz, vele mozog a forráscsomag. Felvillan az Író szerepét jelző toll. |
 | 34–45 mp | A Készítőnél összeáll a „Piszkozat” kártya egy árcédulaikonnal, majd visszacsúszik a Karmesterhez. |
 | 45–58 mp | Az Ellenőrnél megnyílik a friss keret. A Karmester három ikont továbbít bele: piszkozat, eredeti források, ellenőrzőlista. A készítői jegyzet ikonja a Készítő sávjában marad. |
-| 58–69 mp | Az Ellenőrnél megjelenik a blokkoló „Forrás nélküli ár”, egy üres naptárikon a vitatható észrevételhez és a „Nyitott pont” az apró stílusészrevételhez. A jelzések és a piszkozat a Karmester sávján át együtt visszamennek a Készítőhöz. |
+| 58–69 mp | Az Ellenőrnél megjelenik a blokkoló „Forrás nélküli ár”, egy üres naptárikon a közepes súlyú, vitatott dátumészrevételhez („közepes · vitatott”) és a „Nyitott pont” az apró stílusészrevételhez. A jelzések és a piszkozat a Karmester sávján át együtt visszamennek a Készítőhöz. |
 | 69–82 mp | A piros jelzés pipát kap, amely itt az észrevétel elfogadását jelzi. A naptár mellé visszaúszik egy forrásikon, majd a vitatott naptárjelzés az indoklással együtt az Ellenőr felé indul. A kis pont a nyitottak közé kerül. |
-| 82–94 mp | A Készítőnél az árcédula eltűnik, a „Bejárás” kártya a helyére kerül. Az új piszkozat a Karmesteren át az Ellenőrhöz jut, a visszahajló nyíl kirajzolja a teljes javítási kört. |
-| 94–105 mp | Az Ellenőr összeilleszti az új piszkozatot az eredeti forrással. A blokkoló jelzés bezárul, a vitatott naptárjelzésnél röviden megjelenik a „Feloldva: időpontot kérünk” felirat, majd a jelzés eltűnik, és megmarad az apró nyitott pont. A visszahajló ág egyszer felvillan, jelezve, merre menne vissza a munka, ha maradt volna súlyos hiba. |
+| 82–94 mp | A Készítőnél az árcédula eltűnik, a „Bejárás” kártya a helyére kerül. Az új piszkozat a Karmesteren át az Ellenőrhöz jut, ekkor csak az Ellenőr felé tartó mozgás látszik. |
+| 94–105 mp | Az Ellenőr összeilleszti az új piszkozatot az eredeti forrással. Az ár sora „Javítva” jelölést kap, a dátum sorában röviden megjelenik a „Dátum tisztázva: időpontot kérünk” felirat, majd a jelzés eltűnik, és megmarad az apró nyitott pont. A szaggatott visszanyíl itt jelenik meg a „Ha maradt javítandó hiba” felirattal, és megmutatja, merre menne vissza a munka. |
 | 105–116 mp | A Karmester az Emberhez küldi az átnézett piszkozatot és a nyitott észrevételt. Melléjük kerül a „Küldés?” döntéskártya. |
 | 116–124 mp | A Karmester beírja a munkanaplóba, mi történt. Felirat: „Munkanapló: mi történt, hol értettük félre, mit tanultunk”. A „Küldés?” döntéskártya az Embernél marad. |
 
-A teljes animáció 124 mp. A dia megnyitásakor magától indul, kattintás nélkül halad végig. A záróállapot 1 mp-ig látszik, így a dia teljes ideje 2:05 marad. Csökkentett mozgásnál három nagy állapot látszik: feladatátadás; lelet és javítás; ellenőrzött piszkozat és emberi döntés. A példa egy javítási kört mutat. A villanó visszaág jelzi, hogy új lelet esetén lenne még kör. A záróállapotban soha ne jelenjen meg elküldött boríték vagy sikeres küldést jelző ikon.
+A teljes animáció 124 mp. A dia megnyitásakor magától indul, kattintás nélkül halad végig. A záróállapot 1 mp-ig látszik, így a dia teljes ideje 2:05 marad. Csökkentett mozgásnál három nagy állapot látszik: feladatátadás (25 növény, levél és Cég-DNS); lelet és javítás (A fix ár kikerül, bejárást kérünk); ellenőrzött piszkozat és emberi döntés (Nyitott stíluspont. Elküldöd?). A példa egy javítási kört mutat. A szaggatott visszanyíl jelzi, hogy javítandó hiba esetén lenne még kör. A záróállapotban soha ne jelenjen meg elküldött boríték vagy sikeres küldést jelző ikon.
 
 **Lépésfeliratok:**
 
@@ -233,8 +233,8 @@ A teljes animáció 124 mp. A dia megnyitásakor magától indul, kattintás né
 3. Jóváhagyod a tervet. A Karmester az Írót a forrásokkal együtt indítja.
 4. A Készítő visszaadja a piszkozatot. Ebben már van egy fix ár.
 5. Friss beszélgetés: piszkozat, eredeti források, ellenőrzőlista. Az Író gondolatmenete kimarad.
-6. Leletek súlyossággal: blokkoló, vitatható, apró.
-7. A Készítő elfogadja az árat, a dátumot forrással vitatja, az apró pont nyitott marad.
+6. Leletek súlyossággal: blokkoló, közepes, apró.
+7. A Készítő elfogadja az árra vonatkozó kifogást, a dátumot forrással vitatja, az apró pont nyitott marad.
 8. Az ár kikerül, bejárás kerül a helyére. Az új változat visszamegy az Ellenőrhöz.
 9. Blokkoló, súlyos vagy közepes hibánál javítunk. Az aprót feljegyezzük.
 10. Ellenőrzött piszkozat és nyitott pont. Te döntesz, elküldöd-e.
@@ -252,9 +252,9 @@ A teljes animáció 124 mp. A dia megnyitásakor magától indul, kattintás né
 
 ## Dia 21: Tartalék dia | Ugyanannyi számítás, több szöveg
 
-**A dián látható szöveg:** Gopher: 280 milliárd paraméter · Chinchilla: 70 milliárd paraméter · Azonos tanítási számítás · Chinchilla: kb. négyszer annyi tanítótoken
+**A dián látható szöveg:** Gopher: 280 milliárd paraméter · Chinchilla: 70 milliárd paraméter · Azonos tanítási számítás · Tanítótokenek, arányosan · Chinchilla: kb. négyszer annyi tanítótoken
 
-**Ábra:** Azonos szélességű felső keretben két modellkártya. Mindegyiken külön mezőben a paraméterszám. A Chinchilla alatt a több tanítótoken mellett négy kicsi, azonos méretű lapikon, a Gopher alatt egy lapikon. A szöveges arány a kerekített különbséget jelzi.
+**Ábra:** Azonos szélességű felső keretben két modellkártya. Mindegyiken külön mezőben a paraméterszám. A Chinchilla alatt a több tanítótoken mellett négy kicsi, azonos méretű lapikon, a Gopher alatt egy lapikon. Mindkét lapkasor fölött a „Tanítótokenek, arányosan” címke áll. A szöveges arány a kerekített különbséget jelzi.
 
 **Forrás:** Chinchilla összehasonlítás, kivonat és 4. szakasz [F07].
 
