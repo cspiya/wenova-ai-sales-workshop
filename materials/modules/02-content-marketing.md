@@ -63,9 +63,9 @@ Használd a [mentőútvonalat](#recovery). A kimeneteket a közös adatátadási
 
 <a name="overview-5"></a>
 
-### Előfeltételek (előzetes felkészülés)
+### Előfeltételek
 
-1. A márkád felvéve a Brandiseerben: a **brandiseer.hu** főoldalán add meg a weboldalad címét, kattints a **Try My Brand** gombra, nézd át a kiválasztott képeket, majd **Add Brand**, és hozd létre a fiókodat.
+1. A márkád felvéve a Brandiseerben: a **brandiseer.hu** főoldalán add meg a weboldalad címét, kattints a **Try My Brand** gombra, nézd át a kiválasztott képeket, majd **Add Brand**, és hozd létre a fiókodat. Ha még nincs fiókod, a workshopon a saját laptopodon is létrehozhatod.
 2. Pro csomag a **WENOVA** promóciós kóddal: az első hónap ingyenes, bőven elég kredittel a workshopra.
 3. A Brandiseer connector bekötve a Claude-ba (ha előre nem sikerült, az 1. lecke elején együtt bekötjük): **Customize → Connectors → + → Add custom connector** → név: `Brandiseer`, URL: `https://brandiseer.com/api/mcp` → **Add** → bejelentkezés a Brandiseer-fiókoddal. A beszélgetésben a bal alsó **+** gomb → **Connectors** alatt legyen bekapcsolva.
 4. Opcionális: Buffer-fiók (buffer.com, ingyenes) legalább egy bekötött közösségi csatornával, és a Buffer connector a Claude-ban: **Customize → Connectors** → keresd meg a **Buffer**-t a listában → **Connect** → engedélyezés. Csak a bónuszfeladathoz kell.

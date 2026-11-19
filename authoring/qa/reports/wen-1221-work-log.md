@@ -39,11 +39,18 @@ A szöveget és a generált HTML szerkezetét ellenőriztem. A böngészős néz
 
 Vizsgált alap: `4a7e15db56ac4f14e4c36cd41dba4cd34fd3c5ff`. Az érintett 37 fájl helyi összesített SHA-256 értéke `0387f73b64a5aa18c2abb10a11b2a90d2a1e1d068adb238af25acdccd3ee9cb2` (rendezett útvonal, NUL, a fájl hexadecimális SHA-256 értéke és LF; e napló nélkül).
 
+### Második javítási kör
+
+A 2026. november 19-i szerzői munkamenet (`01a1f133-54ac-71b0-ba85-0f98923a9141`) az `1221-maker-r2.md` alapján kezelte a `1221-rereview-r1.md` IR-01–IR-05 pontjait. A kezdőlap pontosítja a Buffer-ütemezés következményét és a dokumentált ügyféleset átadását. A Brandiseer videóbemutatója bekerült a hétperces demóba. Az EstiWise modul két kijelölt mentőútja feltételes demófiókot és közvetlen fájlos folytatást ad. A menetrend és a Brandiseer-modul jelzi a saját laptopos helyszíni regisztrációt.
+
+Vizsgált alap `36c1bc5e57a1c77ab1519c41e91802e10623dfa7`. Az 5 módosított Markdown és 7 generált HTML összesített SHA-256 értéke `6f47bef0e38f77543a4810c00f05ba24e9e512ea4809386a0e580e5d7913201d` (rendezett útvonal, NUL, a fájl hexadecimális SHA-256 értéke és LF; e napló nélkül). Az EstiWise modul 95. sorának demófiók-említése a második kör briefjében megadott két javítási helyen kívül esik. A módosított változat független újraellenőrzése és a helyszíni próba nyitott.
+
 ## Félreértések és javítások
 
 | # | Mikor, hol | Szándék | Mi történt | Ki vette észre | Ok | Javítás | Tanulság |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | C1 | 2026-11-19, fenti munkamenet | A forrás szerkesztése UTF-8-ban | A fájlszerkesztő íráshibát jelzett, miközben a módosítás megjelent. | Szerző | Eszköz- vagy környezeti hiba | A Git-diff igazolta a módosítást. A további cserék az eredeti sorokat ellenőrző UTF-8 szerkesztéssel készültek. | Sikertelennek jelzett írás után ellenőrizd a tényleges fájlt. |
+| C2 | 2026-11-19, második javítási kör | A jóváhagyott hatókör szerkesztése UTF-8-ban | A szerkesztő íráshibát jelzett a kezdőlapnál. | Szerző | A szerkesztő hibajelzése eltért a fájl tényleges állapotától. | A Git-diff igazolta a kezdőlap két javítását. A további cserék az eredeti szöveg egyezését ellenőrző UTF-8 írással készültek. | A hibajelzés után a fájlt ellenőrizd, mielőtt újra írnál. |
 
 ## Tesztek
 
@@ -54,6 +61,8 @@ Vizsgált alap: `4a7e15db56ac4f14e4c36cd41dba4cd34fd3c5ff`. Az érintett 37 fáj
 | `npm.cmd run check` | 0. 22 HTML-oldal, 1226 helyi hivatkozás, 20 lecke. A repófájlok neve és SHA-256 értéke a futás előtt és után egyezett. |
 | `npm.cmd test` | 0. 10 sikeres teszt, 0 hiba. |
 | `git diff --check` és célzott `rg` keresés | 0 whitespace-hiba. 0 találat a korábbi Buffer-tiltásra, a következményre figyelmeztető mondat 17 fájlban szerepel az előforduló HTML-változatokkal együtt. |
+
+A második javítási kör a Node.js 24.22.1 verzióval futott. A `npm run render` 0 kóddal zárt (`PASS: 22 presentation sources.`). A `npm run check` 0 kóddal zárt (`PASS: 22 current HTML pages; 1226 local references; 20 lessons.`), az összes követett fájl lenyomata egyezett a futás előtt és után. A `npm test` 0 kóddal zárt (10 sikeres teszt, 0 hiba). A `git diff --check` 0 kóddal zárt. A módosított tananyag diffje alapján a leckeazonosítók, perckeretek és állapotok egyeznek az alappal.
 
 ## Tanulságok
 

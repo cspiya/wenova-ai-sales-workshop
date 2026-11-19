@@ -20,9 +20,9 @@ Belső oktatói jegyzet · review
 2. **Piac (4 perc):** nevezd meg a képgenerálók és márkaeszközök kategóriáit. A 2026. november 15-i Brandiseer-próbából mutasd meg a kiválasztott márkát és két design módban készült posztképet. A próba a márka kiválasztását és a saját logó megjelenését igazolta.
 3. **Brandiseer (4 perc):** a weboldalból tanult, megmaradó márkaprofil; design mód; MCP, így Claude-ból vezérelhető; magyar termék, magyar támogatás.
 4. **Ügyfélbeszámoló (2 perc):** a Komáromy Pékség beszámolója szerint ötször annyi tartalmat készítettek, és a vizuális tervezés ideje 85%-kal csökkent. A két adat ennek a pékségnek a tapasztalata, a Brandiseer által közölt ügyfélinterjú alapján. [Brandiseer-esettanulmány](https://brandiseer.com/case-studies/komaromy-pekseg)
-5. **Élő demó (7 perc):** ugyanaz a folyamat, amit a résztvevők csinálnak, a BRANDISEER márkán: márkalista → Cég-DNS-összefoglaló és két kérdés → egy design kép → a hét többi posztjának táblázata. Előre generált tartalékképek legyenek kéznél a diák között, ha a hálózat lassú.
+5. **Élő demó (7 perc):** ugyanaz a folyamat, amit a résztvevők csinálnak, a BRANDISEER márkán: márkalista → Cég-DNS-összefoglaló és két kérdés → egy design kép → a hét többi posztjának táblázata. Ebben a demóban a Brandiseer azt is megmutatja, hogyan készül a márkaazonos videó. Előre generált tartalékképek legyenek kéznél a diák között, ha a hálózat lassú.
 
-A márkaazonos kép- és videókészítést a Brandiseer a saját bemutatójában mutatja meg. A bemutatóban 2D-s mozgóképes videó is szerepelhet narrációval. A hangalámondáshoz ElevenLabs szükséges. A gyakorlati kimenet az öt poszt és a kampányterv.
+A bemutatóban 2D-s mozgóképes videó is szerepelhet narrációval. A hangalámondáshoz ElevenLabs szükséges. A gyakorlati kimenet az öt poszt és a kampányterv.
 
 Mondandó, amit érdemes kimondani: „A márka a rendszerben él, nem a promptban. Te csak azt mondod meg, mi legyen a képen.”
 

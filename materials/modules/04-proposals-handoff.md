@@ -146,7 +146,7 @@ Minden módosítás előtt mutasd meg, mit változtatnál, és kérd a jóváhag
 
 ### Ha elakadtál
 
-- **Nem él a kapcsolat vagy nem érkezik meg a belépőkód:** jelezd a mentornak. Használd a választott minta teljes láncát és az ahhoz tartozó demófiókot, ha elérhető.
+- **Nem él a kapcsolat vagy nem érkezik meg a belépőkód:** jelezd a mentornak, és használd a választott minta teljes láncát. Ha elérhető a hozzá tartozó demófiók, használd azt. Ha nincs elérhető demófiók, folytasd közvetlenül a mintafájlokkal.
 - **Nincs használható weboldal vagy leírás:** az alaplap mezőiből dolgozzon a rendszer; ha ez sem megy, válts az IrodaLiget mintára.
 - Öt perc után használd a [mentőcsomagot](#recovery).
 
@@ -359,7 +359,7 @@ A 05-ös modulhoz az előnézet kihagyható. Ha később közzéteszed az ajánl
 4. A haladási naplóban jelöld: `completed_with_example`, végrehajtás: `simulation`.
 5. Mondd el saját szavaiddal, mit készített volna a lépés, majd folytasd a következő leckével.
 
-Ha az EstiWise-fiók vagy a Claude-kapcsolat nem működik, a mentor előkészített demófiókot ad, amely a három mintavállalkozás egyikére van beállítva. A demófiókban ténylegesen végrehajtott és visszaolvasott műveletet `sandbox` módban rögzítsd. Az `evidence` mezőben nevezd meg, mit láttál visszaolvasáskor, például a tervezet azonosítóját és állapotát. Ha csak mintafájlból dolgozol, jelöld `simulation`-nek.
+Ha az EstiWise-fiók vagy a Claude-kapcsolat nem működik, és elérhető a választott mintavállalkozás demófiókja, kérd el a mentortól. Ha nincs elérhető demófiók, folytasd közvetlenül a mintafájlokkal. A demófiókban ténylegesen végrehajtott és visszaolvasott műveletet `sandbox` módban rögzítsd. Az `evidence` mezőben nevezd meg, mit láttál visszaolvasáskor, például a tervezet azonosítóját és állapotát. Ha csak mintafájlból dolgozol, jelöld `simulation`-nek.
 
 Saját üzletről mintára váltáskor külön munkapéldányban a teljes kapcsolódó mintaláncot használd; ne keverd a minta árait a saját ajánlatoddal. Fájlos szimulációban ellenőrizd az árat és a mennyiséget a mintaárlistán, majd olvasd vissza a lead és az ajánlat azonosítóját a tervezetből és az átadásból.
 

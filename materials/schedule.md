@@ -23,7 +23,7 @@ A **Cég-DNS-ed** (kinek adsz el, mit és milyen hangon) minden blokk bemenete. 
 
 | Idő | Blokk | Partner | Előadók | Mit építesz |
 | --- | --- | --- | --- | --- |
-| Előtte | [Felkészülés](modules/00-prework.md) | Wenova | Wenova csapat | Claude-projekt a sablonokkal, levelező- és Google-kapcsolat, CRM-tábla, EstiWise-fiók, saját források |
+| Előtte | [Felkészülés](modules/00-prework.md) | Wenova | Wenova csapat | Claude-projekt a sablonokkal, levelező- és Google-kapcsolat, CRM-tábla, EstiWise-fiók (a workshopon a saját laptopodon is létrehozhatod), saját források |
 | 08:30–09:00 | Érkezés, technikai check | Wenova | Wenova csapat | Működő gép, Claude-fiók és megnyitott munkacsomag |
 | 09:00–09:20 | Nyitás | Wenova | Piya Csaba | A nap célja és fonala: egy ügyfél útja a Cég-DNS-től az ajánlatig |
 | 09:20–10:30 | [1. Cég-DNS és saját AI-csapat](modules/01-business-foundations.md) | Wenova | Piya Csaba, Kemény Krisztián | Cég-DNS forrásokkal, hangprofil a küldött leveleidből, saját AI-csapat (Karmester, Író, Ellenőr) első próbafutással |

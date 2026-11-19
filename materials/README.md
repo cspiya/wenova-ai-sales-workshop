@@ -53,7 +53,7 @@ Magyar KKV-k, közép- és nagyvállalatok tulajdonosainak, marketing- és ért�
 
 ### Mit építünk?
 
-Cég-DNS és saját AI-csapat → tartalom a céged hangján → LinkedIn-megkeresés és leadkezelés → igényfelmérés és ajánlat → levelek, CRM és egy ügyfél végig. A **Cég-DNS** egy oldal arról, kinek, mit és milyen hangon adsz el; reggel készül, és minden blokk ebből dolgozik. A nap végére a saját cégeden kipróbált folyamat, működő agentek és konkrét holnapi terv készül.
+Cég-DNS és saját AI-csapat → tartalom a céged hangján → LinkedIn-megkeresés és leadkezelés → igényfelmérés és ajánlat → levelek, CRM és egy ügyfél végig. A **Cég-DNS** egy oldal arról, kinek, mit és milyen hangon adsz el; reggel készül, és minden blokk ebből dolgozik. A nap végére lesz egy dokumentált ügyféleseted, amelyben jelölöd, mely lépéseket próbáltad ki és melyeket végezted el mintából. A másnapi tervedet is elkészíted.
 
 <a name="agenda-4"></a>
 
@@ -92,7 +92,7 @@ Egész nap egyetlen Cowork-projektben dolgozol, a gépeden lévő `Wenova-AI-Sal
 
 ### Elakadás esetén is folytatható
 
-A személyes LinkedIn bekötése nem feltétel: a Sales Bot-gyakorlat ma sandboxban (gyakorló környezetben) fut. Minden modulhoz mentőcsomag tartozik a kitalált IrodaLiget-mintán; a saját munka megtartása mellett abból folytatható a következő lépés. Kifelé semmi nem megy ki: levél, üzenet, poszt és ajánlat piszkozat marad.
+A személyes LinkedIn bekötése nem feltétel: a Sales Bot-gyakorlat ma sandboxban (gyakorló környezetben) fut. Minden modulhoz mentőcsomag tartozik a kitalált IrodaLiget-mintán; a saját munka megtartása mellett abból folytatható a következő lépés. A levelek, üzenetek és ajánlatok piszkozatban maradnak. A Bufferben a jóváhagyásoddal beütemezett poszt a megadott időpontban megjelenik.
 
 <a name="agenda-8"></a>
 
