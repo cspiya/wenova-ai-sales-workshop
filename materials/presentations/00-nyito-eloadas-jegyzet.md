@@ -72,33 +72,33 @@ Ezt a jegyzetet egyedül is végig tudod olvasni felkészüléskor, és vetíté
 
 **Idő:** 09:01:15–09:02:10 (0:55)
 
-**Mi látszik a dián:** Négy sor logaritmikus sávval: műveletek másodpercenként (kb. 14 nagyságrend), tranzisztor egy chipen (8,2), operatív memória (11,8), egy merevlemez kapacitása (7,1). Alul két telefonos tény és a feltételek.
+**Mi látszik a dián:** Négy sor logaritmikus sávval: Linpack-teljesítmény 1993 és 2026 között (7,6 nagyságrend), tranzisztorok egy processzortokban (8,2), operatív memória (11,8), egy merevlemez kapacitása (7,1). Az IBM 701 1952-es sebessége külön történeti felirat. Alul két telefonos tény és a források.
 
-**A lényeg egy mondatban:** Hetven év alatt a számítási kapacitás annyit nőtt, hogy ma egy telefonban több memória van, mint egykor a legendás szuperszámítógépben.
+**A lényeg egy mondatban:** Azonos mércével mérve a leggyorsabb számítógépek teljesítménye 1993 óta 7,6 nagyságrenddel nőtt.
 
-**Ezt mondd el:** „Mielőtt a modellekre térünk, nézd meg, mi tette lehetővé őket. A sávon minden osztás tízszeres növekedés, ezt hívjuk nagyságrendnek. A műveletek száma 1952 óta körülbelül tizennégy nagyságrendet nőtt, bár közben a mérce is változott. Azonos mérővel, a Linpack sebességteszttel, 1993 óta 7,6 nagyságrend. A tranzisztor a chip apró kapcsolóeleme: 2300-ról 336 milliárdra nőtt a számuk. Az operatív memória, vagyis a gép munkamemóriája közel tizenkét nagyságrendet nőtt. És egy kézzelfogható példa: egy 2024-es csúcstelefon lapkája 1993 júniusában a világ második leggyorsabb számítógépe lett volna.”
+**Ezt mondd el:** „Mielőtt a modellekre térünk, nézd meg, mi tette lehetővé őket. A sávon minden osztás tízszeres növekedés, ezt hívjuk nagyságrendnek. Azonos mércével, a Linpack sebességteszttel mérve 1993 és 2026 között 7,6 nagyságrenddel nőtt a TOP500 első helyezettjének teljesítménye. A tranzisztor a chip apró kapcsolóeleme: 2300-ról 336 milliárdra nőtt a számuk egy processzortokban. Az operatív memória, vagyis a gép munkamemóriája közel tizenkét nagyságrendet nőtt. A 2024-es iPhone 16 Pro A18 Pro lapkája MacBook Neóban, dupla pontosságú Linpack-mérésben 57,012 GFLOPS-ot ért el. Ez az eredmény az 1993. júniusi TOP500-listán a második helyre lett volna elég.”
 
 **Várható kérdés:** Nem igaz, hogy a telefon felér egy 20 éve csúcsgéppel?
 
-**Rövid válasz:** Nem. A 2006. novemberi világelső, a BlueGene/L 280,6 TFLOPS-ot ért el, ez 4 922-szer több a telefonchip mért 57 GFLOPS-ánál. Mért, dupla pontosságú Linpackkel a telefon 1993 júniusában lett volna a második.
+**Rövid válasz:** Nem. A 2006. novemberi első, a BlueGene/L 280,6 TFLOPS-ot ért el. Ez körülbelül 4 922-szerese a MacBook Neóban mért 57,012 GFLOPS-nak.
 
-**Ha visszakérdeznek:** A FLOPS másodpercenkénti lebegőpontos művelet, egy EFLOPS 10¹⁸ ilyen művelet. A mérés Apple A18 Pro lapkán készült, MacBook Neóban, nem telefonban. A LineShine memóriája nem ismert, ezért szerepel az El Capitan, és nem állítjuk, hogy ez a világ legnagyobb memóriája.
+**Ha visszakérdeznek:** A TOP500 a világ leggyorsabb számítógépeinek listája. A FLOPS másodpercenkénti lebegőpontos művelet, egy EFLOPS 10¹⁸ ilyen művelet. Az IBM 701 összeadást és kivonást mért, ezért nem kerül közös sávra a Linpackkel. A TOP500 LineShine-adatlapja nem közöl memóriakapacitást. Az El Capitan értékét az üzemeltető labor közli.
 
-## Dia 4: A digitalizált adat: mi jut el a tanításig?
+## Dia 4: A digitalizált adat: három külön mennyiség
 
 **Idő:** 09:02:10–09:02:55 (0:45)
 
-**Mi látszik a dián:** Balra a világ tárolókapacitása 1986-ban, 2002-ben és 2007-ben. Jobbra tölcsér: létező adat (132 ZB egy év alatt), nyilvánosan elérhető (több mint 10 PB), dokumentált tanítóanyag (4,7 TB, LLaMA 65B).
+**Mi látszik a dián:** Balra a világ tárolókapacitása 1986-ban, 2002-ben és 2007-ben. Jobbra három külön kártya: éves globális adatmennyiség (132 ZB), egy nyilvános webarchívum (több mint 10 PB), egy modell előtanítóanyaga (4,7 TB, LLaMA 65B).
 
-**A lényeg egy mondatban:** Rengeteg adat létezik, de ami nyilvános, az nem feltétlenül használható szabadon, és egy modell tanítóanyaga ennek csak kis szelete.
+**A lényeg egy mondatban:** Az éves adatmennyiség, egy nyilvános archívum és egy modell előtanítóanyaga három külön mennyiség, és ami nyilvános, az még lehet jogvédett.
 
-**Ezt mondd el:** „A másik feltétel az adat volt. 1986-ban a világ tárolókapacitásának még csak 0,8 százaléka volt digitális, 2007-re már 94 százaléka. A jobb oldal más mérce: 2023-ban körülbelül 132 zettabájt adatot hoztak létre, rögzítettek, másoltak vagy fogyasztottak. Nyilvánosan elérhető például a Common Crawl több mint 10 petabájtos webarchívuma, de ami nyilvános, az még lehet jogvédett. A LLaMA modell dokumentált tanítóanyaga 4,7 terabájt volt. A mai zárt modelleknél ezt nem ismerjük.”
+**Ezt mondd el:** „A másik feltétel az adat volt. 1986-ban a világ tárolókapacitásának még csak 0,8 százaléka volt digitális, 2007-re már 94 százaléka. A jobb oldal más mérce. Az IDC 2023-ra 132 zettabájtnyi éves adatmennyiséget becsült, a másolatokkal együtt. Nyilvánosan elérhető például a Common Crawl több mint 10 petabájtos webarchívuma, de ami nyilvános, az még lehet jogvédett. A LLaMA 65B dokumentált előtanítóanyagának lemezmérete körülbelül 4,7 terabájt volt. A három érték eltérő mennyiséget mér.”
 
 **Várható kérdés:** Akkor a modellek az egész internetet megtanulták?
 
-**Rövid válasz:** Nem. A gyűjtemények mérete nem azt jelenti, hogy egy modell mindet felhasználta, és a legtöbb mai zárt modell tanítóadata nem ismert.
+**Rövid válasz:** Nem. A gyűjtemények mérete nem azt jelenti, hogy egy modell mindet felhasználta. A LLaMA előtanítóanyagának méretét közölték. A GPT-4 jelentése ilyen adatot nem ad meg.
 
-**Ha visszakérdeznek:** „2023-ban a világon kb. 132 zettabájt adatot hoztak létre, rögzítettek, másoltak vagy fogyasztottak, a LLaMA modell teljes, dokumentált tanítóanyaga pedig 4,7 terabájt volt: ennek nagyjából 28 milliárdod része.” Feltételek: az IDC-adat éves forgalom, másolatokkal együtt, nem egyedi tudásanyag. A LLaMA egyetlen, 2023-as, nyíltan dokumentált modell. Egy petabájt ezer terabájt, egy zettabájt milliárd terabájt.
+**Ha visszakérdeznek:** Az IDC 2023-ra 132 zettabájtnyi éves adatmennyiséget becsült, a másolatokkal együtt. A LLaMA 65B dokumentált előtanítóanyagának lemezmérete körülbelül 4,7 terabájt volt. A két érték eltérő mennyiséget mér. Egy petabájt ezer terabájt, egy zettabájt milliárd terabájt.
 
 ## Dia 5: A modellek mérete: 60 ezertől 2,8 billióig
 
@@ -108,13 +108,13 @@ Ezt a jegyzetet egyedül is végig tudod olvasni felkészüléskor, és vetíté
 
 **A lényeg egy mondatban:** A modellek mérete 28 év alatt majdnem nyolc nagyságrendet nőtt, a tanítóadat pedig minden korszakban más egységben mérhető.
 
-**Ezt mondd el:** „Most nézzük a modelleket. A paraméter egy szám a modellben, amelynek az értékét a tanítás állítja be. A LeNet-5 1998-ban 60 ezer paraméterrel dolgozott, a Kimi K3 2,8 billióval: ez majdnem nyolc nagyságrend. A GPT-4 méretét nem publikálták. A legnagyobb mai modellekben tokenenként a paramétereknek csak egy része aktív, a Kimi K3-nál 104 milliárd. A tanítóadatot nem lehet egy skálára tenni, mert a kép, a könyv, a bájt és a token nem váltható át. A token szövegdarab: szó, szórész vagy írásjel. A GPT-3 300 milliárd tokent dolgozott fel, a DeepSeek-V4-Pro több mint 32 billiót.”
+**Ezt mondd el:** „Most nézzük a modelleket. A paraméter egy szám a modellben, amelynek az értékét a tanítás állítja be. A LeNet-5 1998-ban 60 ezer paraméterrel dolgozott, a Kimi K3 2,8 billióval: ez majdnem nyolc nagyságrend. A GPT-4 méretét nem publikálták. A bemutatott modellek közül a DeepSeek-V4-Pro és a Kimi K3 tokenenként a paramétereinek csak egy részét használja. A Kimi K3-nál 104 milliárd aktív. A tanítóadatot nem lehet egy skálára tenni, mert a kép, a könyv, a bájt és a token nem váltható át. A token szövegdarab: szó, szórész vagy írásjel. A GPT-3 300 milliárd tokent dolgozott fel, a DeepSeek-V4-Pro több mint 32 billiót.”
 
 **Várható kérdés:** Mekkorák a mai zárt modellek?
 
 **Rövid válasz:** Ez modellenként eltér. A GPT-4 nyilvános műszaki jelentése például nem adta meg a modell méretét.
 
-**Ha visszakérdeznek:** A GPT-3 tanításához a kutatók becslése szerint körülbelül 3,14 × 10²³ művelet kellett. Másodpercenként egymilliárd művelettel ez nagyjából tízmillió évig tartana. A 300 milliárd token feldolgozott mennyiség, egyes adathalmazokat a modell akár 3,4-szer is látott. A Kimi K3 a legnagyobb nyílt súlyú modell, amelyet találtunk, de teljes piaci felmérés nem készült.
+**Ha visszakérdeznek:** A GPT-3 tanításához a kutatók becslése szerint körülbelül 3,14 × 10²³ művelet kellett. Másodpercenként egymilliárd művelettel ez nagyjából tízmillió évig tartana. A 300 milliárd token feldolgozott mennyiség, egyes adathalmazokat a modell akár 3,4-szer is látott. A Kimi K3 a dián szereplő modellek közül a legnagyobb a közölt teljes paraméterszám alapján. A GPT-2 kiadott változata kb. 1,56 milliárd paraméteres, az OpenAI helyesbítette az eredeti cikk számát.
 
 ## Dia 6: Mitől javult a teljesítmény?
 
@@ -214,7 +214,7 @@ Ezt a jegyzetet egyedül is végig tudod olvasni felkészüléskor, és vetíté
 
 **A lényeg egy mondatban:** A Transformer rétegei összekapcsolják a szöveg részeit, majd továbbalakítják őket, és a végén kiszámolják a következő token esélyét.
 
-**Ezt mondd el:** „Az előbb egyetlen lépést láttál, a figyelmet. A Transformer az a felépítés, amelybe ez a lépés beépül: sok réteg egymás után. Itt egy válasz elejét látod három tokenben. A kártyák a tokenekhez tartozó számsorokat jelölik. Egy réteg két részből áll. A figyelmi részben a „jük” információt vesz át a korábbi tokenekből. A következő helyre még nem láthat rá, az még üres. Az átalakító rész ezután tokenenként külön számol tovább. A következő réteg ugyanezt végzi az átdolgozott számsorokkal. A már meglevő tokenek helyein párhuzamosan lehet számolni. A válasz új tokenjei egymás után készülnek. Az utolsó réteg után a modell kiszámolja, melyik token mekkora eséllyel következik. Ezek az esélyek itt kitaláltak.”
+**Ezt mondd el:** „Az előbb egyetlen lépést láttál, a figyelmet. A Transformer az a felépítés, amelybe ez a lépés beépül: sok réteg egymás után. Itt egy válasz elejét látod három tokenben. A kártyák a tokenekhez tartozó számsorokat jelölik. Egy réteg két részből áll. A figyelmi részben a „jük” információt vesz át a korábbi tokenekből. A következő helyre még nem láthat rá, az még üres. Az átalakító rész ezután tokenenként külön számol tovább. A következő réteg ugyanezt végzi az átdolgozott számsorokkal. A már meglévő tokenek helyein párhuzamosan lehet számolni. A válasz új tokenjei egymás után készülnek. Az utolsó réteg után a modell kiszámolja, melyik token mekkora eséllyel következik. Ezek az esélyek itt kitaláltak.”
 
 **Várható kérdés:** Hány réteg van egy modellben?
 
