@@ -5,7 +5,7 @@
 ## Tartalom
 
 - [Három munkaterület](#workspaces)
-- [A következő közös döntés](#next)
+- [Időpont és helyszín](#event)
 - [Mi hol van, és mire használjuk?](#map)
 - [Hogyan dolgozunk együtt?](#working)
 - [Megosztás és kiadás](#sharing)
@@ -26,11 +26,13 @@ Egy közös hely a tananyaghoz, a szerzői munkához és a workshop megszervezé
 
 - [**03 · Operations** Szervezés, marketing, sales és belső oktatói jegyzetek. A workshop közös működtetése.](operations/README.md)
 
-<a name="next"></a>
+<a name="event"></a>
 
-## A következő közös döntés
+## Időpont és helyszín
 
-2026. szeptember 16-án a partnerekkel véglegesítjük a programot és kiválasztjuk a dátumot: október 14., 15., 21. vagy 22. A helyszín egyeztetés alatt van, a cél 30–40 résztvevő.
+**2026. november 19., csütörtök, 09:00–17:00 · CEU Nádor Event Center, Budapest**
+
+[A nap menete](materials/schedule.md)
 
 [Partneri emailtervezet](operations/README.md#email) · [Közös indulási terv](operations/README.md#plan)
 
