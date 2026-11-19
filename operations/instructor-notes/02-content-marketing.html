@@ -15,10 +15,10 @@
 <a id="notes-1"></a>
 <h3 class="cell-title">Bemutató (20 perc)</h3>
 <ol>
-<li><strong>Probléma (3 perc):</strong> a kkv-knak napi tartalom kell, de a márka minden csatornán máshogy néz ki; több eszközben nehéz következetesen továbbvinni ugyanazt a vizuális megjelenést.</li>
-<li><strong>Piac (4 perc):</strong> nevezd meg a képgenerálók és márkaeszközök kategóriáit. A 2026. november 15-i Brandiseer-próbából mutasd meg a kiválasztott márkát és két design módban készült posztképet. A próba a márka kiválasztását és a saját logó megjelenését igazolta.</li>
+<li><strong>Probléma (3 perc):</strong> a kkv-knak napi tartalom kell, de a márka minden csatornán máshogy néz ki; ügynökség lassú és drága, a ChatGPT és a Canva gyors, de általános.</li>
+<li><strong>Piac (4 perc):</strong> képgenerálók (ChatGPT, Gemini, Midjourney, Canva AI), márkaeszközök (Bloom). Mindegyik a nulláról indul minden kérésnél, vagy csak egyszeri pillanatképet készít a márkáról.</li>
 <li><strong>Brandiseer (4 perc):</strong> a weboldalból tanult, megmaradó márkaprofil; design mód; MCP, így Claude-ból vezérelhető; magyar termék, magyar támogatás.</li>
-<li><strong>Ügyfélbeszámoló (2 perc):</strong> a Komáromy Pékség beszámolója szerint ötször annyi tartalmat készítettek, és a vizuális tervezés ideje 85%-kal csökkent. A két adat ennek a pékségnek a tapasztalata, a Brandiseer által közölt ügyfélinterjú alapján. <a href="https://brandiseer.com/case-studies/komaromy-pekseg">Brandiseer-esettanulmány</a></li>
+<li><strong>Bizonyíték (2 perc):</strong> Komáromy Pékség: 5× több tartalom, 85%-kal kevesebb tervezési idő, eszközönként 1 € alatti költség.</li>
 <li><strong>Élő demó (7 perc):</strong> ugyanaz a folyamat, amit a résztvevők csinálnak, a BRANDISEER márkán: márkalista → Cég-DNS-összefoglaló és két kérdés → egy design kép → a hét többi posztjának táblázata. Előre generált tartalékképek legyenek kéznél a diák között, ha a hálózat lassú.</li>
 </ol>
 <p>Mondandó, amit érdemes kimondani: „A márka a rendszerben él, nem a promptban. Te csak azt mondod meg, mi legyen a képen.”</p>
@@ -28,7 +28,7 @@
 <ul>
 <li>Minden leckénél mondd meg az aktuális feladatot, a mentendő eredményt és a kész feltételt.</li>
 <li>Az első lecke 3–5. percében járd körbe a termet: a leggyakoribb hiba a ki nem kapcsolt connector és az üres márkalista.</li>
-<li>A második leckében a legutóbbi <code>progress.json</code> <code>active_business</code> mezőjében kijelölt céget és Cég-DNS-t ellenőrizd. Claude ebből a DNS-ből dolgozik, és csak a csatornát és a témát kérdezi. Ha a kijelölt fájl hiányzik, segíts megkeresni a cég jóváhagyott változatát. Mutasd meg egy résztvevő példáján, hogyan hagyhatja a színt és a stílust a márkaprofilra.</li>
+<li>A második leckében Claude a Cég-DNS-ből dolgozik, és csak a csatornát és a témát kérdezi; akinél hiányzik a <code>Munka/01-DNS/company-dna.md</code>, annál a Ha elakadtál pont segít. Figyeld, ki ír színt vagy stílust a képkérésbe; ez a modul fő tanulsága, mutasd meg egy résztvevő példáján.</li>
 <li>A harmadik leckében, amíg a három új kép készül, terelj mindenkit az első két kép letöltésére; a végén nézzék meg az öt posztot egymás mellett.</li>
 <li>Öt perc sikertelen hibaelhárítás után ajánld fel a mentőcsomagot; a saját munka maradjon meg.</li>
 </ul>
@@ -81,7 +81,7 @@
 </ul>
 <a id="notes-5"></a>
 <h3>Átadás</h3>
-<p>Ellenőrizd, hogy a <code>campaign-plan.md</code> és az üzleti alaplap a legutóbbi <code>progress.json</code>-ban kijelölt céghez tartozik. Ez a két fájl a Blackhole Media délutáni moduljának bemenete. Ha hiányzik a kampányterv, segíts pótolni ugyanannak a cégnek a tervét. Ha a résztvevővel a teljes mintaláncra váltotok, a minta alaplapját és kampánytervét együtt vegyétek át. Frissítsétek a naplóban az aktív cég nevét, a DNS verzióját, a DNS, a hangprofil és az alaplap tényleges útvonalát, valamint a <code>business_mode</code> és a <code>scenario_id</code> értékét. Ha a mintához még nincs DNS vagy hangprofil, a korábbi útvonal helyett rögzítsétek a hiányt a <code>gaps</code> listában. A saját fájlok maradjanak meg külön.</p>
+<p>Ellenőrizd, hogy mindenkinél elkészült a <code>campaign-plan.md</code>: ez a Blackhole Media délutáni moduljának bemenete. Akinél nem, az a minta <code>campaign-plan.md</code> fájljával menjen tovább.</p>
 <h2 id="kapcsolódó-tananyagrészek">Kapcsolódó tananyagrészek</h2>
 <p>A hivatkozások a bal oldali tananyagnézetet a megfelelő szakaszra állítják.</p>
 <ul>

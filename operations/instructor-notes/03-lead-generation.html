@@ -9,17 +9,17 @@
 <p class="kicker">Belső oktatói jegyzet · review</p>
 <p class="state"><strong>Státusz: review – oktatói próbára vár.</strong></p>
 <p class="lead">Előadók: Bölcskei Balázs (bemutató és gyakorlat), Nagy Bogáta (mentor a gyakorlat alatt, majd a záró sales blokk). Csaba kérésére ketten jövünk, mert a résztvevők egyszerű lépéseken is elakadnak.</p>
-<p class="lead">15 perc bemutató + 3 × 20 perc gyakorlat + 15 perc ellenőrzés és pótlás. Ha marad idő, a záró ajánlat és kérdések is ebbe a 15 percbe férnek.</p>
+<p class="lead">15 perc bemutató + 3 × 20 perc gyakorlat + 15 perc eredmények, ajánlat és kérdések.</p>
 <div class="block-banner block-banner--blackhole"><p class="block-banner__when"><span class="chip chip--time">13:00–14:30</span> <span class="block-banner__title">A nap menetében: 3. LinkedIn-ügyfélszerzés és lead-kezelés</span></p><p class="block-banner__lead"><span class="logo-tile"><img class="logo logo--blackhole" src="../../materials/assets/logos/black-hole-media-logo.png" alt="Blackhole Media" width="299" height="28"></span><span><span class="block-banner__label">Blokkgazda</span> <strong>Blackhole Media / Sales Bot</strong> · Bölcskei Balázs, Nagy Bogáta</span></p><p class="block-banner__builds"><span class="block-banner__label">Ezt építed</span> Sales Bot-hozzáférés a blokk elején, értékelt leadlista, személyre szabott megkeresés és feldolgozott válasz</p></div>
 </header>
 <a id="notes-1"></a>
 <h3>Előkészítés a workshop előtt</h3>
 <ul>
 <li>A résztvevők Sales Bot regisztrációját mi töltjük ki előre; mindenkinek legyen profilja.</li>
-<li>A hozzáférést a helyszínen, a 03-as blokk elején adjuk át.</li>
+<li>A belépő linket a workshop előtt e-mailben ki kell küldeni.</li>
 <li>A workshop-profilok <strong>nincsenek LinkedInhez kötve</strong>; a leadlista 100 főben van korlátozva, hogy senki ne húzza le a teljes adatbázist, és semmi ne menjen ki.</li>
 <li>Ellenőrizni kell, hogy az MCP-n keresztül működik-e az AI brain kitöltése, a lista- és kampánylétrehozás, valamint a válaszok listázása.</li>
-<li>A 2. lecke végén kérd el a résztvevő által a CSV-ből kiválasztott <code>lead_id</code>-t. Ehhez a leadhez tölts be kitalált érdeklődő választ, ha a gyakorlókörnyezetben egyeztethető az azonosító. Ha nincs egyező válasz, adj teljes mintaláncot.</li>
+<li>Elő kell készíteni a gyakorló válaszok generálását: a 2. leckében létrehozott kampányra résztvevőnként kb. 10 kitalált lead-választ küldünk be.</li>
 <li>MCP-próba (2026-11-16, tesztfiókban): a piszkozat kampány, a háttérben futó leadkeresés, a lead státusza és jegyzete, valamint az üzenetsorozat mentése és visszaolvasása működik. A kampányt MCP-ről nem lehet elindítani.</li>
 <li>Az AI brain írása az MCP-ben elkészült (2026-11-17-i próba): a szöveges forrás (cég-DNS) és a mezők kézi javítása működik. A weboldalas forrás a 2026-11-18-i próbán már kitöltötte az ajánlat összes mezőjét, 1–2 perc alatt; a szöveges forrás kb. 45 másodperc. Mindkettő a háttérben fut: hívás után egy percig várni kell, és utána megnézni a brain-t.</li>
 <li>A gyakorló válaszokat a demo-válaszokat betöltő eszközzel (admin) töltjük be a résztvevők workspace-ébe; semmi nem megy ki.</li>
@@ -27,7 +27,7 @@
 <li>A résztvevők csak a saját workspace-ükhöz kötött tokent kapjanak. A kivetítőn ne admin tokennel mutassunk, mert az minden ügyfél-workspace-t látja.</li>
 <li>A cégméret-szűrő javult: a rossz méretű cégeket kihagyja, és nem von le rájuk kreditet (20 kértből 14 jött). Az iparág viszont téved (szoftveres szűrőre felsőoktatási, pénzügyi cégek is jöttek): ez jó példa a minősítés fontosságára, a gyakorlat elején mondjuk el.</li>
 <li>Végigpróba (2026-11-18): a sorrend leadlista → kampány a listára. Ha a keresést a kampányhoz kötjük lista nélkül, a kampány visszaolvasva „nincs közönség”, és a leadeket nehéz kilistázni.</li>
-<li>A célcsoporthoz illeszkedés a CSV-ben szerepel (<code>qualified</code> vagy <code>open</code>). A Sales Bot <code>Interested</code> státuszát csak érdeklődő válasz után állítsuk be.</li>
+<li>Leadstátusznak a CRM státuszait használjuk (Interested, Later, Not Interested); a „Qualified” és „Replied” értéket elfogadja, de a CRM nem számolja.</li>
 <li>Kampányonként adjunk meg válaszcélt, különben az AI angol alapcélt használ („20-minute demo call”). Foglalási link nélkül a válaszjavaslat időpontot kérdez.</li>
 <li>A {COMPANY} változóra ne kerüljön rag: a próbán „a Innomedio Kft.-nál” lett belőle.</li>
 <li>A leadkvótát ellenőrizni kell: a kis csomag havi 500 lead, a workshopon fejenként legfeljebb 100.</li>
@@ -52,7 +52,7 @@
 <h4 id="miért-a-linkedin">Miért a LinkedIn?</h4>
 <p>Ott van a célközönség, és ott épül a bizalom. Magyarországon kb. 2 millió LinkedIn-tag van (a felnőttek kb. 25%-a, DataReportal Digital 2026), és havonta kb. 500 ezren lépnek be (LinkedIn uniós DSA-adat); világszerte 1 milliárd+ szakember.</p>
 <ul>
-<li><strong>Személyes profilról:</strong> emberi hangon lehet írni. Ha később éles megkeresést terveztek, a szöveg célja és tartalma alapján beszéljétek meg, reklámról van-e szó. Mutasd meg a <a href="../../materials/modules/03-lead-generation.html#03-lead-generation.02-personalize-outreach--explanation" target="lesson">tananyag rövid példáit</a>.</li>
+<li><strong>Személyes profilról:</strong> személyesebb, mint a céges oldal: emberi hang, nem hirdetés, hanem people to people.</li>
 <li><strong>Egymást erősítik:</strong> posztolsz, építed a brandedet, látják a hitelességedet; aki bekerül a kapcsolati hálódba, a posztjaidat is látja.</li>
 <li><strong>Hosszú távú befektetés:</strong> a network a kampány után is a tiéd: bármikor eléred őket, és később is látnak.</li>
 </ul>
@@ -96,7 +96,7 @@
 <p>Gyakori elakadás: Teams-meetingbe lépésnél be kell írni a nevet. Öt perc sikertelen hibaelhárítás után ajánld fel a mentőcsomagot; a saját munka maradjon meg.</p>
 <a id="notes-4"></a>
 <h3>Záró sales blokk (Bogi)</h3>
-<p>Az utolsó 15 percben először azonosítsátok a leadet a három átadandó fájlban, és pótoljátok a hiányzó ügyféligényt. Ha kell, váltsatok teljes mintaláncra. Az ajánlat és a kérdések a maradék időbe kerülnek:</p>
+<p>A gyakorlat után Bogi veszi át:</p>
 <ol>
 <li><strong>Eredmények:</strong> ügyféllogók, képernyőképek a saját rendszerből, hány leadet hoztunk június óta. Csak ellenőrzött számot mutatunk.</li>
 <li><strong>Mire lehet számítani:</strong> árazás, feltételek és a workshop-kedvezmény.</li>
@@ -111,7 +111,7 @@
 <h2 id="kapcsolódó-tananyagrészek">Kapcsolódó tananyagrészek</h2>
 <p>A hivatkozások a bal oldali tananyagnézetet a megfelelő szakaszra állítják.</p>
 <ul>
-<li><a href="../../materials/modules/03-lead-generation.html#03-lead-generation.01-qualify-leads" target="lesson">Célközönség és öt lead értékelése</a></li>
+<li><a href="../../materials/modules/03-lead-generation.html#03-lead-generation.01-qualify-leads" target="lesson">Célközönség és öt minősített lead</a></li>
 <li><a href="../../materials/modules/03-lead-generation.html#03-lead-generation.02-personalize-outreach" target="lesson">Kampány és személyre szabott üzenetek</a></li>
 <li><a href="../../materials/modules/03-lead-generation.html#03-lead-generation.03-process-reply" target="lesson">Ügyfélválasz feldolgozása</a></li>
 </ul>

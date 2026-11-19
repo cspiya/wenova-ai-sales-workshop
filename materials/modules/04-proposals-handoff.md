@@ -26,7 +26,7 @@ Igényből ellenőrzött ajánlat, ajánlatból kijelölt következő feladat �
 
 **Státusz: partneri kidolgozás kész, időmért próbára vár.**
 
-15 perc bemutató + 3 × 20 perc gyakorlat + 15 perc ellenőrzés, pótlás és opcionális előnézet. Belső átadás: Wenova közreműködésével.
+15 perc bemutató + 3 × 20 perc gyakorlat + 15 perc ellenőrzés, pótlás és opcionális élesítés. Belső átadás: Wenova közreműködésével.
 
 A modul végére a résztvevő saját (vagy minta-) vállalkozásához tartozó EstiWise-fiókban szolgáltatáskatalógus, árazási szabályok, egy ellenőrzött ajánlattervezet és egy kijelölt következő feladat lesz. A közös munkacsomagba mindez a megszokott `proposal.md` és `handoff.md` formában is bekerül.
 
@@ -34,7 +34,7 @@ A modul végére a résztvevő saját (vagy minta-) vállalkozásához tartozó 
 
 ### Bemenet
 
-Weboldal link, business-profile.md, leads.csv, outreach.md, customer-brief.md, saját árlista (ha van; PDF vagy táblázat), a felkészülés során létrehozott EstiWise-fiók és a 04-es blokk bemutatójában beállított Claude-kapcsolat.
+Weboldal link, business-profile.md, customer-brief.md, saját árlista (ha van; PDF vagy táblázat), a felkészülés során létrehozott EstiWise-fiók és Claude-kapcsolat.
 
 <a name="overview-2"></a>
 
@@ -55,7 +55,7 @@ Használd a [mentőútvonalat](#recovery). A kimeneteket a közös adatátadási
 - Azonosító: `04-proposals-handoff`
 - Szakmai gazda: EstiWise (Gyömrei Máté, CommIT Smart Kft.)
 - Időkeret: 90 perc
-- Végrehajtási mód: saját fiókkal **live** (EstiWise próbaidőszak), előkészített demófiókban végrehajtott és visszaolvasott műveletnél **sandbox**, fájlos mintával **simulation**
+- Végrehajtási mód: saját fiókkal **live** (EstiWise próbaidőszak), mintavállalkozással **simulation** vagy előkészített demófiók
 - Állapot: review – kidolgozva, a teljes út időmért próbája még hátravan.
 
 <a name="overview-5"></a>
@@ -88,8 +88,8 @@ Az EstiWise-fiókodban a `business-profile.md` ajánlatához tartozó szolgálta
 
 ### Erre lesz szükséged
 
-- A `progress.json`-ban kijelölt üzleti alaplap, az ehhez tartozó `customer-brief.md` és a vállalkozás weboldala.
-- A felkészülésben létrehozott EstiWise-fiók (Standard próbacsomag, bankkártya nélkül) és a 04-es blokk bemutatójában beállított Claude-kapcsolat.
+- `business-profile.md` és `customer-brief.md` a saját munkacsomagodból, weboldalad linkje.
+- A felkészülésben létrehozott EstiWise-fiók (Standard próbacsomag, bankkártya nélkül) és a Claude-hoz kapcsolt EstiWise-kapcsolat.
 - Ha van: saját árlista vagy szolgáltatásleírás PDF-ben vagy táblázatban.
 
 Ha nincs saját üzleted vagy fiókod: [IrodaLiget alaplap](../scenarios/office-plants/outputs/business-profile.md) · [igény](../scenarios/office-plants/outputs/customer-brief.md) · [árlista](../scenarios/office-plants/price-list.csv), és a mentor által kiosztott demófiók.
@@ -115,7 +115,7 @@ Mely szolgáltatás kerüljön a katalógusba; az ár és az egység (nettó/bru
 ```text
 Az EstiWise-kapcsolattal dolgozunk a workshop 04-es moduljában. Csatoltam a business-profile.md és a customer-brief.md fájlomat, és ha van, az árlistámat.
 1. Ellenőrizd, hogy él-e az EstiWise-kapcsolat, és milyen csomagban vagyok.
-2. Nézd meg, van-e már szolgáltatáskatalógusom. Ha nincs, az üzleti alaplapom alapján javasolj szolgáltatást. Csak jóváhagyás után rögzítsd belső kalkulációhoz. Nyilvánosan ne tedd közzé.
+2. Nézd meg, van-e már szolgáltatáskatalógusom. Ha nincs, az üzleti alaplapom alapján állítsd be a fiókot, és mutasd meg a javasolt szolgáltatásokat, mielőtt jóváhagyom.
 3. A business-profile.md ajánlatához tartozó szolgáltatásnál vesd össze az árat és az egységet az alaplapommal és az árlistámmal. Eltérésnél kérdezz, ne találj ki árat.
 4. Mutasd meg, milyen kérdéseket tesz fel a rendszer az ügyfélnek. Javasolj legfeljebb 7 rövid kérdést.
 5. Vesd össze a customer-brief.md igényét a kérdésekkel: mi ismert, és mi hiányzik? A hiányzókat írd az open_questions mezőbe.
@@ -128,7 +128,7 @@ Minden módosítás előtt mutasd meg, mit változtatnál, és kérd a jóváhag
 
 1. **0–3 perc:** csatold az alaplapot, az igényt és az árlistát; futtasd a kapcsolatellenőrzést (1. pont).
 2. **3–10 perc:** hagyd jóvá vagy javítsd a szolgáltatást, az árat és az egységet.
-3. **10–15 perc:** szűkítsd az ügyfélkérdéseket legfeljebb hétre; jóváhagyás után rögzítsd a szolgáltatást a belső kalkulációhoz. Ha a fiók ehhez nyilvános közzétételt kér, folytasd demófiókban vagy a mintafájlokkal.
+3. **10–15 perc:** szűkítsd az ügyfélkérdéseket legfeljebb hétre; jóváhagyás után kérd a szolgáltatás közzétételét.
 4. **15–18 perc:** a hiányzó adatokkal frissítsd és mentsd a `customer-brief.md` fájlt.
 5. **18–20 perc:** mondd el egy mondatban, mi hiányzik még az ajánlathoz.
 
@@ -136,7 +136,7 @@ Minden módosítás előtt mutasd meg, mit változtatnál, és kérd a jóváhag
 
 ### Ellenőrizd az eredményt
 
-- A kalkulációhoz használt szolgáltatás tartozik a `business-profile.md` `offer_id`-jához.
+- Az EstiWise-fiókban közzétett szolgáltatás tartozik a `business-profile.md` `offer_id`-jához.
 - Az ár, a pénznem, a nettó/bruttó jelölés és az egység egyezik az alaplappal vagy az árlistával; ahol nincs jóváhagyott ár, ott `open` szerepel.
 - Legfeljebb 7 ügyfélkérdés van, mindegyik egy adatot kérdez.
 - A `customer-brief.md` `open_questions` mezője tartalmazza a hiányzó adatokat.
@@ -146,7 +146,7 @@ Minden módosítás előtt mutasd meg, mit változtatnál, és kérd a jóváhag
 
 ### Ha elakadtál
 
-- **Nem él a kapcsolat vagy nem érkezik meg a belépőkód:** jelezd a mentornak. Használd a választott minta teljes láncát és az ahhoz tartozó demófiókot, ha elérhető.
+- **Nem él a kapcsolat vagy nem érkezik meg a belépőkód:** jelezd a mentornak, és a kiosztott demófiókkal folytasd.
 - **Nincs használható weboldal vagy leírás:** az alaplap mezőiből dolgozzon a rendszer; ha ez sem megy, válts az IrodaLiget mintára.
 - Öt perc után használd a [mentőcsomagot](#recovery).
 
@@ -154,7 +154,7 @@ Minden módosítás előtt mutasd meg, mit változtatnál, és kérd a jóváhag
 
 ### Ezt viszed tovább
 
-A kalkulációhoz beállított szolgáltatás és a frissített `customer-brief.md` a következő lecke bemenete. A naplóban rögzítsd a végrehajtási módot (`live`, `sandbox` vagy `simulation`) és az eredményt, amelyet visszaolvastál vagy a mintafájlban ellenőriztél.
+A közzétett szolgáltatás és a frissített `customer-brief.md` a következő lecke bemenete. A naplóban rögzítsd a végrehajtási módot (live / simulation).
 
 <a name="04-proposals-handoff.01-discover-needs--extra"></a>
 
@@ -186,13 +186,13 @@ Egy EstiWise-ban kiszámolt ajánlattervezetet a `customer-brief.md` igényére,
 
 ### Erre lesz szükséged
 
-Az előző lecke szolgáltatása, a `business-profile.md`, az árlista és a 03-as ügy három fájlja: `leads.csv`, `outreach.md`, `customer-brief.md`. A [mintaláncban](../scenarios/office-plants/README.md) ugyanezekhez megtalálod az ajánlatot is.
+Az előző leckében közzétett szolgáltatás, a frissített `customer-brief.md`, az árlista. Mintával: [IrodaLiget ajánlatminta](../scenarios/office-plants/outputs/proposal.md).
 
 <a name="04-proposals-handoff.02-prepare-proposal--explanation"></a>
 
 ### Így működik
 
-Igény → belső kalkuláció (a rendszer kérdez, te válaszolsz az ügyfél nevében) → árazott sorok → ajánlattervezet → közös `proposal.md`. A sor alapösszege a mennyiség és az egységár szorzata. Ha van jóváhagyott kedvezmény, azzal is számolj. Ha egy sor 0 Ft, ellenőrizd a mennyiséget, az egységárat, a kedvezményt és az esetleges jóváhagyott díjmentességet. Hiányzó adatnál kérdezz rá.
+Igény → belső kalkuláció (a rendszer kérdez, te válaszolsz az ügyfél nevében) → árazott sorok → ajánlattervezet → közös `proposal.md`. A számítás ellenőrizhető: mennyiség × egységár = összeg. Ha egy sorban hiányzik a mennyiség, az a sor 0 és kimarad az összegből: ezt észre kell venni és javítani.
 
 <a name="04-proposals-handoff.02-prepare-proposal--decisions"></a>
 
@@ -205,21 +205,21 @@ A hiányzó adatokra adott válaszok; az ajánlat sorai, ára és feltételei; h
 ### Ezt kérd Claude-tól
 
 ```text
-Az EstiWise-kapcsolattal készítsünk ajánlattervezetet. Csatoltam a customer-brief.md, business-profile.md, leads.csv, outreach.md fájlokat és az árlistát.
-1. Ellenőrizd, hogy a customer-brief.md és az outreach.md lead_id-ja egyezik, és pontosan egy ilyen sor van a leads.csv-ben. A sor company mezője az ügyfél neve. Hiánynál vagy eltérésnél állj meg, és kérd az összetartozó fájlokat vagy a teljes mintaláncot. Egyezés esetén indíts belső kalkulációt az igényből, és egyenként tedd fel a rendszer kérdéseit.
-2. Ha kész, mutasd meg a kalkulációt soronként. Nulla összegnél ellenőrizd a mennyiséget, az egységárat, a kedvezményt és az esetleges jóváhagyott díjmentességet. Hiányzó adatnál kérdezz rá.
+Az EstiWise-kapcsolattal készítsünk ajánlattervezetet. Csatoltam a customer-brief.md és a business-profile.md fájlomat, és az árlistámat.
+1. Indíts belső kalkulációt a customer-brief.md igényéből. A rendszer kérdéseit egyenként tedd fel nekem; az ügyfél nevében válaszolok. Ügyfélként azt a céget használd, amelyhez a customer-brief.md lead_id mezője tartozik a leadlistában (leads.csv); ha ott nincs ilyen, kérdezz rá egy kitalált tesztügyfélre. A business_name a saját cégem, nem az ügyfél.
+2. Ha kész, mutasd meg a kalkulációt soronként. Jelezd, ha egy sorban hiányzik a mennyiség, és kérdezz rá.
 3. Készíts belőle ajánlattervezetet, de NE küldd ki.
-4. Írd meg a proposal.md tartalmát a közös mezőkkel: proposal_id, lead_id, offer_id, scope, quantity, unit_price, currency, price_basis, total, assumptions, status: draft. A lead_id és az offer_id a customer-brief.md-ből jön. A proposal_id-t olvasd vissza a létrejött EstiWise-tervezetből. Ha nem látod, kérd, hogy mutassam meg. Csak fájlos szimulációnál adj külön, a munkacsomagban egyedi proposal_id-t, vagy vedd át a teljes minta tervezetének azonosítóját.
-5. Ellenőrizd a számítást soronként (mennyiség × egységár, az esetleges jóváhagyott kedvezménnyel). A total a végleges sorösszegek összege. A kedvezmény alapját az assumptions mezőben add meg.
+4. Írd meg a proposal.md tartalmát a közös mezőkkel: proposal_id, lead_id, offer_id, scope, quantity, unit_price, currency, price_basis, total, assumptions, status: draft. Az azonosítókat a customer-brief.md-ből vedd.
+5. Ellenőrizd a számítást (mennyiség × egységár = total), és írd le egy sorban.
 ```
 
 <a name="04-proposals-handoff.02-prepare-proposal--steps"></a>
 
 ### Haladj végig ezeken
 
-1. **0–2 perc:** csatold a bemeneteket. Egyeztesd a leadazonosítót a leadlistában, a megkeresésben és az igényben, majd indítsd a kalkulációt.
+1. **0–2 perc:** csatold a bemeneteket, indítsd a kalkulációt.
 2. **2–9 perc:** válaszold meg a rendszer kérdéseit; a nem ismert adatot jelöld feltételezésnek.
-3. **9–13 perc:** nézd át az árazott sorokat. Nulla összegnél keresd meg az okát és egyeztesd a javítást.
+3. **9–13 perc:** nézd át az árazott sorokat; hiányzó mennyiségnél javíts.
 4. **13–17 perc:** készüljön el az ajánlattervezet; nézd meg az EstiWise-ban is.
 5. **17–20 perc:** mentsd a `proposal.md` fájlt, és ellenőrizd a számítást.
 
@@ -227,11 +227,9 @@ Az EstiWise-kapcsolattal készítsünk ajánlattervezetet. Csatoltam a customer-
 
 ### Ellenőrizd az eredményt
 
-- **Fiókkal.** Az EstiWise-ból visszaolvastad az ajánlattervezet azonosítóját és állapotát, és ellenőrizted, hogy a tervezet kiküldetlen.
-- **Fájlból.** A `proposal.md` tartalmazza a kiválasztott ügyhöz tartozó ajánlattervezetet. A fájlos gyakorlatot `simulation` módban rögzítetted.
+- Az EstiWise-ban létezik az ajánlattervezet, és nincs kiküldve.
 - A `proposal.md` minden kötelező mezőt tartalmaz; a `lead_id` és az `offer_id` egyezik a `customer-brief.md`-vel.
-- A `proposal_id` az EstiWise-tervezetből visszaolvasott azonosító, fájlos szimulációnál pedig a tervezethez rendelt egyedi azonosító.
-- A pénznem és a nettó/bruttó jelölés megvan; a `total` a jóváhagyott kedvezménnyel korrigált sorösszeg, több sornál a sorösszegek összege.
+- A pénznem és a nettó/bruttó jelölés megvan; a `total` = `quantity` × `unit_price` (több sornál a sorok összege).
 - A feltételezések az `assumptions` mezőben, a `status` értéke `draft`.
 - Össze tudod hasonlítani egy korábbi saját ajánlatoddal: hol tér el, és miért.
 
@@ -240,7 +238,7 @@ Az EstiWise-kapcsolattal készítsünk ajánlattervezetet. Csatoltam a customer-
 ### Ha elakadtál
 
 - **A kalkuláció sokáig fut:** ne indítsd újra (minden indítás új kalkuláció); kérd Claude-ot, hogy ellenőrizze az állapotát.
-- **Egy sor 0 Ft:** nézd meg a mennyiséget, az egységárat és a kedvezményt. Ha a sor díjmentes, ellenőrizd a jóváhagyását. A mentor segít, ha a már árazott kalkulációt javítani kell.
+- **Egy sor 0 Ft:** hiányzik a mennyiség. Ha a kalkuláció már árazott, a mentor segít javítani az EstiWise felületén.
 - Öt perc után használd a [mentőcsomagot](#recovery).
 
 <a name="04-proposals-handoff.02-prepare-proposal--handoff"></a>
@@ -302,7 +300,7 @@ Az EstiWise-kapcsolattal készítsük el az ajánlat belső átadását. Csatolt
 1. Mutasd meg az értékesítési folyamat szakaszait, és hogy az ajánlatomhoz tartozó lehetőség most hol áll.
 2. Javasolj megfelelő szakaszt; csak a jóváhagyásom után mozgasd át.
 3. Kérdezd meg, ki a felelős, mi a következő feladat és mi a határidő.
-4. Írd meg a handoff.md tartalmát a közös mezőkkel: proposal_id, lead_id, decision_status, owner, next_task, due. A proposal_id-t és a lead_id-t a proposal.md-ből másold át. A decision_status maradjon draft, amíg nincs elfogadott ajánlat.
+4. Írd meg a handoff.md tartalmát a közös mezőkkel: proposal_id, decision_status, owner, next_task, due. A proposal_id a proposal.md-ből jöjjön; a decision_status maradjon draft, amíg nincs elfogadott ajánlat.
 ```
 
 <a name="04-proposals-handoff.03-handoff--steps"></a>
@@ -318,9 +316,8 @@ Az EstiWise-kapcsolattal készítsük el az ajánlat belső átadását. Csatolt
 
 ### Ellenőrizd az eredményt
 
-- **Fiókkal.** Az EstiWise-ból visszaolvastad, hogy az ajánlathoz tartozó lehetőség a jóváhagyott szakaszban van.
-- **Fájlból.** A `proposal.md`, a `handoff.md` és az ügy CRM-sora egyezik. A CRM-ben a `case_id` a `lead_id`, a `partner_ref` a `proposal_id`. A szakasz a jóváhagyott szakasz (a mintában `Ajánlattervezet`), a teendő, a felelős és a határidő az átadásból jön. A fájlos gyakorlatot `simulation` módban rögzítetted.
-- A `handoff.md` minden mezőt tartalmaz; a `proposal_id` és a `lead_id` egyezik a `proposal.md`-vel.
+- A lehetőség a jóváhagyott szakaszban van az EstiWise-ban.
+- A `handoff.md` minden mezőt tartalmaz; a `proposal_id` egyezik a `proposal.md`-vel.
 - A következő feladat konkrét, van felelőse és határideje.
 - A szomszédod a fájlból elmondja, mi a teendő.
 - Nem indult teljesítés, és nem ment ki ajánlat.
@@ -329,7 +326,7 @@ Az EstiWise-kapcsolattal készítsük el az ajánlat belső átadását. Csatolt
 
 ### Ha elakadtál
 
-Ha az értékesítési folyamat nem érhető el, a `handoff.md` fájlt az [átadásminta](../scenarios/office-plants/outputs/handoff.md) szerkezetével kézzel is elkészítheted. Az ügyhöz tartozó sort készítsd el a [CRM-sablon](../starter-kit/crm-template.csv) oszlopaival, vagy a teljes minta útján keresd ki ugyanennek az ügynek a sorát a minta `crm.csv` fájljából. Öt perc után használd a [mentőcsomagot](#recovery).
+Ha az értékesítési folyamat nem érhető el, a `handoff.md` fájlt az [átadásminta](../scenarios/office-plants/outputs/handoff.md) szerkezetével kézzel is elkészítheted. Öt perc után használd a [mentőcsomagot](#recovery).
 
 <a name="04-proposals-handoff.03-handoff--handoff"></a>
 
@@ -339,15 +336,15 @@ A `proposal.md` és a `handoff.md` a 05-ös folyamatpróba bemenete.
 
 <a name="04-proposals-handoff.03-handoff--extra"></a>
 
-### Ha maradt időd: webes előnézet (75–90. perc)
+### Ha maradt időd: élesítés a weboldaladon (75–90. perc)
 
-Nézd meg az ajánlatkérőt előnézetben vagy zárt tesztoldalon.
+Ha van hozzáférésed a weboldaladhoz vagy egy landing oldaladhoz, tedd ki az ajánlatkérőt élesben:
 
 ```text
-Segíts előnézetben vagy zárt tesztoldalon megnézni az ajánlatkérőmet. Kérdezd meg, milyen rendszeren fut az oldalam, és adj útmutatót a teszthez. Hagyd a nyilvános oldalt érintetlenül.
+Az EstiWise-kapcsolattal segíts kitenni az ajánlatkérőmet a weboldalamra. Kérdezd meg, milyen rendszeren fut az oldalam (pl. WordPress, Wix), és adj lépésenkénti útmutatót a beágyazáshoz vagy a linkhez. Utána mutasd meg, hol látom majd a beérkező ajánlatkéréseket.
 ```
 
-A 05-ös modulhoz az előnézet kihagyható. Ha később közzéteszed az ajánlatkérőt vagy megosztod a linkjét, előbb nézd át a végleges változatot, és külön dönts a közzétételről.
+Ha nincs hozzáférésed, az EstiWise-linket vagy QR-kódot bárhol megoszthatod. Ez opcionális: a 05-ös modulhoz nem szükséges.
 
 **Hazavihető promptok a finomhangoláshoz:** heti átnézés (hol tér el az ár, hol akadt el az ügyfél); utánkövető levéltervezet nem válaszoló ügyfélnek; új szolgáltatás felvétele rövid leírásból; akciós vagy szezonális árváltozás. Három szabály: legfeljebb 7 ügyfélkérdés; az első 10 ajánlatot kézzel ellenőrizd; havonta frissítsd az árakat.
 
@@ -361,9 +358,9 @@ A 05-ös modulhoz az előnézet kihagyható. Ha később közzéteszed az ajánl
 4. A haladási naplóban jelöld: `completed_with_example`, végrehajtás: `simulation`.
 5. Mondd el saját szavaiddal, mit készített volna a lépés, majd folytasd a következő leckével.
 
-Ha az EstiWise-fiók vagy a Claude-kapcsolat nem működik, a mentor előkészített demófiókot ad, amely a három mintavállalkozás egyikére van beállítva. A demófiókban ténylegesen végrehajtott és visszaolvasott műveletet `sandbox` módban rögzítsd. Az `evidence` mezőben nevezd meg, mit láttál visszaolvasáskor, például a tervezet azonosítóját és állapotát. Ha csak mintafájlból dolgozol, jelöld `simulation`-nek.
+Ha az EstiWise-fiók vagy a Claude-kapcsolat nem működik, a mentor előkészített demófiókot ad, amely a három mintavállalkozás egyikére van beállítva. Ezzel a lépések végigjárhatók; a naplóban ilyenkor is `simulation` a végrehajtási mód.
 
-Saját üzletről mintára váltáskor külön munkapéldányban a teljes kapcsolódó mintaláncot használd; ne keverd a minta árait a saját ajánlatoddal. Fájlos szimulációban ellenőrizd az árat és a mennyiséget a mintaárlistán, majd olvasd vissza a lead és az ajánlat azonosítóját a tervezetből és az átadásból.
+Saját üzletről mintára váltáskor külön munkapéldányban a teljes kapcsolódó mintaláncot használd; ne keverd a minta árait a saját ajánlatoddal. A statikus csomag nem bizonyít működő partnerintegrációt.
 
 <a name="examples"></a>
 

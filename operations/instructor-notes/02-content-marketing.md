@@ -16,10 +16,10 @@ Belső oktatói jegyzet · review
 
 ### Bemutató (20 perc)
 
-1. **Probléma (3 perc):** a kkv-knak napi tartalom kell, de a márka minden csatornán máshogy néz ki; több eszközben nehéz következetesen továbbvinni ugyanazt a vizuális megjelenést.
-2. **Piac (4 perc):** nevezd meg a képgenerálók és márkaeszközök kategóriáit. A 2026. november 15-i Brandiseer-próbából mutasd meg a kiválasztott márkát és két design módban készült posztképet. A próba a márka kiválasztását és a saját logó megjelenését igazolta.
+1. **Probléma (3 perc):** a kkv-knak napi tartalom kell, de a márka minden csatornán máshogy néz ki; ügynökség lassú és drága, a ChatGPT és a Canva gyors, de általános.
+2. **Piac (4 perc):** képgenerálók (ChatGPT, Gemini, Midjourney, Canva AI), márkaeszközök (Bloom). Mindegyik a nulláról indul minden kérésnél, vagy csak egyszeri pillanatképet készít a márkáról.
 3. **Brandiseer (4 perc):** a weboldalból tanult, megmaradó márkaprofil; design mód; MCP, így Claude-ból vezérelhető; magyar termék, magyar támogatás.
-4. **Ügyfélbeszámoló (2 perc):** a Komáromy Pékség beszámolója szerint ötször annyi tartalmat készítettek, és a vizuális tervezés ideje 85%-kal csökkent. A két adat ennek a pékségnek a tapasztalata, a Brandiseer által közölt ügyfélinterjú alapján. [Brandiseer-esettanulmány](https://brandiseer.com/case-studies/komaromy-pekseg)
+4. **Bizonyíték (2 perc):** Komáromy Pékség: 5× több tartalom, 85%-kal kevesebb tervezési idő, eszközönként 1 € alatti költség.
 5. **Élő demó (7 perc):** ugyanaz a folyamat, amit a résztvevők csinálnak, a BRANDISEER márkán: márkalista → Cég-DNS-összefoglaló és két kérdés → egy design kép → a hét többi posztjának táblázata. Előre generált tartalékképek legyenek kéznél a diák között, ha a hálózat lassú.
 
 Mondandó, amit érdemes kimondani: „A márka a rendszerben él, nem a promptban. Te csak azt mondod meg, mi legyen a képen.”
@@ -30,7 +30,7 @@ Mondandó, amit érdemes kimondani: „A márka a rendszerben él, nem a promptb
 
 - Minden leckénél mondd meg az aktuális feladatot, a mentendő eredményt és a kész feltételt.
 - Az első lecke 3–5. percében járd körbe a termet: a leggyakoribb hiba a ki nem kapcsolt connector és az üres márkalista.
-- A második leckében a legutóbbi `progress.json` `active_business` mezőjében kijelölt céget és Cég-DNS-t ellenőrizd. Claude ebből a DNS-ből dolgozik, és csak a csatornát és a témát kérdezi. Ha a kijelölt fájl hiányzik, segíts megkeresni a cég jóváhagyott változatát. Mutasd meg egy résztvevő példáján, hogyan hagyhatja a színt és a stílust a márkaprofilra.
+- A második leckében Claude a Cég-DNS-ből dolgozik, és csak a csatornát és a témát kérdezi; akinél hiányzik a `Munka/01-DNS/company-dna.md`, annál a Ha elakadtál pont segít. Figyeld, ki ír színt vagy stílust a képkérésbe; ez a modul fő tanulsága, mutasd meg egy résztvevő példáján.
 - A harmadik leckében, amíg a három új kép készül, terelj mindenkit az első két kép letöltésére; a végén nézzék meg az öt posztot egymás mellett.
 - Öt perc sikertelen hibaelhárítás után ajánld fel a mentőcsomagot; a saját munka maradjon meg.
 
@@ -65,7 +65,7 @@ A deckben előre generált, design módban készült képek vannak (címkép, pr
 
 ### Átadás
 
-Ellenőrizd, hogy a `campaign-plan.md` és az üzleti alaplap a legutóbbi `progress.json`-ban kijelölt céghez tartozik. Ez a két fájl a Blackhole Media délutáni moduljának bemenete. Ha hiányzik a kampányterv, segíts pótolni ugyanannak a cégnek a tervét. Ha a résztvevővel a teljes mintaláncra váltotok, a minta alaplapját és kampánytervét együtt vegyétek át. Frissítsétek a naplóban az aktív cég nevét, a DNS verzióját, a DNS, a hangprofil és az alaplap tényleges útvonalát, valamint a `business_mode` és a `scenario_id` értékét. Ha a mintához még nincs DNS vagy hangprofil, a korábbi útvonal helyett rögzítsétek a hiányt a `gaps` listában. A saját fájlok maradjanak meg külön.
+Ellenőrizd, hogy mindenkinél elkészült a `campaign-plan.md`: ez a Blackhole Media délutáni moduljának bemenete. Akinél nem, az a minta `campaign-plan.md` fájljával menjen tovább.
 
 ## Kapcsolódó tananyagrészek
 

@@ -18,7 +18,7 @@
 <div class="cell cell--input">
 <a id="overview-1"></a>
 <h3 class="cell-title">Bemenet</h3>
-<p>A legutóbbi <code>progress.json</code>-ban kijelölt Cég-DNS, hangprofil és üzleti alaplap, a hozzájuk tartozó <code>sales-strategy.md</code>, valamint a Brandiseer-fiókod a felvett márkáddal.</p>
+<p>A délelőtti 01-es modul fájljai a <code>Munka/01-DNS/</code> mappában: <code>company-dna.md</code> (Cég-DNS), <code>voice-profile.md</code> (hangprofil), <code>business-profile.md</code> és <code>sales-strategy.md</code>; a saját Brandiseer-fiókod a felvett márkáddal.</p>
 </div>
 <div class="cell cell--output">
 <a id="overview-2"></a>
@@ -54,7 +54,7 @@
 <p>Minden képet <strong>design</strong> módban készítünk. Ez a Brandiseer grafikai, márkahű módja: poszt, plakát, szöveges elrendezés. A fast mód csak tartalék, ha a design hibát ad; ilyenkor Claude jelezze. Egy design kép 1–1,5 perc alatt készül el és 5 kreditbe kerül.</p>
 <a id="connect"></a>
 <h2>A Brandiseer bekötése a Claude-ba</h2>
-<p><strong>Az 1. lecke első 3 percében.</strong> Ha előre már bekötötted, csak az ellenőrzést csináld meg.</p>
+<p><strong>Az 1. lecke előtt, kb. 3 perc.</strong> Ha előre már bekötötted, csak az ellenőrzést csináld meg.</p>
 <p>A Brandiseer connector címe:</p>
 <pre><code class="language-text">https://brandiseer.com/api/mcp
 </code></pre>
@@ -87,7 +87,7 @@
 <div class="cell cell--input">
 <a id="02-content-marketing.01-brand-brief--needs"></a>
 <h3 class="cell-title">Erre lesz szükséged</h3>
-<p>Claude Desktop (Cowork) a bekötött Brandiseer connectorral, a felvett márkád, és a <code>progress.json</code>-ban kijelölt aktív Cég-DNS. Ha még nincs felvett márkád, a <a href="#02-content-marketing.01-brand-brief--steps">lépéseknél</a> megtalálod, hogyan pótold.</p>
+<p>Claude Desktop (Cowork) a bekötött Brandiseer connectorral, a felvett márkád, és a délelőtti Cég-DNS (<code>Munka/01-DNS/company-dna.md</code>). Ha még nincs felvett márkád, a <a href="#02-content-marketing.01-brand-brief--steps">lépéseknél</a> megtalálod, hogyan pótold.</p>
 </div>
 <div class="cell cell--how">
 <a id="02-content-marketing.01-brand-brief--explanation"></a>
@@ -104,7 +104,7 @@
 <h3 class="cell-title">Ezt kérd Claude-tól</h3>
 <pre><code class="language-text">Ellenőrizd a Brandiseer-kapcsolatot: listázd a márkáimat (brandiseer_list_brands), és nézd meg a kreditegyenlegemet (brandiseer_check_credits).
 Ha egy márkám van, azzal dolgozunk; ha több, kérdezd meg, melyikkel. Ha nincs márkám, szólj, és ne hozz létre semmit kérdés nélkül.
-Utána készíts egy próbaképet a márkámmal a brandiseer_generate_image eszközzel: egyszerű bemutatkozó poszt, rajta a cégnév és egy rövid mondat arról, mivel foglalkozunk (a legutóbbi progress.json-ban kijelölt aktív Cég-DNS alapján).
+Utána készíts egy próbaképet a márkámmal a brandiseer_generate_image eszközzel: egyszerű bemutatkozó poszt, rajta a cégnév és egy rövid mondat arról, mivel foglalkozunk (a Munka/01-DNS/company-dna.md alapján).
 Beállítás: aspectRatio 1:1, mode design, useLogo true, resolution 1K.
 A képpromptba csak tartalmat és elrendezést írj; színt, betűtípust, hangulatot vagy stílust ne. Mutasd meg a képet és a használt promptot.
 </code></pre>
@@ -163,7 +163,7 @@ A képpromptba csak tartalmat és elrendezést írj; színt, betűtípust, hangu
 <div class="cell cell--input">
 <a id="02-content-marketing.02-create-content--needs"></a>
 <h3 class="cell-title">Erre lesz szükséged</h3>
-<p>Az előző lecke beszélgetése a kiválasztott márkával, valamint az aktív Cég-DNS, a hangprofil és a hozzájuk tartozó <code>sales-strategy.md</code>.</p>
+<p>Az előző lecke beszélgetése a kiválasztott márkával, és a <code>Munka/01-DNS/</code> mappa: <code>company-dna.md</code>, <code>voice-profile.md</code>, <code>sales-strategy.md</code>.</p>
 </div>
 <div class="cell cell--how">
 <a id="02-content-marketing.02-create-content--explanation"></a>
@@ -180,7 +180,7 @@ A képpromptba csak tartalmat és elrendezést írj; színt, betűtípust, hangu
 <h3 class="cell-title">Ezt kérd Claude-tól</h3>
 <pre><code class="language-text">Most a márkahű közösségimédia-tartalomkészítőm vagy. A képekhez a Brandiseer connectort használod, az előző lépésben kiválasztott márkámmal.
 
-Olvasd el a legutóbbi progress.json-ban kijelölt aktív DNS-t és hangprofilt, valamint az ugyanahhoz a céghez tartozó sales-strategy.md fájlt.
+Először olvasd el a Munka/01-DNS/ mappából: company-dna.md, voice-profile.md, sales-strategy.md.
 Foglald össze három sorban, mit használsz belőlük: kinek szól (ICP), mit ajánlunk és milyen felhívással, milyen hangon, és mit nem mondunk. Amit ott megtalálsz, azt ne kérdezd meg tőlem.
 
 Utána egyenként, csak ezt kérdezd:
@@ -230,7 +230,7 @@ Ha megvan a két téma:
 <a id="02-content-marketing.02-create-content--help"></a>
 <h3 class="cell-title">Ha elakadtál</h3>
 <ul>
-<li><strong>Nincs meg a Cég-DNS:</strong> ha a naplóban kijelölt DNS hiányzik, mondd meg Claude-nak, hogy a weboldaladból és a válaszaidból dolgozzon, és tegye fel a hiányzó kérdéseket (célközönség, ajánlat, hangnem, kerülendő). Végső esetben a választott minta <code>company-dna.md</code> fájlja a <a href="#recovery">mentőútvonal</a> szerint.</li>
+<li><strong>Nincs meg a Cég-DNS:</strong> ha a délelőtti <code>Munka/01-DNS/company-dna.md</code> hiányzik, mondd meg Claude-nak, hogy a weboldaladból és a válaszaidból dolgozzon, és tegye fel a hiányzó kérdéseket (célközönség, ajánlat, hangnem, kerülendő). Végső esetben a választott minta <code>company-dna.md</code> fájlja a <a href="#recovery">mentőútvonal</a> szerint.</li>
 <li><strong>Nincs ötleted a témára:</strong> írd: „döntsd el te”, és Claude a DNS fő ajánlatából választ.</li>
 <li><strong>A kép szövege hibás vagy elírt:</strong> kérd Claude-ot, hogy a képre kerülő szöveget rövidebbre írja (legfeljebb 6–8 szó), és generálja újra.</li>
 <li><strong>A generálás hibát ad:</strong> Claude egyszer próbálja újra; ha a design továbbra sem megy, a fast mód tartalék. Ha az sem, folytasd a mentorral.</li>
@@ -283,7 +283,7 @@ A képpromptba csak tartalmat és elrendezést írj; színt, betűtípust, hangu
 Végül add meg mind az öt kép linkjét naponként, egy listában.
 </code></pre>
 <p><strong>2. Kampányterv:</strong></p>
-<pre><code class="language-text">Készítsd el a campaign-plan.md tartalmát ebben a szerkezetben: offer_id (az aktív cég sales-strategy.md fájljából), audience, posts (az öt poszt: nap, téma, szöveg), image_urls (az öt kép linkje naponként), channel, call_to_action.
+<pre><code class="language-text">Készítsd el a campaign-plan.md tartalmát ebben a szerkezetben: offer_id (a Munka/01-DNS/sales-strategy.md-ből), audience, posts (az öt poszt: nap, téma, szöveg), image_urls (az öt kép linkje naponként), channel, call_to_action.
 Csak azt írd bele, amit ma jóváhagytam. Mentsd Munka/02-Tartalom/campaign-plan.md néven.
 </code></pre>
 <p><strong>3. Bónusz – Buffer-piszkozat (csak ha bekötötted a Buffert):</strong></p>
@@ -310,7 +310,7 @@ Előtte írd le, melyik csatornára mi kerül, és várd meg az igenemet.
 <li>A képek promptjaiban nincs szín, betűtípus, hangulat vagy stílus.</li>
 <li>Mind az öt kép le van töltve a munkacsomagodba.</li>
 <li>A <code>campaign-plan.md</code> elmentve, benne az öt posztszöveg, a napok, a csatorna, a felhívás és a képek linkje.</li>
-<li>Az öt poszt piszkozat. Ellenőrizd, hogy a bónuszfeladatban sem ütemeztél be és nem tettél közzé posztot.</li>
+<li>Semmi nem került ki a közösségi oldaladra a jóváhagyásod nélkül.</li>
 <li>Bónusz: a posztok piszkozatként látszanak a Bufferben.</li>
 </ul>
 </div>
@@ -328,7 +328,7 @@ Előtte írd le, melyik csatornára mi kerül, és várd meg az igenemet.
 <div class="cell cell--output">
 <a id="02-content-marketing.03-prepare-publishing--handoff"></a>
 <h3 class="cell-title">Ezt viszed tovább</h3>
-<p>A <code>campaign-plan.md</code> a délutáni ügyfélszerzési modul bemenete (Blackhole Media): ebből készül a megkeresés üzenete. A letöltött képek a tieid; a workshop után, külön döntéssel kézzel vagy a Bufferrel közzéteheted őket.</p>
+<p>A <code>campaign-plan.md</code> a délutáni ügyfélszerzési modul bemenete (Blackhole Media): ebből készül a megkeresés üzenete. A letöltött képek a tieid; amikor jónak látod, kézzel vagy a Bufferrel közzéteheted őket.</p>
 </div>
 <div class="cell cell--extra">
 <a id="02-content-marketing.03-prepare-publishing--extra"></a>
@@ -344,7 +344,7 @@ Előtte írd le, melyik csatornára mi kerül, és várd meg az igenemet.
 <li>A haladási naplóban jelöld: <code>completed_with_example</code>, végrehajtás: <code>simulation</code>.</li>
 <li>Mondd el saját szavaiddal, mit készített volna a lépés, majd folytasd a következő leckével.</li>
 </ol>
-<p>A mintavállalkozások kitaláltak, ezért Brandiseer-márkájuk nincs; a mentőcsomag öt napra ad posztszöveget, és naponta jelöli, hogy kép nem készült. Ha a saját márkáddal a kapcsolat működik, de az ötletek akadnak el, a minta témáival a saját márkádon is generálhatsz. Saját üzletről mintára váltáskor külön munkapéldányban a teljes kapcsolódó mintaláncot használd; ne keverd a minta árait a saját ajánlatoddal. A statikus csomag nem bizonyít működő partnerintegrációt.</p>
+<p>A mintavállalkozások kitaláltak, ezért Brandiseer-márkájuk nincs; a mentőcsomag a képek tervét tartalmazza, nem legenerált képet. Ha a saját márkáddal a kapcsolat működik, de az ötletek akadnak el, a minta témáival a saját márkádon is generálhatsz. Saját üzletről mintára váltáskor külön munkapéldányban a teljes kapcsolódó mintaláncot használd; ne keverd a minta árait a saját ajánlatoddal. A statikus csomag nem bizonyít működő partnerintegrációt.</p>
 <a id="examples"></a>
 <h2>Gyakorlópéldák</h2>
 <p>A közös, összefüggő kitalált példák a repó <code>scenarios/</code> mappájában találhatók; a modulhoz tartozó kimenet a <code>campaign-plan.md</code>. Élő próba: 2026. november 15., Brandiseer connector, design mód, 1K felbontás: a képek egyenként kb. 1–1,5 perc alatt, 5 kreditért készültek el. Egy ötposztos hét így kb. 25–35 kredit, az újragenerálásokkal együtt.</p>

@@ -7,7 +7,7 @@
 ## Tartalom
 
 - [Cél, bemenet és eredmény](#overview)
-- [Célközönség és öt lead értékelése](#03-lead-generation.01-qualify-leads)
+- [Célközönség és öt minősített lead](#03-lead-generation.01-qualify-leads)
 - [Kampány és személyre szabott üzenetek](#03-lead-generation.02-personalize-outreach)
 - [Ügyfélválasz feldolgozása](#03-lead-generation.03-process-reply)
 - [Segítség elakadáskor](#recovery)
@@ -36,7 +36,7 @@ A modulban a Blackhole Media saját sales eszközét, a [Sales Botot](https://sa
 
 ### Bemenet
 
-A legutóbbi `progress.json`-ban kijelölt üzleti alaplap (`business-profile.md`) és az ugyanahhoz a céghez tartozó `campaign-plan.md`.
+business-profile.md, campaign-plan.md
 
 <a name="overview-2"></a>
 
@@ -62,7 +62,7 @@ Használd a [mentőútvonalat](#recovery). A kimeneteket a közös adatátadási
 
 <a name="03-lead-generation.01-qualify-leads"></a>
 
-## Célközönség és öt lead értékelése
+## Célközönség és öt minősített lead
 
 **Állapot: review.**
 
@@ -72,17 +72,17 @@ Használd a [mentőútvonalat](#recovery). A kimeneteket a közös adatátadási
 
 ### Ezt készíted el
 
-A Sales Bot **AI brainjét** kitöltöd a saját vagy a mintavállalkozásod adataival, majd egy legfeljebb 100 fős leadlistát készítesz a célközönségedre. A listából öt leadet értékelsz, és az indoklást is elmented a `leads.csv` fájlba.
+A Sales Bot **AI brainjét** kitöltöd a saját vagy a mintavállalkozásod adataival, majd egy legfeljebb 100 fős leadlistát készítesz a célközönségedre. A listából öt leadet minősítesz, és `leads.csv` néven mented.
 
 <a name="03-lead-generation.01-qualify-leads--needs"></a>
 
 ### Erre lesz szükséged
 
 - Az 01-es modulban mentett `business-profile.md` és a 02-es modul `campaign-plan.md` fájlja.
-- A workshop-fiókod a Sales Botban. A hozzáférést a 03-as blokk elején, a helyszínen kapod meg.
+- A workshop-fiókod a Sales Botban. A fiókot előre létrehoztuk; a belépő linket e-mailben kaptad meg.
 - Claude, amelyben be van kapcsolva a Sales Bot connector (MCP): **Beállítások → Connectors → „Add custom connector”**, név például `Sales-Bot.io`, URL: `https://app.sales-bot.io/api/mcp`, majd **Connect**, belépés a Sales Bot-fiókkal és engedélyezés. Ha elakadsz, a mentorok segítenek.
 
-Saját fiók nélkül a kiválasztott mintavállalkozás alaplapjával és a hozzá tartozó leadlistával dolgozz. A fájlokat a [mentőút](#03-lead-generation.01-qualify-leads--help) alapján válaszd ki.
+Saját fiók nélkül: [IrodaLiget mintaalaplap](../scenarios/office-plants/outputs/business-profile.md) · [Minta leadlista](../scenarios/office-plants/outputs/leads.csv)
 
 <a name="03-lead-generation.01-qualify-leads--explanation"></a>
 
@@ -115,7 +115,7 @@ A Sales Bot eszközeivel dolgozunk a workshopon, sandbox módban: semmit ne kül
 3. Kérdezd meg tőlem egyenként: ország, cégméret (például 11-50 fő), iparág, döntéshozói pozíció. Először számold meg ingyen, hány ember felel meg, és mondd meg a számot. Ezután keress leadeket ebbe a listába: először 20-at, és ha a minta jó, bővítsd legfeljebb 100-ra.
 4. A keresés a háttérben fut. Néhány perc múlva nézd meg az állapotát, és listázd ki a lista leadjeit.
 5. Mutass öt leadet. Mindegyiknél ellenőrizd a cégméretet és az iparágat is, mert a szűrő nem mindig pontos, és írd le egy mondatban, miért illik vagy miért nem.
-6. A jóváhagyásom után készíts leads.csv tartalmat ezekkel az oszlopokkal: lead_id,company,fit_reason,status,next_action. Írd a fit_reason mezőbe, mi alapján döntöttünk. Illeszkedő leadnél a status értéke qualified, a többi esetben open. A Sales Bot válaszstátuszai maradjanak változatlanok. Az Interested státuszhoz érdeklődő válasz kell.
+6. A jóváhagyásom után a jó leadeket állítsd Interested státuszra a Sales Botban, és készíts leads.csv tartalmat ezekkel az oszlopokkal: lead_id,company,fit_reason,status,next_action. A status értéke qualified vagy open legyen.
 ```
 
 Ha a cég-DNS-ből dolgozol, csatold a `business-profile.md` fájlodat.
@@ -127,7 +127,7 @@ Ha a cég-DNS-ből dolgozol, csatold a `business-profile.md` fájlodat.
 1. **0–3 perc:** a Claude-ban add hozzá a connectort (Beállítások → Connectors → „Add custom connector”, URL: `https://app.sales-bot.io/api/mcp`, Connect), lépj be a Sales Bot-fiókoddal, és ellenőrizd, hogy a Claude látja az eszközöket („Milyen Sales Bot eszközeid vannak?”).
 2. **3–8 perc:** másold be a promptot, válaszd ki az AI brain kitöltésének útját (weboldal, cég-DNS vagy kézi), és nézd át a kitöltött mezőket.
 3. **8–14 perc:** válaszold meg a szűrőkre vonatkozó kérdéseket, és indítsd el a keresést. Amíg a leadek megérkeznek (2–3 perc), írd le magadnak, milyen lead lenne a legjobb ügyfeled.
-4. **14–18 perc:** nézd át az öt leadet. A CSV-ben az illeszkedő lead legyen `qualified`, a többi `open`. Írd melléjük a döntés okát. A Sales Bot válaszstátuszát ebben a leckében hagyd változatlanul.
+4. **14–18 perc:** nézd át az öt leadet. Ami illik, kerüljön Interested státuszba a Sales Botban és `qualified` jelöléssel a CSV-be; ami nem, maradjon `open`.
 5. **18–20 perc:** mentsd a `leads.csv` fájlt a saját munkacsomagodba.
 
 <a name="03-lead-generation.01-qualify-leads--check"></a>
@@ -137,13 +137,13 @@ Ha a cég-DNS-ből dolgozol, csatold a `business-profile.md` fájlodat.
 - Az AI brainben ki van töltve a cégleírás, a hangnem, és legalább egy ajánlat az ideális ügyféllel, az USP-vel és a fájdalompontokkal.
 - A leadlista legfeljebb 100 fős, és a négy szűrő mindegyikét te adtad meg.
 - A `leads.csv` öt sort tartalmaz a közös oszlopokkal; mindegyikhez van indoklás.
-- Mind az öt döntést meg tudod indokolni akkor is, ha egyik lead sem illik a célcsoportodhoz.
+- Legalább három lead `qualified`, és meg tudod mondani, miért.
 
 <a name="03-lead-generation.01-qualify-leads--help"></a>
 
 ### Ha elakadtál
 
-Ha öt perc után sem éri el a Claude a Sales Botot, jelezd egy mentornak. Ha a belépés vagy a connector ma nem működik, a legutóbbi `progress.json` `scenario_id` mezője alapján válaszd ki a mintád `outputs/leads.csv` fájlját: [IrodaLiget](../scenarios/office-plants/outputs/leads.csv), [CégesKép](../scenarios/business-photography/outputs/leads.csv) vagy [WebŐr](../scenarios/website-maintenance/outputs/leads.csv). Ha már választottál mintát, de hiányzik az azonosító, rögzítsd a választott mappa nevét. Ha most választasz először, az ajánlott kezdőminta az IrodaLiget (`office-plants`). Ugyanennek a mintának az alaplapjával minősítsd újra az öt leadet, és mentsd a `leads.csv` fájlt. A haladási naplóban jelöld `completed_with_example`, végrehajtás `simulation`.
+Ha öt perc után sem éri el a Claude a Sales Botot, jelezd egy mentornak. Ha a belépés vagy a connector ma nem működik, használd az IrodaLiget [minta leadlistáját](../scenarios/office-plants/outputs/leads.csv): minősítsd újra az öt leadet a saját szavaiddal, és a haladási naplóban jelöld `completed_with_example`, végrehajtás `simulation`.
 
 <a name="03-lead-generation.01-qualify-leads--handoff"></a>
 
@@ -169,13 +169,13 @@ Kérd meg a Claude-ot, hogy hasonlítsa össze a listát egy második ajánlatod
 
 ### Ezt készíted el
 
-A leadlistára piszkozatkampányt készítesz a Sales Botban. Átnézed az üzenetsorozatot, majd a `leads.csv` egyik `qualified` sorához elmented az `outreach.md` fájlt. Ennek a leadnek a válaszát dolgozod fel a következő leckében.
+A minősített leadlistára kampányt hozol létre a Sales Botban. A rendszer megírja az üzenetsorozatot, te átnézed és javítod, majd egy kiválasztott leadhez tartozó üzenetet `outreach.md` néven mentesz.
 
 <a name="03-lead-generation.02-personalize-outreach--needs"></a>
 
 ### Erre lesz szükséged
 
-- Az előző lecke `leads.csv` fájlja és a kitöltött AI brain. A kiválasztott leadhez kell egy `qualified` sor. Ha egyik lead sem illeszkedik, kezdd a [teljes mintalánccal](#recovery).
+- Az előző lecke `leads.csv` fájlja és a kitöltött AI brain.
 - A 02-es modul `campaign-plan.md` fájlja: ebből jön az ajánlat és a cselekvésre hívás.
 
 Saját fiók nélkül: [Minta megkeresés](../scenarios/office-plants/outputs/outreach.md)
@@ -189,8 +189,6 @@ A kampány három dologból áll: **leadlista**, **üzenetsorozat** és **üteme
 Három kampánytípus van: **bejelöléses kampány** (kapcsolódási kérés rövid üzenettel, utána üzenetsorozat), **üzenetkampány az 1. fokú kapcsolataidnak**, és **InMail** (csak Sales Navigatorral). A workshopon a bejelöléses kampányt használjuk.
 
 A kampányt a Claude-ból nem lehet elindítani, mindig piszkozat marad. Ma küldő LinkedIn-profil sincs hozzákötve, ezért semmi nem megy ki; a küldő kiválasztását kihagyjuk.
-
-Ma kitalált válasszal gyakorolsz. Ha később valaki visszahívást kér az űrlapodon, a visszahívás témája az ő kérése. Természetes személynek szóló közvetlen elektronikus reklámhoz az NMHH szerint főszabály szerint előzetes, egyértelmű és kifejezett hozzájárulás kell. Ez a kérdés személyes profilról küldött reklámnál is felmerül. [NMHH útmutató](https://nmhh.hu/cikk/4077/Az_elektronikus_hirdeteskuldes_szabalyai)
 
 <a name="03-lead-generation.02-personalize-outreach--decisions"></a>
 
@@ -208,7 +206,7 @@ Hozz létre piszkozat kampányt „Workshop – [cégnév]” néven az előző 
 Az üzenetek a campaign-plan.md-ben szereplő ajánlatról szóljanak. Kérdezd meg, hány üzenetet szeretnék, és tegeződve vagy magázódva írjunk.
 Írd meg a sorozatot: kapcsolódási üzenet, első üzenet, utánkövetések, a lépések közötti várakozási napokkal. A {COMPANY} változóra ne tegyél ragot (például ne „{COMPANY}-nál”), mert a cégnévvel magyarul hibás lesz. Mutasd meg, és csak a jóváhagyásom után mentsd a kampányba.
 Mentés után futtass egy próbamegjelenítést (preview) két leadre, és ellenőrizd, hogy minden lépés benne van, és a szöveg a valódi nevekkel is jól hangzik.
-A javításaim után válasszunk a leads.csv qualified sorai közül egy leadet. A lead_id-ját másold az outreach.md fájlba, és add meg a first_message, followup és stop_condition mezőt. Ha nincs qualified sor, álljunk meg és váltsunk a teljes mintaláncra.
+A javításaim után készíts outreach.md tartalmat egy általam kiválasztott leadhez ezekkel a mezőkkel: lead_id, first_message, followup, stop_condition.
 ```
 
 Csatold a `leads.csv` és a `campaign-plan.md` fájlt.
@@ -220,7 +218,7 @@ Csatold a `leads.csv` és a `campaign-plan.md` fájlt.
 1. **0–3 perc:** másold be a promptot, és csatold a két fájlt.
 2. **3–9 perc:** add meg az üzenetszámot és a hangnemet, és nézd át a Claude első változatát.
 3. **9–15 perc:** olvasd végig az üzeneteket. Ami nem a te hangodon szól, azt kérd átírni.
-4. **15–18 perc:** válassz egy `qualified` sort a `leads.csv` fájlból. Ellenőrizd az első üzenetet és az utánkövetést, majd add meg a mentornak a `lead_id`-t a gyakorló válaszhoz. Ha nincs ilyen sor, válts a teljes mintaláncra.
+4. **15–18 perc:** válassz egy leadet, és ellenőrizd a hozzá tartozó első üzenetet és utánkövetést.
 5. **18–20 perc:** mentsd az `outreach.md` fájlt.
 
 <a name="03-lead-generation.02-personalize-outreach--check"></a>
@@ -231,14 +229,13 @@ Csatold a `leads.csv` és a `campaign-plan.md` fájlt.
 - Az első üzenet személyes, rövid, és nem ad el azonnal.
 - Az utánkövetés új értéket ad, nem ismétli az első üzenetet.
 - Az `outreach.md` tartalmazza a négy mezőt, a `stop_condition` pedig kimondja, mikor áll le a megkeresés.
-- Az `outreach.md` azonosítója a `leads.csv` kiválasztott `qualified` sorához tartozik.
 - Egyetlen üzenet sem ment ki: ellenőrizted, hogy a kampány nincs élesítve.
 
 <a name="03-lead-generation.02-personalize-outreach--help"></a>
 
 ### Ha elakadtál
 
-Ha a kampány létrehozása elakad, az üzenetsorozatot a Sales Bot nélkül is megírhatod a `campaign-plan.md` alapján. Ha a kiválasztott leadhez nincs gyakorló válasz, válts a [teljes mintaláncra](#recovery), és jelöld `completed_with_example`, végrehajtás `simulation`.
+Ha a kampány létrehozása elakad, kérd meg a Claude-ot, hogy csak az üzenetsorozatot írja meg a `campaign-plan.md` alapján, a Sales Bot nélkül. Ha ez sem megy, használd a [minta megkeresést](../scenarios/office-plants/outputs/outreach.md), és jelöld `completed_with_example`, végrehajtás `simulation`.
 
 <a name="03-lead-generation.02-personalize-outreach--handoff"></a>
 
@@ -270,8 +267,8 @@ A kampányodra érkezett gyakorló válaszokat kilistázod és kategorizálod, e
 
 ### Erre lesz szükséged
 
-- Az előző lecke kampánya, a `leads.csv`, az `outreach.md` és a `campaign-plan.md`.
-- A mentor által betöltött kitalált gyakorló válasz a kiválasztott leadhez, annak `lead_id` értéke alapján.
+- Az előző lecke kampánya és `outreach.md` fájlja.
+- A gyakorló válaszok: a kampányod létrehozása után minden résztvevőnek körülbelül tíz generált választ küldünk be. Ezek kitalált leadektől érkeznek.
 
 Saját fiók nélkül: [Minta ügyféligény](../scenarios/office-plants/outputs/customer-brief.md)
 
@@ -296,10 +293,9 @@ Melyik válasz kategóriája helyes; melyik válaszjavaslatot fogadod el vagy í
 ```text
 Sandbox módban dolgozunk: semmit ne küldj ki.
 Listázd ki a Sales Bot beérkező beszélgetéseit, nyisd meg a válaszokat, és csoportosítsd őket: érdeklődő, később, nem releváns.
-Ellenőrizd a Sales Bot válaszstátuszait. Az Interested csak érdeklődő válasz után jár; későbbi érdeklődésnél Later, elutasításnál Not Interested. Mutasd meg a javasolt módosításokat, és jóváhagyásom után végezd el őket.
-Vesd össze a csatolt outreach.md lead_id-ját a leads.csv qualified sorával és a válaszoló azonosítójával. Ha a három azonosító nem egyezik, vagy ettől a leadtől nincs érdeklődő válasz, állj meg és jelezd, hogy a teljes mintaláncra kell váltani.
-Az egyező érdeklődő válaszra írj válaszjavaslatot. A jóváhagyásom után mentsd piszkozatként a beszélgetéshez; ne küldd el.
-Készíts customer-brief.md tartalmat ugyanebből a válaszból: lead_id, offer_id, need, quantity, constraints, open_questions. Az offer_id a csatolt campaign-plan.md-ből jöjjön.
+Ellenőrizd a leadek státuszát (Interested, Later, Not Interested), és ahol nem illik a válaszhoz, javítsd.
+Válassz ki egy érdeklődő választ, és írj rá válaszjavaslatot. A jóváhagyásom után mentsd piszkozatként a beszélgetéshez; ne küldd el.
+Ezután készíts customer-brief.md tartalmat ebből a válaszból ezekkel a mezőkkel: lead_id, offer_id, need, quantity, constraints, open_questions.
 Amit a válasz nem mond ki, azt ne találd ki: tedd az open_questions mezőbe.
 ```
 
@@ -307,8 +303,8 @@ Amit a válasz nem mond ki, azt ne találd ki: tedd az open_questions mezőbe.
 
 ### Haladj végig ezeken
 
-1. **0–4 perc:** csatold a három fájlt, listázd ki a válaszokat, és nézd át a kategóriákat.
-2. **4–10 perc:** keresd meg az `outreach.md`-ben kiválasztott lead érdeklődő válaszát. Egyezésnél nézd át a válaszjavaslatot, és mentsd piszkozatként. Ha nincs ilyen válasz, válts a [teljes mintaláncra](#recovery).
+1. **0–4 perc:** listázd ki a válaszokat, és nézd át a kategóriákat. Ha valamelyik rossz helyre került, javítsd.
+2. **4–10 perc:** válassz egy érdeklődő választ, nézd át a válaszjavaslatot, és mentsd piszkozatként. A kivetítőn megnézzük, hogyan jelenik meg a beérkező üzenetek között.
 3. **10–16 perc:** készítsd el a `customer-brief.md` tartalmát. Ellenőrizd, hogy minden állítás a válaszból jön.
 4. **16–20 perc:** mentsd a fájlt, és mondd el egy mondatban, mi a lead igénye és mi a következő lépés.
 
@@ -317,7 +313,7 @@ Amit a válasz nem mond ki, azt ne találd ki: tedd az open_questions mezőbe.
 ### Ellenőrizd az eredményt
 
 - Minden gyakorló válasznak van kategóriája, és egyetértesz vele.
-- A kiválasztott válasz érdeklődést jelez. A válaszoló, a `leads.csv` kiválasztott sora, az `outreach.md` és a `customer-brief.md` leadazonosítója egyezik.
+- A kiválasztott válasz valóban érdeklődést jelez.
 - A `customer-brief.md` mind a hat mezőt tartalmazza; az igény a válaszból származik, nem kitalált.
 - A bizonytalan adatok az `open_questions` mezőben vannak.
 
@@ -325,13 +321,13 @@ Amit a válasz nem mond ki, azt ne találd ki: tedd az open_questions mezőbe.
 
 ### Ha elakadtál
 
-Ha nem érkezett érdeklődő válasz a kiválasztott leadtől, szólj egy mentornak. Ha a válasz nem érhető el, vedd át egyetlen [mintavállalkozás](#recovery) összetartozó alaplapját, kampánytervét, leadlistáját, megkeresését és ügyféligényét. Jelöld `completed_with_example`, végrehajtás `simulation`.
+Ha nem érkeztek meg a gyakorló válaszok, szólj egy mentornak. Ha ma nem érhetők el, használd a [minta ügyféligényt](../scenarios/office-plants/outputs/customer-brief.md), és jelöld `completed_with_example`, végrehajtás `simulation`.
 
 <a name="03-lead-generation.03-process-reply--handoff"></a>
 
 ### Ezt viszed tovább
 
-A `customer-brief.md`, a `leads.csv` és az `outreach.md` együtt kerül a 04-es modulhoz. Az ajánlat előtt ezekben egyezteted az ügyfél azonosítóját.
+A `customer-brief.md` a 04-es modul, az igényfelmérés és ajánlatkészítés bemenete.
 
 <a name="03-lead-generation.03-process-reply--extra"></a>
 
