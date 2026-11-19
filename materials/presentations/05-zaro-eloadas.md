@@ -5,7 +5,7 @@
 
 **Közönség.** Nem fejlesztő cégtulajdonosok, sales- és marketingvezetők. Az előadáshoz nem kell fiók vagy saját adat.
 
-**Idő.** 16:15–17:00: 20 perc előadás és élő bemutató, 17 perc saját feladat, majd kérdések és zárás.
+**Idő.** 16:15–16:35 előadás és élő bemutató, 16:35–16:50 saját feladat, 16:50–17:00 kérdések és köszönet.
 
 **Vetített változat.** [A záró előadás diái](05-zaro-eloadas.html). A mozgó ábrák kattintás nélkül futnak, és körbeérve újraindulnak. Csökkentett mozgásnál minden szöveg állóképen olvasható.
 
@@ -55,13 +55,19 @@
 
 ## Dia 7: Ne csak leadet számolj: kivel zártál?
 
-**A dián látható szöveg:** Példa, kitalált adatok · Lead 120 · 21,7% jut tovább · Beszélgetés 26 · 38,5% jut tovább · Ajánlat 10 · 20,0% jut tovább · Megnyert ügy 2 · 1,7% a leadekből lett vevő (2 / 120, kitalált adat) · Sok lead, kevés vevő? Rossz embereket hoztunk a folyamatba. · Vissza az elejére: célcsoport, Cég-DNS, ajánlat, kampány
+**A dián látható szöveg:** Példa, kitalált adatok · Lead 120 · 21,7% jut tovább · Beszélgetés 26 · 38,5% jut tovább · Ajánlat 10 · 20,0% jut tovább · Megnyert ügy 2 · 1,7% a leadekből lett vevő (2 / 120, kitalált adat) · 120 érdeklődőből 2 lett vevő. Jó célcsoportot értünk el? Nézzük meg, kik vásároltak, és mit változtatunk a következő kampányban. · Vissza az elejére: célcsoport, Cég-DNS, ajánlat, kampány
 
 **Ábra:** Vízszintes tölcsér négy szakasszal. Az oszlopok hossza arányos a kitalált értékekkel.
 
 **Adatok:** a [minta CSV](../starter-kit/kampany-minta.csv) négy hetének összege.
 
-## Dia 8: Melyik szám melyik döntéshez vezet?
+## Dia 8: Demó: egy valódi kampány számai
+
+**A dián látható szöveg:** Demó: egy valódi kampány számai · Az előadó ezt élőben mutatja meg. · Demó nélkül: tovább a 9. diára
+
+A dián nincs szám és kampányrészlet.
+
+## Dia 9: Melyik szám melyik döntéshez vezet?
 
 | Ezt látod | Ide nyúlsz | Ez lehet a döntés |
 | --- | --- | --- |
@@ -72,33 +78,33 @@
 | Gyakori BLOKKOLÓ az Ellenőrtől | Cég-DNS: Mondjuk / Nem mondjuk | Új tiltott ígéret a listán |
 | Idegen hang a szövegekben | Márkahang | Új kifejezés, kerülendő szó |
 
-**A dián látható szöveg még:** 10 eset alatt még ne dönts. A célértéket a saját első 2–4 heted adja. · Rövid út: tovább a 12. diára
+**A dián látható szöveg még:** 10 eset alatt még ne dönts. A célértéket a saját első 2–4 heted adja. · Rövid út: tovább a 13. diára
 
 **Mozgó ábra:** A hat sor sorban kiemelődik. Teljes hossz 30 mp.
 
 **Forrás:** [Heti mérés és visszacsatolás](../starter-kit/weekly-review.md).
 
-## Dia 9: Három szó a heti döntéshez
+## Dia 10: Három szó a heti döntéshez
 
-**A dián látható szöveg:** Megtartod: Eléri a saját célértékedet. Ugyanígy fut tovább a következő körben. · Módosítod: Van érdeklődés, de egy lépésnél kiesnek. Egyszerre egy dolgot változtatsz. · Leállítod: Elég eset után sincs eredmény. A helyére új próba kerül. · Vissza a kezdetekhez: Cég-DNS · márkahang · ajánlat · kampányterv · Tovább a 12. diára
+**A dián látható szöveg:** Megtartod: Eléri a saját célértékedet. Ugyanígy fut tovább a következő körben. · Módosítod: Van érdeklődés, de egy lépésnél kiesnek. Egyszerre egy dolgot változtatsz. · Leállítod: Elég eset után sincs eredmény. A helyére új próba kerül. · Vissza a kezdetekhez: Cég-DNS · márkahang · ajánlat · kampányterv · Tovább a 13. diára
 
-## Dia 10: Hangügynök: beszélget, és hívni is tudna
+## Dia 11: Hangügynök: beszélget, és hívni is tudna
 
-**A dián látható szöveg:** Élő demó · Magyarul beszél, értékesítési forgatókönyv szerint. · A beszélgetés után elemzés készül, és javaslat a forgatókönyvre. · Telefonhíváshoz telefonszám és telefonos bekötés is kell. Ezt ma nem próbáltuk ki. · A laborban: OpenAI GPT-Live, Google Gemini Live, ElevenLabs. · Váltás az élő demóra · Hangügynök-labor megnyitása · A demó a böngészőben fut, valódi telefonhívás nélkül. · Demó nélkül: tovább a 12. diára
+**A dián látható szöveg:** Élő demó · Magyarul beszél, értékesítési forgatókönyv szerint. · A beszélgetés után elemzés készül, és javaslat a forgatókönyvre. · Telefonhíváshoz telefonszám és telefonos bekötés is kell. Ezt ma nem próbáltuk ki. · A laborban: OpenAI GPT-Live, Google Gemini Live, ElevenLabs. · Váltás az élő demóra · A hanglabor indítási útmutatója · A demó a böngészőben fut, valódi telefonhívás nélkül. · Demó nélkül: tovább a 13. diára
 
 **Mozgó ábra:** Hangszalagot idéző, ritmikusan mozgó oszlopok.
 
 **Hivatkozás:** [Hangügynök-labor](../demos/voice-lab/README.md).
 
-## Dia 11: Narrált 2D videós demó
+## Dia 12: Narrált 2D videós demó
 
-**A dián látható szöveg:** Videó · Váltás a videóra · A Wenova a nap végén mutatja meg ezt a demót. · Videó nélkül: tovább a 12. diára
+**A dián látható szöveg:** Videó · Váltás a videóra · A Wenova a nap végén mutatja meg ezt a demót. · Videó nélkül: tovább a 13. diára
 
 **Mozgó ábra:** Lassan lüktető lejátszás ikon.
 
-## Dia 12: Így nézhet ki a kampányod egy oldalon
+## Dia 13: Így nézhet ki a kampányod egy oldalon
 
-**A dián látható szöveg:** Példa, kitalált adatok · 12 000 Elérés · 354 Kattintás · 120 Lead · 2 Megnyert ügy · Lead hetente (kitalált adatok) · Megnyert ügy, azonos skálán (kitalált adatok) · Példa, kitalált adatok. Nem valódi kampány eredménye.
+**A dián látható szöveg:** Példa, kitalált adatok · 12 000 Posztelérések összege · 354 Kattintás · 120 Lead · 2 Megnyert ügy · Lead hetente (kitalált adatok) · Megnyert ügy, azonos skálán (kitalált adatok) · Példa, kitalált adatok. Nem valódi kampány eredménye.
 
 **Ábra, lead:** Függőleges oszlopok: 1. hét 18, 2. hét 27, 3. hét 31, 4. hét 44.
 
@@ -106,7 +112,7 @@
 
 **Adatok:** a számok kitaláltak, és a [minta CSV-ből](../starter-kit/kampany-minta.csv) számolhatók.
 
-## Dia 13: Mire jó egy Claude artifact?
+## Dia 14: Mire jó egy Claude artifact?
 
 **A dián látható szöveg:** Gyors összefoglaló: Egy megosztható oldal a beszélgetés eredményéből. · KPI-oldal: A heti számaid egyetlen nézetben. · Monitoring oldal: Connectorral megnyitáskor friss adatot mutathat. · Ütemezett oldal: Ütemezett feladat frissítheti, például hétfő reggel. · Artifact: önálló oldal a beszélgetés mellett. Megnyitod, szerkeszted, megosztod. Minden csomagban elérhető, ha a Beállításokban be van kapcsolva a fájlkészítés.
 
@@ -114,15 +120,15 @@
 
 **Források:** [Mik azok az artifactok?](https://support.claude.com/en/articles/17153992-what-are-artifacts-and-how-do-i-use-them) · [Artifactok a Claude Code-ban, élő adat connectorral](https://code.claude.com/docs/en/artifacts) · [Academy-példa: heti hirdetési összefoglaló](https://academy.claude.com/use-cases/ad-performance-recap).
 
-## Dia 14: Ütemezett frissítés: mi kell hozzá?
+## Dia 15: Ütemezett frissítés: mi kell hozzá?
 
-**A dián látható szöveg:** 1 Fizetős csomag: Pro, Max, Ultra, Team vagy Enterprise. · 2 Ütemezett feladat: Ez adja az időzítést: óránként, naponta, hetente vagy hétköznap. · 3 Adatforrás: Connector vagy a fiókodba mentett fájl. Helyi mappánál a gép legyen ébren, a Claude Desktop nyitva. · A Claude Data dashboard megnyitáskor frissül, ütemezésre nem. · Források · ellenőrizve: 2026. 11. 19.
+**A dián látható szöveg:** 1 Fizetős csomag: Pro, Max, Ultra, Team vagy Enterprise. · 2 Ütemezett feladat: Ez adja az időzítést: óránként, naponta, hetente vagy hétköznap. · 3 Adatforrás: A felhőben futó feladat engedélyezett kapcsolatból vagy a Claude-fiókodba mentett fájlból dolgozhat. Helyi mappához a szervezetben engedélyezett Computer access, ébren lévő gép és megnyitott Claude Desktop kell. · A Claude Data műszerfala megnyitáskor frissíti az adatokat, ha a frissítés esedékes. Önálló időzítése nincs. · Források · ellenőrizve: 2026. 11. 19.
 
 **Források:** [Ütemezett feladatok a Coworkben](https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-cowork) · [Mik azok az artifactok?](https://support.claude.com/en/articles/17153992-what-are-artifacts-and-how-do-i-use-them) · [Claude Data](https://support.claude.com/en/articles/17454700) · [Academy-példa](https://academy.claude.com/use-cases/ad-performance-recap).
 
-## Dia 15: Most te jössz: mit tudsz ma megcsinálni?
+## Dia 16: Most te jössz: mit tudsz ma megcsinálni?
 
-**A dián látható szöveg:** 16:35–16:52 · Mindenkinek van feladata: a munkafüzet lépésről lépésre vezet.
+**A dián látható szöveg:** 16:35–16:50 · Mindenkinek van feladata: a munkafüzet lépésről lépésre vezet.
 
 | Lépés | Ez kell hozzá | Ha megvan | Ha nincs |
 | --- | --- | --- | --- |
@@ -131,10 +137,10 @@
 | Levelek | Engedélyezett Gmail | Válaszok összefoglalása, piszkozat | Mintapostafiók vagy bemásolt levél |
 | Döntés | Csak Claude | Visszacsatolás, következő kör | Ugyanez, a mintából |
 
-## Dia 16: Mi maradt nyitva?
+## Dia 17: Mi maradt nyitva?
 
 **A dián látható szöveg:** Kérdések? · Otthonra: a munkafüzet rövid, önálló lépésekből áll.
 
-## Dia 17: Köszönjük a mai napot!
+## Dia 18: Köszönjük a mai napot!
 
 **A dián látható szöveg:** Mérj, tanulj, indíts újra. · [wenova.io](https://wenova.io) · Hétfőn 30 perc: az első heti átnézés.

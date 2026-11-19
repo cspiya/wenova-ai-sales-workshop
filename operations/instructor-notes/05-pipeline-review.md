@@ -8,7 +8,7 @@
 
 Belső oktatói jegyzet · review
 
-**Státusz: review.** 16:15–17:00, a Zárással együtt 45 perc. Vezeti: Kemény Krisztián; körbejár: Piya Csaba, és ha maradnak, a partnerek. Menet, időterv és a 16:15 előtti ellenőrzőlista: [előadói jegyzet](../../materials/presentations/05-zaro-eloadas-jegyzet.md).
+**Státusz: review.** 16:15–17:00, a Zárással együtt 45 perc. Vezeti: Kemény Krisztián; körbejár: Piya Csaba, és ha maradnak, a partnerek. Menet és időterv: [előadói jegyzet](../../materials/presentations/05-zaro-eloadas-jegyzet.md). A 16:15 előtti ellenőrzőlista lent található.
 
 <a name="notes-1"></a>
 
@@ -24,6 +24,25 @@ Belső oktatói jegyzet · review
 2. Az eredmények és a kommentek lekérése a Windsor.ai-on át, csak olvasással (a kapcsolatot 16:15 előtt a saját fiókoddal ki kell próbálni), majd a [munkafüzet elemző promptja](../../materials/modules/05-pipeline-review.md#05-pipeline-review.02-one-customer--prompt).
 3. Ha a kapcsolat nem válaszol, a [minta CSV](../../materials/starter-kit/kampany-minta.csv) kitalált adataival folytasd, és ezt mondd ki.
 
+<a name="notes-checklist"></a>
+
+### Előadói ellenőrzőlista: 16:15 előtt
+
+Az alábbi kapcsolatok állapotát az előadó ellenőrzi a bemutató gépén. A tananyag egyiket sem állítja kipróbáltnak. **A Windsor.ai-kapcsolatot 16:15 előtt még ki kell próbálnod a saját fiókoddal.** Amelyik próba nem sikerül, annál a mintával dolgozz.
+
+| Kész? | Fiók vagy kapcsolat | Próba | Ha nem működik |
+| --- | --- | --- | --- |
+| ☐ | Claude Desktop, a bemutató projektje | Új beszélgetés indul a projektben | Tartalék gép vagy a vetített minta |
+| ☐ | Buffer | Látszik a megjelent posztok listája | A minta CSV posztjai |
+| ☐ | Facebook, Windsor.ai-on át, a saját fiókoddal | Egy poszt eredménye és kommentje kiolvasható | A minta CSV eredményei és kommentjei |
+| ☐ | GA4, Windsor.ai-on át, a saját fiókoddal | Egy időszak munkameneteinek száma kiolvasható | A minta CSV munkamenetei |
+| ☐ | CRM-tábla, Google Drive | A tábla megtalálható és olvasható | A minta CSV tölcsére |
+| ☐ | Gmail, csak olvasás | Egy próbalevél megtalálható | A mintapostafiók |
+| ☐ | Valódi kampány demója, ha mutatod | A számok megnyílnak a bemutató gépén | Ugord át a 8. diát |
+| ☐ | Hangügynök-labor, ha mutatod | Teljes próbahívás a vetítőgépen, hallható teremhanggal | Ugord át a 11. diát |
+| ☐ | 2D videó, ha mutatod | A videó elindul, a teremhang hallható | Ugord át a 12. diát |
+| ☐ | [Minta CSV](../../materials/starter-kit/kampany-minta.csv) | A fájl megnyílik a bemutató gépén | A 13. dia kitalált számai |
+
 <a name="notes-3"></a>
 
 ### Mérés és visszacsatolás: beszédpontok (a 3. leckénél, 2 perc)
@@ -37,14 +56,14 @@ Belső oktatói jegyzet · review
 
 ### Időkapuk és gyakori hibák
 
-A saját feladat 17 perc. A heti jelentés és a dashboard „Ha maradt időd” vagy házi feladat.
+A saját feladat 15 perc. A heti jelentés és a dashboard „Ha maradt időd” vagy házi feladat.
 
 | Óra | Hol kell tartani? | Ha nem |
 | --- | --- | --- |
 | 16:35 | Az előadás véget ért, mindenki választott utat az előfeltételek szerint | Aki bizonytalan, a minta CSV-vel kezd |
-| 16:41 | `tolcser.md` kész | Mintaszámokkal folytatja |
-| 16:47 | `kampany-elemzes.md` kész | Elég a három megfigyelés |
-| 16:52 | `launch-plan.md` „Holnap” táblája kész | A mérési sor holnapra marad |
+| 16:40 | `tolcser.md` kész | Mintaszámokkal folytatja |
+| 16:45 | `kampany-elemzes.md` kész | Elég a három megfigyelés |
+| 16:50 | `launch-plan.md` „Holnap” táblája kész | A mérési sor holnapra marad |
 
 - **Nincs CRM-tábla vagy Gmail-engedély:** a minta CSV-vel dolgozik, `simulation` jelöléssel. Ez teljes értékű feladat.
 - **Valaki Facebook- vagy GA4-kapcsolatot szeretne most beállítani:** ne ezzel töltse az időt. Exportfájl vagy minta.
@@ -53,9 +72,9 @@ A saját feladat 17 perc. A heti jelentés és a dashboard „Ha maradt időd”
 
 <a name="notes-5"></a>
 
-### Zárás 16:52–17:00
+### Zárás 16:50–17:00
 
-Kérdések, majd köszönet a [záró előadás](../../materials/presentations/05-zaro-eloadas.md) 16. és 17. diájával. Kulcsmondat: „Számold meg, kivel zártál, ne csak a leadeket.”
+Kérdések, majd köszönet a [záró előadás](../../materials/presentations/05-zaro-eloadas.md) 17. és 18. diájával. Kulcsmondat: „Számold meg, kivel zártál, ne csak a leadeket.”
 
 A zárásban a Wenova egy külön, rövid, színes demóban vetíti le a nap összefoglalóját. A 2D-s animált videó narrációjához ElevenLabs kell. A Brandiseer a saját blokkjában állóképet mutat be.
 
@@ -66,7 +85,7 @@ Utána három résztvevő mondja el a saját holnapi első lépését; végül p
 ### Partnerkapcsolatok, vizuális áttekintés, ütemezés
 
 - Az 5. blokkhoz nem kell partnerkapcsolat. Aki nem fér hozzá a saját adataihoz, a minta CSV-ből dolgozik, `simulation` jelöléssel.
-- A dashboard és az ütemezett feladatok csak „Ha maradt időd” vagy otthoni feladat. A 17 percbe nem férnek bele; ne erőltesd.
+- A dashboard és az ütemezett feladatok csak „Ha maradt időd” vagy otthoni feladat. A 15 percbe nem férnek bele; ne erőltesd.
 - Ütemezett feladat Pro csomagon a felhőben fut, helyi mappa nélkül: ezért a DNS-t a Google Drive-ba kell tenni. Ezt élőben nem próbáltuk.
 
 <a name="notes-7"></a>

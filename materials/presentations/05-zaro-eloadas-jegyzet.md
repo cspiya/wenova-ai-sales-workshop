@@ -7,7 +7,7 @@ Ez a jegyzet diánként megmondja, mi látszik, mi a fő üzenet, mit mondj, és
 
 ## Időterv: 16:15–17:00
 
-A blokk három részből áll: 20 perc előadás és élő bemutató, 17 perc saját feladat, 8 perc kérdés és zárás. A 9., 10. és 11. dia kihagyható. A kihagyásokhoz a dia alján van ugrólink.
+A blokk három részből áll: 16:15–16:35 előadás és élő bemutató, 16:35–16:50 saját feladat, 16:50–17:00 kérdések és köszönet. A 8., 10., 11. és 12. dia kihagyható. A kihagyásokhoz a dia alján van ugrólink.
 
 | Dia | Téma | Kezdés | Hossz | Út |
 | --- | --- | --- | --- | --- |
@@ -18,39 +18,32 @@ A blokk három részből áll: 20 perc előadás és élő bemutató, 17 perc sa
 | 5 | A hurok | 16:18:30 | 2:00 | Fő út, ez a lényeg |
 | 6 | Élő bemutató: a kampány mérése | 16:20:30 | 6:00 | Fő út, mintával is megy |
 | 7 | Számold meg, kivel zártál | 16:26:30 | 1:30 | Fő út |
-| 8 | Melyik szám melyik döntéshez vezet | 16:28:00 | 1:30 | Fő út |
-| 9 | Három szó a heti döntéshez | ugorható | +1:00 | Kihagyható |
-| 10 | Hangügynök, élő demó | ugorható | +3:00 | Kihagyható |
-| 11 | 2D videós demó | ugorható | a videó hossza | Kihagyható |
-| 12 | Példa dashboard | 16:29:30 | 1:00 | Fő út |
-| 13 | Mire jó az artifact | 16:30:30 | 1:30 | Fő út |
-| 14 | Ütemezett frissítés | 16:32:00 | 1:30 | Fő út |
-| 15 | Most te jössz | 16:33:30 | 1:30 | Fő út |
-| – | Saját feladat a munkafüzetből | 16:35:00 | 17:00 | Fő út |
-| 16 | Kérdések | 16:52:00 | 6:00 | Fő út |
-| 17 | Köszönjük | 16:58:00 | 2:00 | Fő út |
+| 8 | Demó: egy valódi kampány számai | ugorható | 2:00 a 6. dia idejéből | Választható |
+| 9 | Melyik szám melyik döntéshez vezet | 16:28:00 | 1:30 | Fő út |
+| 10 | Három szó a heti döntéshez | ugorható | +1:00 | Kihagyható |
+| 11 | Hangügynök, élő demó | ugorható | 3:00 | Kihagyható |
+| 12 | 2D videós demó | ugorható | a videó hossza | Kihagyható |
+| 13 | Példa dashboard | 16:29:30 | 1:00 | Fő út |
+| 14 | Mire jó az artifact | 16:30:30 | 1:30 | Fő út |
+| 15 | Ütemezett frissítés | 16:32:00 | 1:30 | Fő út |
+| 16 | Most te jössz | 16:33:30 | 1:30 | Fő út |
+| – | Saját feladat a munkafüzetből | 16:35:00 | 15:00 | Fő út |
+| 17 | Kérdések | 16:50:00 | 8:00 | Fő út |
+| 18 | Köszönjük | 16:58:00 | 2:00 | Fő út |
 
-**Ha mutatod a hangdemót vagy a videót:** a többletidő a saját feladat 17 percéből jön. A kérdések és a zárás ideje maradjon meg.
+**Ha a hangdemót is mutatod:** a 6. dia kampánybemutatója 16:20:30–16:23:30. A 7. és a 9. diára másfél-másfél perc jut. A 8. és a 10. diát ugord át. A 11. dia hangdemója 16:26:30–16:29:30. Innen ugorj a 13. diára. A saját feladat 16:35-kor, a kérdések 16:50-kor kezdődnek. Ha az élő adat hiányzik, a 6. dián a CSV-ből mutass meg egy számot, egy kommentet és egy döntést.
 
-**Ha csúszol:** a 4. diát mondd el egy mondatban, és a 8. diáról ugorj a 12. diára.
+**Ha a valódi kampányt mutatod a 8. dián:** a 6. dia bemutatóját rövidítsd 4 percre. A hangdemóval együtt nem fér bele, ezért a kettő közül egyet válassz.
 
-<a name="checklist"></a>
+**Ha a videót is mutatod:** a hosszát a saját feladat idejéből vedd el. A kérdések 16:50-kor kezdődnek.
 
-## Előadói ellenőrzőlista: 16:15 előtt
+**Ha csúszol:** a 4. diát mondd el egy mondatban, és a 9. diáról ugorj a 13. diára.
 
-Az alábbi kapcsolatok állapotát az előadó ellenőrzi a bemutató gépén. A tananyag egyiket sem állítja kipróbáltnak. **A Windsor.ai-kapcsolatot 16:15 előtt még ki kell próbálnod a saját fiókoddal.** Amelyik próba nem sikerül, annál a mintával dolgozz.
+<a name="bemutato"></a>
 
-| Kész? | Fiók vagy kapcsolat | Próba | Ha nem működik |
-| --- | --- | --- | --- |
-| ☐ | Claude Desktop, a bemutató projektje | Új beszélgetés indul a projektben | Tartalék gép vagy a vetített minta |
-| ☐ | Buffer | Látszik a megjelent posztok listája | A minta CSV posztjai |
-| ☐ | Facebook, Windsor.ai-on át, a saját fiókoddal | Egy poszt eredménye és kommentje kiolvasható | A minta CSV eredményei és kommentjei |
-| ☐ | GA4, Windsor.ai-on át, a saját fiókoddal | Egy időszak munkameneteinek száma kiolvasható | A minta CSV munkamenetei |
-| ☐ | CRM-tábla, Google Drive | A tábla megtalálható és olvasható | A minta CSV tölcsére |
-| ☐ | Gmail, csak olvasás | Egy próbalevél megtalálható | A mintapostafiók |
-| ☐ | Hangügynök-labor, ha mutatod | Teljes próbahívás a vetítőgépen, hallható hanggal | Hagyd ki a 10. diát |
-| ☐ | 2D videó, ha mutatod | A videó elindul, a hang hallható | Hagyd ki a 11. diát |
-| ☐ | [Minta CSV](../starter-kit/kampany-minta.csv) | A fájl megnyílik a bemutató gépén | A 12. dia kitalált számai |
+## A bemutatóról
+
+A bemutatóhoz nem kell saját fiók. Ha az élő adatforrás nem érhető el, ugyanazt az elemzést a négyhetes, kitalált kampánymintán követheted.
 
 <a name="s01"></a>
 
@@ -98,7 +91,7 @@ Az alábbi kapcsolatok állapotát az előadó ellenőrzi a bemutató gépén. A
 
 **Mondd el:** Az első: az alap dönt. Ha hibás a Cég-DNS, minden agent hibásan dolgozik. A második: más ír és más ellenőriz. Az Ellenőr új beszélgetésben dolgozik. A harmadik: az ember dönt árról, vállalásról és küldésről. A negyedik: a mérés zárja a kört. Erről szól a következő dia.
 
-**Várható kérdés:** Miért kell új beszélgetés az ellenőrzéshez? **Válasz:** Mert ugyanaz a beszélgetés a saját feltételezéseit látja helyesnek. Az új beszélgetés csak a szöveget és a kérést kapja.
+**Várható kérdés:** Miért kell új beszélgetés az ellenőrzéshez? **Válasz:** Az Ellenőr külön beszélgetésben kapja meg a szöveget, az eredeti kérést és az ellenőrzési szempontokat. Az Író indoklását hagyd ki az átadásból. Ugyanabban a projektben a közös utasítások és források az Ellenőr számára is elérhetők lehetnek.
 
 <a name="s05"></a>
 
@@ -136,13 +129,29 @@ Az alábbi kapcsolatok állapotát az előadó ellenőrzi a bemutató gépén. A
 
 **Fő üzenet:** ne csak a leadeket számold, hanem azt is, kivel zártál.
 
-**Mondd el:** Az üzletkötést ma nem tanítjuk, de ez a legfontosabb szám. A példában 120 leadből 2 vevő lett. Ezek kitalált adatok. Ha sok a lead, de kevés a vevő, akkor rossz embereket hoztunk a folyamatba. Ilyenkor nem több lead kell. Vissza kell menni az elejére: a célcsoporthoz, a Cég-DNS-hez, az ajánlathoz és a kampányhoz.
+**Mondd el:** Az üzletkötést ma nem tanítjuk, de ez a legfontosabb szám. 120 érdeklődőből 2 lett vevő. Ezek kitalált adatok. Jó célcsoportot értünk el? Nézzük meg, kik vásároltak, és mit változtatunk a következő kampányban. A tanulság visszamegy az elejére: a célcsoporthoz, a Cég-DNS-hez, az ajánlathoz és a kampányhoz.
 
 **Várható kérdés:** Hány százalék a jó zárási arány? **Válasz:** Erre itt nem adunk átvett számot. A saját első heteid adják a mércét.
 
 <a name="s08"></a>
 
-## 8. dia: Melyik szám melyik döntéshez vezet (16:28:00, 1 perc 30 mp)
+## 8. dia: Demó: egy valódi kampány számai (választható, 2 perc)
+
+**Képernyőn:** a „Demó: egy valódi kampány számai” felirat és egy rövid sor. A dián nincs szám és kampányrészlet.
+
+**Fő üzenet:** a mérés valódi kampányon is ugyanígy működik.
+
+**Mondd el:** Most egy valódi kampány számait mutatom meg élőben. Ugyanazt nézzük: kik jöttek, kikkel beszéltünk, és kivel zártunk.
+
+**Választható:** megmutathatod az élő demót, vagy átugorhatod ezt a diát. A valódi számok csak élőben látszanak, a diára és a jegyzetbe nem kerülnek.
+
+**Ha kimarad:** kattints a „Demó nélkül: tovább a 9. diára” linkre.
+
+**Várható kérdés:** Megkaphatjuk ezeket a számokat? **Válasz:** Nem, ezek csak a bemutatón látszanak. Gyakorolni a kitalált kampánymintán tudsz.
+
+<a name="s09"></a>
+
+## 9. dia: Melyik szám melyik döntéshez vezet (16:28:00, 1 perc 30 mp)
 
 **Képernyőn:** hat sor: mit látsz, hova nyúlsz, mi lehet a döntés.
 
@@ -150,13 +159,13 @@ Az alábbi kapcsolatok állapotát az előadó ellenőrzi a bemutató gépén. A
 
 **Mondd el:** Nézzünk két példát. Ha kevesen fogadják el a LinkedIn-bejelölést, a célzással van gond. Ilyenkor a Cég-DNS-ben szűkíted az ideális ügyfelet. Ha sok az ajánlat, de kevés a megnyert ügy, az utánkövetésen változtatsz. Egy szabályt jegyezz meg: 10 eset alatt még ne dönts.
 
-**Váltás:** a dia alján a „Rövid út” link a 12. diára visz.
+**Váltás:** a dia alján a „Rövid út” link a 13. diára visz.
 
 **Várható kérdés:** Mi számít jó elfogadási aránynak? **Válasz:** A saját első két-négy heted adja a mércét.
 
-<a name="s09"></a>
+<a name="s10"></a>
 
-## 9. dia: Három szó a heti döntéshez (kihagyható, +1 perc)
+## 10. dia: Három szó a heti döntéshez (kihagyható, +1 perc)
 
 **Képernyőn:** megtartod, módosítod, leállítod. Alatta a négy hely, ahova a döntés visszakerül.
 
@@ -166,9 +175,9 @@ Az alábbi kapcsolatok állapotát az előadó ellenőrzi a bemutató gépén. A
 
 **Várható kérdés:** Hány dolgot változtassak egyszerre? **Válasz:** Egyet. Így látod, mitől változott a szám.
 
-<a name="s10"></a>
+<a name="s11"></a>
 
-## 10. dia: Hangügynök, élő demó (kihagyható, +3 perc)
+## 11. dia: Hangügynök, élő demó (kihagyható, +3 perc)
 
 **Képernyőn:** három rövid állítás, az eszközök neve és a váltás a laborra.
 
@@ -176,15 +185,15 @@ Az alábbi kapcsolatok állapotát az előadó ellenőrzi a bemutató gépén. A
 
 **Mondd el:** Egy kitekintés. Ez egy magyarul beszélő hangügynök, amely forgatókönyv szerint beszélget. A beszélgetés után elemzés készül, és javaslatot kapsz a forgatókönyvre. Telefonszámmal és telefonos bekötéssel hívni is tudna, de ezt ma nem próbáltuk ki. Most a böngészőben mutatom meg.
 
-**Váltás:** kattints a „Hangügynök-labor megnyitása” gombra. A labor új lapon nyílik.
+**Váltás:** Válts az előre megnyitott és kipróbált hanglaborra. A dián lévő gomb az otthoni indítási útmutatót nyitja meg.
 
-**Ha kimarad:** kattints a „Demó nélkül: tovább a 12. diára” linkre. A történet így is teljes.
+**Ha kimarad:** kattints a „Demó nélkül: tovább a 13. diára” linkre. A történet így is teljes.
 
 **Várható kérdés:** Fel tud hívni most egy ügyfelet? **Válasz:** Ebben a demóban nem. A labor a böngészőben fut, valódi telefonhívás nincs benne.
 
-<a name="s11"></a>
+<a name="s12"></a>
 
-## 11. dia: 2D videós demó (kihagyható, a videó hossza)
+## 12. dia: 2D videós demó (kihagyható, a videó hossza)
 
 **Képernyőn:** lejátszás ikon és a váltás felirata.
 
@@ -192,27 +201,27 @@ Az alábbi kapcsolatok állapotát az előadó ellenőrzi a bemutató gépén. A
 
 **Mondd el:** Most egy narrált 2D videós demó következik.
 
-**Váltás:** indítsd el a videót a saját lejátszódból, utána térj vissza a 12. diára.
+**Váltás:** indítsd el a videót a saját lejátszódból, utána térj vissza a 13. diára.
 
-**Ha kimarad:** kattints a „Videó nélkül: tovább a 12. diára” linkre.
+**Ha kimarad:** kattints a „Videó nélkül: tovább a 13. diára” linkre.
 
 **Várható kérdés:** Hol érem el később a videót? **Válasz:** Erről a szervező tájékoztat.
 
-<a name="s12"></a>
+<a name="s13"></a>
 
-## 12. dia: Példa dashboard (16:29:30, 1 perc)
+## 13. dia: Példa dashboard (16:29:30, 1 perc)
 
 **Képernyőn:** négy mutató és két heti oszlopdiagram azonos skálán. A „Példa, kitalált adatok” jelölés többször látszik.
 
 **Fő üzenet:** a kampány számai egy oldalon olvashatók.
 
-**Mondd el:** Így nézhet ki a kampányod egy oldalon. Ezek kitalált adatok. Bal oldalon nő a leadek száma. Jobb oldalon ugyanazon a skálán alig látszik a megnyert ügy. Ezt a különbséget akarjuk észrevenni.
+**Mondd el:** Így nézhet ki a kampányod egy oldalon. Ezek kitalált adatok. A négy poszt elérését adtuk össze. Aki több posztot is látott, többször szerepelhet ebben a számban. Bal oldalon nő a leadek száma. Jobb oldalon ugyanazon a skálán alig látszik a megnyert ügy. Ezt a különbséget akarjuk észrevenni.
 
 **Várható kérdés:** Ilyet én is tudok készíteni? **Válasz:** Igen. A munkafüzet választható lépése ezt kéri a Claude-tól a minta CSV-ből.
 
-<a name="s13"></a>
+<a name="s14"></a>
 
-## 13. dia: Mire jó az artifact (16:30:30, 1 perc 30 mp)
+## 14. dia: Mire jó az artifact (16:30:30, 1 perc 30 mp)
 
 **Képernyőn:** négy felhasználás: összefoglaló, KPI-oldal, monitoring oldal, ütemezett oldal.
 
@@ -222,33 +231,33 @@ Az alábbi kapcsolatok állapotát az előadó ellenőrzi a bemutató gépén. A
 
 **Várható kérdés:** Ingyenes csomagban is működik? **Válasz:** Artifactot igen. A connectoros kapcsolathoz és az ütemezett feladathoz fizetős csomag kell.
 
-<a name="s14"></a>
+<a name="s15"></a>
 
-## 14. dia: Ütemezett frissítés (16:32:00, 1 perc 30 mp)
+## 15. dia: Ütemezett frissítés (16:32:00, 1 perc 30 mp)
 
 **Képernyőn:** három feltétel, egy figyelmeztetés a Claude Data dashboardról és a források.
 
 **Fő üzenet:** az időzítést az ütemezett feladat adja, és kell hozzá adatforrás.
 
-**Mondd el:** Három dolog kell. Fizetős csomag: Pro, Max, Ultra, Team vagy Enterprise. Ütemezett feladat, amely óránként, naponta, hetente vagy hétköznap fut. És adatforrás: connector vagy a fiókodba mentett fájl. Ha helyi mappát választasz, a gépnek ébren kell lennie, és a Claude Desktopnak nyitva. Egy fontos különbség: a Claude Data dashboard megnyitáskor frissül, ütemezésre nem.
+**Mondd el:** Három dolog kell. Fizetős csomag: Pro, Max, Ultra, Team vagy Enterprise. Ütemezett feladat, amely óránként, naponta, hetente vagy hétköznap fut. És adatforrás. A felhőben futó feladat engedélyezett kapcsolatból vagy a Claude-fiókodba mentett fájlból dolgozhat. Helyi mappához a szervezetben engedélyezett Computer access, ébren lévő gép és megnyitott Claude Desktop kell. Egy fontos különbség: a Claude Data műszerfala megnyitáskor frissíti az adatokat, ha a frissítés esedékes. Önálló időzítése nincs.
 
 **Várható kérdés:** Frissül magától az oldal, ha senki nem nyitja meg? **Válasz:** Az ütemezett feladat a megadott időben lefut. Az Academy példájában így frissül az artifact is. Azt, hogy egy artifact saját maga, feladat nélkül ütemezve frissülne, a dokumentációban nem találtuk.
 
-<a name="s15"></a>
+<a name="s16"></a>
 
-## 15. dia: Most te jössz (16:33:30, 1 perc 30 mp, utána saját feladat 16:52-ig)
+## 16. dia: Most te jössz (16:33:30, 1 perc 30 mp, utána saját feladat 16:50-ig)
 
 **Képernyőn:** négy sor: kampányadat, tölcsér, levelek, döntés. Mindegyiknél látszik, mi kell hozzá, és mi a tartalékút.
 
 **Fő üzenet:** mindenkinek van értelmes feladata, akkor is, ha nincs CRM-je vagy Gmail-engedélye.
 
-**Mondd el:** Most te jössz. Nézd meg, mi van meg neked. Ha van Buffer-, Facebook- vagy GA4-adatod, a sajátodból dolgozol. Ha nincs CRM-táblád vagy Gmail-engedélyed, a kitalált minta CSV-ből dolgozol. A feladat ugyanaz: számokból tanulság, tanulságból döntés. Nyisd meg a munkafüzet előfeltételek részét.
+**Mondd el:** Most te jössz. Nézd meg, mi van meg neked. Ha van Buffer-, Facebook- vagy GA4-adatod, a sajátodból dolgozol. CRM nélkül a minta CSV-ből készíts tölcsért. Ha nincs engedélyezett levelezőkapcsolatod, a levélfeladatot kihagyhatod, vagy a mintapostafiók egyik levelével gyakorolhatsz. A feladat ugyanaz: számokból tanulság, tanulságból döntés. Nyisd meg a munkafüzet előfeltételek részét.
 
 **Várható kérdés:** Mi van, ha semmilyen kapcsolatom nincs? **Válasz:** Akkor a minta CSV-vel dolgozol. Ehhez csak a Claude kell.
 
-<a name="s16"></a>
+<a name="s17"></a>
 
-## 16. dia: Kérdések (16:52:00, 6 perc)
+## 17. dia: Kérdések (16:50:00, 8 perc)
 
 **Képernyőn:** „Kérdések?” és a munkafüzet linkje.
 
@@ -258,9 +267,9 @@ Az alábbi kapcsolatok állapotát az előadó ellenőrzi a bemutató gépén. A
 
 **Várható kérdés:** Mivel kezdjem holnap? **Válasz:** Számold meg, hány leadből lett vevő az eddigi kampányodban, és tedd a naptáradba a hétfői 30 percet.
 
-<a name="s17"></a>
+<a name="s18"></a>
 
-## 17. dia: Köszönjük (16:58:00, 2 perc)
+## 18. dia: Köszönjük (16:58:00, 2 perc)
 
 **Képernyőn:** köszönet, a [wenova.io](https://wenova.io) link és a hétfői átnézés emlékeztetője.
 

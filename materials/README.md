@@ -38,7 +38,7 @@ Magyarországi, AI-alapú megoldások fejlesztésében, bevezetésében és üzl
 
 | Partner | Tudás és szerep | Előadó |
 | --- | --- | --- |
-| Wenova — szervező és szakmai partner | AI-bevezetés, folyamatoptimalizálás, agentikus működés és a közös tanulási útvonal | Piya Csaba, Kemény Krisztián |
+| Wenova (szervező és szakmai partner) | AI-bevezetés, folyamatoptimalizálás, agentikus működés és a közös tanulási útvonal | Piya Csaba, Kemény Krisztián |
 | Brandiseer | Márkaazonos képkészítés és tartalom, kampány-előkészítés | Sorok Dániel |
 | Blackhole Media | B2B leadgenerálás, LinkedIn-megkeresés, sales automatizáció | Bölcskei Balázs, Nagy Bogáta |
 | EstiWise | Igényfelmérés, szabályalapú árazás és ajánlatautomatizáció | Gyömrei Máté, CommIT Smart Kft. |
