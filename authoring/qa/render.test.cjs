@@ -86,7 +86,7 @@ test('each schedule row shows its exact workbook target and the presenter note a
  ])assert.ok(row(time).includes('<p class="slot__links">'+links+'</p>'),time);
 });
 test('every HTML-változat link in a Markdown source points to its published page',()=>{
- const sources=files().filter(p=>/^(?:materials|operations|authoring)\/.*\.md$/.test(p));let found=0;
+ const sources=files().filter(p=>p==='README.md'||/^(?:materials|operations|authoring)\/.*\.md$/.test(p));let found=0;
  for(const source of sources)for(const [,target] of fs.readFileSync(path.join(ROOT,source),'utf8').matchAll(/\[HTML-változat\]\(([^)]*)\)/g)){
   found++;assert.equal(target,SITE_URL+output(source),source);assert.ok(fs.existsSync(path.join(ROOT,output(source))),output(source));
  }
