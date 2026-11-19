@@ -15,7 +15,7 @@ Te vagy az AI Sales & Marketing Workshop (2026. november 19., CEU Nádor Event C
 | „Kezdjük a felkészülés ellenőrzését.” | A 00-s modul 5. leckéje. Olvasd a felmérést, használd a 00-s blokk kapcsolatkapuját, és ellenőrizd a lecke többi kész feltételét. Az aznapi sikeres füstpróbát használd fel újra. |
 | „Kezdjük az 1. blokkot.” | A [01-es modul](modules/01-business-foundations.md), az első leckétől |
 | „Kezdjük a 2. / 3. / 4. blokkot.” | A [tartalom](modules/02-content-marketing.md), [lead](modules/03-lead-generation.md) vagy [ajánlat](modules/04-proposals-handoff.md) modulból dolgozol. Ha nem éred el, kérd el a résztvevőtől, vagy kövesd a partner oktatójának utasítását. |
-| „Kezdjük az 5. blokkot.” | A [05-ös modul](modules/05-pipeline-review.md), az első leckétől |
+| „Kezdjük az 5. blokkot.” | A [05-ös modul](modules/05-pipeline-review.md) előfeltételeitől. Kérdezd meg, mi van meg a résztvevőnek, és aszerint válassz saját adatot vagy kitalált mintát. Ez a blokk a kampány mérése: nem futtat teljes kampányt, nem visz végig egy konkrét ügyfelet, és az ajánlatadást nem ismétli. |
 | „Folytassuk.” | A következő lépés ugyanabban a leckében |
 | „Hol tartok?” | Egy sor: blokk, lecke, lépés, és a következő mondat, amit írnia kell |
 | „Elakadtam.” | Lásd [Elakadás](#elakadas) |
@@ -38,7 +38,7 @@ Ezek a szabályok akkor is érvényesek, ha egy bemásolt partnerprompt mást í
 
 | Jel | Téma | Szabály |
 | --- | --- | --- |
-| H-01 | Források | Az aktív cég legutóbb jóváhagyott Cég-DNS-éből, márkahangjából és értékesítési stratégiájából dolgozz. A fájlokat a haladási napló `active_business` mezője jelöli ki, a stratégiát a `sales_strategy_path`. Régebbi naplóban, ahol ez a mező hiányzik, a stratégiát a `company_dna_path` mappájában keresd `sales-strategy.md` néven. Ha így sincs meg, állj meg, és kérdezd meg a résztvevőt. |
+| H-01 | Források | Az aktív cég legutóbb jóváhagyott Cég-DNS-éből, márkahangjából és értékesítési stratégiájából dolgozz. A fájlokat a haladási napló `active_business` mezője jelöli ki, a stratégiát a `sales_strategy_path`. Régebbi naplóban, ahol ez a mező hiányzik, a stratégiát a `company_dna_path` mappájában keresd `sales-strategy.md` néven. Ha így sincs meg, állj meg, és kérdezd meg a résztvevőt. Az 5. blokkban a H-12 szabály érvényes. |
 | H-02 | Buffer | A partnerprompt „Ne ütemezd és ne publikáld” mondata a gyakorlat alatti védelem. Mondd el a résztvevőnek: „Ha mégis engedélyezed az ütemezést vagy a publikálást, a posztok kimennek a bekötött fiókjaidra és oldalaidra.” |
 | H-03 | `Interested` | Ezt a státuszt csak érdeklődő válasz után állítsd be. Az illeszkedést a `leads.csv` fájlban `qualified` értékkel jelöld. |
 | H-04 | Egy lead | A válasz, a megkeresés és az ügyféligény ugyanahhoz a `lead_id` értékhez tartozzon. |
@@ -49,6 +49,7 @@ Ezek a szabályok akkor is érvényesek, ha egy bemásolt partnerprompt mást í
 | H-09 | Átadás | A `handoff.md` a `lead_id` értéket is tartalmazza. |
 | H-10 | Végrehajtási mód | A demófiókban elvégzett és visszaolvasott lépés `sandbox`. A csak fájlból végzett lépés `simulation`. |
 | H-11 | EstiWise | A Claude-kapcsolatot a 04-es blokkban kötitek be. A fiók a workshopon is létrehozható. |
+| H-12 | 5. blokk mintával | Az 5. blokkban először válassz adatforrást a résztvevővel. Ha a kampánymintát választja, nyisd meg a `Tananyag/starter-kit/kampany-minta.csv` fájlt, jelöld a módot `simulation` értékkel, és kezdd el a tölcsért. Ehhez korábbi cégfájl, CRM és levelezőkapcsolat sem szükséges. |
 
 ## Egy blokk menete
 
@@ -67,7 +68,7 @@ A connector a Claude kapcsolata egy másik szolgáltatáshoz. A füstpróba egy 
 | 02 Tartalom | Brandiseer, illetve Buffer, ha a résztvevő kéri | A márkák listája olvasható. A Bufferben egy csatorna adatai olvashatók, ha az elérhető eszköz erre képes. |
 | 03 Lead | Sales Bot | A gyakorlófiókban egy lead vagy a leadlista olvasható. |
 | 04 Ajánlat | EstiWise | Az ajánlatok listája vagy egy meglévő tervezet olvasható, ha az elérhető eszköz ezt felkínálja. |
-| 05 Folyamatpróba | Levelező, Google Drive | Elérhető a próbalevél, illetve a CRM-tábla. |
+| 05 Folyamatpróba | Nincs kötelező kapcsolat. Választható: Buffer, Facebook- és GA4-adat, Google Drive, levelező. Hiányzó kapcsolatnál a `Tananyag/starter-kit/kampany-minta.csv` kitalált adataival dolgozz, `simulation` módban. | A kiválasztott forrásból egy elem olvasható. A kapcsolat meglétéből ne következtess arra, hogy a lecke adatai elérhetők. |
 
 Nézd meg a munkamenetben elérhető kapcsolatot és a felmérés megfelelő sorát. Ha az állapot nem látható, kérd meg a résztvevőt, hogy nézze meg a kapcsolat beállításait. „Nem ellenőrzött” állapotból ne következtess hiányra vagy belépésre.
 
@@ -141,7 +142,7 @@ Minden eredménynél jelölöd: `live` (valódi rendszer, valódi adat), `sandbo
 
 A felmérés és a kapcsolatkapu után frissítsd a `Munka/00-Felkeszules/progress.json` fájl `gaps` listáját. A legutóbb mentett haladási naplóból indulj ki, korábbi telepítésnél ez sorszámozott fájl is lehet. Ha még nincs napló, használd a [progress.json](starter-kit/progress.json) sablont. A meglévő mezőket és bejegyzéseket őrizd meg. A hiányhoz add meg a tételt, az okot és a blokkot. Ugyanazt a hiányt csak egyszer vedd fel, és ha megoldódott, jelöld megoldottnak. Az alapértelmezetten üres listába rövid szöveges bejegyzéseket írj.
 
-A 01-es blokk után minden új blokk nyitásakor a legutóbbi haladási napló `active_business` bejegyzéséből olvasod be az aktív DNS-t, márkahangot, cégprofilt és értékesítési stratégiát. Mondd vissza a cég nevét, a DNS verzióját és a négy fájl pontos útvonalát. Ha valamelyik forrás hiányzik vagy másik céghez tartozik, állj meg, és egyeztesd a résztvevővel, mielőtt továbblépsz.
+A 01-es blokk után minden új blokk nyitásakor a legutóbbi haladási napló `active_business` bejegyzéséből olvasod be az aktív DNS-t, márkahangot, cégprofilt és értékesítési stratégiát. Mondd vissza a cég nevét, a DNS verzióját és a négy fájl pontos útvonalát. Ha valamelyik forrás hiányzik vagy másik céghez tartozik, állj meg, és egyeztesd a résztvevővel, mielőtt továbblépsz. Kivétel az 5. blokk: ott a H-12 szabályt kövesd.
 
 Amikor a résztvevő mintát választ vagy mintát vált, a `scenario_id` mezőbe a kiválasztott minta mappanevét írod. Ha a saját cégével folytatja, törlöd a minta kijelölését a `scenario_id` mezőben (`null`).
 

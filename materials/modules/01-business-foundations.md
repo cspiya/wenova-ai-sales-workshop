@@ -455,7 +455,7 @@ Ellenőr: itt a teljes javított v2 változat [bemásolva]. Ellenőrizd a koráb
 
 ### Ezt viszed tovább
 
-A munkamappádban ott van a Cég-DNS és a márkahang. A `post-review.md` fájlt add át az 05-ös blokk méréséhez is. Ugyanilyen ellenőri menettel nézheted át a Brandiseer-tartalmat, a Sales Bot-üzeneteket és az ajánlat kísérőszövegét. Az 5. blokkban a Postás és a CRM-agent is munkába áll, és a Karmester egy teljes ügyfélesetet visz végig.
+A munkamappádban ott van a Cég-DNS és a márkahang. A `post-review.md` fájlt add át az 05-ös blokk méréséhez is. Ugyanilyen ellenőri menettel nézheted át a Brandiseer-tartalmat, a Sales Bot-üzeneteket és az ajánlat kísérőszövegét. Az 5. blokkban a kampány mérési adatait elemezzük, és a tanulságokat visszavezetjük a Cég-DNS-be.
 
 **Wenova-kiegészítés a 02-es blokkhoz (választható, ha a Brandiseer-oktató is így kéri):** a kampányvázból (lásd lent, „Ha maradt időd”) egy poszthoz képet kérsz a Brandiseer connectorával; a Claude a képet a `Munka/02-Tartalom/` mappába menti, és posztelőnézetet készít belőle HTML-ben. Ha bekötötted a Buffert, választhatsz piszkozatot vagy ütemezést. Ütemezés előtt a Claude megmutatja a csatornát, a szöveget és az időpontot, majd megvárja a kifejezett jóváhagyásodat. Ami be van ütemezve, az ki is megy. Ha ezt nem szeretnéd, kérj piszkozatot. A Bufferben ellenőrizd a mentett állapotot. Ha a kép nem jön vissza a connectoron át, töltsd le a Brandiseerből a `Munka/02-Tartalom/` mappába. Ha a poszthoz nem csatolható a connectorral, a Buffer felületén töltsd fel. Ha az ütemezési művelet nem érhető el a Claude-ban, használd a [02-es blokk kézi útját](02-content-marketing.md#02-content-marketing.03-prepare-publishing--help).
 
