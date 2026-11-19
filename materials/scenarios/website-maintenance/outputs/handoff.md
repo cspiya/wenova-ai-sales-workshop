@@ -1,7 +1,8 @@
 proposal_id: website-maintenance-P01
+lead_id: website-maintenance-L01
 decision_status: draft
-owner: Résztvevő
-next_task: Indulási időpont és számlázási igény pontosítása; utána ajánlat felülvizsgálata.
-due: A résztvevő rögzíti.
+owner: Ügyvezető
+next_task: Pontosítsd az indulási időpontot és a számlázási adatokat
+due: 2026-11-21
 
 Nincs elfogadott megrendelés, teljesítési feladat még nem indul.

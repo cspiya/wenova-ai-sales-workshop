@@ -9,7 +9,7 @@ Egy nap, négy szakmai csapat, egy végigvitt ügyfélút. Minden blokk az előz
 
 ## A nap fonala
 
-A **Cég-DNS-ed** (kinek adsz el, mit és milyen hangon) minden blokk bemenete. Claude a karmester: készítő és ellenőrző agenteket irányít, te üzleti nyelven adsz célt és jóváhagysz.
+Az 1. blokkban elkészíted a **Cég-DNS-t**, a céged teljes leírását. A későbbi blokkok a belőle készült cégprofilt használják. Claude a karmester: készítő és ellenőrző agenteket irányít, te üzleti nyelven adsz célt és jóváhagysz.
 
 1. **Cég-DNS** – üzleti alap és saját AI-csapat
 2. **Tartalom** – a céged hangján, kampányra készen
@@ -23,14 +23,14 @@ A **Cég-DNS-ed** (kinek adsz el, mit és milyen hangon) minden blokk bemenete. 
 
 | Idő | Blokk | Partner | Előadók | Mit építesz | Munkafüzet, előadás |
 | --- | --- | --- | --- | --- | --- |
-| Előtte | [Felkészülés](modules/00-prework.md) | Wenova | Wenova csapat | Claude-projekt a sablonokkal, levelező- és Google-kapcsolat, CRM-tábla, Sales Bot- és EstiWise-belépés, saját források |  |
+| Előtte | [Felkészülés](modules/00-prework.md) | Wenova | Wenova csapat | Claude-projekt a sablonokkal, levelező- és Google-kapcsolat, CRM-tábla, EstiWise-fiók (a workshopon a saját laptopodon is létrehozhatod), saját források |  |
 | 08:30–09:00 | Érkezés, technikai check | Wenova | Wenova csapat | Működő gép, Claude-fiók és megnyitott munkacsomag | [Munkafüzet](modules/00-prework.md) |
 | 09:00–09:20 | Nyitás | Wenova | Piya Csaba | A nap célja és fonala: egy ügyfél útja a Cég-DNS-től az ajánlatig | Az előadó vetíti |
-| 09:20–10:30 | [1. Cég-DNS és saját AI-csapat](modules/01-business-foundations.md) | Wenova | Piya Csaba, Kemény Krisztián | Cég-DNS forrásokkal, hangprofil a küldött leveleidből, saját AI-csapat (Karmester, Író, Ellenőr) első próbafutással | Az előadó vetíti |
+| 09:20–10:30 | [1. Cég-DNS és saját AI-csapat](modules/01-business-foundations.md) | Wenova | Piya Csaba, Kemény Krisztián | Cég-DNS forrásokkal, márkahang a küldött leveleidből, saját AI-csapat (Karmester, Író, Ellenőr) első próbafutással | Az előadó vetíti |
 | 10:30–10:45 | Szünet |  |  |  |  |
 | 10:45–12:15 | [2. Tartalom a céged hangján](modules/02-content-marketing.md) | Brandiseer | Sorok Dániel | Egy hétre való márkahű posztkép szöveggel, kampányterv | Az előadó vetíti |
 | 12:15–13:00 | Ebéd |  |  |  |  |
-| 13:00–14:30 | [3. LinkedIn-ügyfélszerzés és lead-kezelés](modules/03-lead-generation.md) | Blackhole Media / Sales Bot | Bölcskei Balázs, Nagy Bogáta | Minősített leadlista, személyre szabott megkeresés és utánkövetés, feldolgozott válasz | Az előadó vetíti |
+| 13:00–14:30 | [3. LinkedIn-ügyfélszerzés és lead-kezelés](modules/03-lead-generation.md) | Blackhole Media / Sales Bot | Bölcskei Balázs, Nagy Bogáta | Sales Bot-hozzáférés a blokk elején, értékelt leadlista, személyre szabott megkeresés és feldolgozott válasz | Az előadó vetíti |
 | 14:30–14:45 | Szünet |  |  |  |  |
 | 14:45–16:15 | [4. Igényfelmérés és ajánlatadás 0–24-ben](modules/04-proposals-handoff.md) | EstiWise / CommIT Smart | Gyömrei Máté | Szolgáltatáskatalógus és árazási szabály, ellenőrzött ajánlattervezet, belső átadás | Az előadó vetíti |
 | 16:15–16:50 | [5. Folyamatpróba: levelek, CRM, egy ügyfél végig](modules/05-pipeline-review.md) | Wenova | Kemény Krisztián, Piya Csaba | Postás és válaszpiszkozat a saját hangodon, frissített CRM, egy ügyfél végig a Karmesterrel, heti mérés és visszacsatolás | Az előadó vetíti |

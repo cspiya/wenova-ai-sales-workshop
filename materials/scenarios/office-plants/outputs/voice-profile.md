@@ -1,4 +1,4 @@
-# Hangprofil – IrodaLiget
+# Márkahang – IrodaLiget
 
 **KITALÁLT oktatási minta**, a [kitalált mintalevelekből](mailbox-sample.md) kinyerve.
 
