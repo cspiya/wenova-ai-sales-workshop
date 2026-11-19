@@ -153,7 +153,7 @@ Telepítsd a workshop tananyagát: https://raw.githubusercontent.com/cspiya/weno
 - **A Claude szerint a letöltés hálózati okból nem megy:** Beállítások → Képességek (Settings → Capabilities): kapcsold be az **Allow network egress** kapcsolót, a **Domain allowlist** legyen **Package managers only** (ez engedi a github.com-ot). Utána: „Próbáld újra.”
 - **Így sem megy:** kézi út, 3 perc: töltsd le a [ZIP-et](https://github.com/cspiya/wenova-ai-sales-workshop/archive/refs/heads/main.zip), bontsd ki (Windows: jobb klikk → Összes kibontása; macOS: dupla kattintás), a kibontott mappában a `materials` mappa **tartalmát** másold a `Wenova-AI-Sales-Workshop/Tananyag/` mappába, és hozz létre mellette egy `Munka` mappát. Utána írd a Claude-nak: „A Tananyag/TELEPITES.md 4. szakasza szerint hozd létre a Munka hat almappájából a hiányzókat. A már bemásolt Tananyag mappát hagyd a helyén. Utána folytasd az 5–7. szakasszal.”
 - **Nincs Cowork a gépeden, vagy nem indul:** tartalékút a böngészőben: a claude.ai-on hozz létre egy projektet („AI Sales Workshop – [cégnév]”), töltsd fel a tudásába az `assistant.md`, `AGENTS.md`, a 00–05 modulok `.md` fájljait és a `starter-kit` sablonjait, a projektutasításba pedig a [projektutasítás](../starter-kit/project-instructions.md) keretes szövegét. Ilyenkor a „Munka/” helyett az eredményeket letöltöd és visszatöltöd a projektbe.
-- **Terminált szívesen használsz:** a [haladó út a Claude Code-dal](../CLAUDE-CODE.md) ugyanezt a telepítést a terminálban végzi.
+- **A Cowork nem indul a gépeden:** a mentőút a Claude Code. Windowson a [Scoopos telepítés](../CLAUDE-CODE.md#scoop) lépésről lépésre vezet, macOS-en egy sor a [hivatalos telepítő](../CLAUDE-CODE.md#mentőút-macos-en).
 
 <a name="00-prework.01-install--handoff"></a>
 

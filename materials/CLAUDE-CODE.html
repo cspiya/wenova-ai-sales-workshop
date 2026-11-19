@@ -2,11 +2,11 @@
 <!-- Generated from materials/CLAUDE-CODE.md; edit Markdown and run npm run render. -->
 <html lang="hu"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Haladó út: Claude Code a terminálban · AI Sales &amp; Marketing Workshop</title><link rel="stylesheet" href="assets/notebook.css"></head><body class="page page--doc">
 <a class="skip" href="#main">Ugrás a tartalomhoz</a><header class="site-head"><div class="site-head__bar"><a class="site-head__brand" href="index.html"><img src="assets/logos/wenova-wordmark.png" alt="Wenova" width="154" height="18"><span>AI Sales &amp; Marketing Workshop</span></a><nav class="site-head__nav" aria-label="Fő navigáció"><a href="index.html">Kezdőlap</a><a href="schedule.html" class="is-cta">A nap menete</a><a href="CLAUDE-CODE.md">Markdown-forrás</a></nav></div><div class="partner-band partner-band--head"><p class="partner-band__label">Négy hazai csapat, egy közös értékesítési folyamat</p><ul class="partner-band__list" aria-label="Partnerek"><li class="partner partner--wenova"><span class="partner__logo"><img class="logo logo--wenova" src="assets/logos/wenova-wordmark.png" alt="Wenova" width="239" height="28"></span><span class="partner__role">Szervező · AI-működés</span></li><li class="partner partner--brandiseer"><span class="partner__logo"><img class="logo logo--brandiseer" src="assets/logos/brandiseer-icon.png" alt="" width="24" height="28"><span class="logo-word">Brandiseer</span></span><span class="partner__role">Márkaazonos tartalom</span></li><li class="partner partner--blackhole"><span class="partner__logo"><img class="logo logo--blackhole" src="assets/logos/black-hole-media-logo.png" alt="Blackhole Media" width="299" height="28"></span><span class="partner__role">Ügyfélszerzés · Sales Bot</span></li><li class="partner partner--estiwise"><span class="partner__logo"><img class="logo logo--estiwise" src="assets/logos/estiwise-logo-feher.svg" alt="EstiWise" width="99" height="28"></span><span class="partner__role">Ajánlatadás 0–24</span></li></ul></div></header>
-<div class="layout"><nav class="toc" aria-label="Tartalom"><p>Tartalom</p><ol><li><a href="#mikor-jó-ez-neked">Mikor jó ez neked?</a></li><li><a href="#1-telepítés-5-perc">1. Telepítés (5 perc)</a></li><li><a href="#2-belépés">2. Belépés</a></li><li><a href="#3-a-tananyag-telepítése-egy-mondattal">3. A tananyag telepítése egy mondattal</a></li><li><a href="#4-connectorok">4. Connectorok</a></li><li><a href="#5-biztonsági-beállítás-küldés-tiltva">5. Biztonsági beállítás: küldés tiltva</a></li><li><a href="#6-így-dolgozol-a-blokkokban">6. Így dolgozol a blokkokban</a></li><li><a href="#7-ütemezett-feladatok">7. Ütemezett feladatok</a></li><li><a href="#8-biztonság-röviden">8. Biztonság röviden</a></li></ol></nav><main id="main">
+<div class="layout"><nav class="toc" aria-label="Tartalom"><p>Tartalom</p><ol><li><a href="#mikor-jó-ez-neked">Mikor jó ez neked?</a></li><li><a href="#1-telepítés-5-perc">1. Telepítés (5 perc)</a></li><li><a href="#scoop">Mentőút Windowson: Claude Code Scooppal</a></li><li><a href="#mentőút-macos-en">Mentőút macOS-en</a></li><li><a href="#2-belépés">2. Belépés</a></li><li><a href="#3-a-tananyag-telepítése-egy-mondattal">3. A tananyag telepítése egy mondattal</a></li><li><a href="#4-connectorok">4. Connectorok</a></li><li><a href="#5-engedélyek">5. Engedélyek</a></li><li><a href="#6-így-dolgozol-a-blokkokban">6. Így dolgozol a blokkokban</a></li><li><a href="#7-ütemezett-feladatok">7. Ütemezett feladatok</a></li><li><a href="#8-biztonság-röviden">8. Biztonság röviden</a></li></ol></nav><main id="main">
 <!-- presentation -->
 <header class="page-hero">
 <h1>Haladó út: Claude Code a terminálban</h1>
-<p class="lead"><strong>Választható, haladóknak.</strong> Az alapút a Claude Desktop Cowork; ezt csak akkor válaszd, ha szívesen dolgozol a terminálban (karakteres képernyőn). Ugyanazt a tananyagot, ugyanazokkal a lépésekkel járod végig, csak a Claude Code-ban.</p>
+<p class="lead"><strong>Mentőút.</strong> A nap kötelező módja a Claude Desktop Cowork. Ezt az utat akkor használd, ha a Cowork a gépeden nem indul (<a href="#scoop">Windows-mentőút Scooppal</a>), vagy ha szívesen dolgozol a terminálban (karakteres képernyőn). Ugyanazt a tananyagot, ugyanazokkal a lépésekkel járod végig, csak a Claude Code-ban.</p>
 </header>
 <h2 id="mikor-jó-ez-neked">Mikor jó ez neked?</h2>
 <ul>
@@ -47,6 +47,75 @@
 </tbody>
 </table></div>
 <p>Utána nyiss <strong>új</strong> terminálablakot, és ellenőrizd: <code>claude --version</code>. Ha a <code>claude</code> parancs ismeretlen, a leírás „Fix your PATH” része segít. Windowson a Git for Windows nem kötelező; nélküle a Claude Code PowerShell-lel dolgozik. Rendszergazdai jog nem kell.</p>
+<a id="scoop"></a>
+<h2>Mentőút Windowson: Claude Code Scooppal</h2>
+<p>Akkor használd, ha a Cowork nem indul a gépeden. A Scoop egy ingyenes programtelepítő, amely a saját felhasználói mappádba dolgozik, ezért rendszergazdai jog nem kell. Minden parancsot egy sima <strong>PowerShell</strong> ablakba másolj: Start menü, írd be, hogy PowerShell, és nyisd meg. Ne válaszd a „Futtatás rendszergazdaként” lehetőséget.</p>
+<p><strong>1. A Scoop telepítése.</strong> Ez az egy sor közvetlenül a memóriából futtatja a hivatalos telepítőt, fájlt nem ment le, ezért nem jön elő a „letöltött fájl nem futtatható” hiba.</p>
+<pre><code class="language-powershell">Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force; Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+</code></pre>
+<ul>
+<li><strong>Akkor jó, ha</strong> ezt látod: <code>Scoop was installed successfully!</code></li>
+<li><strong>Ha azt írja, hogy már telepítve van:</strong> ugorj a 2. lépésre.</li>
+<li><strong>Ha rendszergazdai ablakra panaszkodik:</strong> zárd be, és nyiss sima PowerShell ablakot.</li>
+</ul>
+<p><strong>2. A Claude Code és ami kell hozzá.</strong> A <code>7zip</code> a csomagok kibontásához, a <code>git</code> a Scoop csomaglistáihoz kell, a <code>claude-code</code> maga a Claude Code.</p>
+<pre><code class="language-powershell">scoop install 7zip git claude-code
+</code></pre>
+<ul>
+<li><strong>Akkor jó, ha</strong> a végén ezt látod: <code>'claude-code' (…) was installed successfully!</code></li>
+<li><strong>Ha megszakad:</strong> futtasd újra ugyanezt a sort, a kész csomagokat átugorja.</li>
+</ul>
+<p><strong>3. Ellenőrzés.</strong></p>
+<pre><code class="language-powershell">claude --version
+</code></pre>
+<ul>
+<li><strong>Akkor jó, ha</strong> egy verziószámot látsz, utána <code>(Claude Code)</code> felirattal.</li>
+<li><strong>Ha a <code>claude</code> parancs ismeretlen:</strong> zárd be az ablakot, nyiss újat, és próbáld újra.</li>
+</ul>
+<p>Ezután folytasd a <a href="#2-bel%C3%A9p%C3%A9s">belépéssel</a> és a <a href="#3-a-tananyag-telep%C3%ADt%C3%A9se-egy-mondattal">tananyag telepítésével</a>.</p>
+<p><strong>4. Választható: videó hanggal és narrációval.</strong> Ezekre a napi feladatokhoz nincs szükség.</p>
+<pre><code class="language-powershell">scoop install ffmpeg sox espeak-ng whisper-cpp nodejs-lts uv
+</code></pre>
+<div class="table-wrap" role="region" aria-label="Táblázat" tabindex="0"><table>
+<thead>
+<tr>
+<th>Csomag</th>
+<th>Mire való?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ffmpeg</code></td>
+<td>Videó és hang vágása, átalakítása, összefűzése</td>
+</tr>
+<tr>
+<td><code>sox</code></td>
+<td>Hangfájlok átalakítása és szerkesztése</td>
+</tr>
+<tr>
+<td><code>espeak-ng</code></td>
+<td>Gépi felolvasás szövegből, sok nyelven</td>
+</tr>
+<tr>
+<td><code>whisper-cpp</code></td>
+<td>Beszéd átírása szöveggé, például felirathoz</td>
+</tr>
+<tr>
+<td><code>nodejs-lts</code></td>
+<td>Node.js, sok videókészítő eszköz erre épül</td>
+</tr>
+<tr>
+<td><code>uv</code></td>
+<td>Python-eszközök gyors telepítése</td>
+</tr>
+</tbody>
+</table></div>
+<p>Ellenőrzés: <code>scoop list</code>. <strong>Akkor jó, ha</strong> mind a hat csomag ott van a listában a verziószámával. Ha egy csomag hibát ad, a Claude Code enélkül is működik: futtasd újra a sort, vagy hagyd ki azt a csomagot.</p>
+<h2 id="mentőút-macos-en">Mentőút macOS-en</h2>
+<p>Nyisd meg a <strong>Terminal</strong> alkalmazást, és másold be a hivatalos telepítő sort:</p>
+<pre><code class="language-bash">curl -fsSL https://claude.ai/install.sh | bash
+</code></pre>
+<p>Utána nyiss új Terminal-ablakot, és írd be: <code>claude --version</code>. <strong>Akkor jó, ha</strong> egy verziószámot látsz. Ha a <code>claude</code> parancs ismeretlen, nézd meg a <a href="https://code.claude.com/docs/en/setup">telepítési leírás</a> „Fix your PATH” részét, vagy szólj egy oktatónak.</p>
 <h2 id="2-belépés">2. Belépés</h2>
 <p>Írd be: <code>claude</code>. A böngészőben lépj be a Pro vagy Max Claude-fiókoddal. Jelszót a terminálba ne írj.</p>
 <h2 id="3-a-tananyag-telepítése-egy-mondattal">3. A tananyag telepítése egy mondattal</h2>
@@ -64,17 +133,16 @@
 </code></pre>
 <p>A Claude Code a saját gépeden tölti le és csomagolja ki a tananyagot a <code>Tananyag/</code> mappába, létrehozza a <code>Munka/</code> mappát, és a gyökérbe másolja a <code>CLAUDE.md</code> és <code>AGENTS.md</code> fájlt. Minden parancs előtt engedélyt kér: olvasd el, mit futtatna, és csak akkor engedd, ha érted. A futtatókönyv: <a href="TELEPITES.md">TELEPITES.md</a>.</p>
 <ol start="4">
+<li>A futtatókönyv a plugint is felteszi. Ellenőrzés: <code>claude plugin list</code>, a listában ott a <code>wenova-sales-workshop</code>.</li>
 <li>Lépj ki (<code>/exit</code>), és indítsd újra a <code>claude</code> parancsot ugyanebben a mappában. A Claude Code ekkor automatikusan betölti a <code>CLAUDE.md</code> fájlt, az pedig az <code>AGENTS.md</code>-t: így tudja a mappaszabályokat, az indítómondatokat és a biztonsági szabályokat.</li>
 </ol>
 <h2 id="4-connectorok">4. Connectorok</h2>
 <ul>
 <li><strong>A claude.ai-on bekötött connectorok</strong> (Gmail vagy Microsoft 365, Google Drive) a Claude Code-ban is megjelenhetnek, ha ugyanazzal a fiókkal léptél be. A <code>/mcp</code> paranccsal nézd meg, mi látszik, és ott kapcsolhatod ki, ami nem kell.</li>
-<li><strong>Buffer:</strong> <code>claude mcp add --transport http buffer https://mcp.buffer.com/mcp</code>, utána a Claude Code-ban <code>/mcp</code> → Buffer → belépés a böngészőben (<a href="https://developers.buffer.com/guides/integrations/claude.html">Buffer leírása</a>).</li>
-<li><strong>Brandiseer, Sales Bot, EstiWise:</strong> a partnerek MCP-connectorát a saját blokkjukban kötjük be; előre nincs teendő. A blokkban kapott címet ugyanígy, <code>claude mcp add --transport http …</code> paranccsal adod hozzá.</li>
+<li><strong>Brandiseer, Sales Bot, EstiWise, Buffer:</strong> a címüket a plugin hozza, külön hozzáadni nem kell. A <code>/mcp</code> menüben szolgáltatásonként lépj be a böngészőben. A partnerekhez elég a saját blokkjuk elején belépni, a Buffer választható.</li>
 </ul>
-<h2 id="5-biztonsági-beállítás-küldés-tiltva">5. Biztonsági beállítás: küldés tiltva</h2>
-<p>Az engedélymódod maradjon az alapértelmezett: a Claude minden művelet előtt kérdez. Az automatikus jóváhagyást ne kapcsold be. Levélküldést, posztolást és törlést soha ne engedélyezz „mindig” (always allow) válasszal.</p>
-<p>Tiltsd le a levelező írási eszközeit: a <code>/permissions</code> paranccsal a <strong>Deny</strong> listára vedd fel a Gmail vagy Outlook küldő, válaszoló, továbbító és törlő eszközét. Az eszközök pontos nevét a <code>/mcp</code> mutatja (például <code>mcp__claude_ai_Gmail__send_message</code>). A tiltólista erősebb, mint a kérés: a tiltott eszközt a Claude akkor sem tudja használni, ha valaki erre utasítja.</p>
+<h2 id="5-engedélyek">5. Engedélyek</h2>
+<p>Az engedélyek a te döntésed. A kényelmes automatizáláshoz engedélyek kellenek, a teljes engedély is elfogadható. Amit engedélyezel, azt a Claude kérdés nélkül megteheti, a levélküldést is. A Claude a kérésed nélkül ekkor sem küld és nem publikál. A beállításokat a <code>/permissions</code> paranccsal nézheted meg és módosíthatod.</p>
 <h2 id="6-így-dolgozol-a-blokkokban">6. Így dolgozol a blokkokban</h2>
 <ul>
 <li>Indítómondatok ugyanazok: „Kezdjük a felkészülést”, „Kezdjük az 1. blokkot”, „Hol tartok?”, „Karmester: …”, „Író: …”, és így tovább.</li>
@@ -92,8 +160,7 @@
 <h2 id="8-biztonság-röviden">8. Biztonság röviden</h2>
 <ul>
 <li>Jelszót, API-kulcsot, belépőkódot soha ne írj a terminálba vagy a beszélgetésbe.</li>
-<li>A levélküldő eszközök legyenek a Deny listán.</li>
-<li>Minden fájlváltozást nézz át, mielőtt engeded.</li>
+<li>Tudd, mit engedélyeztél: amit engedélyezel, azt a Claude kérdés nélkül megteheti.</li>
 <li>Ha valami furcsát kér a Claude (törlés, ismeretlen parancs), utasítsd el, és kérdezz egy oktatót.</li>
 </ul>
 <p><a href="modules/00-prework.html">Vissza a felkészüléshez</a> · <a href="index.html">A tananyag kezdőlapja</a></p>
