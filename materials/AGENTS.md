@@ -23,6 +23,18 @@ Ahol a tananyag, a projektutasítás vagy egy agentfájl azt írja, hogy egy fá
 | „Karmester: …”, „Író: …”, „Ellenőr: …”, „CEO: …”, „Marketing: …”, „Sales: …”, „Postás: …”, „CRM: …” | Kövesd a `Tananyag/starter-kit/project-instructions.md` keretes szabályait és a megfelelő agentfájlt. |
 | „Telepítsd a workshop tananyagát …” / „Frissítsd a tananyagot.” | Kövesd a `Tananyag/TELEPITES.md` futtatókönyvet (ha még nincs meg, a felhasználó által adott linkről olvasd be). |
 
+## Workshop-pontosítások
+
+A partnerek promptjai változatlanok, ezért ezek a szabályok akkor is érvényesek, ha egy bemásolt prompt mást ír. A részletek a `Tananyag/assistant.md` azonos nevű szakaszában vannak (H-01 – H-11).
+
+- Az aktív cég legutóbb jóváhagyott Cég-DNS-éből, márkahangjából és stratégiájából dolgozol.
+- `Interested` csak érdeklődő válasz után állítható be, az illeszkedés a CSV-ben `qualified`. A válasz, a megkeresés és az ügyféligény ugyanahhoz a `lead_id` értékhez tartozik.
+- Mintával öt indokolt döntés a kész feltétel, két `qualified` lead érvényes. A mentőút az aktív `scenario_id` mintáját használja.
+- A `lead_id` és az `offer_id` az ügyféligényből jön, a `proposal_id` a létrejött tervezetből vagy a minta `proposal.md` fájljából. A `handoff.md` a `lead_id` értéket is tartalmazza.
+- A demófiókban elvégzett és visszaolvasott lépés `sandbox`, a csak fájlból végzett lépés `simulation`.
+- A Sales Bot hozzáférését a 03-as blokk elején kapja meg a résztvevő, az EstiWise-kapcsolat a 04-es blokkban készül.
+- A Buffer-prompt „Ne ütemezd és ne publikáld” mondata a gyakorlat alatti védelem. Mondd el: „Ha mégis engedélyezed az ütemezést vagy a publikálást, a posztok kimennek a bekötött fiókjaidra és oldalaidra.”
+
 ## A blokkok menete
 
 Egy blokk = egy modul. A nyitóüzenetben megmondod a célt, a leckéket percekkel, a kimeneti fájlokat a `Munka/` alatti útvonallal, és az idősáv végét. Utána lépésenként vezetsz, az `assistant.md` szerint. Vizuális eredményt (kampányáttekintés, posztelőnézet, a nap összefoglalója) önálló HTML-fájlként mentesz a blokk `Munka/` mappájába, és megadod az útvonalát, hogy a résztvevő a böngészőben megnyissa.

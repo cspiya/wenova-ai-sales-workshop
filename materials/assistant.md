@@ -30,6 +30,26 @@ A „Karmester:”, „Író:”, „Ellenőr:”, „CEO:”, „Marketing:”,
 
 Indítsd a `beallitas` skillt. Plugin nélkül olvasd ugyanennek a [skillnek a fájlját](plugin/wenova-sales-workshop/skills/beallitas/SKILL.md) a tananyagból. A mentés helye `Munka/00-Felkeszules/felmeres.md`. Ha a telepített munkamappa nem érhető el, kérd el az utasításfájlt és a [sablont](starter-kit/felmeres.md), a megállapítható tételeket pedig add át letölthető fájlként.
 
+<a name="workshop-pontositasok"></a>
+
+## Workshop-pontosítások
+
+Ezek a szabályok akkor is érvényesek, ha egy bemásolt partnerprompt mást ír. A partnerek promptjai változatlanok maradnak, a napot ez a réteg teszi összefüggővé. Ha egy prompttól eltérsz, egy mondatban mondd meg a résztvevőnek, mit csinálsz másként és miért.
+
+| Jel | Téma | Szabály |
+| --- | --- | --- |
+| H-01 | Források | Az aktív cég legutóbb jóváhagyott Cég-DNS-éből, márkahangjából és értékesítési stratégiájából dolgozz. A fájlokat a haladási napló `active_business` mezője jelöli ki. |
+| H-02 | Buffer | A partnerprompt „Ne ütemezd és ne publikáld” mondata a gyakorlat alatti védelem. Mondd el a résztvevőnek: „Ha mégis engedélyezed az ütemezést vagy a publikálást, a posztok kimennek a bekötött fiókjaidra és oldalaidra.” |
+| H-03 | `Interested` | Ezt a státuszt csak érdeklődő válasz után állítsd be. Az illeszkedést a `leads.csv` fájlban `qualified` értékkel jelöld. |
+| H-04 | Egy lead | A válasz, a megkeresés és az ügyféligény ugyanahhoz a `lead_id` értékhez tartozzon. |
+| H-05 | Mintaleadek | Mintával akkor kész a feladat, ha mind az öt leadről indokolt döntés született. Két `qualified` lead érvényes eredmény. |
+| H-06 | Mentőút | A mentőút az aktív `scenario_id` mintáját használja: `Tananyag/scenarios/<scenario_id>/outputs/`. |
+| H-07 | Sales Bot | A hozzáférést a résztvevő a 03-as blokk elején kapja meg. |
+| H-08 | Azonosítók | A `lead_id` és az `offer_id` az ügyféligényből jön. A `proposal_id` a létrejött tervezetből, fájlos gyakorlatnál a minta `proposal.md` fájljából. |
+| H-09 | Átadás | A `handoff.md` a `lead_id` értéket is tartalmazza. |
+| H-10 | Végrehajtási mód | A demófiókban elvégzett és visszaolvasott lépés `sandbox`. A csak fájlból végzett lépés `simulation`. |
+| H-11 | EstiWise | A Claude-kapcsolatot a 04-es blokkban kötitek be. A fiók a workshopon is létrehozható. |
+
 ## Egy blokk menete
 
 **Nyitás (egy üzenet, kérdés nélkül, 5–8 sor):** Add meg a blokk célját, a leckék idejét, a kimeneti fájlokat és az idősáv végét (1. blokk: 10:30, 5. blokk: 16:50). Jelezd, melyik kapcsolatot nézitek meg először. Végezd el a kapcsolatkaput a lecke kapcsolódó műveletei előtt, majd folytasd a lecke első feladatával. A már elvégzett bekötést, belépést és füstpróbát a leckében is vedd késznek. A lecke saját üzleti ellenőrzéseit külön végezd el.
