@@ -1,0 +1,970 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Sales &amp; Marketing Workshop: nyitó előadás</title>
+<!-- Szövegcsere: minden dia szövege a törzsben, a DIA nn jelölés alatt található, sima HTML- és SVG-szövegként. -->
+<style>
+/* AI Sales & Marketing Workshop: nyitó előadás. Tokenek: materials/assets/notebook.css. JavaScript nincs. */
+@font-face{font-family:'Geist';font-style:normal;font-weight:400 700;font-display:swap;src:url(../assets/fonts/geist-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1E00-1E9F}
+@font-face{font-family:'Geist';font-style:normal;font-weight:400 700;font-display:swap;src:url(../assets/fonts/geist-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+2000-206F,U+20AC,U+2122,U+2212}
+@font-face{font-family:'Fraunces';font-style:italic;font-weight:400;font-display:swap;src:url(../assets/fonts/fraunces-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1E00-1E9F}
+@font-face{font-family:'Fraunces';font-style:italic;font-weight:400;font-display:swap;src:url(../assets/fonts/fraunces-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+2000-206F,U+20AC,U+2122,U+2212}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:500;font-display:swap;src:url(../assets/fonts/jetbrains-mono-latin.woff2) format('woff2')}
+:root{color-scheme:dark;--navy:#07081a;--navy-2:#0e1030;--navy-3:#1b1f4a;--on:#eef1fa;--on2:#b4bcd6;--or:#ff7a2f;--or2:#ffb48a;--bl:#6ea3ff;--vi:#a78bfa;--gr:#4ade80;--rd:#ff6b6b;--am:#fbbf24;--line:#39406f;--sans:'Geist','Segoe UI',system-ui,sans-serif;--serif:'Fraunces',Georgia,serif;--mono:'JetBrains Mono',Consolas,monospace}
+*{box-sizing:border-box}
+html{font-size:min(calc(100vw / 192),calc(100vh / 108));scroll-snap-type:y mandatory;overflow-y:scroll;scrollbar-width:none;background:var(--navy)}
+html::-webkit-scrollbar{display:none}
+body{margin:0;background:var(--navy);color:var(--on);font-family:var(--sans);counter-reset:dia}
+.defs{position:absolute}
+.slide{height:100vh;display:grid;place-items:center;overflow:hidden;scroll-snap-align:start;scroll-snap-stop:always;counter-increment:dia;background:radial-gradient(90rem 50rem at 0 0,rgba(79,140,247,.13),transparent 62%),radial-gradient(80rem 46rem at 100% 0,rgba(255,122,47,.09),transparent 60%),var(--navy)}
+.frame{width:192rem;height:108rem;padding:3.6rem 6.4rem 1.6rem;display:flex;flex-direction:column;gap:1.4rem}
+.head{display:flex;justify-content:space-between;align-items:flex-start;gap:3rem;flex:none}
+h1,h2{margin:0;font-size:6.6rem;line-height:1.22;letter-spacing:-.028em;font-weight:700}
+.em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--or);letter-spacing:-.01em}
+.pipe{color:var(--line);font-weight:400}
+.tag{flex:none;margin-top:.8rem;padding:.5rem 2rem;border:.2rem solid var(--or2);border-radius:99rem;color:var(--or2);font-size:3.4rem;font-weight:600;line-height:1.25}
+.stage{flex:1;min-height:0;position:relative}
+.stage>svg{display:block;width:100%;height:100%}
+.foot{flex:none;display:flex;align-items:center;gap:2.4rem;height:3.4rem;font-size:2.4rem;color:var(--on2)}
+.foot img{height:2rem;width:auto;display:block}
+.foot .sp{flex:1}
+.foot a{color:var(--on2);text-decoration:none;padding:.2rem 1rem;border-radius:.6rem}
+.foot a:hover,.foot a:focus-visible{color:#fff;outline:.2rem solid var(--or)}
+.count{font-family:var(--mono)}
+.count::after{content:counter(dia) " / 22"}
+.hint{padding:.2rem 1.2rem;border:.15rem solid var(--line);border-radius:.8rem;color:var(--on)}
+/* feliratok */
+.prog{flex:none;height:.5rem;background:var(--navy-3);border-radius:1rem;overflow:hidden}
+.prog i{display:block;height:100%;background:linear-gradient(90deg,#4f8cf7,#8b5cf6,var(--or));transform-origin:0 50%}
+.caps{flex:none;list-style:none;margin:0;padding:0;display:grid;min-height:10.4rem;align-items:center}
+.caps li{grid-area:1/1;display:flex;align-items:center;gap:2.4rem;font-size:3.8rem;line-height:1.2;font-weight:500}
+.caps .n{flex:none;font:500 3.4rem var(--mono);color:var(--or)}
+.pills{flex:none;list-style:none;margin:0;padding:0;display:flex;gap:1.4rem;min-height:10.4rem}
+.pills li{position:relative;flex:1;display:grid;place-items:center;text-align:center;padding:.6rem 1.4rem;border:.2rem solid var(--line);border-radius:1.4rem;overflow:hidden}
+.pills i{position:absolute;inset:0;background:#b3460c}
+.pills b{position:relative;font-size:3.6rem;line-height:1.12;color:#fff}
+.flow{flex:none;margin:0;display:flex;align-items:center;gap:1.4rem;font-size:3.6rem}
+.flow span{position:relative;padding:.3rem 1.8rem;border:.2rem solid var(--line);border-radius:1rem;overflow:hidden}
+.flow i{position:absolute;inset:0;background:#b3460c}
+.flow b{position:relative;color:#fff}
+.flow em{font-style:normal;color:var(--or)}
+.formula{flex:none;margin:0;font-size:4rem;font-weight:600;text-align:center;color:var(--or2)}
+.rm3{display:none}
+/* svg szöveg */
+svg text{font-family:var(--sans);fill:var(--on)}
+.f34{font-size:34px}.f38{font-size:38px}.f44{font-size:44px}.f52{font-size:52px}.f56{font-size:56px}
+svg .b{font-weight:700}svg .m{font-family:var(--mono)}svg .dk{fill:var(--navy)}svg .ink{fill:#14162e}svg .wh{fill:#fff}svg .or{fill:var(--or)}svg .rd{fill:var(--rd)}svg .am{fill:var(--am)}svg .gr{fill:var(--gr)}
+.pn{fill:var(--navy-2);stroke:var(--line);stroke-width:3}
+.box{fill:rgba(79,140,247,.08);stroke:var(--bl);stroke-width:4}
+.sub{fill:var(--navy-2);stroke:var(--vi);stroke-width:3}
+.dash{fill:none;stroke:var(--on2);stroke-width:3;stroke-dasharray:14 10}
+.hot{fill:var(--or);stroke:none}.hot2{fill:var(--or);stroke:none}
+.ln{stroke:var(--line);stroke-width:4}
+.edge{stroke:var(--line);stroke-width:3}
+.nd{fill:var(--navy-3);stroke:var(--bl);stroke-width:4}
+.halo{fill:none;stroke:var(--or);stroke-width:6}
+.w1{stroke:var(--or);stroke-linecap:round}.w2{stroke:var(--bl);stroke-linecap:round}
+.gl{fill:none;stroke:#fff;stroke-width:6;stroke-linecap:round}
+.ar{stroke:var(--on2);stroke-width:5}.ar-h{fill:var(--on2)}
+.bk{stroke:var(--vi);stroke-width:5;stroke-dasharray:14 10}.bk-h{fill:var(--vi)}
+.back{stroke:var(--vi);stroke-width:7;stroke-dasharray:18 12}
+.dot{fill:var(--or)}
+.lock{stroke:var(--or);stroke-width:10;stroke-linecap:round}
+.pat1{fill:var(--or)}.pat2{fill:var(--bl)}
+.div{stroke:var(--on2);stroke-width:3;stroke-dasharray:12 12}
+.photo{fill:#21316a;stroke:var(--line);stroke-width:3}
+.leaf{fill:var(--gr)}.pot{fill:var(--or)}
+.sil{fill:#fff}
+.silo{fill:rgba(255,122,47,.22);stroke:var(--or);stroke-width:5}
+.ic{fill:none;stroke:var(--on);stroke-width:5;stroke-linecap:round;stroke-linejoin:round}.dsh{stroke-dasharray:9 8}
+.okc{fill:var(--gr)}.okl{fill:none;stroke:var(--navy);stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
+.ringc{fill:none;stroke:var(--on);stroke-width:6}
+.qb{fill:var(--am)}
+.tagc{fill:var(--am)}.tagh{fill:var(--navy)}
+.penc{fill:var(--or)}.pen2{stroke:var(--navy);stroke-width:4}
+.octc{fill:#e02d2d;stroke:#fff;stroke-width:3}
+.ambc{fill:var(--am)}
+.nest1{fill:rgba(79,140,247,.05);stroke:var(--line);stroke-width:3}.nest2{fill:rgba(79,140,247,.08);stroke:var(--bl);stroke-width:3}.nest3{fill:rgba(139,92,246,.14);stroke:var(--vi);stroke-width:3}.nest4{fill:var(--or)}
+.errf{fill:rgba(255,107,107,.07);stroke:var(--rd);stroke-width:3}.errl{stroke:var(--rd);stroke-width:5;stroke-dasharray:12 10}
+.track{fill:var(--navy-3);stroke:var(--line);stroke-width:3}.fillb{fill:var(--gr)}
+.fb{transform-box:fill-box;transform-origin:0 50%}.fr{transform-box:fill-box;transform-origin:100% 50%}.fbb{transform-box:fill-box;transform-origin:50% 100%}
+.at1{fill:none;stroke:var(--or);stroke-width:30;opacity:.45}.at2{fill:none;stroke:var(--bl);stroke-width:9;opacity:.6}
+.fl1{fill:none;stroke:var(--or);stroke-width:30;stroke-dasharray:42 28}.fl2{fill:none;stroke:var(--bl);stroke-width:9;stroke-dasharray:42 28}
+.bar1{fill:var(--navy)}.bar2{fill:#23407e}
+.arc{fill:none;stroke:var(--or);stroke-width:6}.arh{fill:var(--or)}
+.chip{fill:var(--bl)}.chip2{fill:var(--or)}
+.paper{fill:#fff}.papc{fill:#fff}.pill2{fill:var(--or2)}
+.tok{fill:var(--navy-2);stroke:var(--vi);stroke-width:3}.space{fill:none;stroke:var(--vi);stroke-width:3;stroke-dasharray:6 6}
+.num{fill:var(--navy-3);stroke:var(--bl);stroke-width:3}
+.pb{fill:var(--bl)}.sel{fill:none;stroke:var(--or);stroke-width:7}
+.tokh{fill:var(--or)}.tokc{fill:var(--navy-3);stroke:var(--or);stroke-width:3}.wfill{fill:#fff}
+.srcc{fill:var(--or2)}.cmdc{fill:var(--navy-3);stroke:var(--vi);stroke-width:3}
+.bu1{fill:#25306a}.bu2{fill:#3a2f73}.bl{stroke:var(--on2);stroke-width:6;stroke-linecap:round}
+.slot{fill:none;stroke:var(--line);stroke-width:3}
+.stripe{fill:rgba(255,255,255,.04);stroke:var(--on2);stroke-width:3;stroke-dasharray:14 10}
+.mark{fill:none;stroke:var(--or);stroke-width:6}
+.ret{fill:none;stroke:var(--or);stroke-width:7}.reth{fill:var(--or)}
+.lane{fill:rgba(255,255,255,.025);stroke:var(--navy-3);stroke-width:2}.laneon{fill:rgba(255,122,47,.1);stroke:var(--or);stroke-width:3}
+.okf{fill:none;stroke:var(--gr);stroke-width:6}.okf2{fill:var(--navy-2);stroke:var(--gr);stroke-width:4}.okb{fill:var(--gr)}
+.dbl1,.dbl2{fill:none;stroke:var(--on);stroke-width:3}
+.loop{fill:none;stroke:var(--or);stroke-width:6;stroke-dasharray:16 12}.looph{fill:var(--or)}
+.wl{stroke:var(--on2);stroke-width:7;stroke-linecap:round}
+.feed{stroke:var(--or);stroke-width:5}.feedp{fill:none;stroke:var(--or);stroke-width:5}
+/* statikus diák */
+.hero .frame{position:relative;padding-top:11rem}
+.hero h1{font-size:19rem;line-height:1.3;font-family:var(--serif);font-style:italic;font-weight:400;color:var(--on)}
+.hero .stage{position:static;display:flex;flex-direction:column;padding:0 0 3rem}
+.eyebrow{margin:0;font-size:3.8rem;font-weight:600;color:var(--or2);position:absolute;top:4.6rem;left:6.4rem}
+.tl{list-style:none;margin:auto 0 0;padding:3.4rem 0 0;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;border-top:.5rem solid var(--or)}
+.tl b{display:block;font-size:9.6rem;line-height:1;letter-spacing:-.03em}
+.tl span{display:block;margin-top:1.2rem;font-size:4.4rem;color:var(--on2)}
+.lead{margin:0 0 2.6rem;font-size:5.4rem;font-weight:700;color:var(--or2)}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:2.4rem;height:calc(100% - 11rem)}
+.nums div{display:flex;flex-direction:column;justify-content:center;gap:2rem;padding:3rem;background:var(--navy-2);border:.25rem solid var(--line);border-radius:2.2rem}
+.nums b{font-size:8rem;line-height:1.05;letter-spacing:-.03em}.nums span{font-size:4.4rem;color:var(--on2)}
+.tiles{height:100%;display:grid;grid-template-columns:repeat(4,1fr);gap:2.4rem;padding-bottom:3rem}
+.tiles div{display:flex;flex-direction:column;justify-content:center;gap:4rem;padding:3rem;background:var(--navy-2);border:.25rem solid var(--line);border-radius:2.2rem}
+.tiles svg{width:16rem;height:16rem}.tiles b{font-size:5rem;line-height:1.14}
+.big{fill:none;stroke:var(--or);stroke-width:7;stroke-linejoin:round;stroke-linecap:round}.bigo{fill:none;stroke:var(--or);stroke-width:7;stroke-dasharray:14 12}.fw{fill:var(--or)}.fo{fill:var(--or)}
+.q{font-size:96px;font-weight:700;fill:var(--am)}
+.three{height:100%;display:grid;grid-template-columns:repeat(3,1fr);gap:2.4rem;padding-bottom:2rem}
+.three>div{display:flex;flex-direction:column;gap:2.6rem;justify-content:center;padding:3rem;background:var(--navy-2);border:.25rem solid var(--line);border-radius:2.2rem}
+.three svg{height:26rem;width:100%}.three p{margin:0;font-size:4.4rem;line-height:1.18}.three b{display:block;color:var(--or2);font-size:5.2rem}
+.band{height:calc(100% - 6rem);margin-top:2rem;display:grid;grid-template-columns:repeat(4,1fr);border-radius:2.2rem;overflow:hidden;border:.3rem solid var(--on2)}
+.band div{display:grid;place-items:center;text-align:center;padding:2rem;font-size:5.4rem;font-weight:700;line-height:1.12;background:var(--navy-3);border-right:.3rem solid var(--on2)}
+.band div:nth-child(1){background:#2c3f86}.band div:nth-child(2){background:#3b3585}.band div:nth-child(3){background:#55307f}
+.band .free{border:0;color:var(--or2);background:repeating-linear-gradient(135deg,rgba(255,122,47,.2) 0 2.4rem,transparent 2.4rem 4.8rem)}
+.rows{list-style:none;margin:0;padding:0;height:100%;display:flex;flex-direction:column;justify-content:center;gap:2rem}
+.rows li{flex:0 1 17rem;display:grid;grid-template-columns:9rem 34rem 1fr;align-items:center;gap:2rem;padding:1rem 3.4rem;background:var(--navy-2);border:.25rem solid var(--line);border-radius:1.8rem;font-size:5rem}
+.rows .no{font:500 5rem var(--mono);color:var(--or)}.rows b{color:var(--or2)}
+.quote{margin:0;height:100%;display:flex;align-items:center;font:italic 400 14.6rem/1.14 var(--serif);letter-spacing:-.015em}
+.caret{display:inline-block;vertical-align:-1.6rem;width:1.1rem;height:13rem;margin-left:2rem;background:var(--or);animation:blink 1.1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+.same{margin:0 0 2rem;padding:1.4rem;text-align:center;font-size:4.6rem;font-weight:700;color:var(--navy);background:var(--or);border-radius:1.4rem}
+.models{display:grid;grid-template-columns:1fr 1fr;gap:2.4rem}
+.models>div{height:49rem;padding:2.6rem 3.4rem;background:var(--navy-2);border:.25rem solid var(--line);border-radius:2.2rem}
+.models h3{margin:0;font-size:5.4rem;color:var(--or2)}.big-n{margin:.8rem 0 2.2rem;font-size:5.2rem;font-weight:700}
+.pads{display:flex;gap:1.6rem;margin-bottom:2.4rem}.pads i{width:9rem;height:9rem;border-radius:1.2rem;background:var(--bl)}
+.more{margin:0;font-size:4rem;font-weight:600;line-height:1.15}
+.two{height:100%;display:flex;flex-direction:column;justify-content:center;gap:6rem}
+.two p{margin:0;font-size:9rem;font-weight:700;line-height:1.1;letter-spacing:-.025em}.two .q2{font:italic 400 10rem/1.1 var(--serif);color:var(--or)}
+/* tartalom */
+.toc{display:none;position:fixed;inset:0;z-index:9;padding:4rem 6.4rem;background:rgba(7,8,26,.97);overflow:auto}
+.toc:target{display:block}
+.toc-h{margin:0 0 2rem;font-size:5rem;font-weight:700}
+.toc ol{margin:0;padding:0 0 0 5rem;columns:2;column-gap:6rem;font-size:3rem;line-height:1.2}
+.toc li{margin:0 0 1.1rem;break-inside:avoid;color:var(--or)}
+.toc a{color:var(--on);text-decoration:none}.toc a:hover,.toc a:focus-visible{color:var(--or);text-decoration:underline}
+/* az animáció a dia beúszásakor indul, ahol a böngésző ismeri a scroll-state lekérdezést */
+@supports (container-type:scroll-state){
+.slide{container-type:scroll-state;container-name:dia}
+@container dia not scroll-state(snapped:y){.frame *{animation-name:none!important}}
+}
+/* csökkentett mozgás: a záróállapot és minden lépésfelirat látszik */
+@media (prefers-reduced-motion:reduce){
+*{animation:none!important}
+.prog{display:none}
+.caps{grid-template-columns:repeat(var(--n),1fr);gap:1.6rem;align-items:start}
+.caps li{grid-area:auto;display:block;opacity:1!important;font-size:2.6rem}
+.caps .n{display:block;font-size:2.6rem}
+#s19 .stage,#s19 .caps{display:none}
+#s19 .rm3{flex:1;display:grid;grid-template-columns:repeat(3,1fr);gap:2.4rem;list-style:none;margin:0;padding:0}
+#s19 .rm3 li{display:grid;place-items:center;text-align:center;padding:3rem;font-size:5.6rem;font-weight:700;line-height:1.15;background:var(--navy-2);border:.3rem solid var(--or);border-radius:2.2rem}
+}
+@media print{html{scroll-snap-type:none}.slide{break-after:page}}
+
+/* ========== ANIMÁCIÓK DIÁNKÉNT ========== */
+@keyframes d05k1{0%{opacity:1}33.333%{opacity:1}37.5%{opacity:0.3}100%{opacity:0.3}}
+.d05k1{animation:d05k1 24s ease-in-out infinite both}
+@keyframes d05k2{0%{opacity:0}35.417%{opacity:0}37.083%{opacity:1}100%{opacity:1}}
+.d05k2{animation:d05k2 24s ease-in-out infinite both}
+@keyframes d05k3{0%{transform:translate(0px,64px);opacity:0}1.25%{transform:translate(0px,64px);opacity:0}2.083%{transform:translate(82.941px,83.059px);opacity:1}7.083%{transform:translate(580.588px,197.412px);opacity:1}8.333%{transform:translate(705px,226px);opacity:0}100%{transform:translate(705px,226px);opacity:0}}
+.d05k3{animation:d05k3 24s ease-in-out infinite both}
+@keyframes d05k4{0%{transform:translate(0px,226px);opacity:0}8.333%{transform:translate(0px,226px);opacity:0}9.167%{transform:translate(82.941px,226px);opacity:1}14.167%{transform:translate(580.588px,226px);opacity:1}15.417%{transform:translate(705px,226px);opacity:0}100%{transform:translate(705px,226px);opacity:0}}
+.d05k4{animation:d05k4 24s ease-in-out infinite both}
+@keyframes d05k5{0%{transform:translate(0px,388px);opacity:0}15%{transform:translate(0px,388px);opacity:0}15.833%{transform:translate(88.125px,367.75px);opacity:1}20.417%{transform:translate(572.813px,256.375px);opacity:1}21.667%{transform:translate(705px,226px);opacity:0}100%{transform:translate(705px,226px);opacity:0}}
+.d05k5{animation:d05k5 24s ease-in-out infinite both}
+@keyframes d05k6{0%{opacity:0}22.917%{opacity:0}24.583%{opacity:1}100%{opacity:1}}
+.d05k6{animation:d05k6 24s ease-in-out infinite both}
+@keyframes d05k7{0%{opacity:0}25%{opacity:0}26.667%{opacity:1}100%{opacity:1}}
+.d05k7{animation:d05k7 24s ease-in-out infinite both}
+@keyframes d05k8{0%{opacity:0}27.083%{opacity:0}28.75%{opacity:1}100%{opacity:1}}
+.d05k8{animation:d05k8 24s ease-in-out infinite both}
+@keyframes d05k9{0%{opacity:0}29.167%{opacity:0}30.833%{opacity:1}100%{opacity:1}}
+.d05k9{animation:d05k9 24s ease-in-out infinite both}
+@keyframes d05k10{0%{opacity:0}31.25%{opacity:0}32.917%{opacity:1}100%{opacity:1}}
+.d05k10{animation:d05k10 24s ease-in-out infinite both}
+@keyframes d05k11{0%{opacity:0}33.333%{opacity:0}35%{opacity:1}100%{opacity:1}}
+.d05k11{animation:d05k11 24s ease-in-out infinite both}
+@keyframes d05k12{0%{opacity:0}41.667%{opacity:0}43.333%{opacity:1}100%{opacity:1}}
+.d05k12{animation:d05k12 24s ease-in-out infinite both}
+@keyframes d05k13{0%{transform:translate(1295px,64px);opacity:0}43.75%{transform:translate(1295px,64px);opacity:0}45%{transform:translate(1252.857px,80.571px);opacity:1}51.25%{transform:translate(1042.143px,163.429px);opacity:1}52.5%{transform:translate(1000px,180px);opacity:0.25}52.917%{transform:translate(1000px,180px);opacity:0}100%{transform:translate(1000px,180px);opacity:0}}
+.d05k13{animation:d05k13 24s ease-in-out infinite both}
+@keyframes d05k14{0%{opacity:0}54.167%{opacity:0}55.833%{opacity:1}100%{opacity:1}}
+.d05k14{animation:d05k14 24s ease-in-out infinite both}
+@keyframes d05k15{0%{opacity:0}62.5%{opacity:0}64.167%{opacity:1}100%{opacity:1}}
+.d05k15{animation:d05k15 24s ease-in-out infinite both}
+@keyframes d05k16{0%{opacity:1}20.833%{opacity:1}22.083%{opacity:0}100%{opacity:0}}
+.d05k16{animation:d05k16 24s ease-in-out infinite both}
+@keyframes d05k17{0%{opacity:0}20.833%{opacity:0}22.083%{opacity:1}41.667%{opacity:1}42.917%{opacity:0}100%{opacity:0}}
+.d05k17{animation:d05k17 24s ease-in-out infinite both}
+@keyframes d05k18{0%{opacity:0}41.667%{opacity:0}42.917%{opacity:1}62.5%{opacity:1}63.75%{opacity:0}100%{opacity:0}}
+.d05k18{animation:d05k18 24s ease-in-out infinite both}
+@keyframes d05k19{0%{opacity:0}62.5%{opacity:0}63.75%{opacity:1}100%{opacity:1}}
+.d05k19{animation:d05k19 24s ease-in-out infinite both}
+@keyframes d05k20{0%{transform:scaleX(0)}75%{transform:scaleX(1)}100%{transform:scaleX(1)}}
+.d05k20{animation:d05k20 24s ease-in-out infinite both}
+@keyframes d06k1{0%{opacity:0;stroke-width:16}19.231%{opacity:0;stroke-width:16}20.769%{opacity:1;stroke-width:16}25%{opacity:1;stroke-width:16}28.846%{opacity:1;stroke-width:24}32.692%{opacity:1;stroke-width:16}36.538%{opacity:1;stroke-width:24}38.462%{opacity:1;stroke-width:16}100%{opacity:1;stroke-width:16}}
+.d06k1{animation:d06k1 26s ease-in-out infinite both}
+@keyframes d06k2{0%{opacity:0;stroke-width:5}19.231%{opacity:0;stroke-width:5}20.769%{opacity:1;stroke-width:5}25%{opacity:1;stroke-width:5}28.846%{opacity:1;stroke-width:8}32.692%{opacity:1;stroke-width:5}36.538%{opacity:1;stroke-width:8}38.462%{opacity:1;stroke-width:5}100%{opacity:1;stroke-width:5}}
+.d06k2{animation:d06k2 26s ease-in-out infinite both}
+@keyframes d06k3{0%{opacity:0}3.846%{opacity:0}5.385%{opacity:1}100%{opacity:1}}
+.d06k3{animation:d06k3 26s ease-in-out infinite both}
+@keyframes d06k4{0%{opacity:0}21.154%{opacity:0}22.692%{opacity:1}100%{opacity:1}}
+.d06k4{animation:d06k4 26s ease-in-out infinite both}
+@keyframes d06k5{0%{opacity:0}38.462%{opacity:0}40%{opacity:1}100%{opacity:1}}
+.d06k5{animation:d06k5 26s ease-in-out infinite both}
+@keyframes d06k6{0%{opacity:0}40.385%{opacity:0}41.923%{opacity:1}100%{opacity:1}}
+.d06k6{animation:d06k6 26s ease-in-out infinite both}
+@keyframes d06k7{0%{opacity:0}42.308%{opacity:0}43.846%{opacity:1}100%{opacity:1}}
+.d06k7{animation:d06k7 26s ease-in-out infinite both}
+@keyframes d06k8{0%{opacity:0}48.077%{opacity:0}49.615%{opacity:1}100%{opacity:1}}
+.d06k8{animation:d06k8 26s ease-in-out infinite both}
+@keyframes d06k9{0%{opacity:0}50%{opacity:0}51.538%{opacity:1}100%{opacity:1}}
+.d06k9{animation:d06k9 26s ease-in-out infinite both}
+@keyframes d06k10{0%{opacity:0}51.923%{opacity:0}53.462%{opacity:1}100%{opacity:1}}
+.d06k10{animation:d06k10 26s ease-in-out infinite both}
+@keyframes d06k11{0%{opacity:0}57.692%{opacity:0}59.231%{opacity:1}61.538%{opacity:0.35}63.462%{opacity:1}65.385%{opacity:0.35}67.308%{opacity:1}100%{opacity:1}}
+.d06k11{animation:d06k11 26s ease-in-out infinite both}
+@keyframes d06k12{0%{opacity:0}57.692%{opacity:0}59.231%{opacity:1}61.538%{opacity:0.35}63.462%{opacity:1}65.385%{opacity:0.35}67.308%{opacity:1}100%{opacity:1}}
+.d06k12{animation:d06k12 26s ease-in-out infinite both}
+@keyframes d06k13{0%{opacity:0}57.692%{opacity:0}59.231%{opacity:1}61.538%{opacity:0.35}63.462%{opacity:1}65.385%{opacity:0.35}67.308%{opacity:1}100%{opacity:1}}
+.d06k13{animation:d06k13 26s ease-in-out infinite both}
+@keyframes d06k14{0%{opacity:0}67.308%{opacity:0}68.846%{opacity:1}100%{opacity:1}}
+.d06k14{animation:d06k14 26s ease-in-out infinite both}
+@keyframes d06k15{0%{opacity:1}19.231%{opacity:1}20.385%{opacity:0}100%{opacity:0}}
+.d06k15{animation:d06k15 26s ease-in-out infinite both}
+@keyframes d06k16{0%{opacity:0}19.231%{opacity:0}20.385%{opacity:1}38.462%{opacity:1}39.615%{opacity:0}100%{opacity:0}}
+.d06k16{animation:d06k16 26s ease-in-out infinite both}
+@keyframes d06k17{0%{opacity:0}38.462%{opacity:0}39.615%{opacity:1}57.692%{opacity:1}58.846%{opacity:0}100%{opacity:0}}
+.d06k17{animation:d06k17 26s ease-in-out infinite both}
+@keyframes d06k18{0%{opacity:0}57.692%{opacity:0}58.846%{opacity:1}100%{opacity:1}}
+.d06k18{animation:d06k18 26s ease-in-out infinite both}
+@keyframes d06k19{0%{transform:scaleX(0)}76.923%{transform:scaleX(1)}100%{transform:scaleX(1)}}
+.d06k19{animation:d06k19 26s ease-in-out infinite both}
+@keyframes d07k1{0%{stroke-width:5}50%{stroke-width:5}59.375%{stroke-width:16}100%{stroke-width:16}}
+.d07k1{animation:d07k1 32s ease-in-out infinite both}
+@keyframes d07k2{0%{stroke-width:5}53.125%{stroke-width:5}62.5%{stroke-width:16}100%{stroke-width:16}}
+.d07k2{animation:d07k2 32s ease-in-out infinite both}
+@keyframes d07k3{0%{stroke-width:9}56.25%{stroke-width:9}65.625%{stroke-width:2}100%{stroke-width:2}}
+.d07k3{animation:d07k3 32s ease-in-out infinite both}
+@keyframes d07k4{0%{opacity:0;stroke-dashoffset:0}28.125%{opacity:0;stroke-dashoffset:0}29.063%{opacity:1;stroke-dashoffset:10.286}39.375%{opacity:1;stroke-dashoffset:123.429}40.313%{opacity:0;stroke-dashoffset:133.714}50%{opacity:0;stroke-dashoffset:240}100%{opacity:0;stroke-dashoffset:240}}
+.d07k4{animation:d07k4 32s ease-in-out infinite both}
+@keyframes d07k5{0%{opacity:0;stroke-dashoffset:0}28.125%{opacity:0;stroke-dashoffset:0}29.063%{opacity:1;stroke-dashoffset:10.286}39.375%{opacity:1;stroke-dashoffset:123.429}40.313%{opacity:0;stroke-dashoffset:133.714}50%{opacity:0;stroke-dashoffset:240}100%{opacity:0;stroke-dashoffset:240}}
+.d07k5{animation:d07k5 32s ease-in-out infinite both}
+@keyframes d07k6{0%{opacity:0;stroke-dashoffset:0}28.125%{opacity:0;stroke-dashoffset:0}29.063%{opacity:1;stroke-dashoffset:10.286}39.375%{opacity:1;stroke-dashoffset:123.429}40.313%{opacity:0;stroke-dashoffset:133.714}50%{opacity:0;stroke-dashoffset:240}100%{opacity:0;stroke-dashoffset:240}}
+.d07k6{animation:d07k6 32s ease-in-out infinite both}
+@keyframes d07k7{0%{opacity:0;stroke-dashoffset:0}28.125%{opacity:0;stroke-dashoffset:0}38.75%{opacity:0;stroke-dashoffset:116.571}39.688%{opacity:1;stroke-dashoffset:126.857}50%{opacity:1;stroke-dashoffset:240}50.938%{opacity:0;stroke-dashoffset:240}100%{opacity:0;stroke-dashoffset:240}}
+.d07k7{animation:d07k7 32s ease-in-out infinite both}
+@keyframes d07k8{0%{opacity:0;stroke-dashoffset:0}28.125%{opacity:0;stroke-dashoffset:0}38.75%{opacity:0;stroke-dashoffset:116.571}39.688%{opacity:1;stroke-dashoffset:126.857}50%{opacity:1;stroke-dashoffset:240}50.938%{opacity:0;stroke-dashoffset:240}100%{opacity:0;stroke-dashoffset:240}}
+.d07k8{animation:d07k8 32s ease-in-out infinite both}
+@keyframes d07k9{0%{opacity:0;stroke-dashoffset:0}28.125%{opacity:0;stroke-dashoffset:0}38.75%{opacity:0;stroke-dashoffset:116.571}39.688%{opacity:1;stroke-dashoffset:126.857}50%{opacity:1;stroke-dashoffset:240}50.938%{opacity:0;stroke-dashoffset:240}100%{opacity:0;stroke-dashoffset:240}}
+.d07k9{animation:d07k9 32s ease-in-out infinite both}
+@keyframes d07k10{0%{transform:translate(245px,300px);opacity:0}0.938%{transform:translate(245px,300px);opacity:1}4.063%{transform:translate(400px,300px);opacity:1}7.187%{transform:translate(720px,300px);opacity:1}10.313%{transform:translate(1040px,300px);opacity:1}13.438%{transform:translate(1270px,230px);opacity:1}14.375%{transform:translate(1270px,230px);opacity:0}100%{transform:translate(1270px,230px);opacity:0}}
+.d07k10{animation:d07k10 32s ease-in-out infinite both}
+@keyframes d07k11{0%{transform:translate(245px,300px);opacity:0}65.625%{transform:translate(245px,300px);opacity:0}66.25%{transform:translate(276px,300px);opacity:1}68.75%{transform:translate(400px,300px);opacity:1}71.875%{transform:translate(720px,300px);opacity:1}75%{transform:translate(1040px,300px);opacity:1}78.125%{transform:translate(1270px,230px);opacity:1}79.063%{transform:translate(1270px,230px);opacity:0}100%{transform:translate(1270px,230px);opacity:0}}
+.d07k11{animation:d07k11 32s ease-in-out infinite both}
+@keyframes d07k12{0%{opacity:0}28.125%{opacity:0}29.375%{opacity:1}50%{opacity:1}51.25%{opacity:0}100%{opacity:0}}
+.d07k12{animation:d07k12 32s ease-in-out infinite both}
+@keyframes d07k13{0%{opacity:0}11.875%{opacity:0}13.125%{opacity:1}100%{opacity:1}}
+.d07k13{animation:d07k13 32s ease-in-out infinite both}
+@keyframes d07k14{0%{opacity:0}15.625%{opacity:0}16.875%{opacity:1}100%{opacity:1}}
+.d07k14{animation:d07k14 32s ease-in-out infinite both}
+@keyframes d07k15{0%{transform:scaleX(0)}11.875%{transform:scaleX(0)}13.438%{transform:scaleX(0.24)}65.625%{transform:scaleX(0.24)}81.25%{transform:scaleX(0.8)}100%{transform:scaleX(0.8)}}
+.d07k15{animation:d07k15 32s ease-in-out infinite both}
+@keyframes d07k16{0%{opacity:1}15.625%{opacity:1}16.563%{opacity:0}100%{opacity:0}}
+.d07k16{animation:d07k16 32s ease-in-out infinite both}
+@keyframes d07k17{0%{opacity:0}15.625%{opacity:0}16.563%{opacity:1}28.125%{opacity:1}29.063%{opacity:0}100%{opacity:0}}
+.d07k17{animation:d07k17 32s ease-in-out infinite both}
+@keyframes d07k18{0%{opacity:0}28.125%{opacity:0}29.063%{opacity:1}50%{opacity:1}50.938%{opacity:0}100%{opacity:0}}
+.d07k18{animation:d07k18 32s ease-in-out infinite both}
+@keyframes d07k19{0%{opacity:0}50%{opacity:0}50.938%{opacity:1}65.625%{opacity:1}66.563%{opacity:0}100%{opacity:0}}
+.d07k19{animation:d07k19 32s ease-in-out infinite both}
+@keyframes d07k20{0%{opacity:0}65.625%{opacity:0}66.563%{opacity:1}100%{opacity:1}}
+.d07k20{animation:d07k20 32s ease-in-out infinite both}
+@keyframes d07k21{0%{transform:scaleX(0)}81.25%{transform:scaleX(1)}100%{transform:scaleX(1)}}
+.d07k21{animation:d07k21 32s ease-in-out infinite both}
+@keyframes d08k1{0%{opacity:0}1.364%{opacity:0}3.182%{opacity:1}100%{opacity:1}}
+.d08k1{animation:d08k1 22s ease-in-out infinite both}
+@keyframes d08k2{0%{opacity:0}5.455%{opacity:0}7.273%{opacity:1}100%{opacity:1}}
+.d08k2{animation:d08k2 22s ease-in-out infinite both}
+@keyframes d08k3{0%{opacity:0}9.545%{opacity:0}11.364%{opacity:1}100%{opacity:1}}
+.d08k3{animation:d08k3 22s ease-in-out infinite both}
+@keyframes d08k4{0%{opacity:0}20.455%{opacity:0}22.273%{opacity:1}100%{opacity:1}}
+.d08k4{animation:d08k4 22s ease-in-out infinite both}
+@keyframes d08k5{0%{opacity:0}25%{opacity:0}26.818%{opacity:1}100%{opacity:1}}
+.d08k5{animation:d08k5 22s ease-in-out infinite both}
+@keyframes d08k6{0%{opacity:0;stroke-dashoffset:0}45.455%{opacity:0;stroke-dashoffset:0}46.818%{opacity:1;stroke-dashoffset:-21}72.727%{opacity:1;stroke-dashoffset:-420}100%{opacity:1;stroke-dashoffset:-420}}
+.d08k6{animation:d08k6 22s ease-in-out infinite both}
+@keyframes d08k7{0%{opacity:0;stroke-dashoffset:0}45.455%{opacity:0;stroke-dashoffset:0}48.182%{opacity:0;stroke-dashoffset:-42}49.545%{opacity:1;stroke-dashoffset:-63}72.727%{opacity:1;stroke-dashoffset:-420}100%{opacity:1;stroke-dashoffset:-420}}
+.d08k7{animation:d08k7 22s ease-in-out infinite both}
+@keyframes d08k8{0%{opacity:0}8.182%{opacity:0}10%{opacity:1}100%{opacity:1}}
+.d08k8{animation:d08k8 22s ease-in-out infinite both}
+@keyframes d08k9{0%{transform:scaleX(0)}50%{transform:scaleX(0)}72.727%{transform:scaleX(1)}100%{transform:scaleX(1)}}
+.d08k9{animation:d08k9 22s ease-in-out infinite both}
+@keyframes d08k10{0%{transform:scaleX(0)}54.545%{transform:scaleX(0)}72.727%{transform:scaleX(1)}100%{transform:scaleX(1)}}
+.d08k10{animation:d08k10 22s ease-in-out infinite both}
+@keyframes d08k11{0%{opacity:1}18.182%{opacity:1}19.545%{opacity:0}100%{opacity:0}}
+.d08k11{animation:d08k11 22s ease-in-out infinite both}
+@keyframes d08k12{0%{opacity:0}18.182%{opacity:0}19.545%{opacity:1}45.455%{opacity:1}46.818%{opacity:0}100%{opacity:0}}
+.d08k12{animation:d08k12 22s ease-in-out infinite both}
+@keyframes d08k13{0%{opacity:0}45.455%{opacity:0}46.818%{opacity:1}100%{opacity:1}}
+.d08k13{animation:d08k13 22s ease-in-out infinite both}
+@keyframes d08k14{0%{transform:scaleX(0)}72.727%{transform:scaleX(1)}100%{transform:scaleX(1)}}
+.d08k14{animation:d08k14 22s ease-in-out infinite both}
+@keyframes d09k1{0%{opacity:0}15.385%{opacity:0}16.923%{opacity:1}34.615%{opacity:1}36.154%{opacity:0}100%{opacity:0}}
+.d09k1{animation:d09k1 26s ease-in-out infinite both}
+@keyframes d09k2{0%{opacity:1}42.308%{opacity:1}44.615%{opacity:0}100%{opacity:0}}
+.d09k2{animation:d09k2 26s ease-in-out infinite both}
+@keyframes d09k3{0%{opacity:0}42.308%{opacity:0}44.615%{opacity:1}100%{opacity:1}}
+.d09k3{animation:d09k3 26s ease-in-out infinite both}
+@keyframes d09k4{0%{transform:translate(90px,400px) scale(1);opacity:0}0.769%{transform:translate(90px,400px) scale(1);opacity:0}2.308%{transform:translate(90px,360px) scale(1);opacity:1}4.615%{transform:translate(90px,300px) scale(1);opacity:1}35.385%{transform:translate(90px,300px) scale(1);opacity:1}41.538%{transform:translate(840px,470px) scale(1);opacity:1}53.846%{transform:translate(840px,470px) scale(1);opacity:1}63.462%{transform:translate(1375px,200px) scale(0.72);opacity:1}67.308%{transform:translate(1375px,200px) scale(0.72);opacity:1}75.385%{transform:translate(1655px,200px) scale(0.72);opacity:1}100%{transform:translate(1655px,200px) scale(0.72);opacity:1}}
+.d09k4{animation:d09k4 26s ease-in-out infinite both}
+@keyframes d09k5{0%{opacity:1}45%{opacity:1}47.308%{opacity:0}100%{opacity:0}}
+.d09k5{animation:d09k5 26s ease-in-out infinite both}
+@keyframes d09k6{0%{opacity:0}45%{opacity:0}47.308%{opacity:1}100%{opacity:1}}
+.d09k6{animation:d09k6 26s ease-in-out infinite both}
+@keyframes d09k7{0%{transform:translate(240px,400px) scale(1);opacity:0}4.231%{transform:translate(240px,400px) scale(1);opacity:0}5.769%{transform:translate(240px,360px) scale(1);opacity:1}8.077%{transform:translate(240px,300px) scale(1);opacity:1}36.538%{transform:translate(240px,300px) scale(1);opacity:1}42.692%{transform:translate(950px,470px) scale(1);opacity:1}53.846%{transform:translate(950px,470px) scale(1);opacity:1}55%{transform:translate(950px,470px) scale(0.966);opacity:1}63.462%{transform:translate(1375px,340px) scale(0.72);opacity:1}67.308%{transform:translate(1375px,340px) scale(0.72);opacity:1}75.385%{transform:translate(1655px,340px) scale(0.72);opacity:1}100%{transform:translate(1655px,340px) scale(0.72);opacity:1}}
+.d09k7{animation:d09k7 26s ease-in-out infinite both}
+@keyframes d09k8{0%{opacity:1}47.692%{opacity:1}50%{opacity:0}100%{opacity:0}}
+.d09k8{animation:d09k8 26s ease-in-out infinite both}
+@keyframes d09k9{0%{opacity:0}47.692%{opacity:0}50%{opacity:1}100%{opacity:1}}
+.d09k9{animation:d09k9 26s ease-in-out infinite both}
+@keyframes d09k10{0%{transform:translate(390px,400px) scale(1);opacity:0}7.692%{transform:translate(390px,400px) scale(1);opacity:0}9.231%{transform:translate(390px,360px) scale(1);opacity:1}11.538%{transform:translate(390px,300px) scale(1);opacity:1}37.692%{transform:translate(390px,300px) scale(1);opacity:1}43.846%{transform:translate(1060px,470px) scale(1);opacity:1}53.846%{transform:translate(1060px,470px) scale(1);opacity:1}56.154%{transform:translate(1060px,470px) scale(0.933);opacity:1}63.462%{transform:translate(1375px,480px) scale(0.72);opacity:1}67.308%{transform:translate(1375px,480px) scale(0.72);opacity:1}75.385%{transform:translate(1655px,480px) scale(0.72);opacity:1}100%{transform:translate(1655px,480px) scale(0.72);opacity:1}}
+.d09k10{animation:d09k10 26s ease-in-out infinite both}
+@keyframes d09k11{0%{opacity:1}15.385%{opacity:1}16.538%{opacity:0}100%{opacity:0}}
+.d09k11{animation:d09k11 26s ease-in-out infinite both}
+@keyframes d09k12{0%{opacity:0}15.385%{opacity:0}16.538%{opacity:1}34.615%{opacity:1}35.769%{opacity:0}100%{opacity:0}}
+.d09k12{animation:d09k12 26s ease-in-out infinite both}
+@keyframes d09k13{0%{opacity:0}34.615%{opacity:0}35.769%{opacity:1}53.846%{opacity:1}55%{opacity:0}100%{opacity:0}}
+.d09k13{animation:d09k13 26s ease-in-out infinite both}
+@keyframes d09k14{0%{opacity:0}53.846%{opacity:0}55%{opacity:1}100%{opacity:1}}
+.d09k14{animation:d09k14 26s ease-in-out infinite both}
+@keyframes d09k15{0%{transform:scaleX(0)}76.923%{transform:scaleX(1)}100%{transform:scaleX(1)}}
+.d09k15{animation:d09k15 26s ease-in-out infinite both}
+@keyframes d10k1{0%{transform:scaleX(1)}1.538%{transform:scaleX(1)}15.385%{transform:scaleX(0)}100%{transform:scaleX(0)}}
+.d10k1{animation:d10k1 26s ease-in-out infinite both}
+@keyframes d10k2{0%{opacity:0}13.846%{opacity:0}15.385%{opacity:1}100%{opacity:1}}
+.d10k2{animation:d10k2 26s ease-in-out infinite both}
+@keyframes d10k3{0%{transform:translate(570px,175px);opacity:0}19.231%{transform:translate(570px,175px);opacity:0}20%{transform:translate(582px,172.5px);opacity:1}26.154%{transform:translate(678px,152.5px);opacity:1}26.923%{transform:translate(690px,150px);opacity:0.5}27.692%{transform:translate(690px,150px);opacity:0}100%{transform:translate(690px,150px);opacity:0}}
+.d10k3{animation:d10k3 26s ease-in-out infinite both}
+@keyframes d10k4{0%{opacity:0}26.923%{opacity:0}28.462%{opacity:1}100%{opacity:1}}
+.d10k4{animation:d10k4 26s ease-in-out infinite both}
+@keyframes d10k5{0%{opacity:0}42.308%{opacity:0}43.846%{opacity:1}100%{opacity:1}}
+.d10k5{animation:d10k5 26s ease-in-out infinite both}
+@keyframes d10k6{0%{opacity:0}30.385%{opacity:0}31.923%{opacity:1}100%{opacity:1}}
+.d10k6{animation:d10k6 26s ease-in-out infinite both}
+@keyframes d10k7{0%{opacity:0}46.538%{opacity:0}48.077%{opacity:1}100%{opacity:1}}
+.d10k7{animation:d10k7 26s ease-in-out infinite both}
+@keyframes d10k8{0%{opacity:0}33.846%{opacity:0}35.385%{opacity:1}100%{opacity:1}}
+.d10k8{animation:d10k8 26s ease-in-out infinite both}
+@keyframes d10k9{0%{opacity:0}50.769%{opacity:0}52.308%{opacity:1}100%{opacity:1}}
+.d10k9{animation:d10k9 26s ease-in-out infinite both}
+@keyframes d10k10{0%{opacity:0}37.308%{opacity:0}38.846%{opacity:1}100%{opacity:1}}
+.d10k10{animation:d10k10 26s ease-in-out infinite both}
+@keyframes d10k11{0%{opacity:0}55%{opacity:0}56.538%{opacity:1}100%{opacity:1}}
+.d10k11{animation:d10k11 26s ease-in-out infinite both}
+@keyframes d10k12{0%{opacity:1}19.231%{opacity:1}20.385%{opacity:0}100%{opacity:0}}
+.d10k12{animation:d10k12 26s ease-in-out infinite both}
+@keyframes d10k13{0%{opacity:0}19.231%{opacity:0}20.385%{opacity:1}42.308%{opacity:1}43.462%{opacity:0}100%{opacity:0}}
+.d10k13{animation:d10k13 26s ease-in-out infinite both}
+@keyframes d10k14{0%{opacity:0}42.308%{opacity:0}43.462%{opacity:1}61.538%{opacity:1}62.692%{opacity:0}100%{opacity:0}}
+.d10k14{animation:d10k14 26s ease-in-out infinite both}
+@keyframes d10k15{0%{opacity:0}61.538%{opacity:0}62.692%{opacity:1}100%{opacity:1}}
+.d10k15{animation:d10k15 26s ease-in-out infinite both}
+@keyframes d10k16{0%{transform:scaleX(0)}76.923%{transform:scaleX(1)}100%{transform:scaleX(1)}}
+.d10k16{animation:d10k16 26s ease-in-out infinite both}
+@keyframes d11k1{0%{transform:translate(-60px,0px);opacity:0}0.333%{transform:translate(-56.667px,0px);opacity:0}1.667%{transform:translate(-43.333px,0px);opacity:1}6%{transform:translate(0px,0px);opacity:1}100%{transform:translate(0px,0px);opacity:1}}
+.d11k1{animation:d11k1 30s ease-in-out infinite both}
+@keyframes d11k2{0%{transform:translate(-60px,0px);opacity:0}2.667%{transform:translate(-60px,0px);opacity:0}4%{transform:translate(-46.667px,0px);opacity:1}8.667%{transform:translate(0px,0px);opacity:1}100%{transform:translate(0px,0px);opacity:1}}
+.d11k2{animation:d11k2 30s ease-in-out infinite both}
+@keyframes d11k3{0%{opacity:0}8.667%{opacity:0}10%{opacity:1}100%{opacity:1}}
+.d11k3{animation:d11k3 30s ease-in-out infinite both}
+@keyframes d11k4{0%{transform:scaleY(0.12)}18.333%{transform:scaleY(0.12)}21.667%{transform:scaleY(0.5)}41.667%{transform:scaleY(0.5)}45%{transform:scaleY(0.35)}66%{transform:scaleY(0.35)}66.667%{transform:scaleY(0.95)}72.667%{transform:scaleY(0.95)}73.333%{transform:scaleY(0.3)}100%{transform:scaleY(0.3)}}
+.d11k4{animation:d11k4 30s ease-in-out infinite both}
+@keyframes d11k5{0%{transform:scaleY(0.12)}18.333%{transform:scaleY(0.12)}21.667%{transform:scaleY(0.9)}41.667%{transform:scaleY(0.9)}45%{transform:scaleY(0.5)}66%{transform:scaleY(0.5)}66.667%{transform:scaleY(0.4)}72.667%{transform:scaleY(0.4)}73.333%{transform:scaleY(0.95)}100%{transform:scaleY(0.95)}}
+.d11k5{animation:d11k5 30s ease-in-out infinite both}
+@keyframes d11k6{0%{transform:scaleY(0.12)}18.333%{transform:scaleY(0.12)}21.667%{transform:scaleY(0.35)}41.667%{transform:scaleY(0.35)}45%{transform:scaleY(0.95)}66%{transform:scaleY(0.95)}66.667%{transform:scaleY(0.3)}72.667%{transform:scaleY(0.3)}73.333%{transform:scaleY(0.45)}100%{transform:scaleY(0.45)}}
+.d11k6{animation:d11k6 30s ease-in-out infinite both}
+@keyframes d11k7{0%{opacity:0}21.667%{opacity:0}22.333%{opacity:1}40%{opacity:1}40.667%{opacity:0}100%{opacity:0}}
+.d11k7{animation:d11k7 30s ease-in-out infinite both}
+@keyframes d11k8{0%{opacity:0}60.667%{opacity:0}61.333%{opacity:1}66.667%{opacity:1}67.333%{opacity:0}100%{opacity:0}}
+.d11k8{animation:d11k8 30s ease-in-out infinite both}
+@keyframes d11k9{0%{opacity:0}67.333%{opacity:0}68%{opacity:1}73.333%{opacity:1}74%{opacity:0}100%{opacity:0}}
+.d11k9{animation:d11k9 30s ease-in-out infinite both}
+@keyframes d11k10{0%{opacity:0}74%{opacity:0}74.667%{opacity:1}80%{opacity:1}80.667%{opacity:0}100%{opacity:0}}
+.d11k10{animation:d11k10 30s ease-in-out infinite both}
+@keyframes d11k11{0%{transform:translate(1400px,100px);opacity:0}26.667%{transform:translate(1400px,100px);opacity:0}27.5%{transform:translate(1400px,100px);opacity:1}36.667%{transform:translate(1400px,100px);opacity:1}41.667%{transform:translate(270px,480px);opacity:1}100%{transform:translate(270px,480px);opacity:1}}
+.d11k11{animation:d11k11 30s ease-in-out infinite both}
+@keyframes d11k12{0%{transform:translate(270px,480px);opacity:0}41.667%{transform:translate(270px,480px);opacity:0}41.833%{transform:translate(263.25px,473.7px);opacity:0}42.333%{transform:translate(243px,454.8px);opacity:1}48.333%{transform:translate(0px,228px);opacity:1}100%{transform:translate(0px,228px);opacity:1}}
+.d11k12{animation:d11k12 30s ease-in-out infinite both}
+@keyframes d11k13{0%{transform:translate(1400px,100px);opacity:0}61%{transform:translate(1400px,100px);opacity:0}61.833%{transform:translate(1400px,100px);opacity:1}63.333%{transform:translate(1400px,100px);opacity:1}64.333%{transform:translate(556px,480px);opacity:1}100%{transform:translate(556px,480px);opacity:1}}
+.d11k13{animation:d11k13 30s ease-in-out infinite both}
+@keyframes d11k14{0%{transform:translate(556px,480px);opacity:0}64.333%{transform:translate(556px,480px);opacity:0}64.5%{transform:translate(537px,462px);opacity:0}65%{transform:translate(480px,408px);opacity:1}66.667%{transform:translate(290px,228px);opacity:1}100%{transform:translate(290px,228px);opacity:1}}
+.d11k14{animation:d11k14 30s ease-in-out infinite both}
+@keyframes d11k15{0%{transform:translate(1400px,100px);opacity:0}67.667%{transform:translate(1400px,100px);opacity:0}68.5%{transform:translate(1400px,100px);opacity:1}70%{transform:translate(1400px,100px);opacity:1}71%{transform:translate(652px,480px);opacity:1}100%{transform:translate(652px,480px);opacity:1}}
+.d11k15{animation:d11k15 30s ease-in-out infinite both}
+@keyframes d11k16{0%{transform:translate(652px,480px);opacity:0}71%{transform:translate(652px,480px);opacity:0}71.167%{transform:translate(605.429px,467.714px);opacity:0}71.667%{transform:translate(465.714px,430.857px);opacity:1}73.333%{transform:translate(0px,308px);opacity:1}100%{transform:translate(0px,308px);opacity:1}}
+.d11k16{animation:d11k16 30s ease-in-out infinite both}
+@keyframes d11k17{0%{transform:translate(1400px,100px);opacity:0}74.333%{transform:translate(1400px,100px);opacity:0}75.167%{transform:translate(1400px,100px);opacity:1}76.667%{transform:translate(1400px,100px);opacity:1}77.667%{transform:translate(858px,480px);opacity:1}100%{transform:translate(858px,480px);opacity:1}}
+.d11k17{animation:d11k17 30s ease-in-out infinite both}
+@keyframes d11k18{0%{transform:translate(858px,480px);opacity:0}77.667%{transform:translate(858px,480px);opacity:0}77.833%{transform:translate(811.714px,467.714px);opacity:0}78.333%{transform:translate(672.857px,430.857px);opacity:1}80%{transform:translate(210px,308px);opacity:1}100%{transform:translate(210px,308px);opacity:1}}
+.d11k18{animation:d11k18 30s ease-in-out infinite both}
+@keyframes d11k19{0%{opacity:0}78.667%{opacity:0}80%{opacity:1}100%{opacity:1}}
+.d11k19{animation:d11k19 30s ease-in-out infinite both}
+@keyframes d11k20{0%{opacity:1}16.667%{opacity:1}17.667%{opacity:0}100%{opacity:0}}
+.d11k20{animation:d11k20 30s ease-in-out infinite both}
+@keyframes d11k21{0%{opacity:0}16.667%{opacity:0}17.667%{opacity:1}23.333%{opacity:1}24.333%{opacity:0}100%{opacity:0}}
+.d11k21{animation:d11k21 30s ease-in-out infinite both}
+@keyframes d11k22{0%{opacity:0}23.333%{opacity:0}24.333%{opacity:1}40%{opacity:1}41%{opacity:0}100%{opacity:0}}
+.d11k22{animation:d11k22 30s ease-in-out infinite both}
+@keyframes d11k23{0%{opacity:0}40%{opacity:0}41%{opacity:1}100%{opacity:1}}
+.d11k23{animation:d11k23 30s ease-in-out infinite both}
+@keyframes d11k24{0%{opacity:1}20%{opacity:1}21%{opacity:0}100%{opacity:0}}
+.d11k24{animation:d11k24 30s ease-in-out infinite both}
+@keyframes d11k25{0%{opacity:0}20%{opacity:0}21%{opacity:1}40%{opacity:1}41%{opacity:0}100%{opacity:0}}
+.d11k25{animation:d11k25 30s ease-in-out infinite both}
+@keyframes d11k26{0%{opacity:0}40%{opacity:0}41%{opacity:1}60%{opacity:1}61%{opacity:0}100%{opacity:0}}
+.d11k26{animation:d11k26 30s ease-in-out infinite both}
+@keyframes d11k27{0%{opacity:0}60%{opacity:0}61%{opacity:1}100%{opacity:1}}
+.d11k27{animation:d11k27 30s ease-in-out infinite both}
+@keyframes d11k28{0%{transform:scaleX(0)}80%{transform:scaleX(1)}100%{transform:scaleX(1)}}
+.d11k28{animation:d11k28 30s ease-in-out infinite both}
+@keyframes d12k1{0%{opacity:0}65.625%{opacity:0}66.875%{opacity:1}100%{opacity:1}}
+.d12k1{animation:d12k1 32s ease-in-out infinite both}
+@keyframes d12k2{0%{transform:translate(0px,60px) scale(0.3);opacity:0}1.563%{transform:translate(0px,60px) scale(0.3);opacity:0}2.813%{transform:translate(90px,74px) scale(0.44);opacity:1}7.813%{transform:translate(450px,130px) scale(1);opacity:1}45.313%{transform:translate(450px,130px) scale(1);opacity:1}46.563%{transform:translate(450px,130px) scale(1);opacity:0}100%{transform:translate(450px,130px) scale(1);opacity:0}}
+.d12k2{animation:d12k2 32s ease-in-out infinite both}
+@keyframes d12k3{0%{transform:translate(0px,168px) scale(0.3);opacity:0}6.875%{transform:translate(0px,168px) scale(0.3);opacity:0}8.125%{transform:translate(149.778px,159.556px) scale(0.456);opacity:1}12.5%{transform:translate(674px,130px) scale(1);opacity:1}46.875%{transform:translate(674px,130px) scale(1);opacity:1}48.125%{transform:translate(674px,130px) scale(1);opacity:0}100%{transform:translate(674px,130px) scale(1);opacity:0}}
+.d12k3{animation:d12k3 32s ease-in-out infinite both}
+@keyframes d12k4{0%{transform:translate(250px,236px) scale(0.3);opacity:0}11.875%{transform:translate(250px,236px) scale(0.3);opacity:0}13.125%{transform:translate(379.6px,214.8px) scale(0.44);opacity:1}18.125%{transform:translate(898px,130px) scale(1);opacity:1}100%{transform:translate(898px,130px) scale(1);opacity:1}}
+.d12k4{animation:d12k4 32s ease-in-out infinite both}
+@keyframes d12k5{0%{transform:translate(0px,304px) scale(0.3);opacity:0}20.313%{transform:translate(0px,304px) scale(0.3);opacity:0}21.563%{transform:translate(179.52px,276.16px) scale(0.412);opacity:1}28.125%{transform:translate(1122px,130px) scale(1);opacity:1}100%{transform:translate(1122px,130px) scale(1);opacity:1}}
+.d12k5{animation:d12k5 32s ease-in-out infinite both}
+@keyframes d12k6{0%{transform:translate(150px,372px) scale(0.3);opacity:0}29.688%{transform:translate(150px,372px) scale(0.3);opacity:0}30.938%{transform:translate(309.467px,339.733px) scale(0.393);opacity:1}39.063%{transform:translate(1346px,130px) scale(1);opacity:1}100%{transform:translate(1346px,130px) scale(1);opacity:1}}
+.d12k6{animation:d12k6 32s ease-in-out infinite both}
+@keyframes d12k7{0%{transform:translate(0px,440px) scale(0.3);opacity:0}50%{transform:translate(0px,440px) scale(0.3);opacity:0}51.25%{transform:translate(72px,390.4px) scale(0.412);opacity:1}57.813%{transform:translate(450px,130px) scale(1);opacity:1}100%{transform:translate(450px,130px) scale(1);opacity:1}}
+.d12k7{animation:d12k7 32s ease-in-out infinite both}
+@keyframes d12k8{0%{transform:translate(250px,508px) scale(0.3);opacity:0}56.25%{transform:translate(250px,508px) scale(0.3);opacity:0}57.5%{transform:translate(317.84px,447.52px) scale(0.412);opacity:1}64.063%{transform:translate(674px,130px) scale(1);opacity:1}100%{transform:translate(674px,130px) scale(1);opacity:1}}
+.d12k8{animation:d12k8 32s ease-in-out infinite both}
+@keyframes d12k9{0%{opacity:1}18.75%{opacity:1}19.688%{opacity:0}100%{opacity:0}}
+.d12k9{animation:d12k9 32s ease-in-out infinite both}
+@keyframes d12k10{0%{opacity:0}18.75%{opacity:0}19.688%{opacity:1}40.625%{opacity:1}41.563%{opacity:0}100%{opacity:0}}
+.d12k10{animation:d12k10 32s ease-in-out infinite both}
+@keyframes d12k11{0%{opacity:0}40.625%{opacity:0}41.563%{opacity:1}65.625%{opacity:1}66.563%{opacity:0}100%{opacity:0}}
+.d12k11{animation:d12k11 32s ease-in-out infinite both}
+@keyframes d12k12{0%{opacity:0}65.625%{opacity:0}66.563%{opacity:1}100%{opacity:1}}
+.d12k12{animation:d12k12 32s ease-in-out infinite both}
+@keyframes d12k13{0%{transform:scaleX(0)}81.25%{transform:scaleX(1)}100%{transform:scaleX(1)}}
+.d12k13{animation:d12k13 32s ease-in-out infinite both}
+@keyframes d19k1{0%{opacity:0}0.24%{opacity:1}3.2%{opacity:1}3.44%{opacity:0}11.2%{opacity:0}11.44%{opacity:1}13.6%{opacity:1}13.84%{opacity:0}17.6%{opacity:0}17.84%{opacity:1}20.8%{opacity:1}21.04%{opacity:0}86.4%{opacity:0}86.64%{opacity:1}92.8%{opacity:1}93.04%{opacity:0}100%{opacity:0}}
+.d19k1{animation:d19k1 125s ease-in-out infinite both}
+@keyframes d19k2{0%{opacity:0}3.2%{opacity:0}3.44%{opacity:1}11.2%{opacity:1}11.44%{opacity:0}13.6%{opacity:0}13.84%{opacity:1}17.6%{opacity:1}17.84%{opacity:0}20.8%{opacity:0}21.04%{opacity:1}24%{opacity:1}24.24%{opacity:0}32.8%{opacity:0}33.04%{opacity:1}39.2%{opacity:1}39.44%{opacity:0}52%{opacity:0}52.24%{opacity:1}53.6%{opacity:1}53.84%{opacity:0}69.6%{opacity:0}69.84%{opacity:1}72%{opacity:1}72.24%{opacity:0}84%{opacity:0}84.24%{opacity:1}86.4%{opacity:1}86.64%{opacity:0}92.8%{opacity:0}93.04%{opacity:1}100%{opacity:1}}
+.d19k2{animation:d19k2 125s ease-in-out infinite both}
+@keyframes d19k3{0%{opacity:0}24%{opacity:0}24.24%{opacity:1}32.8%{opacity:1}33.04%{opacity:0}53.6%{opacity:0}53.84%{opacity:1}60.8%{opacity:1}61.04%{opacity:0}63.2%{opacity:0}63.44%{opacity:1}69.6%{opacity:1}69.84%{opacity:0}100%{opacity:0}}
+.d19k3{animation:d19k3 125s ease-in-out infinite both}
+@keyframes d19k4{0%{opacity:0}39.2%{opacity:0}39.44%{opacity:1}52%{opacity:1}52.24%{opacity:0}60.8%{opacity:0}61.04%{opacity:1}63.2%{opacity:1}63.44%{opacity:0}72%{opacity:0}72.24%{opacity:1}84%{opacity:1}84.24%{opacity:0}100%{opacity:0}}
+.d19k4{animation:d19k4 125s ease-in-out infinite both}
+@keyframes d19k5{0%{opacity:0}1.6%{opacity:0}1.84%{opacity:1}4%{opacity:1}4.24%{opacity:0}100%{opacity:0}}
+.d19k5{animation:d19k5 125s ease-in-out infinite both}
+@keyframes d19k6{0%{transform:translate(212px,190px);opacity:0}0.32%{transform:translate(212px,190px);opacity:0}0.64%{transform:translate(212px,190px);opacity:1}1.6%{transform:translate(212px,190px);opacity:1}4%{transform:translate(668px,140px);opacity:1}22.4%{transform:translate(668px,140px);opacity:1}22.72%{transform:translate(668px,140px);opacity:0}100%{transform:translate(668px,140px);opacity:0}}
+.d19k6{animation:d19k6 125s ease-in-out infinite both}
+@keyframes d19k7{0%{opacity:0}4%{opacity:0}4.32%{opacity:1}26.4%{opacity:1}26.72%{opacity:0}100%{opacity:0}}
+.d19k7{animation:d19k7 125s ease-in-out infinite both}
+@keyframes d19k8{0%{transform:translate(560px,560px);opacity:0}4.8%{transform:translate(560px,560px);opacity:0}5.12%{transform:translate(566px,508px);opacity:1}6.4%{transform:translate(590px,300px);opacity:1}26.4%{transform:translate(590px,300px);opacity:1}26.72%{transform:translate(590px,300px);opacity:0}100%{transform:translate(590px,300px);opacity:0}}
+.d19k8{animation:d19k8 125s ease-in-out infinite both}
+@keyframes d19k9{0%{transform:translate(760px,560px);opacity:0}6.4%{transform:translate(760px,560px);opacity:0}6.72%{transform:translate(760px,508px);opacity:1}8%{transform:translate(760px,300px);opacity:1}26.4%{transform:translate(760px,300px);opacity:1}26.72%{transform:translate(760px,300px);opacity:0}100%{transform:translate(760px,300px);opacity:0}}
+.d19k9{animation:d19k9 125s ease-in-out infinite both}
+@keyframes d19k10{0%{transform:translate(668px,400px);opacity:0}8.8%{transform:translate(668px,400px);opacity:0}9.12%{transform:translate(607.2px,390.667px);opacity:1}11.2%{transform:translate(212px,330px);opacity:1}13.28%{transform:translate(212px,330px);opacity:1}13.6%{transform:translate(212px,330px);opacity:0}100%{transform:translate(212px,330px);opacity:0}}
+.d19k10{animation:d19k10 125s ease-in-out infinite both}
+@keyframes d19k11{0%{transform:translate(212px,330px);opacity:0}13.6%{transform:translate(212px,330px);opacity:0}13.92%{transform:translate(272.8px,339.333px);opacity:1}16%{transform:translate(668px,400px);opacity:1}26.4%{transform:translate(668px,400px);opacity:1}26.72%{transform:translate(668px,400px);opacity:0}100%{transform:translate(668px,400px);opacity:0}}
+.d19k11{animation:d19k11 125s ease-in-out infinite both}
+@keyframes d19k12{0%{opacity:0}16.32%{opacity:0}16.64%{opacity:1}26.4%{opacity:1}26.72%{opacity:0}100%{opacity:0}}
+.d19k12{animation:d19k12 125s ease-in-out infinite both}
+@keyframes d19k13{0%{transform:translate(212px,240px);opacity:0}18.4%{transform:translate(212px,240px);opacity:0}18.72%{transform:translate(297.867px,237.333px);opacity:1}20.8%{transform:translate(856px,220px);opacity:1}26.4%{transform:translate(856px,220px);opacity:1}26.72%{transform:translate(856px,220px);opacity:0}100%{transform:translate(856px,220px);opacity:0}}
+.d19k13{animation:d19k13 125s ease-in-out infinite both}
+@keyframes d19k14{0%{opacity:0}21.2%{opacity:0}21.52%{opacity:1}27.2%{opacity:1}27.52%{opacity:0}100%{opacity:0}}
+.d19k14{animation:d19k14 125s ease-in-out infinite both}
+@keyframes d19k15{0%{opacity:0}24%{opacity:0}24.24%{opacity:1}26.4%{opacity:1}26.64%{opacity:0}100%{opacity:0}}
+.d19k15{animation:d19k15 125s ease-in-out infinite both}
+@keyframes d19k16{0%{transform:translate(668px,140px);opacity:0}22.72%{transform:translate(668px,140px);opacity:0}23.04%{transform:translate(668px,140px);opacity:1}24%{transform:translate(668px,140px);opacity:1}26.4%{transform:translate(1124px,150px);opacity:1}32.8%{transform:translate(1124px,150px);opacity:1}33.12%{transform:translate(1124px,150px);opacity:0}100%{transform:translate(1124px,150px);opacity:0}}
+.d19k16{animation:d19k16 125s ease-in-out infinite both}
+@keyframes d19k17{0%{transform:translate(668px,250px);opacity:0}23.2%{transform:translate(668px,250px);opacity:0}23.52%{transform:translate(668px,250px);opacity:1}24%{transform:translate(668px,250px);opacity:1}26.4%{transform:translate(1040px,270px);opacity:1}32.8%{transform:translate(1040px,270px);opacity:1}33.12%{transform:translate(1040px,270px);opacity:0}100%{transform:translate(1040px,270px);opacity:0}}
+.d19k17{animation:d19k17 125s ease-in-out infinite both}
+@keyframes d19k18{0%{opacity:0}26.72%{opacity:0}27.04%{opacity:1}32.8%{opacity:1}33.12%{opacity:0}100%{opacity:0}}
+.d19k18{animation:d19k18 125s ease-in-out infinite both}
+@keyframes d19k19{0%{opacity:0}32.8%{opacity:0}33.04%{opacity:1}35.2%{opacity:1}35.44%{opacity:0}100%{opacity:0}}
+.d19k19{animation:d19k19 125s ease-in-out infinite both}
+@keyframes d19k20{0%{transform:translate(1124px,410px);opacity:0}28.8%{transform:translate(1124px,410px);opacity:0}29.12%{transform:translate(1124px,410px);opacity:1}32.8%{transform:translate(1124px,410px);opacity:1}35.2%{transform:translate(668px,540px);opacity:1}55.2%{transform:translate(668px,540px);opacity:1}56.4%{transform:translate(1124px,490px);opacity:1}66.4%{transform:translate(1124px,490px);opacity:1}66.72%{transform:translate(1124px,490px);opacity:0}100%{transform:translate(1124px,490px);opacity:0}}
+.d19k20{animation:d19k20 125s ease-in-out infinite both}
+@keyframes d19k21{0%{transform:translate(1234px,410px);opacity:0}28.8%{transform:translate(1234px,410px);opacity:0}30.4%{transform:translate(1234px,410px);opacity:0}30.72%{transform:translate(1234px,410px);opacity:1}32.8%{transform:translate(1234px,410px);opacity:1}35.2%{transform:translate(778px,540px);opacity:1}55.2%{transform:translate(778px,540px);opacity:1}56.4%{transform:translate(1234px,490px);opacity:1}66.4%{transform:translate(1234px,490px);opacity:1}66.72%{transform:translate(1234px,490px);opacity:0}100%{transform:translate(1234px,490px);opacity:0}}
+.d19k21{animation:d19k21 125s ease-in-out infinite both}
+@keyframes d19k22{0%{opacity:0}36.8%{opacity:0}37.12%{opacity:1}52%{opacity:1}52.32%{opacity:0}100%{opacity:0}}
+.d19k22{animation:d19k22 125s ease-in-out infinite both}
+@keyframes d19k23{0%{opacity:0}37.6%{opacity:0}37.92%{opacity:1}46.4%{opacity:1}46.72%{opacity:0}100%{opacity:0}}
+.d19k23{animation:d19k23 125s ease-in-out infinite both}
+@keyframes d19k24{0%{opacity:0}39.2%{opacity:0}39.44%{opacity:1}44%{opacity:1}44.24%{opacity:0}100%{opacity:0}}
+.d19k24{animation:d19k24 125s ease-in-out infinite both}
+@keyframes d19k25{0%{transform:translate(668px,170px);opacity:0}39.2%{transform:translate(668px,170px);opacity:0}39.52%{transform:translate(830.4px,170px);opacity:1}40.8%{transform:translate(1480px,170px);opacity:1}52%{transform:translate(1480px,170px);opacity:1}52.32%{transform:translate(1480px,170px);opacity:0}100%{transform:translate(1480px,170px);opacity:0}}
+.d19k25{animation:d19k25 125s ease-in-out infinite both}
+@keyframes d19k26{0%{transform:translate(668px,170px);opacity:0}40.8%{transform:translate(668px,170px);opacity:0}41.12%{transform:translate(850.4px,170px);opacity:1}42.4%{transform:translate(1580px,170px);opacity:1}52%{transform:translate(1580px,170px);opacity:1}52.32%{transform:translate(1580px,170px);opacity:0}100%{transform:translate(1580px,170px);opacity:0}}
+.d19k26{animation:d19k26 125s ease-in-out infinite both}
+@keyframes d19k27{0%{transform:translate(668px,170px);opacity:0}42.4%{transform:translate(668px,170px);opacity:0}42.72%{transform:translate(870.4px,170px);opacity:1}44%{transform:translate(1680px,170px);opacity:1}52%{transform:translate(1680px,170px);opacity:1}52.32%{transform:translate(1680px,170px);opacity:0}100%{transform:translate(1680px,170px);opacity:0}}
+.d19k27{animation:d19k27 125s ease-in-out infinite both}
+@keyframes d19k28{0%{transform:translate(1580px,290px);opacity:0}47.2%{transform:translate(1580px,290px);opacity:0}47.52%{transform:translate(1580px,290px);opacity:1}52%{transform:translate(1580px,290px);opacity:1}53.6%{transform:translate(668px,200px);opacity:1}55.2%{transform:translate(1124px,160px);opacity:1}69.28%{transform:translate(1124px,160px);opacity:1}69.6%{transform:translate(1124px,160px);opacity:0}100%{transform:translate(1124px,160px);opacity:0}}
+.d19k28{animation:d19k28 125s ease-in-out infinite both}
+@keyframes d19k29{0%{transform:translate(1580px,360px);opacity:0}75.2%{transform:translate(1580px,360px);opacity:0}75.52%{transform:translate(1580px,360px);opacity:1}82.4%{transform:translate(1580px,360px);opacity:1}82.72%{transform:translate(1580px,360px);opacity:0}100%{transform:translate(1580px,360px);opacity:0}}
+.d19k29{animation:d19k29 125s ease-in-out infinite both}
+@keyframes d19k30{0%{transform:translate(1750px,252px);opacity:0}47.2%{transform:translate(1750px,252px);opacity:0}52%{transform:translate(1750px,252px);opacity:0}53.6%{transform:translate(838px,162px);opacity:0}55.2%{transform:translate(1294px,122px);opacity:0}56.4%{transform:translate(1294px,122px);opacity:0}56.72%{transform:translate(1294px,122px);opacity:1}69.28%{transform:translate(1294px,122px);opacity:1}69.6%{transform:translate(1294px,122px);opacity:0}100%{transform:translate(1294px,122px);opacity:0}}
+.d19k30{animation:d19k30 125s ease-in-out infinite both}
+@keyframes d19k31{0%{transform:translate(1432px,290px);opacity:0}47.2%{transform:translate(1432px,290px);opacity:0}77.6%{transform:translate(1432px,360px);opacity:0}77.92%{transform:translate(1432px,360px);opacity:1}82.4%{transform:translate(1432px,360px);opacity:1}82.72%{transform:translate(1432px,360px);opacity:0}100%{transform:translate(1432px,360px);opacity:0}}
+.d19k31{animation:d19k31 125s ease-in-out infinite both}
+@keyframes d19k32{0%{transform:translate(1580px,400px);opacity:0}48.8%{transform:translate(1580px,400px);opacity:0}49.12%{transform:translate(1580px,400px);opacity:1}52%{transform:translate(1580px,400px);opacity:1}53.6%{transform:translate(668px,310px);opacity:1}55.2%{transform:translate(1124px,270px);opacity:1}60.8%{transform:translate(1124px,270px);opacity:1}63.2%{transform:translate(1580px,470px);opacity:1}77.6%{transform:translate(1580px,470px);opacity:1}77.92%{transform:translate(1580px,470px);opacity:0}100%{transform:translate(1580px,470px);opacity:0}}
+.d19k32{animation:d19k32 125s ease-in-out infinite both}
+@keyframes d19k33{0%{transform:translate(668px,270px);opacity:0}58.4%{transform:translate(668px,270px);opacity:0}58.72%{transform:translate(792.4px,266px);opacity:1}60%{transform:translate(1290px,250px);opacity:1}60.8%{transform:translate(1290px,250px);opacity:1}63.2%{transform:translate(1746px,450px);opacity:1}77.6%{transform:translate(1746px,450px);opacity:1}77.92%{transform:translate(1746px,450px);opacity:0}100%{transform:translate(1746px,450px);opacity:0}}
+.d19k33{animation:d19k33 125s ease-in-out infinite both}
+@keyframes d19k34{0%{opacity:0}77.6%{opacity:0}77.84%{opacity:1}80.48%{opacity:1}80.72%{opacity:0}100%{opacity:0}}
+.d19k34{animation:d19k34 125s ease-in-out infinite both}
+@keyframes d19k35{0%{transform:translate(1580px,510px);opacity:0}50.4%{transform:translate(1580px,510px);opacity:0}50.72%{transform:translate(1580px,510px);opacity:1}52%{transform:translate(1580px,510px);opacity:1}53.6%{transform:translate(668px,420px);opacity:1}55.2%{transform:translate(1124px,380px);opacity:1}64%{transform:translate(1124px,380px);opacity:1}65.6%{transform:translate(668px,545px);opacity:1}86.4%{transform:translate(668px,545px);opacity:1}88.8%{transform:translate(212px,370px);opacity:1}100%{transform:translate(212px,370px);opacity:1}}
+.d19k35{animation:d19k35 125s ease-in-out infinite both}
+@keyframes d19k36{0%{transform:translate(1124px,490px);opacity:0}66.4%{transform:translate(1124px,490px);opacity:0}66.64%{transform:translate(1124px,490px);opacity:1}69.6%{transform:translate(1124px,490px);opacity:1}72%{transform:translate(668px,180px);opacity:1}74.4%{transform:translate(1580px,140px);opacity:1}84.8%{transform:translate(1580px,140px);opacity:1}86.4%{transform:translate(668px,140px);opacity:1}88%{transform:translate(212px,150px);opacity:1}100%{transform:translate(212px,150px);opacity:1}}
+.d19k36{animation:d19k36 125s ease-in-out infinite both}
+@keyframes d19k37{0%{transform:translate(1124px,574px);opacity:0}67.6%{transform:translate(1124px,574px);opacity:0}67.92%{transform:translate(1124px,574px);opacity:1}69.6%{transform:translate(1124px,574px);opacity:1}72%{transform:translate(668px,264px);opacity:1}74.4%{transform:translate(1580px,224px);opacity:1}84.8%{transform:translate(1580px,224px);opacity:1}86.4%{transform:translate(668px,224px);opacity:1}88%{transform:translate(212px,234px);opacity:1}100%{transform:translate(212px,234px);opacity:1}}
+.d19k37{animation:d19k37 125s ease-in-out infinite both}
+@keyframes d19k38{0%{transform:translate(322px,112px);opacity:0}87.2%{transform:translate(322px,112px);opacity:0}88%{transform:translate(322px,112px);opacity:0}88.16%{transform:translate(322px,112px);opacity:0}88.48%{transform:translate(322px,112px);opacity:1}100%{transform:translate(322px,112px);opacity:1}}
+.d19k38{animation:d19k38 125s ease-in-out infinite both}
+@keyframes d19k39{0%{opacity:0}76%{opacity:0}76.32%{opacity:1}79.2%{opacity:1}79.52%{opacity:0}100%{opacity:0}}
+.d19k39{animation:d19k39 125s ease-in-out infinite both}
+@keyframes d19k40{0%{opacity:0;stroke-dashoffset:0}70.4%{opacity:0;stroke-dashoffset:0}70.8%{opacity:1;stroke-dashoffset:-13.333}75.2%{opacity:1;stroke-dashoffset:-160}75.52%{opacity:0;stroke-dashoffset:-160}81.2%{opacity:0;stroke-dashoffset:-160}81.44%{opacity:1;stroke-dashoffset:-169.677}81.92%{opacity:0.25;stroke-dashoffset:-189.032}82.32%{opacity:1;stroke-dashoffset:-205.161}82.72%{opacity:0.25;stroke-dashoffset:-221.29}83.12%{opacity:1;stroke-dashoffset:-237.419}83.68%{opacity:0;stroke-dashoffset:-260}100%{opacity:0;stroke-dashoffset:-260}}
+.d19k40{animation:d19k40 125s ease-in-out infinite both}
+@keyframes d19k41{0%{opacity:0}85.6%{opacity:0}85.84%{opacity:1}88%{opacity:1}88.24%{opacity:0}100%{opacity:0}}
+.d19k41{animation:d19k41 125s ease-in-out infinite both}
+@keyframes d19k42{0%{opacity:0}89.6%{opacity:0}89.92%{opacity:1}100%{opacity:1}}
+.d19k42{animation:d19k42 125s ease-in-out infinite both}
+@keyframes d19k43{0%{opacity:0}93.12%{opacity:0}93.44%{opacity:1}100%{opacity:1}}
+.d19k43{animation:d19k43 125s ease-in-out infinite both}
+@keyframes d19k44{0%{transform:scaleX(0)}93.6%{transform:scaleX(0)}94.88%{transform:scaleX(1)}100%{transform:scaleX(1)}}
+.d19k44{animation:d19k44 125s ease-in-out infinite both}
+@keyframes d19k45{0%{transform:scaleX(0)}94.88%{transform:scaleX(0)}96.16%{transform:scaleX(1)}100%{transform:scaleX(1)}}
+.d19k45{animation:d19k45 125s ease-in-out infinite both}
+@keyframes d19k46{0%{transform:scaleX(0)}96.16%{transform:scaleX(0)}97.44%{transform:scaleX(1)}100%{transform:scaleX(1)}}
+.d19k46{animation:d19k46 125s ease-in-out infinite both}
+@keyframes d19k47{0%{opacity:0}93.6%{opacity:0}93.92%{opacity:1}97.2%{opacity:1}97.52%{opacity:0}100%{opacity:0}}
+.d19k47{animation:d19k47 125s ease-in-out infinite both}
+@keyframes d19k48{0%{opacity:1}8.8%{opacity:1}9.04%{opacity:0}100%{opacity:0}}
+.d19k48{animation:d19k48 125s ease-in-out infinite both}
+@keyframes d19k49{0%{opacity:0}8.8%{opacity:0}9.04%{opacity:1}17.6%{opacity:1}17.84%{opacity:0}100%{opacity:0}}
+.d19k49{animation:d19k49 125s ease-in-out infinite both}
+@keyframes d19k50{0%{opacity:0}17.6%{opacity:0}17.84%{opacity:1}27.2%{opacity:1}27.44%{opacity:0}100%{opacity:0}}
+.d19k50{animation:d19k50 125s ease-in-out infinite both}
+@keyframes d19k51{0%{opacity:0}27.2%{opacity:0}27.44%{opacity:1}36%{opacity:1}36.24%{opacity:0}100%{opacity:0}}
+.d19k51{animation:d19k51 125s ease-in-out infinite both}
+@keyframes d19k52{0%{opacity:0}36%{opacity:0}36.24%{opacity:1}46.4%{opacity:1}46.64%{opacity:0}100%{opacity:0}}
+.d19k52{animation:d19k52 125s ease-in-out infinite both}
+@keyframes d19k53{0%{opacity:0}46.4%{opacity:0}46.64%{opacity:1}55.2%{opacity:1}55.44%{opacity:0}100%{opacity:0}}
+.d19k53{animation:d19k53 125s ease-in-out infinite both}
+@keyframes d19k54{0%{opacity:0}55.2%{opacity:0}55.44%{opacity:1}65.6%{opacity:1}65.84%{opacity:0}100%{opacity:0}}
+.d19k54{animation:d19k54 125s ease-in-out infinite both}
+@keyframes d19k55{0%{opacity:0}65.6%{opacity:0}65.84%{opacity:1}75.2%{opacity:1}75.44%{opacity:0}100%{opacity:0}}
+.d19k55{animation:d19k55 125s ease-in-out infinite both}
+@keyframes d19k56{0%{opacity:0}75.2%{opacity:0}75.44%{opacity:1}84%{opacity:1}84.24%{opacity:0}100%{opacity:0}}
+.d19k56{animation:d19k56 125s ease-in-out infinite both}
+@keyframes d19k57{0%{opacity:0}84%{opacity:0}84.24%{opacity:1}92.8%{opacity:1}93.04%{opacity:0}100%{opacity:0}}
+.d19k57{animation:d19k57 125s ease-in-out infinite both}
+@keyframes d19k58{0%{opacity:0}92.8%{opacity:0}93.04%{opacity:1}100%{opacity:1}}
+.d19k58{animation:d19k58 125s ease-in-out infinite both}
+@keyframes d19k59{0%{transform:scaleX(0)}99.2%{transform:scaleX(1)}100%{transform:scaleX(1)}}
+.d19k59{animation:d19k59 125s ease-in-out infinite both}
+</style>
+</head>
+<body>
+<svg class="defs" width="0" height="0" aria-hidden="true"><defs>
+<g id="i-letter"><rect x="-46" y="-33" width="92" height="66" rx="8" class="ic"></rect><polyline points="-46,-27 0,8 46,-27" class="ic"></polyline></g>
+<g id="i-check"><circle r="32" class="okc"></circle><polyline points="-14,1 -4,12 15,-11" class="okl"></polyline></g>
+<g id="i-ring"><circle r="32" class="ringc"></circle></g>
+<g id="i-q"><path d="M-40,-32 h80 a10,10 0 0 1 10,10 v44 a10,10 0 0 1 -10,10 h-46 l-20,20 v-20 h-14 a10,10 0 0 1 -10,-10 v-44 a10,10 0 0 1 10,-10 z" class="qb"></path><text y="14" text-anchor="middle" class="f38 b dk">?</text></g>
+<g id="i-tag"><path d="M-36,-24 h38 l34,26 l-34,26 h-38 z" class="tagc"></path><circle cx="-20" cy="2" r="7" class="tagh"></circle></g>
+<g id="i-cal"><rect x="-34" y="-30" width="68" height="62" rx="8" class="ic"></rect><line x1="-34" y1="-12" x2="34" y2="-12" class="ic"></line><line x1="-16" y1="-40" x2="-16" y2="-22" class="ic"></line><line x1="16" y1="-40" x2="16" y2="-22" class="ic"></line></g>
+<g id="i-src"><path d="M-28,-38 h38 l20,20 v56 h-58 z" class="ic"></path><line x1="-15" y1="-6" x2="16" y2="-6" class="ic"></line><line x1="-15" y1="10" x2="16" y2="10" class="ic"></line><line x1="-15" y1="26" x2="6" y2="26" class="ic"></line></g>
+<g id="i-list"><rect x="-32" y="-38" width="64" height="76" rx="8" class="ic"></rect><polyline points="-20,-16 -14,-9 -5,-21" class="ic"></polyline><line x1="4" y1="-14" x2="21" y2="-14" class="ic"></line><polyline points="-20,10 -14,17 -5,5" class="ic"></polyline><line x1="4" y1="12" x2="21" y2="12" class="ic"></line></g>
+<g id="i-note"><rect x="-34" y="-34" width="68" height="68" rx="6" class="ic dsh"></rect><line x1="-18" y1="-12" x2="18" y2="-12" class="ic"></line><line x1="-18" y1="8" x2="10" y2="8" class="ic"></line></g>
+<g id="i-pen"><path d="M-30,30 l8,-26 l36,-36 l18,18 l-36,36 z" class="penc"></path><line x1="-22" y1="4" x2="-4" y2="22" class="pen2"></line></g>
+<g id="i-oct"><polygon points="-14,-34 14,-34 34,-14 34,14 14,34 -14,34 -34,14 -34,-14" class="octc"></polygon><text y="15" text-anchor="middle" class="f38 b wh">!</text></g>
+<g id="i-amb"><circle r="33" class="ambc"></circle><text y="13" text-anchor="middle" class="f34 b dk">i</text></g>
+<g id="i-plant"><path d="M0,40 C-8,0 -60,-6 -74,-52 C-30,-50 -6,-26 0,6 C2,-40 22,-78 58,-92 C66,-46 36,-10 4,12 C20,-12 50,-24 84,-18 C74,14 34,30 0,40 z" class="leaf"></path><path d="M-52,40 h104 l-14,84 h-76 z" class="pot"></path></g>
+<g id="i-sil"><path d="M0,40 C-8,0 -60,-6 -74,-52 C-30,-50 -6,-26 0,6 C2,-40 22,-78 58,-92 C66,-46 36,-10 4,12 C20,-12 50,-24 84,-18 C74,14 34,30 0,40 z" class="sil"></path><path d="M-52,40 h104 l-14,84 h-76 z" class="sil"></path></g>
+<g id="i-silo"><path d="M0,40 C-8,0 -60,-6 -74,-52 C-30,-50 -6,-26 0,6 C2,-40 22,-78 58,-92 C66,-46 36,-10 4,12 C20,-12 50,-24 84,-18 C74,14 34,30 0,40 z" class="silo"></path><path d="M-52,40 h104 l-14,84 h-76 z" class="silo"></path></g>
+</defs></svg>
+
+<!-- ========== DIA 01: AI dióhéjban ========== -->
+<section class="slide hero" id="s01">
+<div class="frame">
+<header class="head"><h1>AI dióhéjban</h1></header>
+<div class="stage ">
+<p class="eyebrow">AI Sales &amp; Marketing Workshop</p>
+<ol class="tl">
+<li><b>1955:</b> <span>Dartmouth-javaslat</span></li>
+<li><b>2012:</b> <span>képfelismerés</span></li>
+<li><b>2017:</b> <span>Transformer</span></li>
+<li><b>2022:</b> <span>ChatGPT</span></li>
+</ol>
+</div>
+
+<footer class="foot"><img src="../assets/logos/wenova-wordmark.png" alt="Wenova"><span class="hint">F11: teljes képernyő</span><span class="sp"></span><a href="#tartalom">Tartalom</a><span class="count"></span></footer>
+</div>
+</section>
+
+<!-- ========== DIA 02: Melyik AI-val dolgozunk ma? ========== -->
+<section class="slide " id="s02">
+<div class="frame">
+<header class="head"><h2>Melyik AI-val dolgozunk ma?</h2></header>
+<div class="stage ">
+<svg viewBox="0 0 1792 590" role="img" aria-label="Négy egymásba zárt keret">
+<rect x="0" y="0" width="1792" height="590" rx="26" class="nest1"></rect><text x="44" y="58" class="f44 b" text-anchor="start">AI</text>
+<rect x="90" y="76" width="1612" height="500" rx="24" class="nest2"></rect><text x="130" y="132" class="f44 b" text-anchor="start">Gépi tanulás</text>
+<rect x="180" y="152" width="1432" height="410" rx="22" class="nest3"></rect><text x="220" y="208" class="f44 b" text-anchor="start">Mélytanulás</text>
+<rect x="270" y="232" width="1252" height="316" rx="20" class="nest4"></rect><text x="896" y="410" class="f56 b dk" text-anchor="middle">Generatív nagy nyelvi modellek (LLM-ek)</text></svg>
+</div>
+<p class="formula">AI ⊃ Gépi tanulás ⊃ Mélytanulás ⊃ Generatív nagy nyelvi modellek (LLM-ek)</p>
+<footer class="foot"><img src="../assets/logos/wenova-wordmark.png" alt="Wenova"><span class="sp"></span><a href="#tartalom">Tartalom</a><span class="count"></span></footer>
+</div>
+</section>
+
+<!-- ========== DIA 03: Mekkora léptékről beszélünk? ========== -->
+<section class="slide " id="s03">
+<div class="frame">
+<header class="head"><h2>Mekkora léptékről beszélünk?</h2></header>
+<div class="stage ">
+<p class="lead">GPT-3, 2020</p>
+<div class="nums">
+<div><b>300 milliárd</b> <span>token</span></div>
+<div><b>175 milliárd</b> <span>paraméter</span></div>
+<div><b>kb. 3,14 × 10²³</b> <span>művelet a tanításban</span></div>
+</div>
+</div>
+
+<footer class="foot"><img src="../assets/logos/wenova-wordmark.png" alt="Wenova"><span class="sp"></span><a href="#tartalom">Tartalom</a><span class="count"></span></footer>
+</div>
+</section>
+
+<!-- ========== DIA 04: Mitől javult a teljesítmény? ========== -->
+<section class="slide " id="s04">
+<div class="frame">
+<header class="head"><h2>Mitől javult a teljesítmény?</h2></header>
+<div class="stage ">
+<div class="tiles">
+<div><svg viewBox="0 0 148 148" aria-hidden="true"><path d="M12,20 h116 l-44,54 v46 l-28,14 v-60 z" class="big"></path></svg><b>Szűrt tanítóanyag</b></div>
+<div><svg viewBox="0 0 148 148" aria-hidden="true"><rect x="14" y="30" width="24" height="90" rx="5" class="big"></rect><rect x="58" y="30" width="24" height="90" rx="5" class="big"></rect><rect x="102" y="30" width="24" height="90" rx="5" class="big"></rect></svg><b>Párhuzamos számítás</b></div>
+<div><svg viewBox="0 0 148 148" aria-hidden="true"><rect x="20" y="20" width="100" height="28" rx="7" class="big"></rect><rect x="20" y="62" width="100" height="28" rx="7" class="big"></rect><rect x="20" y="104" width="100" height="28" rx="7" class="big"></rect></svg><b>Jobb modellfelépítés</b></div>
+<div><svg viewBox="0 0 148 148" aria-hidden="true"><path d="M12,22 h82 a8,8 0 0 1 8,8 v44 a8,8 0 0 1 -8,8 h-52 l-20,20 v-20 h-10 a8,8 0 0 1 -8,-8 v-44 a8,8 0 0 1 8,-8 z" class="big"></path><path d="M116,52 h14 a6,6 0 0 1 6,6 v44 a6,6 0 0 1 -6,6 h-8 v18 l-20,-18 h-40" class="big"></path></svg><b>Tanítás a párbeszédre</b></div>
+</div>
+</div>
+
+<footer class="foot"><img src="../assets/logos/wenova-wordmark.png" alt="Wenova"><span class="sp"></span><a href="#tartalom">Tartalom</a><span class="count"></span></footer>
+</div>
+</section>
+
+<!-- ========== DIA 05: Machine learning | Minták a példákból ========== -->
+<section class="slide " id="s05">
+<div class="frame">
+<header class="head"><h2><span class="em">Machine learning</span><span class="pipe"> | </span>Minták a példákból</h2><span class="tag">Szemléltetés</span></header>
+<div class="stage ">
+<svg viewBox="0 0 1792 620" role="img" aria-label="Tanítópéldákból tanuló modell új levelet becsül"><text x="0" y="38" class="f38 b" text-anchor="start">Tanítópéldák</text><g transform="translate(0 64)" opacity=".55"><rect x="0" y="0" width="330" height="136" rx="14" class="pn"></rect><use href="#i-letter" transform="translate(84 68) scale(1)"></use><use href="#i-check" transform="translate(250 68) scale(1)"></use></g><g transform="translate(0 226)" opacity=".55"><rect x="0" y="0" width="330" height="136" rx="14" class="pn"></rect><use href="#i-letter" transform="translate(84 68) scale(1)"></use><use href="#i-check" transform="translate(250 68) scale(1)"></use></g><g transform="translate(0 388)" opacity=".55"><rect x="0" y="0" width="330" height="136" rx="14" class="pn"></rect><use href="#i-letter" transform="translate(84 68) scale(1)"></use><use href="#i-ring" transform="translate(250 68) scale(1)"></use></g><rect x="640" y="64" width="460" height="460" rx="20" class="box"></rect><text x="870" y="128" class="f44 b" text-anchor="middle">Modell</text><g class="d05k1" style="opacity:0.3"><line x1="350" y1="294" x2="602" y2="294" class="ar"></line><polygon points="622,294 602,306 602,282" class="ar-h"></polygon></g><g class="d05k2" style="opacity:1"><line x1="632" y1="244" x2="632" y2="344" class="lock"></line></g><g class="d05k3" style="transform:translate(705px,226px);opacity:0"><rect x="0" y="0" width="330" height="136" rx="14" class="pn"></rect><use href="#i-letter" transform="translate(84 68) scale(1)"></use><use href="#i-check" transform="translate(250 68) scale(1)"></use></g><g class="d05k4" style="transform:translate(705px,226px);opacity:0"><rect x="0" y="0" width="330" height="136" rx="14" class="pn"></rect><use href="#i-letter" transform="translate(84 68) scale(1)"></use><use href="#i-check" transform="translate(250 68) scale(1)"></use></g><g class="d05k5" style="transform:translate(705px,226px);opacity:0"><rect x="0" y="0" width="330" height="136" rx="14" class="pn"></rect><use href="#i-letter" transform="translate(84 68) scale(1)"></use><use href="#i-ring" transform="translate(250 68) scale(1)"></use></g><g class="d05k6" style="opacity:1"><circle cx="770" cy="250" r="30" class="pat1"></circle></g><g class="d05k7" style="opacity:1"><circle cx="730" cy="330" r="30" class="pat1"></circle></g><g class="d05k8" style="opacity:1"><circle cx="810" cy="340" r="30" class="pat1"></circle></g><g class="d05k9" style="opacity:1"><rect x="902" y="222" width="56" height="56" rx="8" class="pat2"></rect></g><g class="d05k10" style="opacity:1"><rect x="872" y="312" width="56" height="56" rx="8" class="pat2"></rect></g><g class="d05k11" style="opacity:1"><rect x="952" y="312" width="56" height="56" rx="8" class="pat2"></rect></g><text x="1460" y="38" class="f38 b" text-anchor="middle">Új levél</text><rect x="1295" y="64" width="330" height="136" rx="14" class="dash"></rect><use href="#i-letter" transform="translate(1460 132) scale(1)"></use><g class="d05k12" style="opacity:1"><line x1="1285" y1="132" x2="1135.694" y2="210.676" class="ar"></line><polygon points="1118,220 1130.1,200.06 1141.288,221.293" class="ar-h"></polygon></g><g class="d05k13" style="transform:translate(1000px,180px);opacity:0"><rect x="0" y="0" width="330" height="136" rx="14" class="dash"></rect><use href="#i-letter" transform="translate(165 68) scale(1)"></use></g><g class="d05k14" style="opacity:1"><use href="#i-check" transform="translate(1340 330) scale(1.2)"></use><text x="1395" y="344" class="f44 b" text-anchor="start">Ajánlatkérés?</text></g><g class="d05k15" style="opacity:1"><line x1="1190" y1="20" x2="1190" y2="560" class="div"></line><text x="620" y="600" class="f38 b or" text-anchor="middle">Tanítás</text><text x="1490" y="600" class="f38 b or" text-anchor="middle">Kipróbálás</text></g></svg>
+</div>
+<div class="prog"><i class="d05k20" style="transform:scaleX(1)"></i></div>
+<ol class="caps" style="--n:4">
+<li class="d05k16" style="opacity:0"><span class="n">1/4</span><span>Előre megjelölt példákat adsz.</span></li>
+<li class="d05k17" style="opacity:0"><span class="n">2/4</span><span>A modell megtanul jelekből következtetni.</span></li>
+<li class="d05k18" style="opacity:0"><span class="n">3/4</span><span>Az új üzenetnek még nincs címkéje. A modell arra is ad egy becslést.</span></li>
+<li class="d05k19" style="opacity:1"><span class="n">4/4</span><span>A használhatóságát félretett példákon nézed meg.</span></li>
+</ol>
+<footer class="foot"><img src="../assets/logos/wenova-wordmark.png" alt="Wenova"><span class="sp"></span><a href="#tartalom">Tartalom</a><span class="count"></span></footer>
+</div>
+</section>
+
+<!-- ========== DIA 06: Deep learning | Mit csinálnak a rétegek? ========== -->
+<section class="slide " id="s06">
+<div class="frame">
+<header class="head"><h2><span class="em">Deep learning</span><span class="pipe"> | </span>Mit csinálnak a rétegek?</h2><span class="tag">Szemléltetés</span></header>
+<div class="stage ">
+<svg viewBox="0 0 1792 620" role="img" aria-label="Rétegek az élektől a tárgyig"><line x1="520" y1="170" x2="850" y2="170" class="edge"></line><line x1="520" y1="170" x2="850" y2="330" class="edge"></line><line x1="520" y1="170" x2="850" y2="490" class="edge"></line><line x1="520" y1="330" x2="850" y2="170" class="edge"></line><line x1="520" y1="330" x2="850" y2="330" class="edge"></line><line x1="520" y1="330" x2="850" y2="490" class="edge"></line><line x1="520" y1="490" x2="850" y2="170" class="edge"></line><line x1="520" y1="490" x2="850" y2="330" class="edge"></line><line x1="520" y1="490" x2="850" y2="490" class="edge"></line><line x1="850" y1="170" x2="1180" y2="170" class="edge"></line><line x1="850" y1="170" x2="1180" y2="330" class="edge"></line><line x1="850" y1="170" x2="1180" y2="490" class="edge"></line><line x1="850" y1="330" x2="1180" y2="170" class="edge"></line><line x1="850" y1="330" x2="1180" y2="330" class="edge"></line><line x1="850" y1="330" x2="1180" y2="490" class="edge"></line><line x1="850" y1="490" x2="1180" y2="170" class="edge"></line><line x1="850" y1="490" x2="1180" y2="330" class="edge"></line><line x1="850" y1="490" x2="1180" y2="490" class="edge"></line><rect x="50" y="190" width="280" height="280" rx="22" class="photo"></rect><use href="#i-plant" transform="translate(190 320) scale(1.05)"></use><line x1="340" y1="330" x2="442" y2="330" class="ar"></line><polygon points="462,330 442,342 442,318" class="ar-h"></polygon><g class="d06k1" style="opacity:1;stroke-width:16"><line x1="520" y1="170" x2="850" y2="170" class="w1"></line></g><g class="d06k2" style="opacity:1;stroke-width:5"><line x1="520" y1="330" x2="850" y2="170" class="w2"></line></g><circle cx="520" cy="170" r="46" class="nd"></circle><circle cx="520" cy="330" r="46" class="nd"></circle><circle cx="520" cy="490" r="46" class="nd"></circle><circle cx="850" cy="170" r="46" class="nd"></circle><circle cx="850" cy="330" r="46" class="nd"></circle><circle cx="850" cy="490" r="46" class="nd"></circle><circle cx="1180" cy="170" r="46" class="nd"></circle><circle cx="1180" cy="330" r="46" class="nd"></circle><circle cx="1180" cy="490" r="46" class="nd"></circle><g class="d06k3" style="opacity:1"><circle cx="850" cy="170" r="58" class="halo"></circle><text x="850" y="86" class="f38 b or" text-anchor="middle">Neuron</text></g><g class="d06k4" style="opacity:1"><text x="672" y="140" class="f38 b or" text-anchor="middle">Súly</text></g><g class="d06k5" style="opacity:1"><g transform="translate(520 170)"><line x1="-22" y1="18" x2="22" y2="-18" class="gl"></line></g></g><g class="d06k6" style="opacity:1"><g transform="translate(520 330)"><line x1="-24" y1="0" x2="24" y2="0" class="gl"></line></g></g><g class="d06k7" style="opacity:1"><g transform="translate(520 490)"><line x1="0" y1="-24" x2="0" y2="24" class="gl"></line></g></g><g class="d06k8" style="opacity:1"><g transform="translate(850 170)"><circle r="22" class="gl"></circle></g></g><g class="d06k9" style="opacity:1"><g transform="translate(850 330)"><path d="M-24,12 Q0,-34 24,12" class="gl"></path></g></g><g class="d06k10" style="opacity:1"><g transform="translate(850 490)"><path d="M-20,-18 h40 l-10,38 h-20 z" class="gl"></path></g></g><g class="d06k11" style="opacity:1"><circle cx="1180" cy="170" r="56" class="halo"></circle><use href="#i-sil" transform="translate(1180 164) scale(.3)"></use></g><g class="d06k12" style="opacity:1"><circle cx="1180" cy="330" r="56" class="halo"></circle><use href="#i-sil" transform="translate(1180 324) scale(.3)"></use></g><g class="d06k13" style="opacity:1"><circle cx="1180" cy="490" r="56" class="halo"></circle><use href="#i-sil" transform="translate(1180 484) scale(.3)"></use></g><line x1="1236" y1="330" x2="1372" y2="330" class="ar"></line><polygon points="1392,330 1372,342 1372,318" class="ar-h"></polygon><use href="#i-sil" transform="translate(1590 310) scale(1.5)" opacity=".28"></use><g class="d06k14" style="opacity:1"><use href="#i-silo" transform="translate(1590 310) scale(1.5)"></use></g><text x="520" y="600" class="f38 b" text-anchor="middle">Élek</text><text x="850" y="600" class="f38 b" text-anchor="middle">Formák</text><text x="1180" y="600" class="f38 b" text-anchor="middle">Tárgy</text></svg>
+</div>
+<div class="prog"><i class="d06k19" style="transform:scaleX(1)"></i></div>
+<ol class="caps" style="--n:4">
+<li class="d06k15" style="opacity:0"><span class="n">1/4</span><span>A kis pont egy mesterséges neuron, egyszerű számolóegység.</span></li>
+<li class="d06k16" style="opacity:0"><span class="n">2/4</span><span>A súly az egyik fajta tanulható paraméter. A vonal vastagsága ezt szemlélteti.</span></li>
+<li class="d06k17" style="opacity:0"><span class="n">3/4</span><span>A rétegek az egyszerű jelekből összetettebb mintázatokat építhetnek.</span></li>
+<li class="d06k18" style="opacity:1"><span class="n">4/4</span><span>Előbb egy élt, aztán egy formát, végül egy cserepet ismersz fel.</span></li>
+</ol>
+<footer class="foot"><img src="../assets/logos/wenova-wordmark.png" alt="Wenova"><span class="sp"></span><a href="#tartalom">Tartalom</a><span class="count"></span></footer>
+</div>
+</section>
+
+<!-- ========== DIA 07: Backpropagation | Melyik súlyon állítsunk? ========== -->
+<section class="slide " id="s07">
+<div class="frame">
+<header class="head"><h2><span class="em">Backpropagation</span><span class="pipe"> | </span>Melyik súlyon állítsunk?</h2><span class="tag">Szemléltetés</span></header>
+<div class="stage ">
+<svg viewBox="0 0 1792 620" role="img" aria-label="Hibavisszaterjesztés lépései"><use href="#i-letter" transform="translate(150 300) scale(1.7)"></use><line x1="245" y1="300" x2="328" y2="300" class="ar"></line><polygon points="348,300 328,312 328,288" class="ar-h"></polygon><line x1="400" y1="150" x2="720" y2="150" class="edge"></line><line x1="400" y1="150" x2="720" y2="300" class="edge"></line><line x1="400" y1="150" x2="720" y2="450" class="edge"></line><line x1="400" y1="300" x2="720" y2="150" class="edge"></line><line x1="400" y1="300" x2="720" y2="300" class="edge"></line><line x1="400" y1="300" x2="720" y2="450" class="edge"></line><line x1="400" y1="450" x2="720" y2="150" class="edge"></line><line x1="400" y1="450" x2="720" y2="300" class="edge"></line><line x1="400" y1="450" x2="720" y2="450" class="edge"></line><line x1="720" y1="150" x2="1040" y2="150" class="edge"></line><line x1="720" y1="150" x2="1040" y2="300" class="edge"></line><line x1="720" y1="150" x2="1040" y2="450" class="edge"></line><line x1="720" y1="300" x2="1040" y2="150" class="edge"></line><line x1="720" y1="300" x2="1040" y2="300" class="edge"></line><line x1="720" y1="300" x2="1040" y2="450" class="edge"></line><line x1="720" y1="450" x2="1040" y2="150" class="edge"></line><line x1="720" y1="450" x2="1040" y2="300" class="edge"></line><line x1="720" y1="450" x2="1040" y2="450" class="edge"></line><g class="d07k1" style="stroke-width:16"><line x1="400" y1="150" x2="720" y2="300" class="w1"></line></g><g class="d07k2" style="stroke-width:16"><line x1="720" y1="300" x2="1040" y2="150" class="w1"></line></g><g class="d07k3" style="stroke-width:2"><line x1="400" y1="450" x2="720" y2="300" class="w2"></line></g><g class="d07k4" style="opacity:0;stroke-dashoffset:240"><line x1="1040" y1="150" x2="720" y2="300" class="back"></line></g><g class="d07k5" style="opacity:0;stroke-dashoffset:240"><line x1="1040" y1="300" x2="720" y2="300" class="back"></line></g><g class="d07k6" style="opacity:0;stroke-dashoffset:240"><line x1="1040" y1="450" x2="720" y2="300" class="back"></line></g><g class="d07k7" style="opacity:0;stroke-dashoffset:240"><line x1="720" y1="300" x2="400" y2="150" class="back"></line></g><g class="d07k8" style="opacity:0;stroke-dashoffset:240"><line x1="720" y1="300" x2="400" y2="300" class="back"></line></g><g class="d07k9" style="opacity:0;stroke-dashoffset:240"><line x1="720" y1="300" x2="400" y2="450" class="back"></line></g><circle cx="400" cy="150" r="40" class="nd"></circle><circle cx="400" cy="300" r="40" class="nd"></circle><circle cx="400" cy="450" r="40" class="nd"></circle><circle cx="720" cy="150" r="40" class="nd"></circle><circle cx="720" cy="300" r="40" class="nd"></circle><circle cx="720" cy="450" r="40" class="nd"></circle><circle cx="1040" cy="150" r="40" class="nd"></circle><circle cx="1040" cy="300" r="40" class="nd"></circle><circle cx="1040" cy="450" r="40" class="nd"></circle><g class="d07k10" style="transform:translate(1270px,230px);opacity:0"><circle cx="0" cy="0" r="20" class="dot"></circle></g><g class="d07k11" style="transform:translate(1270px,230px);opacity:0"><circle cx="0" cy="0" r="20" class="dot"></circle></g><g class="d07k12" style="opacity:0"><line x1="1236" y1="300" x2="1110" y2="300" class="bk"></line><polygon points="1090,300 1110,288 1110,312" class="bk-h"></polygon></g><g class="d07k13" style="opacity:1"><text x="1340" y="150" class="f34 b" text-anchor="middle">Becslés</text><use href="#i-ring" transform="translate(1340 225) scale(1.1)"></use></g><text x="1640" y="150" class="f34 b" text-anchor="middle">Helyes címke</text><use href="#i-check" transform="translate(1640 225) scale(1.1)"></use><g class="d07k14" style="opacity:1"><rect x="1240" y="100" width="540" height="200" rx="18" class="errf"></rect><line x1="1385" y1="225" x2="1595" y2="225" class="errl"></line><text x="1490" y="208" class="f38 b rd" text-anchor="middle">Hiba</text></g><text x="1240" y="372" class="f34 b" text-anchor="start">A helyes címke</text><text x="1240" y="416" class="f34 b" text-anchor="start">becsült valószínűsége</text><rect x="1240" y="444" width="540" height="60" rx="12" class="track"></rect><g class="d07k15 fb" style="transform:scaleX(0.8)"><rect x="1240" y="444" width="540" height="60" rx="12" class="fillb"></rect></g></svg>
+</div>
+<div class="prog"><i class="d07k21" style="transform:scaleX(1)"></i></div>
+<ol class="pills">
+<li><i class="d07k16" style="opacity:0"></i><b>Becsülj</b></li>
+<li><i class="d07k17" style="opacity:0"></i><b>Mérd a hibát</b></li>
+<li><i class="d07k18" style="opacity:0"></i><b>Számolj visszafelé</b></li>
+<li><i class="d07k19" style="opacity:0"></i><b>Frissítsd a súlyokat</b></li>
+<li><i class="d07k20" style="opacity:1"></i><b>Új előrehaladás</b></li>
+</ol>
+<footer class="foot"><img src="../assets/logos/wenova-wordmark.png" alt="Wenova"><span class="sp"></span><a href="#tartalom">Tartalom</a><span class="count"></span></footer>
+</div>
+</section>
+
+<!-- ========== DIA 08: Attention | Mely szövegrészek számítanak itt? ========== -->
+<section class="slide " id="s08">
+<div class="frame">
+<header class="head"><h2><span class="em">Attention</span><span class="pipe"> | </span>Mely szövegrészek számítanak itt?</h2><span class="tag">Szemléltetés</span></header>
+<div class="stage ">
+<svg viewBox="0 0 1792 620" role="img" aria-label="Súlyozott figyelem az utolsó pozícióra"><g class="d08k1" style="opacity:1"><rect x="60" y="30" width="400" height="120" rx="14" class="pn"></rect><text x="260" y="110" class="f52 b" text-anchor="middle">Ajánlatot</text></g><g class="d08k2" style="opacity:1"><rect x="520" y="30" width="270" height="120" rx="14" class="pn"></rect><text x="655" y="110" class="f52 b" text-anchor="middle">kérek</text></g><g class="d08k3" style="opacity:1"><rect x="850" y="30" width="640" height="120" rx="14" class="pn"></rect><text x="1170" y="110" class="f52 b" text-anchor="middle">növénygondozásra.</text></g><g class="d08k4" style="opacity:1"><path d="M260,150 C260,330 1000,260 1090,420" class="at1"></path></g><g class="d08k5" style="opacity:1"><path d="M655,150 C655,300 1150,280 1210,420" class="at2"></path></g><g class="d08k6" style="opacity:1;stroke-dashoffset:-420"><path d="M260,150 C260,330 1000,260 1090,420" class="fl1"></path></g><g class="d08k7" style="opacity:1;stroke-dashoffset:-420"><path d="M655,150 C655,300 1150,280 1210,420" class="fl2"></path></g><g class="d08k8" style="opacity:1"><rect x="850" y="420" width="640" height="170" rx="14" class="hot"></rect><text x="1170" y="495" class="f52 b dk" text-anchor="middle">növénygondozásra</text></g><g class="d08k9 fb" style="transform:scaleX(1)"><rect x="880" y="530" width="400" height="34" rx="8" class="bar1"></rect></g><g class="d08k10 fb" style="transform:scaleX(1)"><rect x="1290" y="530" width="170" height="34" rx="8" class="bar2"></rect></g></svg>
+</div>
+<div class="prog"><i class="d08k14" style="transform:scaleX(1)"></i></div>
+<ol class="caps" style="--n:3">
+<li class="d08k11" style="opacity:0"><span class="n">1/3</span><span>Egy adott szöveghely feldolgozása.</span></li>
+<li class="d08k12" style="opacity:0"><span class="n">2/3</span><span>A modell a többi helyről eltérő mértékben vesz át információt.</span></li>
+<li class="d08k13" style="opacity:1"><span class="n">3/3</span><span>A vastagabb vonal az eltérő súlyt szemlélteti.</span></li>
+</ol>
+<footer class="foot"><img src="../assets/logos/wenova-wordmark.png" alt="Wenova"><span class="sp"></span><a href="#tartalom">Tartalom</a><span class="count"></span></footer>
+</div>
+</section>
+
+<!-- ========== DIA 09: Transformer | Figyelem, rétegről rétegre ========== -->
+<section class="slide " id="s09">
+<div class="frame">
+<header class="head"><h2><span class="em">Transformer</span><span class="pipe"> | </span>Figyelem, rétegről rétegre</h2><span class="tag">Szemléltetés</span></header>
+<div class="stage ">
+<svg viewBox="0 0 1792 620" role="img" aria-label="Jelek haladása a Transformer rétegein"><rect x="700" y="30" width="500" height="570" rx="20" class="box"></rect><rect x="735" y="60" width="430" height="210" rx="14" class="sub"></rect><text x="950" y="118" class="f38 b" text-anchor="middle">Figyelem</text><rect x="735" y="300" width="430" height="270" rx="14" class="sub"></rect><text x="950" y="358" class="f38 b" text-anchor="middle">Átalakítás</text><rect x="1270" y="90" width="210" height="510" rx="20" class="box"></rect><rect x="1550" y="90" width="210" height="510" rx="20" class="box"></rect><text x="1515" y="62" class="f38 b" text-anchor="middle">Következő réteg</text><rect x="488" y="250" width="100" height="100" rx="16" class="dash"></rect><g class="d09k1" style="opacity:0"><path d="M90,240 C90,120 390,120 390,232" class="arc"></path><path d="M240,240 C240,170 390,170 390,232" class="arc"></path><polygon points="390,250 376,226 404,226" class="arh"></polygon></g><g class="d09k4" style="transform:translate(1655px,200px) scale(0.72);opacity:1"><g class="d09k2" style="opacity:0"><circle cx="0" cy="0" r="50" class="chip"></circle><text x="0" y="19" class="f52 b dk" text-anchor="middle">1</text></g><g class="d09k3" style="opacity:1"><polygon points="0,-58 58,0 0,58 -58,0" class="chip2"></polygon><text x="0" y="19" class="f52 b dk" text-anchor="middle">1</text></g></g><g class="d09k7" style="transform:translate(1655px,340px) scale(0.72);opacity:1"><g class="d09k5" style="opacity:0"><circle cx="0" cy="0" r="50" class="chip"></circle><text x="0" y="19" class="f52 b dk" text-anchor="middle">2</text></g><g class="d09k6" style="opacity:1"><polygon points="0,-58 58,0 0,58 -58,0" class="chip2"></polygon><text x="0" y="19" class="f52 b dk" text-anchor="middle">2</text></g></g><g class="d09k10" style="transform:translate(1655px,480px) scale(0.72);opacity:1"><g class="d09k8" style="opacity:0"><circle cx="0" cy="0" r="50" class="chip"></circle><text x="0" y="19" class="f52 b dk" text-anchor="middle">3</text></g><g class="d09k9" style="opacity:1"><polygon points="0,-58 58,0 0,58 -58,0" class="chip2"></polygon><text x="0" y="19" class="f52 b dk" text-anchor="middle">3</text></g></g></svg>
+</div>
+<div class="prog"><i class="d09k15" style="transform:scaleX(1)"></i></div>
+<ol class="pills">
+<li><i class="d09k11" style="opacity:0"></i><b>Sorrend</b></li>
+<li><i class="d09k12" style="opacity:0"></i><b>Figyelem</b></li>
+<li><i class="d09k13" style="opacity:0"></i><b>Átalakítás</b></li>
+<li><i class="d09k14" style="opacity:1"></i><b>Következő réteg</b></li>
+</ol>
+<footer class="foot"><img src="../assets/logos/wenova-wordmark.png" alt="Wenova"><span class="sp"></span><a href="#tartalom">Tartalom</a><span class="count"></span></footer>
+</div>
+</section>
+
+<!-- ========== DIA 10: A szövegből tokenek lesznek ========== -->
+<section class="slide " id="s10">
+<div class="frame">
+<header class="head"><h2>A szövegből tokenek lesznek</h2><span class="tag">Szemléltetés</span></header>
+<div class="stage ">
+<svg viewBox="0 0 1792 590" role="img" aria-label="Szövegből tokenek és számazonosítók"><text x="280" y="44" class="f44 b" text-anchor="middle">Input</text><text x="900" y="44" class="f44 b" text-anchor="middle">Tokenek</text><text x="1520" y="44" class="f44 b" text-anchor="middle">Számazonosítók</text><rect x="10" y="90" width="540" height="170" rx="18" class="paper"></rect><text x="280" y="192" class="f52 b ink" text-anchor="middle">Írj rövid választ.</text><g class="d10k1 fr" style="transform:scaleX(0)"><rect x="14" y="94" width="532" height="162" rx="16" class="papc"></rect></g><g class="d10k2" style="opacity:1"><rect x="170" y="290" width="220" height="76" rx="38" class="pill2"></rect><text x="280" y="342" class="f38 b dk" text-anchor="middle">Prompt</text></g><g class="d10k3" style="transform:translate(690px,150px);opacity:0"><text x="0" y="0" class="f44 b" text-anchor="start">Írj rövid választ.</text></g><g class="d10k4" style="opacity:1"><rect x="680" y="90" width="440" height="104" rx="14" class="tok"></rect><text x="712" y="160" class="f52 b" text-anchor="start">Írj</text></g><g class="d10k5" style="opacity:1"><line x1="1130" y1="142" x2="1280" y2="142" class="ar"></line><polygon points="1300,142 1280,154 1280,130" class="ar-h"></polygon><rect x="1320" y="90" width="400" height="104" rx="14" class="num"></rect><text x="1520" y="162" class="f56 m" text-anchor="middle">01</text></g><g class="d10k6" style="opacity:1"><rect x="680" y="214" width="440" height="104" rx="14" class="tok"></rect><rect x="698" y="236" width="34" height="60" rx="6" class="space"></rect><text x="750" y="284" class="f52 b" text-anchor="start">rövid</text></g><g class="d10k7" style="opacity:1"><line x1="1130" y1="266" x2="1280" y2="266" class="ar"></line><polygon points="1300,266 1280,278 1280,254" class="ar-h"></polygon><rect x="1320" y="214" width="400" height="104" rx="14" class="num"></rect><text x="1520" y="286" class="f56 m" text-anchor="middle">02</text></g><g class="d10k8" style="opacity:1"><rect x="680" y="338" width="440" height="104" rx="14" class="tok"></rect><rect x="698" y="360" width="34" height="60" rx="6" class="space"></rect><text x="750" y="408" class="f52 b" text-anchor="start">választ</text></g><g class="d10k9" style="opacity:1"><line x1="1130" y1="390" x2="1280" y2="390" class="ar"></line><polygon points="1300,390 1280,402 1280,378" class="ar-h"></polygon><rect x="1320" y="338" width="400" height="104" rx="14" class="num"></rect><text x="1520" y="410" class="f56 m" text-anchor="middle">03</text></g><g class="d10k10" style="opacity:1"><rect x="680" y="462" width="440" height="104" rx="14" class="tok"></rect><text x="712" y="532" class="f52 b" text-anchor="start">.</text></g><g class="d10k11" style="opacity:1"><line x1="1130" y1="514" x2="1280" y2="514" class="ar"></line><polygon points="1300,514 1280,526 1280,502" class="ar-h"></polygon><rect x="1320" y="462" width="400" height="104" rx="14" class="num"></rect><text x="1520" y="534" class="f56 m" text-anchor="middle">04</text></g></svg>
+</div>
+<div class="prog"><i class="d10k16" style="transform:scaleX(1)"></i></div>
+<ol class="caps" style="--n:4">
+<li class="d10k12" style="opacity:0"><span class="n">1/4</span><span>Az input az, amit a modell megkap. A prompt a kérésed.</span></li>
+<li class="d10k13" style="opacity:0"><span class="n">2/4</span><span>A rendszer tokenekre bontja a szöveget.</span></li>
+<li class="d10k14" style="opacity:0"><span class="n">3/4</span><span>Minden tokenhez tartozik egy számazonosító.</span></li>
+<li class="d10k15" style="opacity:1"><span class="n">4/4</span><span>A pontos vágás és a szám az adott modelltől függ.</span></li>
+</ol>
+<footer class="foot"><img src="../assets/logos/wenova-wordmark.png" alt="Wenova"><span class="sp"></span><a href="#tartalom">Tartalom</a><span class="count"></span></footer>
+</div>
+</section>
+
+<!-- ========== DIA 11: A kimenet lépésenként készül ========== -->
+<section class="slide " id="s11">
+<div class="frame">
+<header class="head"><h2>A kimenet lépésenként készül</h2><span class="tag">Kitalált példa</span></header>
+<p class="flow"><span><i class="d11k20" style="opacity:0"></i><b>Prompt + ügyféllevél</b></span> <em>→</em> <span><i class="d11k21" style="opacity:0"></i><b>LLM</b></span> <em>→</em> <span><i class="d11k22" style="opacity:0"></i><b>Következő token</b></span> <em>→</em> <span><i class="d11k23" style="opacity:1"></i><b>Kimenet</b></span></p>
+<div class="stage ">
+<svg viewBox="0 0 1792 590" role="img" aria-label="Tokenenként felépülő válasz"><g class="d11k1" style="transform:translate(0px,0px);opacity:1"><rect x="0" y="10" width="400" height="84" rx="14" class="pn"></rect><text x="200" y="66" class="f38 b" text-anchor="middle">Prompt</text></g><g class="d11k2" style="transform:translate(0px,0px);opacity:1"><rect x="0" y="110" width="400" height="84" rx="14" class="pn"></rect><text x="200" y="166" class="f38 b" text-anchor="middle">Ügyféllevél</text></g><g class="d11k3" style="opacity:1"><line x1="410" y1="110" x2="510" y2="110" class="ar"></line><polygon points="530,110 510,122 510,98" class="ar-h"></polygon></g><rect x="545" y="10" width="300" height="200" rx="20" class="box"></rect><text x="695" y="130" class="f56 b" text-anchor="middle">LLM</text><line x1="855" y1="110" x2="940" y2="110" class="ar"></line><polygon points="960,110 940,122 940,98" class="ar-h"></polygon><g class="d11k4 fbb" style="transform:scaleY(0.3)"><rect x="985" y="15" width="100" height="200" rx="8" class="pb"></rect></g><g class="d11k5 fbb" style="transform:scaleY(0.95)"><rect x="1125" y="15" width="100" height="200" rx="8" class="pb"></rect></g><g class="d11k6 fbb" style="transform:scaleY(0.45)"><rect x="1265" y="15" width="100" height="200" rx="8" class="pb"></rect></g><g class="d11k7" style="opacity:0"><rect x="1119" y="9" width="112" height="212" rx="10" class="sel"></rect></g><g class="d11k8" style="opacity:0"><rect x="1259" y="9" width="112" height="212" rx="10" class="sel"></rect></g><g class="d11k9" style="opacity:0"><rect x="979" y="9" width="112" height="212" rx="10" class="sel"></rect></g><g class="d11k10" style="opacity:0"><rect x="1119" y="9" width="112" height="212" rx="10" class="sel"></rect></g><g class="d11k11" style="transform:translate(270px,480px);opacity:1"><rect x="0" y="0" width="270" height="84" rx="14" class="tokh"></rect><text x="135" y="58" class="f44 b dk" text-anchor="middle">Köszönöm</text></g><g class="d11k12" style="transform:translate(0px,228px);opacity:1"><rect x="0" y="0" width="270" height="68" rx="14" class="tokc"></rect><text x="135" y="48" class="f34 b" text-anchor="middle">Köszönöm</text></g><g class="d11k13" style="transform:translate(556px,480px);opacity:1"><rect x="0" y="0" width="80" height="84" rx="14" class="tokh"></rect><text x="40" y="58" class="f44 b dk" text-anchor="middle">a</text></g><g class="d11k14" style="transform:translate(290px,228px);opacity:1"><rect x="0" y="0" width="80" height="68" rx="14" class="tokc"></rect><text x="40" y="48" class="f34 b" text-anchor="middle">a</text></g><g class="d11k15" style="transform:translate(652px,480px);opacity:1"><rect x="0" y="0" width="190" height="84" rx="14" class="tokh"></rect><text x="95" y="58" class="f44 b dk" text-anchor="middle">kérdést</text></g><g class="d11k16" style="transform:translate(0px,308px);opacity:1"><rect x="0" y="0" width="190" height="68" rx="14" class="tokc"></rect><text x="95" y="48" class="f34 b" text-anchor="middle">kérdést</text></g><g class="d11k17" style="transform:translate(858px,480px);opacity:1"><rect x="0" y="0" width="60" height="84" rx="14" class="tokh"></rect><text x="30" y="58" class="f44 b dk" text-anchor="middle">.</text></g><g class="d11k18" style="transform:translate(210px,308px);opacity:1"><rect x="0" y="0" width="60" height="68" rx="14" class="tokc"></rect><text x="30" y="48" class="f34 b" text-anchor="middle">.</text></g><text x="0" y="536" class="f44 b" text-anchor="start">Kimenet</text><line x1="270" y1="578" x2="1200" y2="578" class="ln"></line><g class="d11k19" style="opacity:1"><polygon points="1000,486 1032,486 1054,508 1054,540 1032,562 1000,562 978,540 978,508" class="octc"></polygon><rect x="1003" y="511" width="26" height="26" class="wfill"></rect></g></svg>
+</div>
+<div class="prog"><i class="d11k28" style="transform:scaleX(1)"></i></div>
+<ol class="caps" style="--n:4">
+<li class="d11k24" style="opacity:0"><span class="n">1/4</span><span>A háló az addigi szöveg alapján számol.</span></li>
+<li class="d11k25" style="opacity:0"><span class="n">2/4</span><span>A generálás kiválaszt egy tokent.</span></li>
+<li class="d11k26" style="opacity:0"><span class="n">3/4</span><span>A következő döntéshez már ez is rendelkezésre áll.</span></li>
+<li class="d11k27" style="opacity:1"><span class="n">4/4</span><span>Így alakul ki a mondat, amíg elér egy megállási feltételt.</span></li>
+</ol>
+<footer class="foot"><img src="../assets/logos/wenova-wordmark.png" alt="Wenova"><span class="sp"></span><a href="#tartalom">Tartalom</a><span class="count"></span></footer>
+</div>
+</section>
+
+<!-- ========== DIA 12: Mi gyűlik össze egy chatben? ========== -->
+<section class="slide " id="s12">
+<div class="frame">
+<header class="head"><h2>Mi gyűlik össze egy chatben?</h2><span class="tag">Szemléltetés</span></header>
+<div class="stage ">
+<svg viewBox="0 0 1792 590" role="img" aria-label="A kontextus megtelik, a legrégebbi kártyák kikerülnek"><text x="0" y="40" class="f38 b" text-anchor="start">Chatelőzmény</text><text x="450" y="40" class="f38 b" text-anchor="start">Aktuális kontextus</text><rect x="0" y="60" width="420" height="96" rx="14" class="srcc"></rect><text x="210" y="100" class="f34 b dk" text-anchor="middle">Alapcsomag:</text><text x="210" y="140" class="f34 b dk" text-anchor="middle">20 növény</text><g class="d12k1" style="opacity:1"><rect x="-6" y="54" width="432" height="108" rx="18" class="mark"></rect></g><g transform="translate(0 168)"><rect x="0" y="0" width="150" height="56" rx="18" class="bu1"></rect><line x1="24" y1="28" x2="126" y2="28" class="bl"></line></g><g transform="translate(250 236)"><rect x="0" y="0" width="150" height="56" rx="18" class="bu2"></rect><line x1="24" y1="28" x2="126" y2="28" class="bl"></line></g><g transform="translate(0 304)"><rect x="0" y="0" width="150" height="56" rx="18" class="bu1"></rect><line x1="24" y1="28" x2="126" y2="28" class="bl"></line></g><g transform="translate(150 372)"><rect x="0" y="0" width="270" height="58" rx="18" class="cmdc"></rect><text x="135" y="41" class="f34 b" text-anchor="middle">Írj rövidebben</text></g><g transform="translate(0 440)"><rect x="0" y="0" width="150" height="56" rx="18" class="bu1"></rect><line x1="24" y1="28" x2="126" y2="28" class="bl"></line></g><g transform="translate(250 508)"><rect x="0" y="0" width="150" height="56" rx="18" class="bu2"></rect><line x1="24" y1="28" x2="126" y2="28" class="bl"></line></g><rect x="450" y="130" width="216" height="300" rx="12" class="slot"></rect><rect x="674" y="130" width="216" height="300" rx="12" class="slot"></rect><rect x="898" y="130" width="216" height="300" rx="12" class="slot"></rect><rect x="1122" y="130" width="216" height="300" rx="12" class="slot"></rect><rect x="1346" y="130" width="216" height="300" rx="12" class="slot"></rect><rect x="1570" y="130" width="216" height="300" rx="12" class="stripe"></rect><text x="1678" y="482" class="f34 b" text-anchor="middle">Válaszhely</text><g class="d12k2" style="transform:translate(450px,130px) scale(1);opacity:0"><rect x="0" y="0" width="216" height="300" rx="12" class="srcc"></rect><text x="108" y="136" class="f34 b dk" text-anchor="middle">Alapcsomag:</text><text x="108" y="180" class="f34 b dk" text-anchor="middle">20 növény</text></g><g class="d12k3" style="transform:translate(674px,130px) scale(1);opacity:0"><rect x="0" y="0" width="216" height="300" rx="12" class="bu1"></rect><line x1="40" y1="130" x2="168" y2="130" class="bl"></line><line x1="40" y1="170" x2="140" y2="170" class="bl"></line></g><g class="d12k4" style="transform:translate(898px,130px) scale(1);opacity:1"><rect x="0" y="0" width="216" height="300" rx="12" class="bu2"></rect><line x1="40" y1="130" x2="168" y2="130" class="bl"></line><line x1="40" y1="170" x2="140" y2="170" class="bl"></line></g><g class="d12k5" style="transform:translate(1122px,130px) scale(1);opacity:1"><rect x="0" y="0" width="216" height="300" rx="12" class="bu1"></rect><line x1="40" y1="130" x2="168" y2="130" class="bl"></line><line x1="40" y1="170" x2="140" y2="170" class="bl"></line></g><g class="d12k6" style="transform:translate(1346px,130px) scale(1);opacity:1"><rect x="0" y="0" width="216" height="300" rx="12" class="cmdc"></rect><text x="108" y="136" class="f34 b" text-anchor="middle">Írj</text><text x="108" y="180" class="f34 b" text-anchor="middle">rövidebben</text></g><g class="d12k7" style="transform:translate(450px,130px) scale(1);opacity:1"><rect x="0" y="0" width="216" height="300" rx="12" class="bu1"></rect><line x1="40" y1="130" x2="168" y2="130" class="bl"></line><line x1="40" y1="170" x2="140" y2="170" class="bl"></line></g><g class="d12k8" style="transform:translate(674px,130px) scale(1);opacity:1"><rect x="0" y="0" width="216" height="300" rx="12" class="bu2"></rect><line x1="40" y1="130" x2="168" y2="130" class="bl"></line><line x1="40" y1="170" x2="140" y2="170" class="bl"></line></g></svg>
+</div>
+<div class="prog"><i class="d12k13" style="transform:scaleX(1)"></i></div>
+<ol class="caps" style="--n:4">
+<li class="d12k9" style="opacity:0"><span class="n">1/4</span><span>Minden újabb körben gyarapodhat ez a csomag.</span></li>
+<li class="d12k10" style="opacity:0"><span class="n">2/4</span><span>A kontextusablak véges, és helyet kell hagyni a válasznak is.</span></li>
+<li class="d12k11" style="opacity:0"><span class="n">3/4</span><span>Az alkalmazás kiveszi a két legrégebbi kártyát, köztük a forrás másolatát.</span></li>
+<li class="d12k12" style="opacity:1"><span class="n">4/4</span><span>A chatben továbbra is olvasható, de már kimaradt abból, amit a modell megkapott.</span></li>
+</ol>
+<footer class="foot"><img src="../assets/logos/wenova-wordmark.png" alt="Wenova"><span class="sp"></span><a href="#tartalom">Tartalom</a><span class="count"></span></footer>
+</div>
+</section>
+
+<!-- ========== DIA 13: Hallucináció, drift, felejtés ========== -->
+<section class="slide " id="s13">
+<div class="frame">
+<header class="head"><h2>Hallucináció, drift, felejtés</h2><span class="tag">Kitalált példa</span></header>
+<div class="stage ">
+<div class="three">
+<div><svg viewBox="0 0 300 220" aria-hidden="true"><path d="M30,60 h150 l90,60 l-90,60 h-150 z" class="big"></path><circle cx="66" cy="120" r="14" class="big"></circle><text x="150" y="152" text-anchor="middle" class="q">?</text></svg><p><b>Hallucináció:</b> kitalált ár</p></div>
+<div><svg viewBox="0 0 300 220" aria-hidden="true"><rect x="14" y="76" width="96" height="70" rx="8" class="big"></rect><polyline points="14,82 62,118 110,82" class="big"></polyline><path d="M116,111 C170,111 180,50 250,44" class="big"></path><path d="M116,111 C170,111 180,170 250,176" class="bigo"></path><polygon points="284,42 248,24 250,62" class="fw"></polygon><polygon points="284,178 250,158 248,196" class="fo"></polygon></svg><p><b>Drift:</b> levélből kampány</p></div>
+<div><svg viewBox="0 0 300 220" aria-hidden="true"><rect x="60" y="8" width="200" height="90" rx="8" class="big"></rect><rect x="4" y="30" width="44" height="46" rx="6" class="fo"></rect><rect x="60" y="122" width="200" height="90" rx="8" class="big"></rect><rect x="138" y="144" width="44" height="46" rx="6" class="fo" opacity=".35"></rect></svg><p><b>Felejtés:</b> kimaradt vagy elsikkadt szabály</p></div>
+</div>
+</div>
+
+<footer class="foot"><img src="../assets/logos/wenova-wordmark.png" alt="Wenova"><span class="sp"></span><a href="#tartalom">Tartalom</a><span class="count"></span></footer>
+</div>
+</section>
+
+<!-- ========== DIA 14: Adj elég hátteret, és hagyj helyet a válasznak ========== -->
+<section class="slide " id="s14">
+<div class="frame">
+<header class="head"><h2>Adj elég hátteret, és hagyj helyet a válasznak</h2></header>
+<div class="stage ">
+<div class="band"><div>Friss cél</div><div>Döntések</div><div>Forrásrészlet</div><div class="free">Hely a válasznak</div></div>
+</div>
+
+<footer class="foot"><img src="../assets/logos/wenova-wordmark.png" alt="Wenova"><span class="sp"></span><a href="#tartalom">Tartalom</a><span class="count"></span></footer>
+</div>
+</section>
+
+<!-- ========== DIA 15: A jó prompt megadja a feladatot ========== -->
+<section class="slide " id="s15">
+<div class="frame">
+<header class="head"><h2>A jó prompt megadja a feladatot</h2></header>
+<div class="stage ">
+<ol class="rows" start="1"><li><span class="no">1</span><b>Cél</b><span>Válaszolj az ajánlatkérésre.</span></li>
+<li><span class="no">2</span><b>Címzett</b><span>Irodavezető.</span></li>
+<li><span class="no">3</span><b>Forrás</b><span>Mellékelt levél és Cég-DNS.</span></li></ol>
+</div>
+
+<footer class="foot"><img src="../assets/logos/wenova-wordmark.png" alt="Wenova"><span class="sp"></span><a href="#tartalom">Tartalom</a><span class="count"></span></footer>
+</div>
+</section>
+
+<!-- ========== DIA 16: A jó prompt megmondja, mikor kész ========== -->
+<section class="slide " id="s16">
+<div class="frame">
+<header class="head"><h2>A jó prompt megmondja, mikor kész</h2></header>
+<div class="stage ">
+<ol class="rows" start="4"><li><span class="no">4</span><b>Forma</b><span>Három mondat.</span></li>
+<li><span class="no">5</span><b>Korlát</b><span>Húsz fölött kérj bejárást.</span></li>
+<li><span class="no">6</span><b>Minta</b><span>„Mikor lenne jó a bejárás?”</span></li>
+<li><span class="no">7</span><b>Ellenőrzés</b><span>Minden állításhoz forrás.</span></li></ol>
+</div>
+
+<footer class="foot"><img src="../assets/logos/wenova-wordmark.png" alt="Wenova"><span class="sp"></span><a href="#tartalom">Tartalom</a><span class="count"></span></footer>
+</div>
+</section>
+
+<!-- ========== DIA 17: Egyetlen mondat, amivel elindulsz ========== -->
+<section class="slide " id="s17">
+<div class="frame">
+<header class="head"><h2>Egyetlen mondat, amivel elindulsz</h2></header>
+<div class="stage ">
+<p class="quote"><span>Írj nekem egy jó promptot arra, hogy…<i class="caret"></i></span></p>
+</div>
+
+<footer class="foot"><img src="../assets/logos/wenova-wordmark.png" alt="Wenova"><span class="sp"></span><a href="#tartalom">Tartalom</a><span class="count"></span></footer>
+</div>
+</section>
+
+<!-- ========== DIA 18: Egy kérés, három AI-szerep ========== -->
+<section class="slide " id="s18">
+<div class="frame">
+<header class="head"><h2>Egy kérés, három AI-szerep</h2></header>
+<div class="stage ">
+<svg viewBox="0 0 1792 590" role="img" aria-label="Ember, Karmester, Készítő, Ellenőr és az emberi döntés"><rect x="20" y="90" width="396" height="220" rx="20" class="hot2"></rect><text x="218" y="186" class="f52 b dk" text-anchor="middle">Ember</text><text x="218" y="250" class="f44 dk" text-anchor="middle">ad célt</text><line x1="422" y1="200" x2="444" y2="200" class="ar"></line><polygon points="466,200 444,213.2 444,186.8" class="ar-h"></polygon><rect x="472" y="90" width="396" height="220" rx="20" class="pn"></rect><text x="670" y="186" class="f52 b" text-anchor="middle">Karmester</text><text x="670" y="250" class="f44" text-anchor="middle">szervez</text><line x1="874" y1="200" x2="896" y2="200" class="ar"></line><polygon points="918,200 896,213.2 896,186.8" class="ar-h"></polygon><rect x="924" y="90" width="396" height="220" rx="20" class="pn"></rect><text x="1122" y="186" class="f52 b" text-anchor="middle">Készítő</text><text x="1122" y="250" class="f44" text-anchor="middle">dolgozik</text><line x1="1326" y1="200" x2="1348" y2="200" class="ar"></line><polygon points="1370,200 1348,213.2 1348,186.8" class="ar-h"></polygon><rect x="1376" y="90" width="396" height="220" rx="20" class="pn"></rect><text x="1574" y="186" class="f52 b" text-anchor="middle">Ellenőr</text><text x="1574" y="250" class="f44" text-anchor="middle">vizsgál</text><path d="M1574,316 C1574,560 218,560 218,334" class="ret"></path><polygon points="218,314 200,346 236,346" class="reth"></polygon><rect x="716" y="462" width="360" height="92" rx="46" class="hot2"></rect><text x="896" y="524" class="f44 b dk" text-anchor="middle">Ember dönt</text></svg>
+</div>
+
+<footer class="foot"><img src="../assets/logos/wenova-wordmark.png" alt="Wenova"><span class="sp"></span><a href="#tartalom">Tartalom</a><span class="count"></span></footer>
+</div>
+</section>
+
+<!-- ========== DIA 19: Egy levél útja az emberi döntésig ========== -->
+<section class="slide loop19" id="s19">
+<div class="frame">
+<header class="head"><h2>Egy levél útja az emberi döntésig</h2><span class="tag">Kitalált eset</span></header>
+<div class="stage ">
+<svg viewBox="0 0 1792 660" role="img" aria-label="Egy levél útja négy szerep között az emberi döntésig"><rect x="0" y="64" width="424" height="546" rx="16" class="lane"></rect><g class="d19k1" style="opacity:0"><rect x="0" y="64" width="424" height="546" rx="16" class="laneon"></rect></g><text x="212" y="44" class="f38 b" text-anchor="middle">Ember</text><rect x="456" y="64" width="424" height="546" rx="16" class="lane"></rect><g class="d19k2" style="opacity:1"><rect x="456" y="64" width="424" height="546" rx="16" class="laneon"></rect></g><text x="668" y="44" class="f38 b" text-anchor="middle">Karmester</text><rect x="912" y="64" width="424" height="546" rx="16" class="lane"></rect><g class="d19k3" style="opacity:0"><rect x="912" y="64" width="424" height="546" rx="16" class="laneon"></rect></g><text x="1124" y="44" class="f38 b" text-anchor="middle">Készítő</text><rect x="1368" y="64" width="424" height="546" rx="16" class="lane"></rect><g class="d19k4" style="opacity:0"><rect x="1368" y="64" width="424" height="546" rx="16" class="laneon"></rect></g><text x="1580" y="44" class="f38 b" text-anchor="middle">Ellenőr</text><g class="d19k5" style="opacity:0"><line x1="330" y1="110" x2="500" y2="110" class="ar"></line><polygon points="520,110 500,122 500,98" class="ar-h"></polygon></g><g class="d19k6" style="transform:translate(668px,140px);opacity:0"><rect x="-135" y="-42" width="270" height="84" rx="14" class="hot"></rect><text x="0" y="13" class="f38 b dk" text-anchor="middle">25 növény</text></g><g class="d19k7" style="opacity:0"><rect x="473" y="214" width="390" height="240" rx="14" class="dash"></rect></g><g class="d19k8" style="transform:translate(590px,300px);opacity:0"><use href="#i-letter" transform="translate(0 0) scale(1)"></use></g><g class="d19k9" style="transform:translate(760px,300px);opacity:0"><rect x="-100" y="-40" width="200" height="80" rx="14" class="pn"></rect><text x="0" y="13" class="f34 b" text-anchor="middle">Cég-DNS</text></g><g class="d19k10" style="transform:translate(212px,330px);opacity:0"><use href="#i-q" transform="translate(0 0) scale(1.1)"></use></g><g class="d19k11" style="transform:translate(668px,400px);opacity:0"><use href="#i-check" transform="translate(0 0) scale(1)"></use></g><g class="d19k12" style="opacity:0"><rect x="473" y="214" width="390" height="240" rx="14" class="okf"></rect></g><g class="d19k13" style="transform:translate(856px,220px);opacity:0"><use href="#i-check" transform="translate(0 0) scale(1)"></use></g><g class="d19k14" style="opacity:0"><use href="#i-list" transform="translate(668 530) scale(1)"></use></g><g class="d19k15" style="opacity:0"><line x1="830" y1="110" x2="955" y2="110" class="ar"></line><polygon points="975,110 955,122 955,98" class="ar-h"></polygon></g><g class="d19k16" style="transform:translate(1124px,150px);opacity:0"><rect x="-115" y="-42" width="230" height="84" rx="14" class="pn"></rect><text x="0" y="13" class="f38 b" text-anchor="middle">Brief</text></g><g class="d19k17" style="transform:translate(1040px,270px);opacity:0"><use href="#i-src" transform="translate(0 0) scale(1)"></use></g><g class="d19k18" style="opacity:0"><use href="#i-pen" transform="translate(1210 270) scale(1.1)"></use></g><g class="d19k19" style="opacity:0"><line x1="975" y1="540" x2="850" y2="540" class="ar"></line><polygon points="830,540 850,528 850,552" class="ar-h"></polygon></g><g class="d19k20" style="transform:translate(1124px,490px);opacity:0"><rect x="-150" y="-52" width="300" height="104" rx="14" class="pn"></rect><text x="-30" y="13" class="f38 b" text-anchor="middle">Piszkozat</text></g><g class="d19k21" style="transform:translate(1234px,490px);opacity:0"><use href="#i-tag" transform="translate(0 0) scale(0.9)"></use></g><g class="d19k22" style="opacity:0"><rect x="1392" y="88" width="376" height="500" rx="16" class="dbl1"></rect><rect x="1404" y="100" width="352" height="476" rx="12" class="dbl2"></rect></g><g class="d19k23" style="opacity:0"><use href="#i-note" transform="translate(1124 200) scale(1.1)"></use></g><g class="d19k24" style="opacity:0"><line x1="830" y1="170" x2="1365" y2="170" class="ar"></line><polygon points="1385,170 1365,182 1365,158" class="ar-h"></polygon></g><g class="d19k25" style="transform:translate(1480px,170px);opacity:0"><use href="#i-letter" transform="translate(0 0) scale(0.9)"></use></g><g class="d19k26" style="transform:translate(1580px,170px);opacity:0"><use href="#i-src" transform="translate(0 0) scale(0.9)"></use></g><g class="d19k27" style="transform:translate(1680px,170px);opacity:0"><use href="#i-list" transform="translate(0 0) scale(0.9)"></use></g><g class="d19k28" style="transform:translate(1124px,160px);opacity:0"><use href="#i-oct" transform="translate(-148 0) scale(1)"></use><text x="-112" y="-8" class="f34 b rd" text-anchor="start">blokkoló</text><text x="-112" y="34" class="f34 b" text-anchor="start">Forrás nélküli ár</text></g><g class="d19k29" style="transform:translate(1580px,360px);opacity:0"><use href="#i-oct" transform="translate(-148 0) scale(1)"></use><text x="-112" y="-8" class="f34 b rd" text-anchor="start">blokkoló</text><text x="-112" y="34" class="f34 b" text-anchor="start">Forrás nélküli ár</text></g><g class="d19k30" style="transform:translate(1294px,122px);opacity:0"><use href="#i-check" transform="translate(0 0) scale(0.75)"></use></g><g class="d19k31" style="transform:translate(1432px,360px);opacity:0"><use href="#i-check" transform="translate(0 0) scale(1.15)"></use></g><g class="d19k32" style="transform:translate(1580px,470px);opacity:0"><use href="#i-cal" transform="translate(-148 0) scale(1)"></use><text x="-112" y="-8" class="f34 b am" text-anchor="start">vitatható</text><text x="-112" y="34" class="f34 b" text-anchor="start">Hiányzó dátum</text></g><g class="d19k33" style="transform:translate(1746px,450px);opacity:0"><use href="#i-src" transform="translate(0 0) scale(0.75)"></use></g><g class="d19k34" style="opacity:0"><rect x="1376" y="414" width="408" height="116" rx="12" class="okf2"></rect><text x="1580" y="460" class="f34 b gr" text-anchor="middle">Feloldva:</text><text x="1580" y="508" class="f34 b" text-anchor="middle">időpontot kérünk</text></g><g class="d19k35" style="transform:translate(212px,370px);opacity:1"><use href="#i-amb" transform="translate(-148 0) scale(1)"></use><text x="-112" y="-8" class="f34 b am" text-anchor="start">apró</text><text x="-112" y="34" class="f34 b" text-anchor="start">Nyitott pont</text></g><g class="d19k36" style="transform:translate(212px,150px);opacity:1"><rect x="-150" y="-52" width="300" height="104" rx="14" class="pn"></rect><text x="-30" y="13" class="f38 b" text-anchor="middle">Piszkozat</text></g><g class="d19k37" style="transform:translate(212px,234px);opacity:1"><rect x="-115" y="-32" width="230" height="64" rx="14" class="okb"></rect><text x="0" y="13" class="f34 b dk" text-anchor="middle">Bejárás</text></g><g class="d19k38" style="transform:translate(322px,112px);opacity:1"><use href="#i-check" transform="translate(0 0) scale(0.75)"></use></g><g class="d19k39" style="opacity:0"><use href="#i-src" transform="translate(1730 140) scale(0.8)"></use></g><g class="d19k40" style="opacity:0;stroke-dashoffset:-260"><path d="M1580,612 C1580,676 1124,676 1124,632" class="loop"></path><polygon points="1124,612 1108,642 1140,642" class="looph"></polygon></g><g class="d19k41" style="opacity:0"><line x1="520" y1="300" x2="350" y2="300" class="ar"></line><polygon points="330,300 350,288 350,312" class="ar-h"></polygon></g><g class="d19k42" style="opacity:1"><rect x="62" y="440" width="300" height="130" rx="18" class="hot"></rect><text x="212" y="523" class="f52 b dk" text-anchor="middle">Küldés?</text></g><g class="d19k43" style="opacity:1"><rect x="478" y="190" width="380" height="250" rx="16" class="pn"></rect><text x="668" y="250" class="f38 b or" text-anchor="middle">Munkanapló</text></g><g class="d19k44 fb" style="transform:scaleX(1)"><line x1="518" y1="300" x2="818" y2="300" class="wl"></line></g><g class="d19k45 fb" style="transform:scaleX(1)"><line x1="518" y1="344" x2="768" y2="344" class="wl"></line></g><g class="d19k46 fb" style="transform:scaleX(1)"><line x1="518" y1="388" x2="718" y2="388" class="wl"></line></g><g class="d19k47" style="opacity:0"><use href="#i-pen" transform="translate(818 400) scale(0.9)"></use></g></svg>
+</div>
+<div class="prog"><i class="d19k59" style="transform:scaleX(1)"></i></div>
+<ol class="caps" style="--n:11">
+<li class="d19k48" style="opacity:0"><span class="n">1/11</span><span>Az Ember célt ad. A Karmester összegyűjti a levelet és a Cég-DNS szabályait.</span></li>
+<li class="d19k49" style="opacity:0"><span class="n">2/11</span><span>Ha hiányzik egy döntés, a Karmester kérdez.</span></li>
+<li class="d19k50" style="opacity:0"><span class="n">3/11</span><span>Jóváhagyod a tervet. A Karmester az Írót a forrásokkal együtt indítja.</span></li>
+<li class="d19k51" style="opacity:0"><span class="n">4/11</span><span>A Készítő visszaadja a piszkozatot. Ebben már van egy fix ár.</span></li>
+<li class="d19k52" style="opacity:0"><span class="n">5/11</span><span>Friss beszélgetés: piszkozat, eredeti források, ellenőrzőlista. Az Író gondolatmenete kimarad.</span></li>
+<li class="d19k53" style="opacity:0"><span class="n">6/11</span><span>Leletek súlyossággal: blokkoló, vitatható, apró.</span></li>
+<li class="d19k54" style="opacity:0"><span class="n">7/11</span><span>A Készítő elfogadja az árat, a dátumot forrással vitatja, az apró pont nyitott marad.</span></li>
+<li class="d19k55" style="opacity:0"><span class="n">8/11</span><span>Az ár kikerül, bejárás kerül a helyére. Az új változat visszamegy az Ellenőrhöz.</span></li>
+<li class="d19k56" style="opacity:0"><span class="n">9/11</span><span>Blokkoló, súlyos vagy közepes hibánál javítunk. Az aprót feljegyezzük.</span></li>
+<li class="d19k57" style="opacity:0"><span class="n">10/11</span><span>Ellenőrzött piszkozat és nyitott pont. Te döntesz, elküldöd-e.</span></li>
+<li class="d19k58" style="opacity:1"><span class="n">11/11</span><span>Munkanapló: mi történt, hol értettük félre, mit tanultunk</span></li>
+</ol><ol class="rm3"><li>Feladatátadás</li><li>Lelet és javítás</li><li>Ellenőrzött piszkozat és emberi döntés</li></ol>
+<footer class="foot"><img src="../assets/logos/wenova-wordmark.png" alt="Wenova"><span class="sp"></span><a href="#tartalom">Tartalom</a><span class="count"></span></footer>
+</div>
+</section>
+
+<!-- ========== DIA 20: 09:20 | Kezdjük a Cég-DNS-sel ========== -->
+<section class="slide " id="s20">
+<div class="frame">
+<header class="head"><h2><span class="em">09:20</span><span class="pipe"> | </span>Kezdjük a Cég-DNS-sel</h2></header>
+<div class="stage ">
+<svg viewBox="0 0 1792 590" role="img" aria-label="A Cég-DNS a nap négy állomásának közös bemenete"><rect x="0" y="40" width="450" height="450" rx="22" class="hot"></rect><text x="225" y="120" class="f56 b dk" text-anchor="middle">09:20</text><text x="225" y="186" class="f52 b dk" text-anchor="middle">Cég-DNS</text><text x="225" y="290" class="f44 b dk" text-anchor="middle">Kinek?</text><text x="225" y="356" class="f44 b dk" text-anchor="middle">Mit?</text><text x="225" y="422" class="f44 b dk" text-anchor="middle">Milyen hangon?</text><rect x="520" y="120" width="285" height="190" rx="18" class="pn"></rect><text x="662" y="228" class="f34 b" text-anchor="middle">Tartalom</text><text x="827" y="232" class="f44 b or" text-anchor="middle">→</text><line x1="662" y1="310" x2="662" y2="540" class="feed"></line><rect x="849" y="120" width="285" height="190" rx="18" class="pn"></rect><text x="991" y="228" class="f34 b" text-anchor="middle">Ügyfélszerzés</text><text x="1156" y="232" class="f44 b or" text-anchor="middle">→</text><line x1="991" y1="310" x2="991" y2="540" class="feed"></line><rect x="1178" y="120" width="285" height="190" rx="18" class="pn"></rect><text x="1320" y="228" class="f34 b" text-anchor="middle">Ajánlat</text><text x="1485" y="232" class="f44 b or" text-anchor="middle">→</text><line x1="1320" y1="310" x2="1320" y2="540" class="feed"></line><rect x="1507" y="120" width="285" height="190" rx="18" class="pn"></rect><text x="1649" y="228" class="f34 b" text-anchor="middle">Folyamatpróba</text><line x1="1649" y1="310" x2="1649" y2="540" class="feed"></line><line x1="225" y1="490" x2="225" y2="540" class="feed"></line><path d="M225,540 H1649" class="feedp"></path></svg>
+</div>
+
+<footer class="foot"><img src="../assets/logos/wenova-wordmark.png" alt="Wenova"><span class="sp"></span><a href="#tartalom">Tartalom</a><span class="count"></span></footer>
+</div>
+</section>
+
+<!-- ========== DIA 21: Tartalék dia | Ugyanannyi számítás, több szöveg ========== -->
+<section class="slide " id="s21">
+<div class="frame">
+<header class="head"><h2><span class="em">Tartalék dia</span><span class="pipe"> | </span>Ugyanannyi számítás, több szöveg</h2></header>
+<div class="stage ">
+<p class="same">Azonos tanítási számítás</p>
+<div class="models">
+<div><h3>Gopher:</h3><p class="big-n">280 milliárd paraméter</p><div class="pads"><i></i></div></div>
+<div><h3>Chinchilla:</h3><p class="big-n">70 milliárd paraméter</p><div class="pads"><i></i><i></i><i></i><i></i></div><p class="more">Chinchilla: kb. négyszer annyi tanítótoken</p></div>
+</div>
+</div>
+
+<footer class="foot"><img src="../assets/logos/wenova-wordmark.png" alt="Wenova"><span class="sp"></span><a href="#tartalom">Tartalom</a><span class="count"></span></footer>
+</div>
+</section>
+
+<!-- ========== DIA 22: Tartalék dia | Egyben a kipróbálható prompt ========== -->
+<section class="slide " id="s22">
+<div class="frame">
+<header class="head"><h2><span class="em">Tartalék dia</span><span class="pipe"> | </span>Egyben a kipróbálható prompt</h2></header>
+<div class="stage ">
+<div class="two"><p>A levél és a szabály együtt</p><p class="q2">Mit kérdeznél még az ügyféltől?</p></div>
+</div>
+
+<footer class="foot"><img src="../assets/logos/wenova-wordmark.png" alt="Wenova"><span class="sp"></span><a href="#tartalom">Tartalom</a><span class="count"></span></footer>
+</div>
+</section>
+<nav class="toc" id="tartalom" aria-label="Tartalom"><p class="toc-h">Tartalom</p><ol><li><a href="#s01">AI dióhéjban</a></li><li><a href="#s02">Melyik AI-val dolgozunk ma?</a></li><li><a href="#s03">Mekkora léptékről beszélünk?</a></li><li><a href="#s04">Mitől javult a teljesítmény?</a></li><li><a href="#s05">Machine learning | Minták a példákból</a></li><li><a href="#s06">Deep learning | Mit csinálnak a rétegek?</a></li><li><a href="#s07">Backpropagation | Melyik súlyon állítsunk?</a></li><li><a href="#s08">Attention | Mely szövegrészek számítanak itt?</a></li><li><a href="#s09">Transformer | Figyelem, rétegről rétegre</a></li><li><a href="#s10">A szövegből tokenek lesznek</a></li><li><a href="#s11">A kimenet lépésenként készül</a></li><li><a href="#s12">Mi gyűlik össze egy chatben?</a></li><li><a href="#s13">Hallucináció, drift, felejtés</a></li><li><a href="#s14">Adj elég hátteret, és hagyj helyet a válasznak</a></li><li><a href="#s15">A jó prompt megadja a feladatot</a></li><li><a href="#s16">A jó prompt megmondja, mikor kész</a></li><li><a href="#s17">Egyetlen mondat, amivel elindulsz</a></li><li><a href="#s18">Egy kérés, három AI-szerep</a></li><li><a href="#s19">Egy levél útja az emberi döntésig</a></li><li><a href="#s20">09:20 | Kezdjük a Cég-DNS-sel</a></li><li><a href="#s21">Tartalék dia | Ugyanannyi számítás, több szöveg</a></li><li><a href="#s22">Tartalék dia | Egyben a kipróbálható prompt</a></li></ol></nav>
+</body>
+</html>
