@@ -87,7 +87,7 @@ A bemutató ezt a részt mutatja meg. Később kézikönyvként visszalapozhatsz
 | **Ellenőr** (reviewer) | Új beszélgetésben, csak a szövegből, a DNS-ből és ellenőrzőlistából minősít: MEGFELEL / JAVÍTANDÓ / BLOKKOLÓ. | Nem írja át a szöveget, és nem látja az Író indoklását. |
 | **Te** | Jóváhagyod a tervet, döntesz az Ellenőr után, és te küldesz, teszel közzé azonnal vagy indítasz kampányt. A Buffer-ütemezést te hagyod jóvá. | – |
 
-Őszintén: az agentek szerepleírások a tananyagban (`Tananyag/starter-kit/agents/`). A pluginnal a Karmester külön alügynökként indítja az Írót és az Ellenőrt, friss kontextusban. Plugin nélkül ugyanabban a beszélgetésben vált szerepet (Író, Postás, CRM), az Ellenőr pedig új beszélgetésben fut. Az agentek a projekt fájljaiból működnek: a projektutasítás köti össze az indítómondatot („Író: …”) az agentfájllal (`writer.md`). Később ugyanezek a fájlok Skillé alakíthatók; a Skill olyan feladatleírás, amelyet a Claude magától betölt, ha illik a kéréshez.
+Őszintén: az agentek szerepleírások a tananyagban (`Tananyag/starter-kit/agents/`). A pluginnal a Karmester külön alügynökként indítja az Írót és a Claude-Ellenőrt, friss kontextusban. Ha elérhető a Codex, az Ellenőr külön Codex-munkamenetben fut. Plugin nélkül ugyanabban a beszélgetésben vált szerepet (Író, Postás, CRM), az Ellenőr pedig új beszélgetésben fut. Az agentek a projekt fájljaiból működnek: a projektutasítás köti össze az indítómondatot („Író: …”) az agentfájllal (`writer.md`). Később ugyanezek a fájlok Skillé alakíthatók; a Skill olyan feladatleírás, amelyet a Claude magától betölt, ha illik a kéréshez.
 
 **Miért új beszélgetés az Ellenőrnek?** Ha ugyanaz a beszélgetés ellenőriz, amelyik írt, az ugyanazokat a feltételezéseket látja helyesnek. Az új beszélgetés csak azt kapja, amit az ügyfél is látna: a szöveget és az eredeti kérést. Ez a friss kontextus.
 
@@ -202,7 +202,7 @@ Forrás és határ: a weboldalam: [URL]; a Munka/00-Felkeszules/forrasok/ mappa 
 Kimeneti séma: a sablon 0–13. szakasza. Legfeljebb 3 ajánlat O01, O02, O03 azonosítóval. Az O01 a fő ajánlat.
 Szabályok: ha a forrásokban nincs a cég következő célja, az ügyfélszerzés fő lépései vagy az emberi döntési pont, kérdezz rá ezekre először. A döntési pontnál kérdezd meg, ki és miről dönt. Egyszerre egy kérdést tegyél fel, összesen legfeljebb ötöt. A válaszaimat F-05 forrásként rögzítsd. A javaslatot jelöld javaslatnak.
 Ellenőrzés: a végén mutass két fontos állítást a forrásszöveg szó szerinti idézetével, hogy ellenőrizni tudjam.
-Mentés: Munka/01-DNS/company-dna.md. Utána a DNS-ből készíts kivonatot ugyanide: business-profile.md (a Tananyag/starter-kit/business-profile.md 13 mezőjével) és sales-strategy.md (offer_id, audience, channel, message, next_action, success_metric). A legutóbbi progress.json új változatában jelöld ki az aktív céget, a DNS verzióját és a DNS, illetve a cégprofil útvonalát. A márkahang útvonalát a következő leckében töltjük ki.
+Mentés: Munka/01-DNS/company-dna.md. Utána a DNS-ből készíts kivonatot ugyanide: business-profile.md (a Tananyag/starter-kit/business-profile.md 13 mezőjével) és sales-strategy.md (offer_id, audience, channel, message, next_action, success_metric). A legutóbbi progress.json új változatában jelöld ki az aktív céget, a DNS verzióját és a DNS, a cégprofil, illetve az értékesítési stratégia útvonalát. A márkahang útvonalát a következő leckében töltjük ki.
 ```
 
 <a name="01-business-foundations.01-offer-and-audience--steps"></a>
@@ -455,7 +455,7 @@ Ellenőr: itt a teljes javított v2 változat [bemásolva]. Ellenőrizd a koráb
 
 ### Ezt viszed tovább
 
-A munkamappádban ott van a Cég-DNS és a márkahang. A `post-review.md` fájlt add át az 05-ös blokk méréséhez is. Ugyanilyen ellenőri menettel nézheted át a Brandiseer-tartalmat, a Sales Bot-üzeneteket és az ajánlat kísérőszövegét. Az 5. blokkban a Postás és a CRM-agent is munkába áll, és a Karmester egy teljes ügyfélesetet visz végig.
+A munkamappádban ott van a Cég-DNS és a márkahang. A `post-review.md` fájlt add át az 05-ös blokk méréséhez is. Ugyanilyen ellenőri menettel nézheted át a Brandiseer-tartalmat, a Sales Bot-üzeneteket és az ajánlat kísérőszövegét. Az 5. blokkban a kampány mérési adatait elemezzük, és a tanulságokat visszavezetjük a Cég-DNS-be.
 
 **Wenova-kiegészítés a 02-es blokkhoz (választható, ha a Brandiseer-oktató is így kéri):** a kampányvázból (lásd lent, „Ha maradt időd”) egy poszthoz képet kérsz a Brandiseer connectorával; a Claude a képet a `Munka/02-Tartalom/` mappába menti, és posztelőnézetet készít belőle HTML-ben. Ha bekötötted a Buffert, választhatsz piszkozatot vagy ütemezést. Ütemezés előtt a Claude megmutatja a csatornát, a szöveget és az időpontot, majd megvárja a kifejezett jóváhagyásodat. Ami be van ütemezve, az ki is megy. Ha ezt nem szeretnéd, kérj piszkozatot. A Bufferben ellenőrizd a mentett állapotot. Ha a kép nem jön vissza a connectoron át, töltsd le a Brandiseerből a `Munka/02-Tartalom/` mappába. Ha a poszthoz nem csatolható a connectorral, a Buffer felületén töltsd fel. Ha az ütemezési művelet nem érhető el a Claude-ban, használd a [02-es blokk kézi útját](02-content-marketing.md#02-content-marketing.03-prepare-publishing--help).
 

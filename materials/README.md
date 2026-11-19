@@ -1,9 +1,33 @@
 # AI Sales & Marketing Workshop
 
+<a name="indulas"></a>
+
+## Indulás: itt kezdd
+
+**A tananyag kezdőlapja: [https://cspiya.github.io/wenova-ai-sales-workshop/materials/](https://cspiya.github.io/wenova-ai-sales-workshop/materials/)**
+
+[![QR-kód a tananyag kezdőlapjához: https://cspiya.github.io/wenova-ai-sales-workshop/materials/](assets/indulas-qr.png)](https://cspiya.github.io/wenova-ai-sales-workshop/materials/)
+
+**Letöltés:** [nyilvános repó](https://github.com/cspiya/wenova-ai-sales-workshop) · [ZIP-csomag](https://github.com/cspiya/wenova-ai-sales-workshop/archive/refs/heads/main.zip)
+
+### Az első három lépés
+
+1. Hozz létre egy `Wenova-AI-Sales-Workshop` nevű mappát, majd a Claude Desktopban nyiss rá Cowork-projektet: Projects → + → Use an existing folder.
+2. A projekt új munkamenetébe illeszd be ezt az egy mondatot:
+
+   ```text
+   Telepítsd a workshop tananyagát: https://raw.githubusercontent.com/cspiya/wenova-ai-sales-workshop/main/materials/TELEPITES.md
+   ```
+
+   Ha a mondat nem működik, töltsd le a [ZIP-csomagot](https://github.com/cspiya/wenova-ai-sales-workshop/archive/refs/heads/main.zip), és kövesd a [kézi utat](https://github.com/cspiya/wenova-ai-sales-workshop/blob/main/materials/TELEPITES.md#kezi-ut).
+
+3. Kövesd a Claude által kiírt lépéseket (plugin hozzáadása, Instructions, új munkamenet), majd írd be: **Kezdjük a felkészülést.**
+
 [HTML-változat](https://cspiya.github.io/wenova-ai-sales-workshop/materials/index.html)
 
 ## Tartalom
 
+- [Indulás: itt kezdd](#indulas)
 - [Program és célközönség](#agenda)
 - [A tanulási út](#modules)
 - [Saját munkacsomag és AI-kísérő](#start)
@@ -38,7 +62,7 @@ Magyarországi, AI-alapú megoldások fejlesztésében, bevezetésében és üzl
 
 | Partner | Tudás és szerep | Előadó |
 | --- | --- | --- |
-| Wenova — szervező és szakmai partner | AI-bevezetés, folyamatoptimalizálás, agentikus működés és a közös tanulási útvonal | Piya Csaba, Kemény Krisztián |
+| Wenova (szervező és szakmai partner) | AI-bevezetés, folyamatoptimalizálás, agentikus működés és a közös tanulási útvonal | Piya Csaba, Kemény Krisztián |
 | Brandiseer | Márkaazonos képkészítés és tartalom, kampány-előkészítés | Sorok Dániel |
 | Blackhole Media | B2B leadgenerálás, LinkedIn-megkeresés, sales automatizáció | Bölcskei Balázs, Nagy Bogáta |
 | EstiWise | Igényfelmérés, szabályalapú árazás és ajánlatautomatizáció | Gyömrei Máté, CommIT Smart Kft. |
@@ -53,7 +77,7 @@ Magyar KKV-k, közép- és nagyvállalatok tulajdonosainak, marketing- és ért�
 
 ### Mit építünk?
 
-Cég-DNS és saját AI-csapat → tartalom a céged hangján → LinkedIn-megkeresés és leadkezelés → igényfelmérés és ajánlat → levelek, CRM és egy ügyfél végig. Reggel elkészíted a céged teljes leírását, a Cég-DNS-t. A partnerblokkok a belőle készült cégprofilra épülnek. A nap végére lesz egy dokumentált ügyféleseted, amelyben jelölöd, mely lépéseket próbáltad ki és melyeket végezted el mintából. A másnapi tervedet is elkészíted.
+Cég-DNS és saját AI-csapat → tartalom a céged hangján → LinkedIn-megkeresés és leadkezelés → igényfelmérés és ajánlat → kampánymérés és visszacsatolás. Reggel elkészíted a céged teljes leírását, a Cég-DNS-t. A partnerblokkok a belőle készült cégprofilra épülnek. A nap végére lesz egy kampányelemzésed és egy tölcséred, amelyben jelölöd, mi jött saját adatból és mi kitalált mintából. A másnapi tervedet is elkészíted.
 
 <a name="agenda-4"></a>
 
@@ -77,7 +101,7 @@ A pontos idővonal, előadók és blokkonkénti eredmények: **[A nap menete](sc
 | 10:45–12:15 | 2. Tartalom a céged hangján | Brandiseer |
 | 13:00–14:30 | 3. LinkedIn-ügyfélszerzés és leadkezelés | Blackhole Media / Sales Bot |
 | 14:45–16:15 | 4. Igényfelmérés és ajánlatadás | EstiWise |
-| 16:15–16:50 | 5. Folyamatpróba: levelek, CRM, egy ügyfél végig | Wenova |
+| 16:15–16:50 | 5. Folyamatpróba: kampánymérés és visszacsatolás | Wenova |
 | 16:50–17:00 | Zárás | Wenova |
 
 Minden partnerblokk felépítése: rövid bevezető, vezetett gyakorlat a saját cégeden, ellenőrzés és pótlás. Az előző blokk eredményét a következő használja.
@@ -98,7 +122,7 @@ A személyes LinkedIn bekötése nem feltétel: a Sales Bot-gyakorlat ma sandbox
 
 ### Hazavihető eredmény
 
-Claude-projekt a saját Cég-DNS-eddel és márkahangoddal; nyolc agent; kampányanyagok; minősített leadek és üzenetsor; ajánlattervezet; CRM-tábla heti méréssel; egy végigvitt ügyféleset; holnapi indulási terv és heti rutin.
+Claude-projekt a saját Cég-DNS-eddel és márkahangoddal; nyolc agent; kampányanyagok; minősített leadek és üzenetsor; ajánlattervezet; CRM-tábla heti méréssel; tölcsér és kampányelemzés; holnapi indulási terv és heti rutin.
 
 **Szervező: Wenova · Szakmai partnerek: Brandiseer, Blackhole Media, EstiWise.**
 
@@ -118,7 +142,9 @@ Szerkesztés alatt álló tananyag. A leckék draft/review állapota jelzi a ké
 
 - [**Ajánlatadás és belső átadás** 04-proposals-handoff](modules/04-proposals-handoff.md)
 
-- [**Folyamatpróba: levelek, CRM, egy ügyfél végig** 05-pipeline-review](modules/05-pipeline-review.md)
+- [**Folyamatpróba: kampánymérés és visszacsatolás** 05-pipeline-review](modules/05-pipeline-review.md)
+
+Záró előadás: [diák](presentations/05-zaro-eloadas.md) · [előadói jegyzet](presentations/05-zaro-eloadas-jegyzet.md).
 
 Kitekintésként, nem kötelező: **[Demók](demos/README.md)**, például a hangügynök-labor (AI-telefonos asszisztens a böngészőben, kitalált adatokkal).
 
@@ -173,7 +199,8 @@ Minden output a résztvevő saját munkacsomagjába kerül. A példavállalkozá
 | customer-brief.md | lead\_id, offer\_id, need, quantity, constraints, open\_questions |
 | proposal.md | proposal\_id, lead\_id, offer\_id, scope, quantity, unit\_price, currency, price\_basis, total, assumptions, status |
 | handoff.md | proposal\_id, lead\_id, decision\_status, owner, next\_task, due |
-| pipeline-review.md | case\_id, results, execution\_mode, evidence, gaps, next\_step |
+| tolcser.md | lead, beszélgetés, ajánlat, megnyert ügy, továbbjutási arányok |
+| kampany-elemzes.md | Kampány, időszak, execution\_mode, adatforrások, eredmények, kommentek témái, megfigyelések, javaslatok |
 | CRM – [cégnév] (Google-táblázat) | CRM lap: case\_id, company, source, offer\_id, stage, next\_step, next\_step\_due …; Heti mérés lap: week, stage, metric\_id, value, source |
 | launch-plan.md | Három holnapi lépés, heti rutin, ami még nem működik, mérőszám |
 

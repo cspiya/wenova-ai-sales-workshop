@@ -303,6 +303,8 @@ h1, h2, h3, h4, .day-strip__item a, .tl-title, .day-strip__item { overflow-wrap:
 .logo-word, .logo-tile { white-space:nowrap; }
 .day-strip__item .logo-tile { max-width:100%; }
 
+/* Participant home: the QR code stays scannable without pushing the three steps off the screen. */
+.page--home main img[src$="indulas-qr.png"] { display:block; width:min(15rem,70vw); height:auto; }
 /* Projection page (materials/indulas.md): readable from the back of the room at 1920x1080. */
 .page--projection { background:#fff; }
 .page--projection .site-head, .page--projection .site-foot, .page--projection .toc, .page--projection .skip { display:none; }

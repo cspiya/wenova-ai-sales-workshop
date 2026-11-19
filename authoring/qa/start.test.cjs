@@ -9,9 +9,12 @@ function links(text){
  for(const t of new MarkdownIt({html:true}).parse(text,{}))for(const c of t.children||[])if(c.type==='link_open')out.push(c.attrGet('href'));
  return out;
 }
-test('root README opens with the start page, QR code and downloads',()=>{
+test('root README routes the three audiences, the participant home opens with the QR code and three steps',()=>{
  const top=read('README.md').split('## Tartalom')[0];
- for(const s of [START,'https://cspiya.github.io/wenova-ai-sales-workshop/operations/','https://cspiya.github.io/wenova-ai-sales-workshop/authoring/','materials/assets/indulas-qr.png','https://github.com/cspiya/wenova-ai-sales-workshop/archive/refs/heads/main.zip','Kezdjük a felkészülést.'])assert.ok(top.includes(s),s);
+ for(const s of [START,'https://cspiya.github.io/wenova-ai-sales-workshop/operations/','https://cspiya.github.io/wenova-ai-sales-workshop/authoring/'])assert.ok(top.includes(s),s);
+ for(const s of ['indulas-qr.png','Az első három lépés','Kezdjük a felkészülést.'])assert.ok(!top.includes(s),s);
+ const home=read('materials/README.md').split('## Tartalom')[0];
+ for(const s of [START,'assets/indulas-qr.png','https://github.com/cspiya/wenova-ai-sales-workshop/archive/refs/heads/main.zip','Az első három lépés','Kezdjük a felkészülést.'])assert.ok(home.includes(s),s);
 });
 test('root README never links to a repository HTML file',()=>{
  for(const href of links(read('README.md'))){
