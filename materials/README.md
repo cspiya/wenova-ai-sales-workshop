@@ -59,7 +59,7 @@ Cég-DNS és saját AI-csapat → tartalom a céged hangján → LinkedIn-megker
 
 ### Előzetes felkészülés
 
-A [felkészülés](modules/00-prework.md) kb. 55 perc. Készítsd elő a Claude-előfizetésedet és a Claude Desktopot, telepítsd a tananyagot, kösd be a levelezőt és a Google-táblázatot, és gyűjtsd össze a saját forrásaidat. A Brandiseer- és EstiWise-fiókot a workshopon is létrehozhatod a saját laptopodon. A Buffer-fiók választható. Érkezz 08:30-ra a közös technikai ellenőrzésre, amely 09:00-ig tart. Ha elakadsz, szólj egy oktatónak, aki a helyeden segít.
+A [felkészülés](modules/00-prework.md) kb. 55 perc. Készítsd elő a Claude-előfizetésedet és a Claude Desktopot, telepítsd a tananyagot, kösd be a levelezőt és a Google-táblázatot, és gyűjtsd össze a saját forrásaidat. A Brandiseer- és EstiWise-fiókot a workshopon is létrehozhatod a saját laptopodon. A Buffer-fiók választható. Érkezz 08:30-ra a közös technikai ellenőrzésre, amely 09:00-ig tart. Ha elakadsz, keresd a [Claude Desktop hibaelhárítási útmutatóját](hibaelharitas.md), vagy szólj egy oktatónak, aki a helyeden segít.
 
 <a name="agenda-5"></a>
 

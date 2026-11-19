@@ -61,7 +61,7 @@ Másold a `Tananyag/AGENTS.md` és a `Tananyag/CLAUDE.md` fájlt a munkamappa gy
 Közöld ✅/⚠️ jelöléssel:
 
 - `Tananyag/VERSION` tartalma (és a régi verzió, ha frissítés volt);
-- a `Tananyag/` fájljainak száma a rejtett fájlokkal együtt (legalább 159 legyen);
+- a `Tananyag/` fájljainak száma a rejtett fájlokkal együtt (legalább 161 legyen);
 - megvan-e: `Tananyag/index.html`, `Tananyag/README.md`, `Tananyag/AGENTS.md`, `Tananyag/assistant.md`, `Tananyag/modules/00-prework.md` … `05-pipeline-review.md`, `Tananyag/starter-kit/agents/` nyolc agentfájlja (`orchestrator`, `writer`, `reviewer`, `ceo`, `marketing`, `sales`, `inbox`, `crm`), `Tananyag/assets/notebook.css`;
 - megvan-e a plugin: `Tananyag/plugin/wenova-sales-workshop.plugin`, és a `Tananyag/plugin/wenova-sales-workshop/` mappában a `.claude-plugin/plugin.json`, a `.mcp.json`, az `agents/` hét fájlja és a `skills/` nyolc `SKILL.md` fájlja. Kézi másolásnál a rejtett fájlok hiányozhatnak: ez ⚠️, de nem akadály, mert a feltöltéshez a `.plugin` fájl elég;
 - a `Munka/` érintetlen maradt: a korábbi fájlok hashlistája előtte és utána azonos. Az újonnan létrehozott üres almappa nem eltérés;
@@ -140,5 +140,7 @@ Ezt a résztvevő csinálja, kb. 3 perc:
 7. A Claude-ban írd: „A Tananyag/TELEPITES.md 4. szakasza szerint hozd létre a Munka hat almappájából a hiányzókat. Hagyd a helyén a bemásolt Tananyag mappát, majd folytasd az 5., 6., 6/a és 7. szakasszal.”
 
 ## Ha végképp nem megy
+
+A résztvevő a [Claude Desktop hibaelhárítási útmutatójában](hibaelharitas.md) talál segítséget a gyakori hibákhoz.
 
 A tananyag böngészőben is olvasható: `https://github.com/cspiya/wenova-ai-sales-workshop/tree/main/materials`. A gyakorlatok a claude.ai-projekttel is végigjárhatók (tartalékút a felkészülési modulban). Szólj egy oktatónak, aki a helyeden segít.

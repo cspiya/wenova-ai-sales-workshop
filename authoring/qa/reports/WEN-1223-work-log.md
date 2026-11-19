@@ -80,3 +80,36 @@ Második kör, vizsgált revízió `16b27bf`, tiszta profil: újrafuttatás 91,4
 
 - A modulok szövegcseréi a másik makerre várnak.
 - A kivetítő oldal és a QR-kód csak a main ágra kerülés után él.
+
+
+## Hibaelhárítási oldal
+
+A `1223-troubleshooting.md` maker brief alapján a résztvevői útmutató 11 helyzetet fed le. Mindegyikhez tünetet, lehetséges okot, teendőt és mentőutat ad. A Wenova Academy oktatási útmutatója a workshop üzleti résztvevőinek szól, magyarul, böngészőben és Markdownban. Forrás a brief, a telepítési futtatókönyv, a 00-s modul, a Claude Code útmutató, a tanulási kísérő és a `beallitas` skill. A Windows-követelményt és a keret kezelését a [Claude Windows útmutatója](https://support.claude.com/en/articles/12622703-deploy-claude-desktop-for-windows) és a [Claude használati keretének leírása](https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work) támasztja alá. Wenova OS forrásrevízió `f450f6fd91e87eca4c24725e1b1541aa61ecc817`. Felülvizsgálat akkor esedékes, ha a Claude felülete vagy a telepítési út módosul.
+
+| # | Dátum | Session | Lépés | Eredmény |
+|---|---|---|---|---|
+| 6 | 2026-11-19 | Codex, hibaelhárítási munkamenet | Résztvevői Markdown és HTML, négy belépési pont, új fájlszám | 11 helyzet és 161 fájl a csomagban |
+| 7 | 2026-11-19 | Codex, hibaelhárítási munkamenet | Generálás, tesztek és saját ellenőrzés | 4 kért parancs és a célzott ellenőrzés sikeres |
+
+| Azonosító | Dátum | Döntés | Döntéshozó típusa és szerepköre | Indoklás | Alapja | Leváltja | Forrás |
+|---|---|---|---|---|---|---|---|
+| WEN-1223/D10 | 2026-11-19 | A ZIP-mentőút linkje a felkészülés generált oldalának telepítési segítségére mutat. | AI (maker) | A cél asztali böngészőben és helyi HTML-ből is megnyitható. | `1223-troubleshooting.md`, 00-s modul | nincs | Codex, hibaelhárítási munkamenet |
+| WEN-1223/D11 | 2026-11-19 | Új beszélgetés és rövidebb feladat a további kerethasználathoz. Kimerült keretnél a megújulás vagy a csomagváltás segít. | AI (maker) | Az új beszélgetés a folytatás feladatát rövidíti, a fiók használati keretét a fiók beállításai szabják meg. | `1223-troubleshooting.md`, Claude keretleírás | nincs | Codex, hibaelhárítási munkamenet |
+
+| # | Mikor, hol | Szándék | Mi történt | Ki vette észre | Ok | Javítás | Tanulság |
+|---|---|---|---|---|---|---|---|
+| C3 | 2026-11-19, kezdőlapi bekötés | A hibaelhárítás látszódjon a kezdőlapon. | Az első link csak Markdownban jelent meg. | Maker | A renderelő saját tartalomjegyzéket épít. | A link az „Előzetes felkészülés” bekezdésébe került. | A belépési pontokat a renderelt változatban is ellenőrizni kell. |
+| C4 | 2026-11-19, kapufuttatás | A technikai kapu fájlmódosítás nélküli futásának ellenőrzése. | Az első lenyomatvétel a párhuzamos teszt ideiglenes fájlját olvasta volna, miután a teszt törölte. | Maker | A teszt átmeneti fájlokat hoz létre a munkafában. | A végső ellenőrzés a teszt előtt, külön futott. | A munkafa lenyomatvételét külön kell futtatni a fájlokat létrehozó tesztektől. |
+
+Vizsgált alap HEAD `3e015ba687fd5c2d754f54fbd68d40eaacfbeb76`. A helyi, commitolatlan `materials` csomag lenyomata `8153b60d31b7d7f994143642d6fafa584ef86d5475a8c10da1b5267e6a316d1f`.
+
+| Parancs vagy ellenőrzés | Eredmény |
+|---|---|
+| `npm ci --ignore-scripts --offline --cache .npm-cache --no-audit` | 0. Hét rögzített függőség helyi gyorsítótárból. |
+| `npm run plugin:build` | 0. `PASS: 8 plugin copies and materials/plugin/wenova-sales-workshop.plugin` |
+| `npm run render` | 0. `PASS: 24 presentation sources.` |
+| `npm run check` | 0. `PASS: 24 current HTML pages; 1318 local references; 20 lessons.` A Git által látott fájlok SHA-256 értékei egyeztek a futás előtt és után. |
+| `npm test` | 0. 21 sikeres, 0 hibás, 0 kihagyott. |
+| Célzott szerkezeti ellenőrzés | 11 szakasz és tartalomjegyzék-link, 44 címke, 4 Markdown- és 3 HTML-belépési pont, 2 mentőúticél. A 02–04-es modulok és oktatói jegyzeteik változatlanok. |
+
+Környezet: Windows, Node `24.22.1`, npm `11.19.1`. Saját ellenőrzés, technikai PASS, lefedettség PARTIAL, ajánlás NOT_READY. A maker brief önálló munkát kér. A független tartalmi review, a böngészős megjelenés vizsgálata és a résztvevői Cowork-próba nyitott.

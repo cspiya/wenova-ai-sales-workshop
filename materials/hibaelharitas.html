@@ -1,0 +1,92 @@
+<!doctype html>
+<!-- Generated from materials/hibaelharitas.md; edit Markdown and run npm run render. -->
+<html lang="hu"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Hibaelhárítás: ha elakadsz a Claude Desktopban · AI Sales &amp; Marketing Workshop</title><link rel="stylesheet" href="assets/notebook.css"></head><body class="page page--doc">
+<a class="skip" href="#main">Ugrás a tartalomhoz</a><header class="site-head"><div class="site-head__bar"><a class="site-head__brand" href="index.html"><img src="assets/logos/wenova-wordmark.png" alt="Wenova" width="154" height="18"><span>AI Sales &amp; Marketing Workshop</span></a><nav class="site-head__nav" aria-label="Fő navigáció"><a href="index.html">Kezdőlap</a><a href="schedule.html" class="is-cta">A nap menete</a><a href="hibaelharitas.md">Markdown-forrás</a></nav></div><div class="partner-band partner-band--head"><p class="partner-band__label">Négy hazai csapat, egy közös értékesítési folyamat</p><ul class="partner-band__list" aria-label="Partnerek"><li class="partner partner--wenova"><span class="partner__logo"><img class="logo logo--wenova" src="assets/logos/wenova-wordmark.png" alt="Wenova" width="239" height="28"></span><span class="partner__role">Szervező · AI-működés</span></li><li class="partner partner--brandiseer"><span class="partner__logo"><img class="logo logo--brandiseer" src="assets/logos/brandiseer-icon.png" alt="" width="24" height="28"><span class="logo-word">Brandiseer</span></span><span class="partner__role">Márkaazonos tartalom</span></li><li class="partner partner--blackhole"><span class="partner__logo"><img class="logo logo--blackhole" src="assets/logos/black-hole-media-logo.png" alt="Blackhole Media" width="299" height="28"></span><span class="partner__role">Ügyfélszerzés · Sales Bot</span></li><li class="partner partner--estiwise"><span class="partner__logo"><img class="logo logo--estiwise" src="assets/logos/estiwise-logo-feher.svg" alt="EstiWise" width="99" height="28"></span><span class="partner__role">Ajánlatadás 0–24</span></li></ul></div></header>
+<div class="layout"><nav class="toc" aria-label="Tartalom"><p>Tartalom</p><ol><li><a href="#letoltes">A tananyag letöltése leáll</a></li><li><a href="#git">A Claude szerint nincs git</a></li><li><a href="#plugin">A plugin hiányzik vagy nem adható hozzá</a></li><li><a href="#szerepek">A Karmester nem tudja elindítani az Írót vagy az Ellenőrt</a></li><li><a href="#utasitasok">A Claude nem követi a workshop szabályait</a></li><li><a href="#connector">Egy connector nem működik vagy belépést kér</a></li><li><a href="#cowork">Windowson nem indul a Cowork</a></li><li><a href="#codex">Nincs Codex a gépeden</a></li><li><a href="#keret">Elfogyott a használati keret</a></li><li><a href="#engedely">A Claude engedélyt kér</a></li><li><a href="#egyeb">Más gond akadt</a></li></ol></nav><main id="main">
+<!-- presentation -->
+<header class="page-hero">
+<h1>Hibaelhárítás: ha elakadsz a Claude Desktopban</h1>
+<p class="lead">Először írd a Claude-nak: „Elakadtam.” Ha ez nem segít, szólj egy oktatónak. A helyeden, a saját gépeden segít.</p>
+</header>
+<a id="letoltes"></a>
+<h2>A tananyag letöltése leáll</h2>
+<p><strong>Ezt látod.</strong> Beírtad a telepítő mondatot, de a letöltés hibával leáll.</p>
+<p><strong>Mi lehet az oka.</strong> A Claude hálózati beállításai miatt előfordulhat, hogy nem éri el a GitHubot.</p>
+<p><strong>Ezt csináld.</strong></p>
+<ol>
+<li>Nyisd meg a <strong>Settings → Capabilities</strong> menüt, és kapcsold be az <strong>Allow network egress</strong> kapcsolót.</li>
+<li>A <strong>Domain allowlist</strong> beállítása legyen <strong>Package managers only</strong>.</li>
+<li>Az <strong>Additional allowed domains</strong> listába add hozzá ezt a három címet:
+<ul>
+<li><code>github.com</code></li>
+<li><code>codeload.github.com</code></li>
+<li><code>raw.githubusercontent.com</code></li>
+</ul>
+</li>
+<li>Írd a Claude-nak: „Próbáld újra.”</li>
+</ol>
+<p><strong>Ha így sem megy.</strong> Töltsd le a tananyagot a böngésződben, és kövesd a <a href="modules/00-prework.html#00-prework.01-install--help">kézi ZIP-út</a> lépéseit.</p>
+<a id="git"></a>
+<h2>A Claude szerint nincs git</h2>
+<p><strong>Ezt látod.</strong> A telepítés közben a Claude jelzi, hogy nem éri el a <code>git</code> programot.</p>
+<p><strong>Mi lehet az oka.</strong> A <code>git</code>, amellyel a Claude először próbálja letölteni a fájlokat, hiányozhat a munkakörnyezetéből.</p>
+<p><strong>Ezt csináld.</strong> A Claude ZIP-ből is le tudja tölteni a tananyagot. Írd be: „Töltsd le ZIP-ből a tananyagot a telepítési útmutató szerint.”</p>
+<p><strong>Ha így sem megy.</strong> Kövesd a <a href="modules/00-prework.html#00-prework.01-install--help">kézi ZIP-út</a> lépéseit.</p>
+<a id="plugin"></a>
+<h2>A plugin hiányzik vagy nem adható hozzá</h2>
+<p><strong>Ezt látod.</strong> Nem sikerül hozzáadnod a workshop pluginját, vagy a munkamenetben nem jelennek meg a szerepek és parancsok.</p>
+<p><strong>Mi lehet az oka.</strong> A hozzáadás megszakadt, vagy a munkamenet már a hozzáadás előtt megnyílt.</p>
+<p><strong>Ezt csináld.</strong> Nyisd meg a <strong>Customize → Plugins → Add → Upload plugin</strong> menüt. A <code>Tananyag/plugin/</code> mappából válaszd a <code>wenova-sales-workshop.plugin</code> fájlt. Utána nyiss <strong>új munkamenetet</strong> a workshop projektjében.</p>
+<p><strong>Ha így sem megy.</strong> Folytasd plugin nélkül. Használd a <a href="starter-kit/agents/README.md">szerepleírásokat</a> és az ott megadott indítómondatokat.</p>
+<a id="szerepek"></a>
+<h2>A Karmester nem tudja elindítani az Írót vagy az Ellenőrt</h2>
+<p><strong>Ezt látod.</strong> A Karmester nem tudja külön elindítani az Írót vagy az Ellenőrt.</p>
+<p><strong>Mi lehet az oka.</strong> Előfordulhat, hogy a Claude ebben a munkamenetben csak közvetlenül tudja követni a szerepek leírását.</p>
+<p><strong>Ezt csináld.</strong> Az Írót te indíthatod. Kezdd a kérésedet így: <code>Író:</code>, majd írd le a feladatot. Kérd el a Karmestertől az ellenőrzési csomagot. Nyiss új beszélgetést ugyanabban a projektben, kezdd az <code>Ellenőr: [műfaj]</code> mondattal, majd te másold át a csomagot. A műfaj lehet például levél vagy ajánlat.</p>
+<p><strong>Ha így sem megy.</strong> Szólj az oktatónak. Mutasd meg a mentett piszkozatot és az eredeti feladatot.</p>
+<a id="utasitasok"></a>
+<h2>A Claude nem követi a workshop szabályait</h2>
+<p><strong>Ezt látod.</strong> A Claude például rossz mappába ment, vagy más céghez tartozó anyagból dolgozik.</p>
+<p><strong>Mi lehet az oka.</strong> A projekt utasítása hiányzik, vagy a munkamenet a beállítás mentése előtt indult.</p>
+<p><strong>Ezt csináld.</strong> Írd a workshop projektjének <strong>Instructions</strong> mezőjébe: „Kövesd a munkamappa AGENTS.md fájlját. A cégem neve: [cégnév].” A <code>[cégnév]</code> helyére a céged nevét írd. Mentsd, majd nyiss új munkamenetet a projektben.</p>
+<p><strong>Ha így sem megy.</strong> Nézd meg, hogy a projekt a <code>Wenova-AI-Sales-Workshop</code> mappára mutat-e, és a mappa gyökerében ott van-e az <code>AGENTS.md</code>. A <a href="TELEPITES.md">telepítési útmutató</a> 5. szakasza segít az utasításfájlok pótlásában.</p>
+<a id="connector"></a>
+<h2>Egy connector nem működik vagy belépést kér</h2>
+<p><strong>Ezt látod.</strong> A Claude nem tud olvasni egy szolgáltatásból, vagy a kapcsolat belépést kér.</p>
+<p><strong>Mi lehet az oka.</strong> A connector, vagyis a Claude kapcsolata a szolgáltatáshoz, még nincs hozzáadva, vagy újra be kell lépned.</p>
+<p><strong>Ezt csináld.</strong> A <strong>Customize → Connectors</strong> menüben vagy a workshop plugin <strong>Connectors</strong> fülén válaszd ki a kapcsolatot. Ha még hiányzik, kattints az <strong>Add</strong> gombra, majd a <strong>Connect</strong> gombra. A szolgáltató oldalán lépj be. Utána kérd meg a Claude-ot, hogy végezzen rövid olvasási próbát, például olvassa ki egy levél tárgyát.</p>
+<p><strong>Ha így sem megy.</strong> Kövesd az adott modul „Ha elakadtál” részét. Levelezésnél például dolgozhatsz bemásolt szöveggel vagy <a href="scenarios/office-plants/outputs/mailbox-sample.md">mintapostafiókkal</a>.</p>
+<a id="cowork"></a>
+<h2>Windowson nem indul a Cowork</h2>
+<p><strong>Ezt látod.</strong> A Claude Desktop megnyílik, de a Cowork nem tud munkamenetet indítani.</p>
+<p><strong>Mi lehet az oka.</strong> A Coworknak virtualizációra van szüksége, hogy külön környezetben fusson. Lehet, hogy ez a funkció ki van kapcsolva a gépeden.</p>
+<p><strong>Ezt csináld.</strong> Folytasd Claude Code-ban a <a href="CLAUDE-CODE.html#scoop">Scoop-mentőút</a> lépéseivel.</p>
+<p><strong>Ha így sem megy.</strong> Hozz létre projektet a claude.ai-on. A feltöltendő fájlokat a <a href="modules/00-prework.html#00-prework.01-install--help">felkészülési modul mentőútjában</a> találod.</p>
+<a id="codex"></a>
+<h2>Nincs Codex a gépeden</h2>
+<p><strong>Ezt látod.</strong> Az induló felmérésben a Claude jelzi, hogy nem talált Codexet.</p>
+<p><strong>Mi lehet az oka.</strong> A Codex nincs telepítve, vagy ebből a munkamenetből nem érhető el. Codex nélkül is folytathatod a workshopot.</p>
+<p><strong>Ezt csináld.</strong> Az Ellenőr szerepét a Claude kapja egy új beszélgetésben, a készítés előzményei nélkül. Így az ellenőrzés függetlensége részleges.</p>
+<p><strong>Ha így sem megy.</strong> Kérd meg az oktatót, hogy segítsen átadni az ellenőrzési csomagot az új beszélgetésbe.</p>
+<a id="keret"></a>
+<h2>Elfogyott a használati keret</h2>
+<p><strong>Ezt látod.</strong> A Claude jelzi, hogy elérted a használati keretedet, és megáll a feladat.</p>
+<p><strong>Mi lehet az oka.</strong> A hosszú beszélgetés és a sok javítási kör több keretet használ el.</p>
+<p><strong>Ezt csináld.</strong> Amikor újra tudsz dolgozni, adj rövidebb feladatot, és kérj kevesebb javítási kört. Hosszú beszélgetés helyett nyiss újat, és vidd át a folytatáshoz szükséges fájlokat.</p>
+<p><strong>Ha így sem megy.</strong> Várd meg, amíg megújul a kereted. Ha rendszeresen elfogy, és több keretre van szükséged, válthatsz nagyobb keretű csomagra.</p>
+<a id="engedely"></a>
+<h2>A Claude engedélyt kér</h2>
+<p><strong>Ezt látod.</strong> A Claude megáll, és jóváhagyást kér egy művelethez.</p>
+<p><strong>Mi lehet az oka.</strong> A művelethez még nincs engedélye.</p>
+<p><strong>Ezt csináld.</strong> Olvasd el, mit kér, és te dönts róla. Amit tartósan engedélyezel, azt a Claude újabb rákérdezés nélkül megteheti, a levélküldést is. A workshopon a levél piszkozat marad, amíg te nem döntesz a küldésről.</p>
+<p><strong>Ha így sem megy.</strong> Ha nem szeretnéd megadni az engedélyt, kérd a Claude-tól a modul kézi mentőútját.</p>
+<a id="egyeb"></a>
+<h2>Más gond akadt</h2>
+<p><strong>Ezt látod.</strong> Elakadtál, de a fenti helyzetek közül egyik sem illik arra, amit látsz.</p>
+<p><strong>Mi lehet az oka.</strong> Lehet, hogy hiányzik egy beállítás, fájl vagy kapcsolat.</p>
+<p><strong>Ezt csináld.</strong> Írd be a Claude-nak: <code>/wenova-sales-workshop:beallitas</code>. A Claude a hiányokat a <code>Munka/00-Felkeszules/felmeres.md</code> fájlba írja.</p>
+<p><strong>Ha így sem megy.</strong> Ha a parancs nem érhető el, írd be: „Mérd fel a gépem.” Ha továbbra is elakadsz, mutasd meg az oktatónak, melyik lépésnél álltál meg.</p>
+<p><a href="index.html">Vissza a tananyag kezdőlapjára</a></p>
+</main></div>
+<footer class="site-foot"><div class="partner-band partner-band--foot"><p class="partner-band__label">Négy hazai csapat, egy közös értékesítési folyamat</p><ul class="partner-band__list" aria-label="Partnerek"><li class="partner partner--wenova"><span class="partner__logo"><img class="logo logo--wenova" src="assets/logos/wenova-wordmark.png" alt="Wenova" width="239" height="28"></span><span class="partner__role">Szervező · AI-működés</span></li><li class="partner partner--brandiseer"><span class="partner__logo"><img class="logo logo--brandiseer" src="assets/logos/brandiseer-icon.png" alt="" width="24" height="28"><span class="logo-word">Brandiseer</span></span><span class="partner__role">Márkaazonos tartalom</span></li><li class="partner partner--blackhole"><span class="partner__logo"><img class="logo logo--blackhole" src="assets/logos/black-hole-media-logo.png" alt="Blackhole Media" width="299" height="28"></span><span class="partner__role">Ügyfélszerzés · Sales Bot</span></li><li class="partner partner--estiwise"><span class="partner__logo"><img class="logo logo--estiwise" src="assets/logos/estiwise-logo-feher.svg" alt="EstiWise" width="99" height="28"></span><span class="partner__role">Ajánlatadás 0–24</span></li></ul></div><p class="site-foot__meta">AI Sales &amp; Marketing Workshop · 2026. november 19. · CEU, Budapest · a Wenova szervezésében</p></footer>
+</body></html>

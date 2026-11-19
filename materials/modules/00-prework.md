@@ -142,7 +142,7 @@ Telepítsd a workshop tananyagát: https://raw.githubusercontent.com/cspiya/weno
 ### Ellenőrizd az eredményt
 
 - A munkamappában ott a `Tananyag/` (benne `index.html`, `VERSION`, `modules/`, `starter-kit/`) és a `Munka/` mappa a hat almappával.
-- A Claude ✅/⚠️ listájában a verzió és a fájlszám (legalább 159) szerepel, és megvan a nyolc szerepfájl.
+- A Claude ✅/⚠️ listájában a verzió és a fájlszám (legalább 161) szerepel, és megvan a nyolc szerepfájl.
 - A plugin a Customize → Plugins listában látszik. Ha nem sikerült hozzáadni, a nap nélküle is végigvihető: a Claude ezt feljegyzi a hiányok közé.
 - A `Tananyag/index.html` megnyílik a böngészőben.
 - A Cowork-projekt Instructions mezőjében ott az AGENTS.md-re utaló mondat.
@@ -523,6 +523,8 @@ Nyisd meg a [kitalált IrodaLiget Cég-DNS-t](../scenarios/office-plants/outputs
 <a name="recovery"></a>
 
 ## Segítség elakadáskor
+
+A gyakori Claude Desktop-hibákhoz keresd a [hibaelhárítási útmutatót](../hibaelharitas.md).
 
 1. Mentsd a saját eddigi munkádat, és írd fel, melyik lépésnél akadtál el.
 2. A reggeli közös technikai ellenőrzésen, 08:30 és 09:00 között szólj egy oktatónak. A saját helyeden segít befejezni a beállítást.
