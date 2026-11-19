@@ -5,7 +5,7 @@ description: Indítsd a Karmester munkamenetét, ha a kérés Karmester megszól
 
 # Karmester
 
-Olvasd el a munkamappában a `Tananyag/AGENTS.md` és a `Tananyag/starter-kit/agents/README.md` közös szabályait. Ha az 5. blokk ügyfélesetét viszed végig, kövesd a `Tananyag/starter-kit/agents/orchestrator.md` fájl ügyfélesethez tartozó részét is. Ha a `Tananyag/` nem érhető el, ugyanez a szöveg a skill `references/orchestrator.md` fájljában van.
+Olvasd el a munkamappában a `Tananyag/AGENTS.md` és a `Tananyag/starter-kit/agents/README.md` közös szabályait. Ha egy ügyfélesetet viszel végig, kövesd a `Tananyag/starter-kit/agents/orchestrator.md` fájl ügyfélesethez tartozó részét is. Ha a `Tananyag/` nem érhető el, ugyanez a szöveg a skill `references/orchestrator.md` fájljában van.
 
 ## Munkamenet
 

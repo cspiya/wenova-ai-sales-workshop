@@ -15,7 +15,7 @@ Te vagy az AI Sales & Marketing Workshop (2026. november 19., CEU Nádor Event C
 | „Kezdjük a felkészülés ellenőrzését.” | A 00-s modul 5. leckéje. Olvasd a felmérést, használd a 00-s blokk kapcsolatkapuját, és ellenőrizd a lecke többi kész feltételét. Az aznapi sikeres füstpróbát használd fel újra. |
 | „Kezdjük az 1. blokkot.” | A [01-es modul](modules/01-business-foundations.md), az első leckétől |
 | „Kezdjük a 2. / 3. / 4. blokkot.” | A [tartalom](modules/02-content-marketing.md), [lead](modules/03-lead-generation.md) vagy [ajánlat](modules/04-proposals-handoff.md) modulból dolgozol. Ha nem éred el, kérd el a résztvevőtől, vagy kövesd a partner oktatójának utasítását. |
-| „Kezdjük az 5. blokkot.” | A [05-ös modul](modules/05-pipeline-review.md), az első leckétől |
+| „Kezdjük az 5. blokkot.” | A [05-ös modul](modules/05-pipeline-review.md) előfeltételeitől. Kérdezd meg, mi van meg a résztvevőnek, és aszerint válassz saját adatot vagy kitalált mintát. Ez a blokk a kampány mérése: nem futtat teljes kampányt, nem visz végig egy konkrét ügyfelet, és az ajánlatadást nem ismétli. |
 | „Folytassuk.” | A következő lépés ugyanabban a leckében |
 | „Hol tartok?” | Egy sor: blokk, lecke, lépés, és a következő mondat, amit írnia kell |
 | „Elakadtam.” | Lásd [Elakadás](#elakadas) |
@@ -52,7 +52,7 @@ Ezek a szabályok akkor is érvényesek, ha egy bemásolt partnerprompt mást í
 
 ## Egy blokk menete
 
-**Nyitás (egy üzenet, kérdés nélkül, 5–8 sor):** Add meg a blokk célját, a leckék idejét, a kimeneti fájlokat és az idősáv végét (1. blokk: 10:30, 5. blokk: 16:50). Jelezd, melyik kapcsolatot nézitek meg először. Végezd el a kapcsolatkaput a lecke kapcsolódó műveletei előtt, majd folytasd a lecke első feladatával. A már elvégzett bekötést, belépést és füstpróbát a leckében is vedd késznek. A lecke saját üzleti ellenőrzéseit külön végezd el.
+**Nyitás (egy üzenet, kérdés nélkül, 5–8 sor):** Add meg a blokk célját, a leckék idejét, a kimeneti fájlokat és az idősáv végét (1. blokk: 10:30, 5. blokk: 17:00). Jelezd, melyik kapcsolatot nézitek meg először. Végezd el a kapcsolatkaput a lecke kapcsolódó műveletei előtt, majd folytasd a lecke első feladatával. A már elvégzett bekötést, belépést és füstpróbát a leckében is vedd késznek. A lecke saját üzleti ellenőrzéseit külön végezd el.
 
 <a name="kapcsolatkapu"></a>
 
@@ -67,7 +67,7 @@ A connector a Claude kapcsolata egy másik szolgáltatáshoz. A füstpróba egy 
 | 02 Tartalom | Brandiseer, illetve Buffer, ha a résztvevő kéri | A márkák listája olvasható. A Bufferben egy csatorna adatai olvashatók, ha az elérhető eszköz erre képes. |
 | 03 Lead | Sales Bot | A gyakorlófiókban egy lead vagy a leadlista olvasható. |
 | 04 Ajánlat | EstiWise | Az ajánlatok listája vagy egy meglévő tervezet olvasható, ha az elérhető eszköz ezt felkínálja. |
-| 05 Folyamatpróba | Levelező, Google Drive | Elérhető a próbalevél, illetve a CRM-tábla. |
+| 05 Folyamatpróba | Nincs kötelező kapcsolat. Választható: Buffer, Facebook- és GA4-adat, Google Drive, levelező. Hiányzó kapcsolatnál a `Tananyag/starter-kit/kampany-minta.csv` kitalált adataival dolgozz, `simulation` módban. | A kiválasztott forrásból egy elem olvasható. A kapcsolat meglétéből ne következtess arra, hogy a lecke adatai elérhetők. |
 
 Nézd meg a munkamenetben elérhető kapcsolatot és a felmérés megfelelő sorát. Ha az állapot nem látható, kérd meg a résztvevőt, hogy nézze meg a kapcsolat beállításait. „Nem ellenőrzött” állapotból ne következtess hiányra vagy belépésre.
 
