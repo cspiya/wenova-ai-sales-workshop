@@ -9,5 +9,5 @@ results:
   8. Holnapi lépés: launch-plan.md (simulation)
 execution_mode: simulation minden lépésben; nincs partnerrendszer, nincs küldés
 evidence: leads.csv, outreach.md, customer-brief.md, proposal.md, handoff.md és crm.csv. A lead azonosítója office-plants-L01, az ajánlaté office-plants-P01.
-gaps: A kísérőszöveg és az Ellenőr ítélete ehhez az ügyhöz hiányzik. A kép és a videó kimaradt. Külső művelet és ajánlatelfogadás nem történt.
+gaps: A kísérőszöveg és az Ellenőr ítélete ehhez az ügyhöz hiányzik. A mintához nem készült posztkép. Külső művelet és ajánlatelfogadás nem történt.
 next_step: Pontosítsd az indulási időpontot és a számlázási adatokat. Felelős: Ügyvezető. Határidő: 2026-11-21.

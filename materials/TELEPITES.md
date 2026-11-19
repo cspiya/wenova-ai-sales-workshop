@@ -87,4 +87,4 @@ Ezt a résztvevő csinálja, kb. 3 perc:
 
 ## Ha végképp nem megy
 
-A tananyag böngészőben is olvasható: `https://github.com/cspiya/wenova-ai-sales-workshop/tree/main/materials`. A gyakorlatok a claude.ai-projekttel is végigjárhatók (tartalékút a felkészülési modulban). Szólj a technikai pultnál.
+A tananyag böngészőben is olvasható: `https://github.com/cspiya/wenova-ai-sales-workshop/tree/main/materials`. A gyakorlatok a claude.ai-projekttel is végigjárhatók (tartalékút a felkészülési modulban). Szólj egy oktatónak, aki a helyeden segít.

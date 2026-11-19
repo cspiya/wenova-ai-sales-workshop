@@ -36,7 +36,7 @@ A nap négy blokkja egy folyamattá áll össze: levél, LinkedIn-lead, ajánlat
 | 16:28–16:40 | [Egy ügyfél végig a Karmesterrel](#05-pipeline-review.02-one-customer) | `pipeline-review.md` |
 | 16:40–16:50 | [Mérés, visszacsatolás és holnapi indulás](#05-pipeline-review.03-measure-launch) | `launch-plan.md` holnapi lépései, egy sor a „Heti mérés” lapon |
 
-A nap végén minden kifelé menő művelet piszkozat marad: levél, Sales Bot-üzenet, ajánlat. Az elküldés holnap a te döntésed.
+A levelek, a Sales Bot-üzenetek és az ajánlatok piszkozatban maradnak, az elküldés holnap a te döntésed. A Bufferben a jóváhagyásoddal beütemezett poszt a megadott időpontban megjelenik.
 
 <a name="overview-1"></a>
 
@@ -356,7 +356,7 @@ Ha a táblázat nem érhető el, a sort a `launch-plan.md` végére írd. Ha az 
 
 ### Ezt viszed tovább
 
-**Mit viszel haza:** egy Claude-projektet a saját Cég-DNS-eddel és márkahangoddal; öt agentet (Karmester, Író, Ellenőr, Postás, CRM); a partnerrendszerek bekötését a saját fiókjaidban; egy CRM-táblát „Heti mérés” lappal; egy végigvitt ügyféleset leírását; és egy holnapi tervet heti rutinnal. A tananyag és a [tanulási kísérő](../assistant.md) hazavihető: bármelyik blokk újraindítható a „Kezdjük az N. blokkot” mondattal.
+**Mit viszel haza:** egy Claude-projektet a saját Cég-DNS-eddel és márkahangoddal; öt agentet (Karmester, Író, Ellenőr, Postás, CRM); a saját fiókodban ténylegesen beállított partnerkapcsolatokat; egy CRM-táblát „Heti mérés” lappal; egy végigvitt ügyféleset leírását; és egy holnapi tervet heti rutinnal. A tananyag és a [tanulási kísérő](../assistant.md) hazavihető: bármelyik blokk újraindítható a „Kezdjük az N. blokkot” mondattal.
 
 <a name="05-pipeline-review.03-measure-launch--extra"></a>
 
