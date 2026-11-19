@@ -111,6 +111,12 @@ test('every page carries exactly its own audience band and theme class',()=>{
  }
  assert.deepEqual([...seen].sort(),Object.keys(AREAS).sort());
 });
+test('the voice lab application carries the participant band after its skip link',()=>{
+ const html=fs.readFileSync(path.join(ROOT,'materials/demos/voice-lab/app.htm'),'utf8').replace(/\r\n/g,'\n');
+ assert.match(html,/<body class="area--participant">\n<a class="skip" href="#main">[^<]*<\/a>\n<div class="area-band" role="note">HALLGATÓI ANYAG<\/div>\n/);
+ assert.equal((html.match(/class="area-band"/g)||[]).length,1);assert.doesNotMatch(html,/OKTATÓI OLDAL|area--instructor/);
+ assert.match(fs.readFileSync(path.join(ROOT,'materials/demos/voice-lab/app.css'),'utf8'),/\.area-band \{ position:sticky; top:0;/);
+});
 test('stale output and changed Markdown fail check without repairing files',()=>fixture((root,put)=>{
  put('README.md','# Cím\n');run({root});put('index.html','manual change');
  assert.throws(()=>run({root,check:true}),/stale HTML/);assert.equal(fs.readFileSync(path.join(root,'index.html'),'utf8'),'manual change');
