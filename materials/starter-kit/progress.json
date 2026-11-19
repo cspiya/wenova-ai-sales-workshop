@@ -4,6 +4,13 @@
   "current_lesson": "00-prework.01-install",
   "business_mode": "undecided",
   "scenario_id": null,
+  "active_business": {
+    "name": null,
+    "dna_version": null,
+    "company_dna_path": null,
+    "voice_profile_path": null,
+    "business_profile_path": null
+  },
   "execution_mode": "simulation",
   "checkpoints": [],
   "gaps": []

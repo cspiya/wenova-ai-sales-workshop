@@ -4,3 +4,5 @@ need: Egy helyszín, legfeljebb 10 fő, fejenként két retusált portré
 quantity: 1
 constraints: A példabeli csomag keretein belül.
 open_questions: Indulás időpontja és számlázási adatok még tisztázandók.
+
+Kitalált érdeklődő válasz (business-photography-L01): „Érdekel a portréfotózás. Egy helyszínen legfeljebb tíz főre kérünk fejenként két retusált portrét.”

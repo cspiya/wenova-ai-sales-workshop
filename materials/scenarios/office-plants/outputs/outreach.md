@@ -1,6 +1,6 @@
 lead_id: office-plants-L01
-first_message: Szia! Láttam, hogy nemrég költöztetek új irodába. Ilyenkor a növényekről gyakran senki nem gondoskodik: nálatok van már, aki viszi ezt?
-followup: Szia! Egy rövid gondolat a múltkorihoz: egy 20 növényes irodában havi két gondozási látogatás elég ahhoz, hogy ne kelljen cserélni. Ha érdekes, szívesen ránézek egy 15 perces bejáráson.
-stop_condition: Elutasítás, leiratkozási kérés vagy két utánkövetés utáni válasz nélküliség esetén nincs további megkeresés.
+first_message: Szia! Van már, aki rendszeresen gondozza az irodai növényeiteket? Ha ez most aktuális, szívesen átbeszélem veletek az igényt egy rövid bejáráson.
+followup: Szia! A havi csomag két gondozási látogatást tartalmaz, legfeljebb 20 növényhez. Ha érdekel, egyeztessünk egy 15 perces bejárást.
+stop_condition: Válasz vagy leiratkozási kérés után leáll az üzenetsorozat. Válasz hiányában két utánkövetésnél áll meg.
 
 KITALÁLT szimuláció, semmi nincs elküldve.

@@ -26,7 +26,7 @@ A Cég-DNS-től az ajánlatig és a CRM-ig: saját AI-csapat a Claude-ban, a saj
 
 **Wenova × Brandiseer × Blackhole Media × EstiWise**
 
-**2026. november 19., csütörtök, 09:00–17:00 (érkezés és technikai ellenőrzés 08:30-tól) · CEU Nádor Event Center, Budapest V., Nádor u. 15., N13 412/A terem (4. emelet; belépőkártya a recepción) · legfeljebb 30 résztvevő**
+**2026. november 19., csütörtök, 09:00–17:00 (érkezés és technikai ellenőrzés 08:30-tól) · CEU Nádor Event Center, Budapest V., Nádor u. 15., N13 412/A terem (4. emelet; belépőkártya a recepción)**
 
 **Honnan töltöd le az anyagot?** A Claude Desktop Cowork módjában egy mondattal telepíted: „Telepítsd a workshop tananyagát: https://raw.githubusercontent.com/cspiya/wenova-ai-sales-workshop/main/materials/TELEPITES.md”. Részletek: [felkészülés](modules/00-prework.md#00-prework.01-install) és [telepítési futtatókönyv](TELEPITES.md). Kézi letöltés: [ZIP](https://github.com/cspiya/wenova-ai-sales-workshop/archive/refs/heads/main.zip); böngészőben: [github.com/cspiya/wenova-ai-sales-workshop/tree/main/materials](https://github.com/cspiya/wenova-ai-sales-workshop/tree/main/materials). Terminálhoz szokottaknak: [haladó út Claude Code-dal](CLAUDE-CODE.md).
 
@@ -53,13 +53,13 @@ Magyar KKV-k, közép- és nagyvállalatok tulajdonosainak, marketing- és ért�
 
 ### Mit építünk?
 
-Cég-DNS és saját AI-csapat → tartalom a céged hangján → LinkedIn-megkeresés és leadkezelés → igényfelmérés és ajánlat → levelek, CRM és egy ügyfél végig. A **Cég-DNS** egy oldal arról, kinek, mit és milyen hangon adsz el; reggel készül, és minden blokk ebből dolgozik. A nap végére a saját cégeden kipróbált folyamat, működő agentek és konkrét holnapi terv készül.
+Cég-DNS és saját AI-csapat → tartalom a céged hangján → LinkedIn-megkeresés és leadkezelés → igényfelmérés és ajánlat → levelek, CRM és egy ügyfél végig. Reggel elkészíted a céged teljes leírását, a Cég-DNS-t. A partnerblokkok a belőle készült cégprofilra épülnek. A nap végére lesz egy dokumentált ügyféleseted, amelyben jelölöd, mely lépéseket próbáltad ki és melyeket végezted el mintából. A másnapi tervedet is elkészíted.
 
 <a name="agenda-4"></a>
 
 ### Előzetes felkészülés
 
-A workshop előtt kb. 55 perc a [felkészülési modul](modules/00-prework.md) szerint: Claude-előfizetés és Claude Desktop, a tananyag telepítése egy mondattal egy saját munkamappába, a levelező és a Google-táblázat bekötése, Brandiseer- és EstiWise-fiók (a Buffer-fiók választható), a saját források összegyűjtése. Ami nem sikerül, azt reggel 08:30-tól a technikai pultnál befejezzük.
+A [felkészülés](modules/00-prework.md) kb. 55 perc. Készítsd elő a Claude-előfizetésedet és a Claude Desktopot, telepítsd a tananyagot, kösd be a levelezőt és a Google-táblázatot, és gyűjtsd össze a saját forrásaidat. A Brandiseer- és EstiWise-fiókot a workshopon is létrehozhatod a saját laptopodon. A Buffer-fiók választható. Érkezz 08:30-ra a közös technikai ellenőrzésre, amely 09:00-ig tart. Ha elakadsz, szólj egy oktatónak, aki a helyeden segít.
 
 <a name="agenda-5"></a>
 
@@ -86,7 +86,7 @@ Minden partnerblokk felépítése: rövid bevezető, vezetett gyakorlat a saját
 
 ### A nap eszköze: Claude Desktop, Cowork mód
 
-Egész nap egyetlen Cowork-projektben dolgozol, a gépeden lévő `Wenova-AI-Sales-Workshop` munkamappában: a `Tananyag/` a workshop anyaga, a `Munka/` a te eredményeid. A Claude a mappa [AGENTS.md](AGENTS.md) fájlja szerint dolgozik; a Cég-DNS, a hangprofil és a nyolc agent (Karmester, Író, Ellenőr, CEO, Marketing, Sales, Postás, CRM) innen dolgozik. Vizuális eredményeket (kampányváz, posztelőnézet, a nap összefoglalója) HTML-fájlként kapsz, a böngészőben nyitod meg. A levelezőt, a Google-táblázatot és a három partnerrendszert connectorral (engedélyezett kapcsolattal) éred el a Claude-ból. Ahol egy kapcsolat nem működik, mintafájllal vagy kézi lépéssel folytatod, és ezt jelöljük.
+Egész nap egyetlen Cowork-projektben dolgozol, a gépeden lévő `Wenova-AI-Sales-Workshop` munkamappában: a `Tananyag/` a workshop anyaga, a `Munka/` a te eredményeid. A Claude a mappa [AGENTS.md](AGENTS.md) fájlja szerint dolgozik; a Cég-DNS, a márkahang és a nyolc agent (Karmester, Író, Ellenőr, CEO, Marketing, Sales, Postás, CRM) innen dolgozik. Vizuális eredményeket (kampányváz, posztelőnézet, a nap összefoglalója) HTML-fájlként kapsz, a böngészőben nyitod meg. A levelezőt, a Google-táblázatot és a három partnerrendszert connectorral (engedélyezett kapcsolattal) éred el a Claude-ból. Ahol egy kapcsolat nem működik, mintafájllal vagy kézi lépéssel folytatod, és ezt jelöljük.
 
 <a name="agenda-7"></a>
 
@@ -98,7 +98,7 @@ A személyes LinkedIn bekötése nem feltétel: a Sales Bot-gyakorlat ma sandbox
 
 ### Hazavihető eredmény
 
-Claude-projekt a saját Cég-DNS-eddel és hangprofiloddal; nyolc agent; kampányanyagok; minősített leadek és üzenetsor; ajánlattervezet; CRM-tábla heti méréssel; egy végigvitt ügyféleset; holnapi indulási terv és heti rutin.
+Claude-projekt a saját Cég-DNS-eddel és márkahangoddal; nyolc agent; kampányanyagok; minősített leadek és üzenetsor; ajánlattervezet; CRM-tábla heti méréssel; egy végigvitt ügyféleset; holnapi indulási terv és heti rutin.
 
 **Szervező: Wenova · Szakmai partnerek: Brandiseer, Blackhole Media, EstiWise.**
 
@@ -144,31 +144,40 @@ A telepítés a [starter-kit](starter-kit/README.md) sablonjait is a munkamappá
 
 ## Eszközök és hozzáférések
 
-Fizetős Claude-előfizetés (Pro vagy magasabb) és a Claude Desktop (Cowork mód); Gmail- vagy Microsoft 365-levelezés; Google-fiók a CRM-táblához. Előre: Brandiseer-fiók a felvett márkáddal ([brandiseer.hu](https://brandiseer.hu): Try My Brand → Add Brand) és Pro csomag a WENOVA kóddal (az első hónap ingyenes), választhatóan ingyenes Buffer-fiók ([buffer.com](https://buffer.com)) legalább egy közösségimédia-oldallal (a 02-es blokk bónuszfeladatához), EstiWise-regisztráció bankkártya nélkül ([admin.estiwise.ai/auth/register](https://admin.estiwise.ai/auth/register)). A Sales Bothoz ([sales-bot.io](https://sales-bot.io)) előre nincs teendőd: a hozzáférést a helyszínen, a 03-as blokk elején kapod; a LinkedIn-belépésed legyen kéznél. A partnereszközökre nem kell fizetned: a Brandiseerhez a WENOVA kód ad egy hónap ingyenes Pro csomagot, a többi eszközhöz a napra mindenki megkapja a használati keretet. A részletes lépések a [felkészülési modulban](modules/00-prework.md) vannak. Személyes LinkedIn-kapcsolat nélkül is végig lehet menni a napon.
+Készítsd elő a fizetős Claude-előfizetést (Pro vagy magasabb), a Claude Desktopot (Cowork mód), a Gmail- vagy Microsoft 365-levelezést és a CRM-táblához használt Google-fiókot.
+
+Ha még nincs Brandiseer- vagy EstiWise-fiókod, a workshopon is regisztrálhatsz a saját laptopodon. A [Brandiseerben](https://brandiseer.hu) vedd fel a márkádat (Try My Brand → Add Brand). A WENOVA kód az első hónapra ingyenes Pro csomagot ad. Az [EstiWise-regisztrációhoz](https://admin.estiwise.ai/auth/register) nem kell bankkártya. A Blackhole Media előre létrehozza a [Sales Bot](https://sales-bot.io)-hozzáférésedet, és a 03-as blokk elején adja át. A LinkedIn-belépésed legyen kéznél. Személyes LinkedIn-kapcsolat nélkül is végigmehetsz a napon. A partnereszközökre a naphoz nem kell előfizetned. A regisztrációhoz és a beállításhoz a helyeden kérhetsz segítséget az oktatótól. A részleteket a [felkészülési modulban](modules/00-prework.md#00-prework.03-partner-accounts) találod.
+
+A [Buffer](https://buffer.com) a 02-es blokk választható bónuszához kell. Ha használod, legalább egy közösségimédia-oldalt köss be. A Claude ütemezés előtt megmutatja a csatornát, a szöveget és az időpontot, majd megvárja a kifejezett jóváhagyásodat. **Ami be van ütemezve, az ki is megy.** Ha ezt nem szeretnéd, hagyd piszkozatban. Azonnali közzétételt te indíthatsz.
 
 <a name="outputs"></a>
 
 ## Az elkészülő munkadarabok
 
+- A **Cég-DNS** a céged teljes leírása. Összefoglalja, kik vagytok, kinek és mit adtok el, milyen bizonyítékaitok vannak, mit mondtok és mit nem.
+- A **márkahang** a céged stílusa és szóhasználata (angolul *brand voice*). A küldött leveleidből állítod össze.
+- A **cégprofil** a Cég-DNS rövid, mezőkre bontott kivonata. A későbbi blokkok és a partnereszközök ezt használják.
+
 Minden output a résztvevő saját munkacsomagjába kerül. A példavállalkozás és az ügyfél azonosítója a láncon végig azonos. A nyitott adat értéke `open`; nem nullából vagy kitalált számból számolunk. Pénz: pénznem, nettó/bruttó jelölés és egység mindig kell.
 
 | Fájl | Kötelező mezők |
 | --- | --- |
-| company-dna.md | Metaadat (verzió, státusz, gazda), ICP, ajánlatok offer\_id-val, bizonyíték, hangnem, Mondjuk / Nem mondjuk, források, hiányok |
+| company-dna.md | Metaadat (verzió, státusz, gazda), ICP, ajánlatok offer\_id-val, bizonyíték, hangnem, Mondjuk / Nem mondjuk, források, hiányok, a cég következő célja, az ügyfélszerzés fő lépései és az emberi döntési pont |
 | voice-profile.md | Tegezés/magázás, megszólítás, mondathossz, következő lépés, záróformula, kerülendő kifejezések |
 | business-profile.md | business\_id, business\_name, offer\_id, offer, audience, problem, outcome, scope, exclusions, pricing\_basis, channel, next\_action, assumptions |
+| post-review.md | Szövegazonosító, vizsgált verzió, Ellenőr ítélete, függőben lévő újraellenőrzés (ha van) |
 | sales-strategy.md | offer\_id, audience, channel, message, next\_action, success\_metric |
-| ai-work-instructions.md | goal, inputs, allowed\_actions, review\_points, missing\_data\_rule |
-| brand-brief.md | business\_id, voice, message, visual\_direction |
-| campaign-plan.md | offer\_id, audience, posts, image\_brief, video\_outline, channel, call\_to\_action |
+| campaign-plan.md | offer\_id, audience, posts (öt nap, téma és szöveg), image\_urls (naponként), channel, call\_to\_action |
 | leads.csv | lead\_id, company, fit\_reason, status, next\_action |
 | outreach.md | lead\_id, first\_message, followup, stop\_condition |
 | customer-brief.md | lead\_id, offer\_id, need, quantity, constraints, open\_questions |
 | proposal.md | proposal\_id, lead\_id, offer\_id, scope, quantity, unit\_price, currency, price\_basis, total, assumptions, status |
-| handoff.md | proposal\_id, decision\_status, owner, next\_task, due |
+| handoff.md | proposal\_id, lead\_id, decision\_status, owner, next\_task, due |
 | pipeline-review.md | case\_id, results, execution\_mode, evidence, gaps, next\_step |
 | CRM – [cégnév] (Google-táblázat) | CRM lap: case\_id, company, source, offer\_id, stage, next\_step, next\_step\_due …; Heti mérés lap: week, stage, metric\_id, value, source |
 | launch-plan.md | Három holnapi lépés, heti rutin, ami még nem működik, mérőszám |
+
+Az `ai-work-instructions.md` és a `brand-brief.md` a gyakorlóvállalkozások kiegészítő mintafájljai. A rendes gyakorlatban átadott fájlok a fenti táblázatban szerepelnek.
 
 Az ajánlat számítását az árlista és a mennyiség alapján külön ellenőrizzük. A `draft` ajánlat nem elfogadott megrendelés. Eszközspecifikus formátumból a modul végén a közös formátumba exportálunk vagy átalakítunk.
 
@@ -187,7 +196,7 @@ Az ajánlat számítását az árlista és a mennyiség alapján külön ellenő
 
 ## Fogalomtár
 
-- **Cég-DNS:** egy oldal arról, kinek, mit és milyen hangon ad el a cég; minden állítás forrással, a hiány „Nincs megadva”.
+- A **Cég-DNS** a céged teljes leírása. Az állítások mellett ott a forrásuk, a hiányt a „Nincs megadva” jelöli.
 - **ICP (ideal customer profile):** az ideális ügyfél leírása: iparág, méret, döntéshozó, probléma, kizáró jel.
 - **Agent:** állandó feladatleírás, amelyet a Claude egy indítómondatra követ.
 - **Karmester (orchestrator), Író (maker), Ellenőr (reviewer):** a koordináló, a készítő és a friss beszélgetésben független ellenőrző szerep.
