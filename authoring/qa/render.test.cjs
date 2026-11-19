@@ -76,7 +76,7 @@ test('each schedule row shows its exact workbook target and the presenter note a
  const note='Az előadó vetíti';
  for(const [time,links] of [
   ['08:30–09:00','<a href="modules/00-prework.html">Munkafüzet</a>'],
-  ['09:00–09:20','<a href="presentations/00-nyito-eloadas.html">Előadás</a>'],
+  ['09:00–09:20','<a href="presentations/00-nyito-eloadas.html">Előadás</a> · <a href="presentations/00-nyito-eloadas-jegyzet.html">Előadói jegyzet</a>'],
   ['09:20–10:30','<a href="modules/01-business-foundations.html">Munkafüzet</a> · '+note],
   ['10:45–12:15','<a href="modules/02-content-marketing.html">Munkafüzet</a> · '+note],
   ['13:00–14:30','<a href="modules/03-lead-generation.html">Munkafüzet</a> · '+note],
