@@ -104,6 +104,8 @@ A pontos idővonal, előadók és blokkonkénti eredmények: **[A nap menete](sc
 | 16:15–16:50 | 5. Folyamatpróba: kampánymérés és visszacsatolás | Wenova |
 | 16:50–17:00 | Zárás | Wenova |
 
+Előadások: nyitó előadás ([diák](presentations/00-nyito-eloadas.md) · [előadói jegyzet](presentations/00-nyito-eloadas-jegyzet.md)), záró előadás ([diák](presentations/05-zaro-eloadas.md) · [előadói jegyzet](presentations/05-zaro-eloadas-jegyzet.md)).
+
 Minden partnerblokk felépítése: rövid bevezető, vezetett gyakorlat a saját cégeden, ellenőrzés és pótlás. Az előző blokk eredményét a következő használja.
 
 <a name="agenda-6"></a>
@@ -144,7 +146,7 @@ Szerkesztés alatt álló tananyag. A leckék draft/review állapota jelzi a ké
 
 - [**Folyamatpróba: kampánymérés és visszacsatolás** 05-pipeline-review](modules/05-pipeline-review.md)
 
-Záró előadás: [diák](presentations/05-zaro-eloadas.md) · [előadói jegyzet](presentations/05-zaro-eloadas-jegyzet.md).
+Nyitó előadás: [diák](presentations/00-nyito-eloadas.md) · [előadói jegyzet](presentations/00-nyito-eloadas-jegyzet.md). Záró előadás: [diák](presentations/05-zaro-eloadas.md) · [előadói jegyzet](presentations/05-zaro-eloadas-jegyzet.md).
 
 Kitekintésként, nem kötelező: **[Demók](demos/README.md)**, például a hangügynök-labor (AI-telefonos asszisztens a böngészőben, kitalált adatokkal).
 
