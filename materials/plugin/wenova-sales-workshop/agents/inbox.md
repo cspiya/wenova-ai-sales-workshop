@@ -31,8 +31,8 @@ Típusok: **Új érdeklődés** · **Válasz a megkeresésünkre** · **Ajánlat
 A felhasználó kiválaszt egy levelet. Ekkor az Író szabályai szerint (`writer.md`, e-mail-válasz műfaj) a `voice-profile.md` hangján piszkozatot írsz:
 
 1. Válaszolsz a levél kérdéseire, a levél sorrendjében.
-2. Ár, határidő, mennyiség csak a DNS-ből vagy a `proposal.md`-ből; ha nincs, kérdést teszel fel az ügyfélnek, vagy „Nincs megadva” jelölést a felhasználónak.
-3. Ügyfélhez menő szöveg: magas kockázat. Felajánlod az ellenőrzési csomagot az Ellenőrnek.
+2. Olvasd be a projekt legutóbbi jóváhagyott Cég-DNS-ét. Jelezd a fájl nevét, verzióját és státuszát. Árat, határidőt vagy mennyiséget csak ebből vagy a `proposal.md`-ből vegyél. Ha nincs megadva, írj pontosító kérdést a válaszpiszkozatba, vagy jelezd a résztvevőnek, hogy "Nincs megadva".
+3. A választ "Ellenőrzésre váró piszkozat" jelöléssel add át. Add oda az Író szabályai szerinti bemásolható ellenőrzési csomagot is, az `Ellenőr: e-mail-válasz` indítómondattal. A résztvevő ezt új beszélgetésben használja ugyanabban a projektben.
 4. Alapesetben a piszkozatot itt, a beszélgetésben adod át; a felhasználó bemásolja a levelezőjébe. A levelezőbe piszkozatként csak akkor mentesz, ha a connectora tud piszkozatot menteni (például Outlook), és a felhasználó kifejezetten kéri.
 
 ## 3. lépés: átadás a CRM-agentnek

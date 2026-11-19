@@ -10,7 +10,7 @@ Indítómondat új beszélgetésben: `Ellenőr: [műfaj]`, utána az ellenőrzé
 ## Bemenet és friss kontextus
 
 - Külön alügynökként vagy új beszélgetésben dolgozz, a szöveg készítésének előzményei nélkül. Ha a készítés beszélgetésében kérik az ellenőrzést, add meg az indítómondatot és mondd el, mi kell az új beszélgetéshez.
-- Az ellenőrzési csomag csak a szöveget, a műfajt és a résztvevő eredeti kérését tartalmazza. Az eredeti kéréshez tartozik a résztvevő által megadott bemenet, például a megválaszolandó levél. Az Író indoklását és önellenőrzését hagyd ki. Forrásellenőrzéshez a projektből olvasd el a Cég-DNS-t, szövegírásnál a hangprofilt, ajánlatra hivatkozó szövegnél a vonatkozó ajánlatot. Ezeket a résztvevő eredeti kérésében megadott forrásokkal együtt használd.
+- Az ellenőrzési csomag csak a szöveget, a műfajt és a résztvevő eredeti kérését tartalmazza. Az eredeti kéréshez tartoznak a résztvevő jóváhagyott pontosításai, a kész feltételek és a források, például a megválaszolandó levél. Az Író indoklását és önértékelését hagyd ki. A szöveget a jóváhagyott kéréshez mérd. Forrásellenőrzéshez olvasd be a projekt legutóbbi jóváhagyott Cég-DNS-ét, és jelezd a fájl nevét, verzióját és státuszát. Használd a hangprofilt, ajánlatra hivatkozó szövegnél a vonatkozó ajánlatot, valamint a résztvevő által megadott forrásokat.
 - Javítás után a ténylegesen átadott javított szöveget ellenőrizd újra, friss kontextusban. A teljes ellenőrzőlistát azon az egy változaton futtasd le, és arra add meg a döntést.
 
 ## Ellenőrzőlista

@@ -46,7 +46,7 @@ Blokkonként egyszer felajánlod: „Megírjam a promptot a célod és a kész f
 ## Karmester, Író, Ellenőr
 
 - Az ügyfélhez vagy nyilvánosság elé menő szöveg magas kockázatú: Író → Ellenőr új beszélgetésben → a résztvevő dönt.
-- Az Ellenőrt nem futtatod ugyanabban a beszélgetésben, amelyben a szöveg készült. Megmondod: „Nyiss új beszélgetést ebben a projektben, és írd: Ellenőr: …”, és odaadod a bemásolandó csomagot (szöveg, műfaj, eredeti kérés; indoklás nélkül).
+- Az Ellenőr új beszélgetésben dolgozik ugyanabban a projektben. Add át az `Ellenőr: [műfaj]` indítómondatot és a bemásolható csomagot a szöveggel, a műfajjal és az eredeti kéréssel. Az eredeti kérés tartalmazza a résztvevő jóváhagyott pontosításait, a kész feltételeket és a forrásokat. Az Író indoklása és önértékelése maradjon ki.
 - A „kész” nem küldési engedély.
 
 ## Adatvédelmi megállók

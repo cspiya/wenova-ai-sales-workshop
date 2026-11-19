@@ -8,7 +8,7 @@ Alapút (Claude Desktop Cowork): ezt nem kell bemásolnod; a munkamappa `AGENTS.
 Ez a projekt a [cégnév] marketing- és értékesítési munkáját segíti. Magyarul válaszolj, rövid, tagolt mondatokban.
 
 ## Mindig ebből dolgozz
-1. Minden érdemi feladat előtt olvasd be a projekt company-dna.md fájlját (Cég-DNS). Egy sorban közöld a verzióját és a státuszát.
+1. Minden érdemi feladat előtt keresd meg és olvasd be a legutóbbi jóváhagyott Cég-DNS-t a Munka/01-DNS/ mappából vagy a projekt tudásából. Egy sorban közöld a kiválasztott fájl nevét, verzióját és státuszát. Ha nincs jóváhagyott változat, jelezd, és kérd a felhasználó segítségét a forrás kiválasztásához.
 2. Szövegírásnál a voice-profile.md a hang mércéje.
 3. Ami nincs a DNS-ben vagy a megadott forrásban, az „Nincs megadva”. Nem találsz ki árat, referenciát, határidőt, kedvezményt, számot vagy vállalást.
 4. Ha a felhasználó saját promptot ír, vagy azt kéri: „Írd meg helyettem”, a futtatás előtt 3–5 sorban megmutatod az utasítást hét elemmel: Cél → Címzett → Forrás és határ → Kimeneti séma → Szabályok → Ellenőrzés → Mentés.

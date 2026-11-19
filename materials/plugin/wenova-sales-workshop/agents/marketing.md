@@ -11,7 +11,7 @@ Kövesd a `Tananyag/starter-kit/agents/README.md` közös szabályait és a `Tan
 
 ## Munkamenet
 
-1. Olvasd be a `Munka/01-DNS/` mappából a `company-dna.md` és a `voice-profile.md` fájlt. Írd ki a DNS verzióját és státuszát. Ha van `sales-strategy.md` vagy jóváhagyott kampányanyag, abból vedd át a kiválasztott ajánlatot és a csatornára vonatkozó döntéseket.
+1. Olvasd be a `Munka/01-DNS/` mappából a legutóbbi jóváhagyott Cég-DNS-t és a `voice-profile.md` fájlt. Jelezd a DNS-fájl nevét, verzióját és státuszát. Ha van `sales-strategy.md` vagy jóváhagyott kampányanyag, abból vedd át a kiválasztott ajánlatot és a csatornára vonatkozó döntéseket.
 2. Fogalmazd meg az üzenet alapját. Kinek szól, milyen helyzetben segít az ajánlat, mi szól mellette, és mit tudsz ebből igazolni? Amihez nincs forrás, azt jelöld "Nincs megadva" szöveggel, és kérdezz rá.
 3. Adj rövid kampányvázat. Legyen benne cél, közönség, fő üzenet, javasolt csatorna indoklással, üzenetötletek, kért következő lépés és mérőszám. A csatornát, az ajánlatot és a fő üzenetet a résztvevő választja ki.
 4. Ha kész posztszöveg kell, a kiválasztott irányt add át az Írónak. Kifelé szánt szöveghez friss kontextusú Ellenőr és emberi döntés kell. A publikálást és a kampányindítást a résztvevő végezheti.

@@ -9,9 +9,9 @@ Ez a fájl a Claude-nak szól (Claude Desktop Cowork vagy Claude Code). A részt
 | `Tananyag/` | A workshop teljes anyaga: modulok, sablonok, agentek, minták | Csak olvasod. Soha nem módosítod és nem törlöd. Frissíteni csak a `Tananyag/TELEPITES.md` szerint lehet. |
 | `Munka/` | A résztvevő saját eredményei, blokkonként | Ide mentesz. Meglévő fájlt nem írsz felül: új verziószámot adsz (`company-dna-v0.2.md`). Törlés csak a résztvevő kifejezett kérésére. |
 
-Mentési helyek: `Munka/00-Felkeszules/`, `Munka/01-DNS/`, `Munka/02-Tartalom/`, `Munka/03-Leadek/`, `Munka/04-Ajanlat/`, `Munka/05-Folyamat/`. Ha egy mappa hiányzik, létrehozod.
+Mentési helyek: `Munka/00-Felkeszules/`, `Munka/01-DNS/`, `Munka/02-Tartalom/`, `Munka/03-Leadek/`, `Munka/04-Ajanlat/`, `Munka/05-Folyamat/` és `Munka/munkanaplo.md`. Ha egy mappa hiányzik, létrehozod. A munkanaplót ugyanabban a fájlban bővíted, a korábbi bejegyzések megőrzésével.
 
-Ahol a tananyag, a projektutasítás vagy egy agentfájl azt írja, hogy egy fájl „a projektben” van (például `company-dna.md`, `voice-profile.md`), azt a `Munka/` megfelelő mappájában keresd; ha ott nincs, a `Tananyag/starter-kit/` sablonját használd kiindulásnak. Az agentfájlok helye: `Tananyag/starter-kit/agents/`.
+Ahol a tananyag, a projektutasítás vagy egy agentfájl azt írja, hogy egy fájl „a projektben” van (például `voice-profile.md`), azt a `Munka/` megfelelő mappájában keresd; ha ott nincs, a `Tananyag/starter-kit/` sablonját használd kiindulásnak. A Cég-DNS-ből a legutóbbi jóváhagyott változatot használd. Jelezd a fájl nevét, verzióját és státuszát. Az agentfájlok helye: `Tananyag/starter-kit/agents/`.
 
 ## Indítómondatok
 

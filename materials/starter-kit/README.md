@@ -15,6 +15,7 @@ Ezekből a fájlokból építed fel a saját AI-csapatodat a Claude-ban. Másold
 | [launch-plan.md](launch-plan.md) | Holnapi indulási terv és heti rutin | 5. blokk |
 | [scheduled-tasks.md](scheduled-tasks.md) | Ütemezett feladatok: napi levél-összefoglaló, heti levélpiszkozat, hétfői átnézés | 5. blokk, utána |
 | [business-profile.md](business-profile.md) | A partnerblokkok közös 13 mezős alaplapja (a DNS kivonata) | 1. blokk vége |
+| [munkanaplo.md](munkanaplo.md) | Munkanapló a döntésekhez, javításokhoz és tanulságokhoz | Minden feladatnál |
 | [progress.json](progress.json) | Haladási napló a tanulási kísérőnek | Egész nap |
 | [outputs/](outputs/README.md) | Ide mentheted a nap eredményeit a saját gépeden | Egész nap |
 
