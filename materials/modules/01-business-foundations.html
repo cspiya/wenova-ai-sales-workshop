@@ -122,7 +122,7 @@
 </tr>
 </tbody>
 </table></div>
-<p>Őszintén: a Claude Desktopban ezek az agentek szerepleírások a tananyagban (<code>Tananyag/starter-kit/agents/</code>), nem külön futó programok. A Karmester ugyanabban a beszélgetésben vált szerepet (Író, Postás, CRM); az Ellenőr függetlenségét az adja, hogy új beszélgetésben fut. Az agentek a projekt fájljaiból működnek: a projektutasítás köti össze az indítómondatot („Író: …”) az agentfájllal (<code>writer.md</code>). Később ugyanezek a fájlok Skillé alakíthatók; a Skill olyan feladatleírás, amelyet a Claude magától betölt, ha illik a kéréshez.</p>
+<p>Őszintén: az agentek szerepleírások a tananyagban (<code>Tananyag/starter-kit/agents/</code>). A pluginnal a Karmester külön alügynökként indítja az Írót és az Ellenőrt, friss kontextusban. Plugin nélkül ugyanabban a beszélgetésben vált szerepet (Író, Postás, CRM), az Ellenőr pedig új beszélgetésben fut. Az agentek a projekt fájljaiból működnek: a projektutasítás köti össze az indítómondatot („Író: …”) az agentfájllal (<code>writer.md</code>). Később ugyanezek a fájlok Skillé alakíthatók; a Skill olyan feladatleírás, amelyet a Claude magától betölt, ha illik a kéréshez.</p>
 <p><strong>Miért új beszélgetés az Ellenőrnek?</strong> Ha ugyanaz a beszélgetés ellenőriz, amelyik írt, az ugyanazokat a feltételezéseket látja helyesnek. Az új beszélgetés csak azt kapja, amit az ügyfél is látna: a szöveget és az eredeti kérést. Ez a friss kontextus.</p>
 <a id="team-model-2"></a>
 <h3>Mikor kell emberi jóváhagyás?</h3>
@@ -515,7 +515,7 @@ A döntés mellé írd oda a szöveg azonosítóját (01-LinkedIn-poszt) és a v
 <a id="01-business-foundations.03-ai-workspace--steps"></a>
 <h3 class="cell-title">Haladj végig ezeken</h3>
 <ol>
-<li><strong>0–2 perc:</strong> kérdezd meg a Claude-ot: „Látod az öt agentfájlt és az AGENTS.md-t?” Ha nem, a <a href="00-prework.html#00-prework.01-install">telepítés</a> 5. lépése hiányzik.</li>
+<li><strong>0–2 perc:</strong> kérdezd meg a Claude-ot: „Látod a nyolc agentfájlt és az AGENTS.md-t?” Ha nem, a <a href="00-prework.html#00-prework.01-install">telepítés</a> 5. lépése hiányzik.</li>
 <li><strong>2–5 perc:</strong> A beszélgetés: Karmester-prompt; nézd át és hagyd jóvá a tervet.</li>
 <li><strong>5–9 perc:</strong> az Író megírja a posztot. Olvasd el az önellenőrzést, és másold ki az ellenőrzési csomagot.</li>
 <li><strong>9–14 perc:</strong> B beszélgetés: Ellenőr. Olvasd el a döntést és a táblázatot. Mentsd az első tényleges ítéletet a <code>Munka/01-DNS/post-review.md</code> fájlba. A sorba írd a szövegazonosítót (<code>01-LinkedIn-poszt</code>), a vizsgált verziót, az ítélet dátumát (ÉÉÉÉ-HH-NN) és az ítéletet.</li>

@@ -25,6 +25,8 @@
    Telepítsd a workshop tananyagát: https://raw.githubusercontent.com/cspiya/wenova-ai-sales-workshop/main/materials/TELEPITES.md
    ```
 
+   Ha a mondat nem működik, töltsd le a [ZIP-csomagot](https://github.com/cspiya/wenova-ai-sales-workshop/archive/refs/heads/main.zip), és kövesd a [kézi utat](https://github.com/cspiya/wenova-ai-sales-workshop/blob/main/materials/TELEPITES.md#kezi-ut).
+
 3. Kövesd a Claude által kiírt lépéseket (plugin hozzáadása, Instructions, új munkamenet), majd írd be: **Kezdjük a felkészülést.**
 
 [HTML-változat](https://cspiya.github.io/wenova-ai-sales-workshop/)

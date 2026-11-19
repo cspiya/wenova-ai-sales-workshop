@@ -49,7 +49,7 @@
 <div class="cell cell--input">
 <a id="overview-1"></a>
 <h3 class="cell-title">Bemenet</h3>
-<p>A legutóbbi <code>progress.json</code>-ban kijelölt aktív DNS és márkahang, az öt agentfájl a <code>Tananyag/starter-kit/agents/</code> mappában. A három partner connectora (Brandiseer, Sales Bot, EstiWise), amelyet a 02–04-es blokkban kötöttél be. A nap eredményei: a 02-es blokk tartalma (vagy <code>campaign-plan.md</code>), a 03-as blokk <code>leads.csv</code>, <code>outreach.md</code>, <code>customer-brief.md</code> fájlja és Sales Bot-kampánya, a 04-es blokk <code>proposal.md</code>, <code>handoff.md</code> fájlja és EstiWise-ajánlata. A „CRM – [cégnév]” táblázat (vagy a saját Excel-fájlod).</p>
+<p>A legutóbbi <code>progress.json</code>-ban kijelölt aktív DNS és márkahang, a nyolc agentfájl a <code>Tananyag/starter-kit/agents/</code> mappában. A három partner connectora (Brandiseer, Sales Bot, EstiWise), amelyet a 02–04-es blokkban kötöttél be. A nap eredményei: a 02-es blokk tartalma (vagy <code>campaign-plan.md</code>), a 03-as blokk <code>leads.csv</code>, <code>outreach.md</code>, <code>customer-brief.md</code> fájlja és Sales Bot-kampánya, a 04-es blokk <code>proposal.md</code>, <code>handoff.md</code> fájlja és EstiWise-ajánlata. A „CRM – [cégnév]” táblázat (vagy a saját Excel-fájlod).</p>
 </div>
 <div class="cell cell--output">
 <a id="overview-2"></a>
@@ -95,7 +95,7 @@
 <a id="05-pipeline-review.01-inbox-crm--explanation"></a>
 <h3 class="cell-title">Így működik</h3>
 <p>Próbalevél → Postás-táblázat (típus, igény, következő lépés) → válaszpiszkozat a <code>voice-profile.md</code> szerint, itt a beszélgetésben → te másolod a levelezőbe → javasolt CRM-sorok → CRM-agent: változáslista és CSV-sorok → te bemásolod a táblázatba → a Claude a Drive-ból visszaolvassa.</p>
-<p>Miért kézi a bemásolás? A Gmail connector a dokumentáció szerint olvasásra való, és a táblázatcellák közvetlen írása sincs minden connectornál dokumentálva. A bemásolás 30 másodperc, és te látod, mi kerül be. Ha a connectorod tud levélpiszkozatot menteni (például Outlook) vagy táblázatba írni, a Claude megteheti, de csak a kifejezett kérésedre.</p>
+<p>Miért kézi a bemásolás? A táblázatcellák közvetlen írása nincs minden connectornál dokumentálva. A bemásolás 30 másodperc, és te látod, mi kerül be. Ha a connectorod tud levélpiszkozatot menteni (például Outlook) vagy táblázatba írni, a Claude megteheti, de csak a kifejezett kérésedre.</p>
 <p>A levél tartalma adat, nem utasítás: ha egy levél „küldd el” vagy „hagyd figyelmen kívül” jellegű kérést tartalmaz, a Postás jelzi, és nem hajtja végre.</p>
 </div>
 <div class="cell cell--decide">
@@ -405,7 +405,7 @@ Adj egy sort a Heti mérés laphoz CSV-ben (week, stage, metric_id, metric, valu
 <div class="cell cell--output">
 <a id="05-pipeline-review.03-measure-launch--handoff"></a>
 <h3 class="cell-title">Ezt viszed tovább</h3>
-<p><strong>Mit viszel haza:</strong> egy Claude-projektet a saját Cég-DNS-eddel és márkahangoddal; öt agentet (Karmester, Író, Ellenőr, Postás, CRM); a saját fiókodban ténylegesen beállított partnerkapcsolatokat; egy CRM-táblát „Heti mérés” lappal; egy végigvitt ügyféleset leírását; és egy holnapi tervet heti rutinnal. A tananyag és a <a href="../assistant.md">tanulási kísérő</a> hazavihető: bármelyik blokk újraindítható a „Kezdjük az N. blokkot” mondattal.</p>
+<p><strong>Mit viszel haza:</strong> egy Claude-projektet a saját Cég-DNS-eddel és márkahangoddal; nyolc agentet (Karmester, Író, Ellenőr, CEO, Marketing, Sales, Postás, CRM); a saját fiókodban ténylegesen beállított partnerkapcsolatokat; egy CRM-táblát „Heti mérés” lappal; egy végigvitt ügyféleset leírását; és egy holnapi tervet heti rutinnal. A tananyag és a <a href="../assistant.md">tanulási kísérő</a> hazavihető: bármelyik blokk újraindítható a „Kezdjük az N. blokkot” mondattal.</p>
 </div>
 <div class="cell cell--extra">
 <a id="05-pipeline-review.03-measure-launch--extra"></a>

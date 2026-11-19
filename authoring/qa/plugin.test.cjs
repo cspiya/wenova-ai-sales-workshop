@@ -31,6 +31,12 @@ test('package is reproducible and has the manifest at the ZIP root',()=>{
  assert.equal(names.filter(n=>/^agents\/[^/]+\.md$/.test(n)).length,7);
  assert.equal(names.filter(n=>/^skills\/[^/]+\/SKILL\.md$/.test(n)).length,8);
 });
+test('release list and fingerprint include the plugin dotfiles',t=>{
+ const {packaged,fingerprint}=require('./release.cjs'),dir=fixture(t);
+ for(const name of ['.claude-plugin/plugin.json','.mcp.json'])assert.ok(packaged(dir).includes(PLUGIN+'/'+name),name);
+ const before=fingerprint(dir);fs.appendFileSync(path.join(dir,PLUGIN,'.mcp.json'),'\n');
+ assert.notEqual(fingerprint(dir),before);
+});
 test('connector list holds only the four documented addresses',()=>{
  const {mcpServers}=JSON.parse(fs.readFileSync(path.join(ROOT,PLUGIN,'.mcp.json'),'utf8'));
  assert.deepEqual(Object.fromEntries(Object.entries(mcpServers).map(([k,v])=>[k,v.url])),{brandiseer:'https://brandiseer.com/api/mcp','sales-bot':'https://app.sales-bot.io/api/mcp',estiwise:'https://mcp.estiwise.ai/mcp',buffer:'https://mcp.buffer.com/mcp'});

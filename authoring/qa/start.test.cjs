@@ -19,6 +19,11 @@ test('root README never links to a repository HTML file',()=>{
   assert.doesNotMatch(href,/github\.com\/.*\/blob\/.*\.html?/i,href);
  }
 });
+test('runbook updates safely and never names restricted plans',()=>{
+ const text=read('materials/TELEPITES.md');
+ for(const s of ['Tananyag.uj-','hashlista','claude plugin marketplace update wenova-workshop','raw.githubusercontent.com','bármilyen okból'])assert.ok(text.includes(s),s);
+ assert.doesNotMatch(text,/Enterprise/);
+});
 test('projection page is generated, script-free and linked from the start page',()=>{
  const html=read('materials/indulas.html');
  assert.match(html,/page--projection/);assert.doesNotMatch(html,/<script/i);assert.ok(html.includes(START));

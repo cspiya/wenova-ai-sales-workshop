@@ -87,7 +87,7 @@ A bemutató ezt a részt mutatja meg. Később kézikönyvként visszalapozhatsz
 | **Ellenőr** (reviewer) | Új beszélgetésben, csak a szövegből, a DNS-ből és ellenőrzőlistából minősít: MEGFELEL / JAVÍTANDÓ / BLOKKOLÓ. | Nem írja át a szöveget, és nem látja az Író indoklását. |
 | **Te** | Jóváhagyod a tervet, döntesz az Ellenőr után, és te küldesz, teszel közzé azonnal vagy indítasz kampányt. A Buffer-ütemezést te hagyod jóvá. | – |
 
-Őszintén: a Claude Desktopban ezek az agentek szerepleírások a tananyagban (`Tananyag/starter-kit/agents/`), nem külön futó programok. A Karmester ugyanabban a beszélgetésben vált szerepet (Író, Postás, CRM); az Ellenőr függetlenségét az adja, hogy új beszélgetésben fut. Az agentek a projekt fájljaiból működnek: a projektutasítás köti össze az indítómondatot („Író: …”) az agentfájllal (`writer.md`). Később ugyanezek a fájlok Skillé alakíthatók; a Skill olyan feladatleírás, amelyet a Claude magától betölt, ha illik a kéréshez.
+Őszintén: az agentek szerepleírások a tananyagban (`Tananyag/starter-kit/agents/`). A pluginnal a Karmester külön alügynökként indítja az Írót és az Ellenőrt, friss kontextusban. Plugin nélkül ugyanabban a beszélgetésben vált szerepet (Író, Postás, CRM), az Ellenőr pedig új beszélgetésben fut. Az agentek a projekt fájljaiból működnek: a projektutasítás köti össze az indítómondatot („Író: …”) az agentfájllal (`writer.md`). Később ugyanezek a fájlok Skillé alakíthatók; a Skill olyan feladatleírás, amelyet a Claude magától betölt, ha illik a kéréshez.
 
 **Miért új beszélgetés az Ellenőrnek?** Ha ugyanaz a beszélgetés ellenőriz, amelyik írt, az ugyanazokat a feltételezéseket látja helyesnek. Az új beszélgetés csak azt kapja, amit az ügyfél is látna: a szöveget és az eredeti kérést. Ez a friss kontextus.
 
@@ -424,7 +424,7 @@ Ellenőr: itt a teljes javított v2 változat [bemásolva]. Ellenőrizd a koráb
 
 ### Haladj végig ezeken
 
-1. **0–2 perc:** kérdezd meg a Claude-ot: „Látod az öt agentfájlt és az AGENTS.md-t?” Ha nem, a [telepítés](00-prework.md#00-prework.01-install) 5. lépése hiányzik.
+1. **0–2 perc:** kérdezd meg a Claude-ot: „Látod a nyolc agentfájlt és az AGENTS.md-t?” Ha nem, a [telepítés](00-prework.md#00-prework.01-install) 5. lépése hiányzik.
 2. **2–5 perc:** A beszélgetés: Karmester-prompt; nézd át és hagyd jóvá a tervet.
 3. **5–9 perc:** az Író megírja a posztot. Olvasd el az önellenőrzést, és másold ki az ellenőrzési csomagot.
 4. **9–14 perc:** B beszélgetés: Ellenőr. Olvasd el a döntést és a táblázatot. Mentsd az első tényleges ítéletet a `Munka/01-DNS/post-review.md` fájlba. A sorba írd a szövegazonosítót (`01-LinkedIn-poszt`), a vizsgált verziót, az ítélet dátumát (ÉÉÉÉ-HH-NN) és az ítéletet.
