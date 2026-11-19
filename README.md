@@ -69,7 +69,7 @@ Egy közös hely a tananyaghoz, a szerzői munkához és a workshop megszervezé
 | --- | --- | --- |
 | materials/README.md | Agenda és a teljes tanulási út | Program áttekintése, résztvevői indulás |
 | materials/modules/ | Markdown-forrás és HTML-nézet modulonként | Tananyagírás és gyakorlat |
-| materials/starter-kit/ | Üzleti alaplap, haladási napló, saját eredmények helye | A résztvevő saját példányt készít |
+| materials/starter-kit/ | Cégprofil, haladási napló, saját eredmények helye | A résztvevő saját példányt készít |
 | materials/scenarios/ | Kitalált vállalkozások, árlisták, munkadarabok | Saját üzlet nélkül vagy elakadáskor |
 | materials/assistant.md | A tanulási kísérő utasítása | Átadjuk az AI-nak az aktuális modullal együtt |
 | materials/assets/ | Közös CSS, képek és mellékletek | A tananyag megjelenése |

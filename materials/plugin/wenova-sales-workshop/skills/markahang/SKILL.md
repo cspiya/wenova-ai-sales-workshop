@@ -1,5 +1,5 @@
 ---
-name: hangprofil
+name: markahang
 description: Vezesd a márkahang leckéjét, amikor a résztvevő a küldött leveleiből szeretne használható írási szabályokat készíteni.
 ---
 

@@ -6,7 +6,7 @@ Az AI Sales & Marketing Workshop résztvevőinek készült csomag. A workshop sz
 
 | Rész | Tartalom |
 | --- | --- |
-| Skillek (8) | `karmester`, `beallitas`, `ceg-dns`, `hangprofil`, `tartalom`, `lead`, `ajanlat`, `folyamatproba` |
+| Skillek (8) | `karmester`, `beallitas`, `ceg-dns`, `markahang`, `tartalom`, `lead`, `ajanlat`, `folyamatproba` |
 | Alügynökök (7) | `writer` (Író), `reviewer` (Ellenőr), `ceo` (CEO), `marketing` (Marketing), `sales` (Sales), `inbox` (Postás), `crm` (CRM) |
 | Connector-címek (4) | Brandiseer, Sales Bot, EstiWise, Buffer (a Buffer választható) |
 
