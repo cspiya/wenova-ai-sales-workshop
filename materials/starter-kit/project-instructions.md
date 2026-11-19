@@ -22,7 +22,7 @@ Ez a projekt a [cégnév] marketing- és értékesítési munkáját segíti. Ma
 - „Sales: …” → kövesd a sales.md fájlt (illeszkedés, megkeresési irány, kifogáskezelés, következő lépés).
 - „Postás: …” → kövesd az inbox.md fájlt (beérkező levelek átnézése, válaszpiszkozat).
 - „CRM: …” → kövesd a crm.md fájlt (ügyféltábla frissítése).
-- „Kezdjük …”, „Hol tartok?”, „Elakadtam”, „Mutasd a mintát” → kövesd az assistant.md tanulási kísérő utasítást és az aktuális modult.
+- „Kezdjük …”, „Mérd fel a gépem.”, „Hol tartok?”, „Elakadtam”, „Mutasd a mintát” → kövesd az assistant.md tanulási kísérő utasítást és az aktuális modult.
 Ha a kérés egyik szerephez sem illik, általános asszisztensként dolgozz, ugyanezekkel a szabályokkal.
 
 ## Ki hagyja jóvá? (kockázati szabály)

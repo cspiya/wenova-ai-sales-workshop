@@ -10,14 +10,14 @@ Az AI Sales & Marketing Workshop résztvevőinek készült csomag. A workshop sz
 | Alügynökök (7) | `writer` (Író), `reviewer` (Ellenőr), `ceo` (CEO), `marketing` (Marketing), `sales` (Sales), `inbox` (Postás), `crm` (CRM) |
 | Connector-címek (4) | Brandiseer, Sales Bot, EstiWise, Buffer (a Buffer választható) |
 
-A Karmester skillként fut a fő beszélgetésben, onnan indítja az Írót és az Ellenőrt. Egy feladaton legfeljebb három kör fut, utána a résztvevő dönt.
+A Karmester skillként fut a fő beszélgetésben, onnan indítja az Írót, és az induló felmérés alapján választ Ellenőrt. Egy feladaton legfeljebb három kör fut, utána a résztvevő dönt.
 
 ## Hozzáadás
 
 - **Cowork:** Customize → Plugins → Add → Add marketplace, a cím `cspiya/wenova-ai-sales-workshop`, majd Install. Tartalék: Add → Upload plugin, a `wenova-sales-workshop.plugin` fájllal. Utána új munkamenetet kell nyitni.
 - **Claude Code:** `claude plugin install wenova-sales-workshop --marketplace cspiya/wenova-ai-sales-workshop`, majd újraindítás vagy `/reload-plugins`.
 
-Állapotellenőrzés: `/wenova-sales-workshop:beallitas`.
+Az első „Kezdjük a felkészülést.” indítás felméréssel kezdődik. Később a „Mérd fel a gépem.” mondattal vagy a `/wenova-sales-workshop:beallitas` paranccsal kérheted újra.
 
 ## Mi marad kézi?
 

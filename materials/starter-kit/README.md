@@ -5,6 +5,7 @@ Ezekből a fájlokból építed fel a saját AI-csapatodat a Claude-ban. Másold
 | Fájl | Mire való? | Mikor? |
 | --- | --- | --- |
 | [project-instructions.md](project-instructions.md) | A Claude-projekt utasítása: szerepek, indítómondatok, tiltások | Felkészülés |
+| [felmeres.md](felmeres.md) | Induló felmérés és a kapcsolatok próbaeredményei | Felkészülés, blokknyitás |
 | [company-dna.md](company-dna.md) | Cég-DNS sablon: kinek, mit, milyen hangon adsz el | 1. blokk |
 | [voice-profile.md](voice-profile.md) | Hangprofil sablon a küldött leveleidből | 1. blokk |
 | [voice-checklist.md](voice-checklist.md) | Hangkinyerési ellenőrzőlista | 1. blokk |
@@ -21,6 +22,6 @@ Ezekből a fájlokból építed fel a saját AI-csapatodat a Claude-ban. Másold
 
 ## Mi kerül a Claude-projektbe?
 
-Alapút: a Claude Desktop Cowork a telepített `Tananyag/` mappából olvassa ezeket a fájlokat, és az eredményeidet a `Munka/` mappába menti; feltölteni semmit nem kell ([telepítés](../TELEPITES.md)). Tartalékút (claude.ai-projekt a böngészőben): a projekt tudásába töltsd fel az `assistant.md`, `AGENTS.md`, a modulok Markdown-fájljait, a fenti sablonokat és a nyolc agentfájlt, a projektutasítás mezőjébe pedig a `project-instructions.md` keretes szövegét. A pontos lépéseket a [felkészülési modul](../modules/00-prework.md) adja.
+Alapút: a Claude Desktop Cowork a telepített `Tananyag/` mappából olvassa ezeket a fájlokat, és az eredményeidet a `Munka/` mappába menti; feltölteni semmit nem kell ([telepítés](../TELEPITES.md)). Tartalékút (claude.ai-projekt a böngészőben): a projekt tudásába töltsd fel az `assistant.md`, `AGENTS.md`, a modulok Markdown-fájljait, a fenti sablonokat, a nyolc agentfájlt és a [felmérés utasítását](../plugin/wenova-sales-workshop/skills/beallitas/SKILL.md), a projektutasítás mezőjébe pedig a `project-instructions.md` keretes szövegét. A pontos lépéseket a [felkészülési modul](../modules/00-prework.md) adja.
 
 A kitöltött DNS, hangprofil és CRM a te üzleti adatod. Csak a saját Claude-fiókodban és a saját táblázatodban tárold.

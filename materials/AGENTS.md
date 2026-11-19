@@ -7,9 +7,9 @@ Ez a fájl a Claude-nak szól (Claude Desktop Cowork vagy Claude Code). A részt
 | Mappa | Mi van benne? | Mit tehetsz vele? |
 | --- | --- | --- |
 | `Tananyag/` | A workshop teljes anyaga: modulok, sablonok, agentek, minták | Csak olvasod. Soha nem módosítod és nem törlöd. Frissíteni csak a `Tananyag/TELEPITES.md` szerint lehet. |
-| `Munka/` | A résztvevő saját eredményei, blokkonként | Ide mentesz. Meglévő fájlt nem írsz felül: új verziószámot adsz (`company-dna-v0.2.md`). Törlés csak a résztvevő kifejezett kérésére. |
+| `Munka/` | A résztvevő saját eredményei, blokkonként | Ide mentesz. Meglévő fájlt nem írsz felül: új verziószámot adsz (`company-dna-v0.2.md`). A munkanapló, a felmérés és a haladási napló ugyanabban a fájlban bővül. Törlés csak a résztvevő kifejezett kérésére. |
 
-Mentési helyek: `Munka/00-Felkeszules/`, `Munka/01-DNS/`, `Munka/02-Tartalom/`, `Munka/03-Leadek/`, `Munka/04-Ajanlat/`, `Munka/05-Folyamat/` és `Munka/munkanaplo.md`. Ha egy mappa hiányzik, létrehozod. A munkanaplót ugyanabban a fájlban bővíted, a korábbi bejegyzések megőrzésével.
+Mentési helyek: `Munka/00-Felkeszules/`, `Munka/01-DNS/`, `Munka/02-Tartalom/`, `Munka/03-Leadek/`, `Munka/04-Ajanlat/`, `Munka/05-Folyamat/` és `Munka/munkanaplo.md`. A munkanaplót ugyanabban a fájlban bővíted, a korábbi bejegyzések megőrzésével. A felmérés a `Munka/00-Felkeszules/felmeres.md`, a haladási napló a `Munka/00-Felkeszules/progress.json` fájlba kerül. Ezeket helyben frissíted a korábbi próbaeredmények és a többi naplómező megőrzésével. A felmérésben először a talált állapotot rögzítsd. Ha a mentési mappa hiányzik, a mentéshez hozd létre. A többi hiányzó munkamappát akkor hozd létre, amikor szükség van rájuk.
 
 Ahol a tananyag, a projektutasítás vagy egy agentfájl azt írja, hogy egy fájl „a projektben” van (például `voice-profile.md`), azt a `Munka/` megfelelő mappájában keresd; ha ott nincs, a `Tananyag/starter-kit/` sablonját használd kiindulásnak. A Cég-DNS-ből a legutóbbi jóváhagyott változatot használd. Jelezd a fájl nevét, verzióját és státuszát. Az agentfájlok helye: `Tananyag/starter-kit/agents/`.
 
@@ -17,7 +17,9 @@ Ahol a tananyag, a projektutasítás vagy egy agentfájl azt írja, hogy egy fá
 
 | Mondat | Mit csinálsz? |
 | --- | --- |
-| „Kezdjük a felkészülést.” / „Kezdjük az N. blokkot.” / „Hol tartok?” / „Elakadtam.” / „Mutasd a mintát.” / „Írd meg helyettem.” | A tanulási kísérő: kövesd a `Tananyag/assistant.md` fájlt és az aktuális modult (`Tananyag/modules/`). |
+| „Kezdjük a felkészülést.” | Kövesd a `Tananyag/assistant.md` fájlt. Ha még nincs kitöltött `Munka/00-Felkeszules/felmeres.md`, kezdd a felméréssel. |
+| „Mérd fel a gépem.” | Futtasd a `beallitas` skill felmérését. Ha a plugin nincs betöltve, olvasd a skill forrását a `Tananyag/plugin/wenova-sales-workshop/skills/beallitas/SKILL.md` fájlból. |
+| „Kezdjük az N. blokkot.” / „Hol tartok?” / „Elakadtam.” / „Mutasd a mintát.” / „Írd meg helyettem.” | A tanulási kísérő: kövesd a `Tananyag/assistant.md` fájlt és az aktuális modult (`Tananyag/modules/`). |
 | „Karmester: …”, „Író: …”, „Ellenőr: …”, „CEO: …”, „Marketing: …”, „Sales: …”, „Postás: …”, „CRM: …” | Kövesd a `Tananyag/starter-kit/project-instructions.md` keretes szabályait és a megfelelő agentfájlt. |
 | „Telepítsd a workshop tananyagát …” / „Frissítsd a tananyagot.” | Kövesd a `Tananyag/TELEPITES.md` futtatókönyvet (ha még nincs meg, a felhasználó által adott linkről olvasd be). |
 

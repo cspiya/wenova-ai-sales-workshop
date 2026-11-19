@@ -106,8 +106,8 @@ Pontosan ezt add át, a tényleges útvonalakkal:
 2. „Add hozzá a csapatot a 6/a lépés szerint.” Claude Code-ban ezt te végzed el, engedélykérés után.
 3. Cowork esetén: „A Cowork-projekt beállításaiban (Instructions) írd be: »Kövesd a munkamappa AGENTS.md fájlját. A cégem neve: [cégnév].« Mentsd.” Claude Code esetén ez nem kell: a `CLAUDE.md` betölti az `AGENTS.md`-t.
 4. „Nyiss új munkamenetet ebben a projektben, hogy a plugin és az utasítás betöltődjön.” Claude Code-ban: `/reload-plugins` vagy újraindítás.
-5. „Írd be: `/wenova-sales-workshop:beallitas`. Ez ✅/⚠️ listát ad a pluginról, az agentekről és a connectorokról.” Plugin nélkül ezt a lépést hagyd ki.
-6. „Írd be: Kezdjük a felkészülést.”
+5. „Írd be: Kezdjük a felkészülést. Az első indítás rövid felméréssel kezdődik. A Claude feljegyzi, mi áll készen, mi hiányzik, és mit elég a saját blokkjában elintézni.”
+6. „Ha később újra szeretnéd ellenőrizni a beállításokat, írd be: Mérd fel a gépem.”
 
 <a name="kezi-ut"></a>
 
