@@ -299,4 +299,4 @@ h1, h2, h3, h4, .day-strip__item a, .tl-title, .day-strip__item { overflow-wrap:
 .page--projection .page-hero p:has(img) img { display:block; width:min(40vw,74vh); height:auto; }
 .page--projection .page-hero ol { grid-area:steps; margin:0; padding-left:1.2em; font-size:2.5vw; line-height:1.3; }
 .page--projection .page-hero li { margin:0 0 2.5vh; }
-.page--projection .page-hero code { font-size:.9em; overflow-wrap:anywhere; }
+.page--projection .page-hero code { font-size:.85em; white-space:nowrap; }
