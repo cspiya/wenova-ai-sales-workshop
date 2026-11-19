@@ -158,3 +158,9 @@ test('partner band on every page, block lead, step cards and schedule-driven tim
  assert.match(fs.readFileSync(path.join(root,'operations/instructor-notes/02-demo.html'),'utf8'),/is-lead/);
 }));
 module.exports={fixture};
+test('running text stays justified with Hungarian hyphenation (project rule)',()=>{
+ const css=fs.readFileSync(path.join(ROOT,'materials/assets/notebook.css'),'utf8');
+ assert.ok(css.includes('main :where(p,li,dd,blockquote)'),'running text selector');
+ assert.ok(css.includes('{ text-align:justify; hyphens:auto;'),'justified with hyphenation');
+ assert.match(fs.readFileSync(path.join(ROOT,'AGENTS.md'),'utf8'),/Running text is justified/);
+});

@@ -303,6 +303,8 @@ h1, h2, h3, h4, .day-strip__item a, .tl-title, .day-strip__item { overflow-wrap:
 .logo-word, .logo-tile { white-space:nowrap; }
 .day-strip__item .logo-tile { max-width:100%; }
 
+/* Project rule (AGENTS.md): running text is justified with Hungarian hyphenation. Headings, tables, code, prompts, navigation, buttons and short labels keep their own alignment. */
+main :where(p,li,dd,blockquote):where(:not(table *,nav *,pre *,.hero-actions,.hero-links,.kicker,.state,.copy-hint,.day-strip,.day-strip *,.flow,.flow *,.pager,.pager *,.timeline *,[class*="slot"],[class*="slot"] *,[class*="block-banner"],[class*="block-banner"] *,.page--projection *)) { text-align:justify; hyphens:auto; -webkit-hyphens:auto; }
 /* Participant home: the QR code stays scannable without pushing the three steps off the screen. */
 .page--home main img[src$="indulas-qr.png"] { display:block; width:min(15rem,70vw); height:auto; }
 /* Projection page (materials/indulas.md): readable from the back of the room at 1920x1080. */
