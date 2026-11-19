@@ -54,7 +54,7 @@ Frissített CRM-tábla; egy válaszpiszkozat; `pipeline-review.md`; `launch-plan
 
 ### Folytatás elakadás esetén
 
-Használd a [mentőútvonalat](#recovery): az IrodaLiget teljes láncát, a mintapostafiókot és a CRM-mintát.
+Használd a [mentőútvonalat](#recovery), és az aktív mintavállalkozás teljes láncával és a hozzá tartozó CRM-sorral dolgozz. A Postás külön gyakorlatához használd a mintapostafiókot.
 
 <a name="overview-4"></a>
 
@@ -120,8 +120,9 @@ Ha a piszkozat jó, ugyanitt:
 
 ```text
 CRM: olvasd be a jelenlegi CRM-táblát vagy a crm.csv-t, a Postás javaslatait és a 03-as, 04-es blokk csatolt fájljait. A kapcsolt ajánlatnál a case_id a lead_id, a partner_ref a proposal_id. Egyeztesd az azonosítókat a leads.csv, outreach.md, customer-brief.md, proposal.md és handoff.md fájlban. Eltérésnél állj meg. A teendőt, határidőt és felelőst a handoff.md-ből vedd.
+Az ajánlat value_net mezőjébe csak a proposal.md-ben vagy az EstiWise-ban dokumentált nettó összeget írd. Ha csak bruttó összeg ismert, kérd a dokumentált nettó értéket. Amíg az hiányzik, hagyd üresen a value_net mezőt. A currency mezőbe a dokumentált pénznemet írd.
 Case_id alapján mutasd meg, melyik sor új és melyik meglévő sort módosítanád. Egy kulcshoz egy CSV-sort adj a tábla oszlopsorrendjében. Többszörös találat esetén kérj egyeztetést.
-Beillesztés után olvasd vissza a táblát vagy a mentett crm.csv-t. Ellenőrizd az érintett case_id-k egyediségét és a jóváhagyott mezőértékeket.
+Beillesztés után olvasd vissza a táblát vagy a mentett crm.csv-t. Ellenőrizd az érintett case_id-k egyediségét és a jóváhagyott mezőértékeket, köztük a nettó összeget vagy az összeg hiányát, valamint a pénznemet.
 ```
 
 <a name="05-pipeline-review.01-inbox-crm--steps"></a>
@@ -140,7 +141,7 @@ Beillesztés után olvasd vissza a táblát vagy a mentett crm.csv-t. Ellenőriz
 - A Postás táblázatában a próbalevél „Új érdeklődés” típusú, javasolt következő lépéssel.
 - A piszkozat a te hangodon szól, csak a DNS-ben lévő árat és ígéretet tartalmazza, és a leveleződben piszkozatként vár. Nincs elküldve.
 - A CRM-agent változáslistát és CSV-sorokat adott; te bemásoltad őket.
-- A Claude visszaolvasta a táblát. Minden érintett `case_id` egyedi. A kiválasztott lead és a hozzá tartozó ajánlat egy sorban van. Ellenőrizd a szakaszt, a `partner_ref`-et, a teendőt, a határidőt és a felelőst.
+- A Claude visszaolvasta a táblát vagy a mentett CSV-t. Minden érintett `case_id` egyedi. A kiválasztott lead és a hozzá tartozó ajánlat egy sorban van. Ellenőrizd a szakaszt, a `partner_ref`-et, a teendőt, a határidőt és a felelőst. A `value_net` egyezik a dokumentált nettó összeggel, vagy üres, ha ilyen összeg nincs. A `currency` egyezik a dokumentált pénznemmel.
 
 <a name="05-pipeline-review.01-inbox-crm--help"></a>
 
@@ -246,7 +247,7 @@ A végén add meg a pipeline-review.md tartalmát a közös mezőkkel: case_id, 
 ### Ha elakadtál
 
 - **A Sales Bot vagy az EstiWise nem válaszol:** ne indítsd újra többször. Kérd: „Ezt a lépést a projektben lévő fájlból csináld, és jelöld simulation-nek.”
-- **Nincs saját ügyféllánc a délutánból:** vidd végig az IrodaLiget `office-plants-L01` leadjét a [mintafájlokból](../scenarios/office-plants/README.md).
+- **Nincs saját ügyféllánc a délutánból:** a legutóbbi `progress.json` `scenario_id` mezője alapján nyisd meg a [kiválasztott minta](#recovery) `outputs/` mappáját. Ha már választottál mintát, de hiányzik az azonosító, rögzítsd a választott mappa nevét. Ha most választasz először, az ajánlott kezdőminta az IrodaLiget (`office-plants`). A minta `customer-brief.md` fájljában szereplő `lead_id` alapján vidd végig a kiválasztott ügyet. A leadlistát, a megkeresést, az ajánlatot, az átadást és az egyező CRM-sort ugyanebből a mappából vedd át. Jelöld a végrehajtást `simulation` módban.
 
 <a name="05-pipeline-review.02-one-customer--handoff"></a>
 

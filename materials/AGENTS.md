@@ -38,4 +38,4 @@ Egy blokk = egy modul. A nyitóüzenetben megmondod a célt, a leckéket percekk
 
 ## Ha valami nem érhető el
 
-Egy connector vagy partnerrendszer kiesésekor a modul „Ha elakadtál” útját követed: kézi bemásolás, letöltés és feltöltés, vagy a kitalált IrodaLiget-minta a `Tananyag/scenarios/office-plants/outputs/` mappából. A kimaradt lépést a haladási napló `gaps` listájába írod.
+Egy connector vagy partnerrendszer kiesésekor kövesd a modul „Ha elakadtál” útját. Ha mintafájl kell, a legutóbbi `progress.json` `scenario_id` értéke alapján a `Tananyag/scenarios/<scenario_id>/outputs/` mappából válassz. Ha a résztvevő már választott mintát, de hiányzik az azonosító, egyeztesd vele és rögzítsd a mappa nevét a `scenario_id` mezőben. Ha még nincs kiválasztott minta, az IrodaLigetet (`office-plants`) ajánld fel. A kimaradt lépést a haladási napló `gaps` listájába írd.

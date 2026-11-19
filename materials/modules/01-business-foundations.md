@@ -423,9 +423,9 @@ Ellenőr: itt a teljes javított v2 változat [bemásolva]. Ellenőrizd a koráb
 1. **0–2 perc:** kérdezd meg a Claude-ot: „Látod az öt agentfájlt és az AGENTS.md-t?” Ha nem, a [telepítés](00-prework.md#00-prework.01-install) 5. lépése hiányzik.
 2. **2–5 perc:** A beszélgetés: Karmester-prompt; nézd át és hagyd jóvá a tervet.
 3. **5–9 perc:** az Író megírja a posztot. Olvasd el az önellenőrzést, és másold ki az ellenőrzési csomagot.
-4. **9–14 perc:** B beszélgetés: Ellenőr. Olvasd el a döntést és a táblázatot.
+4. **9–14 perc:** B beszélgetés: Ellenőr. Olvasd el a döntést és a táblázatot. Mentsd az első tényleges ítéletet a `Munka/01-DNS/post-review.md` fájlba. A sorba írd a szövegazonosítót (`01-LinkedIn-poszt`), a vizsgált verziót, az ítélet dátumát (ÉÉÉÉ-HH-NN) és az ítéletet.
 5. **14–17 perc:** vissza az A beszélgetésbe; egy javítási kör.
-6. **17–20 perc:** ha változott a poszt, küldd vissza a B beszélgetésbe, és olvasd el a javított változathoz tartozó új ítéletet. A B beszélgetésből mentsd a tényleges ítéletet a `Munka/01-DNS/post-review.md` fájlba a szöveg azonosítójával és verziójával. Ha a javítás újraellenőrzésére nincs idő, a javított változat mellé írd: „ellenőrzésre vár”. DNS-hiány esetén írd be a teendőt a DNS 9. szakaszába.
+6. **17–20 perc:** ha változott a poszt, küldd vissza a B beszélgetésbe, és olvasd el a javított változathoz tartozó új ítéletet. A `post-review.md` fájlban minden tényleges ítélethez adj új sort ugyanazzal a szövegazonosítóval, a vizsgált verzióval, az ítélet dátumával és az ítélettel. Őrizd meg a korábbi sorokat. Ha a javítás újraellenőrzésére nincs idő, a javított változathoz külön jegyezd fel, hogy „ellenőrzésre vár”. DNS-hiány esetén írd be a teendőt a DNS 9. szakaszába.
 
 <a name="01-business-foundations.03-ai-workspace--check"></a>
 
@@ -433,8 +433,8 @@ Ellenőr: itt a teljes javított v2 változat [bemásolva]. Ellenőrizd a koráb
 
 - A Karmester terve kapukat tartalmaz, és te hagytad jóvá.
 - Az Író önellenőrzése ✅/⚠️ jelöléssel és kockázati szinttel ott van.
-- Az Ellenőr a B beszélgetésben adott döntést (MEGFELEL / JAVÍTANDÓ / BLOKKOLÓ) a mentett szövegváltozatról. Javítás után az új ítéletet ellenőrizd.
-- A `post-review.md` megnevezi a szöveget, a vizsgált verziót és az Ellenőr tényleges ítéletét. A még függőben lévő újraellenőrzést külön jelöli.
+- Vesd össze a B beszélgetésben kapott döntéseket (MEGFELEL / JAVÍTANDÓ / BLOKKOLÓ) a `post-review.md` soraival. Ha volt újraellenőrzés, a korábbi és az új ítélet is legyen benne.
+- Minden tényleges ítélet külön sorban szerepel a szövegazonosítóval, a vizsgált verzióval és az ítélet dátumával. Az „ellenőrzésre vár” megjegyzés külön áll az ítéletektől.
 - Meg tudod mondani egy mondatban, mit fogott meg az Ellenőr, vagy miért nem talált hibát.
 - Semmi nem ment ki: a poszt piszkozat.
 

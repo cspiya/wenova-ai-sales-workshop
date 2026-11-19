@@ -29,15 +29,13 @@ A modul kidolgozott, élő Brandiseer-kapcsolattal kipróbált tananyag. A telje
 
 20 perc bemutató és élő demó + 3 × 20 perc gyakorlat + 10 perc ellenőrzés és kérdések.
 
-A Brandiseer a saját blokkjában megmutatja, hogyan készül a márkához illő kép és videó. A bemutatón 2D-s mozgóképes videó is szerepelhet narrációval. A hangalámondáshoz ElevenLabs szükséges.
-
 A modul végére egy hétre való, öt kész, letölthető, márkahű posztod lesz posztszöveggel, és egy kampányterv, amellyel a délutáni ügyfélszerzési modul dolgozik. Minden képet a Brandiseer készít a saját márkádból, Claude pedig végigvezet a folyamaton: kérdez, megírja a szövegeket, és a Brandiseer connectoron keresztül legenerálja a vizuálokat. A Brandiseer felületét közben nem kell kezelned.
 
 <a name="overview-1"></a>
 
 ### Bemenet
 
-A legutóbbi `progress.json`-ban kijelölt Cég-DNS, hangprofil és üzleti alaplap, a hozzájuk tartozó `sales-strategy.md`, valamint a Brandiseer-fiókod a felvett márkáddal.
+A délelőtti 01-es modul fájljai a `Munka/01-DNS/` mappában: `company-dna.md` (Cég-DNS), `voice-profile.md` (hangprofil), `business-profile.md` és `sales-strategy.md`; a saját Brandiseer-fiókod a felvett márkáddal.
 
 <a name="overview-2"></a>
 
@@ -63,9 +61,9 @@ Használd a [mentőútvonalat](#recovery). A kimeneteket a közös adatátadási
 
 <a name="overview-5"></a>
 
-### Előfeltételek
+### Előfeltételek (előzetes felkészülés)
 
-1. A márkád felvéve a Brandiseerben: a **brandiseer.hu** főoldalán add meg a weboldalad címét, kattints a **Try My Brand** gombra, nézd át a kiválasztott képeket, majd **Add Brand**, és hozd létre a fiókodat. Ha még nincs fiókod, a workshopon a saját laptopodon is létrehozhatod.
+1. A márkád felvéve a Brandiseerben: a **brandiseer.hu** főoldalán add meg a weboldalad címét, kattints a **Try My Brand** gombra, nézd át a kiválasztott képeket, majd **Add Brand**, és hozd létre a fiókodat.
 2. Pro csomag a **WENOVA** promóciós kóddal: az első hónap ingyenes, bőven elég kredittel a workshopra.
 3. A Brandiseer connector bekötve a Claude-ba (ha előre nem sikerült, az 1. lecke elején együtt bekötjük): **Customize → Connectors → + → Add custom connector** → név: `Brandiseer`, URL: `https://brandiseer.com/api/mcp` → **Add** → bejelentkezés a Brandiseer-fiókoddal. A beszélgetésben a bal alsó **+** gomb → **Connectors** alatt legyen bekapcsolva.
 4. Opcionális: Buffer-fiók (buffer.com, ingyenes) legalább egy bekötött közösségi csatornával, és a Buffer connector a Claude-ban: **Customize → Connectors** → keresd meg a **Buffer**-t a listában → **Connect** → engedélyezés. Csak a bónuszfeladathoz kell.
@@ -80,7 +78,7 @@ Minden képet **design** módban készítünk. Ez a Brandiseer grafikai, márkah
 
 ## A Brandiseer bekötése a Claude-ba
 
-**Az 1. lecke első 3 percében.** Ha előre már bekötötted, csak az ellenőrzést csináld meg.
+**Az 1. lecke előtt, kb. 3 perc.** Ha előre már bekötötted, csak az ellenőrzést csináld meg.
 
 A Brandiseer connector címe:
 
@@ -133,7 +131,7 @@ Ellenőrzöd, hogy Claude eléri a Brandiseer-fiókodat és a márkádat, majd e
 
 ### Erre lesz szükséged
 
-Claude Desktop (Cowork) a bekötött Brandiseer connectorral, a felvett márkád, és a `progress.json`-ban kijelölt aktív Cég-DNS. Ha még nincs felvett márkád, a [lépéseknél](#02-content-marketing.01-brand-brief--steps) megtalálod, hogyan pótold.
+Claude Desktop (Cowork) a bekötött Brandiseer connectorral, a felvett márkád, és a délelőtti Cég-DNS (`Munka/01-DNS/company-dna.md`). Ha még nincs felvett márkád, a [lépéseknél](#02-content-marketing.01-brand-brief--steps) megtalálod, hogyan pótold.
 
 <a name="02-content-marketing.01-brand-brief--explanation"></a>
 
@@ -154,7 +152,7 @@ Melyik márkáddal dolgozol, ha több is van. A próbakép alapján: jól tükr�
 ```text
 Ellenőrizd a Brandiseer-kapcsolatot: listázd a márkáimat (brandiseer_list_brands), és nézd meg a kreditegyenlegemet (brandiseer_check_credits).
 Ha egy márkám van, azzal dolgozunk; ha több, kérdezd meg, melyikkel. Ha nincs márkám, szólj, és ne hozz létre semmit kérdés nélkül.
-Utána készíts egy próbaképet a márkámmal a brandiseer_generate_image eszközzel: egyszerű bemutatkozó poszt, rajta a cégnév és egy rövid mondat arról, mivel foglalkozunk (a legutóbbi progress.json-ban kijelölt aktív Cég-DNS alapján).
+Utána készíts egy próbaképet a márkámmal a brandiseer_generate_image eszközzel: egyszerű bemutatkozó poszt, rajta a cégnév és egy rövid mondat arról, mivel foglalkozunk (a Munka/01-DNS/company-dna.md alapján).
 Beállítás: aspectRatio 1:1, mode design, useLogo true, resolution 1K.
 A képpromptba csak tartalmat és elrendezést írj; színt, betűtípust, hangulatot vagy stílust ne. Mutasd meg a képet és a használt promptot.
 ```
@@ -184,7 +182,7 @@ A képpromptba csak tartalmat és elrendezést írj; színt, betűtípust, hangu
 
 - **Claude nem látja a Brandiseer eszközöket:** a beszélgetés bal alsó **+** gombja → **Connectors** alatt kapcsold be a Brandiseert. Ha nincs ott: **Customize → Connectors → + → Add custom connector**, URL: `https://brandiseer.com/api/mcp`, majd jelentkezz be. Bekapcsolás után indíts új beszélgetést, ha az eszközök még mindig nem látszanak.
 - **Üres a márkalista:** ugyanazzal az e-mail-címmel léptél be a connectorba, mint a brandiseer.hu-n? Ha igen, vedd fel a márkát a 3. lépés szerint.
-- **A weboldalad gyenge vagy nincs:** a Brandiseerben felvehetsz egy olyan nyilvános weboldalt is gyakorlásra, amelynek a márkáját jól ismered (pl. kedvenc kávézód). Az így készült képeket és posztszövegeket tartsd meg a saját gyakorlómappádban.
+- **A weboldalad gyenge vagy nincs:** a Brandiseerben felvehetsz egy olyan nyilvános weboldalt is gyakorlásra, amelynek a márkáját jól ismered (pl. kedvenc kávézód). Ezzel csak gyakorolsz, semmit nem publikálsz.
 - **Öt perc után sincs kép:** szólj a mentornak, és nézd az előadó kivetített példáját; a következő leckét a mentor segítségével folytasd.
 
 <a name="02-content-marketing.01-brand-brief--handoff"></a>
@@ -219,7 +217,7 @@ Két publikálásra kész posztot a választott csatornára: mindkettő egy már
 
 ### Erre lesz szükséged
 
-Az előző lecke beszélgetése a kiválasztott márkával, valamint az aktív Cég-DNS, a hangprofil és a hozzájuk tartozó `sales-strategy.md`.
+Az előző lecke beszélgetése a kiválasztott márkával, és a `Munka/01-DNS/` mappa: `company-dna.md`, `voice-profile.md`, `sales-strategy.md`.
 
 <a name="02-content-marketing.02-create-content--explanation"></a>
 
@@ -240,7 +238,7 @@ A csatorna, a két poszt témája, a felhívás és a hangnem. A két képötlet
 ```text
 Most a márkahű közösségimédia-tartalomkészítőm vagy. A képekhez a Brandiseer connectort használod, az előző lépésben kiválasztott márkámmal.
 
-Olvasd el a legutóbbi progress.json-ban kijelölt aktív DNS-t és hangprofilt, valamint az ugyanahhoz a céghez tartozó sales-strategy.md fájlt.
+Először olvasd el a Munka/01-DNS/ mappából: company-dna.md, voice-profile.md, sales-strategy.md.
 Foglald össze három sorban, mit használsz belőlük: kinek szól (ICP), mit ajánlunk és milyen felhívással, milyen hangon, és mit nem mondunk. Amit ott megtalálsz, azt ne kérdezd meg tőlem.
 
 Utána egyenként, csak ezt kérdezd:
@@ -255,7 +253,7 @@ Szabályok:
 - A képpromptban csak tartalmat és elrendezést írj le: mi látszik, milyen szöveg kerül a képre és hová, mi kerül a középpontba. Színt, betűtípust, hangulatot vagy stílust soha ne írj bele, ezt a Brandiseer a márkából hozza.
 - Az oldalarányt a csatornához válaszd: Instagram és Facebook poszt 1:1, Story és Reels 9:16, LinkedIn 1:1 vagy 4:3, X 16:9.
 - A posztszöveg a hangprofil szerint szóljon; ár, akció, referencia vagy vállalás csak az lehet, ami a Cég-DNS-ben forrással szerepel.
-- Ebben a lépésben a képeket és a posztszövegeket készítsd elő. Az esetleges Buffer-ütemezésről a következő leckében döntök.
+- Semmit ne publikálj és ne ütemezz a kifejezett kérésem nélkül.
 
 Ha megvan a két téma:
 - Írj két rövid képötletet (mi látszik a képen, milyen szöveg kerül rá, legfeljebb 6–8 szó), és kérd a jóváhagyásomat.
@@ -288,7 +286,7 @@ Ha megvan a két téma:
 
 ### Ha elakadtál
 
-- **Nincs meg a Cég-DNS:** ha a naplóban kijelölt DNS hiányzik, mondd meg Claude-nak, hogy a weboldaladból és a válaszaidból dolgozzon, és tegye fel a hiányzó kérdéseket (célközönség, ajánlat, hangnem, kerülendő). Végső esetben a választott minta `company-dna.md` fájlja a [mentőútvonal](#recovery) szerint.
+- **Nincs meg a Cég-DNS:** ha a délelőtti `Munka/01-DNS/company-dna.md` hiányzik, mondd meg Claude-nak, hogy a weboldaladból és a válaszaidból dolgozzon, és tegye fel a hiányzó kérdéseket (célközönség, ajánlat, hangnem, kerülendő). Végső esetben a választott minta `company-dna.md` fájlja a [mentőútvonal](#recovery) szerint.
 - **Nincs ötleted a témára:** írd: „döntsd el te”, és Claude a DNS fő ajánlatából választ.
 - **A kép szövege hibás vagy elírt:** kérd Claude-ot, hogy a képre kerülő szöveget rövidebbre írja (legfeljebb 6–8 szó), és generálja újra.
 - **A generálás hibát ad:** Claude egyszer próbálja újra; ha a design továbbra sem megy, a fast mód tartalék. Ha az sem, folytasd a mentorral.
@@ -332,13 +330,13 @@ Az előző lecke két jóváhagyott képe és posztszövege, ugyanabban a beszé
 
 ### Így működik
 
-Claude az előző lecke briefjéből (csatorna, hangnem, felhívás) javasol három további témát, hogy kijöjjön egy hét. Előbb heti táblázatot kapsz, és csak a jóváhagyásod után generál. A képkérésben csak tartalom és elrendezés szerepel, a márkát a Brandiseer hozza. A letöltött képeket és a posztszövegeket kézzel is közzéteheted. Ha használod a választható Buffert, a posztokat piszkozatként mentheted, vagy jóváhagyás után beütemezheted.
+Claude az előző lecke briefjéből (csatorna, hangnem, felhívás) javasol három további témát, hogy kijöjjön egy hét. Előbb heti táblázatot kapsz, és csak a jóváhagyásod után generál. A szabály ugyanaz: a képkérésben csak tartalom és elrendezés, a márkát a Brandiseer hozza, így az öt poszt egymás mellett is egy márkának látszik. A publikálás ma kézzel történik: letöltöd a képeket, és a posztszöveggel együtt kiteszed, amikor te jónak látod. A Buffer-bónusz megmutatja, hogyan kerülhet ez automatikusan a közösségi felületeid piszkozatai közé.
 
 <a name="02-content-marketing.03-prepare-publishing--decisions"></a>
 
 ### Ezekről te döntesz
 
-A három új témáról, a heti sorrendről és az esetleges ütemezésről te döntesz. A Claude előre megmutatja a csatornát, a végleges posztszöveget és a megjelenés pontos időpontját, és csak a kifejezett jóváhagyásod után ütemezhet. **Ami be van ütemezve, az ki is megy.** Ha ezt nem szeretnéd, hagyd piszkozatban. Azonnali közzétételt te indíthatsz a közösségi felületen.
+A három új téma és a heti sorrend, és hogy mi kerül ki valójában. Semmi nem kerül ki a közösségi oldaladra a kifejezett jóváhagyásod nélkül; a bónuszfeladat is csak piszkozatot készít.
 
 <a name="02-content-marketing.03-prepare-publishing--prompt"></a>
 
@@ -357,16 +355,15 @@ Végül add meg mind az öt kép linkjét naponként, egy listában.
 **2. Kampányterv:**
 
 ```text
-Készítsd el a campaign-plan.md tartalmát ebben a szerkezetben: offer_id (az aktív cég sales-strategy.md fájljából), audience, posts (az öt poszt: nap, téma, szöveg), image_urls (az öt kép linkje naponként), channel, call_to_action.
+Készítsd el a campaign-plan.md tartalmát ebben a szerkezetben: offer_id (a Munka/01-DNS/sales-strategy.md-ből), audience, posts (az öt poszt: nap, téma, szöveg), image_urls (az öt kép linkje naponként), channel, call_to_action.
 Csak azt írd bele, amit ma jóváhagytam. Mentsd Munka/02-Tartalom/campaign-plan.md néven.
 ```
 
-**3. Bónusz: piszkozat vagy ütemezés a Bufferben**
+**3. Bónusz – Buffer-piszkozat (csak ha bekötötted a Buffert):**
 
 ```text
-A Bufferbe szánt posztokhoz mutasd meg a csatornát, a végleges szöveget és a hozzá tartozó képet. Kérdezd meg, melyik maradjon piszkozat, és melyiket szeretném ütemezni.
-Az ütemezésre kiválasztott posztoknál mutasd meg a csatornát, a végleges szöveget és a pontos dátumot, időt és időzónát. Mondd el: ami be van ütemezve, az ki is megy. Várd meg a kifejezett jóváhagyásomat erre a listára, mielőtt ütemezel. Ha valamelyik poszt megjelenését nem kérem, hagyd piszkozatban. A piszkozat Bufferbe mentése előtt is kérj jóváhagyást.
-Használd a Buffer connectorban elérhető műveleteket. Olvasd vissza a mentett állapotot és az ütemezett időpontot. Ha valamelyik művelet vagy a kép csatolása nem érhető el, szólj, hogy a Bufferben kézzel végezhessem el. Azonnali közzétételt ne indíts.
+A Buffer connectorral tedd be az öt posztot piszkozatként (draft) a bekötött csatornámra, a képpel és a szöveggel együtt. Ne ütemezd és ne publikáld.
+Előtte írd le, melyik csatornára mi kerül, és várd meg az igenemet.
 ```
 
 <a name="02-content-marketing.03-prepare-publishing--steps"></a>
@@ -377,7 +374,7 @@ Használd a Buffer connectorban elérhető műveleteket. Olvasd vissza a mentett
 2. **3–9 perc:** amíg a három kép készül (képenként 1–1,5 perc), töltsd le az előző lecke két képét (a linkre kattintva vagy jobb klikk → mentés) a `Munka/02-Tartalom/` mappába.
 3. **9–12 perc:** nézd meg az új képeket egymás mellett: egy márkának látszik az öt poszt? Kérj legfeljebb egy javítást, majd töltsd le mindet.
 4. **12–17 perc:** másold be a kampánytervhez tartozó promptot, és mentsd a `campaign-plan.md` fájlt.
-5. **17–20 perc, bónusz:** ha bekötötted a Buffert, futtasd a harmadik promptot. Ütemezés előtt nézd át a csatornát, a szöveget és az időpontot. Utána a Bufferben ellenőrizd a választott állapotot.
+5. **17–20 perc, bónusz:** ha bekötötted a Buffert, futtasd a harmadik promptot, és ellenőrizd a Bufferben a piszkozatokat.
 
 <a name="02-content-marketing.03-prepare-publishing--check"></a>
 
@@ -387,7 +384,8 @@ Használd a Buffer connectorban elérhető műveleteket. Olvasd vissza a mentett
 - A képek promptjaiban nincs szín, betűtípus, hangulat vagy stílus.
 - Mind az öt kép le van töltve a munkacsomagodba.
 - A `campaign-plan.md` elmentve, benne az öt posztszöveg, a napok, a csatorna, a felhívás és a képek linkje.
-- Bónusz: a Bufferben a posztok a választott állapotban látszanak. Az ütemezett posztok csatornája, szövege és időpontja egyezik azzal, amit jóváhagytál.
+- Semmi nem került ki a közösségi oldaladra a jóváhagyásod nélkül.
+- Bónusz: a posztok piszkozatként látszanak a Bufferben.
 
 <a name="02-content-marketing.03-prepare-publishing--help"></a>
 
@@ -395,7 +393,7 @@ Használd a Buffer connectorban elérhető műveleteket. Olvasd vissza a mentett
 
 - **Kevés az idő:** elég, ha egy vagy két új kép készül el; a táblázat akkor is lefedi a hetet, a hiányzó képeket otthon ugyanígy pótolod.
 - **A generálás hibát ad:** Claude egyszer próbálja újra; ha a design továbbra sem megy, a fast mód tartalék. Ha az sem, folytasd a mentorral.
-- **A Buffer nem látszik a Claude-ban:** Customize → Connectors → Buffer → Connect, majd a beszélgetés **+** gombja alatt kapcsold be. Ha a connector nem kínálja fel a választott műveletet, dolgozz a Buffer felületén. Ütemezés előtt ott is nézd át a csatornát, a szöveget és az időpontot. Ami be van ütemezve, az ki is megy. Ha ezt nem szeretnéd, hagyd piszkozatban.
+- **A Buffer nem látszik a Claude-ban:** Customize → Connectors → Buffer → Connect, majd a beszélgetés **+** gombja alatt kapcsold be. Ha a piszkozat nem jelenik meg, nézd meg a Bufferben, melyik csatornára készült.
 - **Nincs Buffer:** ez bónusz, nyugodtan hagyd ki. Otthon a [teljes automatizálási útmutatóval](https://blog.brandiseer.com/use-cases/social-media-automation) pótolhatod.
 - **Nem készül el a kampányterv:** használd a választott minta `campaign-plan.md` fájlját a [mentőútvonal](#recovery) szerint.
 
@@ -403,7 +401,7 @@ Használd a Buffer connectorban elérhető műveleteket. Olvasd vissza a mentett
 
 ### Ezt viszed tovább
 
-A `campaign-plan.md` a délutáni ügyfélszerzési modul bemenete (Blackhole Media): ebből készül a megkeresés üzenete. A letöltött képeket a workshop után is felhasználhatod a posztokhoz.
+A `campaign-plan.md` a délutáni ügyfélszerzési modul bemenete (Blackhole Media): ebből készül a megkeresés üzenete. A letöltött képek a tieid; amikor jónak látod, kézzel vagy a Bufferrel közzéteheted őket.
 
 <a name="02-content-marketing.03-prepare-publishing--extra"></a>
 
@@ -421,7 +419,7 @@ Kérd Claude-ot, hogy a [Brandiseer automatizálási útmutatója](https://blog.
 4. A haladási naplóban jelöld: `completed_with_example`, végrehajtás: `simulation`.
 5. Mondd el saját szavaiddal, mit készített volna a lépés, majd folytasd a következő leckével.
 
-A mintavállalkozások kitaláltak, ezért Brandiseer-márkájuk nincs; a mentőcsomag öt napra ad posztszöveget, és naponta jelöli, hogy kép nem készült. Ha a saját márkáddal a kapcsolat működik, de az ötletek akadnak el, a minta témáival a saját márkádon is generálhatsz. Saját üzletről mintára váltáskor külön munkapéldányban a teljes kapcsolódó mintaláncot használd; ne keverd a minta árait a saját ajánlatoddal. A statikus csomag nem bizonyít működő partnerintegrációt.
+A mintavállalkozások kitaláltak, ezért Brandiseer-márkájuk nincs; a mentőcsomag a képek tervét tartalmazza, nem legenerált képet. Ha a saját márkáddal a kapcsolat működik, de az ötletek akadnak el, a minta témáival a saját márkádon is generálhatsz. Saját üzletről mintára váltáskor külön munkapéldányban a teljes kapcsolódó mintaláncot használd; ne keverd a minta árait a saját ajánlatoddal. A statikus csomag nem bizonyít működő partnerintegrációt.
 
 <a name="examples"></a>
 

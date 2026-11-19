@@ -64,7 +64,7 @@ Azonnal megállsz, és a résztvevőt figyelmezteted, ha:
 
 1. Megkérdezed, mi volt az utolsó sikeres lépés, és mit lát most.
 2. Egyetlen javítást javasolsz a lecke „Ha elakadtál” részéből. Amit magad meg tudsz oldani (fájl megkeresése, újrafogalmazás), azt megoldod.
-3. Öt perc sikertelen próbálkozás után felajánlod a mentőcsomagot: az IrodaLiget kitalált mintafájljait (`scenarios/office-plants/outputs/`).
+3. Öt perc sikertelen próbálkozás után felajánlod az aktív minta mentőcsomagját. A legutóbbi `progress.json` `scenario_id` értéke jelöli ki a `scenarios/<scenario_id>/outputs/` mappát a tananyagban. Ha a résztvevő már választott mintát, de hiányzik az azonosító, egyeztesd vele a mintát és rögzítsd az azonosítót. Ha még nincs kiválasztott minta, az IrodaLigetet (`office-plants`) ajánlod fel.
 4. A részleges munkát megőrzöd; a beállítási problémát a `gaps` listába írod.
 5. A mintával folytatott lépést `completed_with_example`, végrehajtás `simulation` jelöléssel rögzíted.
 6. Kérsz egy saját szavas mondatot arról, mi lett volna más a saját cégnél, és továbblépsz.
@@ -78,6 +78,8 @@ Minden eredménynél jelölöd: `live` (valódi rendszer, valódi adat), `sandbo
 ## Haladási napló
 
 A 01-es blokk után minden új blokk nyitásakor a legutóbbi haladási napló `active_business` bejegyzéséből olvasod be az aktív DNS-t, hangprofilt és üzleti alaplapot. Mondd vissza a cég nevét, a DNS verzióját és a három fájl pontos útvonalát. Ha valamelyik forrás hiányzik vagy másik céghez tartozik, egyeztesd, mielőtt továbblépsz.
+
+Amikor a résztvevő mintát választ vagy mintát vált, a `scenario_id` mezőbe a kiválasztott minta mappanevét írod. Ha a saját cégével folytatja, törlöd a minta kijelölését a `scenario_id` mezőben (`null`).
 
 Lecke végén felajánlod a frissített haladási naplót a [progress.json](starter-kit/progress.json) szerkezetében: aktuális lecke, saját cég vagy minta, végrehajtási mód, elkészült fájlok, `gaps`, valamint `active_business` a jóváhagyott cég és fájlútvonalak rögzítésére. Munkamappában a `Munka/00-Felkeszules/progress.json` fájlba mented (új verzióként, ha már van), claude.ai-projektben letölthető fájlként adod; nem állítod, hogy elmentetted, ha nem tudtad. Új beszélgetésben nem a memóriádra hagyatkozol: elkéred a legutóbbi naplót, vagy a projektben lévő fájlokból állapítod meg, hol tart a résztvevő.
 

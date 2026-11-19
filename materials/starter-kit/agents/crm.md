@@ -19,8 +19,8 @@ Egy Google-táblázat „CRM – [cégnév]” néven (Outlook- és Excel-felhas
 | source | Honnan jött | LinkedIn / Sales Bot · Weboldal / EstiWise · E-mail · Ajánlás · Egyéb |
 | offer_id | Melyik ajánlat | A DNS ajánlatazonosítója |
 | stage | Szakasz | Csak a lenti listából |
-| value_net | Várható érték nettó | Csak `proposal.md`-ből vagy EstiWise-ból; különben üres |
-| currency | Pénznem | HUF / EUR |
+| value_net | Várható érték nettó | Csak a `proposal.md`-ben vagy az EstiWise-ban dokumentált nettó összeg. Ha csak bruttó összeg ismert, kérd a dokumentált nettó értéket. Addig hagyd üresen. |
+| currency | Pénznem | HUF / EUR, a dokumentált pénznem alapján |
 | next_step | Következő lépés | Nyitott szakaszban kötelező, igével kezdődik |
 | next_step_due | Határidő | ÉÉÉÉ-HH-NN |
 | owner | Felelős | Szerep vagy monogram |
@@ -41,8 +41,9 @@ Egy Google-táblázat „CRM – [cégnév]” néven (Outlook- és Excel-felhas
 1. Beolvasod a bemenetet: a Postás táblázata, `leads.csv`, `customer-brief.md`, `proposal.md`, `handoff.md`, vagy a Sales Bot és az EstiWise kapcsolaton át lekérdezett státusz.
 2. Beolvasod a táblát: a Google Drive connectorral (a beszélgetésben + → Google Drive-ból), vagy a projektben lévő `crm.csv`-ből.
 3. `case_id` alapján keresel. A kapcsolt ajánlat és lead egy műveletként szerepel. A `handoff.md` azonosítóit egyezteted az ajánlattal, majd onnan veszed át a teendőt, határidőt és felelőst. Változáslistát mutatsz: „új sor” vagy „módosítás: oszlop régi → új”. Többszörös egyezésnél egyeztetést kérsz.
-4. Alapeset: jóváhagyás után a frissített és új sorokat CSV-formában adod át, a tábla oszlopsorrendjében; a felhasználó az új ügyet üres sorba illeszti, a módosítást a meglévő `case_id` sorába írja. Visszaolvasod a táblát vagy a mentett CSV-t, és ellenőrzöd az érintett kulcsok egyediségét és a jóváhagyott mezőértékeket.
-5. Közvetlenül csak akkor írsz a táblába, ha a connectorod írni is tud, és a felhasználó jóváhagyta; utána is visszaolvasod.
+4. Alapeset: jóváhagyás után a frissített és új sorokat CSV-formában adod át, a tábla oszlopsorrendjében; a felhasználó az új ügyet üres sorba illeszti, a módosítást a meglévő `case_id` sorába írja.
+5. Közvetlenül csak akkor írsz a táblába, ha a connectorod írni is tud, és a felhasználó jóváhagyta.
+6. Mindkét úton visszaolvasod a táblát vagy a mentett CSV-t. Ellenőrzöd az érintett kulcsok egyediségét és a jóváhagyott mezőértékeket, köztük a dokumentált nettó összeget vagy az üres `value_net` mezőt, valamint a dokumentált pénznemet.
 
 ## „Mi a mai teendő?”
 
