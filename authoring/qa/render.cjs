@@ -71,6 +71,10 @@ const kindOf = (label,id) => {
   const byId = /--(prompt|steps|check|help)$/.exec(id||'')?.[1] || /^(prompt|steps|check|help)$/.exec(id||'')?.[1];
   return byId || KINDS.find(([p])=>label.startsWith(p))?.[1] || null;
 };
+// Two audiences, two looks: participants read materials/, every other page is for instructors.
+// Each generated page carries exactly one area class and one permanent band.
+const AREAS = {participant:'HALLGATÓI ANYAG', instructor:'OKTATÓI OLDAL'};
+const areaOf = source => source.startsWith('materials/') ? 'participant' : 'instructor';
 const SCHEDULE = 'materials/schedule.md';
 // Participant pages have no JavaScript: code blocks are selected whole by CSS, and this line says how to copy them.
 const COPY_HINT = 'Másolás: kattints a szövegbe, majd Ctrl+C (Macen Cmd+C). Telefonon tartsd rajta az ujjad, és válaszd a „Másolás” pontot.';
@@ -134,7 +138,7 @@ function render(source, root = ROOT, pages = new Set(inventory(root))) {
   }
   const moduleId = /^materials\/modules\/([^/]+)\.md$/.exec(source)?.[1];
   const noteModule = /^operations\/instructor-notes\/([^/]+)\.md$/.exec(source)?.[1];
-  const isInstructor = source.startsWith('operations/');
+  const isInstructor = areaOf(source) === 'instructor';
   const isSchedule = source === SCHEDULE, isHome = source === 'materials/README.md';
   const lead = LEAD[(moduleId||noteModule||'').slice(0,2)] || null;
   const mainId = noteModule ? 'notes' : 'main';
@@ -312,8 +316,8 @@ function render(source, root = ROOT, pages = new Set(inventory(root))) {
   const kind = noteModule ? 'notes' : moduleId ? 'module' : isSchedule ? 'schedule' : isHome ? 'home' : source === 'materials/indulas.md' ? 'projection' : 'doc';
   return '<!doctype html>\n<!-- Generated from '+source+'; edit Markdown and run npm run render. -->\n'+
     '<html lang="hu"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>'+(isInstructor?'OKTATÓI OLDAL · ':'')+escape(title)+' · AI Sales &amp; Marketing Workshop</title><link rel="alternate" type="text/markdown" href="'+escape(path.posix.basename(source))+'"><link rel="stylesheet" href="'+css+'">'+
-    (isInstructor?'<link rel="stylesheet" href="'+relative('operations/instructor-notes/notes.css')+'">':'')+'</head><body class="page page--'+kind+(isInstructor?' page--instructor':'')+(lead?' lead--'+lead:'')+'">\n'+
-    '<a class="skip" href="#'+mainId+'">Ugrás a tartalomhoz</a>'+(isInstructor?'<div class="instructor-flag" role="note">OKTATÓI OLDAL</div>':'')+'<header class="site-head"><div class="site-head__bar"><a class="site-head__brand" href="'+home+'">'+(fs.existsSync(path.join(root,'materials/assets/logos/wenova-wordmark.png'))?'<img src="'+relative('materials/assets/logos/wenova-wordmark.png')+'" alt="Wenova" width="154" height="18">':'<strong>Wenova</strong>')+'<span>AI Sales &amp; Marketing Workshop</span></a>'+
+    (isInstructor?'<link rel="stylesheet" href="'+relative('operations/instructor-notes/notes.css')+'">':'')+'</head><body class="page page--'+kind+' area--'+areaOf(source)+(lead?' lead--'+lead:'')+'">\n'+
+    '<a class="skip" href="#'+mainId+'">Ugrás a tartalomhoz</a>'+'<div class="area-band" role="note">'+AREAS[areaOf(source)]+'</div>'+'<header class="site-head"><div class="site-head__bar"><a class="site-head__brand" href="'+home+'">'+(fs.existsSync(path.join(root,'materials/assets/logos/wenova-wordmark.png'))?'<img src="'+relative('materials/assets/logos/wenova-wordmark.png')+'" alt="Wenova" width="154" height="18">':'<strong>Wenova</strong>')+'<span>AI Sales &amp; Marketing Workshop</span></a>'+
     '<nav class="site-head__nav" aria-label="Fő navigáció">'+nav.map(([l,h])=>'<a href="'+h+'"'+(l==='A nap menete'?' class="is-cta"':'')+'>'+l+'</a>').join('')+'</nav></div>'+partnerBand(relative,lead,'head',root)+'</header>\n'+
     '<div class="'+(noteModule?'instructor-grid':'layout')+'">'+frame+'<main id="'+mainId+'"'+(moduleId?' data-module-id="'+moduleId+'"':'')+(noteModule?' class="notes"':'')+'>\n'+body+pager+'</main></div>\n'+
     '<footer class="site-foot">'+partnerBand(relative,lead,'foot',root)+'<p class="site-foot__meta">AI Sales &amp; Marketing Workshop · 2026. november 19. · CEU, Budapest · a Wenova szervezésében</p></footer>\n</body></html>\n';
@@ -340,4 +344,4 @@ function run({root=ROOT, check=false, selected=null}={}) {
   return count;
 }
 if (require.main === module) { try { const i=process.argv.indexOf('--accept-custom');if(i>=0)acceptCustom(process.argv[i+1]);else console.log('PASS: '+run({check:process.argv.includes('--check')})+' presentation sources.'); } catch(e) { console.error(e.message); process.exitCode=1; } }
-module.exports = {ROOT, SITE_URL, files, inventory, output, slug, rewrite, render, run,custom,sourceHash,acceptCustom,isLessonId,PARTNERS,partnerOf,schedule};
+module.exports = {ROOT, SITE_URL, AREAS, areaOf, files, inventory, output, slug, rewrite, render, run,custom,sourceHash,acceptCustom,isLessonId,PARTNERS,partnerOf,schedule};
