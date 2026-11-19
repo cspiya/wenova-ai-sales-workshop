@@ -103,7 +103,7 @@ Ez a három sor a workshop rövidítése a piszkozatok és a belső gyakorlómű
 | Közepes | Kollégának menő összefoglaló, CRM-sor frissítése | Egy menet; te átnézed a változást |
 | Magas | Ügyfélnek menő levél, poszt, ajánlat; ár, határidő, vállalás | Író → Ellenőr új beszélgetésben → te döntesz és te küldesz |
 
-A Wenova-módszer a tényleges döntési jogot D0–D3 szinten adja meg. D0-nál az agent dönthet sikeres ellenőrzés és független review után. D1-nél ehhez bizonyíték, előnézet és visszaállítás kell. D2-nél a kockázathoz igazított próbák és két független ellenőrzés kell. D3-nál az arra jogosult ember dönt, például árról vagy külső vállalásról. [Wenova OS: döntési szintek](https://github.com/cspiya/wenova-os/blob/f450f6fd91e87eca4c24725e1b1541aa61ecc817/09-engineering/agentic-engineering-method/03-decision-levels.md)
+A Wenova-módszer a tényleges döntési jogot D0–D3 szinten adja meg. D0-nál az agent dönthet sikeres ellenőrzés és független review után. D1-nél ehhez bizonyíték, előnézet és visszaállítás kell. D2-nél a kockázathoz igazított próbák és két független ellenőrzés kell. D3-nál az arra jogosult ember dönt, például árról vagy külső vállalásról.
 
 Például az ajánlat kísérőlevelét az Író készíti és az Ellenőr ellenőrzi. A kiküldésről te döntesz külön, és később te küldöd el. A műhelyben a levél piszkozat marad.
 
