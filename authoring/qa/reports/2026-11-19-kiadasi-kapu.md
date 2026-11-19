@@ -1,6 +1,6 @@
 # Kiadási kapu és főpróba-lista (WEN-1226)
 
-**Összesítés:** a közzétett oldal elérhető, két eltéréssel. A telepítési próba NEM fejeződött be, az első indítás felmérése NEM futott. A `release:check` nyitott. Emberi főpróba nem történt, ez a jegyzőkönyv nem jóváhagyás.
+**Összesítés:** a közzétett oldal elérhető. A 404-es külső link javítva, a záró előadáson a sáv hiánya szándékos, mert vetített dia. A harmadik telepítési próba Windows Claude Code-ban sikeres volt (62,7 másodperc), az első indítás felmérése lefutott (116,5 másodperc). A Cowork élő próbája nem történt meg. A `release:check` nyitott. Emberi főpróba nem történt, ez a jegyzőkönyv nem jóváhagyás.
 
 ## 1. Vizsgált változat és lefutott ellenőrzések
 
@@ -44,7 +44,19 @@ Forrás: `https://cspiya.github.io/wenova-ai-sales-workshop/`, névtelen HTTP-k�
 
 ### 2.2 Telepítési próba a közzétett forrásból
 
-**Eredmény: két kísérlet futott, egyik sem fejeződött be.** Mindkettőt a próba saját engedélybeállítása állította meg, ezek tesztbeállítási hibák. A futások nem igazolnak tananyaghibát, de a telepítés sikerét sem.
+**Eredmény: a 3. kísérlet sikeres volt.** Az első kettőt a próba saját engedélybeállítása állította meg, ezek tesztbeállítási hibák.
+
+| 3. kísérlet | Eredmény |
+| --- | --- |
+| Felület és forrás | Windows Claude Code, elkülönített profil, a közzétett futtatókönyv, commit `453456dbd96b` |
+| Telepítés | Sikeres, 62,7 másodperc, 166 fájl a `Tananyag/` mappában, `VERSION` 0.1.0 |
+| Kötelező fájlok | Megvannak: modulok, nyolc szerepfájl, plugincsomag, a két rejtett pluginkonfiguráció, a gyökér `AGENTS.md` és `CLAUDE.md` |
+| `Munka/` | Létrejött a hat almappa |
+| „Kezdjük a felkészülést.” új munkamenetben | Lefutott, 116,5 másodperc. A `felmeres.md` és a `progress.json` elkészült, a felmérés jelzi, hogy a kötelező mód a Cowork |
+| Plugin verziója | Nem ellenőrzött: a profilban egy korábbi helyi próba marketplace-e maradt, ez a próbakörnyezet sajátossága |
+| Nem próbált | Cowork, macOS, connector-belépés, olvasási próbák |
+
+Az 1. és 2. kísérlet adatai:
 
 | Kísérlet | Mappa | Idő a leállásig | Leállás oka | Eredmény a lemezen |
 | --- | --- | --- | --- | --- |
@@ -189,3 +201,7 @@ A jegyzőkönyv elkészülte után mindkét parancs újra lefutott a munkaágon.
 | --- | --- | --- |
 | `npm run check` | 0 | `PASS: 26 current HTML pages; 1616 local references; 20 lessons.` |
 | `npm test` | 0 | `tests 32`, `pass 32`, `fail 0` |
+
+## 8. Utólagos javítás
+
+A H-1 hibát javítottuk: az 1. modulból kikerült a privát repóra mutató, a résztvevőknek 404-et adó link, a mondat változatlan maradt. A záró előadás sávja nem hiba: a vetített diákon szándékosan nincs területjelző sáv.
