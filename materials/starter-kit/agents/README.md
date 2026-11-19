@@ -4,7 +4,7 @@ A nyolc agent nyolc állandó feladatleírás. Claude a feladathoz illő szerepe
 
 | Fájl | Szerep | Indítómondat | Mikor használod? |
 | --- | --- | --- | --- |
-| [orchestrator.md](orchestrator.md) | Karmester, összehangolja a munkát és megáll a döntéseknél | `Karmester: …` | Az 1. blokk próbáján és az 5. blokk ügyféleseténél |
+| [orchestrator.md](orchestrator.md) | Karmester, összehangolja a munkát és megáll a döntéseknél | `Karmester: …` | Az 1. blokk próbáján és a heti átnézésnél |
 | [writer.md](writer.md) | Író, megírja a piszkozatot | `Író: …` | Poszthoz, megkereséshez, e-mail-válaszhoz vagy ajánlati kísérőszöveghez |
 | [reviewer.md](reviewer.md) | Ellenőr, friss kontextusban minősíti a piszkozatot | `Ellenőr: …` | A résztvevő döntése előtt |
 | [ceo.md](ceo.md) | CEO, előkészíti a vezetői döntést | `CEO: …` | Ha lehetőségeket mérlegelsz vagy sorrendet állítasz |

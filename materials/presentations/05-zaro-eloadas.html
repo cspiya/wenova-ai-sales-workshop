@@ -1,0 +1,590 @@
+<!-- Presentation-review SHA-256: d1b91ecf72c45c3aa0f5ad8bc03c4b0b6c1cdd89f1c7de15552980567a744e59 -->
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Sales &amp; Marketing Workshop: záró előadás</title>
+<!-- Szövegcsere: minden dia szövege a törzsben, a DIA nn jelölés alatt található, sima HTML- és SVG-szövegként. -->
+<style>
+/* AI Sales & Marketing Workshop: záró előadás. A nyitó előadás vizuális nyelvét követi. JavaScript nincs. */
+@font-face{font-family:'Geist';font-style:normal;font-weight:400 700;font-display:swap;src:url(../assets/fonts/geist-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1E00-1E9F}
+@font-face{font-family:'Geist';font-style:normal;font-weight:400 700;font-display:swap;src:url(../assets/fonts/geist-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+2000-206F,U+20AC,U+2122,U+2212}
+@font-face{font-family:'Fraunces';font-style:italic;font-weight:400;font-display:swap;src:url(../assets/fonts/fraunces-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1E00-1E9F}
+@font-face{font-family:'Fraunces';font-style:italic;font-weight:400;font-display:swap;src:url(../assets/fonts/fraunces-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+2000-206F,U+20AC,U+2122,U+2212}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:500;font-display:swap;src:url(../assets/fonts/jetbrains-mono-latin.woff2) format('woff2')}
+:root{color-scheme:dark;--navy:#07081a;--navy-2:#0e1030;--navy-3:#1b1f4a;--on:#eef1fa;--on2:#b4bcd6;--or:#ff7a2f;--or2:#ffb48a;--bl:#6ea3ff;--vi:#a78bfa;--gr:#4ade80;--am:#fbbf24;--line:#39406f;--sans:'Geist','Segoe UI',system-ui,sans-serif;--serif:'Fraunces',Georgia,serif;--mono:'JetBrains Mono',Consolas,monospace}
+*{box-sizing:border-box}
+html{font-size:min(calc(100vw / 192),calc(100vh / 108));scroll-snap-type:y mandatory;overflow-y:scroll;scrollbar-width:none;background:var(--navy)}
+html::-webkit-scrollbar{display:none}
+body{margin:0;background:var(--navy);color:var(--on);font-family:var(--sans);counter-reset:dia}
+.slide{height:100vh;display:grid;place-items:center;overflow:hidden;scroll-snap-align:start;scroll-snap-stop:always;counter-increment:dia;background:radial-gradient(90rem 50rem at 0 0,rgba(79,140,247,.13),transparent 62%),radial-gradient(80rem 46rem at 100% 0,rgba(255,122,47,.09),transparent 60%),var(--navy)}
+.frame{width:192rem;height:108rem;padding:3.6rem 6.4rem 1.6rem;display:flex;flex-direction:column;gap:1.4rem}
+.head{display:flex;justify-content:space-between;align-items:flex-start;gap:3rem;flex:none}
+h1,h2{margin:0;font-size:6.6rem;line-height:1.22;letter-spacing:-.028em;font-weight:700}
+.em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--or);letter-spacing:-.01em}
+.tag{flex:none;margin-top:.8rem;padding:.5rem 2rem;border:.2rem solid var(--or2);border-radius:99rem;color:var(--or2);font-size:3.4rem;font-weight:600;line-height:1.25}
+.stage{flex:1;min-height:0;position:relative}
+.stage>svg{display:block;width:100%;height:100%}
+.foot{flex:none;display:flex;align-items:center;gap:2.4rem;height:3.4rem;font-size:2.4rem;color:var(--on2)}
+.foot img{height:2rem;width:auto;display:block}
+.foot .sp{flex:1}
+.foot a{color:var(--on2);text-decoration:none;padding:.2rem 1rem;border-radius:.6rem}
+.foot a:hover,.foot a:focus-visible{color:#fff;outline:.2rem solid var(--or)}
+.foot .jump{color:var(--or2);border:.15rem solid var(--or2)}
+.count{font-family:var(--mono)}
+.count::after{content:counter(dia) " / 18"}
+.hint{padding:.2rem 1.2rem;border:.15rem solid var(--line);border-radius:.8rem;color:var(--on)}
+.formula{flex:none;margin:0;font-size:3.8rem;font-weight:600;text-align:center;color:var(--or2)}
+/* svg szöveg */
+svg text{font-family:var(--sans);fill:var(--on)}
+.f34{font-size:34px}.f38{font-size:38px}.f44{font-size:44px}.f56{font-size:56px}.f72{font-size:72px}
+svg .b{font-weight:700}svg .or{fill:var(--or)}svg .mut{fill:var(--on2)}svg .dk{fill:var(--navy)}
+/* kiemelő réteg: a sorban következő elem világít, nyugalmi állapotban minden olvasható */
+.lit{position:absolute;inset:0;border-radius:inherit;background:rgba(255,122,47,.17);border:.35rem solid var(--or);opacity:0;pointer-events:none}
+/* nyitó */
+.hero .frame{position:relative;padding-top:11rem}
+.hero h1{font-size:19rem;line-height:1.3;font-family:var(--serif);font-style:italic;font-weight:400}
+.hero .stage{position:static;display:flex;flex-direction:column;padding:0 0 3rem}
+.eyebrow{margin:0;font-size:3.8rem;font-weight:600;color:var(--or2);position:absolute;top:4.6rem;left:6.4rem}
+.tl{list-style:none;margin:auto 0 0;padding:3.4rem 0 0;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;border-top:.5rem solid var(--or)}
+.tl b{display:block;font-size:5.4rem;line-height:1.1;letter-spacing:-.02em}
+.tl span{display:block;margin-top:1.2rem;font-size:3.8rem;color:var(--on2)}
+/* a nap fonala */
+.thread{height:100%;display:flex;flex-direction:column;gap:2.4rem}
+.rail{flex:none;height:.8rem;border-radius:1rem;background:var(--navy-3);overflow:hidden}
+.rail i{display:block;height:100%;background:linear-gradient(90deg,#4f8cf7,#8b5cf6,var(--or));transform-origin:0 50%}
+.cards{flex:1;min-height:0;list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:2rem}
+.cards li{position:relative;display:flex;flex-direction:column;gap:2.4rem;padding:3rem 2.2rem;background:var(--navy-2);border:.25rem solid var(--line);border-radius:2.2rem}
+.cards .no{font:500 4.4rem var(--mono);color:var(--or)}
+.cards b{font-size:4.1rem;line-height:1.12;letter-spacing:-.02em}
+.cards p{margin:0;font-size:3.6rem;line-height:1.24;color:var(--on2)}
+.cards small{margin-top:auto;font-size:3rem;font-weight:600;color:var(--or2)}
+/* tanulságok */
+.lessons{height:100%;list-style:none;margin:0;padding:0 0 1rem;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:2.4rem}
+.lessons li{position:relative;display:grid;grid-template-columns:11rem 1fr;align-items:center;gap:2.4rem;padding:3rem 3.6rem;background:var(--navy-2);border:.25rem solid var(--line);border-radius:2.2rem}
+.lessons .no{font:500 9rem var(--mono);color:var(--or)}
+.lessons b{display:block;font-size:5rem;line-height:1.14;letter-spacing:-.02em}
+.lessons span{display:block;margin-top:1.4rem;font-size:3.7rem;line-height:1.22;color:var(--on2)}
+/* hurok */
+.loopgrid{height:100%;display:grid;grid-template-columns:98rem 1fr;gap:2.6rem;align-items:center}
+.loopgrid svg{display:block;width:100%;height:auto;max-height:100%}
+.ring{fill:none;stroke:var(--line);stroke-width:7}
+.ringflow{fill:none;stroke:var(--or);stroke-width:7;stroke-dasharray:26 34;stroke-linecap:round}
+.ah{fill:var(--or)}
+.node{fill:var(--navy-3);stroke:var(--bl);stroke-width:4}
+.nodeon{fill:var(--or);opacity:0}
+.dot{fill:#fff}
+.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:1.2rem}
+.steps li{position:relative;padding:1.4rem 2.4rem;background:var(--navy-2);border:.25rem solid var(--line);border-radius:1.6rem}
+.steps b{display:block;font-size:4rem;line-height:1.15;color:var(--or2)}
+.steps span{display:block;margin-top:.4rem;font-size:3.4rem;line-height:1.2}
+/* szám és döntés */
+.deci{height:100%;display:flex;flex-direction:column;gap:1rem}
+.deci>div{position:relative;flex:1;display:grid;grid-template-columns:64rem 64rem 1fr;align-items:center;gap:2rem;padding:0 2.6rem;background:var(--navy-2);border:.2rem solid var(--line);border-radius:1.4rem;font-size:3.5rem;line-height:1.14}
+.deci>.th{flex:none;height:6.4rem;background:none;border:0;font-size:3.4rem;font-weight:700;color:var(--or2)}
+.deci b{color:var(--or2);font-weight:700}
+/* három döntés */
+.three{height:62rem;display:grid;grid-template-columns:repeat(3,1fr);gap:2.4rem}
+.three>div{position:relative;display:flex;flex-direction:column;justify-content:center;gap:2.4rem;padding:3.4rem;background:var(--navy-2);border:.25rem solid var(--line);border-radius:2.2rem}
+.three b{font:italic 400 8rem/1.1 var(--serif);color:var(--or)}
+.three p{margin:0;font-size:4.2rem;line-height:1.2}
+.three small{font-size:3.5rem;line-height:1.2;color:var(--on2)}
+.back{margin:2.4rem 0 0;padding:2.4rem 3rem;display:flex;align-items:center;justify-content:center;gap:2.2rem;background:var(--or);color:var(--navy);border-radius:1.6rem;font-size:4.2rem;font-weight:700;text-align:center}
+/* demó */
+.demo{height:100%;display:grid;grid-template-columns:1fr 66rem;gap:4rem;align-items:stretch}
+.demo ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;justify-content:center;gap:2.6rem}
+.demo li{font-size:4.3rem;line-height:1.2;padding-left:4rem;position:relative}
+.demo li::before{content:"";position:absolute;left:0;top:1.5rem;width:1.8rem;height:1.8rem;border-radius:50%;background:var(--or)}
+.demo .small{font-size:3.5rem;color:var(--on2)}
+.demo .small::before{background:var(--line)}
+.panel{position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:3rem;padding:3rem;background:var(--navy-2);border:.25rem solid var(--line);border-radius:2.2rem;text-align:center}
+.wave{display:flex;align-items:center;justify-content:center;gap:1.2rem;height:24rem}
+.wave i{display:block;width:2.6rem;height:100%;background:var(--or);border-radius:1.4rem;transform:scaleY(.55)}
+.switch{margin:0;font-size:5rem;line-height:1.15;font-weight:700}
+.cta{display:inline-block;padding:1.6rem 3.4rem;background:var(--or);color:var(--navy);border-radius:1.4rem;font-size:3.8rem;font-weight:700;text-decoration:none}
+.cta:hover,.cta:focus-visible{outline:.4rem solid #fff;outline-offset:.3rem}
+.note{margin:0;font-size:3.4rem;line-height:1.2;color:var(--on2)}
+.play{width:30rem;height:30rem}
+.playc{fill:none;stroke:var(--or);stroke-width:6}.playt{fill:var(--or)}
+.video{height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:3.4rem;text-align:center}
+.video .switch{font-size:7rem}
+.video .note{font-size:4.2rem}
+/* dashboard */
+.dash{height:100%;display:flex;flex-direction:column;gap:1.6rem}
+.kpis{flex:none;display:grid;grid-template-columns:repeat(4,1fr);gap:1.8rem}
+.kpis div{padding:1.4rem 2.4rem;background:var(--navy-2);border:.2rem solid var(--line);border-radius:1.6rem}
+.kpis b{display:block;font-size:6.4rem;line-height:1.1;letter-spacing:-.03em}
+.kpis span{font-size:3.4rem;color:var(--on2)}
+.charts{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:1.8rem}
+.charts figure{margin:0;min-height:0;display:flex;flex-direction:column;padding:1.4rem 2.4rem;background:var(--navy-2);border:.2rem solid var(--line);border-radius:1.6rem}
+.charts figcaption{flex:none;font-size:3.4rem;font-weight:700}
+.charts figcaption span{font-weight:500;color:var(--am)}
+.charts svg{flex:1;min-height:0;width:100%;display:block}
+.bar{fill:var(--or)}.axis{stroke:var(--line);stroke-width:3}
+.gx{transform-box:fill-box;transform-origin:0 50%}.gy{transform-box:fill-box;transform-origin:50% 100%}
+.fake{flex:none;margin:0;padding:.7rem 2rem;background:var(--am);color:var(--navy);border-radius:1rem;font-size:3.5rem;font-weight:700;text-align:center}
+/* artifact */
+.tiles{height:60rem;display:grid;grid-template-columns:repeat(4,1fr);gap:2.2rem}
+.tiles>div{position:relative;display:flex;flex-direction:column;gap:2rem;padding:3rem 2.6rem;background:var(--navy-2);border:.25rem solid var(--line);border-radius:2.2rem}
+.tiles svg{width:11rem;height:11rem;flex:none}
+.ic{fill:none;stroke:var(--or);stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+.tiles b{font-size:4.5rem;line-height:1.12;letter-spacing:-.02em}
+.tiles p{margin:0;font-size:3.6rem;line-height:1.2;color:var(--on2)}
+.plain{margin:2.6rem 0 0;font-size:4rem;line-height:1.24;text-align:center}
+.plain b{color:var(--or2)}
+/* követelmények */
+.req{height:64rem;display:grid;grid-template-columns:repeat(3,1fr);gap:2.2rem}
+.req>div{position:relative;display:flex;flex-direction:column;gap:1.8rem;padding:3rem;background:var(--navy-2);border:.25rem solid var(--line);border-radius:2.2rem}
+.req .no{font:500 5rem var(--mono);color:var(--or)}
+.req b{font-size:4.8rem;line-height:1.12;letter-spacing:-.02em}
+.req p{margin:0;font-size:3.7rem;line-height:1.22;color:var(--on2)}
+.warn{margin:2rem 0 0;padding:1.8rem 2.6rem;border:.25rem solid var(--am);border-radius:1.6rem;font-size:3.8rem;font-weight:600;line-height:1.2;text-align:center}
+.src{margin:1.4rem 0 0;font-size:2.8rem;color:var(--on2);text-align:center}
+.src a{color:var(--or2)}
+/* záró */
+.ask{height:100%;display:flex;flex-direction:column;justify-content:center;gap:5rem}
+.ask .q{margin:0;font:italic 400 24rem/1.05 var(--serif);color:var(--or)}
+.ask p{margin:0;font-size:5rem;line-height:1.2;font-weight:600}
+.ask a{color:var(--or2)}
+.bye{height:100%;display:flex;flex-direction:column;justify-content:center;gap:4.4rem}
+.bye .big{margin:0;font:italic 400 17rem/1.1 var(--serif)}
+.bye .url{font-size:9rem;font-weight:700;letter-spacing:-.03em;color:var(--or);text-decoration:none}
+.bye .url:hover,.bye .url:focus-visible{text-decoration:underline}
+.bye p{margin:0;font-size:4.6rem;line-height:1.2;color:var(--on2)}
+.bye p a{color:var(--or2)}
+/* tartalom */
+.toc{display:none;position:fixed;inset:0;z-index:9;padding:4rem 6.4rem;background:rgba(7,8,26,.97);overflow:auto}
+.toc:target{display:block}
+.toc-h{margin:0 0 2rem;font-size:5rem;font-weight:700}
+.toc ol{margin:0;padding:0 0 0 6rem;columns:2;column-gap:6rem;font-size:3.6rem;line-height:1.2}
+.toc li{margin:0 0 1.8rem;break-inside:avoid;color:var(--or)}
+.toc a{color:var(--on);text-decoration:none}.toc a:hover,.toc a:focus-visible{color:var(--or);text-decoration:underline}
+/* mozgás */
+@keyframes l41{0%,22%{opacity:1}25%,100%{opacity:0}}
+@keyframes l42{0%,22%{opacity:0}25%,47%{opacity:1}50%,100%{opacity:0}}
+@keyframes l43{0%,47%{opacity:0}50%,72%{opacity:1}75%,100%{opacity:0}}
+@keyframes l44{0%,72%{opacity:0}75%,97%{opacity:1}100%{opacity:0}}
+@keyframes l51{0%,18%{opacity:1}21%,100%{opacity:0}}
+@keyframes l52{0%,18%{opacity:0}21%,38%{opacity:1}41%,100%{opacity:0}}
+@keyframes l53{0%,38%{opacity:0}41%,58%{opacity:1}61%,100%{opacity:0}}
+@keyframes l54{0%,58%{opacity:0}61%,78%{opacity:1}81%,100%{opacity:0}}
+@keyframes l55{0%,78%{opacity:0}81%,97%{opacity:1}100%{opacity:0}}
+@keyframes l61{0%,14%{opacity:1}17%,100%{opacity:0}}
+@keyframes l62{0%,14%{opacity:0}17%,31%{opacity:1}34%,100%{opacity:0}}
+@keyframes l63{0%,31%{opacity:0}34%,48%{opacity:1}51%,100%{opacity:0}}
+@keyframes l64{0%,48%{opacity:0}51%,64%{opacity:1}67%,100%{opacity:0}}
+@keyframes l65{0%,64%{opacity:0}67%,81%{opacity:1}84%,100%{opacity:0}}
+@keyframes l66{0%,81%{opacity:0}84%,97%{opacity:1}100%{opacity:0}}
+.a41{animation:l41 20s ease-in-out infinite both}.a42{animation:l42 20s ease-in-out infinite both}.a43{animation:l43 20s ease-in-out infinite both}.a44{animation:l44 20s ease-in-out infinite both}
+.a51{animation:l51 25s ease-in-out infinite both}.a52{animation:l52 25s ease-in-out infinite both}.a53{animation:l53 25s ease-in-out infinite both}.a54{animation:l54 25s ease-in-out infinite both}.a55{animation:l55 25s ease-in-out infinite both}
+.a61{animation:l61 30s ease-in-out infinite both}.a62{animation:l62 30s ease-in-out infinite both}.a63{animation:l63 30s ease-in-out infinite both}.a64{animation:l64 30s ease-in-out infinite both}.a65{animation:l65 30s ease-in-out infinite both}.a66{animation:l66 30s ease-in-out infinite both}
+@keyframes grow{0%{transform:scaleX(0)}80%,100%{transform:scaleX(1)}}
+.railgo{animation:grow 25s linear infinite both}
+@keyframes orbit{from{transform:rotate(-36deg)}to{transform:rotate(324deg)}}
+.orbit{animation:orbit 25s linear infinite both}
+@keyframes flow{to{stroke-dashoffset:-600}}
+.ringflow{animation:flow 25s linear infinite}
+@keyframes wv{0%,100%{transform:scaleY(.3)}50%{transform:scaleY(1)}}
+.wave i{animation:wv 1.5s ease-in-out infinite}
+.wave i:nth-child(2n){animation-delay:-.4s}.wave i:nth-child(3n){animation-delay:-.8s}.wave i:nth-child(5n){animation-delay:-1.1s}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}
+.pulse{transform-box:fill-box;transform-origin:50% 50%;animation:pulse 3s ease-in-out infinite}
+@keyframes gbx{0%{transform:scaleX(0)}40%,100%{transform:scaleX(1)}}
+@keyframes gby{0%{transform:scaleY(0)}40%,100%{transform:scaleY(1)}}
+.gx{animation:gbx 12s ease-out infinite both}.gy{animation:gby 12s ease-out infinite both}
+/* az animáció a dia beúszásakor indul, ahol a böngésző ismeri a scroll-state lekérdezést */
+@supports (container-type:scroll-state){
+.slide{container-type:scroll-state;container-name:dia}
+@container dia not scroll-state(snapped:y){.frame *{animation-name:none!important}}
+}
+/* csökkentett mozgás: a záróállapot látszik, minden szöveg olvasható */
+@media (prefers-reduced-motion:reduce){
+*{animation:none!important}
+.wave i{transform:scaleY(.7)}
+}
+@media print{html{scroll-snap-type:none}.slide{break-after:page}}
+/* mi ez a blokk */
+.isnot{height:100%;display:grid;grid-template-columns:1fr 1fr;gap:2.4rem;padding-bottom:1rem}
+.isnot>div{display:flex;flex-direction:column;gap:2.6rem;padding:3.4rem;background:var(--navy-2);border:.25rem solid var(--line);border-radius:2.2rem}
+.isnot .yes{border-color:var(--or)}
+.isnot h3{margin:0;font:italic 400 7rem/1.1 var(--serif);color:var(--or)}
+.isnot .no3 h3{color:var(--on2)}
+.isnot ul{list-style:none;margin:0;padding:0;display:flex;flex:1;flex-direction:column;justify-content:space-evenly;gap:1.6rem}
+.isnot li{font-size:4.2rem;line-height:1.18}
+/* élő bemutató */
+.flow4{height:53rem;list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem}
+.flow4 li{position:relative;display:flex;flex-direction:column;justify-content:center;gap:2rem;padding:3rem 2.6rem;background:var(--navy-2);border:.25rem solid var(--line);border-radius:2.2rem}
+.flow4 .no{font:500 5rem var(--mono);color:var(--or)}
+.flow4 b{font-size:5rem;line-height:1.1;letter-spacing:-.02em}
+.flow4 p{margin:0;font-size:3.7rem;line-height:1.2;color:var(--on2)}
+.live{margin-top:3rem;display:grid;grid-template-columns:1fr auto;align-items:center;gap:3rem;padding:3rem 3.6rem;background:var(--navy-2);border:.3rem solid var(--or);border-radius:2.2rem}
+.live .switch{font-size:5.6rem}
+.live .note{margin-top:1rem;font-size:3.6rem}
+/* üzletkötés */
+.deal{height:100%;display:grid;grid-template-columns:1fr 66rem;gap:2.6rem}
+.deal svg{display:block;width:100%;height:100%}
+.dealp{display:flex;flex-direction:column;justify-content:center;gap:2.2rem;padding:3rem;background:var(--navy-2);border:.25rem solid var(--line);border-radius:2.2rem}
+.dealp .pct{font-size:13rem;line-height:1;font-weight:700;letter-spacing:-.04em;color:var(--or)}
+.dealp p{margin:0;font-size:3.9rem;line-height:1.2}
+.dealp .mut{color:var(--on2);font-size:3.5rem}
+.dealp .ret{padding:1.8rem 2rem;background:var(--or);color:var(--navy);border-radius:1.4rem;font-weight:700;font-size:3.6rem}
+/* előfeltételek */
+.deci.prq>div{grid-template-columns:27rem 33rem 1fr 1fr;font-size:3.4rem}
+/* élő demó helye */
+.ph-t{margin-top:20rem;font:italic 400 15rem/1.12 var(--serif);letter-spacing:-.015em;color:var(--or)}
+.ph-l{margin:5rem 0 0;font-size:5.4rem;font-weight:600}
+</style>
+</head>
+<body>
+
+<!-- ========== DIA 01: Zárjuk a kört ========== -->
+<section class="slide hero" id="s01">
+<div class="frame">
+<header class="head"><h1>Zárjuk a kört</h1></header>
+<div class="stage">
+<p class="eyebrow">AI Sales &amp; Marketing Workshop · Zárás</p>
+<ol class="tl">
+<li><b>Mérés</b> <span>Mi történt?</span></li>
+<li><b>Elemzés</b> <span>Miért történt?</span></li>
+<li><b>Visszacsatolás</b> <span>Mit tanultunk?</span></li>
+<li><b>Új kör</b> <span>Mit csinálunk másképp?</span></li>
+</ol>
+</div>
+<footer class="foot"><img src="../assets/logos/wenova-wordmark.png" alt="Wenova"><span class="hint">F11: teljes képernyő</span><span class="sp"></span><a href="#tartalom">Tartalom</a><span class="count"></span></footer>
+</div>
+</section>
+
+<!-- ========== DIA 02: A nap egy képben ========== -->
+<section class="slide" id="s02">
+<div class="frame">
+<header class="head"><h2>A nap egy képben</h2></header>
+<div class="stage">
+<div class="thread">
+<div class="rail"><i class="railgo"></i></div>
+<ol class="cards">
+<li><i class="lit a51"></i><span class="no">1</span><b>Cég-DNS</b><p>Cég-DNS, márkahang, saját AI-csapat</p><small>Az alap</small></li>
+<li><i class="lit a52"></i><span class="no">2</span><b>Tartalom</b><p>Márkahű posztok, kampányterv</p><small>Az üzenet</small></li>
+<li><i class="lit a53"></i><span class="no">3</span><b>Ügyfélszerzés</b><p>Értékelt leadlista, megkeresés</p><small>A lead</small></li>
+<li><i class="lit a54"></i><span class="no">4</span><b>Ajánlat</b><p>Katalógus, árazási szabály, ajánlattervezet</p><small>Az ajánlat</small></li>
+<li><i class="lit a55"></i><span class="no">5</span><b>Folyamatpróba</b><p>Kampánymérés, elemzés, visszacsatolás</p><small>A mérés</small></li>
+</ol>
+</div>
+</div>
+<p class="formula">Egy fonal: amit reggel építettél, azt délután már használtad.</p>
+<footer class="foot"><img src="../assets/logos/wenova-wordmark.png" alt="Wenova"><span class="sp"></span><a href="#tartalom">Tartalom</a><span class="count"></span></footer>
+</div>
+</section>
+
+<!-- ========== DIA 03: Mi ez a blokk, és mi nem ========== -->
+<section class="slide" id="s03">
+<div class="frame">
+<header class="head"><h2>Mi ez a blokk, és <span class="em">mi nem</span>?</h2></header>
+<div class="stage">
+<div class="isnot">
+<div class="yes"><h3>Ez</h3><ul>
+<li>A kampány mérési oldala.</li>
+<li>A terv kész, a posztok a Bufferen át kimentek.</li>
+<li>Behúzzuk az eredményeket és a kommenteket: Facebook, GA4.</li>
+<li>Elemzünk, és visszavezetjük a tanulságot.</li>
+</ul></div>
+<div class="no3"><h3>Ez nem</h3><ul>
+<li>Nem futtatunk végig teljes kampányt.</li>
+<li>Nem viszünk végig egy konkrét ügyfelet.</li>
+<li>Az ajánlatadás a 4. blokkban már megvolt.</li>
+<li>Üzletkötést nem tanítunk, de mérjük.</li>
+</ul></div>
+</div>
+</div>
+<footer class="foot"><img src="../assets/logos/wenova-wordmark.png" alt="Wenova"><span class="sp"></span><a href="#tartalom">Tartalom</a><span class="count"></span></footer>
+</div>
+</section>
+
+<!-- ========== DIA 04: Négy tanulság ========== -->
+<section class="slide" id="s04">
+<div class="frame">
+<header class="head"><h2>Négy tanulság, amit vigyél haza</h2></header>
+<div class="stage">
+<ol class="lessons">
+<li><i class="lit a41"></i><span class="no">1</span><div><b>Az alap dönt</b><span>A hibás Cég-DNS minden agent munkáját rontja.</span></div></li>
+<li><i class="lit a42"></i><span class="no">2</span><div><b>Más ír, más ellenőriz</b><span>Az Ellenőr új beszélgetésben, friss szemmel dolgozik.</span></div></li>
+<li><i class="lit a43"></i><span class="no">3</span><div><b>Az ember dönt</b><span>Árról, vállalásról és küldésről te határozol.</span></div></li>
+<li><i class="lit a44"></i><span class="no">4</span><div><b>A mérés zárja a kört</b><span>Hetente néhány szám elég, ha döntés lesz belőle.</span></div></li>
+</ol>
+</div>
+<footer class="foot"><img src="../assets/logos/wenova-wordmark.png" alt="Wenova"><span class="sp"></span><a href="#tartalom">Tartalom</a><span class="count"></span></footer>
+</div>
+</section>
+
+<!-- ========== DIA 05: Zárd a kört ========== -->
+<section class="slide" id="s05">
+<div class="frame">
+<header class="head"><h2>Így ér el a kampány a célhoz: <span class="em">körökben</span></h2></header>
+<div class="stage">
+<div class="loopgrid">
+<svg viewBox="0 0 1000 640" role="img" aria-label="Öt lépésből álló hurok: mérés, elemzés, visszacsatolás, újratervezés, indítás vagy módosítás, majd újra mérés">
+<ellipse cx="500" cy="320" rx="330" ry="240" class="ring"></ellipse>
+<ellipse cx="500" cy="320" rx="330" ry="240" class="ringflow"></ellipse>
+<polygon points="18,0 -12,-15 -12,15" class="ah" transform="translate(694 125.8) rotate(27.8)"></polygon>
+<polygon points="18,0 -12,-15 -12,15" class="ah" transform="translate(813.8 394.2) rotate(114.1)"></polygon>
+<polygon points="18,0 -12,-15 -12,15" class="ah" transform="translate(500 560) rotate(180)"></polygon>
+<polygon points="18,0 -12,-15 -12,15" class="ah" transform="translate(186.2 394.2) rotate(245.9)"></polygon>
+<polygon points="18,0 -12,-15 -12,15" class="ah" transform="translate(306 125.8) rotate(332.2)"></polygon>
+<g transform="translate(500 320) scale(1.375 1)"><g class="orbit"><circle cx="0" cy="-240" r="13" class="dot"></circle></g></g>
+<g><rect x="355" y="42" width="290" height="76" rx="18" class="node"></rect><rect x="355" y="42" width="290" height="76" rx="18" class="nodeon a51"></rect><text x="500" y="93" text-anchor="middle" class="f38 b">Mérés</text></g>
+<g><rect x="669" y="208" width="290" height="76" rx="18" class="node"></rect><rect x="669" y="208" width="290" height="76" rx="18" class="nodeon a52"></rect><text x="814" y="259" text-anchor="middle" class="f38 b">Elemzés</text></g>
+<g><rect x="534" y="476" width="320" height="76" rx="18" class="node"></rect><rect x="534" y="476" width="320" height="76" rx="18" class="nodeon a53"></rect><text x="694" y="527" text-anchor="middle" class="f38 b">Visszacsatolás</text></g>
+<g><rect x="161" y="476" width="290" height="76" rx="18" class="node"></rect><rect x="161" y="476" width="290" height="76" rx="18" class="nodeon a54"></rect><text x="306" y="527" text-anchor="middle" class="f38 b">Újratervezés</text></g>
+<g><rect x="41" y="208" width="290" height="76" rx="18" class="node"></rect><rect x="41" y="208" width="290" height="76" rx="18" class="nodeon a55"></rect><text x="186" y="259" text-anchor="middle" class="f38 b">Indítás</text></g>
+<text x="500" y="312" text-anchor="middle" class="f72 b or">Cél</text>
+<text x="500" y="368" text-anchor="middle" class="f34 mut">minden kör közelebb visz</text>
+</svg>
+<ol class="steps">
+<li><i class="lit a51"></i><b>1. Mérés</b><span>Hetente ugyanazok a számok, egy lapon.</span></li>
+<li><i class="lit a52"></i><b>2. Elemzés</b><span>Hol esnek ki az érdeklődők? Mi változott?</span></li>
+<li><i class="lit a53"></i><b>3. Visszacsatolás</b><span>A tanulság visszakerül a Cég-DNS-be, a márkahangba és az ajánlatba.</span></li>
+<li><i class="lit a54"></i><b>4. Újratervezés</b><span>Megtartod, módosítod vagy leállítod. Ebből lesz az új kampányterv.</span></li>
+<li><i class="lit a55"></i><b>5. Indítás vagy módosítás</b><span>Új kört indítasz, vagy a futó kampányon változtatsz. Aztán újra mérsz.</span></li>
+</ol>
+</div>
+</div>
+<footer class="foot"><img src="../assets/logos/wenova-wordmark.png" alt="Wenova"><span class="sp"></span><a href="#tartalom">Tartalom</a><span class="count"></span></footer>
+</div>
+</section>
+
+<!-- ========== DIA 06: Élő bemutató: a kampány mérése ========== -->
+<section class="slide" id="s06">
+<div class="frame">
+<header class="head"><h2>Élő bemutató: a kampány mérése</h2><span class="tag">Élő demó</span></header>
+<div class="stage">
+<ol class="flow4">
+<li><i class="lit a41"></i><span class="no">1</span><b>Terv</b><p>A kampányterv elkészült.</p></li>
+<li><i class="lit a42"></i><span class="no">2</span><b>Buffer</b><p>A posztok kimentek.</p></li>
+<li><i class="lit a43"></i><span class="no">3</span><b>Adatok</b><p>Facebook és GA4, a Windsor.ai-on át.</p></li>
+<li><i class="lit a44"></i><span class="no">4</span><b>Elemzés</b><p>Mi működött, és mit változtatunk?</p></li>
+</ol>
+<div class="live"><div><p class="switch">Váltás az élő bemutatóra</p><p class="note">Ha az adat nem érhető el, a kitalált mintával mutatjuk meg.</p></div><a class="cta" href="../starter-kit/kampany-minta.csv">Minta CSV</a></div>
+</div>
+<footer class="foot"><img src="../assets/logos/wenova-wordmark.png" alt="Wenova"><a class="jump" href="#s07">Bemutató nélkül: tovább a 7. diára</a><span class="sp"></span><a href="#tartalom">Tartalom</a><span class="count"></span></footer>
+</div>
+</section>
+
+<!-- ========== DIA 07: Számold meg, kivel zártál ========== -->
+<section class="slide" id="s07">
+<div class="frame">
+<header class="head"><h2>Ne csak leadet számolj: kivel zártál?</h2><span class="tag">Példa, kitalált adatok</span></header>
+<div class="stage">
+<div class="deal">
+<svg viewBox="0 0 1080 760" role="img" aria-label="Példa tölcsér kitalált adatokkal: 120 lead, 26 beszélgetés, 10 ajánlat, 2 megnyert ügy">
+<line x1="290" y1="10" x2="290" y2="750" class="axis"></line>
+<text x="270" y="82" text-anchor="end" class="f38 b">Lead</text><rect x="292" y="26" width="640" height="96" rx="4" class="bar gx"></rect><text x="950" y="90" class="f44 b">120</text>
+<text x="310" y="170" class="f34 mut">21,7% jut tovább</text>
+<text x="270" y="262" text-anchor="end" class="f38 b">Beszélgetés</text><rect x="292" y="206" width="139" height="96" rx="4" class="bar gx"></rect><text x="449" y="270" class="f44 b">26</text>
+<text x="310" y="350" class="f34 mut">38,5% jut tovább</text>
+<text x="270" y="442" text-anchor="end" class="f38 b">Ajánlat</text><rect x="292" y="386" width="53" height="96" rx="4" class="bar gx"></rect><text x="363" y="450" class="f44 b">10</text>
+<text x="310" y="530" class="f34 mut">20,0% jut tovább</text>
+<text x="270" y="622" text-anchor="end" class="f38 b">Megnyert ügy</text><rect x="292" y="566" width="11" height="96" rx="3" class="bar gx"></rect><text x="321" y="630" class="f44 b">2</text>
+<text x="292" y="730" class="f34 mut">Példa, kitalált adatok</text>
+</svg>
+<div class="dealp"><span class="pct">1,7%</span><p class="mut">a leadekből lett vevő (2 / 120, kitalált adat)</p><p>120 érdeklődőből 2 lett vevő. Jó célcsoportot értünk el? Nézzük meg, kik vásároltak, és mit változtatunk a következő kampányban.</p><p class="ret">Vissza az elejére: célcsoport, Cég-DNS, ajánlat, kampány</p></div>
+</div>
+</div>
+<footer class="foot"><img src="../assets/logos/wenova-wordmark.png" alt="Wenova"><span class="sp"></span><a href="#tartalom">Tartalom</a><span class="count"></span></footer>
+</div>
+</section>
+
+<!-- ========== DIA 08: Demó: egy valódi kampány számai ========== -->
+<section class="slide" id="s08">
+<div class="frame">
+<header class="head"><h2 class="ph-t">Demó: egy valódi kampány számai</h2></header>
+<div class="stage">
+<p class="ph-l">Az előadó ezt élőben mutatja meg.</p>
+</div>
+<footer class="foot"><img src="../assets/logos/wenova-wordmark.png" alt="Wenova"><a class="jump" href="#s09">Demó nélkül: tovább a 9. diára</a><span class="sp"></span><a href="#tartalom">Tartalom</a><span class="count"></span></footer>
+</div>
+</section>
+
+<!-- ========== DIA 09: Melyik szám melyik döntéshez vezet? ========== -->
+<section class="slide" id="s09">
+<div class="frame">
+<header class="head"><h2>Melyik szám melyik döntéshez vezet?</h2></header>
+<div class="stage">
+<div class="deci">
+<div class="th"><span>Ezt látod</span><span>Ide nyúlsz</span><span>Ez lehet a döntés</span></div>
+<div><i class="lit a61"></i><span>Alacsony elfogadás a LinkedInen</span><span>Cég-DNS: ICP, Sales Bot-szűrők</span><b>Szűkebb célcsoport</b></div>
+<div><i class="lit a62"></i><span>Elfogadnak, de nem válaszolnak</span><span>Író: LinkedIn-üzenet, kifogások</span><b>Rövidebb első üzenet</b></div>
+<div><i class="lit a63"></i><span>Sok érdeklődés, kevés ajánlat</span><span>Cég-DNS: ajánlat, EstiWise-kérdések</span><b>Egyszerűbb belépő ajánlat</b></div>
+<div><i class="lit a64"></i><span>Sok ajánlat, kevés megnyert ügy</span><span>Kísérőszöveg, heti teendőterv</span><b>Utánkövetés a 3. napon</b></div>
+<div><i class="lit a65"></i><span>Gyakori BLOKKOLÓ az Ellenőrtől</span><span>Cég-DNS: Mondjuk / Nem mondjuk</span><b>Új tiltott ígéret a listán</b></div>
+<div><i class="lit a66"></i><span>Idegen hang a szövegekben</span><span>Márkahang</span><b>Új kifejezés, kerülendő szó</b></div>
+</div>
+</div>
+<p class="formula">10 eset alatt még ne dönts. A célértéket a saját első 2–4 heted adja.</p>
+<footer class="foot"><img src="../assets/logos/wenova-wordmark.png" alt="Wenova"><a class="jump" href="#s13">Rövid út: tovább a 13. diára</a><span class="sp"></span><a href="#tartalom">Tartalom</a><span class="count"></span></footer>
+</div>
+</section>
+
+<!-- ========== DIA 10: Megtartod, módosítod, leállítod ========== -->
+<section class="slide" id="s10">
+<div class="frame">
+<header class="head"><h2>Három szó a heti döntéshez</h2></header>
+<div class="stage">
+<div class="three">
+<div><b>Megtartod</b><p>Eléri a saját célértékedet.</p><small>Ugyanígy fut tovább a következő körben.</small></div>
+<div><b>Módosítod</b><p>Van érdeklődés, de egy lépésnél kiesnek.</p><small>Egyszerre egy dolgot változtatsz.</small></div>
+<div><b>Leállítod</b><p>Elég eset után sincs eredmény.</p><small>A helyére új próba kerül.</small></div>
+</div>
+<p class="back">Vissza a kezdetekhez: Cég-DNS · márkahang · ajánlat · kampányterv</p>
+</div>
+<footer class="foot"><img src="../assets/logos/wenova-wordmark.png" alt="Wenova"><a class="jump" href="#s13">Tovább a 13. diára</a><span class="sp"></span><a href="#tartalom">Tartalom</a><span class="count"></span></footer>
+</div>
+</section>
+
+<!-- ========== DIA 11: Hangügynök ========== -->
+<section class="slide" id="s11">
+<div class="frame">
+<header class="head"><h2>Hangügynök: beszélget, és hívni is tudna</h2><span class="tag">Élő demó</span></header>
+<div class="stage">
+<div class="demo">
+<ul>
+<li>Magyarul beszél, értékesítési forgatókönyv szerint.</li>
+<li>A beszélgetés után elemzés készül, és javaslat a forgatókönyvre.</li>
+<li>Telefonhíváshoz telefonszám és telefonos bekötés is kell. Ezt ma nem próbáltuk ki.</li>
+<li class="small">A laborban: OpenAI GPT-Live, Google Gemini Live, ElevenLabs.</li>
+</ul>
+<div class="panel">
+<div class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<p class="switch">Váltás az élő demóra</p>
+<a class="cta" href="../demos/voice-lab/index.html" target="_blank" rel="noopener noreferrer">A hanglabor indítási útmutatója</a>
+<p class="note">A demó a böngészőben fut, valódi telefonhívás nélkül.</p>
+</div>
+</div>
+</div>
+<footer class="foot"><img src="../assets/logos/wenova-wordmark.png" alt="Wenova"><a class="jump" href="#s13">Demó nélkül: tovább a 13. diára</a><span class="sp"></span><a href="#tartalom">Tartalom</a><span class="count"></span></footer>
+</div>
+</section>
+
+<!-- ========== DIA 12: 2D videós demó ========== -->
+<section class="slide" id="s12">
+<div class="frame">
+<header class="head"><h2>Narrált 2D videós demó</h2><span class="tag">Videó</span></header>
+<div class="stage">
+<div class="video">
+<svg class="play" viewBox="0 0 300 300" aria-hidden="true"><g class="pulse"><circle cx="150" cy="150" r="130" class="playc"></circle><polygon points="118,90 118,210 216,150" class="playt"></polygon></g></svg>
+<p class="switch">Váltás a videóra</p>
+<p class="note">A Wenova a nap végén mutatja meg ezt a demót.</p>
+</div>
+</div>
+<footer class="foot"><img src="../assets/logos/wenova-wordmark.png" alt="Wenova"><a class="jump" href="#s13">Videó nélkül: tovább a 13. diára</a><span class="sp"></span><a href="#tartalom">Tartalom</a><span class="count"></span></footer>
+</div>
+</section>
+
+<!-- ========== DIA 13: Így nézhet ki a kampányod egy oldalon ========== -->
+<section class="slide" id="s13">
+<div class="frame">
+<header class="head"><h2>Így nézhet ki a kampányod egy oldalon</h2><span class="tag">Példa, kitalált adatok</span></header>
+<div class="stage">
+<div class="dash">
+<div class="kpis">
+<div><b>12 000</b><span>Posztelérések összege</span></div>
+<div><b>354</b><span>Kattintás</span></div>
+<div><b>120</b><span>Lead</span></div>
+<div><b>2</b><span>Megnyert ügy</span></div>
+</div>
+<div class="charts">
+<figure><figcaption>Lead hetente <span>(kitalált adatok)</span></figcaption>
+<svg viewBox="0 0 860 400" role="img" aria-label="Példa heti leadszám kitalált adatokkal: 18, 27, 31 és 44"><line x1="60" y1="346" x2="800" y2="346" class="axis"></line><rect x="110" y="243" width="110" height="103" rx="4" class="bar gy"></rect><text x="165" y="227" text-anchor="middle" class="f34 b">18</text><text x="165" y="388" text-anchor="middle" class="f34">1. hét</text><rect x="290" y="192" width="110" height="154" rx="4" class="bar gy"></rect><text x="345" y="176" text-anchor="middle" class="f34 b">27</text><text x="345" y="388" text-anchor="middle" class="f34">2. hét</text><rect x="470" y="169" width="110" height="177" rx="4" class="bar gy"></rect><text x="525" y="153" text-anchor="middle" class="f34 b">31</text><text x="525" y="388" text-anchor="middle" class="f34">3. hét</text><rect x="650" y="95" width="110" height="251" rx="4" class="bar gy"></rect><text x="705" y="79" text-anchor="middle" class="f34 b">44</text><text x="705" y="388" text-anchor="middle" class="f34">4. hét</text></svg></figure>
+<figure><figcaption>Megnyert ügy, azonos skálán <span>(kitalált adatok)</span></figcaption>
+<svg viewBox="0 0 860 400" role="img" aria-label="Példa heti megnyert ügyek kitalált adatokkal: 0, 1, 0 és 1"><line x1="60" y1="346" x2="800" y2="346" class="axis"></line><text x="165" y="330" text-anchor="middle" class="f34 b">0</text><text x="165" y="388" text-anchor="middle" class="f34">1. hét</text><rect x="290" y="340" width="110" height="6" rx="3" class="bar gy"></rect><text x="345" y="324" text-anchor="middle" class="f34 b">1</text><text x="345" y="388" text-anchor="middle" class="f34">2. hét</text><text x="525" y="330" text-anchor="middle" class="f34 b">0</text><text x="525" y="388" text-anchor="middle" class="f34">3. hét</text><rect x="650" y="340" width="110" height="6" rx="3" class="bar gy"></rect><text x="705" y="324" text-anchor="middle" class="f34 b">1</text><text x="705" y="388" text-anchor="middle" class="f34">4. hét</text></svg></figure>
+</div>
+<p class="fake">Példa, kitalált adatok. Nem valódi kampány eredménye.</p>
+</div>
+</div>
+<footer class="foot"><img src="../assets/logos/wenova-wordmark.png" alt="Wenova"><span class="sp"></span><a href="#tartalom">Tartalom</a><span class="count"></span></footer>
+</div>
+</section>
+
+<!-- ========== DIA 14: Mire jó egy Claude artifact? ========== -->
+<section class="slide" id="s14">
+<div class="frame">
+<header class="head"><h2>Mire jó egy Claude artifact?</h2></header>
+<div class="stage">
+<div class="tiles">
+<div><i class="lit a41"></i><svg viewBox="0 0 110 110" aria-hidden="true"><rect x="22" y="12" width="66" height="86" rx="8" class="ic"></rect><line x1="36" y1="36" x2="74" y2="36" class="ic"></line><line x1="36" y1="55" x2="74" y2="55" class="ic"></line><line x1="36" y1="74" x2="60" y2="74" class="ic"></line></svg><b>Gyors összefoglaló</b><p>Egy megosztható oldal a beszélgetés eredményéből.</p></div>
+<div><i class="lit a42"></i><svg viewBox="0 0 110 110" aria-hidden="true"><line x1="14" y1="96" x2="96" y2="96" class="ic"></line><rect x="24" y="58" width="16" height="38" class="ic"></rect><rect x="48" y="38" width="16" height="58" class="ic"></rect><rect x="72" y="16" width="16" height="80" class="ic"></rect></svg><b>KPI-oldal</b><p>A heti számaid egyetlen nézetben.</p></div>
+<div><i class="lit a43"></i><svg viewBox="0 0 110 110" aria-hidden="true"><rect x="10" y="18" width="90" height="66" rx="8" class="ic"></rect><polyline points="22,56 40,56 50,36 62,70 72,50 88,50" class="ic"></polyline><line x1="38" y1="98" x2="72" y2="98" class="ic"></line></svg><b>Monitoring oldal</b><p>Connectorral megnyitáskor friss adatot mutathat.</p></div>
+<div><i class="lit a44"></i><svg viewBox="0 0 110 110" aria-hidden="true"><circle cx="55" cy="55" r="42" class="ic"></circle><polyline points="55,28 55,55 74,66" class="ic"></polyline></svg><b>Ütemezett oldal</b><p>Ütemezett feladat frissítheti, például hétfő reggel.</p></div>
+</div>
+<p class="plain"><b>Artifact:</b> önálló oldal a beszélgetés mellett. Megnyitod, szerkeszted, megosztod.<br>Minden csomagban elérhető, ha a Beállításokban be van kapcsolva a fájlkészítés.</p>
+</div>
+<footer class="foot"><img src="../assets/logos/wenova-wordmark.png" alt="Wenova"><span class="sp"></span><a href="#tartalom">Tartalom</a><span class="count"></span></footer>
+</div>
+</section>
+
+<!-- ========== DIA 15: Ütemezett frissítés: mi kell hozzá? ========== -->
+<section class="slide" id="s15">
+<div class="frame">
+<header class="head"><h2>Ütemezett frissítés: mi kell hozzá?</h2></header>
+<div class="stage">
+<div class="req">
+<div><span class="no">1</span><b>Fizetős csomag</b><p>Pro, Max, Ultra, Team vagy Enterprise.</p></div>
+<div><span class="no">2</span><b>Ütemezett feladat</b><p>Ez adja az időzítést: óránként, naponta, hetente vagy hétköznap.</p></div>
+<div><span class="no">3</span><b>Adatforrás</b><p>A felhőben futó feladat engedélyezett kapcsolatból vagy a Claude-fiókodba mentett fájlból dolgozhat. Helyi mappához a szervezetben engedélyezett Computer access, ébren lévő gép és megnyitott Claude Desktop kell.</p></div>
+</div>
+<p class="warn">A Claude Data műszerfala megnyitáskor frissíti az adatokat, ha a frissítés esedékes. Önálló időzítése nincs.</p>
+<p class="src">Források: <a href="https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-cowork" target="_blank" rel="noopener noreferrer">ütemezett feladatok</a> · <a href="https://support.claude.com/en/articles/17153992-what-are-artifacts-and-how-do-i-use-them" target="_blank" rel="noopener noreferrer">artifactok</a> · <a href="https://support.claude.com/en/articles/17454700" target="_blank" rel="noopener noreferrer">Claude Data</a> · <a href="https://academy.claude.com/use-cases/ad-performance-recap" target="_blank" rel="noopener noreferrer">Academy-példa</a> · ellenőrizve: 2026. 11. 19.</p>
+</div>
+<footer class="foot"><img src="../assets/logos/wenova-wordmark.png" alt="Wenova"><span class="sp"></span><a href="#tartalom">Tartalom</a><span class="count"></span></footer>
+</div>
+</section>
+
+<!-- ========== DIA 16: Most te jössz ========== -->
+<section class="slide" id="s16">
+<div class="frame">
+<header class="head"><h2>Most te jössz: mit tudsz ma megcsinálni?</h2><span class="tag">16:35–16:50</span></header>
+<div class="stage">
+<div class="deci prq">
+<div class="th"><span>Lépés</span><span>Ez kell hozzá</span><span>Ha megvan</span><span>Ha nincs</span></div>
+<div><b>Kampányadat</b><span>Buffer, Facebook, GA4</span><span>Saját posztok, eredmények, kommentek</span><span>Minta CSV, kitalált adatokkal</span></div>
+<div><b>Tölcsér</b><span>CRM-tábla</span><span>Saját lead, ajánlat, megnyert ügy</span><span>A minta CSV tölcsére</span></div>
+<div><b>Levelek</b><span>Engedélyezett Gmail</span><span>Válaszok összefoglalása, piszkozat</span><span>Mintapostafiók vagy bemásolt levél</span></div>
+<div><b>Döntés</b><span>Csak Claude</span><span>Visszacsatolás, következő kör</span><span>Ugyanez, a mintából</span></div>
+</div>
+</div>
+<p class="formula">Mindenkinek van feladata: <a href="../modules/05-pipeline-review.html#prerequisites" style="color:inherit">a munkafüzet</a> lépésről lépésre vezet.</p>
+<footer class="foot"><img src="../assets/logos/wenova-wordmark.png" alt="Wenova"><span class="sp"></span><a href="#tartalom">Tartalom</a><span class="count"></span></footer>
+</div>
+</section>
+
+<!-- ========== DIA 17: Kérdések ========== -->
+<section class="slide" id="s17">
+<div class="frame">
+<header class="head"><h2>Mi maradt nyitva?</h2></header>
+<div class="stage">
+<div class="ask">
+<p class="q">Kérdések?</p>
+<p>Otthonra: <a href="../modules/05-pipeline-review.html">a munkafüzet</a> rövid, önálló lépésekből áll.</p>
+</div>
+</div>
+<footer class="foot"><img src="../assets/logos/wenova-wordmark.png" alt="Wenova"><span class="sp"></span><a href="#tartalom">Tartalom</a><span class="count"></span></footer>
+</div>
+</section>
+
+<!-- ========== DIA 18: Köszönjük ========== -->
+<section class="slide" id="s18">
+<div class="frame">
+<header class="head"><h2>Köszönjük a mai napot!</h2></header>
+<div class="stage">
+<div class="bye">
+<p class="big">Mérj, tanulj, indíts újra.</p>
+<a class="url" href="https://wenova.io" target="_blank" rel="noopener noreferrer">wenova.io</a>
+<p>Hétfőn 30 perc: <a href="../modules/05-pipeline-review.html#05-pipeline-review.03-measure-launch">az első heti átnézés</a>.</p>
+</div>
+</div>
+<footer class="foot"><img src="../assets/logos/wenova-wordmark.png" alt="Wenova"><span class="sp"></span><a href="#tartalom">Tartalom</a><span class="count"></span></footer>
+</div>
+</section>
+
+<nav class="toc" id="tartalom" aria-label="Tartalom"><p class="toc-h">Tartalom</p><ol><li><a href="#s01">Zárjuk a kört</a></li><li><a href="#s02">A nap egy képben</a></li><li><a href="#s03">Mi ez a blokk, és mi nem?</a></li><li><a href="#s04">Négy tanulság, amit vigyél haza</a></li><li><a href="#s05">Így ér el a kampány a célhoz: körökben</a></li><li><a href="#s06">Élő bemutató: a kampány mérése</a></li><li><a href="#s07">Számold meg, kivel zártál</a></li><li><a href="#s08">Demó: egy valódi kampány számai</a></li><li><a href="#s09">Melyik szám melyik döntéshez vezet?</a></li><li><a href="#s10">Három szó a heti döntéshez</a></li><li><a href="#s11">Hangügynök: élő demó</a></li><li><a href="#s12">Narrált 2D videós demó</a></li><li><a href="#s13">Így nézhet ki a kampányod egy oldalon</a></li><li><a href="#s14">Mire jó egy Claude artifact?</a></li><li><a href="#s15">Ütemezett frissítés: mi kell hozzá?</a></li><li><a href="#s16">Most te jössz</a></li><li><a href="#s17">Kérdések</a></li><li><a href="#s18">Köszönjük a mai napot!</a></li></ol></nav>
+</body>
+</html>

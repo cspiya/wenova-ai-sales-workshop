@@ -44,6 +44,6 @@ Minden lépéshez írd oda a tényleges végrehajtási módot: `live`, `sandbox`
 
 ## Ügyféleset az 5. blokkban
 
-A `Tananyag/modules/05-pipeline-review.md` fájlban kövesd a `05-pipeline-review.02-one-customer` leckét. A jóváhagyott feladatban a Postás a leveleket és a válaszpiszkozatot kezeli, a CRM-agent a táblajavaslatot. A kapcsolatokból csak a ténylegesen elérhető műveleteket használd. Ha hiányoznak, dolgozz a mentett `leads.csv`, `outreach.md`, `customer-brief.md`, `proposal.md`, `handoff.md` és `crm.csv` fájlból a lecke szerint.
+Ha a résztvevő külön kéri egy ügyféleset végigvitelét, a jóváhagyott feladatban a Postás a leveleket és a válaszpiszkozatot kezeli, a CRM-agent a táblajavaslatot. Az 5. blokk ezt nem tartalmazza: ott a `Tananyag/modules/05-pipeline-review.md` kampánymérési leckéit kövesd. A kapcsolatokból csak a ténylegesen elérhető műveleteket használd. Ha hiányoznak, dolgozz a mentett `leads.csv`, `outreach.md`, `customer-brief.md`, `proposal.md`, `handoff.md` és `crm.csv` fájlból.
 
 A `Munka/05-Folyamat/pipeline-review.md` fájl mezői a `case_id`, `results`, `execution_mode`, `evidence`, `gaps` és `next_step`. A következő lépéshez adj teendőt, felelőst és időpontot a résztvevő által jóváhagyott adatokból.

@@ -8,21 +8,40 @@
 
 Belső oktatói jegyzet · review
 
-**Státusz: review.** 16:15–16:50, 35 perc. Vezeti: Kemény Krisztián; körbejár: Piya Csaba, és ha maradnak, a partnerek.
+**Státusz: review.** 16:15–17:00, a Zárással együtt 45 perc. Vezeti: Kemény Krisztián; körbejár: Piya Csaba, és ha maradnak, a partnerek. Menet és időterv: [előadói jegyzet](../../materials/presentations/05-zaro-eloadas-jegyzet.md). A 16:15 előtti ellenőrzőlista lent található.
 
 <a name="notes-1"></a>
 
 ### Bevezető 16:15–16:17 (2 perc)
 
-„Délelőtt felépítettük a csapatot, napközben a három partnerrendszert. Most egy ügyfél útja lesz egy táblában, és hétfőtől egy 30 perces rutin tartja életben.” Kivetítve a [folyamattábla](../../materials/modules/01-business-foundations.md#team-model-3) utolsó két sora.
+„Délelőtt felépítettük a csapatot, napközben a három partnerrendszert. Most a kampány mérési oldalát nézzük meg, és hétfőtől egy 30 perces rutin tartja életben.” Kivetítve a [folyamattábla](../../materials/modules/01-business-foundations.md#team-model-3) utolsó két sora.
 
 <a name="notes-2"></a>
 
-### Demó (párhuzamosan, a kivetítőn, IrodaLiget-mintával)
+### Élő bemutató (16:20:30-tól, 6 perc)
 
-1. A [mintapostafiók](../../materials/scenarios/office-plants/outputs/mailbox-sample.md) B1–B4 levele a Postásnak: B4 a gyanús utasítás. Mutasd meg, hogy a Postás jelzi, és nem hajtja végre.
-2. B1 válaszpiszkozata: 25 növény, a DNS szerint nincs ár. Ugyanaz a csapda, mint a [kész ellenőri jelentésben](../../materials/scenarios/office-plants/outputs/review-sample.md).
-3. A [CRM-minta](../../materials/scenarios/office-plants/outputs/crm.csv) négy sora, forrásonként.
+1. A terv kész, a posztok a Bufferen át kimentek: ez a kiindulás. Teljes kampányt nem futtatunk, és egy konkrét ügyfelet sem viszünk végig.
+2. Az eredmények és a kommentek lekérése a Windsor.ai-on át, csak olvasással (a kapcsolatot 16:15 előtt a saját fiókoddal ki kell próbálni), majd a [munkafüzet elemző promptja](../../materials/modules/05-pipeline-review.md#05-pipeline-review.02-one-customer--prompt).
+3. Ha a kapcsolat nem válaszol, a [minta CSV](../../materials/starter-kit/kampany-minta.csv) kitalált adataival folytasd, és ezt mondd ki.
+
+<a name="notes-checklist"></a>
+
+### Előadói ellenőrzőlista: 16:15 előtt
+
+Az alábbi kapcsolatok állapotát az előadó ellenőrzi a bemutató gépén. A tananyag egyiket sem állítja kipróbáltnak. **A Windsor.ai-kapcsolatot 16:15 előtt még ki kell próbálnod a saját fiókoddal.** Amelyik próba nem sikerül, annál a mintával dolgozz.
+
+| Kész? | Fiók vagy kapcsolat | Próba | Ha nem működik |
+| --- | --- | --- | --- |
+| ☐ | Claude Desktop, a bemutató projektje | Új beszélgetés indul a projektben | Tartalék gép vagy a vetített minta |
+| ☐ | Buffer | Látszik a megjelent posztok listája | A minta CSV posztjai |
+| ☐ | Facebook, Windsor.ai-on át, a saját fiókoddal | Egy poszt eredménye és kommentje kiolvasható | A minta CSV eredményei és kommentjei |
+| ☐ | GA4, Windsor.ai-on át, a saját fiókoddal | Egy időszak munkameneteinek száma kiolvasható | A minta CSV munkamenetei |
+| ☐ | CRM-tábla, Google Drive | A tábla megtalálható és olvasható | A minta CSV tölcsére |
+| ☐ | Gmail, csak olvasás | Egy próbalevél megtalálható | A mintapostafiók |
+| ☐ | Valódi kampány demója, ha mutatod | A számok megnyílnak a bemutató gépén | Ugord át a 8. diát |
+| ☐ | Hangügynök-labor, ha mutatod | Teljes próbahívás a vetítőgépen, hallható teremhanggal | Ugord át a 11. diát |
+| ☐ | 2D videó, ha mutatod | A videó elindul, a teremhang hallható | Ugord át a 12. diát |
+| ☐ | [Minta CSV](../../materials/starter-kit/kampany-minta.csv) | A fájl megnyílik a bemutató gépén | A 13. dia kitalált számai |
 
 <a name="notes-3"></a>
 
@@ -37,31 +56,25 @@ Belső oktatói jegyzet · review
 
 ### Időkapuk és gyakori hibák
 
-A 35 perc csak a rövid úttal fér bele: a Postás csak a WORKSHOP-TESZT levelet és legfeljebb 5 szálat nézi; a Karmester alapból a 3., 5. és 7. lépést viszi; az Ellenőr és a heti jelentés „Ha maradt időd” vagy házi feladat.
+A saját feladat 15 perc. A heti jelentés és a dashboard „Ha maradt időd” vagy házi feladat.
 
 | Óra | Hol kell tartani? | Ha nem |
 | --- | --- | --- |
-| 16:21 | A Postás megtalálta a WORKSHOP-TESZT levelet | Próbalevél bemásolva vagy mintapostafiók |
-| 16:24 | A piszkozat a levelezőben (bemásolva) | Piszkozat csak a beszélgetésben; tovább |
-| 16:28 | CSV-sorok bemásolva, visszaolvasva | `crm.csv` a projektben; tovább a 2. leckére |
-| 16:40 | `pipeline-review.md` kész (3., 5., 7. lépés) | Csak a 7. lépés; a többi `gaps` |
-| 16:48 | `launch-plan.md` „Holnap” táblája kész, egy „Heti mérés” sor | A mérési sor holnapra marad |
+| 16:35 | Az előadás véget ért, mindenki választott utat az előfeltételek szerint | Aki bizonytalan, a minta CSV-vel kezd |
+| 16:40 | `tolcser.md` kész | Mintaszámokkal folytatja |
+| 16:45 | `kampany-elemzes.md` kész | Elég a három megfigyelés |
+| 16:50 | `launch-plan.md` „Holnap” táblája kész | A mérési sor holnapra marad |
 
-- **Valaki vár, hogy a Claude „beírja” a táblába vagy elmentse a Gmail-piszkozatot:** ez az alapút szerint kézi bemásolás (Gmail connector: olvasás; táblázatírás nincs mindenhol dokumentálva). Ne töltsenek vele időt.
-- **A Sales Bot vagy az EstiWise lassú a nap végén:** egy újrapróbálás, aztán fájlból, `simulation` jelöléssel. Ne indítsanak új EstiWise-kalkulációt.
+- **Nincs CRM-tábla vagy Gmail-engedély:** a minta CSV-vel dolgozik, `simulation` jelöléssel. Ez teljes értékű feladat.
+- **Valaki Facebook- vagy GA4-kapcsolatot szeretne most beállítani:** ne ezzel töltse az időt. Exportfájl vagy minta.
 - **Valaki „live”-nak jelöl mintából jött lépést:** ez a blokk második fontos tanulsága; javíttasd.
-- **Valaki elküldené a piszkozatot:** ma nem; a holnapi terv első lépése lehet.
+- **Valaki válaszolna a kommentekre vagy kiküldene valamit:** ma nem; a holnapi terv első lépése lehet.
 
 <a name="notes-5"></a>
 
 ### Zárás 16:50–17:00
 
-**Egy visszacsatolási kör bemutatása (4 perc, kivetítve, IrodaLiget):**
-
-1. A [kész ellenőri jelentés](../../materials/scenarios/office-plants/outputs/review-sample.md): az Ellenőr BLOKKOLÓ-t adott, mert az Író 25 növényre ígért árat.
-2. A [DNS](../../materials/scenarios/office-plants/outputs/company-dna.md) 6. szakaszába új sor a „Nem mondjuk” oszlopba: „Ár 20 növény felett bejárás nélkül”. Verzió 0.1 → 0.2, sor a változásnaplóba („ellenőri BLOKKOLÓ, B1 levél”). Az új fájl cseréje a projekt tudásában.
-3. Az Író újrafuttatása ugyanarra a levélre egy új beszélgetésben: a piszkozat már nem ígér árat; az Ellenőr MEGFELEL-t ad.
-4. Kulcsmondat: „Ez a hétfői 30 perc kicsiben: szám vagy ellenőri jelzés → DNS-sor → új verzió → minden agent jobb.”
+Kérdések, majd köszönet a [záró előadás](../../materials/presentations/05-zaro-eloadas.md) 17. és 18. diájával. Kulcsmondat: „Számold meg, kivel zártál, ne csak a leadeket.”
 
 A zárásban a Wenova egy külön, rövid, színes demóban vetíti le a nap összefoglalóját. A 2D-s animált videó narrációjához ElevenLabs kell. A Brandiseer a saját blokkjában állóképet mutat be.
 
@@ -71,15 +84,15 @@ Utána három résztvevő mondja el a saját holnapi első lépését; végül p
 
 ### Partnerkapcsolatok, vizuális áttekintés, ütemezés
 
-- Az 5. blokk azzal számol, hogy a Brandiseer, a Sales Bot és az EstiWise connectora a 02–04-es blokkban be van kötve. Akinél kiesett, az a táblázat „Ha nem érhető el” oszlopa szerint fájlból dolgozik, `simulation` jelöléssel.
-- „A nap egy oldalon” HTML és az ütemezett feladatok csak „Ha maradt időd” vagy otthoni feladat. A 35 percbe nem férnek bele; ne erőltesd.
+- Az 5. blokkhoz nem kell partnerkapcsolat. Aki nem fér hozzá a saját adataihoz, a minta CSV-ből dolgozik, `simulation` jelöléssel.
+- A dashboard és az ütemezett feladatok csak „Ha maradt időd” vagy otthoni feladat. A 15 percbe nem férnek bele; ne erőltesd.
 - Ütemezett feladat Pro csomagon a felhőben fut, helyi mappa nélkül: ezért a DNS-t a Google Drive-ba kell tenni. Ezt élőben nem próbáltuk.
 
 <a name="notes-7"></a>
 
 ### Kitekintő bemutatók (csak ha marad idő, kivetítve; a résztvevő nem követi)
 
-Az egyeztetés (november 18.) döntése: ezek bemutatók, nem gyakorlatok. A 35 percből nem vehetnek el; ha nincs idő, a zárásban egy mondat róluk elég.
+Az egyeztetés (november 18.) döntése: ezek bemutatók, nem gyakorlatok. A kérdések idejéből nem vehetnek el; ha nincs idő, a zárásban egy mondat róluk elég.
 
 - **Meta-hirdetések a Claude-ból (Piya Csaba, kb. 3 perc):** a Wenova saját kampányában a Claude a Meta Marketing API-n át kampányt és hirdetést hozott létre, és a leadeket, leveleket, hívásokat egy egyszerű Claude Artifact-irányítópultba (mini CRM) gyűjtötte. Élőben nem kötjük be: a céges Facebook-oldal, a Business Manager, a fejlesztői app és a rendszerfelhasználó összekattintása 1–3 óra. Üzenet: „Egy gyors kampányhoz egy Artifact elég; tartós rendszerhez CRM (például HubSpot) kell.” Tanulság a saját kampányunkból: a korosztályt és a célzást nem szabad teljesen a Metára hagyni, mert arra optimalizál, aki kattint, nem arra, aki vásárol.
 - **AI-hangasszisztens visszahíváshoz (választható, Gyömrei Máté vagy Ujvári Csaba, kb. 5 perc, ha vállalják):** az EstiWise ElevenLabs-agentjének tapasztalatai (gyors válaszidő turbó modellel, a megszakítás és a bemutatkozó mondat kezelése). Kiegészítés a Wenova próbájából: magyar telefonszám uniós SIP-szolgáltatótól fél óra alatt beköthető; élő ügyfeleknél a hideg hívás nem működött, a visszahívást kérő érdeklődőnél van értelme. Ne ígérj kész megoldást.
@@ -89,6 +102,6 @@ Az egyeztetés (november 18.) döntése: ezek bemutatók, nem gyakorlatok. A 35 
 
 A hivatkozások a bal oldali tananyagnézetet a megfelelő szakaszra állítják.
 
-- [Postás és CRM](../../materials/modules/05-pipeline-review.md#05-pipeline-review.01-inbox-crm)
-- [Egy ügyfél végig a Karmesterrel](../../materials/modules/05-pipeline-review.md#05-pipeline-review.02-one-customer)
+- [Saját adatok: CRM, levelek és a tölcsér](../../materials/modules/05-pipeline-review.md#05-pipeline-review.01-inbox-crm)
+- [Kampányeredmények: Buffer, Facebook, GA4](../../materials/modules/05-pipeline-review.md#05-pipeline-review.02-one-customer)
 - [Mérés, visszacsatolás és holnapi indulás](../../materials/modules/05-pipeline-review.md#05-pipeline-review.03-measure-launch)

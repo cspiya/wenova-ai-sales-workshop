@@ -282,7 +282,7 @@ Egy e-mail-cím a regisztrációkhoz, ha a Buffert is bekötöd, legalább egy k
 
 ### Így működik
 
-A partnerrendszereket a saját blokkjukban használod, a délutáni 5. blokkban pedig egy ügyfélesetben kapcsoljuk össze őket. Mindhárom partnernek saját connectora van a Claude-hoz; ezeket a partnerek a saját blokkjukban kötik be és mutatják meg.
+A partnerrendszereket a saját blokkjukban használod, a délutáni 5. blokkban pedig a kampányod mérési adatait elemezzük. Mindhárom partnernek saját connectora van a Claude-hoz; ezeket a partnerek a saját blokkjukban kötik be és mutatják meg.
 
 Ha még nincs fiókod valamelyik eszközhöz, amelyet használni szeretnél, a workshopon is regisztrálhatsz a saját laptopodon. Ha elakadsz, az oktató odamegy hozzád és segít.
 
@@ -332,7 +332,7 @@ A Brandiseer- és az EstiWise-regisztrációt a workshopon is elvégezheted a sa
 
 ### Ezt viszed tovább
 
-A fiókok a 02-es és 04-es blokk bemenetei; a Sales Bot-hozzáférést a 03-as blokkban kapod. Az 5. blokkban a Karmester mindhárom partner connectorát használja.
+A fiókok a 02-es és 04-es blokk bemenetei; a Sales Bot-hozzáférést a 03-as blokkban kapod. Az 5. blokkban a kampány számait elemezzük, saját adatból vagy kitalált mintából.
 
 <a name="00-prework.03-partner-accounts--extra"></a>
 
