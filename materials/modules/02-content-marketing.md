@@ -35,7 +35,7 @@ A modul végére egy hétre való, öt kész, letölthető, márkahű posztod le
 
 ### Bemenet
 
-A délelőtti 01-es modul fájljai a `Munka/01-DNS/` mappában: `company-dna.md` (Cég-DNS), `voice-profile.md` (hangprofil), `business-profile.md` és `sales-strategy.md`; a saját Brandiseer-fiókod a felvett márkáddal.
+A délelőtti 01-es modul fájljai a `Munka/01-DNS/` mappában: `company-dna.md` (Cég-DNS), `voice-profile.md` (márkahang), `business-profile.md` és `sales-strategy.md`; a saját Brandiseer-fiókod a felvett márkáddal.
 
 <a name="overview-2"></a>
 
@@ -223,7 +223,7 @@ Az előző lecke beszélgetése a kiválasztott márkával, és a `Munka/01-DNS/
 
 ### Így működik
 
-A briefet nagyrészt már megírtad délelőtt: a Cég-DNS-ben ott a célközönség, az ajánlat, a bizonyíték, a hangnem és az, amit nem mondasz; a hangprofilban a kerülendő kifejezések. Claude ezeket felolvassa, három sorban összefoglalja, és csak azt kérdezi meg, ami hiányzik: a csatornát, és hogy a javasolt témák és felhívás közül melyik legyen. Ahol a DNS-ben „Nincs megadva” áll, ott rákérdez. Ezután két képötletet ad, a jóváhagyásod után legenerálja a képeket design módban, és mindegyikhez csatornára szabott szöveget ír. Ugyanez a folyamat később automatizálható is: a Brandiseer [közösségi média automatizálási útmutatója](https://blog.brandiseer.com/use-cases/social-media-automation) ugyanezt ütemezett, minden héten lefutó feladattá alakítja.
+A briefet nagyrészt már megírtad délelőtt: a Cég-DNS-ben ott a célközönség, az ajánlat, a bizonyíték, a hangnem és az, amit nem mondasz; a márkahangban a kerülendő kifejezések. Claude ezeket felolvassa, három sorban összefoglalja, és csak azt kérdezi meg, ami hiányzik: a csatornát, és hogy a javasolt témák és felhívás közül melyik legyen. Ahol a DNS-ben „Nincs megadva” áll, ott rákérdez. Ezután két képötletet ad, a jóváhagyásod után legenerálja a képeket design módban, és mindegyikhez csatornára szabott szöveget ír. Ugyanez a folyamat később automatizálható is: a Brandiseer [közösségi média automatizálási útmutatója](https://blog.brandiseer.com/use-cases/social-media-automation) ugyanezt ütemezett, minden héten lefutó feladattá alakítja.
 
 <a name="02-content-marketing.02-create-content--decisions"></a>
 
@@ -252,7 +252,7 @@ Szabályok:
 - Képgenerálás mindig: mode design, useLogo true, resolution 1K. A fast módot csak akkor használd, ha a design hibát ad, és ilyenkor szólj.
 - A képpromptban csak tartalmat és elrendezést írj le: mi látszik, milyen szöveg kerül a képre és hová, mi kerül a középpontba. Színt, betűtípust, hangulatot vagy stílust soha ne írj bele, ezt a Brandiseer a márkából hozza.
 - Az oldalarányt a csatornához válaszd: Instagram és Facebook poszt 1:1, Story és Reels 9:16, LinkedIn 1:1 vagy 4:3, X 16:9.
-- A posztszöveg a hangprofil szerint szóljon; ár, akció, referencia vagy vállalás csak az lehet, ami a Cég-DNS-ben forrással szerepel.
+- A posztszöveg a márkahang szerint szóljon; ár, akció, referencia vagy vállalás csak az lehet, ami a Cég-DNS-ben forrással szerepel.
 - Semmit ne publikálj és ne ütemezz a kifejezett kérésem nélkül.
 
 Ha megvan a két téma:

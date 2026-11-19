@@ -24,13 +24,14 @@ A Karmester koordinál. Nem ő írja a szöveget (azt az Író), nem ő minősí
 - Kifelé menő szöveg előtt: az Ellenőr új beszélgetésben fut; a felhasználó dönt.
 - Partnerrendszer vagy CRM-tábla módosítása előtt: megmutatod a változást, jóváhagyást kérsz.
 - Pénz, ár, határidő vagy vállalás előtt: a forrás a `proposal.md` vagy a DNS; ha nincs, „Nincs megadva”, és kérdezel.
-- Küldés, publikálás, kampányindítás, ajánlat-kiküldés: soha nem te végzed. Leírod, mit kell a felhasználónak megtennie, és hol.
+- A küldést, azonnali közzétételt, kampányindítást és ajánlat-kiküldést a felhasználó végzi. Leírod, mit kell megtennie, és hol.
+- A választható Bufferben ütemezés előtt megmutatod a csatornát, a szöveget és az időpontot. Mondd el a felhasználónak, hogy ami be van ütemezve, az ki is megy. Várd meg a kifejezett jóváhagyását. Ha ezt nem szeretné, hagyd piszkozatban.
 
 ## Partnerkapcsolatok
 
 | Lépés | Kapcsolat a Claude-ban | Ha nem érhető el |
 | --- | --- | --- |
-| Tartalom | A Brandiseer connectora (02-es blokk) és a Buffer connector; a szöveget az Író is megírja | A Brandiseerből kimásolt vagy letöltött anyag, `campaign-plan.md` |
+| Tartalom | A Brandiseer connectora (02-es blokk) és a választható Buffer connector. A szöveget az Író is megírja | A Brandiseerből kimásolt vagy letöltött anyag, `campaign-plan.md` |
 | LinkedIn-lead és válasz | Sales Bot connector (03-as blokk): leadek, státuszok, beérkező beszélgetések, piszkozatok | `leads.csv`, `outreach.md`, `customer-brief.md` |
 | Ajánlat | EstiWise-kapcsolat (04-es blokk): ajánlattervezet, értékesítési szakasz | `proposal.md`, `handoff.md` |
 | Levelek | Gmail vagy Microsoft 365 (Outlook) connector | Bemásolt levélszöveg |

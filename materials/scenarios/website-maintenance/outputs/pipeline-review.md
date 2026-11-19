@@ -1,6 +1,6 @@
-case_id: website-maintenance
-results: Üzleti alap, kampányterv, leadlista, üzenet, igény, ajánlat és átadás összefüggően rendelkezésre áll.
+case_id: website-maintenance-L01
+results: A kiválasztott lead megkeresése és igénye a website-maintenance-P01 ajánlattervezethez vezet. Az átadás és a CRM-sor ehhez a leadhez tartozik. A CRM szakasza Ajánlattervezet.
 execution_mode: simulation
-evidence: A jelen outputs/ mappa fájljai.
-gaps: Nincs generált kép vagy videó, nincs publikálás, küldés, partnerintegráció vagy ajánlatelfogadás.
-next_step: Saját adatokkal felülvizsgálni, majd egy engedélyezett tesztkapcsolatot kipróbálni.
+evidence: leads.csv, outreach.md, customer-brief.md, proposal.md, handoff.md és crm.csv. A lead azonosítója website-maintenance-L01, az ajánlaté website-maintenance-P01.
+gaps: A kísérőszöveg és az Ellenőr ítélete ehhez az ügyhöz hiányzik. A mintához nem készült posztkép. Külső művelet és ajánlatelfogadás nem történt.
+next_step: Pontosítsd az indulási időpontot és a számlázási adatokat. Felelős: Ügyvezető. Határidő: 2026-11-21.

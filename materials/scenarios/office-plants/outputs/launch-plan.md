@@ -6,7 +6,7 @@
 
 | # | Teendő | Agent / eszköz | Időpont | Kész, ha |
 | --- | --- | --- | --- | --- |
-| 1 | A két nyitott levélre (B1, B2) a piszkozatok átnézése és elküldése | Postás, Ellenőr; küldés kézzel | 09:00–09:20 | Mindkét levél elment, CRM-ben `last_contact` frissítve |
+| 1 | Az office-plants-L01 indulási időpontjának és számlázási adatainak pontosítása | Ügyvezető és CRM | 09:00–09:20 | A hiányzó adatok kérdései elő vannak készítve a 2026-11-21-i határidőhöz |
 | 2 | A DNS két hiányának pótlása: felmondási feltétel, 20 növény feletti ár | Ügyvezető, majd DNS 0.2 | 10:00–10:30 | A DNS 9. szakaszából két sor lezárva |
 | 3 | Heti rutin felvétele a naptárba | Naptár | 10:30 | Hétfő 08:30 és péntek 15:00 ismétlődő esemény |
 

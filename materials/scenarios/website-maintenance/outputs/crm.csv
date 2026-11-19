@@ -1,0 +1,2 @@
+case_id,company,contact_role,source,offer_id,stage,value_net,currency,next_step,next_step_due,owner,partner_ref,last_contact,notes,updated
+website-maintenance-L01,Minta Cég 1,,LinkedIn / Sales Bot,website-maintenance-O01,Ajánlattervezet,30000,HUF,Pontosítsd az indulási időpontot és a számlázási adatokat,2026-11-21,Ügyvezető,website-maintenance-P01,,Kitalált szimuláció,2026-11-19

@@ -1,6 +1,6 @@
 lead_id: business-photography-L01
-first_message: Szia! A mintában megadott igényetekhez kapcsolódóan a(z) Céges portréfotózás szolgáltatást szeretném röviden bemutatni. Érdemes erről beszélnünk?
+first_message: Szia! Terveztek egységes portrékat a csapatoldalra? Ha aktuális, egyeztessünk röviden a létszámról és a helyszínről.
 followup: Ha aktuális a téma, küldök egy rövid összefoglalót a csomagról.
-stop_condition: Elutasítás vagy leiratkozási kérés esetén nincs további megkeresés.
+stop_condition: Válasz vagy leiratkozási kérés után leáll az üzenetsorozat.
 
 KITALÁLT szimuláció, semmi nincs elküldve.

@@ -1,6 +1,6 @@
 # Hangkinyerési ellenőrzőlista
 
-Ezzel a listával készül a [hangprofil](voice-profile.md) a saját küldött leveleidből. Claude is ezt használja, te pedig ezzel ellenőrzöd az eredményt.
+Ezzel a listával készül a [márkahang](voice-profile.md) a saját küldött leveleidből. Claude is ezt használja, te pedig ezzel ellenőrzöd az eredményt.
 
 ## Mielőtt elkezded
 
@@ -22,7 +22,7 @@ Ezzel a listával készül a [hangprofil](voice-profile.md) a saját küldött l
 9. Amit sosem használ (például emoji, „Üdvözlettel” helyett mást).
 10. Helyzetfüggő eltérés: új érdeklődő, meglévő ügyfél, panasz.
 
-## Mi nem kerülhet a hangprofilba?
+## Mi nem kerülhet a márkahangba?
 
 - [ ] Ügyfél- vagy kapcsolattartónév, e-mail-cím, telefonszám.
 - [ ] Konkrét ár, kedvezmény, szerződéses feltétel.

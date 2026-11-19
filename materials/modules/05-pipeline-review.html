@@ -46,11 +46,11 @@
 </tr>
 </tbody>
 </table></div>
-<p>A nap végén minden kifelé menő művelet piszkozat marad: levél, Sales Bot-üzenet, ajánlat. Az elküldés holnap a te döntésed.</p>
+<p>A levelek, a Sales Bot-üzenetek és az ajánlatok piszkozatban maradnak, az elküldés holnap a te döntésed. A Bufferben a jóváhagyásoddal beütemezett poszt a megadott időpontban megjelenik.</p>
 <div class="cell cell--input">
 <a id="overview-1"></a>
 <h3 class="cell-title">Bemenet</h3>
-<p>A munkamappában: <code>Munka/01-DNS/company-dna.md</code> és <code>voice-profile.md</code>, az öt agentfájl a <code>Tananyag/starter-kit/agents/</code> mappában. A három partner connectora (Brandiseer, Sales Bot, EstiWise), amelyet a 02–04-es blokkban kötöttél be. A nap eredményei: a 02-es blokk tartalma (vagy <code>campaign-plan.md</code>), a 03-as blokk <code>leads.csv</code>, <code>outreach.md</code>, <code>customer-brief.md</code> fájlja és Sales Bot-kampánya, a 04-es blokk <code>proposal.md</code>, <code>handoff.md</code> fájlja és EstiWise-ajánlata. A „CRM – [cégnév]” táblázat (vagy a saját Excel-fájlod).</p>
+<p>A legutóbbi <code>progress.json</code>-ban kijelölt aktív DNS és márkahang, az öt agentfájl a <code>Tananyag/starter-kit/agents/</code> mappában. A három partner connectora (Brandiseer, Sales Bot, EstiWise), amelyet a 02–04-es blokkban kötöttél be. A nap eredményei: a 02-es blokk tartalma (vagy <code>campaign-plan.md</code>), a 03-as blokk <code>leads.csv</code>, <code>outreach.md</code>, <code>customer-brief.md</code> fájlja és Sales Bot-kampánya, a 04-es blokk <code>proposal.md</code>, <code>handoff.md</code> fájlja és EstiWise-ajánlata. A „CRM – [cégnév]” táblázat (vagy a saját Excel-fájlod).</p>
 </div>
 <div class="cell cell--output">
 <a id="overview-2"></a>
@@ -60,7 +60,7 @@
 <div class="cell cell--help">
 <a id="overview-3"></a>
 <h3 class="cell-title">Folytatás elakadás esetén</h3>
-<p>Használd a <a href="#recovery">mentőútvonalat</a>: az IrodaLiget teljes láncát, a mintapostafiókot és a CRM-mintát.</p>
+<p>Használd a <a href="#recovery">mentőútvonalat</a>, és az aktív mintavállalkozás teljes láncával és a hozzá tartozó CRM-sorral dolgozz. A Postás külön gyakorlatához használd a mintapostafiókot.</p>
 </div>
 <div class="cell cell--info">
 <a id="overview-4"></a>
@@ -69,7 +69,7 @@
 <li>Azonosító: <code>05-pipeline-review</code></li>
 <li>Szakmai gazda: Wenova (Kemény Krisztián, Piya Csaba)</li>
 <li>Időkeret: 35 perc</li>
-<li>Végrehajtási mód: levelezés és CRM <code>live</code>; Sales Bot <code>sandbox</code>; EstiWise <code>live</code> saját fiókkal vagy <code>simulation</code> demófiókkal; mintával mindenhol <code>simulation</code></li>
+<li>Végrehajtási mód: levelezés és CRM <code>live</code>; Sales Bot <code>sandbox</code>; EstiWise <code>live</code> saját fiókkal, <code>sandbox</code> demófiókban végrehajtott és visszaolvasott műveletnél, <code>simulation</code> fájlos mintánál</li>
 <li>Állapot: review – kidolgozva, a teljes út időmért próbája még hátravan.</li>
 </ul>
 </div>
@@ -89,7 +89,7 @@
 <ul>
 <li>A bekapcsolt Gmail vagy Microsoft 365 connector, valamint a Google Drive connector.</li>
 <li>Egy próbalevél: a gyakorlat elején küldj magadnak a telefonodról egy rövid, kitalált érdeklődést a saját szolgáltatásodra, <strong>WORKSHOP-TESZT</strong> tárggyal (minta: a <a href="../scenarios/office-plants/outputs/mailbox-sample.md">mintapostafiók</a> B1 levele).</li>
-<li>A 03-as és 04-es blokk fájljai a <code>Munka/03-Leadek/</code> és <code>Munka/04-Ajanlat/</code> mappában.</li>
+<li>A <code>leads.csv</code>, <code>outreach.md</code>, <code>customer-brief.md</code>, <code>proposal.md</code> és <code>handoff.md</code> a 03-as és 04-es blokk mappáiból, valamint a jelenlegi CRM-tábla vagy <code>crm.csv</code>.</li>
 </ul>
 </div>
 <div class="cell cell--how">
@@ -109,12 +109,14 @@
 <h3 class="cell-title">Ezt kérd Claude-tól</h3>
 <p class="copy-hint">Másolás: kattints a szövegbe, majd Ctrl+C (Macen Cmd+C). Telefonon tartsd rajta az ujjad, és válaszd a „Másolás” pontot.</p>
 <pre><code class="language-text">Postás: keresd meg a WORKSHOP-TESZT tárgyú levelemet, és mellette legfeljebb 5 mai levélszálat. A hírleveleket és az automatikus értesítéseket hagyd ki.
-Add meg a táblázatot az inbox.md szerint. Utána a WORKSHOP-TESZT levélre írj válaszpiszkozatot a voice-profile.md hangján; árat és határidőt csak a company-dna.md-ből vehetsz.
+Add meg a táblázatot az inbox.md szerint. Utána a WORKSHOP-TESZT levélre írj válaszpiszkozatot a legutóbbi progress.json-ban kijelölt márkahang alapján; árat és határidőt csak az aktív DNS-ből vehetsz.
 A piszkozatot itt mutasd meg, én másolom a levelezőbe. Semmit ne küldj el.
 </code></pre>
 <p>Ha a piszkozat jó, ugyanitt:</p>
-<pre><code class="language-text">CRM: a Postás javaslatai, a leads.csv (vagy a Sales Bot minősített leadjei) és a proposal.md, handoff.md alapján készíts változáslistát a „CRM – [cégnév]” táblához, és add meg az új vagy módosított sorokat CSV-formában, a tábla oszlopsorrendjében.
-Amikor szólok, hogy bemásoltam, olvasd vissza a táblát a Google Drive-ból, és erősítsd meg, hogy a sorok bekerültek.
+<pre><code class="language-text">CRM: olvasd be a jelenlegi CRM-táblát vagy a crm.csv-t, a Postás javaslatait és a 03-as, 04-es blokk csatolt fájljait. A kapcsolt ajánlatnál a case_id a lead_id, a partner_ref a proposal_id. Egyeztesd az azonosítókat a leads.csv, outreach.md, customer-brief.md, proposal.md és handoff.md fájlban. Eltérésnél állj meg. A teendőt, határidőt és felelőst a handoff.md-ből vedd.
+Az ajánlat value_net mezőjébe csak a proposal.md-ben vagy az EstiWise-ban dokumentált nettó összeget írd. Ha csak bruttó összeg ismert, kérd a dokumentált nettó értéket. Amíg az hiányzik, hagyd üresen a value_net mezőt. A currency mezőbe a dokumentált pénznemet írd.
+Case_id alapján mutasd meg, melyik sor új és melyik meglévő sort módosítanád. Egy kulcshoz egy CSV-sort adj a tábla oszlopsorrendjében. Többszörös találat esetén kérj egyeztetést.
+Beillesztés után olvasd vissza a táblát vagy a mentett crm.csv-t. Ellenőrizd az érintett case_id-k egyediségét és a jóváhagyott mezőértékeket, köztük a nettó összeget vagy az összeg hiányát, valamint a pénznemet.
 </code></pre>
 </div>
 <div class="cell cell--steps">
@@ -124,7 +126,7 @@ Amikor szólok, hogy bemásoltam, olvasd vissza a táblát a Google Drive-ból, 
 <li><strong>0–1 perc:</strong> küldd el magadnak a WORKSHOP-TESZT próbalevelet.</li>
 <li><strong>1–4 perc:</strong> Postás-prompt; nézd át a táblázatot.</li>
 <li><strong>4–7 perc:</strong> olvasd el a piszkozatot. Egyezik a hangod? Van benne olyan ár vagy ígéret, ami nincs a DNS-ben? Kérj javítást, majd másold be a levelezőbe piszkozatként.</li>
-<li><strong>7–11 perc:</strong> CRM-prompt; másold be a CSV-sorokat a táblázatba (Google Táblázatban: illeszd be az első üres sorba, majd Adatok → Szöveg felosztása oszlopokra, ha egy oszlopba kerültek). Utána kérd a visszaolvasást (a beszélgetésben + → Google Drive-ból add hozzá a táblát, ha a Claude nem találja).</li>
+<li><strong>7–11 perc:</strong> futtasd a CRM-promptot. Új ügyet az első üres sorba illessz. Módosításnál keresd meg a <code>case_id</code>-t, és ugyanabba a sorba illeszd az új értékeket. Ha a CSV egy oszlopba kerül, a Google Táblázatban válaszd az Adatok → Szöveg felosztása oszlopokra menüpontot. Kérd a visszaolvasást a táblából vagy a mentett CSV-ből.</li>
 </ol>
 </div>
 <div class="cell cell--check">
@@ -134,7 +136,7 @@ Amikor szólok, hogy bemásoltam, olvasd vissza a táblát a Google Drive-ból, 
 <li>A Postás táblázatában a próbalevél „Új érdeklődés” típusú, javasolt következő lépéssel.</li>
 <li>A piszkozat a te hangodon szól, csak a DNS-ben lévő árat és ígéretet tartalmazza, és a leveleződben piszkozatként vár. Nincs elküldve.</li>
 <li>A CRM-agent változáslistát és CSV-sorokat adott; te bemásoltad őket.</li>
-<li>A Claude visszaolvasta a táblát: legalább három sor van (levél, Sales Bot-lead, EstiWise-ajánlat), mindegyiknél szakasz, forrás, következő lépés és határidő.</li>
+<li>A Claude visszaolvasta a táblát vagy a mentett CSV-t. Minden érintett <code>case_id</code> egyedi. A kiválasztott lead és a hozzá tartozó ajánlat egy sorban van. Ellenőrizd a szakaszt, a <code>partner_ref</code>-et, a teendőt, a határidőt és a felelőst. A <code>value_net</code> egyezik a dokumentált nettó összeggel, vagy üres, ha ilyen összeg nincs. A <code>currency</code> egyezik a dokumentált pénznemmel.</li>
 </ul>
 </div>
 <div class="cell cell--help">
@@ -143,13 +145,13 @@ Amikor szólok, hogy bemásoltam, olvasd vissza a táblát a Google Drive-ból, 
 <ul>
 <li><strong>Nincs bekötött levelező:</strong> másold be a próbalevelet, vagy a <a href="../scenarios/office-plants/outputs/mailbox-sample.md">mintapostafiók</a> beérkezett leveleit.</li>
 <li><strong>A Claude nem találja a táblát a Drive-ban:</strong> mentsd a táblát CSV-ként <code>Munka/05-Folyamat/crm.csv</code> néven, vagy maradj a saját Excel-fájlodnál a <code>Munka/05-Folyamat/</code> mappában; a visszaolvasás ekkor onnan történik.</li>
-<li><strong>Öt perc után sem megy:</strong> nézd meg a <a href="../scenarios/office-plants/outputs/crm.csv">kitöltött CRM-mintát</a>, és lépj a következő leckére.</li>
+<li><strong>Öt perc után sem megy:</strong> használd az aktív mintavállalkozás CRM-fájlját: <a href="../scenarios/office-plants/outputs/crm.csv">IrodaLiget</a>, <a href="../scenarios/business-photography/outputs/crm.csv">CégesKép</a>, <a href="../scenarios/website-maintenance/outputs/crm.csv">WebŐr</a>. Saját ügyről váltva a teljes mintaláncot vedd át.</li>
 </ul>
 </div>
 <div class="cell cell--output">
 <a id="05-pipeline-review.01-inbox-crm--handoff"></a>
 <h3 class="cell-title">Ezt viszed tovább</h3>
-<p>A kitöltött CRM-tábla a következő lecke kiindulópontja: abból választod ki az ügyfelet, akit végigviszel.</p>
+<p>A következő leckéhez keresd meg azt a CRM-sort, amelynek <code>case_id</code> értéke egyezik a 03-as modulban kiválasztott <code>lead_id</code>-val.</p>
 </div>
 <div class="cell cell--extra">
 <a id="05-pipeline-review.01-inbox-crm--extra"></a>
@@ -164,7 +166,7 @@ Amikor szólok, hogy bemásoltam, olvasd vissza a táblát a Google Drive-ból, 
 <div class="cell cell--goal">
 <a id="05-pipeline-review.02-one-customer--result"></a>
 <h3 class="cell-title">Ezt készíted el</h3>
-<p>Egy ügyfélesetet a Karmester vezetésével, a három kulcslépésen át: a lead a Sales Botban → az ajánlat az EstiWise-ban → a CRM-sor. Az eredmény a <code>pipeline-review.md</code>, lépésenként jelölve, mi működött élesben, mi sandboxban és mi mintából. A teljes lánc (tartalom, válasz, kísérőszöveg, Ellenőr) a „Ha maradt időd” része.</p>
+<p>Egy ügyfélesetet a Karmester vezetésével, a három kulcslépésen át: a lead a Sales Botban → az ajánlat az EstiWise-ban → a CRM-sor. Az eredmény a <code>pipeline-review.md</code>, lépésenként jelölve, mi működött élesben, mi sandboxban és mi mintából. A tartalom és a válasz külön vizsgálata, valamint a kísérőszöveg elkészítése és ellenőrzése választható. Az ügy azonosítóját a rövid úton is minden fájlban egyezteted.</p>
 </div>
 <div class="cell cell--input">
 <a id="05-pipeline-review.02-one-customer--needs"></a>
@@ -256,9 +258,9 @@ Amikor szólok, hogy bemásoltam, olvasd vissza a táblát a Google Drive-ból, 
 <a id="05-pipeline-review.02-one-customer--prompt"></a>
 <h3 class="cell-title">Ezt kérd Claude-tól</h3>
 <p class="copy-hint">Másolás: kattints a szövegbe, majd Ctrl+C (Macen Cmd+C). Telefonon tartsd rajta az ujjad, és válaszd a „Másolás” pontot.</p>
-<pre><code class="language-text">Karmester: vigyük végig egy ügyfél útját, rövid változatban. Az ügyfél: [lead_id vagy cégnév a CRM-ből].
-Lépések: a lead státusza a Sales Botban → az ajánlat és a szakasza az EstiWise-ban → a CRM-sor frissítése CSV-ben (én másolom be) → holnapi lépés.
-Csak a ténylegesen elérhető kapcsolatokat használd; ahol nincs, a projektben lévő fájlból dolgozz, és jelöld simulation-nek.
+<pre><code class="language-text">Karmester: vigyük végig egy ügyfél útját, rövid változatban. Csatoltam a CRM-et és a 03-as, 04-es blokk fájljait. Az ügyfél: [a customer-brief.md lead_id-ja]. Ez egyezzen a leads.csv kiválasztott sorának, az outreach.md, a customer-brief.md, a proposal.md és a handoff.md lead_id-jával, valamint a CRM case_id mezőjével. A proposal.md és handoff.md proposal_id-ja egyezzen a CRM partner_ref mezőjével. Hiánynál vagy eltérésnél kérd az összetartozó fájlokat vagy a teljes mintaláncot.
+Lépések: a lead státusza a Sales Botban → az ajánlat és a szakasza az EstiWise-ban → ugyanannak a CRM-sornak az egyeztetése és szükség szerinti frissítése (én írom be) → holnapi lépés.
+Használd az elérhető kapcsolatokat. A Sales Bot gyakorlóművelete és az EstiWise demófiókban végrehajtott, visszaolvasott művelet sandbox. Nevezd meg az evidence mezőben, mit olvastál vissza. Ha fájlból dolgozol, a mód simulation.
 Előbb a tervet mutasd kapukkal. Semmit ne küldj, ne indíts, ne fogadj el.
 A végén add meg a pipeline-review.md tartalmát a közös mezőkkel: case_id, results, execution_mode, evidence, gaps, next_step. A kihagyott lépések (tartalom, válasz, kísérőszöveg, Ellenőr) kerüljenek a gaps mezőbe.
 </code></pre>
@@ -267,8 +269,8 @@ A végén add meg a pipeline-review.md tartalmát a közös mezőkkel: case_id, 
 <a id="05-pipeline-review.02-one-customer--steps"></a>
 <h3 class="cell-title">Haladj végig ezeken</h3>
 <ol>
-<li><strong>0–2 perc:</strong> válaszd ki az ügyfelet a CRM-ből, futtasd a Karmester-promptot, hagyd jóvá a tervet.</li>
-<li><strong>2–8 perc:</strong> kövesd a lépéseket. A partnerrendszerből érkező adatot vesd össze azzal, amit délután láttál; a CRM-sort másold be.</li>
+<li><strong>0–2 perc:</strong> keresd meg a 03-as blokkban kiválasztott lead CRM-sorát, csatold a fájlokat, majd futtasd a Karmester-promptot és hagyd jóvá a tervet.</li>
+<li><strong>2–8 perc:</strong> kövesd a lépéseket. A partnerrendszerből érkező adatot vesd össze azzal, amit délután láttál; ha módosítás kell, ugyanazt a CRM-sort frissítsd és olvasd vissza.</li>
 <li><strong>8–12 perc:</strong> a <code>pipeline-review.md</code> a <code>Munka/05-Folyamat/</code> mappába kerül; ellenőrizd, hogy a CRM-sor szakasza és következő lépése egyezik vele.</li>
 </ol>
 </div>
@@ -276,7 +278,7 @@ A végén add meg a pipeline-review.md tartalmát a közös mezőkkel: case_id, 
 <a id="05-pipeline-review.02-one-customer--check"></a>
 <h3 class="cell-title">Ellenőrizd az eredményt</h3>
 <ul>
-<li>A <code>pipeline-review.md</code> mind a hat mezőt tartalmazza, és a <code>case_id</code> egyezik a CRM-sorral és a <code>lead_id</code>-vel.</li>
+<li>A <code>pipeline-review.md</code> mind a hat mezőt tartalmazza. A <code>case_id</code> egyezik a CRM-sor kulcsával és a teljes lánc <code>lead_id</code>-jával. Az <code>evidence</code> megnevezi az ügy fájljait és az ajánlatazonosítót.</li>
 <li>Minden lépésnél ott a végrehajtási mód; semmi nincs <code>live</code>-nak jelölve, ami mintából jött.</li>
 <li>A <code>gaps</code> mezőben szerepelnek a kihagyott lépések és a valódi hiányok.</li>
 <li>A <code>next_step</code> konkrét: teendő, felelős, időpont.</li>
@@ -288,7 +290,7 @@ A végén add meg a pipeline-review.md tartalmát a közös mezőkkel: case_id, 
 <h3 class="cell-title">Ha elakadtál</h3>
 <ul>
 <li><strong>A Sales Bot vagy az EstiWise nem válaszol:</strong> ne indítsd újra többször. Kérd: „Ezt a lépést a projektben lévő fájlból csináld, és jelöld simulation-nek.”</li>
-<li><strong>Nincs saját ügyféllánc a délutánból:</strong> vidd végig az IrodaLiget <code>office-plants-L01</code> leadjét a <a href="../scenarios/office-plants/README.md">mintafájlokból</a>.</li>
+<li><strong>Nincs saját ügyféllánc a délutánból:</strong> a legutóbbi <code>progress.json</code> <code>scenario_id</code> mezője alapján nyisd meg a <a href="#recovery">kiválasztott minta</a> <code>outputs/</code> mappáját. Ha már választottál mintát, de hiányzik az azonosító, rögzítsd a választott mappa nevét. Ha most választasz először, az ajánlott kezdőminta az IrodaLiget (<code>office-plants</code>). A minta <code>customer-brief.md</code> fájljában szereplő <code>lead_id</code> alapján vidd végig a kiválasztott ügyet. A leadlistát, a megkeresést, az ajánlatot, az átadást és az egyező CRM-sort ugyanebből a mappából vedd át. Jelöld a végrehajtást <code>simulation</code> módban.</li>
 </ul>
 </div>
 <div class="cell cell--output">
@@ -299,12 +301,12 @@ A végén add meg a pipeline-review.md tartalmát a közös mezőkkel: case_id, 
 <div class="cell cell--extra">
 <a id="05-pipeline-review.02-one-customer--extra"></a>
 <h3 class="cell-title">Ha maradt időd</h3>
-<p>Kérd a teljes láncot: „Karmester: most a kihagyott lépéseket is: milyen tartalmunkat láthatta, mit válaszolt, és írja meg az Író az ajánlat kísérőszövegét.” A kísérőszöveget nézesd át az Ellenőrrel új beszélgetésben.</p>
+<p>Kérd a teljes láncot: „Karmester: most a kihagyott lépéseket is: milyen tartalmunkat láthatta, mit válaszolt, és írja meg az Író az ajánlat kísérőszövegét.” A kísérőszöveget nézesd át az Ellenőrrel új beszélgetésben. Javítás után vidd vissza ugyanoda. Az <code>evidence</code> mezőbe az ehhez a leadhez, ajánlathoz és szövegváltozathoz tartozó ítélet kerüljön. Ha hiányzik, írd a <code>gaps</code> mezőbe.</p>
 <p><strong>A nap egy oldalon (vizuális áttekintés, 5 perc):</strong></p>
 <p class="copy-hint">Másolás: kattints a szövegbe, majd Ctrl+C (Macen Cmd+C). Telefonon tartsd rajta az ujjad, és válaszd a „Másolás” pontot.</p>
 <pre><code class="language-text">Karmester: készíts egyetlen önálló HTML-fájlt Munka/05-Folyamat/nap-attekintes.html néven a mai eredményeimből.
 Tartalom: 1) a Cég-DNS lényege (ICP, fő ajánlat, hang); 2) kampánynaptár: a Bufferben lévő mai posztjaim és a Sales Bot-kampány lépései naptárnézetben (a Buffer és a Sales Bot connectorból olvasd; ha nem érhető el, a Munka/02-Tartalom és 03-Leadek fájljaiból); 3) posztelőnézet a Munka/02-Tartalom mappa képeivel; 4) a végigvitt ügyfél útja lépésenként, végrehajtási móddal; 5) a CRM szakaszonkénti számai; 6) a holnapi három lépés.
-Szabályok: csak olvass; semmit ne küldj, ne ütemezz, ne módosíts a partnerrendszerekben. Ami nincs meg, „Nincs megadva”. Külső hivatkozás és szkript nélkül. A végén add meg az útvonalat.
+A partnerrendszerekből csak olvass. Ami nincs meg, „Nincs megadva”. Az összefoglaló külső hivatkozás és szkript nélkül készüljön. A végén add meg az útvonalat.
 </code></pre>
 <p>Nyisd meg a fájlt a böngészőben (dupla kattintás a <code>Munka/05-Folyamat/</code> mappában).</p>
 </div>
@@ -321,7 +323,7 @@ Szabályok: csak olvass; semmit ne küldj, ne ütemezz, ne módosíts a partnerr
 <div class="cell cell--input">
 <a id="05-pipeline-review.03-measure-launch--needs"></a>
 <h3 class="cell-title">Erre lesz szükséged</h3>
-<p>A <a href="../starter-kit/metrics-template.csv">mérési sablon</a>, a <a href="../starter-kit/weekly-review.md">heti átnézés leírása és promptja</a>, az <a href="../starter-kit/launch-plan.md">indulási terv sablon</a>, és az előző lecke <code>pipeline-review.md</code> fájlja.</p>
+<p>A <a href="../starter-kit/metrics-template.csv">mérési sablon</a>, a <a href="../starter-kit/weekly-review.md">heti átnézés leírása és promptja</a>, az <a href="../starter-kit/launch-plan.md">indulási terv sablon</a>, az előző lecke <code>pipeline-review.md</code> fájlja és a saját, ma mentett ellenőri rekordok, köztük az 01-es blokk <code>post-review.md</code> fájlja, ha elkészült.</p>
 <p>Minta: <a href="../scenarios/office-plants/outputs/launch-plan.md">IrodaLiget indulási terv</a>.</p>
 </div>
 <div class="cell cell--how">
@@ -377,7 +379,7 @@ Szabályok: csak olvass; semmit ne küldj, ne ütemezz, ne módosíts a partnerr
 <h3 class="cell-title">Ezt kérd Claude-tól</h3>
 <p class="copy-hint">Másolás: kattints a szövegbe, majd Ctrl+C (Macen Cmd+C). Telefonon tartsd rajta az ujjad, és válaszd a „Másolás” pontot.</p>
 <pre><code class="language-text">A pipeline-review.md gaps és next_step mezője alapján töltsd ki a launch-plan.md „Holnap” táblázatát: három konkrét lépés agenttel vagy eszközzel, időponttal és kész feltétellel. Legalább egy legyen holnap 10 óráig kész.
-Adj egy sort a Heti mérés laphoz CSV-ben (week, stage, metric_id, metric, value, unit, source, note): a mai ellenőrzött szövegek száma (M16), source: Ellenőri jelentések.
+Adj egy sort a Heti mérés laphoz CSV-ben (week, stage, metric_id, metric, value, unit, source, note): a mai ellenőrzött szövegek száma (M16). Csak az átadott saját ellenőri rekordokból számolj, amelyekben van szövegazonosító, vizsgált verzió és tényleges ítélet. Egy szöveget egy alkalommal számolj, akkor is, ha az Ellenőr több verziót látott. A source mezőbe írd a felhasznált fájlneveket. A mintaítélet nem saját mérési adat. Ha csak mintád van vagy hiányzik a bizonyíték, a value legyen üres, a note mezőben szerepeljen „csak minta” vagy „nem ellenőrzött”.
 </code></pre>
 </div>
 <div class="cell cell--steps">
@@ -385,7 +387,7 @@ Adj egy sort a Heti mérés laphoz CSV-ben (week, stage, metric_id, metric, valu
 <h3 class="cell-title">Haladj végig ezeken</h3>
 <ol>
 <li><strong>0–2 perc:</strong> a CRM-táblázatban új lap „Heti mérés” néven, és importáld a <code>metrics-template.csv</code> fájlt („Jelenlegi munkalap cseréje”).</li>
-<li><strong>2–7 perc:</strong> prompt; nézd át a három holnapi lépést, és javítsd, ami nem konkrét.</li>
+<li><strong>2–7 perc:</strong> csatold a folyamatpróbát és a mentett saját ellenőri rekordokat. Futtasd a promptot, majd nézd át a holnapi lépéseket és a mérési sor forrását.</li>
 <li><strong>7–9 perc:</strong> másold be a mérési sort a „Heti mérés” lapra; a <code>launch-plan.md</code> a <code>Munka/05-Folyamat/</code> mappába kerül.</li>
 <li><strong>9–10 perc:</strong> tedd a naptáradba a hétfői 30 perces heti átnézést.</li>
 </ol>
@@ -395,7 +397,7 @@ Adj egy sort a Heti mérés laphoz CSV-ben (week, stage, metric_id, metric, valu
 <h3 class="cell-title">Ellenőrizd az eredményt</h3>
 <ul>
 <li>A <code>launch-plan.md</code> „Holnap” táblázatában három konkrét lépés áll: agent vagy eszköz, időpont, kész feltétel.</li>
-<li>A „Heti mérés” lapon legalább egy valós mai sor van; az üres adat „Nincs megadva”, nem nulla.</li>
+<li>A „Heti mérés” lapon ott az M16-sor. A szám saját ellenőri rekordokból visszakövethető. Bizonyíték hiányában az érték üres, a megjegyzés megadja az okát.</li>
 <li>A naptáradban ott a hétfői heti átnézés.</li>
 <li>Meg tudod mondani, melyik számnál milyen változtatást csinálnál a DNS-ben vagy az ellenőrzőlistában.</li>
 </ul>
@@ -408,7 +410,7 @@ Adj egy sort a Heti mérés laphoz CSV-ben (week, stage, metric_id, metric, valu
 <div class="cell cell--output">
 <a id="05-pipeline-review.03-measure-launch--handoff"></a>
 <h3 class="cell-title">Ezt viszed tovább</h3>
-<p><strong>Mit viszel haza:</strong> egy Claude-projektet a saját Cég-DNS-eddel és hangprofiloddal; öt agentet (Karmester, Író, Ellenőr, Postás, CRM); a partnerrendszerek bekötését a saját fiókjaidban; egy CRM-táblát „Heti mérés” lappal; egy végigvitt ügyféleset leírását; és egy holnapi tervet heti rutinnal. A tananyag és a <a href="../assistant.md">tanulási kísérő</a> hazavihető: bármelyik blokk újraindítható a „Kezdjük az N. blokkot” mondattal.</p>
+<p><strong>Mit viszel haza:</strong> egy Claude-projektet a saját Cég-DNS-eddel és márkahangoddal; öt agentet (Karmester, Író, Ellenőr, Postás, CRM); a saját fiókodban ténylegesen beállított partnerkapcsolatokat; egy CRM-táblát „Heti mérés” lappal; egy végigvitt ügyféleset leírását; és egy holnapi tervet heti rutinnal. A tananyag és a <a href="../assistant.md">tanulási kísérő</a> hazavihető: bármelyik blokk újraindítható a „Kezdjük az N. blokkot” mondattal.</p>
 </div>
 <div class="cell cell--extra">
 <a id="05-pipeline-review.03-measure-launch--extra"></a>
@@ -426,14 +428,16 @@ Utána töltsd ki a launch-plan.md többi részét: heti rutin, ami még nem mű
 <h2>Segítség elakadáskor</h2>
 <ol>
 <li>A saját eddigi munkád maradjon a <code>Munka/</code> mappában, a CRM-tábla is.</li>
-<li>Az IrodaLiget mintából vedd át, ami hiányzik: <a href="../scenarios/office-plants/outputs/mailbox-sample.md">mintapostafiók</a>, <a href="../scenarios/office-plants/outputs/crm.csv">CRM-minta</a>, <a href="../scenarios/office-plants/outputs/pipeline-review.md">folyamatpróba</a>, <a href="../scenarios/office-plants/outputs/launch-plan.md">indulási terv</a>.</li>
+<li>Válaszd ki a teljes ügyhöz ugyanazt a mintát: <a href="../scenarios/office-plants/README.md">IrodaLiget</a>, <a href="../scenarios/business-photography/README.md">CégesKép</a> vagy <a href="../scenarios/website-maintenance/README.md">WebŐr</a>. A Postás külön gyakorlatához használhatod az IrodaLiget <a href="../scenarios/office-plants/outputs/mailbox-sample.md">mintapostafiókját</a>. A Postás levélügyét a CRM-ben is kezeld külön az ajánlatos ügytől.</li>
 <li>A haladási naplóban jelöld: <code>completed_with_example</code>, végrehajtás: <code>simulation</code>.</li>
 <li>A saját indulási tervedet akkor is töltsd ki: a holnapi első lépés lehet az, ami ma nem működött.</li>
 </ol>
 <p>Saját cégről mintára váltáskor ne keverd a minta árait a saját ajánlatoddal. A statikus csomag nem bizonyít működő partnerintegrációt.</p>
 <a id="examples"></a>
 <h2>Gyakorlópéldák</h2>
-<p>Az <a href="../scenarios/office-plants/README.md">IrodaLiget</a> teljes kitalált lánca: alaplap → DNS → lead → igény → ajánlat → átadás → CRM → folyamatpróba → indulási terv. A végrehajtási mód mindenhol <code>simulation</code>.</p>
+<p>A teljes kitalált lánc az <a href="../scenarios/office-plants/README.md">IrodaLiget</a> példáján.</p>
+<p>Cég-DNS és cégprofil → lead → igény → ajánlat → átadás → CRM → folyamatpróba → indulási terv.</p>
+<p>A végrehajtási mód mindenhol <code>simulation</code>.</p>
 <a id="outlook"></a>
 <h2>Kitekintés: demó</h2>
 <p>Nem része a 35 percnek, és nem kell hozzá semmit telepítened. Ha kíváncsi vagy, hogyan beszél egy magyar AI-telefonos asszisztens egy értékesítési forgatókönyv szerint, és hogyan javítható a forgatókönyv a rögzített beszélgetések elemzéséből, nézd meg a <a href="../demos/voice-lab/index.html">hangügynök-labort</a>. Otthon is kipróbálható, saját API-kulccsal vagy a szervezőtől kapott hozzáféréssel. Ugyanaz a hurok, mint a heti átnézésnél: beszélgetés → elemzés → javaslat → új verzió.</p>

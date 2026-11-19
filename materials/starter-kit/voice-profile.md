@@ -1,8 +1,8 @@
-# Hangprofil – [cégnév]
+# Márkahang – [cégnév]
 
-A hangprofil azt írja le, hogyan írsz te (vagy a céged) az ügyfeleknek. A saját küldött leveleidből készül, a [hangkinyerési ellenőrzőlista](voice-checklist.md) alapján. Ügyfélnevet, e-mail-címet, telefonszámot, árat és egyedi ügyféladatot nem tartalmaz.
+A márkahang a céged stílusa és szóhasználata. A saját küldött leveleidből állítod össze a [hangkinyerési ellenőrzőlista](voice-checklist.md) segítségével. Ügyfélnevet, e-mail-címet, telefonszámot, árat és egyedi ügyféladatot nem tartalmaz.
 
-Kitöltött, kitalált minta: [IrodaLiget hangprofil](../scenarios/office-plants/outputs/voice-profile.md).
+Kitöltött, kitalált minta: [IrodaLiget márkahang](../scenarios/office-plants/outputs/voice-profile.md).
 
 ## Metaadat
 
@@ -44,4 +44,4 @@ Kitöltött, kitalált minta: [IrodaLiget hangprofil](../scenarios/office-plants
 
 ## Próba
 
-A hangprofil akkor jó, ha egy kitalált levélre írt válaszról azt mondod: „ezt én is így írtam volna”. Értékelés (1–5): Nincs megadva.
+A márkahang akkor jó, ha egy kitalált levélre írt válaszról azt mondod: „ezt én is így írtam volna”. Értékelés (1–5): Nincs megadva.
