@@ -54,7 +54,7 @@ Frissített CRM-tábla; egy válaszpiszkozat; `pipeline-review.md`; `launch-plan
 
 ### Folytatás elakadás esetén
 
-Használd a [mentőútvonalat](#recovery): az IrodaLiget teljes láncát, a mintapostafiókot és a CRM-mintát.
+Használd a [mentőútvonalat](#recovery), és az aktív mintavállalkozás teljes láncával és a hozzá tartozó CRM-sorral dolgozz. A Postás külön gyakorlatához használd a mintapostafiókot.
 
 <a name="overview-4"></a>
 
@@ -247,7 +247,7 @@ A végén add meg a pipeline-review.md tartalmát a közös mezőkkel: case_id, 
 ### Ha elakadtál
 
 - **A Sales Bot vagy az EstiWise nem válaszol:** ne indítsd újra többször. Kérd: „Ezt a lépést a projektben lévő fájlból csináld, és jelöld simulation-nek.”
-- **Nincs saját ügyféllánc a délutánból:** vidd végig az IrodaLiget `office-plants-L01` leadjét a [mintafájlokból](../scenarios/office-plants/README.md).
+- **Nincs saját ügyféllánc a délutánból:** a legutóbbi `progress.json` `scenario_id` mezője alapján nyisd meg a [kiválasztott minta](#recovery) `outputs/` mappáját. Ha már választottál mintát, de hiányzik az azonosító, rögzítsd a választott mappa nevét. Ha most választasz először, az ajánlott kezdőminta az IrodaLiget (`office-plants`). A minta `customer-brief.md` fájljában szereplő `lead_id` alapján vidd végig a kiválasztott ügyet. A leadlistát, a megkeresést, az ajánlatot, az átadást és az egyező CRM-sort ugyanebből a mappából vedd át. Jelöld a végrehajtást `simulation` módban.
 
 <a name="05-pipeline-review.02-one-customer--handoff"></a>
 

@@ -59,7 +59,7 @@
 <li>A workshop-fiókod a Sales Botban. A hozzáférést a 03-as blokk elején, a helyszínen kapod meg.</li>
 <li>Claude, amelyben be van kapcsolva a Sales Bot connector (MCP): <strong>Beállítások → Connectors → „Add custom connector”</strong>, név például <code>Sales-Bot.io</code>, URL: <code>https://app.sales-bot.io/api/mcp</code>, majd <strong>Connect</strong>, belépés a Sales Bot-fiókkal és engedélyezés. Ha elakadsz, a mentorok segítenek.</li>
 </ul>
-<p>Saját fiók nélkül: <a href="../scenarios/office-plants/outputs/business-profile.md">IrodaLiget mintaalaplap</a> · <a href="../scenarios/office-plants/outputs/leads.csv">Minta leadlista</a></p>
+<p>Saját fiók nélkül a kiválasztott mintavállalkozás alaplapjával és a hozzá tartozó leadlistával dolgozz. A fájlokat a <a href="#03-lead-generation.01-qualify-leads--help">mentőút</a> alapján válaszd ki.</p>
 </div>
 <div class="cell cell--how">
 <a id="03-lead-generation.01-qualify-leads--explanation"></a>
@@ -112,7 +112,7 @@
 <div class="cell cell--help">
 <a id="03-lead-generation.01-qualify-leads--help"></a>
 <h3 class="cell-title">Ha elakadtál</h3>
-<p>Ha öt perc után sem éri el a Claude a Sales Botot, jelezd egy mentornak. Ha a belépés vagy a connector ma nem működik, használd az IrodaLiget <a href="../scenarios/office-plants/outputs/leads.csv">minta leadlistáját</a>: minősítsd újra az öt leadet a saját szavaiddal, és a haladási naplóban jelöld <code>completed_with_example</code>, végrehajtás <code>simulation</code>.</p>
+<p>Ha öt perc után sem éri el a Claude a Sales Botot, jelezd egy mentornak. Ha a belépés vagy a connector ma nem működik, a legutóbbi <code>progress.json</code> <code>scenario_id</code> mezője alapján válaszd ki a mintád <code>outputs/leads.csv</code> fájlját: <a href="../scenarios/office-plants/outputs/leads.csv">IrodaLiget</a>, <a href="../scenarios/business-photography/outputs/leads.csv">CégesKép</a> vagy <a href="../scenarios/website-maintenance/outputs/leads.csv">WebŐr</a>. Ha már választottál mintát, de hiányzik az azonosító, rögzítsd a választott mappa nevét. Ha most választasz először, az ajánlott kezdőminta az IrodaLiget (<code>office-plants</code>). Ugyanennek a mintának az alaplapjával minősítsd újra az öt leadet, és mentsd a <code>leads.csv</code> fájlt. A haladási naplóban jelöld <code>completed_with_example</code>, végrehajtás <code>simulation</code>.</p>
 </div>
 <div class="cell cell--output">
 <a id="03-lead-generation.01-qualify-leads--handoff"></a>

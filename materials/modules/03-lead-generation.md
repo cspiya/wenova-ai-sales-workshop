@@ -82,7 +82,7 @@ A Sales Bot **AI brainjét** kitöltöd a saját vagy a mintavállalkozásod ada
 - A workshop-fiókod a Sales Botban. A hozzáférést a 03-as blokk elején, a helyszínen kapod meg.
 - Claude, amelyben be van kapcsolva a Sales Bot connector (MCP): **Beállítások → Connectors → „Add custom connector”**, név például `Sales-Bot.io`, URL: `https://app.sales-bot.io/api/mcp`, majd **Connect**, belépés a Sales Bot-fiókkal és engedélyezés. Ha elakadsz, a mentorok segítenek.
 
-Saját fiók nélkül: [IrodaLiget mintaalaplap](../scenarios/office-plants/outputs/business-profile.md) · [Minta leadlista](../scenarios/office-plants/outputs/leads.csv)
+Saját fiók nélkül a kiválasztott mintavállalkozás alaplapjával és a hozzá tartozó leadlistával dolgozz. A fájlokat a [mentőút](#03-lead-generation.01-qualify-leads--help) alapján válaszd ki.
 
 <a name="03-lead-generation.01-qualify-leads--explanation"></a>
 
@@ -143,7 +143,7 @@ Ha a cég-DNS-ből dolgozol, csatold a `business-profile.md` fájlodat.
 
 ### Ha elakadtál
 
-Ha öt perc után sem éri el a Claude a Sales Botot, jelezd egy mentornak. Ha a belépés vagy a connector ma nem működik, használd az IrodaLiget [minta leadlistáját](../scenarios/office-plants/outputs/leads.csv): minősítsd újra az öt leadet a saját szavaiddal, és a haladási naplóban jelöld `completed_with_example`, végrehajtás `simulation`.
+Ha öt perc után sem éri el a Claude a Sales Botot, jelezd egy mentornak. Ha a belépés vagy a connector ma nem működik, a legutóbbi `progress.json` `scenario_id` mezője alapján válaszd ki a mintád `outputs/leads.csv` fájlját: [IrodaLiget](../scenarios/office-plants/outputs/leads.csv), [CégesKép](../scenarios/business-photography/outputs/leads.csv) vagy [WebŐr](../scenarios/website-maintenance/outputs/leads.csv). Ha már választottál mintát, de hiányzik az azonosító, rögzítsd a választott mappa nevét. Ha most választasz először, az ajánlott kezdőminta az IrodaLiget (`office-plants`). Ugyanennek a mintának az alaplapjával minősítsd újra az öt leadet, és mentsd a `leads.csv` fájlt. A haladási naplóban jelöld `completed_with_example`, végrehajtás `simulation`.
 
 <a name="03-lead-generation.01-qualify-leads--handoff"></a>
 
