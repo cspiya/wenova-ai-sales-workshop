@@ -1,6 +1,6 @@
 # Wenova AI Sales Workshop
 
-[HTML-változat](index.html)
+[HTML-változat](https://cspiya.github.io/wenova-ai-sales-workshop/index.html)
 
 ## Tartalom
 

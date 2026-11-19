@@ -1,6 +1,6 @@
 # 00-prework
 
-[HTML-változat](00-prework.html)
+[HTML-változat](https://cspiya.github.io/wenova-ai-sales-workshop/operations/instructor-notes/00-prework.html)
 
 [Kapcsolódó tananyag](../../materials/modules/00-prework.md)
 

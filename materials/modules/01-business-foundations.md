@@ -2,7 +2,7 @@
 
 **Állapot: review.**
 
-[HTML-változat](01-business-foundations.html)
+[HTML-változat](https://cspiya.github.io/wenova-ai-sales-workshop/materials/modules/01-business-foundations.html)
 
 ## Tartalom
 

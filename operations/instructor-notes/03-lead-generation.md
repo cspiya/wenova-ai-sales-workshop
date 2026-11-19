@@ -1,6 +1,6 @@
 # 03-lead-generation
 
-[HTML-változat](03-lead-generation.html)
+[HTML-változat](https://cspiya.github.io/wenova-ai-sales-workshop/operations/instructor-notes/03-lead-generation.html)
 
 [Kapcsolódó tananyag](../../materials/modules/03-lead-generation.md)
 

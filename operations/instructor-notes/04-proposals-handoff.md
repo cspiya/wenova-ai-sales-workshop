@@ -1,6 +1,6 @@
 # 04-proposals-handoff
 
-[HTML-változat](04-proposals-handoff.html)
+[HTML-változat](https://cspiya.github.io/wenova-ai-sales-workshop/operations/instructor-notes/04-proposals-handoff.html)
 
 [Kapcsolódó tananyag](../../materials/modules/04-proposals-handoff.md)
 
