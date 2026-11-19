@@ -217,6 +217,7 @@ ol.flow > li:not(:last-child)::after { content:"→" / ""; position:absolute; ri
 .slot--module .slot__title { font-size:1.2rem; letter-spacing:-.015em; }
 .slot__body .slot__who { display:flex; flex-wrap:wrap; align-items:center; gap:.5rem .8rem; margin-top:.6rem; font-size:.9rem; line-height:1.4; }
 .slot__body .slot__builds { margin-top:.6rem; padding-top:.6rem; border-top:1px dashed var(--line); font-size:.92rem; color:var(--ink-2); }
+.slot__body .slot__links { margin-top:.6rem; font-size:.92rem; color:var(--ink-2); }
 .slot--pause .slot__body { background:transparent; border-style:dashed; padding:.4rem 1.1rem; color:var(--muted); }
 .slot--pause .slot__title { font-weight:500; font-size:.95rem; }
 .slot--pause .slot__time { margin-top:.45rem; color:var(--muted); }

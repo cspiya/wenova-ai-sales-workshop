@@ -40,6 +40,35 @@ test('instructor lesson pane src has no fragment, so opening a note does not scr
  run({root});
  assert.match(fs.readFileSync(path.join(root,'operations/instructor-notes/01-demo.html'),'utf8'),/<iframe name="lesson" src="\.\.\/\.\.\/materials\/modules\/01-demo\.html"/);
 }));
+test('internal links stay on published pages, working files stay direct and prompt text is untouched',()=>fixture((root,put)=>{
+ put('materials/README.md','# Kezdőlap\n\n[Modul](modules/01-demo.md#01-demo.01-start) · [Repo](https://github.com/cspiya/wenova-ai-sales-workshop/tree/main/materials) · [Oldal](https://github.com/cspiya/wenova-ai-sales-workshop/blob/main/materials/modules/01-demo.md) · [Labor](https://cspiya.github.io/wenova-ai-sales-workshop/materials/demos/app.htm) · [Lista](starter/leads.csv) · [Sablon](starter/plan.md) · [ZIP](https://github.com/cspiya/wenova-ai-sales-workshop/archive/refs/heads/main.zip)\n\n```text\nhttps://github.com/cspiya/wenova-ai-sales-workshop/blob/main/materials/modules/01-demo.md\n```\n');
+ put('materials/modules/01-demo.md','# Modul\n\n<a name="01-demo.01-start"></a>\n\n## Lecke\n\nMásold a lenti promptot.\n\n<a name="01-demo.01-start--prompt"></a>\n\n### Ezt kérd Claude-tól\n\n```text\negy\n```\n');
+ run({root});
+ const html=fs.readFileSync(path.join(root,'materials/index.html'),'utf8'),links=[...html.matchAll(/<a href="([^"]+)"[^>]*>([^<]*)<\/a>/g)].map(m=>m[1]);
+ for(const href of ['modules/01-demo.html#01-demo.01-start','index.html','modules/01-demo.html','demos/app.htm','starter/leads.csv','starter/plan.md'])assert.ok(links.includes(href),href);
+ assert.doesNotMatch(html,/<a href="[^"]*(?:modules\/01-demo\.md|\/blob\/main|\/tree\/main)/);
+ assert.match(html,/<code class="language-text">https:\/\/github\.com\/cspiya\/wenova-ai-sales-workshop\/blob\/main\/materials\/modules\/01-demo\.md/);
+ assert.match(fs.readFileSync(path.join(root,'materials/modules/01-demo.html'),'utf8'),/<a href="#01-demo\.01-start--prompt">lenti promptot<\/a>/);
+}));
+test('external links open in a new window, internal links stay in the same one',()=>fixture((root,put)=>{
+ put('materials/README.md','# Kezdőlap\n\n[Külső](https://example.com/a) · [Belső](modules/01-demo.md) · [Levél](mailto:info@example.com)\n');
+ put('materials/modules/01-demo.md','# Modul\n');
+ put('operations/README.md','# Szervezés\n\n[Külső](https://example.com/b)\n');
+ run({root});
+ assert.match(fs.readFileSync(path.join(root,'materials/index.html'),'utf8'),/<a href="https:\/\/example\.com\/a" target="_blank" rel="noopener noreferrer">/);
+ assert.match(fs.readFileSync(path.join(root,'materials/index.html'),'utf8'),/<a href="modules\/01-demo\.html">Belső/);
+ assert.match(fs.readFileSync(path.join(root,'materials/index.html'),'utf8'),/<a href="mailto:info@example\.com">/);
+ assert.match(fs.readFileSync(path.join(root,'operations/index.html'),'utf8'),/<a href="https:\/\/example\.com\/b" target="_blank" rel="noopener noreferrer">/);
+}));
+test('Markdown source is only an invisible alternate link and instructor pages are marked',()=>fixture((root,put)=>{
+ put('materials/modules/01-demo.md','# Modul\n\n[HTML-változat](01-demo.html)\n');
+ put('operations/README.md','# Szervezés\n');put('operations/instructor-notes/01-demo.md','# Oktató\n');
+ run({root});
+ const html=fs.readFileSync(path.join(root,'materials/modules/01-demo.html'),'utf8');
+ assert.match(html,/<head>.*<link rel="alternate" type="text\/markdown" href="01-demo\.md">.*<\/head>/s);
+ assert.doesNotMatch(html,/Markdown-forrás|HTML-változat|<a [^>]*href="01-demo\.md"|<script|instructor-flag|page--instructor/);
+ for(const page of ['operations/index.html','operations/instructor-notes/01-demo.html']){const notes=fs.readFileSync(path.join(root,page),'utf8');assert.match(notes,/page--instructor/);assert.match(notes,/<div class="instructor-flag" role="note">OKTATÓI OLDAL<\/div>/);assert.match(notes,/instructor-notes\/notes\.css|href="notes\.css"/);}
+}));
 test('stale output and changed Markdown fail check without repairing files',()=>fixture((root,put)=>{
  put('README.md','# Cím\n');run({root});put('index.html','manual change');
  assert.throws(()=>run({root,check:true}),/stale HTML/);assert.equal(fs.readFileSync(path.join(root,'index.html'),'utf8'),'manual change');
