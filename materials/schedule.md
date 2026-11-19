@@ -25,7 +25,7 @@ Az 1. blokkban elkészíted a **Cég-DNS-t**, a céged teljes leírását. A ké
 | --- | --- | --- | --- | --- | --- |
 | Előtte | [Felkészülés](modules/00-prework.md) | Wenova | Wenova csapat | Claude-projekt a sablonokkal, levelező- és Google-kapcsolat, CRM-tábla, EstiWise-fiók (a workshopon a saját laptopodon is létrehozhatod), saját források |  |
 | 08:30–09:00 | Érkezés, technikai ellenőrzés | Wenova | Wenova csapat | Működő gép, Claude-fiók és megnyitott munkacsomag. [Hibaelhárítás](hibaelharitas.md) | [Munkafüzet](modules/00-prework.md) |
-| 09:00–09:20 | Nyitás | Wenova | Piya Csaba | A nap célja és fonala: a Cég-DNS-től a kampány méréséig | Az előadó vetíti |
+| 09:00–09:20 | Nyitás | Wenova | Piya Csaba | A nap célja és fonala: a Cég-DNS-től a kampány méréséig | [Előadás](presentations/00-nyito-eloadas.html) |
 | 09:20–10:30 | [1. Cég-DNS és saját AI-csapat](modules/01-business-foundations.md) | Wenova | Piya Csaba, Kemény Krisztián | Cég-DNS forrásokkal, márkahang a küldött leveleidből, saját AI-csapat (Karmester, Író, Ellenőr) első próbafutással | Az előadó vetíti |
 | 10:30–10:45 | Szünet |  |  |  |  |
 | 10:45–12:15 | [2. Tartalom a céged hangján](modules/02-content-marketing.md) | Brandiseer | Sorok Dániel | Egy hétre való márkahű posztkép szöveggel, kampányterv | Az előadó vetíti |

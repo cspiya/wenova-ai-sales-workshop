@@ -1,0 +1,324 @@
+<!doctype html>
+<!-- Generated from materials/presentations/00-nyito-eloadas-jegyzet.md; edit Markdown and run npm run render. -->
+<html lang="hu"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Nyitó előadás: előadói jegyzet · AI Sales &amp; Marketing Workshop</title><link rel="alternate" type="text/markdown" href="00-nyito-eloadas-jegyzet.md"><link rel="stylesheet" href="../assets/notebook.css"></head><body class="page page--doc area--participant">
+<a class="skip" href="#main">Ugrás a tartalomhoz</a><div class="area-band" role="note">HALLGATÓI ANYAG</div><header class="site-head"><div class="site-head__bar"><a class="site-head__brand" href="../index.html"><img src="../assets/logos/wenova-wordmark.png" alt="Wenova" width="154" height="18"><span>AI Sales &amp; Marketing Workshop</span></a><nav class="site-head__nav" aria-label="Fő navigáció"><a href="../index.html">Kezdőlap</a><a href="../schedule.html" class="is-cta">A nap menete</a></nav></div><div class="partner-band partner-band--head"><p class="partner-band__label">Négy hazai csapat, egy közös értékesítési folyamat</p><ul class="partner-band__list" aria-label="Partnerek"><li class="partner partner--wenova"><span class="partner__logo"><img class="logo logo--wenova" src="../assets/logos/wenova-wordmark.png" alt="Wenova" width="239" height="28"></span><span class="partner__role">Szervező · AI-működés</span></li><li class="partner partner--brandiseer"><span class="partner__logo"><img class="logo logo--brandiseer" src="../assets/logos/brandiseer-icon.png" alt="" width="24" height="28"><span class="logo-word">Brandiseer</span></span><span class="partner__role">Márkaazonos tartalom</span></li><li class="partner partner--blackhole"><span class="partner__logo"><img class="logo logo--blackhole" src="../assets/logos/black-hole-media-logo.png" alt="Blackhole Media" width="299" height="28"></span><span class="partner__role">Ügyfélszerzés · Sales Bot</span></li><li class="partner partner--estiwise"><span class="partner__logo"><img class="logo logo--estiwise" src="../assets/logos/estiwise-logo-feher.svg" alt="EstiWise" width="99" height="28"></span><span class="partner__role">Ajánlatadás 0–24</span></li></ul></div></header>
+<div class="layout"><nav class="toc" aria-label="Tartalom"><p>Tartalom</p><ol><li><a href="#a-teljes-előadás-egy-oldalon">A teljes előadás egy oldalon</a></li><li><a href="#dia-1-ai-dióhéjban">Dia 1: AI dióhéjban</a></li><li><a href="#dia-2-melyik-ai-val-dolgozunk-ma">Dia 2: Melyik AI-val dolgozunk ma?</a></li><li><a href="#dia-3-számítási-kapacitás-az-1950-es-évektől-máig">Dia 3: Számítási kapacitás: az 1950-es évektől máig</a></li><li><a href="#dia-4-a-digitalizált-adat-három-külön-mennyiség">Dia 4: A digitalizált adat: három külön mennyiség</a></li><li><a href="#dia-5-a-modellek-mérete-60-ezertől-28-billióig">Dia 5: A modellek mérete: 60 ezertől 2,8 billióig</a></li><li><a href="#dia-6-mitől-javult-a-teljesítmény">Dia 6: Mitől javult a teljesítmény?</a></li><li><a href="#dia-7-machine-learning--minták-a-példákból">Dia 7: Machine learning | Minták a példákból</a></li><li><a href="#dia-8-deep-learning--mit-csinálnak-a-rétegek">Dia 8: Deep learning | Mit csinálnak a rétegek?</a></li><li><a href="#dia-9-backpropagation--így-tanul-a-hibából">Dia 9: Backpropagation | Így tanul a hibából</a></li><li><a href="#dia-10-a-szövegből-tokenek-lesznek">Dia 10: A szövegből tokenek lesznek</a></li><li><a href="#dia-11-attention--a-környezet-adja-a-jelentést">Dia 11: Attention | A környezet adja a jelentést</a></li><li><a href="#dia-12-transformer--figyelem-rétegről-rétegre">Dia 12: Transformer | Figyelem, rétegről rétegre</a></li><li><a href="#dia-13-a-kimenet-lépésenként-készül">Dia 13: A kimenet lépésenként készül</a></li><li><a href="#dia-14-mit-kap-meg-a-modell-minden-körben">Dia 14: Mit kap meg a modell minden körben?</a></li><li><a href="#dia-15-hallucináció-drift-felejtés">Dia 15: Hallucináció, drift, felejtés</a></li><li><a href="#dia-16-adj-elég-hátteret-és-hagyj-helyet-a-válasznak">Dia 16: Adj elég hátteret, és hagyj helyet a válasznak</a></li><li><a href="#dia-17-a-jó-prompt-megadja-a-feladatot">Dia 17: A jó prompt megadja a feladatot</a></li><li><a href="#dia-18-a-jó-prompt-megmondja-mikor-kész">Dia 18: A jó prompt megmondja, mikor kész</a></li><li><a href="#dia-19-két-mondat-amivel-elindulsz">Dia 19: Két mondat, amivel elindulsz</a></li><li><a href="#dia-20-egy-kérés-három-ai-szerep">Dia 20: Egy kérés, három AI-szerep</a></li><li><a href="#dia-21-egy-levél-útja-az-emberi-döntésig">Dia 21: Egy levél útja az emberi döntésig</a></li><li><a href="#dia-22-0920--kezdjük-a-cég-dns-sel">Dia 22: 09:20 | Kezdjük a Cég-DNS-sel</a></li><li><a href="#dia-23-tartalék-dia--ugyanannyi-számítás-több-szöveg">Dia 23: Tartalék dia | Ugyanannyi számítás, több szöveg</a></li><li><a href="#dia-24-tartalék-dia--egyben-a-kipróbálható-prompt">Dia 24: Tartalék dia | Egyben a kipróbálható prompt</a></li><li><a href="#ha-rákérdeznek-a-forrásokra">Ha rákérdeznek a forrásokra</a></li></ol></nav><main id="main">
+<!-- presentation -->
+<header class="page-hero">
+<h1>Nyitó előadás: előadói jegyzet</h1>
+<p class="hero-links"><a href="00-nyito-eloadas.html">A diák megnyitása</a></p>
+<p class="lead">Ezt a jegyzetet egyedül is végig tudod olvasni felkészüléskor, és vetítés közben is használhatod. Minden diánál megtalálod, mi látszik, mi a lényeg, mit mondj el szó szerint, és mit kérdezhetnek.</p>
+</header>
+<details class="toc-mobile"><summary>Tartalom</summary><nav aria-label="Tartalom"><ol><li><a href="#a-teljes-előadás-egy-oldalon">A teljes előadás egy oldalon</a></li><li><a href="#dia-1-ai-dióhéjban">Dia 1: AI dióhéjban</a></li><li><a href="#dia-2-melyik-ai-val-dolgozunk-ma">Dia 2: Melyik AI-val dolgozunk ma?</a></li><li><a href="#dia-3-számítási-kapacitás-az-1950-es-évektől-máig">Dia 3: Számítási kapacitás: az 1950-es évektől máig</a></li><li><a href="#dia-4-a-digitalizált-adat-három-külön-mennyiség">Dia 4: A digitalizált adat: három külön mennyiség</a></li><li><a href="#dia-5-a-modellek-mérete-60-ezertől-28-billióig">Dia 5: A modellek mérete: 60 ezertől 2,8 billióig</a></li><li><a href="#dia-6-mitől-javult-a-teljesítmény">Dia 6: Mitől javult a teljesítmény?</a></li><li><a href="#dia-7-machine-learning--minták-a-példákból">Dia 7: Machine learning | Minták a példákból</a></li><li><a href="#dia-8-deep-learning--mit-csinálnak-a-rétegek">Dia 8: Deep learning | Mit csinálnak a rétegek?</a></li><li><a href="#dia-9-backpropagation--így-tanul-a-hibából">Dia 9: Backpropagation | Így tanul a hibából</a></li><li><a href="#dia-10-a-szövegből-tokenek-lesznek">Dia 10: A szövegből tokenek lesznek</a></li><li><a href="#dia-11-attention--a-környezet-adja-a-jelentést">Dia 11: Attention | A környezet adja a jelentést</a></li><li><a href="#dia-12-transformer--figyelem-rétegről-rétegre">Dia 12: Transformer | Figyelem, rétegről rétegre</a></li><li><a href="#dia-13-a-kimenet-lépésenként-készül">Dia 13: A kimenet lépésenként készül</a></li><li><a href="#dia-14-mit-kap-meg-a-modell-minden-körben">Dia 14: Mit kap meg a modell minden körben?</a></li><li><a href="#dia-15-hallucináció-drift-felejtés">Dia 15: Hallucináció, drift, felejtés</a></li><li><a href="#dia-16-adj-elég-hátteret-és-hagyj-helyet-a-válasznak">Dia 16: Adj elég hátteret, és hagyj helyet a válasznak</a></li><li><a href="#dia-17-a-jó-prompt-megadja-a-feladatot">Dia 17: A jó prompt megadja a feladatot</a></li><li><a href="#dia-18-a-jó-prompt-megmondja-mikor-kész">Dia 18: A jó prompt megmondja, mikor kész</a></li><li><a href="#dia-19-két-mondat-amivel-elindulsz">Dia 19: Két mondat, amivel elindulsz</a></li><li><a href="#dia-20-egy-kérés-három-ai-szerep">Dia 20: Egy kérés, három AI-szerep</a></li><li><a href="#dia-21-egy-levél-útja-az-emberi-döntésig">Dia 21: Egy levél útja az emberi döntésig</a></li><li><a href="#dia-22-0920--kezdjük-a-cég-dns-sel">Dia 22: 09:20 | Kezdjük a Cég-DNS-sel</a></li><li><a href="#dia-23-tartalék-dia--ugyanannyi-számítás-több-szöveg">Dia 23: Tartalék dia | Ugyanannyi számítás, több szöveg</a></li><li><a href="#dia-24-tartalék-dia--egyben-a-kipróbálható-prompt">Dia 24: Tartalék dia | Egyben a kipróbálható prompt</a></li><li><a href="#ha-rákérdeznek-a-forrásokra">Ha rákérdeznek a forrásokra</a></li></ol></nav></details>
+<h2 id="a-teljes-előadás-egy-oldalon">A teljes előadás egy oldalon</h2>
+<p><strong>A szál.</strong> Egy ügyfél ajánlatot kér, és az AI megírhatja a válasz első változatát. Húsz perc alatt megmutatjuk, mi történik közben a gépben, miért hibázik, és hogyan lesz a kérésből ellenőrzött piszkozat, amelyről te döntesz.</p>
+<p><strong>Az öt lépés, amit a közönségnek vinnie kell:</strong></p>
+<ol>
+<li><strong>Honnan jön az AI?</strong> Régi kutatási terület, a mai ugrást a nagyságrendekkel nagyobb számítási kapacitás, a digitalizált adat és a jobb felépítés hozta.</li>
+<li><strong>Hogyan tanul?</strong> Példákból, rétegekben, és a hibájából. Ez a backpropagation.</li>
+<li><strong>Hogyan dolgozik a szöveggel?</strong> Tokenekre vág, vektorokkal számol, a szavakat egymás fényében értelmezi (attention), mindezt egymásra rakott rétegekben (Transformer), végül tokenenként ír.</li>
+<li><strong>Miért hibázik?</strong> Csak azt látja, amit az adott körben megkap, és a valószínű folytatást számolja, nem a tényeket ellenőrzi.</li>
+<li><strong>Mit csinálj másképp?</strong> Adj célt, forrást és kész feltételt, oszd szét a munkát szerepekre, a döntés pedig maradjon nálad.</li>
+</ol>
+<p><strong>A három fogalom, amit nem szabad összekeverni:</strong></p>
+<div class="table-wrap" role="region" aria-label="Táblázat" tabindex="0"><table>
+<thead>
+<tr>
+<th>Fogalom</th>
+<th>Mire való?</th>
+<th>Mikor működik?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Backpropagation</td>
+<td>Kiszámolja, merre változzanak a súlyok. Az átállítás a következő tanítási lépés</td>
+<td>Csak tanítás közben</td>
+</tr>
+<tr>
+<td>Attention</td>
+<td>Súlyozza, mit vegyen át a szöveg többi részéből</td>
+<td>Tanításkor és használatkor is</td>
+</tr>
+<tr>
+<td>Transformer</td>
+<td>A rétegek felépítése: minden rétegben figyelem és átalakítás</td>
+<td>Ez maga a háló</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Időterv.</strong> A fő rész 22 dia, pontosan 20 perc. A 23. és a 24. dia tartalék, csak kérdésre vedd elő.</p>
+<div class="table-wrap" role="region" aria-label="Táblázat" tabindex="0"><table>
+<thead>
+<tr>
+<th>Blokk</th>
+<th>Dia</th>
+<th>Óraidő</th>
+<th>Hossz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Honnan jön az AI, miért most</td>
+<td>1–6</td>
+<td>09:00:00–09:04:25</td>
+<td>4:25</td>
+</tr>
+<tr>
+<td>Hogyan tanul a gép</td>
+<td>7–9</td>
+<td>09:04:25–09:07:00</td>
+<td>2:35</td>
+</tr>
+<tr>
+<td>Hogyan dolgozik a szöveggel</td>
+<td>10–13</td>
+<td>09:07:00–09:11:15</td>
+<td>4:15</td>
+</tr>
+<tr>
+<td>Mit lát a modell, és hol hibázik</td>
+<td>14–16</td>
+<td>09:11:15–09:13:50</td>
+<td>2:35</td>
+</tr>
+<tr>
+<td>Jó utasítás az AI-nak</td>
+<td>17–19</td>
+<td>09:13:50–09:16:25</td>
+<td>2:35</td>
+</tr>
+<tr>
+<td>Szerepek és ellenőrzés</td>
+<td>20–21</td>
+<td>09:16:25–09:19:25</td>
+<td>3:00</td>
+</tr>
+<tr>
+<td>Átkötés a Cég-DNS-re</td>
+<td>22</td>
+<td>09:19:25–09:20:00</td>
+<td>0:35</td>
+</tr>
+<tr>
+<td><strong>Fő rész</strong></td>
+<td><strong>1–22</strong></td>
+<td><strong>09:00–09:20</strong></td>
+<td><strong>20:00</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Vetítés.</strong> Lapozás: PageDown, szóköz vagy nyílbillentyű. Teljes képernyő: F11. Vetítéshez használj Chrome 133-at vagy újabb Chrome-ot. A mozgó ábrák a diára érkezéskor elindulnak, egyszer lefutnak, és a záróképen megállnak. Ha csúszol, a 15. és a 18. diánál rövidíthetsz a legkönnyebben. A hosszabb kérdéseket vidd a nyitás utánra.</p>
+<h2 id="dia-1-ai-dióhéjban">Dia 1: AI dióhéjban</h2>
+<p><strong>Idő:</strong> 09:00:00–09:00:35 (0:35)</p>
+<p><strong>Mi látszik a dián:</strong> A cím és négy évszám: 1955 Dartmouth-javaslat, 2012 képfelismerés, 2017 Transformer, 2022 ChatGPT.</p>
+<p><strong>A lényeg egy mondatban:</strong> Az AI régi kutatási terület, de a mai ugrás friss.</p>
+<p><strong>Ezt mondd el:</strong> „Képzeld el, hogy egy ügyfél ajánlatot kér, és az AI megírja a válasz első változatát. Ma megnézzük, mi történik közben. Az AI, vagyis mesterséges intelligencia, olyan módszerek gyűjtőneve, amelyekkel a gép felismer, előre jelez vagy szöveget alkot. Már az 1955-ös Dartmouth-javaslatban is szó volt a nyelvhasználatról és a tanulásról. 2012-ben áttörést hozott a képfelismerés, 2017-ben megjelent a Transformer, 2022-ben pedig a ChatGPT.”</p>
+<p><strong>Várható kérdés:</strong> Miért most lett ebből áttörés?</p>
+<p><strong>Rövid válasz:</strong> Találkozott a sok digitális szöveg, a nagy számítási kapacitás és a 2017-es Transformer felépítés.</p>
+<h2 id="dia-2-melyik-ai-val-dolgozunk-ma">Dia 2: Melyik AI-val dolgozunk ma?</h2>
+<p><strong>Idő:</strong> 09:00:35–09:01:15 (0:40)</p>
+<p><strong>Mi látszik a dián:</strong> Egymásba zárt keretek: AI, gépi tanulás, mélytanulás, generatív mély modellek. Legbelül kiemelve a nagy nyelvi modellek (LLM), mellettük szaggatottan a kép, hang, videó.</p>
+<p><strong>A lényeg egy mondatban:</strong> Ma a generatív mély modellek szöveges ágával, a nagy nyelvi modellel dolgozunk.</p>
+<p><strong>Ezt mondd el:</strong> „A külső keret az egész terület. Beljebb a gépi tanulás van, ahol a gép példákból tanul. A mélytanulás ennek az az ága, amely sok egymásra épülő számítási réteget használ. Ezen belül a generatív mély modellek új tartalmat állítanak elő. Az egyik águk a nagy nyelvi modell, angol rövidítéssel LLM. Ma a nagy nyelvi modellek szöveges használatára figyelünk. Vannak kép-, hang- és videógeneráló modellek is. Egy modell többféle tartalommal is dolgozhat.”</p>
+<p><strong>Várható kérdés:</strong> A képgenerátor is LLM?</p>
+<p><strong>Rövid válasz:</strong> Egy képgenerátor lehet önálló képmodell vagy többféle tartalommal dolgozó modell része.</p>
+<h2 id="dia-3-számítási-kapacitás-az-1950-es-évektől-máig">Dia 3: Számítási kapacitás: az 1950-es évektől máig</h2>
+<p><strong>Idő:</strong> 09:01:15–09:02:10 (0:55)</p>
+<p><strong>Mi látszik a dián:</strong> Négy sor logaritmikus sávval: Linpack-teljesítmény 1993 és 2026 között (7,6 nagyságrend), tranzisztorok egy processzortokban (8,2), operatív memória (11,8), egy merevlemez kapacitása (7,1). Az IBM 701 1952-es sebessége külön történeti felirat. Alul két telefonos tény és a források.</p>
+<p><strong>A lényeg egy mondatban:</strong> Azonos mércével mérve a leggyorsabb számítógépek teljesítménye 1993 óta 7,6 nagyságrenddel nőtt.</p>
+<p><strong>Ezt mondd el:</strong> „Mielőtt a modellekre térünk, nézd meg, mi tette lehetővé őket. A sávon minden osztás tízszeres növekedés, ezt hívjuk nagyságrendnek. Azonos mércével, a Linpack sebességteszttel mérve 1993 és 2026 között 7,6 nagyságrenddel nőtt a TOP500 első helyezettjének teljesítménye. A tranzisztor a chip apró kapcsolóeleme: 2300-ról 336 milliárdra nőtt a számuk egy processzortokban. Az operatív memória, vagyis a gép munkamemóriája közel tizenkét nagyságrendet nőtt. A 2024-es iPhone 16 Pro A18 Pro lapkája MacBook Neóban, dupla pontosságú Linpack-mérésben 57,012 GFLOPS-ot ért el. Ez az eredmény az 1993. júniusi TOP500-listán a második helyre lett volna elég.”</p>
+<p><strong>Várható kérdés:</strong> Nem igaz, hogy a telefon felér egy 20 éve csúcsgéppel?</p>
+<p><strong>Rövid válasz:</strong> Nem. A 2006. novemberi első, a BlueGene/L 280,6 TFLOPS-ot ért el. Ez körülbelül 4 922-szerese a MacBook Neóban mért 57,012 GFLOPS-nak.</p>
+<p><strong>Ha visszakérdeznek:</strong> A TOP500 a világ leggyorsabb számítógépeinek listája. A FLOPS másodpercenkénti lebegőpontos művelet, egy EFLOPS 10¹⁸ ilyen művelet. Az IBM 701 összeadást és kivonást mért, ezért nem kerül közös sávra a Linpackkel. A TOP500 LineShine-adatlapja nem közöl memóriakapacitást. Az El Capitan értékét az üzemeltető labor közli.</p>
+<h2 id="dia-4-a-digitalizált-adat-három-külön-mennyiség">Dia 4: A digitalizált adat: három külön mennyiség</h2>
+<p><strong>Idő:</strong> 09:02:10–09:02:55 (0:45)</p>
+<p><strong>Mi látszik a dián:</strong> Balra a világ tárolókapacitása 1986-ban, 2002-ben és 2007-ben. Jobbra három külön kártya: éves globális adatmennyiség (132 ZB), egy nyilvános webarchívum (több mint 10 PB), egy modell előtanítóanyaga (4,7 TB, LLaMA 65B).</p>
+<p><strong>A lényeg egy mondatban:</strong> Az éves adatmennyiség, egy nyilvános archívum és egy modell előtanítóanyaga három külön mennyiség, és ami nyilvános, az még lehet jogvédett.</p>
+<p><strong>Ezt mondd el:</strong> „A másik feltétel az adat volt. 1986-ban a világ tárolókapacitásának még csak 0,8 százaléka volt digitális, 2007-re már 94 százaléka. A jobb oldal más mérce. Az IDC 2023-ra 132 zettabájtnyi éves adatmennyiséget becsült, a másolatokkal együtt. Nyilvánosan elérhető például a Common Crawl több mint 10 petabájtos webarchívuma, de ami nyilvános, az még lehet jogvédett. A LLaMA 65B dokumentált előtanítóanyagának lemezmérete körülbelül 4,7 terabájt volt. A három érték eltérő mennyiséget mér.”</p>
+<p><strong>Várható kérdés:</strong> Akkor a modellek az egész internetet megtanulták?</p>
+<p><strong>Rövid válasz:</strong> Nem. A gyűjtemények mérete nem azt jelenti, hogy egy modell mindet felhasználta. A LLaMA előtanítóanyagának méretét közölték. A GPT-4 jelentése ilyen adatot nem ad meg.</p>
+<p><strong>Ha visszakérdeznek:</strong> Az IDC 2023-ra 132 zettabájtnyi éves adatmennyiséget becsült, a másolatokkal együtt. A LLaMA 65B dokumentált előtanítóanyagának lemezmérete körülbelül 4,7 terabájt volt. A két érték eltérő mennyiséget mér. Egy petabájt ezer terabájt, egy zettabájt milliárd terabájt.</p>
+<h2 id="dia-5-a-modellek-mérete-60-ezertől-28-billióig">Dia 5: A modellek mérete: 60 ezertől 2,8 billióig</h2>
+<p><strong>Idő:</strong> 09:02:55–09:03:50 (0:55)</p>
+<p><strong>Mi látszik a dián:</strong> Felül logaritmikus vonal a paraméterek számával, a LeNet-5 60 ezerétől a Kimi K3 2,8 billiójáig. A GPT-4 külön jelölve: nem publikált. Alul kilenc kártya a tanítóadattal, mindegyik a saját mértékegységében.</p>
+<p><strong>A lényeg egy mondatban:</strong> A modellek mérete 28 év alatt majdnem nyolc nagyságrendet nőtt, a tanítóadat pedig minden korszakban más egységben mérhető.</p>
+<p><strong>Ezt mondd el:</strong> „Most nézzük a modelleket. A paraméter egy szám a modellben, amelynek az értékét a tanítás állítja be. A LeNet-5 1998-ban 60 ezer paraméterrel dolgozott, a Kimi K3 2,8 billióval: ez majdnem nyolc nagyságrend. A GPT-4 méretét nem publikálták. A bemutatott modellek közül a DeepSeek-V4-Pro és a Kimi K3 tokenenként a paramétereinek csak egy részét használja. A Kimi K3-nál 104 milliárd aktív. A tanítóadatot nem lehet egy skálára tenni, mert a kép, a könyv, a bájt és a token nem váltható át. A token szövegdarab: szó, szórész vagy írásjel. A GPT-3 300 milliárd tokent dolgozott fel, a DeepSeek-V4-Pro több mint 32 billiót.”</p>
+<p><strong>Várható kérdés:</strong> Mekkorák a mai zárt modellek?</p>
+<p><strong>Rövid válasz:</strong> Ez modellenként eltér. A GPT-4 nyilvános műszaki jelentése például nem adta meg a modell méretét.</p>
+<p><strong>Ha visszakérdeznek:</strong> A GPT-3 tanításához a kutatók becslése szerint körülbelül 3,14 × 10²³ művelet kellett. Másodpercenként egymilliárd művelettel ez nagyjából tízmillió évig tartana. A 300 milliárd token feldolgozott mennyiség, egyes adathalmazokat a modell akár 3,4-szer is látott. A Kimi K3 a dián szereplő modellek közül a legnagyobb a közölt teljes paraméterszám alapján. A GPT-2 kiadott változata kb. 1,56 milliárd paraméteres, az OpenAI helyesbítette az eredeti cikk számát.</p>
+<h2 id="dia-6-mitől-javult-a-teljesítmény">Dia 6: Mitől javult a teljesítmény?</h2>
+<p><strong>Idő:</strong> 09:03:50–09:04:25 (0:35)</p>
+<p><strong>Mi látszik a dián:</strong> Négy kártya: sok, szűrt szöveg; párhuzamos számítás; jobb modellfelépítés; tanítás a párbeszédre.</p>
+<p><strong>A lényeg egy mondatban:</strong> Az eredmény az adat, a számítás, a felépítés és az emberi visszajelzés együttese.</p>
+<p><strong>Ezt mondd el:</strong> „Négy dolog kellett hozzá. Először sok szöveg, amelyet szűrtek, és amelyből kiszedték az ismétlődéseket. Másodszor párhuzamos számítás: sok grafikus processzor dolgozik egyszerre. Harmadszor jobb felépítés, ez a Transformer, amelyre mindjárt visszatérünk. Negyedszer külön tanítás a párbeszédre: emberek értékelik a válaszokat, és a modellt ehhez hangolják. Ettől lesz egy szövegfolytató modellből használható beszélgetőtárs.”</p>
+<p><strong>Várható kérdés:</strong> A nagyobb modell mindig jobb?</p>
+<p><strong>Rövid válasz:</strong> Nem. A Chinchilla kisebb volt a Gophernél, több szövegen tanult, és a vizsgált feladatokon jobb lett. Erre való a 23. tartalék dia.</p>
+<h2 id="dia-7-machine-learning--minták-a-példákból">Dia 7: Machine learning | Minták a példákból</h2>
+<p><strong>Idő:</strong> 09:04:25–09:05:00 (0:35)</p>
+<p><strong>Mi látszik a dián:</strong> Balra három megjelölt levél, középen a Modell doboz, jobbra egy új levél. A végén megjelenik: Becslés: ajánlatkérés. Alul a Tanítás és a Használat oldal.</p>
+<p><strong>A lényeg egy mondatban:</strong> A modell példákból tanul szabályt, nem kézzel írt szabályokból.</p>
+<p><strong>Ezt mondd el:</strong> „A machine learning, magyarul gépi tanulás, azt jelenti, hogy nem szabályokat írunk, hanem példákat adunk. Itt két levélre ráírtuk, hogy ajánlatkérés, egyre, hogy nem az. Ez a címke. A modell a példákból megtanul jelekből következtetni. Jön egy új levél, amelynek nincs címkéje, és a modell megbecsüli, mi lehet. Használat előtt félretett, címkézett példákon mérjük, mennyire pontos.”</p>
+<p><strong>Várható kérdés:</strong> A nyelvi modellt is így címkézték?</p>
+<p><strong>Rövid válasz:</strong> Az alaptanításnál a címke maga a szöveg folytatása: a modell a következő tokent jósolja. Ezt emberi visszajelzéssel finomhangolják.</p>
+<h2 id="dia-8-deep-learning--mit-csinálnak-a-rétegek">Dia 8: Deep learning | Mit csinálnak a rétegek?</h2>
+<p><strong>Idő:</strong> 09:05:00–09:05:45 (0:45)</p>
+<p><strong>Mi látszik a dián:</strong> Balra egy cserepes növény képe, középen három réteg pontokkal és vonalakkal, alattuk: Élek, Formák, Tárgy. Jobbra az eredmény: Cserepes növény, esély: 92%.</p>
+<p><strong>A lényeg egy mondatban:</strong> A rétegek egyszerű jelekből építenek összetett mintázatot, és ezt a háló maga tanulja meg.</p>
+<p><strong>Ezt mondd el:</strong> „A deep learning, magyarul mélytanulás, sok egymásra épülő réteget használ. Ezek együtt alkotják a neurális hálót. A kis pont a neuron, egy egyszerű számolóegység: számokat kap, összesúlyozza őket, és továbbad egy értéket. A súly azt mondja meg, melyik bejövő szám mennyit számít, a vonal vastagsága ezt mutatja. Képfelismerésnél a korai rétegek jellemzően éleket, a későbbiek formákat és tárgyrészeket ismernek fel. Ezt senki nem programozza be, a háló a példákból tanulja meg. A végén egy esélyt kapunk: ez 92 százalék eséllyel cserepes növény.”</p>
+<p><strong>Várható kérdés:</strong> Tudjuk pontosan, mit csinál egy neuron?</p>
+<p><strong>Rövid válasz:</strong> Csak részben. A mintázatokat a háló tanulja, nem mi programozzuk, ezért a belső működés nehezen olvasható ki.</p>
+<h2 id="dia-9-backpropagation--így-tanul-a-hibából">Dia 9: Backpropagation | Így tanul a hibából</h2>
+<p><strong>Idő:</strong> 09:05:45–09:07:00 (1:15)</p>
+<p><strong>Mi látszik a dián:</strong> Felül a nagy mondat. Balra egy levél: „Kérek árat 25 növényre.” Középen a háló, jobbra a tipp (Egyéb levél), a helyes válasz (Ajánlatkérés) és a Hiba. Lila szaggatott vonalak futnak visszafelé, majd egyes vonalak vastagsága megváltozik. Az ajánlatkérés esélye 24%-ról 31%-ra nő. Alul az öt lépés és a „Melyik mire való?” sor.</p>
+<p><strong>A lényeg egy mondatban:</strong> A backpropagation tanítás közben kiszámolja, merre változzanak a súlyok, az átállítás pedig a következő tanítási lépés.</p>
+<p><strong>Ezt mondd el:</strong> „A háló eddig csak becsült. De honnan tudja, hogy javítania kell? Nézzünk egy levelet: Kérek árat huszonöt növényre. A háló azt tippeli, hogy ez egyéb levél, pedig ajánlatkérés. Ez a hiba. A backpropagation, magyarul hibavisszaterjesztés, a hibától visszafelé halad a hálón, és minden súlyra kiszámolja, mennyire hat a hibára. Fontos: ez még csak számolás, itt semmi nem változik. A következő lépésben a tanítóeljárás a számítás alapján egy kicsit átállítja a súlyokat. Újra megnézzük ugyanazt a levelet: az ajánlatkérés esélye 24 százalékról 31-re nőtt. Egy lépés csak keveset javít, ezért a tanítás során ez rengetegszer ismétlődik. Jegyezd meg: a backpropagation csak tanítás közben fut. Amikor te levelet íratsz a modellel, a súlyok már nem változnak.”</p>
+<p><strong>Várható kérdés:</strong> Tanul a modell a chatemből?</p>
+<p><strong>Rövid válasz:</strong> A beszélgetés közben nem változnak a súlyok. A módosításod csak a következő válasz bemenetét változtatja. Hogy a szolgáltató a későbbi tanításhoz felhasználja-e az adataidat, az külön beállítás és szerződési kérdés.</p>
+<p><strong>Ha visszakérdeznek:</strong> A 24 és a 31 százalék szemléltető szám. A backpropagation szigorúan véve csak a számítás, a súlyokat egy külön eljárás, például a sztochasztikus gradiens-ereszkedés frissíti.</p>
+<h2 id="dia-10-a-szövegből-tokenek-lesznek">Dia 10: A szövegből tokenek lesznek</h2>
+<p><strong>Idő:</strong> 09:07:00–09:07:55 (0:55)</p>
+<p><strong>Mi látszik a dián:</strong> Négy sor. Input: „Írj rövid választ.” Tokenek: Í, r, j, rö, vid, választ, pont. Azonosítók: 8463, 81, 73, 76568, 1429, 161394, 13. Vektorok: kis oszlopok minden azonosító alatt. Jobb felül: Valódi példa: o200k_base.</p>
+<p><strong>A lényeg egy mondatban:</strong> A szöveg tokenekké, azonosítókká, majd vektorokká alakul, és a háló ezekkel számol.</p>
+<p><strong>Ezt mondd el:</strong> „Most nézzük, mit kap a háló a szövegből. Az input az, amit a modell megkap, a prompt az a kérés, amelyben elmondod, mit vársz. A modell nem szavakat dolgoz fel, hanem tokeneket. Ez valódi példa az OpenAI egyik nyilvános tokenizálójából, a neve o200k_base: ez a rövid mondat hét token. Az „Írj” egymaga három darab, a szóköz pedig a következő darab elejéhez tapad. Minden darabnak saját azonosítója van a szótárban. Ez csak sorszám, a nagyobb szám nem jelent fontosabbat. A háló minden azonosítóhoz egy tanult számsort, vagyis vektort keres ki, és ezzel számol tovább. Más modellnél más a vágás, a Claude is saját tokenizálót használ.”</p>
+<p><strong>Várható kérdés:</strong> Miért fontos ez nekem?</p>
+<p><strong>Rövid válasz:</strong> A díjat és a kontextus méretét tokenben mérik, és a toldalékos magyar szavak gyakran több tokenre esnek.</p>
+<p><strong>Ha visszakérdeznek:</strong> A vektor sok szám egymás mellett: a 2017-es Transformerben 512, a GPT-3 legnagyobb változatában 12 288. A tanítás során alakul ki.</p>
+<h2 id="dia-11-attention--a-környezet-adja-a-jelentést">Dia 11: Attention | A környezet adja a jelentést</h2>
+<p><strong>Idő:</strong> 09:07:55–09:09:00 (1:05)</p>
+<p><strong>Mi látszik a dián:</strong> Felül a nagy mondat. Két sor: „Az ügyfél levele” és „A növény levele”. Mindkét „levele” felé egy vastag és egy vékony ív fut a korábbi szavaktól. Jobbra az eredmény: elküldött üzenet, illetve a növény része. Alul a „Melyik mire való?” sor.</p>
+<p><strong>A lényeg egy mondatban:</strong> A figyelem súlyozza, mennyi információt vegyen át egy szövegrész a környezetéből, ettől kap más jelentést az ügyfél levele és a növény levele.</p>
+<p><strong>Ezt mondd el:</strong> „Most már vektorokkal számolunk. A kérdés az, honnan tudja a modell, mit jelent egy szó az adott mondatban. Nézd ugyanazt a szót két szövegben. Az ügyfél levele egy üzenet, a növény levele a növény része. A szó ugyanaz, a jelentését a környezet adja. Az attention, magyarul figyelem, pontosan ezt oldja meg: súlyozza, hogy egy szövegrész mennyi információt vegyen át a környezetéből. A vastagabb vonal nagyobb súlyt szemléltet: az „ügyfél” és a „növény” erősen hat a „levele” szóra, a névelő kevésbé. Ezeket a súlyokat senki nem írja be kézzel, a modell számolja ki. A dián az egyszerűség kedvéért szavakat rajzoltunk, a modell valójában tokenekkel dolgozik.”</p>
+<p><strong>Várható kérdés:</strong> A vastag vonal azt jelenti, hogy az a szó a fontos?</p>
+<p><strong>Rövid válasz:</strong> Nem pontosan. Keverési arányt mutat egy adott számításban, és egyszerre több párhuzamos figyelmi számítás fut, mindegyik más mintázattal.</p>
+<p><strong>Ha visszakérdeznek:</strong> Miben más ez, mint a backpropagation? A hibavisszaterjesztés megmutatja, merre érdemes állítani a súlyokat. A következő tanítási lépés állítja át őket. A figyelem használat közben is működik.</p>
+<h2 id="dia-12-transformer--figyelem-rétegről-rétegre">Dia 12: Transformer | Figyelem, rétegről rétegre</h2>
+<p><strong>Idő:</strong> 09:09:00–09:10:10 (1:10)</p>
+<p><strong>Mi látszik a dián:</strong> Felül a nagy mondat. Balra egy válasz eleje három tokenben: K, öszön, jük, alattuk egy üres hely. A három kártya együtt lép be az 1. rétegbe, ahol a Figyelem részben ívek futnak a „jük” felé, az Átalakítás részben színt váltanak. Utána a 2. és a 3. réteg, végül a következő token esélyei: ! 64%, ␣a 28%, vessző 8%. Alul négy lépés és a „Melyik mire való?” sor.</p>
+<p><strong>A lényeg egy mondatban:</strong> A Transformer rétegei összekapcsolják a szöveg részeit, majd továbbalakítják őket, és a végén kiszámolják a következő token esélyét.</p>
+<p><strong>Ezt mondd el:</strong> „Az előbb egyetlen lépést láttál, a figyelmet. A Transformer az a felépítés, amelybe ez a lépés beépül: sok réteg egymás után. Itt egy válasz elejét látod három tokenben. A kártyák a tokenekhez tartozó számsorokat jelölik. Egy réteg két részből áll. A figyelmi részben a „jük” információt vesz át a korábbi tokenekből. A következő helyre még nem láthat rá, az még üres. Az átalakító rész ezután tokenenként külön számol tovább. A következő réteg ugyanezt végzi az átdolgozott számsorokkal. A már meglévő tokenek helyein párhuzamosan lehet számolni. A válasz új tokenjei egymás után készülnek. Az utolsó réteg után a modell kiszámolja, melyik token mekkora eséllyel következik. Ezek az esélyek itt kitaláltak.”</p>
+<p><strong>Várható kérdés:</strong> Hány réteg van egy modellben?</p>
+<p><strong>Rövid válasz:</strong> Az eredeti Transformernek hat kódoló- és hat dekódolórétege volt. A GPT-3 legnagyobb változatában 96 réteg volt.</p>
+<p><strong>Ha visszakérdeznek:</strong> Válaszíráskor egyes korábbi számítások újra felhasználhatók. A következő token esélyei az addigi szövegtől függenek.</p>
+<h2 id="dia-13-a-kimenet-lépésenként-készül">Dia 13: A kimenet lépésenként készül</h2>
+<p><strong>Idő:</strong> 09:10:10–09:11:15 (1:05)</p>
+<p><strong>Mi látszik a dián:</strong> Felül: Prompt + ügyféllevél, LLM, Következő token, Kimenet. Három oszlop mutatja a tokenek esélyét, a kimenet sorban épül: K, öszön, jük, felkiáltójel, majd stoptábla. A harmadik lépésnél felirat: Most a 36%-os „jük” kerül a válaszba. Jobb felül: Valódi tokenek, kitalált esélyek.</p>
+<p><strong>A lényeg egy mondatban:</strong> A válasz tokenenként, esélyek alapján készül, és a modell nem a tényeket ellenőrzi.</p>
+<p><strong>Ezt mondd el:</strong> „A prompt mellé adok egy ügyféllevelet is. A modell ebből kiszámolja, melyik token mekkora eséllyel jöhet következőnek. A darabok itt valódiak, az esélyek kitaláltak. A rendszer az esélyek alapján választ, és nem mindig a legvalószínűbbet. A bal oldali keret a kiválasztott tokent mutatja. A „jük” lett a folytatás, pedig az „öm” esélye nagyobb volt. Ezért kaphatsz ugyanarra a kérésre eltérő választ. A választott token bekerül a bemenet végére, és a modell újra számol. Addig megy, amíg egy külön záró tokent nem választ, vagy el nem éri a beállított hosszkorlátot. A modell a következő darab esélyét számolja, nem a tényeket ellenőrzi. Ha az árat nem adtad meg, akkor is tud hihető számot írni.”</p>
+<p><strong>Várható kérdés:</strong> Miért kapok más választ ugyanarra a kérdésre?</p>
+<p><strong>Rövid válasz:</strong> Mert a rendszer az esélyekből mintavételez, nem mindig a legvalószínűbbet választja. Ezt a véletlenszerűséget a temperature nevű beállítás szabályozza.</p>
+<h2 id="dia-14-mit-kap-meg-a-modell-minden-körben">Dia 14: Mit kap meg a modell minden körben?</h2>
+<p><strong>Idő:</strong> 09:11:15–09:12:15 (1:00)</p>
+<p><strong>Mi látszik a dián:</strong> Balra a chatelőzmény az „Alapcsomag: 20 növény” kártyával. Jobbra az Aktuális kontextus sávja, a végén a Válaszhely. A sáv megtelik, majd a két legrégebbi kártya, köztük a szabály, kikerül belőle.</p>
+<p><strong>A lényeg egy mondatban:</strong> A modell csak azt látja, amit az adott körben megkap, és ami kimarad, azt nem veszi figyelembe.</p>
+<p><strong>Ezt mondd el:</strong></p>
+<ul>
+<li><em>0–6 mp.</em> „A modell minden új körben az alkalmazás által összeállított csomagot kapja.”</li>
+<li><em>6–13 mp.</em> „Ebben utasítás, forrás, előzmény és új kérés is lehet.”</li>
+<li><em>13–21 mp.</em> „A keret véges. Itt két régi kártya kiesik, köztük a húsz növényes szabály.”</li>
+<li><em>21 mp után.</em> „A szabály a chatben még látszik. A kontextusablak a bemenet és a válasz közös, tokenben mért kerete. Más alkalmazás összefoglalhatja a régi részeket. Ha a szabály fontos, add meg újra.”</li>
+</ul>
+<p><strong>Várható kérdés:</strong> Mekkora a kontextusablak?</p>
+<p><strong>Rövid válasz:</strong> Modellenként más, a szolgáltató oldalán megnézheted. A több kontextus nem mindig jobb: a lényeg elsikkadhat a sok szövegben.</p>
+<h2 id="dia-15-hallucináció-drift-felejtés">Dia 15: Hallucináció, drift, felejtés</h2>
+<p><strong>Idő:</strong> 09:12:15–09:13:15 (1:00)</p>
+<p><strong>Mi látszik a dián:</strong> Három kártya. Hallucináció: kitalált ár. Feladatcsúszás (drift): levélből kampány. Felejtés: kimaradt vagy elsikkadt szabály.</p>
+<p><strong>A lényeg egy mondatban:</strong> Három különböző hiba, három különböző kezelés.</p>
+<p><strong>Ezt mondd el:</strong> „Három dolog romolhat el. A hallucináció az, amikor hihetőnek hangzó, de téves állítás kerül a válaszba: például a modell kitalál egy fix árat huszonöt növényre. Ez rövid beszélgetésben is megtörténhet. Ellene forrást adunk, és megengedjük, hogy azt mondja: nincs megadva. A második a feladatcsúszás. Itt driftnek azt hívjuk, amikor menet közben elcsúszik a feladat: rövid választ kértél, és kampányterv lett belőle. Ilyenkor mondd ki újra a célt. A harmadik a felejtés. Lehet, hogy a szabály már nem került a modell elé, ekkor add vissza a forrást. Az is lehet, hogy ott van a hosszú szöveg közepén, de elsikkad, ekkor emeld ki.”</p>
+<p><strong>Várható kérdés:</strong> Megszüntethető a hallucináció?</p>
+<p><strong>Rövid válasz:</strong> Teljesen nem. Forrást adunk, engedjük a visszakérdezést, és az állításokat ellenőrizzük.</p>
+<h2 id="dia-16-adj-elég-hátteret-és-hagyj-helyet-a-válasznak">Dia 16: Adj elég hátteret, és hagyj helyet a válasznak</h2>
+<p><strong>Idő:</strong> 09:13:15–09:13:50 (0:35)</p>
+<p><strong>Mi látszik a dián:</strong> Egy sáv négy részre osztva: Friss cél, Döntések, Forrásrészlet, Hely a válasznak.</p>
+<p><strong>A lényeg egy mondatban:</strong> Kevesebb, de releváns háttér jobb, mint a teljes előzmény.</p>
+<p><strong>Ezt mondd el:</strong> „Mit tegyél egy hosszú chat után? Foglald össze a friss célt és a jóváhagyott döntéseket, add mellé az idevágó forrásrészletet, és a régi ötleteket hagyd ki. Ezzel a rövid csomaggal nyithatsz új beszélgetést. Ezt hívjuk tokenoptimalizálásnak: csak azt adod át, ami a döntéshez kell.”</p>
+<p><strong>Várható kérdés:</strong> Mikor nyissak új chatet?</p>
+<p><strong>Rövid válasz:</strong> Ha a feladat változik, vagy a beszélgetés már hosszú. Vidd át a célt, a döntéseket és a forrást.</p>
+<h2 id="dia-17-a-jó-prompt-megadja-a-feladatot">Dia 17: A jó prompt megadja a feladatot</h2>
+<p><strong>Idő:</strong> 09:13:50–09:14:45 (0:55)</p>
+<p><strong>Mi látszik a dián:</strong> Három sor: 1 Cél: Válaszolj az ajánlatkérésre. 2 Címzett: Irodavezető. 3 Forrás: Mellékelt levél és Cég-DNS.</p>
+<p><strong>A lényeg egy mondatban:</strong> A feladat, a címzett és a forrás adja a prompt alapját.</p>
+<p><strong>Ezt mondd el:</strong> „A prompt az az utasítás, amit az AI-nak adsz. Egy jó prompt először megmondja, mit csináljon: írj válaszpiszkozatot a beérkezett ajánlatkérésre. A második a címzett: egy irodavezetőnek írsz, aki először érdeklődik nálunk. Ettől lesz helyzete a levélnek. A harmadik a forrás: a mellékelt ügyféllevél és a Cég-DNS alapján dolgozz. A Cég-DNS a céged teljes leírása: kinek mit adsz el, milyen határokkal és milyen hangon. A konkrét részletet is tedd oda: az alapcsomag húsz növényig szól, a kérés huszonötre érkezett. Gondold végig, mi változik a válaszban, ha ezt az utolsó sort kiveszed.”</p>
+<p><strong>Várható kérdés:</strong> Kell szerepet adni a modellnek?</p>
+<p><strong>Rövid válasz:</strong> Segíthet, de a konkrét cél és a forrás többet ér.</p>
+<h2 id="dia-18-a-jó-prompt-megmondja-mikor-kész">Dia 18: A jó prompt megmondja, mikor kész</h2>
+<p><strong>Idő:</strong> 09:14:45–09:15:50 (1:05)</p>
+<p><strong>Mi látszik a dián:</strong> Négy sor: 4 Forma: Három mondat. 5 Korlát: Húsz növény fölött kérj bejárást. 6 Minta: „Mikor lenne jó a bejárás?” 7 Ellenőrzés: A levél alatt: melyik állítás honnan való.</p>
+<p><strong>A lényeg egy mondatban:</strong> Előre mondd meg, milyen az elfogadható eredmény.</p>
+<p><strong>Ezt mondd el:</strong> „A negyedik a forma: adj hárommondatos levélpiszkozatot. Az ötödik a korlát, vagyis a határ: húsz növény fölött kérj bejárást, az árat hagyd nyitva. A hatodik egy rövid minta, ha fontos a hang: mikor lenne jó a bejárás? Ebből a modell látja, milyen mondatot vársz. A hetedik az ellenőrzés: a levél alatt jelöld, melyik állítás melyik forrásból származik, és ha valami hiányzik, írd oda, hogy nincs megadva. A forrásjelölést te is olvasd össze az eredetivel. Gondold végig, melyik pont hiányzik a leggyakrabban a saját kéréseidből.”</p>
+<p><strong>Várható kérdés:</strong> A modell forrásjelölése megbízható?</p>
+<p><strong>Rövid válasz:</strong> Nem automatikusan. A jelölést össze kell olvasni az eredeti forrással.</p>
+<h2 id="dia-19-két-mondat-amivel-elindulsz">Dia 19: Két mondat, amivel elindulsz</h2>
+<p><strong>Idő:</strong> 09:15:50–09:16:25 (0:35)</p>
+<p><strong>Mi látszik a dián:</strong> Nagy betűkkel: „Írj nekem egy jó promptot arra, hogy…” Alatta: Először kérdezz rá arra, ami hiányzik.</p>
+<p><strong>A lényeg egy mondatban:</strong> A modell segít megírni a promptot, ha kérdezhet.</p>
+<p><strong>Ezt mondd el:</strong> „És most a jó hír: ezt a hét pontot nem kell fejben tartanod. Ennyivel is elindulhatsz: írj nekem egy jó promptot arra, hogy megválaszoljam egy új érdeklődő ajánlatkérését. Tedd mellé ezt a mondatot is: először kérdezz rá arra, ami hiányzik. Így nem a modell találja ki a céged adatait.”</p>
+<p><strong>Várható kérdés:</strong> Akkor nem kell tudnom promptot írni?</p>
+<p><strong>Rövid válasz:</strong> Az elinduláshoz nem, de az eredményt neked kell ellenőrizned, és a forrásokat neked kell megadnod.</p>
+<h2 id="dia-20-egy-kérés-három-ai-szerep">Dia 20: Egy kérés, három AI-szerep</h2>
+<p><strong>Idő:</strong> 09:16:25–09:17:20 (0:55)</p>
+<p><strong>Mi látszik a dián:</strong> Középen a Karmester. Balra az Ember (célt ad, a végén dönt), jobbra a Készítő és az Ellenőr. Nyilak: cél, átnézett piszkozat, feladat, piszkozat, csomag, leletek. A csomag nyila mellett: A csomagot te másolod át az Ellenőr új beszélgetésébe.</p>
+<p><strong>A lényeg egy mondatban:</strong> Külön szerepek dolgoznak, a döntés az emberé.</p>
+<p><strong>Ezt mondd el:</strong> „Az agent egy szerepre felkért AI-segítő, amely megadott céllal, forrásokkal és szabályokkal végez el egy feladatot. Ma három ilyen szerepet használunk. A Karmester szervezi a munkát. A Készítő megírja a piszkozatot. Az Ellenőr friss beszélgetésben, a források alapján megvizsgálja. Minden átadás a Karmesteren megy át. Ha az Ellenőr hibát talál, a munka visszamegy a Készítőhöz, és a végén te döntesz. A szerepleírásokat készen kapod a munkacsomagban.”</p>
+<p><strong>Várható kérdés:</strong> Miért jobb három szerep egynél?</p>
+<p><strong>Rövid válasz:</strong> A feladatok szétválnak, és az Ellenőr a Készítő gondolatmenete nélkül nézi a szöveget.</p>
+<h2 id="dia-21-egy-levél-útja-az-emberi-döntésig">Dia 21: Egy levél útja az emberi döntésig</h2>
+<p><strong>Idő:</strong> 09:17:20–09:19:25 (2:05)</p>
+<p><strong>Mi látszik a dián:</strong> Négy sáv: Ember, Karmester, Készítő, Ellenőr. Egy kitalált, 25 növényre szóló ajánlatkérés végigmegy rajtuk: piszkozat, leletek, javítás, újraellenőrzés, végül a Küldés? kártya az Embernél és a munkanapló.</p>
+<p><strong>A lényeg egy mondatban:</strong> Az ellenőrzött piszkozat bizonyítékkal és emberi döntéssel készül el.</p>
+<p><strong>Ezt mondd el (az ábrával együtt fut):</strong></p>
+<ul>
+<li><em>0–11 mp.</em> „Huszonöt növényre kérnek ajánlatot. A Karmester megkapja a célodat, és összegyűjti a levelet meg a Cég-DNS szabályait.”</li>
+<li><em>11–22 mp.</em> „Ha hiányzik egy döntés, kérdez. Itt azt tisztázza, hogy első körben egy bejárást egyeztető levél legyen a cél.”</li>
+<li><em>22–34 mp.</em> „Ha összeállt a feladat, jóváhagyod a tervet. A Karmester a Készítőnek adja a feladatot és a forrásokat. Levélnél a Készítő az Író szerepleírásával dolgozik.”</li>
+<li><em>34–45 mp.</em> „A Készítő visszaadja a piszkozatot. Nézd, ebben már van egy fix ár.”</li>
+<li><em>45–58 mp.</em> „A Karmester összeállítja a csomagot. Te megnyitod az Ellenőr új beszélgetését, és bemásolod a piszkozatot, a forrásokat és az ellenőrzőlistát.”</li>
+<li><em>58–69 mp.</em> „Az Ellenőr bizonyítékkal és súlyossággal adja vissza a leleteket. Itt az ár a blokkoló, vagyis enélkül nem mehet tovább. A dátum közepes, a furcsán hangzó ismétlés apró észrevétel.”</li>
+<li><em>69–82 mp.</em> „A Készítő elfogadja az árra vonatkozó észrevételt. A dátumot forrással vitatja: a levélben időpontot kell kérni. Az apró pont nyitva marad.”</li>
+<li><em>82–94 mp.</em> „Kiveszi az árat, és bejárást kér. A módosított változat visszamegy az Ellenőrhöz, mert az új változatot is ellenőrizni kell.”</li>
+<li><em>94–105 mp.</em> „Az Ellenőr újra összeveti a szabállyal. Blokkoló, súlyos vagy közepes hibánál javítunk, az aprót feljegyezzük.”</li>
+<li><em>105–116 mp.</em> „Most kapsz egy ellenőrzött piszkozatot, mellé az apró nyitott pontot. Te döntesz, javítod-e még, és elküldöd-e.”</li>
+<li><em>116–125 mp.</em> „A Karmester feljegyzi a munkanaplóba, mi történt, mit értettünk félre, és mit tanultunk.”</li>
+</ul>
+<p><strong>Várható kérdés:</strong> Független az Ellenőr, ha ugyanaz a modell?</p>
+<p><strong>Rövid válasz:</strong> Csak részben. Friss beszélgetésben fut, de ugyanaz a modell és fiók, ezért az emberi döntés megmarad.</p>
+<h2 id="dia-22-0920--kezdjük-a-cég-dns-sel">Dia 22: 09:20 | Kezdjük a Cég-DNS-sel</h2>
+<p><strong>Idő:</strong> 09:19:25–09:20:00 (0:35)</p>
+<p><strong>Mi látszik a dián:</strong> Balra a Cég-DNS kártya: Kinek? Mit? Milyen hangon? Jobbra a nap négy állomása: Tartalom, Ügyfélszerzés, Ajánlat, Folyamatpróba, mindegyik a Cég-DNS-ből táplálkozik.</p>
+<p><strong>A lényeg egy mondatban:</strong> Minden további blokk a Cég-DNS-re épül.</p>
+<p><strong>Ezt mondd el:</strong> „Végig ugyanaz a forrás döntötte el, mit mondhatunk. Ezt a céges alapot rakjuk most össze. Kilenc húszkor a Cég-DNS-sel kezdünk: kinek adsz el, mit ajánlasz, és milyen hangon beszélsz. Erre épül a tartalom, az ügyfélszerzés, az ajánlat és a nap végi folyamatpróba. Most nyisd meg a munkacsomagot, és keresd elő a fő ajánlatod legjobb leírását.”</p>
+<p><strong>Várható kérdés:</strong> Mi van, ha nincs kész anyagom?</p>
+<p><strong>Rövid válasz:</strong> Az IrodaLiget kitalált mintájával végig tudsz menni.</p>
+<h2 id="dia-23-tartalék-dia--ugyanannyi-számítás-több-szöveg">Dia 23: Tartalék dia | Ugyanannyi számítás, több szöveg</h2>
+<p><strong>Idő:</strong> 1:00, a fő részen kívül. Csak kérdésre.</p>
+<p><strong>Mi látszik a dián:</strong> Felül: Azonos tanítási számítás. Két kártya: Gopher, 280 milliárd paraméter; Chinchilla, 70 milliárd paraméter. A Chinchillánál: Kb. 4,7-szer annyi tanítótoken: 1400 milliárd és 300 milliárd.</p>
+<p><strong>A lényeg egy mondatban:</strong> Ugyanannyi számítást jobb lehet több adatra költeni, mint nagyobb modellre.</p>
+<p><strong>Ezt mondd el:</strong> „Ha kíváncsi vagy, hogyan lett az adatmennyiségből jobb teljesítmény, itt egy konkrét kísérlet. A Gopher 280 milliárd paraméteres volt, 300 milliárd tokenen tanult. A Chinchilla 70 milliárd paraméterrel körülbelül 4,7-szer annyi, 1400 milliárd tanítótokenen készült. A kettőre ugyanannyi számítást szántak, és a kisebb modell a tanulmány tesztfeladataiban jobb eredményt ért el. Itt az számított, hogyan osztották el a számítást a modell mérete és a tanítóanyag között.”</p>
+<p><strong>Várható kérdés:</strong> Akkor a méret nem számít?</p>
+<p><strong>Rövid válasz:</strong> Számít, de a modell mérete és az adat mennyisége együtt adja az eredményt.</p>
+<h2 id="dia-24-tartalék-dia--egyben-a-kipróbálható-prompt">Dia 24: Tartalék dia | Egyben a kipróbálható prompt</h2>
+<p><strong>Idő:</strong> 1:00, a fő részen kívül. Csak kérdésre.</p>
+<p><strong>Mi látszik a dián:</strong> Egy teljes, kipróbálható prompt az IrodaLiget kitalált szabályával, alatta a kérdés: Mit kérdeznél még az ügyféltől?</p>
+<p><strong>A lényeg egy mondatban:</strong> Egy teljes prompt minden elemét egyben látod.</p>
+<p><strong>Ezt mondd el:</strong> „Ha szeretnéd kipróbálni, itt egy kitalált ajánlatkérés, benne a céges szabállyal. Olvasd el a választ, és keresd meg benne a következő lépést. Megkérdezi, mikor jó a bejárás? Maradt benne fix ár? A forrásmegjelölés külön legyen, hogy a levelet egyben tudd átolvasni.”</p>
+<p><strong>Várható kérdés:</strong> Átírhatom a saját cégemre?</p>
+<p><strong>Rövid válasz:</strong> Igen. Cseréld a levelet és a szabályt a saját forrásodra.</p>
+<h2 id="ha-rákérdeznek-a-forrásokra">Ha rákérdeznek a forrásokra</h2>
+<ul>
+<li>A tokenek és azonosítók: <a href="https://github.com/openai/tiktoken" target="_blank" rel="noopener noreferrer">tiktoken, az OpenAI nyilvános tokenizálója</a>, o200k_base kódolás, saját futtatás 2026. november 19-én.</li>
+<li>Backpropagation: <a href="https://www.deeplearningbook.org/contents/mlp.html" target="_blank" rel="noopener noreferrer">Deep Learning, 6.5. szakasz</a>.</li>
+<li>Attention és Transformer: <a href="https://proceedings.neurips.cc/paper/7181--attention-is-all-you-need.pdf" target="_blank" rel="noopener noreferrer">Attention Is All You Need</a>.</li>
+<li>GPT-3 számai: <a href="https://arxiv.org/pdf/2005.14165" target="_blank" rel="noopener noreferrer">Language Models are Few-Shot Learners</a>.</li>
+<li>Szuperszámítógépek: <a href="https://top500.org/lists/top500/list/1993/06/" target="_blank" rel="noopener noreferrer">TOP500, 1993. június</a>, <a href="https://top500.org/lists/top500/2006/11/" target="_blank" rel="noopener noreferrer">TOP500, 2006. november</a>, <a href="https://top500.org/lists/top500/2026/11/" target="_blank" rel="noopener noreferrer">TOP500, 2026. november</a>.</li>
+<li>A telefonchip mérése: <a href="https://github.com/geerlingguy/top500-benchmark/issues/95" target="_blank" rel="noopener noreferrer">A18 Pro HPL-mérés</a>.</li>
+<li>A világ adatmennyisége: <a href="https://www.uvm.edu/pdodds/research/papers/others/2011/hilbert2011a.pdf" target="_blank" rel="noopener noreferrer">Hilbert és López (2011)</a>, <a href="https://techcontentwave.com/files/1763389937_64b594fd4f7f5607256a.pdf" target="_blank" rel="noopener noreferrer">IDC (2024)</a>.</li>
+<li>Nyilvános archívum és feltételei: <a href="https://commoncrawl.org/about" target="_blank" rel="noopener noreferrer">Common Crawl</a>, <a href="https://commoncrawl.org/terms-of-use" target="_blank" rel="noopener noreferrer">felhasználási feltételek</a>.</li>
+<li>LLaMA tanítóanyaga: <a href="https://arxiv.org/pdf/2302.13971" target="_blank" rel="noopener noreferrer">LLaMA, 1. táblázat</a>.</li>
+<li>A legnagyobb modellek: <a href="https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro" target="_blank" rel="noopener noreferrer">DeepSeek-V4-Pro</a>, <a href="https://huggingface.co/moonshotai/Kimi-K3" target="_blank" rel="noopener noreferrer">Kimi K3</a>.</li>
+<li>Chinchilla és Gopher: <a href="https://arxiv.org/pdf/2203.15556" target="_blank" rel="noopener noreferrer">Training Compute-Optimal Large Language Models</a>.</li>
+<li>Token, temperature, kontextusablak: <a href="https://platform.claude.com/docs/en/about-claude/glossary" target="_blank" rel="noopener noreferrer">Claude szószedet</a>.</li>
+<li>Hallucináció: <a href="https://arxiv.org/abs/2509.04664" target="_blank" rel="noopener noreferrer">Why Language Models Hallucinate</a>.</li>
+</ul>
+</main></div>
+<footer class="site-foot"><div class="partner-band partner-band--foot"><p class="partner-band__label">Négy hazai csapat, egy közös értékesítési folyamat</p><ul class="partner-band__list" aria-label="Partnerek"><li class="partner partner--wenova"><span class="partner__logo"><img class="logo logo--wenova" src="../assets/logos/wenova-wordmark.png" alt="Wenova" width="239" height="28"></span><span class="partner__role">Szervező · AI-működés</span></li><li class="partner partner--brandiseer"><span class="partner__logo"><img class="logo logo--brandiseer" src="../assets/logos/brandiseer-icon.png" alt="" width="24" height="28"><span class="logo-word">Brandiseer</span></span><span class="partner__role">Márkaazonos tartalom</span></li><li class="partner partner--blackhole"><span class="partner__logo"><img class="logo logo--blackhole" src="../assets/logos/black-hole-media-logo.png" alt="Blackhole Media" width="299" height="28"></span><span class="partner__role">Ügyfélszerzés · Sales Bot</span></li><li class="partner partner--estiwise"><span class="partner__logo"><img class="logo logo--estiwise" src="../assets/logos/estiwise-logo-feher.svg" alt="EstiWise" width="99" height="28"></span><span class="partner__role">Ajánlatadás 0–24</span></li></ul></div><p class="site-foot__meta">AI Sales &amp; Marketing Workshop · 2026. november 19. · CEU, Budapest · a Wenova szervezésében</p></footer>
+</body></html>
