@@ -176,6 +176,9 @@ function render(source, root = ROOT, pages = new Set(inventory(root))) {
     const open = new Token('link_open','a',1), close = new Token('link_close','a',-1); open.attrSet('href','#'+target);
     kids.splice(index,1,piece(text.content.slice(0,match.index)),open,piece(match[0]),close,piece(text.content.slice(match.index+match[0].length)));
   };
+  // Participant home: the start block (QR code, three steps) comes first, the day overview follows it.
+  const startFirst = isHome && tokens.some(t => t.type === 'html_block' && /^<a (?:name|id)="indulas"><\/a>$/.test(t.content.trim()));
+  let dayOverview = [];
   const closeHero = () => {
     if (!hero) return;
     const slot = agenda.find(r => r.moduleId && r.moduleId === (moduleId||noteModule));
@@ -187,11 +190,12 @@ function render(source, root = ROOT, pages = new Set(inventory(root))) {
     }
     if (isHome && pages.has(SCHEDULE)) {
       const firstModule = [...pages].filter(p=>/^materials\/modules\/0[1-9]/.test(p)).sort()[0];
-      rendered.push(raw('<p class="hero-actions"><a class="btn btn--primary" href="'+relative(output(SCHEDULE))+'">A nap menete →</a>'+
+      const overview = startFirst ? dayOverview : rendered;
+      overview.push(raw('<p class="hero-actions"><a class="btn btn--primary" href="'+relative(output(SCHEDULE))+'">A nap menete →</a>'+
         (firstModule ? ' <a class="btn" href="'+relative(output(firstModule))+'">Az első blokk</a>' : '')+'</p>\n'));
       // Compact agenda strip: the five blocks with time, partner logo and link, from materials/schedule.md.
       const blocks = agenda.filter(s=>s.moduleId && /^0[1-9]/.test(s.moduleId));
-      if (blocks.length) rendered.push(raw('<ol class="day-strip" aria-label="A nap blokkjai">'+blocks.map(s=>{
+      if (blocks.length) overview.push(raw('<ol class="day-strip" aria-label="A nap blokkjai">'+blocks.map(s=>{
         const p = PARTNERS.find(p=>p.key===s.partnerKey), target = 'materials/modules/'+s.moduleId+'.md';
         return '<li class="day-strip__item'+(p?' slot--'+p.key:'')+'"><span class="chip chip--time">'+escape(s.time)+'</span>'+
           (pages.has(target)?'<a href="'+relative(output(target))+'">'+escape(s.title)+'</a>':'<strong>'+escape(s.title)+'</strong>')+
@@ -216,6 +220,7 @@ function render(source, root = ROOT, pages = new Set(inventory(root))) {
       const anchor = token.content.trim().match(/^<a (?:name|id)="([\w.:-]+)"><\/a>$/);
       if (anchor) {
         const id = anchor[1];
+        if (id !== 'indulas' && dayOverview.length) { closeHero(); rendered.push(...dayOverview); dayOverview = []; }
         if (id === mainId) continue;
         if (used.has(id)) throw Error(source+': duplicate anchor '+id);
         used.add(id);
