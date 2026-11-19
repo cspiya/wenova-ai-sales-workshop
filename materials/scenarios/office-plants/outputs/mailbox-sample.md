@@ -1,8 +1,8 @@
 # Mintapostafiók – IrodaLiget
 
-**KITALÁLT oktatási minta.** Minden név, cég és levél kitalált. Akkor használd, ha nincs bekötött leveleződ, vagy nem szeretnéd a valódi leveleidet használni. A küldött levelekből a hangprofil, a beérkezettekből a Postás gyakorlata készül.
+**KITALÁLT oktatási minta.** Minden név, cég és levél kitalált. Akkor használd, ha nincs bekötött leveleződ, vagy nem szeretnéd a valódi leveleidet használni. A küldött levelekből a márkahang, a beérkezettekből a Postás gyakorlata készül.
 
-## Küldött levelek (hangprofilhoz)
+## Küldött levelek (márkahanghoz)
 
 ### K1 – új érdeklődőnek
 

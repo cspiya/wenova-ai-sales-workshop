@@ -2,5 +2,5 @@
 
 **KITALÁLT gyakorlóvállalkozás. Minden ár és ügyfél oktatási minta.**
 
-Havi weboldal-karbantartás. A teljes statikus mentőcsomag az outputs/ mappában van.
-A minta nem kapcsolódik valódi szolgáltatói fiókhoz; végrehajtási módja simulation.
+Havi weboldal-karbantartás. A teljes statikus mentőcsomag az outputs/ mappában van. Az 1. blokkhoz: [Cég-DNS](outputs/company-dna.md).
+Végrehajtási mód: `simulation`. A lánc vége: [CRM-tábla](outputs/crm.csv) · [Folyamatpróba](outputs/pipeline-review.md).

@@ -72,6 +72,7 @@ Budapesti kisvállalkozás, amely 10–40 fős irodák szobanövényeit gondozza
 | F-02 | [Árlista](../price-list.csv) | fájl | 2026-11 |
 | F-03 | Korábbi ajánlat: [proposal.md](proposal.md) | fájl | 2026-11 |
 | F-04 | Küldött levelek: [mailbox-sample.md](mailbox-sample.md), 5 levél | levelezés | 2026-10 – 2026-11 |
+| F-05 | A mintacég ügyvezetőjének kitalált közlése és az [értékesítési terv](sales-strategy.md) | oktatási minta | 2026-11 |
 
 ## 9. Hiányok és nyitott kérdések
 
@@ -87,3 +88,18 @@ Budapesti kisvállalkozás, amely 10–40 fős irodák szobanövényeit gondozza
 | Verzió | Dátum | Változás | Ki |
 | --- | --- | --- | --- |
 | 0.1 | 2026-11-19 | Első változat a workshopon (minta) | Ügyvezető (kitalált) |
+
+## 11. A cég következő célja
+
+Több bejárást szeretnénk egyeztetni 10-40 fős budapesti irodákkal. Hetente megnézzük, hány bejárást egyeztettünk, és az első négy hét után tűzünk ki célértéket. (F-05)
+
+## 12. Az ügyfélszerzés fő lépései
+
+1. A LinkedInen kiválasztjuk az ajánlathoz illő irodákat. (F-05)
+2. Rövid megkeresésben 15 perces, ingyenes bejárást javaslunk. (F-01, F-05)
+3. A bejáráson felmérjük a növények számát és gondozási igényét. (F-05)
+4. A felmérés alapján elkészítjük a havi gondozás ajánlattervezetét. (F-03, F-05)
+
+## 13. Hol kell embernek döntenie?
+
+Az ajánlattervezet előtt az ügyvezető dönt arról, hogy a felmért igény belefér-e a havi csomagba. Húsz növény felett a külön árat ő hagyja jóvá. (F-02, F-05)

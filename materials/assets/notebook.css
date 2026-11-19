@@ -36,24 +36,30 @@
   --sans:'Geist',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
   --serif:'Fraunces',Georgia,serif;
   --mono:'JetBrains Mono',ui-monospace,Consolas,Menlo,monospace;
+  --orange-hover:#ff9150; --band-h:3.4rem;
   --r:12px; --r-lg:18px; --shadow:0 1px 2px rgba(7,8,26,.05),0 8px 28px rgba(7,8,26,.06);
   --wrap:1240px;
 }
 
+/* Két célközönség, két arculat: ez a hallgatói. Az oktatói (area--instructor) színei az operations/instructor-notes/notes.css fájlban vannak. */
+.area--participant { --navy:#0b2f6b; --navy-2:#08245a; --navy-3:#123f8a; --on-navy:#eef6ff; --on-navy-2:#c3dcf7; --orange:#7dd3fc; --orange-hover:#a5e2fd; --orange-deep:#0b5394; --orange-soft:#e8f4fd; --canvas:#e6eefa; --line:#d3e0f2; --line-2:#b3c8e6; --link:#0b4fb3; --link-hover:#083a85; --focus:#0284c7; --grad:linear-gradient(90deg,#0b4fb3,#7dd3fc); --band-bg:#7dd3fc; --band-fg:#06204d; }
+
 /* ============================== 2. ALAP ============================== */
 * { box-sizing:border-box; }
-html { scroll-padding-top:1.5rem; -webkit-text-size-adjust:100%; }
+html { -webkit-text-size-adjust:100%; }
+[id] { scroll-margin-top:var(--band-h); }
 body { margin:0; color:var(--ink); background:var(--canvas); font:17px/1.7 var(--sans); overflow-wrap:anywhere; }
 img { max-width:100%; }
 a { color:var(--link); text-underline-offset:.2em; text-decoration-thickness:1px; }
 a:hover { color:var(--link-hover); text-decoration-thickness:2px; }
 :focus-visible { outline:3px solid var(--focus); outline-offset:3px; border-radius:4px; }
-.skip { position:absolute; left:1rem; top:-6rem; background:#fff; color:var(--ink); padding:.5rem .8rem; border-radius:6px; z-index:5; }
+.skip { position:absolute; left:1rem; top:-6rem; background:#fff; color:var(--ink); padding:.5rem .8rem; border-radius:6px; z-index:30; }
+.area-band { position:sticky; top:0; z-index:20; padding:.45rem 1rem; background:var(--band-bg); color:var(--band-fg); border-bottom:3px solid var(--navy); font:700 .95rem/1.4 var(--sans); letter-spacing:.14em; text-align:center; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
 .skip:focus { top:1rem; }
 strong { font-weight:650; }
 
 /* ============================== 3. FEJLÉC ÉS PARTNERSÁV ============================== */
-.site-head, .site-foot { background:var(--navy); color:var(--on-navy); background-image:radial-gradient(60rem 18rem at 0% 0%,rgba(79,140,247,.16),transparent 60%),radial-gradient(50rem 16rem at 100% 0%,rgba(255,122,47,.12),transparent 60%); }
+.site-head, .site-foot { background:var(--navy); color:var(--on-navy); }
 .site-head__bar { max-width:var(--wrap); margin:auto; padding:.9rem 1.5rem; display:flex; align-items:center; justify-content:space-between; gap:.6rem 1.5rem; flex-wrap:wrap; }
 .site-head__brand { display:inline-flex; align-items:center; gap:.9rem; color:var(--on-navy); text-decoration:none; font-weight:650; font-size:.95rem; letter-spacing:.01em; }
 .site-head__brand img { height:18px; width:auto; display:block; }
@@ -63,7 +69,7 @@ strong { font-weight:650; }
 .site-head__nav a { color:var(--on-navy-2); text-decoration:none; padding:.3rem .7rem; border-radius:999px; border:1px solid transparent; }
 .site-head__nav a:hover { color:#fff; border-color:rgba(255,255,255,.25); }
 .site-head__nav a.is-cta { color:var(--navy); background:var(--orange); font-weight:650; }
-.site-head__nav a.is-cta:hover { background:#ff9150; }
+.site-head__nav a.is-cta:hover { background:var(--orange-hover); }
 
 .partner-band { max-width:var(--wrap); margin:auto; padding:.2rem 1.5rem 1rem; }
 .partner-band__label { margin:0 0 .5rem; font:500 .68rem/1.4 var(--mono); letter-spacing:.14em; text-transform:uppercase; color:var(--on-navy-2); }
@@ -72,7 +78,7 @@ strong { font-weight:650; }
 .partner__logo { display:flex; align-items:center; min-height:28px; gap:.45rem; }
 .partner__role { font-size:.74rem; line-height:1.35; color:var(--on-navy-2); }
 .partner__lead { color:var(--orange); font-weight:650; text-transform:uppercase; letter-spacing:.08em; font-size:.68rem; }
-.partner.is-lead { border-color:var(--orange); background:rgba(255,122,47,.1); box-shadow:inset 0 3px 0 var(--orange); }
+.partner.is-lead { border-color:var(--orange); background:color-mix(in srgb,var(--orange) 12%,transparent); box-shadow:inset 0 3px 0 var(--orange); }
 .partner-band.has-lead .partner:not(.is-lead) { opacity:.72; }
 
 /* logók: arányos magasság, nincs átszínezés; a világos szövegű logók mindig sötét alapon állnak */
@@ -92,12 +98,17 @@ strong { font-weight:650; }
 
 /* ============================== 4. ELRENDEZÉS ============================== */
 .layout { max-width:var(--wrap); margin:auto; display:grid; grid-template-columns:240px minmax(0,1fr); gap:2.5rem; padding:2.2rem 1.5rem 3rem; }
-.toc { align-self:start; position:sticky; top:1.5rem; font-size:.85rem; max-height:calc(100vh - 3rem); overflow:auto; }
+.toc { align-self:start; position:sticky; top:var(--band-h); font-size:.85rem; max-height:calc(100vh - var(--band-h) - 1rem); overflow:auto; }
 .toc p { margin:0 0 .6rem; font:500 .68rem/1.4 var(--mono); letter-spacing:.14em; text-transform:uppercase; color:var(--muted); }
 .toc ol { margin:0; padding:0; list-style:none; border-left:2px solid var(--line); }
 .toc li { margin:0; }
 .toc a { display:block; padding:.38rem .3rem .38rem .9rem; margin-left:-2px; border-left:2px solid transparent; color:var(--ink-2); text-decoration:none; line-height:1.4; }
 .toc a:hover { color:var(--link); border-left-color:var(--orange); background:linear-gradient(90deg,var(--orange-soft),transparent); }
+.toc-mobile { display:none; margin:-1rem 0 1.6rem; padding:0; background:var(--paper); }
+.toc-mobile summary { padding:.7rem 1rem; min-height:2.75rem; }
+.toc-mobile ol { margin:0; padding:0 1rem .6rem; list-style:none; }
+.toc-mobile li { margin:0; }
+.toc-mobile a { display:block; padding:.45rem 0; line-height:1.4; text-decoration:none; }
 main { min-width:0; background:var(--paper); border:1px solid var(--line); border-radius:var(--r-lg); padding:clamp(1.2rem,4vw,3.2rem); box-shadow:var(--shadow); }
 main > :first-child { margin-top:0; }
 
@@ -118,7 +129,7 @@ h1 { font-size:clamp(2rem,4.2vw,3.1rem); line-height:1.1; letter-spacing:-.035em
 .btn { display:inline-flex; align-items:center; gap:.4rem; padding:.62rem 1.15rem; border-radius:999px; border:1.5px solid var(--navy); color:var(--navy); font-weight:650; text-decoration:none; font-size:.95rem; }
 .btn:hover { background:var(--navy); color:#fff; }
 .btn--primary { background:var(--orange); border-color:var(--orange); color:var(--navy); box-shadow:0 6px 18px rgba(255,122,47,.28); }
-.btn--primary:hover { background:#ff9150; border-color:#ff9150; color:var(--navy); }
+.btn--primary:hover { background:var(--orange-hover); border-color:var(--orange-hover); color:var(--navy); }
 
 .block-banner { margin:1.4rem 0 0; padding:1rem 1.2rem; border:1px solid var(--line); border-left:5px solid var(--p, var(--orange)); border-radius:var(--r); background:linear-gradient(180deg,#fbfbfe,#f6f7fc); display:grid; gap:.55rem; }
 .block-banner p { margin:0; }
@@ -170,7 +181,11 @@ h3 { font-size:1.12rem; line-height:1.4; margin:1.8rem 0 .7rem; }
 h4 { font-size:1rem; }
 p, ul, ol { margin:.75rem 0; }
 li { margin:.3rem 0; }
-pre { font:.86rem/1.7 var(--mono); white-space:pre-wrap; overflow-wrap:anywhere; background:#f7f8fc; border:1px solid var(--line); padding:1rem; border-radius:10px; }
+/* másolható blokk: olvasható méret, egy kattintás a teljes szöveget jelöli ki (JavaScript nélkül) */
+pre { font:1rem/1.6 var(--mono); white-space:pre-wrap; overflow-wrap:anywhere; background:#f7f8fc; border:1px solid var(--line); padding:1rem; border-radius:10px; -webkit-user-select:all; user-select:all; }
+pre code { font-size:inherit; }
+pre::selection, pre ::selection { background:var(--orange); color:var(--navy); }
+.copy-hint { margin:.6rem 0 .4rem; font-size:.85rem; line-height:1.45; color:var(--ink-2); }
 code { font-family:var(--mono); font-size:.86em; }
 :not(pre) > code { background:#f0f1f8; border:1px solid var(--line); border-radius:5px; padding:.05rem .35rem; color:#2b2f55; }
 blockquote { margin:1rem 0; border-left:4px solid var(--orange); padding:.8rem 1.1rem; background:var(--orange-soft); border-radius:0 10px 10px 0; white-space:pre-wrap; }
@@ -208,6 +223,7 @@ ol.flow > li:not(:last-child)::after { content:"→" / ""; position:absolute; ri
 .slot--module .slot__title { font-size:1.2rem; letter-spacing:-.015em; }
 .slot__body .slot__who { display:flex; flex-wrap:wrap; align-items:center; gap:.5rem .8rem; margin-top:.6rem; font-size:.9rem; line-height:1.4; }
 .slot__body .slot__builds { margin-top:.6rem; padding-top:.6rem; border-top:1px dashed var(--line); font-size:.92rem; color:var(--ink-2); }
+.slot__body .slot__links { margin-top:.6rem; font-size:.92rem; color:var(--ink-2); }
 .slot--pause .slot__body { background:transparent; border-style:dashed; padding:.4rem 1.1rem; color:var(--muted); }
 .slot--pause .slot__title { font-weight:500; font-size:.95rem; }
 .slot--pause .slot__time { margin-top:.45rem; color:var(--muted); }
@@ -222,9 +238,8 @@ ol.flow > li:not(:last-child)::after { content:"→" / ""; position:absolute; ri
 /* ============================== 10. RESZPONZÍV ============================== */
 @media (max-width:980px) {
   .layout { grid-template-columns:1fr; gap:1rem; padding:1rem 1rem 2rem; }
-  .toc { position:static; max-height:none; background:var(--paper); border:1px solid var(--line); border-radius:var(--r); padding:.9rem 1rem; }
-  .toc ol { columns:2; column-gap:1.5rem; border-left:0; }
-  .toc a { border-left:0; padding-left:0; margin-left:0; break-inside:avoid; }
+  .layout > .toc { display:none; }
+  .toc-mobile { display:block; }
   .partner-band__list { grid-template-columns:repeat(2,minmax(0,1fr)); }
   ol.flow { grid-template-columns:1fr; }
   ol.flow > li:not(:last-child)::after { content:"↓" / ""; right:auto; left:50%; top:auto; bottom:-.72rem; transform:translateX(-50%); }
@@ -237,7 +252,7 @@ ol.flow > li:not(:last-child)::after { content:"→" / ""; position:absolute; ri
   .partner-band { padding:.1rem 1rem .8rem; }
   .partner { padding:.5rem .6rem; }
   .partner__role { font-size:.7rem; }
-  .toc ol { columns:1; }
+  pre, .cell--prompt pre { padding:.8rem .75rem; }
   main { border-radius:var(--r); padding:1.1rem 1rem 1.5rem; }
   .cell { padding:.85rem .9rem; }
   .pager { grid-template-columns:1fr; }
@@ -254,8 +269,10 @@ ol.flow > li:not(:last-child)::after { content:"→" / ""; position:absolute; ri
 @media print {
   @page { margin:14mm 14mm 16mm; }
   body { background:#fff; font-size:10.5pt; line-height:1.5; }
+  .area-band { position:static; }
   .site-head, .site-foot { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
-  .site-head__nav, .toc, .skip, .pager, .hero-actions { display:none !important; }
+  .site-head__nav, .toc, .toc-mobile, .copy-hint, .skip, .pager, .hero-actions { display:none !important; }
+  pre { font-size:9.5pt; line-height:1.5; }
   .site-head__bar { padding:.4rem 0; }
   .partner-band { padding:0 0 .5rem; }
   .partner-band__label { display:none; }
@@ -285,3 +302,18 @@ ol.flow > li:not(:last-child)::after { content:"→" / ""; position:absolute; ri
 h1, h2, h3, h4, .day-strip__item a, .tl-title, .day-strip__item { overflow-wrap:normal; word-break:normal; hyphens:auto; }
 .logo-word, .logo-tile { white-space:nowrap; }
 .day-strip__item .logo-tile { max-width:100%; }
+
+/* Projection page (materials/indulas.md): readable from the back of the room at 1920x1080. */
+.page--projection { background:#fff; }
+.page--projection .site-head, .page--projection .site-foot, .page--projection .toc, .page--projection .skip { display:none; }
+.page--projection .layout { display:block; max-width:none; margin:0; padding:0; }
+.page--projection main { max-width:none; margin:0; padding:2vh 3vw; border:0; border-radius:0; box-shadow:none; }
+.page--projection .page-hero { display:grid; grid-template-columns:auto 1fr; grid-template-areas:"title title" "url url" "qr steps"; column-gap:4vw; align-items:center; margin:0; padding:0; border:0; }
+.page--projection .page-hero::before { display:none; }
+.page--projection .page-hero h1 { grid-area:title; margin:0 0 1vh; font-size:2.6vw; line-height:1.15; }
+.page--projection .page-hero .hero-links { grid-area:url; margin:0 0 2vh; font-size:3.4vw; font-weight:700; line-height:1.2; white-space:nowrap; }
+.page--projection .page-hero p:has(img) { grid-area:qr; margin:0; max-width:none; }
+.page--projection .page-hero p:has(img) img { display:block; width:min(40vw,74vh); height:auto; }
+.page--projection .page-hero ol { grid-area:steps; margin:0; padding-left:1.2em; font-size:2.5vw; line-height:1.3; }
+.page--projection .page-hero li { margin:0 0 2.5vh; }
+.page--projection .page-hero code { font-size:.85em; white-space:nowrap; }

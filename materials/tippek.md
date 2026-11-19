@@ -3,7 +3,9 @@
 
 AI Sales & Marketing Workshop · 2026. november 19. · Piya Csaba blokkjához
 
-**Állapot: draft.** Rövid, általános tanácsok kis- és középvállalkozásoknak, amelyek AI-segítséggel hirdetnek, gyűjtenek érdeklődőket és írnak leveleket. Minden tanács mögött legalább két független, nyilvános forrás áll (platformdokumentáció, hatósági útmutató vagy kutatás); a linkeket a tanácsnál találod. A platformok felülete és szabályai változnak: alkalmazás előtt nézd meg a hivatkozott oldal friss változatát.
+**Állapot: draft.**
+
+Rövid, általános tanácsok kis- és középvállalkozásoknak, amelyek AI-segítséggel hirdetnek, gyűjtenek érdeklődőket és írnak leveleket. Minden tanács mögött legalább két független, nyilvános forrás áll (platformdokumentáció, hatósági útmutató vagy kutatás); a linkeket a tanácsnál találod. A platformok felülete és szabályai változnak: alkalmazás előtt nézd meg a hivatkozott oldal friss változatát.
 
 <a name="terv"></a>
 
@@ -64,7 +66,7 @@ AI Sales & Marketing Workshop · 2026. november 19. · Piya Csaba blokkjához
 ### 7. Készítő és ellenőrző legyen külön: egy AI-munkamenet ír, egy másik, független értékel.
 
 - **Miért:** a készítő-értékelő felállás (egy modell készít, egy másik visszajelez) akkor hasznos, ha világosak az értékelési szempontok. A generatív AI kockázatkezelési ajánlásai is többféle értékelést és emberi felügyeletet kérnek.
-- **Hogyan:** az ellenőrző a tényeket, a szabályokat és a kész anyagot kapja, a készítő érvelését nem. A kimenet: blokkoló, súlyos és kisebb hibák, bizonyítékkal. Javítás után csak a blokkolókat nézesd újra.
+- **Hogyan:** az ellenőrző a tényeket, a szabályokat és a kész anyagot kapja, a készítő érvelését nem. A kimenet: blokkoló, súlyos és kisebb hibák, bizonyítékkal. Javítás után add vissza a teljes javított változatot ugyanabba az ellenőri beszélgetésbe. Nézesd újra a hibák javítását és a változással érintett állításokat. Az Ellenőr az új változatról adjon ítéletet. Addig a piszkozat ellenőrzésre vár.
 - **Források:** [Anthropic: Building effective agents](https://www.anthropic.com/engineering/building-effective-agents) · [NIST AI 600-1: Generative AI Profile (2024)](https://doi.org/10.6028/NIST.AI.600-1)
 
 ### 8. Költést, küldést és visszafordíthatatlan lépést ember hagyjon jóvá.
@@ -87,11 +89,11 @@ AI Sales & Marketing Workshop · 2026. november 19. · Piya Csaba blokkjához
 
 ## Adat és biztonság
 
-### 10. Az adatkezelési tájékoztató az adatgyűjtés pillanatában legyen elérhető, és fedjen le minden új eszközt.
+### 10. A tájékoztatás ideje attól függ, honnan jön a személyes adat.
 
-- **Miért:** a GDPR szerint az érintettet az adatgyűjtéskor kell tájékoztatni a célról, a jogalapról, a címzettekről és a megőrzésről; az európai adatvédelmi testület útmutatója szerint ennek tömörnek, érthetőnek és könnyen elérhetőnek kell lennie.
-- **Hogyan:** a hirdetési űrlap és a kérdőív linkje az éles tájékoztatóra mutasson, mielőtt elindítod. Minden új eszköz (űrlap, kérdőív, AI-szolgáltató) előtt nézd meg, hogy a tájékoztató megnevezi-e az adatkört, a célt és az adatfeldolgozót.
-- **Források:** [GDPR (EU) 2016/679, 13. cikk](https://eur-lex.europa.eu/eli/reg/2016/679/oj) · [Article 29 Working Party (EDPB által elfogadva): Guidelines on transparency, WP260 rev.01](https://ec.europa.eu/newsroom/article29/items/622227)
+- Saját űrlapnál az adat felvételekor adj tájékoztatást (GDPR 13. cikk). Ha más forrásból szerezted a személyes adatot, a 14. cikk szerint az időzítés az esettől függ: főszabály szerint legfeljebb egy hónapon belül, kapcsolatfelvételnél legkésőbb az első megkereséskor.
+- Az űrlapból legyen elérhető a célra, a jogalapra, a címzettekre és a tárolásra is kitérő tájékoztató. Direkt marketingnél az érintett tiltakozhat. Tiltakozás után a személyes adatait erre a célra már nem kezelheted (21. cikk).
+[GDPR, 13., 14. és 21. cikk](https://eur-lex.europa.eu/legal-content/HU/TXT/?uri=CELEX:32016R0679)
 
 ### 11. Az automatikus leveleket hitelesített saját domainről küldd.
 

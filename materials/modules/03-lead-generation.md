@@ -2,7 +2,7 @@
 
 **Állapot: review.**
 
-[HTML-változat](03-lead-generation.html)
+[HTML-változat](https://cspiya.github.io/wenova-ai-sales-workshop/materials/modules/03-lead-generation.html)
 
 ## Tartalom
 
@@ -82,7 +82,7 @@ A Sales Bot **AI brainjét** kitöltöd a saját vagy a mintavállalkozásod ada
 - A workshop-fiókod a Sales Botban. A fiókot előre létrehoztuk; a belépő linket e-mailben kaptad meg.
 - Claude, amelyben be van kapcsolva a Sales Bot connector (MCP): **Beállítások → Connectors → „Add custom connector”**, név például `Sales-Bot.io`, URL: `https://app.sales-bot.io/api/mcp`, majd **Connect**, belépés a Sales Bot-fiókkal és engedélyezés. Ha elakadsz, a mentorok segítenek.
 
-Saját fiók nélkül: [IrodaLiget mintaalaplap](../scenarios/office-plants/outputs/business-profile.md) · [Minta leadlista](../scenarios/office-plants/outputs/leads.csv)
+Saját fiók nélkül: [IrodaLiget mintacégprofil](../scenarios/office-plants/outputs/business-profile.md) · [Minta leadlista](../scenarios/office-plants/outputs/leads.csv)
 
 <a name="03-lead-generation.01-qualify-leads--explanation"></a>
 

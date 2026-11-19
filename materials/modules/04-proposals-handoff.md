@@ -2,7 +2,7 @@
 
 **Állapot: review.**
 
-[HTML-változat](04-proposals-handoff.html)
+[HTML-változat](https://cspiya.github.io/wenova-ai-sales-workshop/materials/modules/04-proposals-handoff.html)
 
 ## Tartalom
 
@@ -92,7 +92,7 @@ Az EstiWise-fiókodban a `business-profile.md` ajánlatához tartozó szolgálta
 - A felkészülésben létrehozott EstiWise-fiók (Standard próbacsomag, bankkártya nélkül) és a Claude-hoz kapcsolt EstiWise-kapcsolat.
 - Ha van: saját árlista vagy szolgáltatásleírás PDF-ben vagy táblázatban.
 
-Ha nincs saját üzleted vagy fiókod: [IrodaLiget alaplap](../scenarios/office-plants/outputs/business-profile.md) · [igény](../scenarios/office-plants/outputs/customer-brief.md) · [árlista](../scenarios/office-plants/price-list.csv), és a mentor által kiosztott demófiók.
+Ha nincs saját üzleted vagy fiókod: [IrodaLiget cégprofil](../scenarios/office-plants/outputs/business-profile.md) · [igény](../scenarios/office-plants/outputs/customer-brief.md) · [árlista](../scenarios/office-plants/price-list.csv), és a mentor által kiosztott demófiók.
 
 <a name="04-proposals-handoff.01-discover-needs--explanation"></a>
 
@@ -115,8 +115,8 @@ Mely szolgáltatás kerüljön a katalógusba; az ár és az egység (nettó/bru
 ```text
 Az EstiWise-kapcsolattal dolgozunk a workshop 04-es moduljában. Csatoltam a business-profile.md és a customer-brief.md fájlomat, és ha van, az árlistámat.
 1. Ellenőrizd, hogy él-e az EstiWise-kapcsolat, és milyen csomagban vagyok.
-2. Nézd meg, van-e már szolgáltatáskatalógusom. Ha nincs, az üzleti alaplapom alapján állítsd be a fiókot, és mutasd meg a javasolt szolgáltatásokat, mielőtt jóváhagyom.
-3. A business-profile.md ajánlatához tartozó szolgáltatásnál vesd össze az árat és az egységet az alaplapommal és az árlistámmal. Eltérésnél kérdezz, ne találj ki árat.
+2. Nézd meg, van-e már szolgáltatáskatalógusom. Ha nincs, a cégprofilom alapján állítsd be a fiókot, és mutasd meg a javasolt szolgáltatásokat, mielőtt jóváhagyom.
+3. A business-profile.md ajánlatához tartozó szolgáltatásnál vesd össze az árat és az egységet a cégprofilommal és az árlistámmal. Eltérésnél kérdezz, ne találj ki árat.
 4. Mutasd meg, milyen kérdéseket tesz fel a rendszer az ügyfélnek. Javasolj legfeljebb 7 rövid kérdést.
 5. Vesd össze a customer-brief.md igényét a kérdésekkel: mi ismert, és mi hiányzik? A hiányzókat írd az open_questions mezőbe.
 Minden módosítás előtt mutasd meg, mit változtatnál, és kérd a jóváhagyásomat. Semmit ne küldj ki ügyfélnek.
@@ -126,7 +126,7 @@ Minden módosítás előtt mutasd meg, mit változtatnál, és kérd a jóváhag
 
 ### Haladj végig ezeken
 
-1. **0–3 perc:** csatold az alaplapot, az igényt és az árlistát; futtasd a kapcsolatellenőrzést (1. pont).
+1. **0–3 perc:** csatold a cégprofilt, az igényt és az árlistát; futtasd a kapcsolatellenőrzést (1. pont).
 2. **3–10 perc:** hagyd jóvá vagy javítsd a szolgáltatást, az árat és az egységet.
 3. **10–15 perc:** szűkítsd az ügyfélkérdéseket legfeljebb hétre; jóváhagyás után kérd a szolgáltatás közzétételét.
 4. **15–18 perc:** a hiányzó adatokkal frissítsd és mentsd a `customer-brief.md` fájlt.
@@ -137,7 +137,7 @@ Minden módosítás előtt mutasd meg, mit változtatnál, és kérd a jóváhag
 ### Ellenőrizd az eredményt
 
 - Az EstiWise-fiókban közzétett szolgáltatás tartozik a `business-profile.md` `offer_id`-jához.
-- Az ár, a pénznem, a nettó/bruttó jelölés és az egység egyezik az alaplappal vagy az árlistával; ahol nincs jóváhagyott ár, ott `open` szerepel.
+- Az ár, a pénznem, a nettó/bruttó jelölés és az egység egyezik a cégprofillal vagy az árlistával; ahol nincs jóváhagyott ár, ott `open` szerepel.
 - Legfeljebb 7 ügyfélkérdés van, mindegyik egy adatot kérdez.
 - A `customer-brief.md` `open_questions` mezője tartalmazza a hiányzó adatokat.
 - Semmilyen üzenet nem ment ki ügyfélnek.
@@ -147,7 +147,7 @@ Minden módosítás előtt mutasd meg, mit változtatnál, és kérd a jóváhag
 ### Ha elakadtál
 
 - **Nem él a kapcsolat vagy nem érkezik meg a belépőkód:** jelezd a mentornak, és a kiosztott demófiókkal folytasd.
-- **Nincs használható weboldal vagy leírás:** az alaplap mezőiből dolgozzon a rendszer; ha ez sem megy, válts az IrodaLiget mintára.
+- **Nincs használható weboldal vagy leírás:** a cégprofil mezőiből dolgozzon a rendszer; ha ez sem megy, válts az IrodaLiget mintára.
 - Öt perc után használd a [mentőcsomagot](#recovery).
 
 <a name="04-proposals-handoff.01-discover-needs--handoff"></a>

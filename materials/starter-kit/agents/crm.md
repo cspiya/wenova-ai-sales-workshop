@@ -9,22 +9,22 @@ Indítómondat: `CRM: [mit frissítsünk]` vagy `CRM: mi a mai teendő?`
 
 ## A tábla
 
-Egy Google-táblázat „CRM – [cégnév]” néven (Outlook- és Excel-felhasználóknál a saját Excel-fájl), a [CRM-sablon](../crm-template.csv) oszlopaival. Ha a táblázat nem érhető el connectorral, a projektbe feltöltött `crm.csv` (a `crm-template.csv` másolata) a forrás. Egy sor egy ügyféleset (egy cég egy lehetősége).
+Egy Google-táblázat „CRM – [cégnév]” néven (Outlook- és Excel-felhasználóknál a saját Excel-fájl), a `Tananyag/starter-kit/crm-template.csv` sablon oszlopaival. Ha a táblázat nem érhető el connectorral, a projektbe feltöltött `crm.csv` (a `crm-template.csv` másolata) a forrás. Egy sor egy ügyféleset (egy cég egy lehetősége).
 
 | Oszlop | Tartalom | Szabály |
 | --- | --- | --- |
-| case_id | Egyedi azonosító | A forrás azonosítója, ha van (Sales Bot: lead_id; EstiWise: proposal_id); egyébként `E-ÉÉHHNN-01` |
+| case_id | Egyedi azonosító | Ha van `lead_id`, azt használd, és ezzel keresd meg a meglévő sort. `lead_id` nélküli EstiWise-esetnél a `proposal_id` az azonosító. Ha egyik sincs, használj helyi azonosítót: `E-ÉÉHHNN-01`. |
 | company | Cégnév | Egyezés keresése előtt ellenőrizd, van-e már sor |
 | contact_role | A kapcsolattartó szerepe | Szerep, nem név |
 | source | Honnan jött | LinkedIn / Sales Bot · Weboldal / EstiWise · E-mail · Ajánlás · Egyéb |
 | offer_id | Melyik ajánlat | A DNS ajánlatazonosítója |
 | stage | Szakasz | Csak a lenti listából |
-| value_net | Várható érték nettó | Csak `proposal.md`-ből vagy EstiWise-ból; különben üres |
-| currency | Pénznem | HUF / EUR |
+| value_net | Várható érték nettó | Csak a `proposal.md`-ben vagy az EstiWise-ban dokumentált nettó összeg. Ha csak bruttó összeg ismert, kérd a dokumentált nettó értéket. Addig hagyd üresen. |
+| currency | Pénznem | HUF / EUR, a dokumentált pénznem alapján |
 | next_step | Következő lépés | Nyitott szakaszban kötelező, igével kezdődik |
 | next_step_due | Határidő | ÉÉÉÉ-HH-NN |
 | owner | Felelős | Szerep vagy monogram |
-| partner_ref | Hivatkozás a partnerrendszerben | Sales Bot kampány, EstiWise-ajánlat azonosítója |
+| partner_ref | Hivatkozás a partnerrendszerben | Ha van `proposal_id`, ide kerül. Ajánlat nélkül a Sales Bot kampányhivatkozását használd, ha elérhető. |
 | last_contact | Utolsó kapcsolat | ÉÉÉÉ-HH-NN |
 | notes | Megjegyzés | Legfeljebb egy mondat, személyes adat nélkül |
 | updated | Utolsó módosítás | ÉÉÉÉ-HH-NN, az agent tölti |
@@ -38,11 +38,12 @@ Egy Google-táblázat „CRM – [cégnév]” néven (Outlook- és Excel-felhas
 
 ## Munkamenet
 
-1. Beolvasod a bemenetet: a Postás táblázata, `leads.csv`, `customer-brief.md`, `proposal.md`, `handoff.md`, vagy a Sales Bot és az EstiWise kapcsolaton át lekérdezett státusz.
+1. Beolvasod a bemenetet: a Postás táblázata, `leads.csv`, `customer-brief.md`, `proposal.md`, `handoff.md`, vagy a Sales Bot és az EstiWise kapcsolaton át lekérdezett státusz. Az ajánlat azonosítójának ellenőrzéséhez (`offer_id`) a legutóbbi jóváhagyott Cég-DNS-t olvasd be. Jelezd a fájl nevét, verzióját és státuszát.
 2. Beolvasod a táblát: a Google Drive connectorral (a beszélgetésben + → Google Drive-ból), vagy a projektben lévő `crm.csv`-ből.
-3. Változáslistát mutatsz: „új sor” vagy „módosítás: oszlop régi → új”. Duplikációt jelzel.
-4. Alapeset: jóváhagyás után a frissített és új sorokat CSV-formában adod át, a tábla oszlopsorrendjében; a felhasználó bemásolja őket a táblázatba. Utána a Drive connectorral visszaolvasod a táblát, és megerősíted, hogy a sorok bekerültek.
-5. Közvetlenül csak akkor írsz a táblába, ha a connectorod írni is tud, és a felhasználó jóváhagyta; utána is visszaolvasod.
+3. `case_id` alapján keresel. A kapcsolt ajánlat és lead egy műveletként szerepel. A `handoff.md` azonosítóit egyezteted az ajánlattal, majd onnan veszed át a teendőt, határidőt és felelőst. Változáslistát mutatsz: „új sor” vagy „módosítás: oszlop régi → új”. Többszörös egyezésnél egyeztetést kérsz.
+4. Alapeset: jóváhagyás után a frissített és új sorokat CSV-formában adod át, a tábla oszlopsorrendjében; a felhasználó az új ügyet üres sorba illeszti, a módosítást a meglévő `case_id` sorába írja.
+5. Közvetlenül csak akkor írsz a táblába, ha a connectorod írni is tud, és a felhasználó jóváhagyta.
+6. Mindkét úton visszaolvasod a táblát vagy a mentett CSV-t. Ellenőrzöd az érintett kulcsok egyediségét és a jóváhagyott mezőértékeket, köztük a dokumentált nettó összeget vagy az üres `value_net` mezőt, valamint a dokumentált pénznemet.
 
 ## „Mi a mai teendő?”
 

@@ -8,8 +8,9 @@
 <link rel="stylesheet" href="app.css">
 <script type="module" src="js/app.js"></script>
 </head>
-<body>
+<body class="area--participant">
 <a class="skip" href="#main">Ugrás a tartalomhoz</a>
+<div class="area-band" role="note">HALLGATÓI ANYAG</div>
 <header class="top">
   <div class="brand">
     <img class="brand__logo" src="../../assets/logos/wenova-wordmark.png" alt="Wenova" width="132" height="15">
@@ -69,10 +70,10 @@
 
     <p class="script-line">Aktív forgatókönyv: <strong id="activeScriptLabel">–</strong></p>
     <div class="actions">
-      <button id="startBtn" class="btn btn--primary" type="button">Indítás</button>
+      <button id="startBtn" class="btn btn--primary" type="button" disabled>Kapcsolat ellenőrzése…</button>
       <button id="stopBtn" class="btn" type="button" disabled>Leállítás</button>
     </div>
-    <p id="status" class="status" role="status" aria-live="polite">Kész.</p>
+    <p id="status" class="status" role="status" aria-live="polite">Kapcsolat ellenőrzése…</p>
     <div id="meters" class="meters" aria-hidden="true"></div>
     <div id="metrics" class="metrics"></div>
     <div id="transcript" class="transcript" tabindex="0" aria-label="Élő átirat" aria-live="polite"><p class="empty">Az átirat itt jelenik meg.</p></div>

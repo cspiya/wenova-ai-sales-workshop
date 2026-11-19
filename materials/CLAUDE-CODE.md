@@ -1,12 +1,11 @@
 <!-- presentation -->
 # Haladó út: Claude Code a terminálban
 
-**Választható, haladóknak.** Az alapút a Claude Desktop Cowork; ezt csak akkor válaszd, ha szívesen dolgozol a terminálban (karakteres képernyőn). Ugyanazt a tananyagot, ugyanazokkal a lépésekkel járod végig, csak a Claude Code-ban.
+**Mentőút.** A nap kötelező módja a Claude Desktop Cowork. Ezt az utat csak akkor használd, ha a Cowork a gépeden nem indul ([Windows-mentőút Scooppal](#scoop)). Ugyanazt a tananyagot, ugyanazokkal a lépésekkel járod végig, csak a Claude Code-ban.
 
-## Mikor jó ez neked?
+## Mi kell hozzá?
 
-- Ismered a terminált (Windowson PowerShell, macOS-en Terminal), vagy szeretnéd megtanulni.
-- Azt szeretnéd, hogy a Claude közvetlenül a saját gépeden, a munkamappádban dolgozzon, és a változásokat fájlonként lásd.
+- Terminál (Windowson PowerShell, macOS-en Terminal). A parancsokat innen másolod be.
 - Pro, Max vagy magasabb Claude-előfizetésed van. Az ingyenes csomag nem tartalmazza a Claude Code-ot.
 
 ## 1. Telepítés (5 perc)
@@ -22,6 +21,69 @@ A hivatalos parancsok ([Claude Code telepítési leírás](https://code.claude.c
 | Windows, WinGet | `winget install Anthropic.ClaudeCode` |
 
 Utána nyiss **új** terminálablakot, és ellenőrizd: `claude --version`. Ha a `claude` parancs ismeretlen, a leírás „Fix your PATH” része segít. Windowson a Git for Windows nem kötelező; nélküle a Claude Code PowerShell-lel dolgozik. Rendszergazdai jog nem kell.
+
+<a name="scoop"></a>
+
+## Mentőút Windowson: Claude Code Scooppal
+
+Akkor használd, ha a Cowork nem indul a gépeden. A Scoop egy ingyenes programtelepítő, amely a saját felhasználói mappádba dolgozik, ezért rendszergazdai jog nem kell. Minden parancsot egy sima **PowerShell** ablakba másolj: Start menü, írd be, hogy PowerShell, és nyisd meg. Ne válaszd a „Futtatás rendszergazdaként” lehetőséget.
+
+**1. A Scoop telepítése.** Ez az egy sor közvetlenül a memóriából futtatja a hivatalos telepítőt, fájlt nem ment le, ezért nem jön elő a „letöltött fájl nem futtatható” hiba.
+
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force; Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+```
+
+- **Akkor jó, ha** ezt látod: `Scoop was installed successfully!`
+- **Ha azt írja, hogy már telepítve van:** ugorj a 2. lépésre.
+- **Ha rendszergazdai ablakra panaszkodik:** zárd be, és nyiss sima PowerShell ablakot.
+
+**2. A Claude Code és ami kell hozzá.** A `7zip` a csomagok kibontásához, a `git` a Scoop csomaglistáihoz kell, a `claude-code` maga a Claude Code.
+
+```powershell
+scoop install 7zip git claude-code
+```
+
+- **Akkor jó, ha** a végén ezt látod: `'claude-code' (…) was installed successfully!`
+- **Ha megszakad:** futtasd újra ugyanezt a sort, a kész csomagokat átugorja.
+
+**3. Ellenőrzés.**
+
+```powershell
+claude --version
+```
+
+- **Akkor jó, ha** egy verziószámot látsz, utána `(Claude Code)` felirattal.
+- **Ha a `claude` parancs ismeretlen:** zárd be az ablakot, nyiss újat, és próbáld újra.
+
+Ezután folytasd a [belépéssel](#2-belépés) és a [tananyag telepítésével](#3-a-tananyag-telepítése-egy-mondattal).
+
+**4. Választható: videó hanggal és narrációval.** Ezekre a napi feladatokhoz nincs szükség.
+
+```powershell
+scoop install ffmpeg sox espeak-ng whisper-cpp nodejs-lts uv
+```
+
+| Csomag | Mire való? |
+| --- | --- |
+| `ffmpeg` | Videó és hang vágása, átalakítása, összefűzése |
+| `sox` | Hangfájlok átalakítása és szerkesztése |
+| `espeak-ng` | Gépi felolvasás szövegből, sok nyelven |
+| `whisper-cpp` | Beszéd átírása szöveggé, például felirathoz |
+| `nodejs-lts` | Node.js, sok videókészítő eszköz erre épül |
+| `uv` | Python-eszközök gyors telepítése |
+
+Ellenőrzés: `scoop list`. **Akkor jó, ha** mind a hat csomag ott van a listában a verziószámával. Ha egy csomag hibát ad, a Claude Code enélkül is működik: futtasd újra a sort, vagy hagyd ki azt a csomagot.
+
+## Mentőút macOS-en
+
+Nyisd meg a **Terminal** alkalmazást, és másold be a hivatalos telepítő sort:
+
+```bash
+curl -fsSL https://claude.ai/install.sh | bash
+```
+
+Utána nyiss új Terminal-ablakot, és írd be: `claude --version`. **Akkor jó, ha** egy verziószámot látsz. Ha a `claude` parancs ismeretlen, nézd meg a [telepítési leírás](https://code.claude.com/docs/en/setup) „Fix your PATH” részét, vagy szólj egy oktatónak.
 
 ## 2. Belépés
 
@@ -39,26 +101,24 @@ Utána nyiss **új** terminálablakot, és ellenőrizd: `claude --version`. Ha a
 Telepítsd a workshop tananyagát: https://raw.githubusercontent.com/cspiya/wenova-ai-sales-workshop/main/materials/TELEPITES.md
 ```
 
-A Claude Code a saját gépeden tölti le és csomagolja ki a tananyagot a `Tananyag/` mappába, létrehozza a `Munka/` mappát, és a gyökérbe másolja a `CLAUDE.md` és `AGENTS.md` fájlt. Minden parancs előtt engedélyt kér: olvasd el, mit futtatna, és csak akkor engedd, ha érted. A futtatókönyv: [TELEPITES.md](TELEPITES.md).
+A Claude Code a saját gépeden tölti le és csomagolja ki a tananyagot a `Tananyag/` mappába, létrehozza a `Munka/` mappát, és a gyökérbe másolja a `CLAUDE.md` és `AGENTS.md` fájlt. Az engedélyezési módtól függ, hogy a parancsok előtt rákérdez-e. Ha rákérdez, olvasd el, mit futtatna, és csak akkor engedd, ha érted. A futtatókönyv: [TELEPITES.md](TELEPITES.md).
 
-4. Lépj ki (`/exit`), és indítsd újra a `claude` parancsot ugyanebben a mappában. A Claude Code ekkor automatikusan betölti a `CLAUDE.md` fájlt, az pedig az `AGENTS.md`-t: így tudja a mappaszabályokat, az indítómondatokat és a biztonsági szabályokat.
+4. A futtatókönyv a plugint is felteszi. Ellenőrzés: `claude plugin list`, a listában ott a `wenova-sales-workshop`.
+5. Lépj ki (`/exit`), és indítsd újra a `claude` parancsot ugyanebben a mappában. A Claude Code ekkor automatikusan betölti a `CLAUDE.md` fájlt, az pedig az `AGENTS.md`-t: így tudja a mappaszabályokat, az indítómondatokat és a biztonsági szabályokat.
 
 ## 4. Connectorok
 
 - **A claude.ai-on bekötött connectorok** (Gmail vagy Microsoft 365, Google Drive) a Claude Code-ban is megjelenhetnek, ha ugyanazzal a fiókkal léptél be. A `/mcp` paranccsal nézd meg, mi látszik, és ott kapcsolhatod ki, ami nem kell.
-- **Buffer:** `claude mcp add --transport http buffer https://mcp.buffer.com/mcp`, utána a Claude Code-ban `/mcp` → Buffer → belépés a böngészőben ([Buffer leírása](https://developers.buffer.com/guides/integrations/claude.html)).
-- **Brandiseer, Sales Bot, EstiWise:** a partnerek MCP-connectorát a saját blokkjukban kötjük be; előre nincs teendő. A blokkban kapott címet ugyanígy, `claude mcp add --transport http …` paranccsal adod hozzá.
+- **Brandiseer, Sales Bot, EstiWise, Buffer:** a címüket a plugin hozza, külön hozzáadni nem kell. A `/mcp` menüben szolgáltatásonként lépj be a böngészőben. A partnerekhez elég a saját blokkjuk elején belépni, a Buffer választható.
 
-## 5. Biztonsági beállítás: küldés tiltva
+## 5. Engedélyek
 
-Az engedélymódod maradjon az alapértelmezett: a Claude minden művelet előtt kérdez. Az automatikus jóváhagyást ne kapcsold be. Levélküldést, posztolást és törlést soha ne engedélyezz „mindig” (always allow) válasszal.
-
-Tiltsd le a levelező írási eszközeit: a `/permissions` paranccsal a **Deny** listára vedd fel a Gmail vagy Outlook küldő, válaszoló, továbbító és törlő eszközét. Az eszközök pontos nevét a `/mcp` mutatja (például `mcp__claude_ai_Gmail__send_message`). A tiltólista erősebb, mint a kérés: a tiltott eszközt a Claude akkor sem tudja használni, ha valaki erre utasítja.
+Az engedélyek a te döntésed. A kényelmes automatizáláshoz engedélyek kellenek, a teljes engedély is elfogadható. Az engedélyezési mód és a tartós engedélyek szabják meg, mikor kérdez rá a Claude Code. Amit engedélyezel, azt a Claude kérdés nélkül megteheti, a levélküldést is. A workshop szabálya ettől független: a Claude magától nem küld és nem publikál, a levelet te küldöd, posztot pedig csak a csatorna, a szöveg és az időpont kifejezett jóváhagyása után ütemezhet. A beállításokat a `/permissions` paranccsal nézheted meg és módosíthatod.
 
 ## 6. Így dolgozol a blokkokban
 
 - Indítómondatok ugyanazok: „Kezdjük a felkészülést”, „Kezdjük az 1. blokkot”, „Hol tartok?”, „Karmester: …”, „Író: …”, és így tovább.
-- Az eredmények a `Munka/` mappába kerülnek; a Claude Code minden fájlírás előtt megmutatja a változást. Nézd át, és csak utána engedd.
+- Az eredmények a `Munka/` mappába kerülnek; ha az engedélyezési módod rákérdez a fájlírásra, a Claude Code előtte megmutatja a változást. Nézd át, és csak utána engedd. Ha a fájlírást tartósan engedélyezted, a kész fájlt nézd át.
 - A vizuális eredmények (kampányáttekintés, posztelőnézet, a nap összefoglalója) HTML-fájlok a `Munka/` alatt. Nyisd meg őket a böngészőben (dupla kattintás); claude.ai-os artifact itt nincs.
 - Az Ellenőrt új munkamenetben futtasd: `/clear`, vagy nyiss új terminálablakot, és ott indíts új `claude` munkamenetet.
 - Hasznos parancsok: `/mcp` (connectorok), `/permissions` (engedélyek), `/clear` (új, tiszta beszélgetés), `/resume` (korábbi beszélgetés folytatása), `/exit` (kilépés). A `/init` parancs itt nem kell: a `CLAUDE.md` már megvan.
@@ -72,8 +132,7 @@ Tiltsd le a levelező írási eszközeit: a `/permissions` paranccsal a **Deny**
 ## 8. Biztonság röviden
 
 - Jelszót, API-kulcsot, belépőkódot soha ne írj a terminálba vagy a beszélgetésbe.
-- A levélküldő eszközök legyenek a Deny listán.
-- Minden fájlváltozást nézz át, mielőtt engeded.
+- Tudd, mit engedélyeztél: amit engedélyezel, azt a Claude kérdés nélkül megteheti.
 - Ha valami furcsát kér a Claude (törlés, ismeretlen parancs), utasítsd el, és kérdezz egy oktatót.
 
 [Vissza a felkészüléshez](modules/00-prework.md) · [A tananyag kezdőlapja](README.md)

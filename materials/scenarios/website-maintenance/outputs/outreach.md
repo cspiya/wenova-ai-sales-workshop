@@ -1,6 +1,6 @@
 lead_id: website-maintenance-L01
-first_message: Szia! A mintában megadott igényetekhez kapcsolódóan a(z) Havi weboldal-karbantartás szolgáltatást szeretném röviden bemutatni. Érdemes erről beszélnünk?
+first_message: Szia! Van, aki havonta átnézi a weboldalatok állapotát? Ha aktuális a kérdés, beszéljünk arról, milyen ellenőrzésekre van szükségetek.
 followup: Ha aktuális a téma, küldök egy rövid összefoglalót a csomagról.
-stop_condition: Elutasítás vagy leiratkozási kérés esetén nincs további megkeresés.
+stop_condition: Válasz vagy leiratkozási kérés után leáll az üzenetsorozat.
 
 KITALÁLT szimuláció, semmi nincs elküldve.

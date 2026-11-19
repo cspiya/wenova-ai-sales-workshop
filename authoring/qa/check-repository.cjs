@@ -15,9 +15,29 @@ function markdownInfo(text){
 }
 const ROOT=path.resolve(__dirname,'../..');
 const unix=p=>p.split(path.sep).join('/');
-const attrs=tag=>Object.fromEntries([...tag.matchAll(/([\w:-]+)\s*=\s*(["'])(.*?)\2/gs)].map(m=>[m[1].toLowerCase(),m[3]]));
+// Double-quoted, single-quoted and unquoted values; as in a browser, the first of a repeated attribute counts.
+const attrs=tag=>{const found={};for(const m of tag.matchAll(/([\w:-]+)\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s"'=<>`]+))/g)){const name=m[1].toLowerCase();if(!(name in found))found[name]=m[2]??m[3]??m[4];}return found;};
 const clean=s=>s.replace(/<!--[\s\S]*?-->/g,'');
-const elements=s=>[...clean(s).matchAll(/<[a-z][^>]*>/gi)].map(m=>({name:m[0].match(/^<(\w+)/)[1].toLowerCase(),a:attrs(m[0])}));
+const elements=s=>[...clean(s).matchAll(/<[a-z](?:"[^"]*"|'[^']*'|[^'">])*>/gi)].map(m=>({name:m[0].match(/^<(\w+)/)[1].toLowerCase(),a:attrs(m[0])}));
+// Participant pages stay in materials/: the root home page, operations/ and authoring/ are instructor pages.
+// The target is resolved like a browser does it, from the page's own published address.
+const SITE_HOST='cspiya.github.io',SITE_PATH='/wenova-ai-sales-workshop';
+const ENTITIES={amp:'&',colon:':',sol:'/',period:'.',lowbar:'_',num:'#',quest:'?'};
+const decodeEntities=s=>s.replace(/&(?:#x([\da-f]+)|#(\d+)|(amp|colon|sol|period|lowbar|num|quest));?/gi,(all,hex,dec,name)=>hex?String.fromCodePoint(parseInt(hex,16)):dec?String.fromCodePoint(Number(dec)):ENTITIES[name.toLowerCase()]);
+function sitePath(pathname){
+ let current=pathname;
+ for(let i=0;i<4;i++){let next;try{next=decodeURIComponent(current);}catch{break;}if(next===current)break;current=next;}
+ return path.posix.normalize(current.replace(/\\/g,'/')).toLowerCase();
+}
+function leavesParticipantArea(target,file,root){
+ const text=decodeEntities(target).trim();let url;
+ try{url=new URL(text,'https://'+SITE_HOST+SITE_PATH+'/'+encodeURI(unix(path.relative(root,file))));}catch{return false;}
+ if(!['http:','https:'].includes(url.protocol)||url.hostname!==SITE_HOST)return false;
+ const absolute=/^(?:[a-z][\w+.-]*:|[/\\]{2})/i.test(text),where=sitePath(url.pathname),home=SITE_PATH.toLowerCase();
+ if(where!==home&&!where.startsWith(home+'/'))return !absolute;
+ const rest=where.slice(home.length);
+ return rest!=='/materials'&&!rest.startsWith('/materials/');
+}
 function check(root=ROOT){
  const errors=[],files=[],hashes={},external=new Set();let links=0,htmlCount=0,materialLinks=0;const lessonIds=[];
  function walk(dir){for(const d of fs.readdirSync(dir,{withFileTypes:true})){if(['.git','node_modules','artifacts'].includes(d.name)||d.name.startsWith('.validation-test-'))continue;const p=path.join(dir,d.name);if(d.isSymbolicLink()){errors.push('Symlink requires explicit review: '+unix(path.relative(root,p)));continue;}if(d.isDirectory())walk(p);else files.push(p);}}
@@ -55,6 +75,12 @@ function check(root=ROOT){
    if(fragment&&path.extname(resolved)==='.md'){
     if(!markdownInfo(fs.readFileSync(resolved,'utf8')).anchors.includes(fragment))errors.push(relative+': missing Markdown anchor '+target);
    }
+  }
+ }
+ for(const file of files){
+  if(!file.startsWith(publicRoot+path.sep)||!/\.html?$/i.test(file))continue;
+  for(const {a} of elements(fs.readFileSync(file,'utf8')))for(const value of [a.href,a.src,a.action,a.formaction,a['xlink:href'],a.data,a.poster].filter(Boolean)){
+   if(leavesParticipantArea(value,file,root))errors.push(unix(path.relative(root,file))+': participant page links to an instructor page: '+value);
   }
  }
  if(new Set(lessonIds).size!==lessonIds.length)errors.push('Duplicate lesson IDs');
