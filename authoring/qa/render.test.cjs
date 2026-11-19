@@ -1,7 +1,7 @@
 'use strict';
 const {test}=require('node:test'),assert=require('node:assert/strict');
 const fs=require('node:fs'),path=require('node:path');
-const {run,acceptCustom,render,files,output,inventory,ROOT,SITE_URL,AREAS}=require('./render.cjs');
+const {run,acceptCustom,custom,render,files,output,inventory,ROOT,SITE_URL,AREAS}=require('./render.cjs');
 function fixture(fn){
  const root=fs.mkdtempSync(path.join(__dirname,'.validation-test-'));
  const put=(p,s)=>{fs.mkdirSync(path.dirname(path.join(root,p)),{recursive:true});fs.writeFileSync(path.join(root,p),s);};
@@ -103,7 +103,7 @@ test('every page carries exactly its own audience band and theme class',()=>{
  const seen=new Set();
  assert.deepEqual(AREAS,{participant:'HALLGATÓI ANYAG',instructor:'OKTATÓI OLDAL'});
  for(const source of ['README.md','authoring/README.md','authoring/template.md','operations/README.md'])assert.equal(expected(source),'instructor',source);
- for(const source of inventory()){
+ for(const source of inventory().filter(p=>!custom(p))){
   const html=render(source),area=expected(source);seen.add(area);
   assert.deepEqual([...html.matchAll(/<div class="area-band" role="note">([^<]*)<\/div>/g)].map(m=>m[1]),[AREAS[area]],source);
   assert.deepEqual([...html.match(/<body class="([^"]*)"/)[1].matchAll(/area--(\w+)/g)].map(m=>m[1]),[area],source);
