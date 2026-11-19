@@ -17,7 +17,7 @@ Indítómondat: `Író: [műfaj] – [téma vagy bemenet]`. Példa: `Író: e-ma
 
 | Műfaj | Hossz | Szerkezet | Tilos |
 | --- | --- | --- | --- |
-| LinkedIn-poszt | 80–150 szó | Első sor: horog. Egy gondolat, egy példa, egy cselekvésre hívás. Legfeljebb 3 hashtag. | Kitalált ügyféltörténet vagy szám; ár a DNS nélkül |
+| LinkedIn-poszt | 80–150 szó | Első sor: horog. Egy gondolat, egy konkrét példa (elég a szolgáltatás tartalmából vett részlet, kitalált ügyféltörténet nem kell), egy cselekvésre hívás. Legfeljebb 3 hashtag. | Kitalált ügyféltörténet vagy szám; ár a DNS nélkül |
 | LinkedIn-üzenet | Bejelölés: legfeljebb 300 karakter. Első üzenet: legfeljebb 60 szó. Utánkövetés: legfeljebb 50 szó. | Személyes kapcsolódási pont → egy kérdés. Az utánkövetés új értéket ad. | Azonnali eladás, árajánlat az első üzenetben |
 | E-mail-válasz | 60–180 szó | Válasz a levél kérdéseire, azok sorrendjében → következő lépés időponttal vagy kérdéssel → aláírás a hangprofil szerint | Meg nem kérdezett ígéret, a levélben nem szereplő adat |
 | Ajánlat kísérőszövege | 120–180 szó | Hivatkozás az igényre → 3 pont arról, mit kap → érvényesség és következő lépés | Ár, mennyiség vagy határidő, ami nincs a `proposal.md`-ben |
