@@ -29,7 +29,7 @@
 <div class="cell cell--output">
 <a id="overview-2"></a>
 <h3 class="cell-title">Kimenet</h3>
-<p>A <code>Wenova-AI-Sales-Workshop</code> munkamappa a telepített tananyaggal; egy Cowork-projekt erre a mappára; bekapcsolt levelező- és Google Drive-kapcsolat (ha van Buffer-fiókod, a Buffer-kapcsolat is), a levélküldés tiltva; Brandiseer- és EstiWise-fiók, választhatóan Buffer-fiók; a forrásaid a <code>Munka/00-Felkeszules/forrasok/</code> mappában; „CRM – [cégnév]” Google-táblázat; a tanulási kísérő ellenőrzőlistája.</p>
+<p>A <code>Wenova-AI-Sales-Workshop</code> munkamappa a telepített tananyaggal; egy Cowork-projekt erre a mappára; bekapcsolt levelező- és Google Drive-kapcsolat (ha van Buffer-fiókod, a Buffer-kapcsolat is), a levelező engedélyei a saját döntésed szerint; Brandiseer- és EstiWise-fiók, választhatóan Buffer-fiók; a forrásaid a <code>Munka/00-Felkeszules/forrasok/</code> mappában; „CRM – [cégnév]” Google-táblázat; a tanulási kísérő ellenőrzőlistája.</p>
 </div>
 <div class="cell cell--help">
 <a id="overview-3"></a>
@@ -71,6 +71,51 @@
 <p>Cowork módban a Claude csak abban a mappában olvas és ír, amelyet te csatolsz. Ezért előbb létrehozod a mappát, és Cowork-projektet készítesz rá. Utána egy mondattal megkéred a Claude-ot, hogy telepítse a tananyagot: ő letölti a nyilvános tananyagot, a <code>Tananyag/</code> mappába teszi, létrehozza a <code>Munka/</code> mappát, és ellenőrzi az eredményt. A telepítés újrafuttatva frissít: az új tananyagot teszi a helyére, a <code>Munka/</code> mappádhoz nem nyúl.</p>
 <p>A telepítés lépéseit a <a href="../TELEPITES.md">TELEPITES.md</a> futtatókönyv írja le; a Claude ezt követi.</p>
 </div>
+<a id="00-prework.01-install--settings"></a>
+<h3>Claude Desktop beállítási lista</h3>
+<p><strong>A nap a Cowork módban fut. Nem a Chat és nem a Code fülön.</strong> A Claude Code csak akkor mentőút, ha a Cowork a gépeden nem indul. Az induló felmérés minden pontot megnéz veled, és amit nem lát, azt „nem ellenőrzött” jelöléssel írja fel.</p>
+<div class="table-wrap" role="region" aria-label="Táblázat" tabindex="0"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Mit nézz meg?</th>
+<th>Hol?</th>
+<th>Akkor jó, ha</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a</td>
+<td>Fizetős csomag és friss Claude Desktop</td>
+<td>Fiókbeállítások, az alkalmazás frissítése</td>
+<td>Fizetős csomagban vagy, és az alkalmazás a legfrissebb változaton fut</td>
+</tr>
+<tr>
+<td>b</td>
+<td>Windowson hardveres virtualizáció a Coworkhöz</td>
+<td>A Cowork első indítása</td>
+<td>A Cowork elindul és munkamenetet nyit</td>
+</tr>
+<tr>
+<td>c</td>
+<td>Hálózati beállítás</td>
+<td>Settings → Capabilities: <strong>Allow network egress</strong> bekapcsolva, <strong>Domain allowlist</strong>: <strong>Package managers only</strong></td>
+<td>A letöltés elindul. Ha nem: az <strong>Additional allowed domains</strong> listába írd be a <code>github.com</code> és a <code>codeload.github.com</code> címet</td>
+</tr>
+<tr>
+<td>d</td>
+<td>Mappa és Cowork-projekt</td>
+<td>Projects → <strong>+</strong> → Use an existing folder</td>
+<td>A projekt a <code>Wenova-AI-Sales-Workshop</code> mappára mutat</td>
+</tr>
+<tr>
+<td>e</td>
+<td>Sorrend</td>
+<td>Ebben a leckében</td>
+<td>Telepítő mondat → plugin → Instructions → új munkamenet</td>
+</tr>
+</tbody>
+</table></div>
 <div class="cell cell--decide">
 <a id="00-prework.01-install--decisions"></a>
 <h3 class="cell-title">Ezekről te döntesz</h3>
@@ -132,7 +177,7 @@
 <div class="cell cell--goal">
 <a id="00-prework.02-account-check--result"></a>
 <h3 class="cell-title">Ezt készíted el</h3>
-<p>Bekapcsolt levelező- és Google Drive-kapcsolatot (ha van Buffer-fiókod, a Buffer-kapcsolatot is), a levelező írási eszközei tiltva.</p>
+<p>Bekapcsolt levelező- és Google Drive-kapcsolatot (ha van Buffer-fiókod, a Buffer-kapcsolatot is), a levelező engedélyei a saját döntésed szerint beállítva.</p>
 </div>
 <div class="cell cell--input">
 <a id="00-prework.02-account-check--needs"></a>
@@ -146,13 +191,13 @@
 <div class="cell cell--how">
 <a id="00-prework.02-account-check--explanation"></a>
 <h3 class="cell-title">Így működik</h3>
-<p>A connectorok a fiókodhoz tartoznak, a Coworkben és a chatben is működnek. Egy munkamenetben a szövegmező melletti <strong>+</strong> menüben kapcsolhatod be vagy ki őket. Minden connector saját oldalán beállíthatod, melyik eszközét használhatja a Claude (Tool permissions, eszközengedélyek). A levelezőnél a küldés, válasz, továbbítás és törlés legyen <strong>Tiltva (Blocked)</strong>. Írási műveletnél soha ne kattints a „Mindig engedélyez” (Always allow) gombra.</p>
+<p>A connectorok a fiókodhoz tartoznak, a Coworkben és a chatben is működnek. Egy munkamenetben a szövegmező melletti <strong>+</strong> menüben kapcsolhatod be vagy ki őket. Minden connector saját oldalán beállíthatod, melyik eszközét használhatja a Claude (Tool permissions, eszközengedélyek). A kényelmes automatizáláshoz engedélyek kellenek, a teljes engedély is elfogadható. Az engedélyek a te döntésed: amit engedélyezel, azt a Claude kérdés nélkül megteheti, a levélküldést is. A Claude a kérésed nélkül ekkor sem küld és nem publikál.</p>
 <p>A Brandiseer, a Sales Bot és az EstiWise connectorát a partnerek a saját blokkjukban kötik be veled; előre nincs teendő.</p>
 </div>
 <div class="cell cell--decide">
 <a id="00-prework.02-account-check--decisions"></a>
 <h3 class="cell-title">Ezekről te döntesz</h3>
-<p>Melyik levelezőt kötöd be (Gmail vagy Outlook), vagy egyiket sem. Mit engedsz a Claude-nak: olvasást igen, küldést nem.</p>
+<p>Melyik levelezőt kötöd be (Gmail vagy Outlook), vagy egyiket sem. Mit engedsz a Claude-nak. Az engedélyek a te döntésed: amit engedélyezel, azt a Claude kérdés nélkül megteheti, a levélküldést is.</p>
 </div>
 <div class="cell cell--prompt">
 <a id="00-prework.02-account-check--prompt"></a>
@@ -175,7 +220,7 @@ Jelszót és belépőkódot ne kérj tőlem.
 <li>választhatóan a <strong>Buffer</strong> connectort (keresd a listában, Connect, belépés a Bufferbe), ha van Buffer-fiókod.</li>
 </ul>
 </li>
-<li><strong>5–8 perc:</strong> nyisd meg a levelező connector oldalát, és az eszközengedélyeknél a küldés, válasz, továbbítás és törlés eszközt állítsd <strong>Tiltva (Blocked)</strong> állásba.</li>
+<li><strong>5–8 perc:</strong> nyisd meg a levelező connector oldalát, és az eszközengedélyeknél döntsd el, mit engedsz a küldésre, válaszra, továbbításra és törlésre. Az engedélyek a te döntésed: amit engedélyezel, azt a Claude kérdés nélkül megteheti, a levélküldést is.</li>
 <li><strong>8–10 perc:</strong> a Cowork-projektben új munkamenet, kapcsold be a connectorokat a + menüben, és írd: „Milyen connectorokat látsz ebben a munkamenetben?”</li>
 </ol>
 </div>
@@ -184,7 +229,7 @@ Jelszót és belépőkódot ne kérj tőlem.
 <h3 class="cell-title">Ellenőrizd az eredményt</h3>
 <ul>
 <li>A Claude felsorolja a levelező és a Google Drive connectort (és a Buffert, ha bekötötted).</li>
-<li>A levelező connector engedélyoldalán te ellenőrizted a küldés, válasz, továbbítás és törlés Tiltva (Blocked) beállítását.</li>
+<li>A levelező connector engedélyoldalán megnézted, mit engedélyeztél, és tudod, mi a következménye.</li>
 </ul>
 </div>
 <div class="cell cell--help">
@@ -445,7 +490,7 @@ Adatok: [például: ügyfélnév, kapcsolattartó e-mail-címe, egyedi kedvezmé
 <p>A Cowork-projektben, új munkamenetben, a connectorokat bekapcsolva:</p>
 <pre><code class="language-text">Kezdjük a felkészülés ellenőrzését.
 </code></pre>
-<p>A kísérő ellenőrzi a munkamappát, a projektutasítást, a CRM-tábla elérését, a levél tárgyának olvasását és a Buffer-kapcsolatot, ha azt választottad. Nyisd meg a levelező connector eszközengedélyeit, ellenőrizd a küldés, válasz, továbbítás és törlés Tiltva (Blocked) beállítását, majd mondd meg a kísérőnek, mit látsz. A listában külön sorban rögzítsétek az olvasás eredményét és az általad ellenőrzött engedélyeket. Ehhez elég a beállítási oldal, próbaüzenetet nem kell küldened.</p>
+<p>A kísérő ellenőrzi a munkamappát, a projektutasítást, a CRM-tábla elérését, a levél tárgyának olvasását és a Buffer-kapcsolatot, ha azt választottad. Nyisd meg a levelező connector eszközengedélyeit, majd mondd meg a kísérőnek, mit engedélyeztél. A listában külön sorban rögzítsétek az olvasás eredményét és az általad választott engedélyeket. Ehhez elég a beállítási oldal, próbaüzenetet nem kell küldened.</p>
 </div>
 <div class="cell cell--steps">
 <a id="00-prework.05-coach-check--steps"></a>
@@ -462,7 +507,7 @@ Adatok: [például: ügyfélnév, kapcsolattartó e-mail-címe, egyedi kedvezmé
 <ul>
 <li>A CRM-táblázat létezik, az első sorban a 15 oszlopnév van.</li>
 <li>A kísérő listájában a munkamappa és az utasítások ✅.</li>
-<li>Külön látod, hogy működött-e a levélolvasás, és hogy te ellenőrizted-e az írási műveletek tiltását. Ha a beállítást nem láttad, az eredmény „nem ellenőrzött”. A CRM és a választott Buffer-kapcsolat mellett ott az eredmény vagy a kézi út.</li>
+<li>Külön látod, hogy működött-e a levélolvasás, és mit engedélyeztél az írási műveleteknél. Ha a beállítást nem láttad, az eredmény „nem ellenőrzött”. A CRM és a választott Buffer-kapcsolat mellett ott az eredmény vagy a kézi út.</li>
 <li>A Brandiseer- és EstiWise-fiókod megvan, vagy felírtad, melyiket hozod létre a workshopon. A Buffer-fiók választható.</li>
 </ul>
 </div>

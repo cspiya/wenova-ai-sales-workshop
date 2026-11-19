@@ -21,7 +21,7 @@ Az első „Kezdjük a felkészülést.” indítás felméréssel kezdődik. K�
 
 ## Mi marad kézi?
 
-A plugin a connectorok címét hozza, a kapcsolatot nem hozza létre. Coworkben a plugin Connectors fülén connectoronként Add, Connect és belépés kell, Claude Code-ban a `/mcp` menüben szolgáltatásonként belépés. A Gmail és a Google Drive nincs a pluginban, ezeket a Customize → Connectors felületen kell bekötni. A levelező írási eszközeit a résztvevő állítja Blocked értékre.
+A plugin a connectorok címét hozza, a kapcsolatot nem hozza létre. Coworkben a plugin Connectors fülén connectoronként Add, Connect és belépés kell, Claude Code-ban a `/mcp` menüben szolgáltatásonként belépés. A Gmail és a Google Drive nincs a pluginban, ezeket a Customize → Connectors felületen kell bekötni. Az engedélyek a te döntésed: amit engedélyezel, azt a Claude kérdés nélkül megteheti, a levélküldést is. A Claude a kérésed nélkül ekkor sem küld és nem publikál.
 
 ## Adatok és határok
 

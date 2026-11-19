@@ -48,7 +48,7 @@ Claude-előfizetés, a céged weboldala, árlistád, 1–2 korábbi ajánlatod, 
 
 ### Kimenet
 
-A `Wenova-AI-Sales-Workshop` munkamappa a telepített tananyaggal; egy Cowork-projekt erre a mappára; bekapcsolt levelező- és Google Drive-kapcsolat (ha van Buffer-fiókod, a Buffer-kapcsolat is), a levélküldés tiltva; Brandiseer- és EstiWise-fiók, választhatóan Buffer-fiók; a forrásaid a `Munka/00-Felkeszules/forrasok/` mappában; „CRM – [cégnév]” Google-táblázat; a tanulási kísérő ellenőrzőlistája.
+A `Wenova-AI-Sales-Workshop` munkamappa a telepített tananyaggal; egy Cowork-projekt erre a mappára; bekapcsolt levelező- és Google Drive-kapcsolat (ha van Buffer-fiókod, a Buffer-kapcsolat is), a levelező engedélyei a saját döntésed szerint; Brandiseer- és EstiWise-fiók, választhatóan Buffer-fiók; a forrásaid a `Munka/00-Felkeszules/forrasok/` mappában; „CRM – [cégnév]” Google-táblázat; a tanulási kísérő ellenőrzőlistája.
 
 <a name="overview-3"></a>
 
@@ -96,6 +96,20 @@ A gépeden egy `Wenova-AI-Sales-Workshop` mappát, benne a teljes tananyaggal (`
 Cowork módban a Claude csak abban a mappában olvas és ír, amelyet te csatolsz. Ezért előbb létrehozod a mappát, és Cowork-projektet készítesz rá. Utána egy mondattal megkéred a Claude-ot, hogy telepítse a tananyagot: ő letölti a nyilvános tananyagot, a `Tananyag/` mappába teszi, létrehozza a `Munka/` mappát, és ellenőrzi az eredményt. A telepítés újrafuttatva frissít: az új tananyagot teszi a helyére, a `Munka/` mappádhoz nem nyúl.
 
 A telepítés lépéseit a [TELEPITES.md](../TELEPITES.md) futtatókönyv írja le; a Claude ezt követi.
+
+<a name="00-prework.01-install--settings"></a>
+
+### Claude Desktop beállítási lista
+
+**A nap a Cowork módban fut. Nem a Chat és nem a Code fülön.** A Claude Code csak akkor mentőút, ha a Cowork a gépeden nem indul. Az induló felmérés minden pontot megnéz veled, és amit nem lát, azt „nem ellenőrzött” jelöléssel írja fel.
+
+| # | Mit nézz meg? | Hol? | Akkor jó, ha |
+| --- | --- | --- | --- |
+| a | Fizetős csomag és friss Claude Desktop | Fiókbeállítások, az alkalmazás frissítése | Fizetős csomagban vagy, és az alkalmazás a legfrissebb változaton fut |
+| b | Windowson hardveres virtualizáció a Coworkhöz | A Cowork első indítása | A Cowork elindul és munkamenetet nyit |
+| c | Hálózati beállítás | Settings → Capabilities: **Allow network egress** bekapcsolva, **Domain allowlist**: **Package managers only** | A letöltés elindul. Ha nem: az **Additional allowed domains** listába írd be a `github.com` és a `codeload.github.com` címet |
+| d | Mappa és Cowork-projekt | Projects → **+** → Use an existing folder | A projekt a `Wenova-AI-Sales-Workshop` mappára mutat |
+| e | Sorrend | Ebben a leckében | Telepítő mondat → plugin → Instructions → új munkamenet |
 
 <a name="00-prework.01-install--decisions"></a>
 
@@ -167,7 +181,7 @@ Lapozd át a böngészőben a [nap menetét](../schedule.md).
 
 ### Ezt készíted el
 
-Bekapcsolt levelező- és Google Drive-kapcsolatot (ha van Buffer-fiókod, a Buffer-kapcsolatot is), a levelező írási eszközei tiltva.
+Bekapcsolt levelező- és Google Drive-kapcsolatot (ha van Buffer-fiókod, a Buffer-kapcsolatot is), a levelező engedélyei a saját döntésed szerint beállítva.
 
 <a name="00-prework.02-account-check--needs"></a>
 
@@ -181,7 +195,7 @@ Bekapcsolt levelező- és Google Drive-kapcsolatot (ha van Buffer-fiókod, a Buf
 
 ### Így működik
 
-A connectorok a fiókodhoz tartoznak, a Coworkben és a chatben is működnek. Egy munkamenetben a szövegmező melletti **+** menüben kapcsolhatod be vagy ki őket. Minden connector saját oldalán beállíthatod, melyik eszközét használhatja a Claude (Tool permissions, eszközengedélyek). A levelezőnél a küldés, válasz, továbbítás és törlés legyen **Tiltva (Blocked)**. Írási műveletnél soha ne kattints a „Mindig engedélyez” (Always allow) gombra.
+A connectorok a fiókodhoz tartoznak, a Coworkben és a chatben is működnek. Egy munkamenetben a szövegmező melletti **+** menüben kapcsolhatod be vagy ki őket. Minden connector saját oldalán beállíthatod, melyik eszközét használhatja a Claude (Tool permissions, eszközengedélyek). A kényelmes automatizáláshoz engedélyek kellenek, a teljes engedély is elfogadható. Az engedélyek a te döntésed: amit engedélyezel, azt a Claude kérdés nélkül megteheti, a levélküldést is. A Claude a kérésed nélkül ekkor sem küld és nem publikál.
 
 A Brandiseer, a Sales Bot és az EstiWise connectorát a partnerek a saját blokkjukban kötik be veled; előre nincs teendő.
 
@@ -189,7 +203,7 @@ A Brandiseer, a Sales Bot és az EstiWise connectorát a partnerek a saját blok
 
 ### Ezekről te döntesz
 
-Melyik levelezőt kötöd be (Gmail vagy Outlook), vagy egyiket sem. Mit engedsz a Claude-nak: olvasást igen, küldést nem.
+Melyik levelezőt kötöd be (Gmail vagy Outlook), vagy egyiket sem. Mit engedsz a Claude-nak. Az engedélyek a te döntésed: amit engedélyezel, azt a Claude kérdés nélkül megteheti, a levélküldést is.
 
 <a name="00-prework.02-account-check--prompt"></a>
 
@@ -212,7 +226,7 @@ Jelszót és belépőkódot ne kérj tőlem.
    - a **Gmail** és a **Google Drive** connectort, ha Google-t használsz;
    - a **Microsoft 365** connectort, ha Outlookot használsz. Személyes Outlook.com-fiókot a webes Claude-ban (claude.ai) köss be. Céges fióknál a cég rendszergazdájának jóvá kell hagynia; ha te vagy a Microsoft 365 rendszergazda, a belépéskor jóváhagyhatod. Ha ez nem megy, a leveleket bemásolva dolgozzuk fel;
    - választhatóan a **Buffer** connectort (keresd a listában, Connect, belépés a Bufferbe), ha van Buffer-fiókod.
-2. **5–8 perc:** nyisd meg a levelező connector oldalát, és az eszközengedélyeknél a küldés, válasz, továbbítás és törlés eszközt állítsd **Tiltva (Blocked)** állásba.
+2. **5–8 perc:** nyisd meg a levelező connector oldalát, és az eszközengedélyeknél döntsd el, mit engedsz a küldésre, válaszra, továbbításra és törlésre. Az engedélyek a te döntésed: amit engedélyezel, azt a Claude kérdés nélkül megteheti, a levélküldést is.
 3. **8–10 perc:** a Cowork-projektben új munkamenet, kapcsold be a connectorokat a + menüben, és írd: „Milyen connectorokat látsz ebben a munkamenetben?”
 
 <a name="00-prework.02-account-check--check"></a>
@@ -220,7 +234,7 @@ Jelszót és belépőkódot ne kérj tőlem.
 ### Ellenőrizd az eredményt
 
 - A Claude felsorolja a levelező és a Google Drive connectort (és a Buffert, ha bekötötted).
-- A levelező connector engedélyoldalán te ellenőrizted a küldés, válasz, továbbítás és törlés Tiltva (Blocked) beállítását.
+- A levelező connector engedélyoldalán megnézted, mit engedélyeztél, és tudod, mi a következménye.
 
 <a name="00-prework.02-account-check--help"></a>
 
@@ -468,7 +482,7 @@ A Cowork-projektben, új munkamenetben, a connectorokat bekapcsolva:
 Kezdjük a felkészülés ellenőrzését.
 ```
 
-A kísérő ellenőrzi a munkamappát, a projektutasítást, a CRM-tábla elérését, a levél tárgyának olvasását és a Buffer-kapcsolatot, ha azt választottad. Nyisd meg a levelező connector eszközengedélyeit, ellenőrizd a küldés, válasz, továbbítás és törlés Tiltva (Blocked) beállítását, majd mondd meg a kísérőnek, mit látsz. A listában külön sorban rögzítsétek az olvasás eredményét és az általad ellenőrzött engedélyeket. Ehhez elég a beállítási oldal, próbaüzenetet nem kell küldened.
+A kísérő ellenőrzi a munkamappát, a projektutasítást, a CRM-tábla elérését, a levél tárgyának olvasását és a Buffer-kapcsolatot, ha azt választottad. Nyisd meg a levelező connector eszközengedélyeit, majd mondd meg a kísérőnek, mit engedélyeztél. A listában külön sorban rögzítsétek az olvasás eredményét és az általad választott engedélyeket. Ehhez elég a beállítási oldal, próbaüzenetet nem kell küldened.
 
 <a name="00-prework.05-coach-check--steps"></a>
 
@@ -484,7 +498,7 @@ A kísérő ellenőrzi a munkamappát, a projektutasítást, a CRM-tábla elér�
 
 - A CRM-táblázat létezik, az első sorban a 15 oszlopnév van.
 - A kísérő listájában a munkamappa és az utasítások ✅.
-- Külön látod, hogy működött-e a levélolvasás, és hogy te ellenőrizted-e az írási műveletek tiltását. Ha a beállítást nem láttad, az eredmény „nem ellenőrzött”. A CRM és a választott Buffer-kapcsolat mellett ott az eredmény vagy a kézi út.
+- Külön látod, hogy működött-e a levélolvasás, és mit engedélyeztél az írási műveleteknél. Ha a beállítást nem láttad, az eredmény „nem ellenőrzött”. A CRM és a választott Buffer-kapcsolat mellett ott az eredmény vagy a kézi út.
 - A Brandiseer- és EstiWise-fiókod megvan, vagy felírtad, melyiket hozod létre a workshopon. A Buffer-fiók választható.
 
 <a name="00-prework.05-coach-check--help"></a>

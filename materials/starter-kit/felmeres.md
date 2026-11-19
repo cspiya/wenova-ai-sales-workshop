@@ -6,7 +6,15 @@ A ✅ jel igazolt állapotot, a ⚠️ teendőt vagy nem ellenőrzött állapoto
 
 | Tétel | Állapot | Mi a teendő | Melyik blokkhoz kell | Mentőút |
 | --- | --- | --- | --- | --- |
-| Felület | | | 00 | Nyisd meg a Coworköt vagy a Claude Code-ot. |
+| Felület (kötelező: Cowork) | | | 00 | Válts Cowork módra. Ha a Cowork nem indul, a mentőút a Claude Code. |
+| Fizetős csomag | | | 00 | A résztvevő a fiókbeállításokban megnézi a csomagját. |
+| Friss Claude Desktop | | | 00 | Frissítsd az alkalmazást, majd indítsd újra. |
+| Hardveres virtualizáció (Windows) | | | 00 | Ha a Cowork nem indul, használd a Claude Code mentőutat. |
+| Allow network egress bekapcsolva | | | 00 | Settings → Capabilities → Allow network egress. |
+| Domain allowlist: Package managers only | | | 00 | Settings → Capabilities → Domain allowlist. |
+| Additional allowed domains | | | 00 | Ha a letöltés nem megy: `github.com` és `codeload.github.com`. |
+| Cowork-projekt a munkamappán | | | 00 | Projects → + → Use an existing folder. |
+| Sorrend: telepítő mondat, plugin, Instructions, új munkamenet | | | 00 | Pótold a kimaradt lépést, majd nyiss új munkamenetet. |
 | Operációs rendszer | | | 00 | Kérdezd meg, milyen rendszer fut a résztvevő gépén. |
 | Munkamappa | | | Mindegyik | Nyisd meg vagy csatold a telepítéskor választott mappát. |
 | `Tananyag/` | | | Mindegyik | Nyisd meg a telepített tananyagot. |
@@ -34,7 +42,7 @@ A ✅ jel igazolt állapotot, a ⚠️ teendőt vagy nem ellenőrzött állapoto
 | Alügynökök indíthatósága | | | 01, 05 | A szerepfájlok alapján folytasd. |
 | Független reviewer (Codex) | | | 01, 05 | A Claude Ellenőrként friss kontextusban dolgozik, így a függetlenség részleges. |
 | Levelező (Gmail vagy Outlook) | | | 00, 01 (ha levélből dolgozol), 05 | Takard ki az adatokat, és másold be a levelet, vagy válaszd a mintapostafiókot. |
-| Levelező írási eszközei (`Blocked`) | | | 00, 01 (ha levélből dolgozol), 05 | A résztvevő beállítja vagy megerősíti a tiltást. Addig használd a kézi utat. |
+| Levelező írási engedélyei | | | 00, 01 (ha levélből dolgozol), 05 | A résztvevő dönt. Írd le, mit engedélyezett. Amit engedélyez, azt a Claude kérdés nélkül megteheti, a levélküldést is. |
 | Google Drive | | | 00, 05 | Dolgozz helyi CRM-táblával vagy CSV-vel. |
 | Brandiseer | | | 02 | Használd a modul képötleteit és kampánymintáját. |
 | Buffer (választható) | | | 02 | Tartsd meg a posztokat helyi piszkozatként. |
