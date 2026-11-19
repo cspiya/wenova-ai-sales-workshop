@@ -187,7 +187,7 @@ Az ajánlat számítását az árlista és a mennyiség alapján külön ellenő
 
 | Partner | Előadók | Szerep / weboldal |
 | --- | --- | --- |
-| Wenova | Piya Csaba, Kemény Krisztián | Szervező |
+| Wenova | Piya Csaba, Kemény Krisztián | [wenova.io](https://wenova.io), szervező |
 | Brandiseer | Sorok Dániel | [brandiseer.com](https://brandiseer.com/) |
 | Blackhole Media | Bölcskei Balázs, Nagy Bogáta | [blackholemedia.io](https://blackholemedia.io/), [sales-bot.io](https://sales-bot.io/) |
 | EstiWise | Gyömrei Máté | [estiwise.ai](https://estiwise.ai/), CommIT Smart Kft. |
