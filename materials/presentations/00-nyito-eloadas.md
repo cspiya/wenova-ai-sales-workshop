@@ -5,7 +5,7 @@
 
 **Közönség.** Nem fejlesztő B2B cégtulajdonosok, sales- és marketingvezetők. Az előadáshoz nem kell fiók vagy saját adat. Az IrodaLiget a workshop kitalált gyakorlócége.
 
-**Vetített változat.** [A nyitó előadás diái](00-nyito-eloadas.html). A mozgó ábrák kattintás nélkül, egyszer futnak le, és a záróállapotban megállnak.
+**Vetített változat.** [A nyitó előadás diái](00-nyito-eloadas.html). Vetítéshez használj Chrome 133-at vagy újabb Chrome-ot. A mozgó ábrák a diára érkezéskor elindulnak, egyszer lefutnak, és a záróképen megállnak.
 
 ## Dia 1: AI dióhéjban
 
@@ -39,7 +39,7 @@
 
 **A dián látható szöveg:** Machine learning · Tanítópéldák · Modell · Új levél · Becslés: ajánlatkérés · Tanítás · Használat · Szemléltetés
 
-**Mozgó ábra:** Balra három kitalált levélkártya, középen egy modell-doboz, jobbra egy szaggatott szélű új levél. A tanítópéldákon két pipa az ajánlatkérést jelöli, egy üres kör az egyéb levelet. 0–5 mp: balról sorban a középső dobozba csúszik a három megjelölt példa. 5–10 mp: a modellben két eltérő alakú minta rendeződik, a bejövő nyíl lezárul. 10–15 mp: az új levél külön nyílon a megtanult modellhez csúszik, mellette megjelenik a pipa mint modellbecslés. 15–18 mp: az elkülönített tanítási és használati oldal egyszerre látszik. Teljes hossz 18 mp.
+**Mozgó ábra:** Balra három kitalált levélkártya, középen egy modell-doboz, jobbra egy szaggatott szélű új levél. A tanítópéldákon két pipa az ajánlatkérést jelöli, egy üres kör az egyéb levelet. 0–5 mp: balról sorban a középső dobozba csúszik a három megjelölt példa. 5–10 mp: a modellben két eltérő alakú minta rendeződik, a bejövő nyíl lezárul. 10–15 mp: az új levél külön nyílon a megtanult modellhez csúszik, mellette megjelenik a pipa mint modellbecslés. 15–18 mp: az elkülönített tanítási és használati oldal egyszerre látszik. A mozgás 18 mp-ig tart. A CSS-időzítés 24 mp.
 
 **Lépésfeliratok:**
 
@@ -54,7 +54,7 @@
 
 **A dián látható szöveg:** Deep learning · Neuron · Súly · Élek · Formák · Tárgy · Cserepes növény · esély: 92% · Szemléltetés
 
-**Mozgó ábra:** Balra egy stilizált fotó cserepes növényről, középen három réteg, rétegenként három csomóponttal. Jobbra kimeneti kártya: „Cserepes növény”, „esély: 92%”. 0–5 mp: a fotó megáll a bemenetnél, egy csomópontot „Neuron” felirattal emelj ki. 5–10 mp: két bejövő él különböző vastagsággal pulzál, az egyik mellett „Súly”. 10–15 mp: az első rétegen éldarabok, a következőn formák rajzolódnak ki. 15–20 mp: az utolsó rétegen levél, teljes növény és cserép jele villan fel, majd megjelenik a kimeneti kártya az eséllyel. Teljes hossz 20 mp. Az ikonok a megtanult jeleket szemléltetik.
+**Mozgó ábra:** Balra egy stilizált fotó cserepes növényről, középen három réteg, rétegenként három csomóponttal. Jobbra kimeneti kártya: „Cserepes növény”, „esély: 92%”. 0–5 mp: a fotó megáll a bemenetnél, egy csomópontot „Neuron” felirattal emelj ki. 5–10 mp: két bejövő él különböző vastagsággal pulzál, az egyik mellett „Súly”. 10–15 mp: az első rétegen éldarabok, a következőn formák rajzolódnak ki. 15–20 mp: az utolsó rétegen levél, teljes növény és cserép jele villan fel, majd megjelenik a kimeneti kártya az eséllyel. A mozgás 20 mp-ig tart. A CSS-időzítés 26 mp. Az ikonok a megtanult jeleket szemléltetik.
 
 **Lépésfeliratok:**
 
@@ -67,7 +67,7 @@
 
 ## Dia 7: Backpropagation | Így tanul a hibából
 
-**A dián látható szöveg:** Backpropagation · Így tanul a hibából · A backpropagation tanítás közben kiszámolja, melyik súly mennyire hat a hibára, így a tanítás tudja, merre állítsa a súlyokat, hogy a modell legközelebb kevesebbet tévedjen. · „Kérek árat 25 növényre.” · A háló tippje: Egyéb levél · Helyes válasz: Ajánlatkérés · Hiba · Az ajánlatkérés esélye: 24%, majd 31% · Egy lépés után: kicsit jobb · Minden súlyra számolunk, a frissítésből csak néhányat rajzoltunk ki. · Szemléltetés · Melyik mire való? Backpropagation: hibából tanul · Attention: szavakat mérlegel · Transformer: ez a felépítés
+**A dián látható szöveg:** Backpropagation · Így tanul a hibából · A backpropagation tanítás közben kiszámolja, melyik súly mennyire hat a hibára, így a tanítás tudja, merre állítsa a súlyokat, hogy a modell legközelebb kevesebbet tévedjen. · „Kérek árat 25 növényre.” · A háló tippje: Egyéb levél · Helyes válasz: Ajánlatkérés · Hiba · Az ajánlatkérés esélye: 24%, majd 31% · Egy lépés után: kicsit jobb · Minden súlyra számolunk, a frissítésből csak néhányat rajzoltunk ki. · Szemléltetés · Melyik mire való? Backpropagation: kiszámolja, merre változzanak a súlyok · Attention: súlyozza, mit vegyen át a szöveg többi részéből · Transformer: a rétegek felépítése
 
 **Mozgó ábra:** Balra egy kitalált ajánlatkérő levél, középen háromrétegű háló, jobbra a tipp, a helyes válasz és az esélysáv. 0–5 mp: a jel előre fut, megjelenik a téves tipp és a 24%. 5–9 mp: keret fogja össze a tippet és a helyes választ, feltűnik a „Hiba”. 9–16 mp: szaggatott vonalak futnak visszafelé a háló minden kapcsolatán. A súlyok még változatlanok. 16–21 mp: külön lépésben több vonal vastagsága megváltozik. 21–26 mp: új előrehaladás a módosított hálón, a sáv 31%-ra nő. Teljes hossz 32 mp. A 24% és a 31% szemléltető érték.
 
@@ -98,7 +98,7 @@
 
 ## Dia 9: Attention | A környezet adja a jelentést
 
-**A dián látható szöveg:** Attention · A környezet adja a jelentést · Az attention egy szó feldolgozásakor kiszámolja, melyik korábbi szóból mennyit vegyen át a modell, így ugyanaz a szó más mondatban mást jelenthet. · Az ügyfél levele: elküldött üzenet · A növény levele: a növény része · Szemléltetés · Melyik mire való? Backpropagation: hibából tanul · Attention: szavakat mérlegel · Transformer: ez a felépítés
+**A dián látható szöveg:** Attention · A környezet adja a jelentést · A figyelem súlyozza, mennyi információt vegyen át egy szövegrész a környezetéből. A példában ettől kap más jelentést az ügyfél levele és a növény levele. · Az ügyfél levele: elküldött üzenet · A növény levele: a növény része · Szemléltetés · Melyik mire való? Backpropagation: kiszámolja, merre változzanak a súlyok · Attention: súlyozza, mit vegyen át a szöveg többi részéből · Transformer: a rétegek felépítése
 
 **Mozgó ábra:** Két sor egymás alatt: „Az ügyfél levele” és „A növény levele”. 0–4 mp: kirajzolódnak a szókártyák, a „levele” kiemelve. 4–10 mp: mindkét „levele” felé egy vastag ív fut a közvetlenül előtte álló szótól, egy vékony a névelőtől. 10–16 mp: az íveken információ áramlik a „levele” felé, jobbra megjelenik a kétféle jelentés. Teljes hossz 22 mp. A vonalvastagság szemléltető érték, a modell valójában tokenekkel számol, és több párhuzamos figyelmi számítást végez.
 
@@ -112,24 +112,24 @@
 
 ## Dia 10: Transformer | Figyelem, rétegről rétegre
 
-**A dián látható szöveg:** Transformer · Figyelem, rétegről rétegre · A Transformer az a hálófelépítés, amely figyelmi rétegeket rak egymásra, és a szöveg minden tokenjét egyszerre dolgozza fel, ezért a számítás szétosztható sok processzorra. · A mondat: A, növény, levele · még üres · 1. réteg: Figyelem, Átalakítás · 2. réteg · 3. réteg · A következő szó esélye: zöld, sárga, száraz · Minden szónál ugyanez történik, itt csak a „levele” kapcsolatait rajzoltuk ki. · Szemléltetés · Melyik mire való? Backpropagation: hibából tanul · Attention: szavakat mérlegel · Transformer: ez a felépítés
+**A dián látható szöveg:** Transformer · Figyelem, rétegről rétegre · A Transformer rétegei összekapcsolják a szöveg részeit, majd továbbalakítják őket. A már rendelkezésre álló tokeneken belüli számítás párhuzamosítható. · A válasz eleje: K, öszön, jük · még üres · 1. réteg: Figyelem, Átalakítás · 2. réteg · 3. réteg · A következő token esélyei: ! 64%, ␣a 28%, , 8% · Kitalált esélyek. · A kártyák a tokenekhez tartozó számsorokat jelölik. A „jük” korábbi tokenekből vesz át információt. · Szemléltetés · Melyik mire való? Backpropagation: kiszámolja, merre változzanak a súlyok · Attention: súlyozza, mit vegyen át a szöveg többi részéből · Transformer: a rétegek felépítése
 
-**Mozgó ábra:** Balra a mondat három szava és egy üres hely, középen az 1. réteg Figyelem és Átalakítás részével, utána a 2. és a 3. réteg, jobbra a következő szó esélyei. 0–3 mp: a három szó megjelenik. 3–6 mp: a három szó egyszerre, egymás mellett halad a Figyelem részbe. 6–11 mp: a „levele” felé egy vastag és egy vékony ív nyílik a korábbi szavaktól, a szó gyűrűt kap. 11–16 mp: a három szó együtt az Átalakításba lép, és színt vált. 16–22 mp: együtt áthaladnak a 2. és a 3. rétegen. 22–28 mp: megjelennek a következő szó esélyei. Teljes hossz 28 mp. A rétegszám, a kapcsolatok és az esélyek szemléltetők.
+**Mozgó ábra:** Balra a válasz eddigi három tokenje és egy üres hely, középen az 1. réteg Figyelem és Átalakítás részével, utána a 2. és a 3. réteg, jobbra a következő token esélyei. 0–3 mp: a három kártya megjelenik. 3–6 mp: a három kártya együtt halad a Figyelem részbe. 6–11 mp: a „jük” felé egy vastag és egy vékony ív nyílik a korábbi tokenektől, a kártya gyűrűt kap. 11–16 mp: a három kártya együtt az Átalakításba lép, és színt vált. 16–22 mp: együtt áthaladnak a 2. és a 3. rétegen. 22–28 mp: megjelennek a következő token esélyei. Teljes hossz 28 mp. A rétegszám és a kapcsolatok szemléltetők, az esélyek kitaláltak. A tokenek valódiak, az ábra a 11. dia utolsó választását készíti elő.
 
 **Lépésfeliratok:**
 
-1. Minden szó egyszerre
+1. A meglevő tokenek együtt
 2. Figyelem
 3. Átalakítás
 4. Rétegről rétegre, a végén esélyek
 
-**Forrás:** Transformer, párhuzamosíthatóság, sorrend, figyelem, pozíciónkénti háló és a későbbi helyek elfedése [F04] · Rétegszám és Transformer-alapú szöveggenerálás [F06], [F08].
+**Forrás:** Transformer, párhuzamosíthatóság, sorrend, figyelem, pozíciónkénti háló és a későbbi helyek elfedése [F04] · Rétegszám és Transformer-alapú szöveggenerálás [F06], [F08] · Valódi tokenek [F20].
 
 ## Dia 11: A kimenet lépésenként készül
 
-**A dián látható szöveg:** Valódi tokenek, kitalált esélyek · Prompt + ügyféllevél → LLM → Következő token → Kimenet · T 23%, K 62%, J 15% · ér 5%, ed 24%, öszön 71% · jük 36%, öm 58%, et 6% · Nem mindig a legnagyobb nyer · ␣a 28%, ! 64%, , 8%
+**A dián látható szöveg:** Valódi tokenek, kitalált esélyek · Prompt + ügyféllevél → LLM → Következő token → Kimenet · T 23%, K 62%, J 15% · ér 5%, ed 24%, öszön 71% · jük 36%, öm 58%, et 6% · Most a 36%-os „jük” kerül a válaszba. · ␣a 28%, ! 64%, , 8%
 
-**Mozgó ábra:** Balra két bemeneti kártya, középen LLM-doboz, jobbra három feliratozott esélyoszlop, alul kimeneti sor. 0–6 mp: a „Prompt” és az „Ügyféllevél” a modellbe csúszik. 6–12 mp: a „K” oszlopa körvonalat kap, a token a kimeneti sorba kerül. 12–18 mp: egy másolat a bemenet végére csúszik, az oszlopok új magasságot vesznek fel, az „öszön” következik. 18–24 mp: a harmadik lépésben a 36%-os „jük” nyer az 58%-os „öm” ellen, majd a „!” zárja a sort. Az olvasható kimenet „Köszönjük!”, mellette stopjel. Teljes hossz 30 mp. A tokenek valódiak, az esélyek kitaláltak.
+**Mozgó ábra:** Balra két bemeneti kártya, középen LLM-doboz, jobbra három feliratozott esélyoszlop, alul kimeneti sor. 0–6 mp: a „Prompt” és az „Ügyféllevél” a modellbe csúszik. 6–12 mp: a „K” oszlopa körvonalat kap, a token a kimeneti sorba kerül. 12–18 mp: egy másolat a bemenet végére csúszik, az oszlopok új magasságot vesznek fel, az „öszön” következik. 18–24 mp: a harmadik lépésben a bal oldali keret a 36%-os „jük” tokent jelöli, pedig az „öm” esélye 58%, majd a „!” zárja a sort. A 4/4 felirat a stopjellel együtt, 24 mp-nél jelenik meg. Az olvasható kimenet „Köszönjük!”, mellette stopjel. Teljes hossz 30 mp. A tokenek valódiak, az esélyek kitaláltak.
 
 **Lépésfeliratok:**
 
@@ -144,7 +144,7 @@
 
 **A dián látható szöveg:** Chatelőzmény · Aktuális kontextus · Minden körben újra elküldve. Egy kártya sok tokent jelent. · Alapcsomag: 20 növény · Válaszhely · Írj rövidebben · Szemléltetés
 
-**Mozgó ábra:** Balra függőleges chatelőzmény. Jobbra véges hosszú, hatrészes „Aktuális kontextus” sáv, jobb szélén csíkozott „Válaszhely”. A hat rekesz szemléltető, egy kártya sok tokent jelképez. 0–6 mp: a bal oldali „Alapcsomag: 20 növény” forráskártya és két jelöletlen beszédbuborék másolata bekerül a jobb oldali sávba. 6–13 mp: még egy korábbi válasz jön be, megtelik a sáv használható része az „Írj rövidebben” kártyával együtt. 13–21 mp: egy válasz és egy új kérés érkezik. A bemutatott alkalmazás a jobb oldali sávból kiveszi a két legrégebbi kártyát, köztük a forrás másolatát. Az eredeti kártyák balra a chatben maradnak. A megmaradt kártyák balra csúsznak, a válasz és az új kérés a sor végére, közvetlenül a válaszhely elé érkezik. 21–26 mp: látszik, mi maradt a modell bemenetében, és a csíkozott hely a következő válasznak. Teljes hossz 26 mp. Ez egy lehetséges előzménykezelés szemléltetése.
+**Mozgó ábra:** Balra függőleges chatelőzmény. Jobbra véges hosszú, hatrészes „Aktuális kontextus” sáv, jobb szélén csíkozott „Válaszhely”. A hat rekesz szemléltető, egy kártya sok tokent jelképez. 0–6 mp: a bal oldali „Alapcsomag: 20 növény” forráskártya és két jelöletlen beszédbuborék másolata bekerül a jobb oldali sávba. 6–13 mp: még egy korábbi válasz jön be, megtelik a sáv használható része az „Írj rövidebben” kártyával együtt. 13–21 mp: egy válasz és egy új kérés érkezik. A bemutatott alkalmazás a jobb oldali sávból kiveszi a két legrégebbi kártyát, köztük a forrás másolatát. Az eredeti kártyák balra a chatben maradnak. A megmaradt kártyák balra csúsznak, a válasz és az új kérés a sor végére, közvetlenül a válaszhely elé érkezik. 21–26 mp: látszik, mi maradt a modell bemenetében, és a csíkozott hely a következő válasznak. A mozgás 26 mp-ig tart. A CSS-időzítés 32 mp. Ez egy lehetséges előzménykezelés szemléltetése.
 
 **Lépésfeliratok:**
 
@@ -190,7 +190,7 @@
 
 **Forrás:** Kimenet, korlát, példák és forrás [F16] · Ellenőrizhető állítás és emberi döntés [H02], [H04] · Kitalált üzleti példa [H05].
 
-## Dia 17: Egyetlen mondat, amivel elindulsz
+## Dia 17: Két mondat, amivel elindulsz
 
 **A dián látható szöveg:** Írj nekem egy jó promptot arra, hogy… · Először kérdezz rá arra, ami hiányzik.
 
@@ -198,7 +198,7 @@
 
 ## Dia 18: Egy kérés, három AI-szerep
 
-**A dián látható szöveg:** Ember: célt ad · Karmester: szervez, továbbít · Készítő: piszkozatot ír · Ellenőr: friss beszélgetésben · cél · átnézett piszkozat · feladat · piszkozat · csomag · leletek · Ember dönt
+**A dián látható szöveg:** Ember: célt ad · Karmester: szervez, továbbít · Készítő: piszkozatot ír · Ellenőr: friss beszélgetésben · cél · átnézett piszkozat · feladat · piszkozat · csomag · leletek · A csomagot te másolod át az Ellenőr új beszélgetésébe. · Ember dönt
 
 **Ábra:** Középen a Karmester, balra az Ember, jobbra felül a Készítő, jobbra alul az Ellenőr. Minden átadás a Karmesteren megy át, ezt oda-vissza nyilak jelzik: Ember és Karmester között cél és átnézett piszkozat, Karmester és Készítő között feladat és piszkozat, Karmester és Ellenőr között csomag és leletek. Az Ember alatt külön kiemelés: „Ember dönt”.
 
@@ -206,7 +206,7 @@
 
 ## Dia 19: Egy levél útja az emberi döntésig
 
-**A dián látható szöveg:** Kitalált eset · Ember · Karmester · Készítő · Ellenőr · 25 növény · Cég-DNS · Brief · Piszkozat · Forrás nélküli ár · közepes · a Készítő válasza után: közepes · vitatott · Javítva · Dátum tisztázva: időpontot kérünk · Ha maradt javítandó hiba · Bejárás · Nyitott pont · Küldés? · Munkanapló
+**A dián látható szöveg:** Kitalált eset · Ember · Karmester · Készítő · Ellenőr · 25 növény · Cég-DNS · Brief · Piszkozat · Forrás nélküli ár · közepes · a Készítő válasza után: közepes · vitatott · A csomagot te másolod át az Ellenőr új beszélgetésébe. · Javítva · Dátum tisztázva: időpontot kérünk · Ha maradt javítandó hiba · Bejárás · Nyitott pont · Küldés? · Munkanapló
 
 **Mozgó ábra:** Négy függőleges sáv balról jobbra: „Ember”, „Karmester”, „Készítő”, „Ellenőr”. A felső sorban mindig maradjon látható a „Kitalált eset”. A sávok közt csak az éppen átadott kártya mozog. Az átadást folytonos nyíl, a javítási kört visszahajló szaggatott nyíl jelzi. A külön beszélgetést az Ellenőrnél megjelenő üres, dupla keret mutatja. A nyitott pont jelölése feliratos borostyánszínű kör, a blokkolóé feliratos piros nyolcszög.
 
@@ -216,7 +216,7 @@
 | 11–22 mp | Kérdőjeles buborék fordul vissza az Emberhez. A válasz pipa formájában érkezik vissza, majd közös keretet kap a levéllel és a forráskártyával. |
 | 22–34 mp | Az Embertől második pipa érkezik a lezárt feladatkeretre, ez a terv jóváhagyása. A Karmester feladatlista-ikonnal jelzi a választható előzetes rögzítést. A „Brief” kártya átcsúszik a Készítőhöz, vele mozog a forráscsomag. Felvillan a Készítő munkáját jelző toll. |
 | 34–45 mp | A Készítőnél összeáll a „Piszkozat” kártya egy árcédulaikonnal, majd visszacsúszik a Karmesterhez. |
-| 45–58 mp | Az Ellenőrnél megnyílik a friss keret. Ezt a beszélgetést a résztvevő nyitja meg, és bemásolja a Karmestertől kapott csomag három elemét: piszkozat, eredeti források, ellenőrzőlista. A készítői jegyzet ikonja a Készítő sávjában marad. |
+| 45–58 mp | Az Ellenőrnél megnyílik a friss keret. Ezt a beszélgetést a résztvevő nyitja meg, és bemásolja a Karmestertől kapott csomag három elemét: piszkozat, eredeti források, ellenőrzőlista. Közben az Ember sávja kiemelést kap, és ott olvasható: „A csomagot te másolod át az Ellenőr új beszélgetésébe.” A készítői jegyzet ikonja a Készítő sávjában marad. |
 | 58–69 mp | Az Ellenőrnél megjelenik a blokkoló „Forrás nélküli ár”, egy üres naptárikon a közepes súlyú dátumészrevételhez („közepes”) és a „Nyitott pont” az apró stílusészrevételhez. A jelzések és a piszkozat a Karmester sávján át együtt visszamennek a Készítőhöz. |
 | 69–82 mp | A piros jelzés pipát kap, amely itt az észrevétel elfogadását jelzi. A naptár mellé visszaúszik egy forrásikon, és csak ekkor egészül ki a jelzés a „· vitatott” szóval, majd a vitatott naptárjelzés az indoklással együtt az Ellenőr felé indul. A kis pont a nyitottak közé kerül. |
 | 82–94 mp | A Készítőnél az árcédula eltűnik, a „Bejárás” kártya a helyére kerül. Az új piszkozat a Karmesteren át az Ellenőrhöz jut, ekkor csak az Ellenőr felé tartó mozgás látszik. |
@@ -252,7 +252,7 @@ A teljes animáció 124 mp. A dia megnyitásakor magától indul, kattintás né
 
 ## Dia 21: Tartalék dia | Ugyanannyi számítás, több szöveg
 
-**A dián látható szöveg:** Gopher: 280 milliárd paraméter · Chinchilla: 70 milliárd paraméter · Azonos tanítási számítás · Tanítótokenek, arányosan · Kb. 4,7-szer több token: 1400 és 300 milliárd
+**A dián látható szöveg:** Gopher: 280 milliárd paraméter · Chinchilla: 70 milliárd paraméter · Azonos tanítási számítás · Tanítótokenek, arányosan · Kb. 4,7-szer annyi tanítótoken: 1400 milliárd és 300 milliárd
 
 **Ábra:** Azonos szélességű felső keretben két modellkártya. Mindegyiken külön mezőben a paraméterszám. A Chinchilla alatt 4,7 lapka, a Gopher alatt egy lapka. Mindkét lapkasor fölött a „Tanítótokenek, arányosan” címke áll. Az arány a tényleges 1400 és 300 milliárd token hányadosa.
 

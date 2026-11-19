@@ -21,9 +21,9 @@ Ezt a jegyzetet egyedül is végig tudod olvasni felkészüléskor, és vetíté
 
 | Fogalom | Mire való? | Mikor működik? |
 | --- | --- | --- |
-| Backpropagation | Kiszámolja, melyik súly mennyire hat a hibára, ebből tanul a modell | Csak tanítás közben |
-| Attention | Egy szó feldolgozásakor mérlegeli, melyik korábbi szóból mennyit vegyen át | Tanításkor és használatkor is |
-| Transformer | A teljes felépítés: figyelmi rétegek egymásra rakva, a szöveg egyszerre feldolgozva | Ez maga a háló |
+| Backpropagation | Kiszámolja, merre változzanak a súlyok. Az átállítás a következő tanítási lépés | Csak tanítás közben |
+| Attention | Súlyozza, mit vegyen át a szöveg többi részéből | Tanításkor és használatkor is |
+| Transformer | A rétegek felépítése: minden rétegben figyelem és átalakítás | Ez maga a háló |
 
 **Időterv.** A fő rész 20 dia, pontosan 20 perc. A 21. és a 22. dia tartalék, csak kérdésre vedd elő.
 
@@ -38,7 +38,7 @@ Ezt a jegyzetet egyedül is végig tudod olvasni felkészüléskor, és vetíté
 | Átkötés a Cég-DNS-re | 20 | 09:19:25–09:20:00 | 0:35 |
 | **Fő rész** | **1–20** | **09:00–09:20** | **20:00** |
 
-**Vetítés.** Lapozás: PageDown, szóköz vagy nyílbillentyű. Teljes képernyő: F11. A mozgó ábrák a dia megnyitásakor maguktól indulnak, egyszer lefutnak, és a záróképen megállnak, így nem kell kattintanod. Ha csúszol, a 13. és a 16. diánál rövidíthetsz a legkönnyebben. A hosszabb kérdéseket vidd a nyitás utánra.
+**Vetítés.** Lapozás: PageDown, szóköz vagy nyílbillentyű. Teljes képernyő: F11. Vetítéshez használj Chrome 133-at vagy újabb Chrome-ot. A mozgó ábrák a diára érkezéskor elindulnak, egyszer lefutnak, és a záróképen megállnak. Ha csúszol, a 13. és a 16. diánál rövidíthetsz a legkönnyebben. A hosszabb kérdéseket vidd a nyitás utánra.
 
 ## Dia 1: AI dióhéjban
 
@@ -62,11 +62,11 @@ Ezt a jegyzetet egyedül is végig tudod olvasni felkészüléskor, és vetíté
 
 **A lényeg egy mondatban:** Ma a generatív mély modellek szöveges ágával, a nagy nyelvi modellel dolgozunk.
 
-**Ezt mondd el:** „A külső keret az egész terület. Beljebb a gépi tanulás van, ahol a gép példákból tanul. A mélytanulás ennek az az ága, amely sok egymásra épülő számítási réteget használ. Ezen belül a generatív mély modellek új tartalmat állítanak elő. Az egyik águk a szöveggel dolgozó nagy nyelvi modell, angol rövidítéssel LLM, a másik a kép, a hang vagy a videó. Ma az elsővel dolgozunk.”
+**Ezt mondd el:** „A külső keret az egész terület. Beljebb a gépi tanulás van, ahol a gép példákból tanul. A mélytanulás ennek az az ága, amely sok egymásra épülő számítási réteget használ. Ezen belül a generatív mély modellek új tartalmat állítanak elő. Az egyik águk a nagy nyelvi modell, angol rövidítéssel LLM. Ma a nagy nyelvi modellek szöveges használatára figyelünk. Vannak kép-, hang- és videógeneráló modellek is. Egy modell többféle tartalommal is dolgozhat.”
 
 **Várható kérdés:** A képgenerátor is LLM?
 
-**Rövid válasz:** Nem. Az is generatív mély modell, de nem nyelvi modell.
+**Rövid válasz:** Egy képgenerátor lehet önálló képmodell vagy többféle tartalommal dolgozó modell része.
 
 ## Dia 3: Mekkora léptékről beszélünk?
 
@@ -76,11 +76,11 @@ Ezt a jegyzetet egyedül is végig tudod olvasni felkészüléskor, és vetíté
 
 **A lényeg egy mondatban:** Egy nagy modell tanítása emberi ésszel alig felfogható mennyiségű számítás.
 
-**Ezt mondd el:** „Nézzünk egy nyilvános példát, a 2020-as GPT-3 legnagyobb változatát. A tanítás során 300 milliárd tokent dolgozott fel. A token szövegdarab: lehet szó, szórész vagy írásjel. A modellnek 175 milliárd paramétere volt. A paraméter egy szám a modellben, amelynek az értékét a tanítás állítja be. A kutatók becslése szerint ehhez körülbelül 3,14-szer tíz a huszonharmadikon művelet kellett. Ha másodpercenként egymilliárd műveletet végeznél, nagyjából tízmillió évig tartana. Az újabb modellek ilyen adatait a fejlesztők többnyire már nem közlik.”
+**Ezt mondd el:** „Nézzünk egy nyilvános példát, a 2020-as GPT-3 legnagyobb változatát. A tanítás során 300 milliárd tokent dolgozott fel. A token szövegdarab: lehet szó, szórész vagy írásjel. A modellnek 175 milliárd paramétere volt. A paraméter egy szám a modellben, amelynek az értékét a tanítás állítja be. A kutatók becslése szerint ehhez körülbelül 3,14-szer tíz a huszonharmadikon művelet kellett. Ha másodpercenként egymilliárd műveletet végeznél, nagyjából tízmillió évig tartana. Hogy ezeket az adatokat közlik-e, az modellenként eltér. A GPT-4 nyilvános műszaki jelentése például nem adta meg a modell méretét.”
 
 **Várható kérdés:** Mekkorák a mai modellek?
 
-**Rövid válasz:** A legtöbb fejlesztő nem közli. Már a GPT-4 műszaki jelentése sem adta meg a modell méretét.
+**Rövid válasz:** Ez modellenként eltér. A GPT-4 nyilvános műszaki jelentése például nem adta meg a modell méretét.
 
 ## Dia 4: Mitől javult a teljesítmény?
 
@@ -130,7 +130,7 @@ Ezt a jegyzetet egyedül is végig tudod olvasni felkészüléskor, és vetíté
 
 **Mi látszik a dián:** Felül a nagy mondat. Balra egy levél: „Kérek árat 25 növényre.” Középen a háló, jobbra a tipp (Egyéb levél), a helyes válasz (Ajánlatkérés) és a Hiba. Lila szaggatott vonalak futnak visszafelé, majd egyes vonalak vastagsága megváltozik. Az ajánlatkérés esélye 24%-ról 31%-ra nő. Alul az öt lépés és a „Melyik mire való?” sor.
 
-**A lényeg egy mondatban:** A backpropagation tanítás közben kiszámolja, melyik súly mennyire hat a hibára, így a súlyokat a jó irányba lehet állítani.
+**A lényeg egy mondatban:** A backpropagation tanítás közben kiszámolja, merre változzanak a súlyok, az átállítás pedig a következő tanítási lépés.
 
 **Ezt mondd el:** „A háló eddig csak becsült. De honnan tudja, hogy javítania kell? Nézzünk egy levelet: Kérek árat huszonöt növényre. A háló azt tippeli, hogy ez egyéb levél, pedig ajánlatkérés. Ez a hiba. A backpropagation, magyarul hibavisszaterjesztés, a hibától visszafelé halad a hálón, és minden súlyra kiszámolja, mennyire hat a hibára. Fontos: ez még csak számolás, itt semmi nem változik. A következő lépésben a tanítóeljárás a számítás alapján egy kicsit átállítja a súlyokat. Újra megnézzük ugyanazt a levelet: az ajánlatkérés esélye 24 százalékról 31-re nőtt. Egy lépés csak keveset javít, ezért a tanítás során ez rengetegszer ismétlődik. Jegyezd meg: a backpropagation csak tanítás közben fut. Amikor te levelet íratsz a modellel, a súlyok már nem változnak.”
 
@@ -162,41 +162,41 @@ Ezt a jegyzetet egyedül is végig tudod olvasni felkészüléskor, és vetíté
 
 **Mi látszik a dián:** Felül a nagy mondat. Két sor: „Az ügyfél levele” és „A növény levele”. Mindkét „levele” felé egy vastag és egy vékony ív fut a korábbi szavaktól. Jobbra az eredmény: elküldött üzenet, illetve a növény része. Alul a „Melyik mire való?” sor.
 
-**A lényeg egy mondatban:** Az attention egy szó feldolgozásakor kiszámolja, melyik korábbi szóból mennyit vegyen át a modell, ezért ugyanaz a szó más mondatban mást jelenthet.
+**A lényeg egy mondatban:** A figyelem súlyozza, mennyi információt vegyen át egy szövegrész a környezetéből, ettől kap más jelentést az ügyfél levele és a növény levele.
 
-**Ezt mondd el:** „Most már vektorokkal számolunk. A kérdés az, honnan tudja a modell, mit jelent egy szó az adott mondatban. Nézd ugyanazt a szót két szövegben. Az ügyfél levele egy üzenet, a növény levele a növény része. A szó ugyanaz, a jelentését a környezet adja. Az attention, magyarul figyelem, pontosan ezt oldja meg: a modell minden szónál kiszámolja, hogy a korábbi szavakból mennyi információt vegyen át. A vastagabb vonal nagyobb súlyt szemléltet: az „ügyfél” és a „növény” erősen hat a „levele” szóra, a névelő kevésbé. Ezeket a súlyokat senki nem írja be kézzel, a modell számolja ki. A dián az egyszerűség kedvéért szavakat rajzoltunk, a modell valójában tokenekkel dolgozik.”
+**Ezt mondd el:** „Most már vektorokkal számolunk. A kérdés az, honnan tudja a modell, mit jelent egy szó az adott mondatban. Nézd ugyanazt a szót két szövegben. Az ügyfél levele egy üzenet, a növény levele a növény része. A szó ugyanaz, a jelentését a környezet adja. Az attention, magyarul figyelem, pontosan ezt oldja meg: súlyozza, hogy egy szövegrész mennyi információt vegyen át a környezetéből. A vastagabb vonal nagyobb súlyt szemléltet: az „ügyfél” és a „növény” erősen hat a „levele” szóra, a névelő kevésbé. Ezeket a súlyokat senki nem írja be kézzel, a modell számolja ki. A dián az egyszerűség kedvéért szavakat rajzoltunk, a modell valójában tokenekkel dolgozik.”
 
 **Várható kérdés:** A vastag vonal azt jelenti, hogy az a szó a fontos?
 
 **Rövid válasz:** Nem pontosan. Keverési arányt mutat egy adott számításban, és egyszerre több párhuzamos figyelmi számítás fut, mindegyik más mintázattal.
 
-**Ha visszakérdeznek:** Miben más ez, mint a backpropagation? A backpropagation a tanítás során állítja a súlyokat. Az attention minden egyes futáskor, a használat közben is számol.
+**Ha visszakérdeznek:** Miben más ez, mint a backpropagation? A hibavisszaterjesztés megmutatja, merre érdemes állítani a súlyokat. A következő tanítási lépés állítja át őket. A figyelem használat közben is működik.
 
 ## Dia 10: Transformer | Figyelem, rétegről rétegre
 
 **Idő:** 09:08:10–09:09:30 (1:20)
 
-**Mi látszik a dián:** Felül a nagy mondat. Balra a mondat három szava: A, növény, levele, alattuk egy üres hely. A három szó együtt lép be az 1. rétegbe, ahol a Figyelem részben ívek kötik össze őket, az Átalakítás részben színt váltanak. Utána a 2. és 3. réteg, végül a következő szó esélyei. Alul négy lépés és a „Melyik mire való?” sor.
+**Mi látszik a dián:** Felül a nagy mondat. Balra egy válasz eleje három tokenben: K, öszön, jük, alattuk egy üres hely. A három kártya együtt lép be az 1. rétegbe, ahol a Figyelem részben ívek futnak a „jük” felé, az Átalakítás részben színt váltanak. Utána a 2. és a 3. réteg, végül a következő token esélyei: ! 64%, ␣a 28%, vessző 8%. Alul négy lépés és a „Melyik mire való?” sor.
 
-**A lényeg egy mondatban:** A Transformer az a felépítés, amely figyelmi rétegeket rak egymásra, és a szöveg minden tokenjét egyszerre dolgozza fel.
+**A lényeg egy mondatban:** A Transformer rétegei összekapcsolják a szöveg részeit, majd továbbalakítják őket, és a végén kiszámolják a következő token esélyét.
 
-**Ezt mondd el:** „Az előbb egyetlen lépést láttál, a figyelmet. A Transformer az a teljes felépítés, amelybe ez a lépés beépül. A korábbi hálók jellemzően szóról szóra haladtak. A Transformer a szöveg minden tokenjét egyszerre kapja meg, a modell a sorrendet külön információként tudja meg. Ezért a számítás szétosztható sok processzorra. Egy réteg két részből áll. A figyelmi részben minden hely információt vesz át a korábbi helyekről, itt a „levele” példáját látod. A következő helyre még nem láthat rá, az még üres. Az átalakító rész ezután helyenként külön számol tovább. A következő réteg ugyanezt végzi az átdolgozott vektorokkal. A GPT-3 legnagyobb változatában 96 ilyen réteg volt. Az utolsó réteg után a modell kiszámolja, melyik token mekkora eséllyel következik.”
+**Ezt mondd el:** „Az előbb egyetlen lépést láttál, a figyelmet. A Transformer az a felépítés, amelybe ez a lépés beépül: sok réteg egymás után. Itt egy válasz elejét látod három tokenben. A kártyák a tokenekhez tartozó számsorokat jelölik. Egy réteg két részből áll. A figyelmi részben a „jük” információt vesz át a korábbi tokenekből. A következő helyre még nem láthat rá, az még üres. Az átalakító rész ezután tokenenként külön számol tovább. A következő réteg ugyanezt végzi az átdolgozott számsorokkal. A már meglevő tokenek helyein párhuzamosan lehet számolni. A válasz új tokenjei egymás után készülnek. Az utolsó réteg után a modell kiszámolja, melyik token mekkora eséllyel következik. Ezek az esélyek itt kitaláltak.”
 
 **Várható kérdés:** Hány réteg van egy modellben?
 
-**Rövid válasz:** Az eredeti, 2017-es Transformerben 6, a GPT-3 legnagyobb változatában 96. A mai modellek többségénél ezt nem közlik.
+**Rövid válasz:** Az eredeti Transformernek hat kódoló- és hat dekódolórétege volt. A GPT-3 legnagyobb változatában 96 réteg volt.
 
-**Ha visszakérdeznek:** A válasz írásakor is párhuzamos? Egy lépésen belül igen, a teljes eddigi szöveget egyszerre számolja. A válasz tokenjei viszont egymás után készülnek, ezt mutatja a következő dia. A zöld, sárga, száraz sávok kitalált, szemléltető értékek.
+**Ha visszakérdeznek:** Válaszíráskor egyes korábbi számítások újra felhasználhatók. A következő token esélyei az addigi szövegtől függenek.
 
 ## Dia 11: A kimenet lépésenként készül
 
 **Idő:** 09:09:30–09:10:40 (1:10)
 
-**Mi látszik a dián:** Felül: Prompt + ügyféllevél, LLM, Következő token, Kimenet. Három oszlop mutatja a tokenek esélyét, a kimenet sorban épül: K, öszön, jük, felkiáltójel, majd stoptábla. A harmadik lépésnél felirat: Nem mindig a legnagyobb nyer. Jobb felül: Valódi tokenek, kitalált esélyek.
+**Mi látszik a dián:** Felül: Prompt + ügyféllevél, LLM, Következő token, Kimenet. Három oszlop mutatja a tokenek esélyét, a kimenet sorban épül: K, öszön, jük, felkiáltójel, majd stoptábla. A harmadik lépésnél felirat: Most a 36%-os „jük” kerül a válaszba. Jobb felül: Valódi tokenek, kitalált esélyek.
 
 **A lényeg egy mondatban:** A válasz tokenenként, esélyek alapján készül, és a modell nem a tényeket ellenőrzi.
 
-**Ezt mondd el:** „A prompt mellé adok egy ügyféllevelet is. A modell ebből kiszámolja, melyik token mekkora eséllyel jöhet következőnek. A darabok itt valódiak, az esélyek kitaláltak. A rendszer az esélyek alapján választ, és nem mindig a legvalószínűbbet: nézd, most a „jük” nyer, pedig az „öm” esélye nagyobb volt. Ezért kaphatsz ugyanarra a kérésre eltérő választ. A választott token bekerül a bemenet végére, és a modell újra számol. Addig megy, amíg egy külön záró tokent nem választ, vagy el nem éri a beállított hosszkorlátot. A modell a következő darab esélyét számolja, nem a tényeket ellenőrzi. Ha az árat nem adtad meg, akkor is tud hihető számot írni.”
+**Ezt mondd el:** „A prompt mellé adok egy ügyféllevelet is. A modell ebből kiszámolja, melyik token mekkora eséllyel jöhet következőnek. A darabok itt valódiak, az esélyek kitaláltak. A rendszer az esélyek alapján választ, és nem mindig a legvalószínűbbet. A bal oldali keret a kiválasztott tokent mutatja. A „jük” lett a folytatás, pedig az „öm” esélye nagyobb volt. Ezért kaphatsz ugyanarra a kérésre eltérő választ. A választott token bekerül a bemenet végére, és a modell újra számol. Addig megy, amíg egy külön záró tokent nem választ, vagy el nem éri a beállított hosszkorlátot. A modell a következő darab esélyét számolja, nem a tényeket ellenőrzi. Ha az árat nem adtad meg, akkor is tud hihető számot írni.”
 
 **Várható kérdés:** Miért kapok más választ ugyanarra a kérdésre?
 
@@ -212,10 +212,10 @@ Ezt a jegyzetet egyedül is végig tudod olvasni felkészüléskor, és vetíté
 
 **Ezt mondd el:**
 
-- *0–6 mp, a szabálykártya belép.* „Figyeld a húsz növényes szabályt. A modell nem emlékszik a korábbi körökre: minden körben újra megkapja, amit az alkalmazás összeállít.”
-- *6–13 mp, a sáv megtelik.* „Ide kerülhet az alkalmazás utasítása, az előzmény, a forrás és az új kérés. Ezért nő körről körre.”
-- *13–21 mp, a szabálykártya kikerül.* „A kontextus az a szöveg, amelyet a modell az adott körben lát. A kontextusablak ennek a felső határa. Tokenben mérjük, és a válasznak is ebben kell elférnie. Ebben a példában az alkalmazás kiveszi a legrégebbi kártyákat.”
-- *21 mp után.* „A szabály a bal oldalon továbbra is olvasható, de a modell már nem kapta meg. Más alkalmazás összefoglalót készít a régi részekből, és abból is kimaradhat részlet. Ezért a fontos szabályt add meg újra.”
+- *0–6 mp.* „A modell minden új körben az alkalmazás által összeállított csomagot kapja.”
+- *6–13 mp.* „Ebben utasítás, forrás, előzmény és új kérés is lehet.”
+- *13–21 mp.* „A keret véges. Itt két régi kártya kiesik, köztük a húsz növényes szabály.”
+- *21 mp után.* „A szabály a chatben még látszik. A kontextusablak a bemenet és a válasz közös, tokenben mért kerete. Más alkalmazás összefoglalhatja a régi részeket. Ha a szabály fontos, add meg újra.”
 
 **Várható kérdés:** Mekkora a kontextusablak?
 
@@ -277,7 +277,7 @@ Ezt a jegyzetet egyedül is végig tudod olvasni felkészüléskor, és vetíté
 
 **Rövid válasz:** Nem automatikusan. A jelölést össze kell olvasni az eredeti forrással.
 
-## Dia 17: Egyetlen mondat, amivel elindulsz
+## Dia 17: Két mondat, amivel elindulsz
 
 **Idő:** 09:15:50–09:16:25 (0:35)
 
@@ -295,7 +295,7 @@ Ezt a jegyzetet egyedül is végig tudod olvasni felkészüléskor, és vetíté
 
 **Idő:** 09:16:25–09:17:20 (0:55)
 
-**Mi látszik a dián:** Középen a Karmester. Balra az Ember (célt ad, a végén dönt), jobbra a Készítő és az Ellenőr. Nyilak: cél, átnézett piszkozat, feladat, piszkozat, csomag, leletek.
+**Mi látszik a dián:** Középen a Karmester. Balra az Ember (célt ad, a végén dönt), jobbra a Készítő és az Ellenőr. Nyilak: cél, átnézett piszkozat, feladat, piszkozat, csomag, leletek. A csomag nyila mellett: A csomagot te másolod át az Ellenőr új beszélgetésébe.
 
 **A lényeg egy mondatban:** Külön szerepek dolgoznak, a döntés az emberé.
 
@@ -319,7 +319,7 @@ Ezt a jegyzetet egyedül is végig tudod olvasni felkészüléskor, és vetíté
 - *11–22 mp.* „Ha hiányzik egy döntés, kérdez. Itt azt tisztázza, hogy első körben egy bejárást egyeztető levél legyen a cél.”
 - *22–34 mp.* „Ha összeállt a feladat, jóváhagyod a tervet. A Karmester a Készítőnek adja a feladatot és a forrásokat. Levélnél a Készítő az Író szerepleírásával dolgozik.”
 - *34–45 mp.* „A Készítő visszaadja a piszkozatot. Nézd, ebben már van egy fix ár.”
-- *45–58 mp.* „Az Ellenőr friss beszélgetésben dolgozik. Ezt ma te nyitod meg, és bemásolod a Karmestertől kapott csomagot: a vizsgált változatot, az eredeti forrásokat és az ellenőrzőlistát. A Készítő gondolatmenete kimarad.”
+- *45–58 mp.* „A Karmester összeállítja a csomagot. Te megnyitod az Ellenőr új beszélgetését, és bemásolod a piszkozatot, a forrásokat és az ellenőrzőlistát.”
 - *58–69 mp.* „Az Ellenőr bizonyítékkal és súlyossággal adja vissza a leleteket. Itt az ár a blokkoló, vagyis enélkül nem mehet tovább. A dátum közepes, a furcsán hangzó ismétlés apró észrevétel.”
 - *69–82 mp.* „A Készítő elfogadja az árra vonatkozó észrevételt. A dátumot forrással vitatja: a levélben időpontot kell kérni. Az apró pont nyitva marad.”
 - *82–94 mp.* „Kiveszi az árat, és bejárást kér. A módosított változat visszamegy az Ellenőrhöz, mert az új változatot is ellenőrizni kell.”
@@ -349,7 +349,7 @@ Ezt a jegyzetet egyedül is végig tudod olvasni felkészüléskor, és vetíté
 
 **Idő:** 1:00, a fő részen kívül. Csak kérdésre.
 
-**Mi látszik a dián:** Felül: Azonos tanítási számítás. Két kártya: Gopher, 280 milliárd paraméter; Chinchilla, 70 milliárd paraméter. A Chinchillánál: Kb. 4,7-szer több token: 1400 és 300 milliárd.
+**Mi látszik a dián:** Felül: Azonos tanítási számítás. Két kártya: Gopher, 280 milliárd paraméter; Chinchilla, 70 milliárd paraméter. A Chinchillánál: Kb. 4,7-szer annyi tanítótoken: 1400 milliárd és 300 milliárd.
 
 **A lényeg egy mondatban:** Ugyanannyi számítást jobb lehet több adatra költeni, mint nagyobb modellre.
 

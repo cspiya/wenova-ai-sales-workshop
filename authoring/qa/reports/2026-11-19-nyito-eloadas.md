@@ -21,7 +21,9 @@ A 09:00-as, 20 perces nyitó előadás javítása nem fejlesztő cégtulajdonoso
 | Diasor r2 | Független Codex-reviewer, `dad035b` | A DK-01–DK-10 javítása | PASS, két kisebb ponttal (DK-11, DK-12) |
 | Tulajdonosi ítélet | Tulajdonos | Tartalom | A megjelenés jó, a tartalom több helyen kérdéses, a három fogalom nem érthető a diáról |
 | Szakértői review | Független Claude-reviewer, a `dad035b` revízión | Szakmai tartalom | 6 blokkoló, 11 fontos, 10 kisebb megállapítás |
-| Ez a javítás | Készítő | Minden fenti megállapítás | Saját ellenőrzés, nem független review |
+| Első javítási kör | Készítő | Minden fenti megállapítás | Saját ellenőrzés, nem független review |
+| Záróellenőrzés | Független reviewer, `6e9dd27` | Teljes diasor, forgatókönyv, jegyzet | REVISE: 2 blokkoló, 5 fontos, 4 kisebb |
+| Második javítási kör | Készítő | A záróellenőrzés megállapításai | Saját ellenőrzés, független újraellenőrzés még nincs |
 
 ## Megállapítások és javítások
 
@@ -76,31 +78,48 @@ A tokeneket és az azonosítókat `tiktoken 0.14.0` csomaggal újra lefuttattam,
 | `npm run render` | Az oldalak elkészültek, a parancs a custom deck elfogadására vár: `Run npm run render; stale HTML: materials/presentations/00-nyito-eloadas.html (custom: review script correspondence, then --accept-custom)` |
 | `npm run check` | Ugyanez az üzenet |
 | Hivatkozások és résztvevői határ (`check-repository`) | 0 hiba |
-| `npm test` | 31 tesztből 30 sikeres, 1 sikertelen |
-| Böngésző | Chromium, 1920×1080, a 2–22. dia záróállapotban, az animált diák kimerevített köztes időpontokban is, összesen 37 képkocka, nincs kilógás |
+| `npm test` | 31 tesztből 31 sikeres |
+| Böngésző | Chromium, 1920×1080, a 2–22. dia záróállapotban, az animált diák kimerevített köztes időpontokban is, nincs kilógás. A második körben a 7., 9., 10., 11., 17., 18., 19. és 21. dia újra, a 11. dián a választási keret körüli képkockákkal |
 | Előadói jegyzet és menetrend | 1440 és 390 px szélességen nincs vízszintes kilógás |
-
-**A sikertelen teszt:** `every page carries exactly its own audience band and theme class`. Hibaüzenet: `use Markdown, not raw HTML: <!-- presentation: custom -->`. Ugyanez a teszt a munka előtti `0fab75a` összefésülésen is hibázik: a main új tesztje a custom deckre is lefut. A tesztet nem módosítottam, mert ez a minőségi kapu gazdájának döntése.
 
 A `render.test.cjs` menetrendi elvárását a kért 09:00-as link miatt frissítettem.
 
+## Záróellenőrzés és második javítási kör
+
+**Ítélet:** REVISE a `6e9dd27` revízión.
+
+| Azonosító | Súly | Hely | Megállapítás | Javítás |
+| --- | --- | --- | --- | --- |
+| B1 | Blokkoló | 10. dia | A dia szavakat mutatott a modell bemeneteként és kimeneteként, és összemosta a párhuzamos számítást a válasz egymás utáni lépéseivel | Új nagy mondat, valódi `K`, `öszön`, `jük` tokenek, a következő token esélyei: `!` 64%, `␣a` 28%, `,` 8%, kitalált esélyként jelölve |
+| B2 | Blokkoló | 11. dia | A döntő pillanatban a keret az `et` tokenen állt, miközben a `jük` került a válaszba | Új keretidőzítés, a 4/4 felirat és a stopjel 80%-nál indul, új felirat a harmadik választásnál |
+| F1 | Fontos | 7., 9., 10. dia, jegyzet | A fogalmi összefoglaló összemosta a lépéseket | Új összehasonlító sáv, új 9. diai mondat, pontosított rövid válaszok |
+| F2 | Fontos | 18., 19. dia | A kézi átadás az ábrán nem látszott | Felirat mindkét dián, a 19. dián kiemelt Ember sáv az átadás alatt |
+| F3 | Fontos | 12. dia, jegyzet | A beszédszöveg nem fért a megadott másodpercekbe | Rövidebb szöveg a négy időszakra |
+| F4 | Fontos | Előadói jegyzet | A jegyzet résztvevői elhelyezése nyitott | **Elutasítva.** A tulajdonos döntése: a résztvevők olvashatják az előadói jegyzetet, ezért az a `materials/presentations/` mappában marad a jelenlegi címmel és szerkezettel |
+| F5 | Fontos | Forgatókönyv, jegyzet | Az animáció indítása böngészőfüggő | Vetítési utasítás: Chrome 133 vagy újabb |
+| K1 | Kisebb | Forgatókönyv | A mozgás és a CSS-időzítés hossza eltért | Pontosított időadatok az 5., 6. és 12. diánál |
+| K2 | Kisebb | 2. dia, jegyzet | A modellfajták átfedése hiányzott | Kiegészített beszédszöveg és rövid válasz |
+| K3 | Kisebb | 3. dia, jegyzet | Alá nem támasztott általánosítás a modellméretről | Csere a GPT-4 példájára |
+| K4 | Kisebb | 17., 21. dia | Két vetített megfogalmazás pontatlan volt | „Két mondat, amivel elindulsz” és „Kb. 4,7-szer annyi tanítótoken: 1400 milliárd és 300 milliárd” |
+
+A 10. dia tokenjeit `tiktoken 0.14.0` csomaggal, `o200k_base` kódolással újra ellenőriztem: `K` 42, `öszön` 193270, `jük` 124049, `!` 0, `␣a` 261, `,` 11.
+
+A 3. dia beszédszövegében a K3 cseréjét a mondat összefüggéséhez igazítottam, a rövid válasz szó szerint a javasolt szöveg.
+
 ## Nyitott pontok
 
-1. Független review kell a javított diasorra és az előadói jegyzetre.
+1. Független újraellenőrzés kell a második javítási kör revízióján.
 2. Az előadó visszaigazolása után futtatható az `--accept-custom`.
-3. A fenti sikertelen teszt javításáról a kapu gazdája dönt.
-4. Az `openai.com/index/chatgpt` automatikus megnyitása 403-as hibát adott, a ChatGPT 2022-es megjelenését innen nem ellenőriztem. A forrásjegyzék ezt jelzi.
-5. A diasort kimerevített időpontokban néztem át. Vetítés előtt egyszer érdemes valós időben, projektoron végignézni.
-6. Az `AGENTS.md` szerint oktatói tartalom nem kerül a `materials/` mappába. A jegyzet a megbízás kifejezett kérésére került oda, mert a résztvevők is olvashatják. A szabály és a kivétel összehangolása nyitott.
-7. A helyi ellenőrzés Node 26-tal futott, a `package.json` Node 24-et ír elő.
+3. A diasort kimerevített időpontokban néztem át. Vetítés előtt egyszer érdemes valós időben, projektoron végignézni.
+4. A helyi ellenőrzés Node 26-tal futott, a `package.json` Node 24-et ír elő.
 
 ## Ellenőrzött fájlok (SHA-256)
 
 | Fájl | SHA-256 |
 | --- | --- |
-| `materials/presentations/00-nyito-eloadas.html` | `43814d9106de252dffeb2756941a81940829827aff6cfd09c0740eca4c90ed55` |
-| `materials/presentations/00-nyito-eloadas.md` | `6999cc154753aeaa46307cbd54cd9e57de76c254a13550f18b386a6c7ad8eecc` |
-| `materials/presentations/00-nyito-eloadas-jegyzet.md` | `0a12b895ca23cc333a10521e6a0f4d4d746fa0752b19f84d273cd5ac91a04f53` |
-| `materials/presentations/00-nyito-eloadas-jegyzet.html` | `2d043220e303f067449b1bbf3f52403b3c91d8d98bfd02aec30fc78140ce2d3f` |
-| `materials/schedule.md` | `e5bf64572d319a3d7d79f43c91b4f69f2df01894b17bd1d2505dbdda1b4cbd3b` |
-| `materials/schedule.html` | `f841538cb4a23dc22f43f4d77789b69450bb419c842d28462a14a6b68048427c` |
+| `materials/presentations/00-nyito-eloadas.html` | `5d4917a78b7654c213b92a63733c1d3d1535fc5e76a600ec6868e1a488acb22b` |
+| `materials/presentations/00-nyito-eloadas.md` | `132ea51b8905c5c511b481b1cbb6d61a46dff11a1a184f0bc19520203ff4f6ca` |
+| `materials/presentations/00-nyito-eloadas-jegyzet.md` | `7279a63f9a64e0837e09a36a13a720a10729af752ff9e535f6c862a6805b7d1b` |
+| `materials/presentations/00-nyito-eloadas-jegyzet.html` | `d1c7fd4068221ff16272acd89da370065473ebfcb548df5fad69f450071f1298` |
+| `materials/schedule.md` | `c37b02f2c201289d9113be8a656f99e88de19eedc0e8d0be9fac9c17385ff9d6` |
+| `materials/schedule.html` | `8738b1a3642bbdc58d9861b9fde27f09d5606c5177511eab90c33540b0775d2c` |
