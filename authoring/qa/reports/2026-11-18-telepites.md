@@ -88,3 +88,17 @@ A próba után a felhasználói környezet, a Scoop-beállítás és a végrehaj
 - **Fájlszám:** a próbák idején 153, majd 159 fájl volt. A jelenlegi Git-forrás 161, a kiadási csomag 159 fájl.
 - **Node 24:** a próba Node 26 alatt futott.
 - **Emberi idő:** a kattintások, a belépések és a jóváhagyások ideje nincs mérve.
+
+
+## Utolsó független ellenőrzés (2026-11-19)
+
+**Vizsgált revízió:** `8ecd055`. **Ítélet:** REVISE, lefedettség PARTIAL.
+
+| Súly | Megállapítás | Javítás |
+| --- | --- | --- |
+| BLOKKOLÓ | A futtatókönyv minden eltérő letöltött példányt újabbnak tekintett. | A `main` ágról letöltött példány az irányadó, hiányzó pluginmappánál a csere előtt megáll. |
+| FONTOS | A Cowork-frissítés összemosta a marketplace-ről és a fájlból telepített plugint. | Külön út a két esetre, az Anthropic Cowork-dokumentációja szerint. |
+| FONTOS | Az első DNS-mentés nem rögzítette az értékesítési stratégia útvonalát. | Az útvonal az első mentéskor bekerül a haladási naplóba. |
+| KISEBB | A kézi másolás kész feltétele és a Karmester szerepleírása pontatlan volt. | Mindkét szöveg pontosítva. |
+
+A javítások után új független kör nem futott, mert a tulajdonos legfeljebb egy további kört engedett (WEN-1220/D14). A Cowork, a macOS és a connector-belépés élő próbája nyitott.

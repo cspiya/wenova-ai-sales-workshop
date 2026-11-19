@@ -142,7 +142,7 @@ Telepítsd a workshop tananyagát: https://raw.githubusercontent.com/cspiya/weno
 ### Ellenőrizd az eredményt
 
 - A munkamappában ott a `Tananyag/` (benne `index.html`, `VERSION`, `modules/`, `starter-kit/`) és a `Munka/` mappa a hat almappával.
-- A Claude ✅/⚠️ listájában a verzió és a fájlszám szerepel (Git-forrásból legalább 161, kiadási csomagból legalább 159), és megvan a nyolc szerepfájl.
+- A Claude ✅/⚠️ listájában a verzió és a fájlszám szerepel (Git-forrásból legalább 161, kiadási csomagból legalább 159; kézi másolásnál kevesebb is elfogadható, ha a szükséges fájlok megvannak), és megvan a nyolc szerepfájl.
 - A plugin a Customize → Plugins listában látszik. Ha nem sikerült hozzáadni, a nap nélküle is végigvihető: a Claude ezt feljegyzi a hiányok közé.
 - A `Tananyag/index.html` megnyílik a böngészőben.
 - A Cowork-projekt Instructions mezőjében ott az AGENTS.md-re utaló mondat.
