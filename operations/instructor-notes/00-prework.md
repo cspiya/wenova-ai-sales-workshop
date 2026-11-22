@@ -55,7 +55,7 @@ A dokumentáció alapján írtuk, élő próbán nem futott:
 1. A Cowork a `raw.githubusercontent.com` linket a résztvevő által megadott URL-ként be tudja-e olvasni, és a `git clone` a github.com-ról Pro csomagon, alapbeállítással átmegy-e (a Pro alapértelmezett hálózati beállítása a dokumentációban nem szerepel).
 2. A VM-ben letöltött fájlok átmásolása a csatolt helyi mappába (`Tananyag/`) gond nélkül megy-e, és a ~97 fájlnál mennyi idő.
 3. Cowork beolvassa-e a csatolt mappa gyökerében lévő `AGENTS.md`-t magától; ezért kérjük az Instructions-mondatot (ez dokumentáltan működik).
-4. A Buffer connector neve és a „Connect” lépés a Customize → Connectors listában (a Buffer dokumentációja szerint létezik).
+4. A Buffer connector a pluginnal érkezik: megjelenik-e a Wenova Sales Workshop plugin Connectors fülén, és működik-e ott az Add és a Connect lépés. A Customize → Connectors listából ne adják hozzá még egyszer; ha valakinél két Buffer-kapcsolat van, az egyiket bontsa.
 5. A Cowork ütemezett feladata helyi mappa nélkül (Pro) a Google Drive-ból olvassa-e a DNS-t.
 
 Ha az 1. vagy 2. pont elakad, mutasd meg a résztvevőnek a kézi ZIP-utat a helyén. Erre 3 percet szánj.
