@@ -24,7 +24,9 @@ Telepíthető plugin a workshophoz: marketplace, négy connector-cím, hét alü
 | 3 | 2026-11-19 | 6b54de9a | A tiszta profilos próba hibájának javítása az Író műfaji szabályában | `61dc6b8` |
 | 4 | 2026-11-22 | session_01YaXeW54cfqpq6AbL96mRzd (koordinátor) | Csak olvasó hiánykeresés, terv a jegyen, maker brief | öt feladat, a 02–04-es modul kizárva |
 | 5 | 2026-11-22 | maker alügynök a koordinátor sessionjében (saját azonosítója nem ismert) | Az Író kézi útja, Karmester parity-teszt, kapcsolattábla, Buffer javítás, kiadási kapu sorai | `writer.md` és plugin-másolata, `karmester-parity.test.cjs`, `TELEPITES.md`, `00-prework.md`, `assistant.md`, `2026-11-19-kiadasi-kapu.md`, újraépített `.plugin` |
-| 6 | 2026-11-22 | ugyanaz | `npm ci --ignore-scripts`, `npm run plugin:build`, `npm run render`, `npm test`, `npm run check`, `npm run prepare:push` | lásd Tesztek |
+| 6 | 2026-11-22 | ugyanaz | `npm ci --ignore-scripts`, `npm run plugin:build`, `npm run render`, `npm test`, `npm run check`, `npm run prepare:push` | lásd Tesztek; PR #21, head `463d6bb` |
+| 7 | 2026-11-22 | session_01YaXeW54cfqpq6AbL96mRzd (koordinátor) | 1. review kör két független reviewerrel | lásd Review körök |
+| 8 | 2026-11-22 | maker alügynök a koordinátor sessionjében | 1. javító kör: R1.1–R1.6 | `TELEPITES.md`, `assistant.md`, `writer.md` és plugin-másolata, két oktatói jegyzet, napló |
 
 ## Döntések
 
@@ -41,7 +43,24 @@ Telepíthető plugin a workshophoz: marketplace, négy connector-cím, hét alü
 
 ## Review körök
 
-Független review még nem futott, az utómunkára sem. A maker saját ellenőrzése nem számít függetlennek.
+A 2026-11-19-i változatra független review még nem futott. A maker saját ellenőrzése nem számít függetlennek.
+
+### 1. kör: 2026-11-22, reviewerek: claude-rev-21 (futás: rev21-r1) és codex-rev-21 (futás: codexrev21-r1), pull request [#21](https://github.com/cspiya/wenova-ai-sales-workshop/pull/21), revízió `463d6bb`
+
+claude-rev-21: PASS, 2 MINOR és 7 megjegyzés. codex-rev-21: 1 MAJOR, lefedettség PARTIAL. A koordinátor által továbbított megállapítások és a maker döntése:
+
+| # | Súlyosság | Hely | Megállapítás | Maker döntése | Indoklás |
+|---|---|---|---|---|---|
+| R1.1 (Codex F1) | MAJOR | `materials/TELEPITES.md:128` | Az általános tartalék (Add custom connector, ha a pluginból nem választható) ütközik a Buffer sorával, két Buffer-kapcsolat keletkezhet | elfogadva, javítva | A tartalék csak akkor él, ha a kapcsolat egyáltalán nincs a plugin Connectors fülén, a duplikátumot bontani kell. Ugyanez az `assistant.md` Cowork-bekezdésében is |
+| R1.2 (Claude F1) | MINOR | `operations/instructor-notes/01-business-foundations.md:87` | A jegyzet szerint a Buffer a Claude connectorlistájában van | elfogadva, javítva | A jegyzet a pluginos utat írja. A teljes `operations/` mappát átnéztük, más Buffer-ellentmondás nincs |
+| R1.3 (Claude F2) | MINOR | `authoring/qa/reports/WEN-1225-work-log.md` | Hiányzik a review kör és a pontos tesztelt revízió | elfogadva, javítva | Ez a szakasz és a Tesztek szakasz |
+| R1.4 (Claude F3) | megjegyzés | `materials/starter-kit/agents/writer.md:38` | Ha az Ellenőr nem indítható alügynökként, az új beszélgetést a Karmester kérje, ne az Író | elfogadva, javítva | Egyezik az `orchestrator.md` Tartalék szakaszával; plugin-másolat és `.plugin` újraépítve |
+| R1.5 (Claude F5) | megjegyzés | `materials/TELEPITES.md:128` | A `/mcp` belépés csak a pluginos kapcsolatokra igaz, a Gmail és a Drive a webes Customize → Connectors felületen kapcsolódik | elfogadva, javítva | A szöveg most kettéválasztja a kettőt, az `assistant.md` Claude Code-bekezdésével egyezően |
+| R1.6 (napló T2) | MINOR | `operations/instructor-notes/00-prework.md:58` | A jegyzet a Buffert a Customize → Connectors listában teszteltetné | elfogadva, javítva | A jegyzet a plugin Connectors fülét teszteltetné |
+
+A két review többi megjegyzésének részletei nem jutottak el a makerhez. Azokról ez a napló nem állít semmit.
+
+Eredmény: a MAJOR javítva, újraellenőrzés szükséges.
 
 ## Félreértések és javítások
 
@@ -65,6 +84,17 @@ Vizsgált revízió: `61dc6b8`. `npm run render`, `npm run check` (22 HTML-oldal
 | `npm run check` | `PASS: 28 current HTML pages; 1827 local references; 20 lessons.`, fájlt nem módosított |
 | `npm run prepare:push` | tíz változott fájl, `PASS: 28 current HTML pages; 1827 local references; 20 lessons.` |
 
+**1. javító kör, 2026-11-22.** Vizsgált revízió: a javító commit, `1ff6132f49fe0ff355e7d1de9647a5ac9fbc4f5a` (alapja `463d6bb`), tiszta munkafával, helyben Node 26 alatt. Az utána következő commit csak ezt a naplót módosítja.
+
+| Teszt | Eredmény |
+|---|---|
+| `npm ci --ignore-scripts` | sikeres |
+| `npm run plugin:build` | `PASS: 8 plugin copies and materials/plugin/wenova-sales-workshop.plugin` |
+| `npm run render` | `PASS: 28 presentation sources.` |
+| `npm test` | 34 teszt, 34 sikeres, 0 hibás |
+| `npm run check` | `PASS: 28 current HTML pages; 1827 local references; 20 lessons.`, fájlt nem módosított |
+| `npm run prepare:push` | 14 változott fájl a `main`-hez képest, ugyanaz a PASS, fájlt nem módosított |
+
 Nem futott és nem is futtatható itt: élő Cowork-próba, fiókbelépés és olvasási füstpróba bármelyik connectorral, macOS-próba, Codex-reviewer futás. Egyik kapcsolatot sem próbáltuk ki.
 
 ## Emberre váró nyitott pontok
@@ -83,5 +113,5 @@ Nem futott és nem is futtatható itt: élő Cowork-próba, fiókbelépés és o
 
 | # | Forrás | Súlyosság | Javaslat | Triázs döntés |
 |---|---|---|---|---|
-| T1 | D8 | MAJOR | A védett `materials/modules/02-content-marketing.md` 69. és 396. sora a Buffert a Customize → Connectors listába köti be, ez a pluginos Buffer mellett kettős kapcsolatot ad. A 02-es modul gazdájának jóváhagyásával igazítani kell | nyitott |
-| T2 | D8 | MINOR | Az `operations/instructor-notes/00-prework.md` 58. sora a Buffert még a Customize → Connectors listában teszteltetné. Igazítani a pluginos útra | nyitott |
+| T1 | D8 | MAJOR | A védett `materials/modules/02-content-marketing.md` 69. és 396. sora a Buffert a Customize → Connectors listába köti be, ez a pluginos Buffer mellett kettős kapcsolatot ad. A 02-es modul gazdájának jóváhagyásával igazítani kell | nyitott, a 02-es modul gazdájára vár |
+| T2 | D8 | MINOR | Az `operations/instructor-notes/00-prework.md` 58. sora a Buffert még a Customize → Connectors listában teszteltetné. Igazítani a pluginos útra | kész, az 1. javító körben (R1.6), az `01-business-foundations.md` jegyzettel együtt (R1.2) |
