@@ -195,7 +195,7 @@
 <a id="00-prework.02-account-check--explanation"></a>
 <h3 class="cell-title">Így működik</h3>
 <p>A connectorok a fiókodhoz tartoznak, a Coworkben és a chatben is működnek. Egy munkamenetben a szövegmező melletti <strong>+</strong> menüben kapcsolhatod be vagy ki őket. Minden connector saját oldalán beállíthatod, melyik eszközét használhatja a Claude (Tool permissions, eszközengedélyek). A kényelmes automatizáláshoz engedélyek kellenek, a teljes engedély is elfogadható. Az engedélyek a te döntésed: amit engedélyezel, azt a Claude kérdés nélkül megteheti, a levélküldést is. A workshop szabálya ettől független: a Claude magától nem küld és nem publikál, a levelet te küldöd, posztot pedig csak a csatorna, a szöveg és az időpont kifejezett jóváhagyása után ütemezhet.</p>
-<p>A Brandiseer, a Sales Bot és az EstiWise connector címét a plugin hozza. A hozzáadást és a belépést a saját blokkjuk elején végzed, a plugin Connectors fülén; előre nincs teendő.</p>
+<p>A Brandiseer, a Sales Bot, az EstiWise és a választható Buffer connector címét a plugin hozza. A Brandiseer, a Sales Bot és az EstiWise hozzáadását és a belépést a saját blokkjuk elején végzed, a plugin Connectors fülén; előre nincs teendő. A Buffert csak akkor kösd be, ha használod, és ugyanott, a plugin Connectors fülén. A Customize → Connectors listából ne add hozzá még egyszer, mert akkor ugyanaz a szolgáltatás két kapcsolattal szerepel. Kapcsolatonként a kézi lépést, a füstpróbát és a várt eredményt a <a href="../TELEPITES.md#kapcsolatok">telepítési útmutató kapcsolattáblája</a> mutatja.</p>
 </div>
 <div class="cell cell--decide">
 <a id="00-prework.02-account-check--decisions"></a>
@@ -221,7 +221,7 @@ Jelszót és belépőkódot ne kérj tőlem.
 <ul>
 <li>a <strong>Gmail</strong> és a <strong>Google Drive</strong> connectort, ha Google-t használsz;</li>
 <li>a <strong>Microsoft 365</strong> connectort, ha Outlookot használsz. Személyes Outlook.com-fiókot a webes Claude-ban (claude.ai) köss be. Céges fióknál a cég rendszergazdájának jóvá kell hagynia; ha te vagy a Microsoft 365 rendszergazda, a belépéskor jóváhagyhatod. Ha ez nem megy, a leveleket bemásolva dolgozzuk fel;</li>
-<li>választhatóan a <strong>Buffer</strong> connectort (keresd a listában, Connect, belépés a Bufferbe), ha van Buffer-fiókod.</li>
+<li>a <strong>Buffert</strong> ne itt keresd: a plugin hozza. Ha van Buffer-fiókod és használni szeretnéd, a Wenova Sales Workshop plugin Connectors fülén kattints a Buffernél az Add, majd a Connect gombra, és lépj be a Bufferbe. Ha a Customize → Connectors listában is hozzáadnád, kétszer szerepelne.</li>
 </ul>
 </li>
 <li><strong>5–8 perc:</strong> nyisd meg a levelező connector oldalát, és az eszközengedélyeknél döntsd el, mit engedsz a küldésre, válaszra, továbbításra és törlésre. Az engedélyek a te döntésed: amit engedélyezel, azt a Claude kérdés nélkül megteheti, a levélküldést is.</li>
@@ -241,7 +241,7 @@ Jelszót és belépőkódot ne kérj tőlem.
 <h3 class="cell-title">Ha elakadtál</h3>
 <ul>
 <li><strong>A levelező connector nem kapcsolódik:</strong> folytasd nélküle. Az 1. és 5. blokkban a leveleidet bemásolva vagy a <a href="../scenarios/office-plants/outputs/mailbox-sample.md">kitalált mintapostafiókkal</a> dolgozol.</li>
-<li><strong>A Buffer connector nem található:</strong> nem gond, a Buffer választható. A 02-es blokkban a posztokat letöltöd, és kézzel teszed ki, amikor jónak látod.</li>
+<li><strong>A Buffer nem látszik a plugin Connectors fülén:</strong> nem gond, a Buffer választható. A 02-es blokkban a posztokat letöltöd, és kézzel teszed ki, amikor jónak látod.</li>
 </ul>
 </div>
 <div class="cell cell--output">
@@ -290,7 +290,7 @@ Jelszót és belépőkódot ne kérj tőlem.
 </tr>
 <tr>
 <td><strong>Buffer</strong> (posztok ütemezése, választható)</td>
-<td>Ingyenes fiók: <a href="https://buffer.com" target="_blank" rel="noopener noreferrer">buffer.com</a>, és köss be legalább egy közösségimédia-oldalt. A Claude-connectort a 2. leckében kapcsolod be.</td>
+<td>Ingyenes fiók: <a href="https://buffer.com" target="_blank" rel="noopener noreferrer">buffer.com</a>, és köss be legalább egy közösségimédia-oldalt. A Claude-connectort a plugin hozza, a 2. leckében kapcsolod be a plugin Connectors fülén.</td>
 <td>A 02-es blokk bónuszában piszkozatot menthetsz vagy ütemezhetsz. Ütemezés előtt a Claude megmutatja a csatornát, a szöveget és az időpontot, majd megvárja a kifejezett jóváhagyásodat. Ami be van ütemezve, az ki is megy. Ha ezt nem szeretnéd, hagyd piszkozatban.</td>
 </tr>
 <tr>

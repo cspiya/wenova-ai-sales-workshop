@@ -193,6 +193,17 @@ Egy laptopon, 08:30 előtt, körülbelül 20 perc. Az eredmény oszlopot ember t
 | 10 | Hanglabor modell-modell módban (2) | Nyisd meg: `https://cspiya.github.io/wenova-ai-sales-workshop/materials/demos/voice-lab/app.htm`. A Beállításokban add meg a hozzáférési kódot, és indíts Modell-modell, hang beszélgetést a vetítő gépen | Mindkét modell hangja hallható, az átirat megjelenik | A WEN-1220/D4 szerint a demó kimarad | |
 | 11 | Záró blokk előfeltételei (1) | A saját fiókkal, csak olvasva, Windsor.ai-on át kérj le egy Facebook-poszt eredményét és kommentjét, valamint egy időszak GA4-munkameneteit. A Bufferben nézd meg a posztlistát | Mindhárom adat kiolvasható | A záró blokkban a minta CSV-vel dolgozz, ahogy az oktatói jegyzet leírja | |
 
+**A 7. és a 8. sor connectoronként.** A két sor eredményét connectoronként külön rögzítsétek. A kézi lépést, a füstpróba kérését és a várt eredményt a [telepítési útmutató kapcsolattáblája](../../../materials/TELEPITES.md#kapcsolatok) írja le. Az eredmény oszlopot ember tölti ki: ✅ sikeres, ⚠️ nem ellenőrzött vagy ❌ sikertelen, a helyi dátummal és idővel.
+
+| Sor | Connector | Eredmény |
+| --- | --- | --- |
+| 7 | Gmail | |
+| 7 | Google Drive | |
+| 8 | Brandiseer | |
+| 8 | Sales Bot | |
+| 8 | EstiWise | |
+| 8 | Buffer (választható) | |
+
 ## 7. Újraellenőrzés a jegyzőkönyv után
 
 A jegyzőkönyv elkészülte után mindkét parancs újra lefutott a munkaágon.
