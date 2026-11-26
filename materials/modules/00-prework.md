@@ -198,7 +198,7 @@ Bekapcsolt levelező- és Google Drive-kapcsolatot (ha van Buffer-fiókod, a Buf
 
 A connectorok a fiókodhoz tartoznak, a Coworkben és a chatben is működnek. Egy munkamenetben a szövegmező melletti **+** menüben kapcsolhatod be vagy ki őket. Minden connector saját oldalán beállíthatod, melyik eszközét használhatja a Claude (Tool permissions, eszközengedélyek). A kényelmes automatizáláshoz engedélyek kellenek, a teljes engedély is elfogadható. Az engedélyek a te döntésed: amit engedélyezel, azt a Claude kérdés nélkül megteheti, a levélküldést is. A workshop szabálya ettől független: a Claude magától nem küld és nem publikál, a levelet te küldöd, posztot pedig csak a csatorna, a szöveg és az időpont kifejezett jóváhagyása után ütemezhet.
 
-A Brandiseer, a Sales Bot és az EstiWise connector címét a plugin hozza. A hozzáadást és a belépést a saját blokkjuk elején végzed, a plugin Connectors fülén; előre nincs teendő.
+A Brandiseer, a Sales Bot, az EstiWise és a választható Buffer connector címét a plugin hozza. A Brandiseer, a Sales Bot és az EstiWise hozzáadását és a belépést a saját blokkjuk elején végzed, a plugin Connectors fülén; előre nincs teendő. A Buffert csak akkor kösd be, ha használod, és ugyanott, a plugin Connectors fülén. A Customize → Connectors listából ne add hozzá még egyszer, mert akkor ugyanaz a szolgáltatás két kapcsolattal szerepel. Kapcsolatonként a kézi lépést, a füstpróbát és a várt eredményt a [telepítési útmutató kapcsolattáblája](../TELEPITES.md#kapcsolatok) mutatja.
 
 <a name="00-prework.02-account-check--decisions"></a>
 
@@ -226,7 +226,7 @@ Jelszót és belépőkódot ne kérj tőlem.
 1. **0–5 perc:** Testreszabás → Connectorok (Customize → Connectors; az asztali appban a bal oldali sávban). Kapcsold be:
    - a **Gmail** és a **Google Drive** connectort, ha Google-t használsz;
    - a **Microsoft 365** connectort, ha Outlookot használsz. Személyes Outlook.com-fiókot a webes Claude-ban (claude.ai) köss be. Céges fióknál a cég rendszergazdájának jóvá kell hagynia; ha te vagy a Microsoft 365 rendszergazda, a belépéskor jóváhagyhatod. Ha ez nem megy, a leveleket bemásolva dolgozzuk fel;
-   - választhatóan a **Buffer** connectort (keresd a listában, Connect, belépés a Bufferbe), ha van Buffer-fiókod.
+   - a **Buffert** ne itt keresd: a plugin hozza. Ha van Buffer-fiókod és használni szeretnéd, a Wenova Sales Workshop plugin Connectors fülén kattints a Buffernél az Add, majd a Connect gombra, és lépj be a Bufferbe. Ha a Customize → Connectors listában is hozzáadnád, kétszer szerepelne.
 2. **5–8 perc:** nyisd meg a levelező connector oldalát, és az eszközengedélyeknél döntsd el, mit engedsz a küldésre, válaszra, továbbításra és törlésre. Az engedélyek a te döntésed: amit engedélyezel, azt a Claude kérdés nélkül megteheti, a levélküldést is.
 3. **8–10 perc:** a Cowork-projektben új munkamenet, kapcsold be a connectorokat a + menüben, és írd: „Milyen connectorokat látsz ebben a munkamenetben?”
 
@@ -242,7 +242,7 @@ Jelszót és belépőkódot ne kérj tőlem.
 ### Ha elakadtál
 
 - **A levelező connector nem kapcsolódik:** folytasd nélküle. Az 1. és 5. blokkban a leveleidet bemásolva vagy a [kitalált mintapostafiókkal](../scenarios/office-plants/outputs/mailbox-sample.md) dolgozol.
-- **A Buffer connector nem található:** nem gond, a Buffer választható. A 02-es blokkban a posztokat letöltöd, és kézzel teszed ki, amikor jónak látod.
+- **A Buffer nem látszik a plugin Connectors fülén:** nem gond, a Buffer választható. A 02-es blokkban a posztokat letöltöd, és kézzel teszed ki, amikor jónak látod.
 
 <a name="00-prework.02-account-check--handoff"></a>
 
@@ -289,7 +289,7 @@ Ha még nincs fiókod valamelyik eszközhöz, amelyet használni szeretnél, a w
 | Partner és blokk | Mit állítasz be a saját laptopodon? | Mi történik a blokkban? |
 | --- | --- | --- |
 | **Brandiseer** ([02-es modul](02-content-marketing.md)) | A [brandiseer.hu](https://brandiseer.hu) oldalon add meg a céged weboldalát → **Try My Brand** → töröld a nem odaillő képeket → **Add Brand** → fiók létrehozása. Utána Pro csomag a **WENOVA** kóddal (az első hónap ingyenes). | A 02-es blokkban a Brandiseer connectorát is bekötitek. |
-| **Buffer** (posztok ütemezése, választható) | Ingyenes fiók: [buffer.com](https://buffer.com), és köss be legalább egy közösségimédia-oldalt. A Claude-connectort a 2. leckében kapcsolod be. | A 02-es blokk bónuszában piszkozatot menthetsz vagy ütemezhetsz. Ütemezés előtt a Claude megmutatja a csatornát, a szöveget és az időpontot, majd megvárja a kifejezett jóváhagyásodat. Ami be van ütemezve, az ki is megy. Ha ezt nem szeretnéd, hagyd piszkozatban. |
+| **Buffer** (posztok ütemezése, választható) | Ingyenes fiók: [buffer.com](https://buffer.com), és köss be legalább egy közösségimédia-oldalt. A Claude-connectort a plugin hozza, a 2. leckében kapcsolod be a plugin Connectors fülén. | A 02-es blokk bónuszában piszkozatot menthetsz vagy ütemezhetsz. Ütemezés előtt a Claude megmutatja a csatornát, a szöveget és az időpontot, majd megvárja a kifejezett jóváhagyásodat. Ami be van ütemezve, az ki is megy. Ha ezt nem szeretnéd, hagyd piszkozatban. |
 | **EstiWise** ([04-es modul](04-proposals-handoff.md)) | Regisztráció: [admin.estiwise.ai/auth/register](https://admin.estiwise.ai/auth/register). Bankkártya és előfizetés nem kell. | A Claude-összekötést a 04-es blokkban együtt csináljuk; előre ne próbáld. |
 | **Blackhole Media – Sales Bot** ([03-as modul](03-lead-generation.md)) | Előre nincs teendőd. Ha kíváncsi vagy: [sales-bot.io](https://sales-bot.io). A LinkedIn-belépésed legyen kéznél. | A Blackhole Media előre létrehozza a hozzáférésedet, és a 03-as blokk elején adja át. Ekkor a connectort is bekötitek. |
 

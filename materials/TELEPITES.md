@@ -77,7 +77,7 @@ Közöld ✅/⚠️ jelöléssel:
 
 ## 6/a. A csapat hozzáadása (plugin)
 
-A plugin adja a Karmestert, az Írót, az Ellenőrt, a CEO, a Marketing és a Sales szerepet, a blokkok skilljeit és a négy partner-connector címét. A sorrend kötött: **előbb plugin, utána Instructions, utána új munkamenet.**
+A plugin adja a Karmestert, az Írót, az Ellenőrt, a CEO, a Marketing és a Sales szerepet, a blokkok skilljeit és a négy partner-connector címét. A sorrend kötött: **előbb plugin, utána Instructions, utána új munkamenet.** A kapcsolatonkénti bekötést és füstpróbát a [Kapcsolatok egyenként](#kapcsolatok) táblázat írja le.
 
 **Cowork:** a plugint te nem tudod hozzáadni, ezt a résztvevő kattintja végig. Add át pontosan ezt:
 
@@ -120,6 +120,23 @@ Ezt mondd el a résztvevőnek is, a saját felületére szabva. Ne ígérj enné
 | **claude.ai (tartalék)** | „A skillek és a connectorok működnek, az Ellenőrt új beszélgetésben futtatod.” | „Az ismétlő ciklus automatikus”: a chat az alügynököket nem tölti be. |
 
 Kézi marad minden felületen: a szolgáltatói belépés és a connectorok engedélyeinek beállítása. Az engedély a résztvevő döntése: amit engedélyez, azt a Claude kérdés nélkül megteheti, a levélküldést is. Coworkben kézi még a mappa és a projekt létrehozása, a plugin hozzáadása, a projekt Instructions mezője, a Gmail és a Drive bekötése (Customize → Connectors), valamint a plugin Connectors fülén connectoronként az Add és a Connect. A partner-connectorokat elég a saját blokkjuk elején bekötni.
+
+<a name="kapcsolatok"></a>
+
+### Kapcsolatok egyenként
+
+A táblázat a várt menetet írja le, nem kipróbált eredményt. Hogy egy kapcsolat a résztvevő gépén működik-e, azt a füstpróba dönti el. A pluginos címek a [plugin beállításából](plugin/wenova-sales-workshop/.mcp.json) valók. Cowork esetén a pluginos kapcsolatot a Wenova Sales Workshop plugin Connectors fülén kell hozzáadni (Add, Connect, majd belépés). Tartalékként csak akkor, ha a kapcsolat egyáltalán nem szerepel a plugin Connectors fülén, a Customize → Connectors → Add custom connector alatt a táblázatban szereplő címmel adható hozzá. Ez a Bufferre is igaz: ha a plugin Connectors fülén megvan, a tartalékot ne használd. Ha egy pluginos kapcsolat így kétszer került be, az egyiket bontsd vagy töröld, hogy egy szolgáltatáshoz egy kapcsolat tartozzon. Claude Code esetén a pluginos kapcsolatokhoz a belépés a `/mcp` menüben történik. A Gmailt és a Google Drive-ot a résztvevő a saját Claude-fiókja webes Customize → Connectors felületén kapcsolja be, majd megnézi, megjelennek-e a `/mcp` menüben.
+
+| Kapcsolat | Honnan jön? | Kézi lépés a résztvevőnek | Füstpróba, csak olvasás (ezt kérje a Claude-tól) | Várt eredmény |
+| --- | --- | --- | --- | --- |
+| Gmail | Nincs a pluginban, kézzel köti be: Customize → Connectors | Gmail → Connect, belépés a Google-fiókba, majd az eszközengedélyek beállítása. Outlook esetén ugyanígy a Microsoft 365 connector | `Csak olvasva írd ki a legutóbbi levelem tárgyát. Ne küldj és ne módosíts semmit.` | Megjelenik egy levél tárgya, levél nem megy ki |
+| Google Drive | Nincs a pluginban, kézzel köti be: Customize → Connectors | Google Drive → Connect, belépés a Google-fiókba | `Csak olvasva keresd meg a Drive-ban a CRM nevű táblázatot, és írd ki a nevét.` | Megjelenik a táblázat neve. Az üres találati lista csak az olvasást igazolja, a táblázat meglétét nem |
+| Brandiseer | Plugin, `.mcp.json`: `https://brandiseer.com/api/mcp` | A 02-es blokk elején: Add, Connect, belépés a Brandiseer-fiókba | `Csak olvasva sorold fel a Brandiseer-márkáimat.` | Megjelenik a felvett márka a listában |
+| Sales Bot | Plugin, `.mcp.json`: `https://app.sales-bot.io/api/mcp` | A 03-as blokk elején, a Blackhole Media által átadott hozzáféréssel: Add, Connect, belépés | `Csak olvasva írd ki a Sales Bot leadlistám első elemét.` | A gyakorlófiókból egy lead vagy a leadlista olvasható |
+| EstiWise | Plugin, `.mcp.json`: `https://mcp.estiwise.ai/mcp` | A 04-es blokk elején: Add, Connect, belépés az EstiWise-fiókba | `Csak olvasva sorold fel az EstiWise-ajánlataimat. Ne hozz létre semmit.` | Megjelenik az ajánlatok listája vagy egy meglévő tervezet. Az üres lista csak az olvasást igazolja |
+| Buffer (választható) | Plugin, `.mcp.json`: `https://mcp.buffer.com/mcp` | Csak ha a résztvevő használja: Add, Connect, belépés a Buffer-fiókba. A Customize → Connectors listából ne adja hozzá még egyszer, mert akkor ugyanaz a szolgáltatás két kapcsolattal szerepel | `Csak olvasva sorold fel a Buffer-csatornáimat. Ne ütemezz semmit.` | Megjelenik legalább egy bekötött közösségimédia-csatorna |
+
+A füstpróba előtt nézd meg, hogy a kapcsolat kínál-e olvasó eszközt. Ha a próba kreditet használna, írna, vagy nincs olvasó eszköz, ne futtasd, és az eredmény „nem ellenőrzött”. Az eredményt a `Munka/00-Felkeszules/felmeres.md` megfelelő sorába írd, a `Tananyag/assistant.md` kapcsolatkapuja szerint.
 
 ## 7. Mondd meg, mi a következő lépés
 

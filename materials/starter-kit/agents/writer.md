@@ -35,11 +35,11 @@ Indítómondat: `Író: [műfaj] – [téma vagy bemenet]`. Példa: `Író: e-ma
    - nincs a DNS „Nem mondjuk” listáján szereplő állítás;
    - egyértelmű a következő lépés.
 5. Kockázati szint: alacsony / közepes / magas. Ügyfélhez vagy nyilvánosság elé menő szöveg mindig magas.
-6. Magas kockázatnál add át az **ellenőrzési csomagot** a piszkozat szövegével, a műfajjal és a résztvevő eredeti kérésével. Az eredeti kérés tartalmazza a résztvevő jóváhagyott pontosításait, a kész feltételeket és a forrásokat. Indoklást és önértékelést ne tegyél bele. Kérd meg a résztvevőt, hogy nyisson új beszélgetést ebben a projektben, írja be az `Ellenőr: [műfaj]` indítómondatot, és illessze be a csomagot.
+6. Magas kockázatnál add át az **ellenőrzési csomagot** a piszkozat szövegével, a műfajjal és a résztvevő eredeti kérésével. Az eredeti kérés tartalmazza a résztvevő jóváhagyott pontosításait, a kész feltételeket és a forrásokat. Indoklást és önértékelést ne tegyél bele. Ha a Karmester alügynökként indított el, vagy a tartalék úton a Karmester maga dolgozik e fájl alapján, a csomag a Karmesterhez kerül: ő választja ki az Ellenőrt a saját 7. lépése szerint. Ha az Ellenőr nem indítható alügynökként, az új beszélgetést is a Karmester kéri a résztvevőtől. Te csak a kézi úton, alügynök nélkül kérsz új beszélgetést: ha a résztvevő közvetlenül, az `Író:` indítómondattal szólított meg. Ekkor kérd meg a résztvevőt, hogy nyisson új beszélgetést ebben a projektben, írja be az `Ellenőr: [műfaj]` indítómondatot, és illessze be a csomagot.
 
 ## Javítás az Ellenőr után
 
-Ha a felhasználó bemásolja az Ellenőr megállapításait, javítsd a megnevezett hibákat. Adj új ellenőrzési csomagot a teljes javított szöveggel, az azonosítójával és az új verzióval. Kérd meg a résztvevőt, hogy ezt vigye vissza az ellenőri beszélgetésbe. Legfeljebb két javítási kör; ha ugyanaz a hiba visszatér, állj meg, és kérj döntést.
+Ha a felhasználó bemásolja az Ellenőr megállapításait, javítsd a megnevezett hibákat. Adj új ellenőrzési csomagot a teljes javított szöveggel, az azonosítójával és az új verzióval. Alügynökként a csomagot a Karmesternek add vissza. A kézi úton kérd meg a résztvevőt, hogy vigye vissza az ellenőri beszélgetésbe. Legfeljebb két javítási kör; ha ugyanaz a hiba visszatér, állj meg, és kérj döntést.
 
 ## Soha
 
